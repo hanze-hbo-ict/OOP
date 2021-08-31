@@ -1,0 +1,46 @@
+# Book settings
+title: Objectgeoriënteerd Programmeren I
+author: Hanzehogeschool Groningen
+logo: images/logo_1.png
+copyright: ""
+exclude_patterns: ["LICENSE.md", "README.md"]
+only_build_toc_files: true
+jupyter_execute_notebooks: force
+
+latex:
+  latex_engine: xelatex
+  latex_documents:
+    targetname: book.tex
+html:
+  home_page_in_navbar: true
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: true
+  navbar_number_sections: false
+  extra_footer: |
+    <div>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"></a>
+        Alle inhoud op deze site (tenzij anders vermeld) valt onder de <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> licentie.
+    </div>
+
+repository:
+  url: https://github.com/misja/OOP1
+  path_to_book: ""
+  branch: master
+
+sphinx:
+  config:
+    language: nl
+    html_show_copyright: false
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    html_extra_path: ["build"]
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - deflist
+    - dollarmath
+    - amsmath
+
+bibtex_bibfiles:
+  - about/references.bib

@@ -1,0 +1,39 @@
+format: jb-book
+root: about/syllabus
+title: Syllabus
+
+parts:
+- caption: Over deze cursus
+  chapters:
+  - file: about/literatuur
+
+- caption: Week 1
+  chapters:
+  - file: course/week_1
+    title: Introductie
+  - file: support/install
+    title: Practicum
+  - file: problems/hello_world/index
+    title: Opdracht
+  - file: exercises/set_1
+    title: Oefeningen
+    sections:
+    - file: exercises/8-9_primitive_data
+    - file: exercises/9a-9_variables_assignment
+
+- caption: Week 2
+  chapters:
+  - file: course/week_2
+    title: Introductie
+  - file: problems/conditionals_loops/index
+    title: Opdracht
+
+- caption: Week 3
+  chapters:
+  - file: problems/n_body/index
+    title: Opdracht
+
+- caption: Week 4
+  chapters:
+  - file: problems/recursive_graphics/index
+    title: Opdracht

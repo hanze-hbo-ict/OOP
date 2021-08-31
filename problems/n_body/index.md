@@ -10,13 +10,11 @@
 
 ## Inleiding
 
-Dit is een **individuele** opdracht.
+Doe het volgende voordat je begint:
 
-Before you begin coding, do the following:
+* **Raak vertrouwd met de command line**
 
-*   *Get familiar with the command line.* Use the `javac-introcs` and `java-introcs` commands to access the standard libraries.
-
-*   Make sure you understand lab and precept exercises.
+* Zorg ervoor dat je de oefeningen van het practicum begrijpt.
 
 * Download de gegevensbestanden. Om je programma te testen, heb je `planets.txt` nodig en de bijbehorende beeld- en geluidsbestanden. Download en unzip de project map <a href="../projects/nbody.zip">nbody.zip</a>, die deze bestanden bevat, inclusief extra test universums.
 

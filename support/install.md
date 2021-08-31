@@ -173,8 +173,6 @@ Als de compilatie mislukt opent een Recompile-paneel (onderaan), waarin de compi
 
 -   Om je programma uit te voeren, selecteer je de menu-optie LIFT → Run 'HelloWorld' with Arguments (Ctrl + E). Aangezien dit programma geen command-line argumenten nodig heeft, klik OK.
 
-Vertaald met www.DeepL.com/Translator (gratis versie)
-
 ### IntelliJ
 
 ### Commandline

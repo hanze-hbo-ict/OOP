@@ -550,3 +550,7 @@ Fractale dimensie (optionele afleiding). Op de lagere school heb je geleerd dat 
 We kunnen deze definitie ook direct toepassen op de (verzameling van witte punten in) Sierpinski driehoek. We kunnen de eenheidsdriehoek van Sierpinski ontbinden in drie Sierpinski-driehoeken, elk met zijde 1/2. De dimensie van een Sierpinski-driehoek is dus log (3) / log (2) ≈ 1.585. De dimensie is fractioneel - meer dan een lijnstuk, maar minder dan een vierkant! Bij Euclidische meetkunde is de dimensie altijd een geheel getal; bij fractale meetkunde kan het iets ertussenin zijn. Fractals lijken op veel fysische objecten; bijvoorbeeld de kustlijn van Groot-Brittannië lijkt op een fractal; de fractal dimensie is gemeten op ongeveer 1.25.
 
 [^ftnt1]: De Poolse wiskundige Wacław Sierpiński beschreef het patroon in 1915, maar het komt al sinds de 13e eeuw voor in de Italiaanse kunst. Hoewel de Sierpinski driehoek er complex uitziet, kan hij worden gegenereerd met een korte recursieve functie.
+
+---
+
+Copyright © 1999–2021, [Robert Sedgewick](http://www.cs.princeton.edu/~rs/) and [Kevin Wayne](http://www.cs.princeton.edu/~wayne).

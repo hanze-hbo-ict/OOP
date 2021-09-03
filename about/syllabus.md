@@ -4,4 +4,12 @@
 
 # Welkom
 
-Objectgeoriënteerd Programmeren I
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+Welkom bij Objectgeoriënteerd Programmeren I.

@@ -1,0 +1,9 @@
+digraph
+{
+    // 100dpi png rendering:
+    // dot -Tpng -Gdpi=100 -Nfontname=Helvetica -Efontname=Helvetica -o 1a_static.png 1a_static.dot
+    rankdir=LR;
+
+    node [shape=box3d]
+    mem1 [label="12\nname=score\ntype = int\nLOC = 312"]
+}

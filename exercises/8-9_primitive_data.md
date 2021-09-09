@@ -30,8 +30,6 @@ A short: 32
 
 Op regel 4 in het programma wordt de waarde van de variabele `value` opgehaald en wordt samen met de tekst "A short: " op scherm geprint.
 
-### Opgave
-
 1.  Compileer `Shortfall.java` en voer het programma uit. Controleer of het volgende wordt geprint:
 
     ```text
@@ -91,8 +89,6 @@ In dit programma is `value` de naam voor een variabele die het gegevenstype `dou
 
 Het is geen probleem om de naam `value` te gebruiken in dit en in het vorige programma. Een naam voor een variabele helpt te beschrijven wat je wilt dat het programma doet. Het reserveert niet permanent een deel van het computergeheugen voor een bepaald gebruik.
 
-### Opgave
-
 1.  Compileer het programma en voer het uit. Verschilt de uitvoer (wat er op het scherm verschijnt) van de uitvoer van de vorige oefening?
 
 2.  Verander de 32 in 32.0 en kijk of dat een verschil maakt wanneer je het programma compileert en uitvoert.
@@ -120,8 +116,6 @@ public class ExponentialExplosion {
 }
 ```
 
-### Opgave
-
 Compileer het programma en voer het uit. Compileert het succesvol en wordt het correct uitgevoerd? Verander nu de 32 in steeds grotere getallen tot iets fout gaat.
 
 ## Karaktermoord
@@ -142,8 +136,6 @@ De variabele `ch` is 16 bits geheugen dat het gegevenstype `char` gebruikt om ka
 ```console
 A char: A
 ```
-
-### Opgave
 
 1.  Wijzig `'A'` naar `'Z'` en voer het programma uit.
 2.  Wijzig `'A'` naar `'AA'` en voer het programma uit.

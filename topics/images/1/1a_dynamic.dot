@@ -1,0 +1,14 @@
+digraph
+{
+    // 100dpi png rendering:
+    // dot -Tpng -Gdpi=100 -Nfontname=Helvetica -Efontname=Helvetica -o 1a_dynamic.png 1a_dynamic.dot
+    rankdir=LR;
+
+    node [shape=circle]
+    a
+
+    node [shape=box3d]
+    mem1 [label="10\ntype = int\nLOC = 348"]
+
+    a -> mem1;
+}

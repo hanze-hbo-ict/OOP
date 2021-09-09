@@ -1,0 +1,16 @@
+digraph
+{
+    // 100dpi png rendering:
+    // dot -Tpng -Gdpi=100 -Nfontname=Helvetica -Efontname=Helvetica -o 1b_dynamic.png 1b_dynamic.dot
+    rankdir=LR;
+
+    node [shape=circle]
+    a
+
+    node [shape=box3d]
+    mem1 [label="10\ntype = int\nLOC = 348"]
+    mem2 [label="'tien'\ntype = str\nLOC = 324"]
+
+    a -> mem1 [style=dashed, color=grey, arrowhead=none];
+    a -> mem2;
+}

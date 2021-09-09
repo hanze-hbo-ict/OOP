@@ -103,9 +103,21 @@ Voor elke opdracht ga je een startproject downloaden waarin jij jouw programmaco
     -   kan *IntelliJ* vragen of je anonieme gebruiksstatistieken naar *JetBrains* wilt sturen. Kies de gewenste optie.
     -   zal *IntelliJ* een welkomstscherm tonen (*Welkom bij IntelliJ IDEA*).
 
--   Om een project te openen vanuit het welkomstscherm, klikt je op **Openen** en selecteer vervolgens de projectmap.
+-   Om een project te openen vanuit het welkomstscherm, klikt je op **Openen**
 
-    <!-- TODO screenshots -->
+    ```{figure} images/intellij_welcome.png
+    :name: intellij-welcome
+
+    Intellij welkomstscherm
+    ```
+
+    Selecteer vervolgens de projectmap.
+
+    ```{figure} images/intellij_select_project.png
+    :name: intellij-select-project
+
+    Selecteer de projectmap
+    ```
 
     Wanneer je IntelliJ voor de eerste keer opstart kan het een minuut of twee duren om bestanden te *indexeren*, sommige functies (zoals automatisch importeren) zullen niet beschikbaar zijn totdat dit proces is voltooid.
 
@@ -121,7 +133,11 @@ Nu bent je klaar om uw eerste Java programma te schrijven. IntelliJ heeft veel g
 
     -   Open *IntelliJ* en het project opnieuw (als je het in de vorige stap hebt gesloten).
 
-        <!-- TODO screenshot -->
+    ```{figure} images/intellij_select_project_2.png
+    :name: intellij-select-project_2
+
+    Open het project
+    ```
 
     -   Klik op de projectnaam in de *Project View* zijbalk (links), zodat deze gemarkeerd wordt. <!--TODO LIFT specifiek, maak algemeen -->
 

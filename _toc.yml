@@ -10,30 +10,45 @@ parts:
 - caption: Week 1
   chapters:
   - file: course/week_1
-    title: Introductie
+    title: Onderwerpen
+    sections:
+      - file: topics/1a_inleiding
+        title: Inleiding
+      - file: topics/1b_variabelen_en_operatoren
+        title: Variabelen en operatoren
+      - file: topics/1c_invoer_en_uitvoer
+        title: Invoer en uitvoer
   - file: support/install
     title: Practicum
   - file: problems/hello_world/index
-    title: Opdracht
+    title: Opgave
   - file: exercises/set_1
-    title: Oefeningen
+    title: Oefening
     sections:
     - file: exercises/8-9_primitive_data
     - file: exercises/9a-9_variables_assignment
 
-- caption: Week 2
-  chapters:
-  - file: course/week_2
-    title: Introductie
-  - file: problems/conditionals_loops/index
-    title: Opdracht
+# - caption: Week 2
+#   chapters:
+#   - file: course/week_2
+#     title: Introductie
+#   - file: exercises/41_41_for_loop
+#     title: Practicum
+#   - file: exercises/15_15_while_loop
+#     title: Practicum 2
+#   - file: problems/conditionals_loops/index
+#     title: Opgave
 
-- caption: Week 3
-  chapters:
-  - file: problems/n_body/index
-    title: Opdracht
+# - caption: Week 3
+#   chapters:
+#   - file: course/week_3
+#     title: Introductie
+#   - file: problems/n_body/index
+#     title: Opgave
 
-- caption: Week 4
-  chapters:
-  - file: problems/recursive_graphics/index
-    title: Opdracht
+# - caption: Week 4
+#   chapters:
+#   - file: course/week_4
+#     title: Introductie
+#   - file: problems/recursive_graphics/index
+#     title: Opgave

@@ -26,8 +26,6 @@ Je zal zien dat **drie** variabelen `hoursWorked`, `payRate` en `taxRate` worden
 Lees 2.1 [*Declaring variables*](https://greenteapress.com/thinkjava7/html/chapter-02.html#sec21) en 2.2 [*Assigning variables*](https://greenteapress.com/thinkjava7/html/chapter-02.html#sec22) over het declareren en initialiseren (toekennen van waarden) van variabelen.
 ```
 
-### Opgave
-
 1.  Pas `Payroll.java` zo aan dat elke variabele op zichzelf wordt gedeclareerd en niet geïnitialiseerd is.
 
     Schrijf vervolgens drie toewijzingsverklaringen om aan elke variabele een waarde toe te kennen. Start het programma en controleer de uitvoer.
@@ -47,8 +45,6 @@ $$
 
 voor verschillende waarden van $x$.
 
-### Opgave
-
 Schrijf een programma dat een dubbele precisie variabele `x` heeft. Wijs er een waarde aan toe. Schrijf een statement dat een waarde berekent voor de vergelijking en sla het resultaat op in een andere dubbele precisie variabele. Schrijf tenslotte het resultaat uit, bijvoorbeeld
 
 ```console
@@ -62,8 +58,6 @@ Lees 2.7 [Rounding Errors](https://greenteapress.com/thinkjava7/html/chapter-02.
 ```
 
 ## Waarden opnieuw toewijzen aan variabelen
-
-### Opgave
 
 Wijzig het vorige programma ([Waarde van kwadratisch](opdracht_2)) zodanig dat in één run van het programma de waarde van de kwadratische functie wordt berekend en uitgeschreven voor drie verschillende waarden van `x`: 0.0, 2.0 en 4.0 (of drie waarden naar keuze).
 

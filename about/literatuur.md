@@ -4,7 +4,7 @@ Het begeleidend boek *Think Java: How to Think Like a Computer Scientist*{cite}`
 
 ![Think Java: How to Think Like a Computer Scientist](images/think_java_2nd.png)
 
-Als je een student aan de Hanzehogeschool bent is het zeer waarschijnlijk dat je Python als eerste taal hebt geleerd. Je zult veel overeenkomsten met Java zien, maar ook voldoende verschillen! Om deze reden verwijzen we ook soms naar [Java for Python Programmers](https://runestone.academy/runestone/books/published/java4python/index.html) waar de twee talen naast elkaar worden gezet. Dit materiaal is ter ondersteuning en kan jou helpen sneller bepaalde syntax en concepten te begrijpen.
+Als je een student aan de Hanzehogeschool bent is het zeer waarschijnlijk dat je Python als eerste taal hebt geleerd. Je zult veel overeenkomsten met Java zien, maar ook voldoende verschillen! Om deze reden verwijzen we ook soms naar [Java for Python Programmers](https://fpl.cs.depaul.edu/jriely/java4python/index.html) waar de twee talen naast elkaar worden gezet. Dit materiaal is ter ondersteuning en kan jou helpen sneller bepaalde syntax en concepten te begrijpen.
 
 <!--
 ![Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition](images/design_patterns_2nd.png)

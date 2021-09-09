@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variabelen en operatoren &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Invoer en uitvoer" href="1c_invoer_en_uitvoer.html" />
+    <link rel="prev" title="Inleiding" href="1a_inleiding.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../exercises/set_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/topics/1b_variabelen_en_operatoren.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/misja/OOP1"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Bronopslagplaats"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/misja/OOP1/issues/new?title=Issue%20on%20page%20%2Ftopics/1b_variabelen_en_operatoren.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open een probleem"><i class="fas fa-lightbulb"></i>open probleem</button></a>
+        <a class="edit-button" href="https://github.com/misja/OOP1/edit/master/topics/1b_variabelen_en_operatoren.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="bewerk deze pagina"><i class="fas fa-pencil-alt"></i>suggereren bewerken</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/master?urlpath=tree/topics/1b_variabelen_en_operatoren.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variabelen">
+   Variabelen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dynamisch-en-statisch-getypeerde-talen">
+     Dynamisch- en statisch getypeerde talen
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#voorbeeld">
+       Voorbeeld
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variabelen-declareren">
+     Variabelen declareren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variabelen-initialiseren">
+     Variabelen initialiseren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#declareren-en-initialiseren">
+     Declareren én initialiseren
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamische-versus-statische-toekenning">
+   Dynamische versus statische toekenning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variabelen-en-geheugen">
+   Variabelen en geheugen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variabelen-op-de-console">
+   Variabelen op de console
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#typen-in-java">
+   Typen in Java
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gehele-getallen">
+     Gehele getallen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floating-point-getallen">
+     Floating point getallen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overige-types">
+     Overige types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#primitief">
+   Primitief?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rekenkundige-operatoren">
+   Rekenkundige operatoren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#afrondingsfouten">
+   Afrondingsfouten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-operatoren">
+   String operatoren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maar-in-een-andere-taal">
+   Maar in een andere taal…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fouten">
+   Fouten
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compiler-fout">
+     Compiler fout
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#runtime-fout">
+     Runtime fout
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logische-fout">
+     Logische fout
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="variabelen-en-operatoren">
+<h1>Variabelen en operatoren<a class="headerlink" href="#variabelen-en-operatoren" title="Permalink naar deze titel">¶</a></h1>
+<div class="section" id="variabelen">
+<h2>Variabelen<a class="headerlink" href="#variabelen" title="Permalink naar deze titel">¶</a></h2>
+<p><strong>Datatypen</strong></p>
+<ul class="simple">
+<li><p>getallen</p></li>
+<li><p>strings (tekst)</p></li>
+<li><p>booleans (<em>true</em> of <em>false</em>)</p></li>
+<li><p>…</p></li>
+</ul>
+<p>Variabelen hebben altijd een datatype, ongeacht de taal. De wijze van toekenning van waarden aan variabelen, en daarmee de typen, kunnen verschillen. We gaan een onderscheid maken tussen <em>dynamisch</em>- en <em>statisch</em> getypeerde talen.</p>
+<div class="section" id="dynamisch-en-statisch-getypeerde-talen">
+<h3>Dynamisch- en statisch getypeerde talen<a class="headerlink" href="#dynamisch-en-statisch-getypeerde-talen" title="Permalink naar deze titel">¶</a></h3>
+<p><em>Dynamisch</em> getypeerd</p>
+<blockquote>
+<div><p>Het type wordt bepaald tijdens uitvoering van een programma aan de hand van de waarde die aan de variabele wordt toegekend, het type kan veranderen door toekenning van andere waarden.</p>
+</div></blockquote>
+<p>Voorbeelden van <em>dynamisch</em> getypeerde talen zijn Python, PHP en JavaScript.</p>
+<div class="section" id="voorbeeld">
+<h4>Voorbeeld<a class="headerlink" href="#voorbeeld" title="Permalink naar deze titel">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;tien&quot;</span>
+</pre></div>
+</div>
+<p>Dit is een voorbeeld in Python. Tijdens de loop van het programma (<em>runtime</em>) zal <code class="docutils literal notranslate"><span class="pre">a</span></code> eerst verwijzen naar een waarde van type <em>integer</em> (<code class="docutils literal notranslate"><span class="pre">10</span></code>), later naar een type <em>string</em> (<code class="docutils literal notranslate"><span class="pre">&quot;tien&quot;</span></code>).</p>
+<p><em>Statisch</em> (of sterk) getypeerd</p>
+<blockquote>
+<div><p>Het type wordt vooraf vastgelegd (gedeclareerd) en het type kan niet veranderen.</p>
+</div></blockquote>
+<p>Java is een statisch getypeerde programmeertaal waar alle variabelen <em>vóór</em> gebruik gedeclareerd moeten  worden. Een ander voorbeeld van een statisch getypeerde taal is C.</p>
+</div>
+</div>
+<div class="section" id="variabelen-declareren">
+<h3>Variabelen declareren<a class="headerlink" href="#variabelen-declareren" title="Permalink naar deze titel">¶</a></h3>
+<p>Het declareren van een variabele vindt plaats met de volgende syntax:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;type&gt; &lt;naam&gt;
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span><span class="o">;</span>         <span class="c1">// variabele met naam &#39;score&#39; en type int</span>
+<span class="n">String</span> <span class="n">woonplaats</span><span class="o">;</span> <span class="c1">// variabele met naam &#39;woonplaats&#39; en type String</span>
+<span class="kt">double</span> <span class="n">prijs</span><span class="o">;</span>      <span class="c1">// variabele met naam &#39;prijs&#39; en type double</span>
+<span class="kt">boolean</span> <span class="n">isManager</span><span class="o">;</span> <span class="c1">// variabele met naam &#39;isManager&#39; en type boolean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>De variabelen hebben hier nog geen waarde, je <em>verklaart</em> hier alleen dat je een variabele van een bepaald type gaat gebruiken, de daadwerkelijke waarde zal pas later worden gezet (<em>geïnitialisereerd</em>).</p>
+</div>
+<div class="section" id="variabelen-initialiseren">
+<h3>Variabelen initialiseren<a class="headerlink" href="#variabelen-initialiseren" title="Permalink naar deze titel">¶</a></h3>
+<p>Als een variabele eenmaal is gedeclareerd, dan kan daar een waarde aan worden toegekend.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
+<span class="n">woonplaats</span> <span class="o">=</span> <span class="s">&quot;Groningen&quot;</span><span class="o">;</span>
+<span class="n">prijs</span> <span class="o">=</span> <span class="mf">4.95</span><span class="o">;</span>
+<span class="n">isManager</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="s">&quot;twaalf&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>   <span class="n">score</span> <span class="o">=</span> <span class="s2">&quot;twaalf&quot;</span>
+<span class="n">incompatible</span> <span class="n">types</span><span class="p">:</span> <span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">String</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">converted</span> <span class="n">to</span> <span class="nb">int</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dit geeft een fout. Als het type eenmaal is gedeclareed dan mag geen waarde van een ander type worden toegekend!</p>
+</div>
+<div class="section" id="declareren-en-initialiseren">
+<h3>Declareren én initialiseren<a class="headerlink" href="#declareren-en-initialiseren" title="Permalink naar deze titel">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">woonplaats</span> <span class="o">=</span> <span class="s">&quot;Groningen&quot;</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">prijs</span> <span class="o">=</span> <span class="mf">4.95</span><span class="o">;</span>
+<span class="kt">boolean</span> <span class="n">isManager</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Declareren en initialiseren kan in één regel!</p>
+</div>
+</div>
+<div class="section" id="dynamische-versus-statische-toekenning">
+<h2>Dynamische versus statische toekenning<a class="headerlink" href="#dynamische-versus-statische-toekenning" title="Permalink naar deze titel">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
+</pre></div>
+</div>
+<p><img alt="statisch 1b" src="../_images/1a_static.png" /></p>
+<p>Je hebt nu gezien hoe variabelen worden gedeclareerd (met type en naam) en vervolgens worden geinitialiseerd met een waarde van het type dat eerder is gedeclareerd. <em>Naam</em>, <em>type</em> en <em>waarde</em> horen bij elkaar en worden als geheel in het geheugen bewaard. Het type kan niet meer worden gewijzigd en daarmee kan het ook niet meer een waarde van een ander type krijgen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p><img alt="dynamisch 1a" src="../_images/1a_dynamic.png" /></p>
+<p>Hoe verschilt dit nu van <em>dynamische</em> typering? Een taal als Python zal bij de toekenning van een waarde een object in het geheugen aanmaken met type en waarde. De naam (variabele) is echter een <em>verwijzing</em> naar (en niet een onderdeel van) het object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;tien&quot;</span>
+</pre></div>
+</div>
+<p><img alt="dynamisch 1b" src="../_images/1b_dynamic.png" /></p>
+<p>Een verwijzing wordt nu gemaakt naar een <em>nieuw</em> object, een <em>string</em> in dit geval. De verwijzing naar het vorige object bestaat niet meer en het object zal op een gegeven moment uit het geheugen worden verwijderd (<em>garbage collection</em>).</p>
+<p>Strikt (technisch) gezien zou je kunnen stellen dat het objecttype niet verandert, alleen maar de verwijzing.</p>
+<p>Je kan je misschien nu afvragen welke benadering (statisch of dynamisch) beter is. Ons antwoord is dat het niet een kwestie van beter of slechter is, beide hebben hun voor- en nadelen.</p>
+</div>
+<div class="section" id="variabelen-en-geheugen">
+<h2>Variabelen en geheugen<a class="headerlink" href="#variabelen-en-geheugen" title="Permalink naar deze titel">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>De bovenstaande declaraties plaatsen <em>twee</em> integers in het geheugen. De toekenning <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a</span></code> plaatst de <strong>waarde</strong> van <code class="docutils literal notranslate"><span class="pre">a</span></code> in <code class="docutils literal notranslate"><span class="pre">b</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wat is de waarde van <code class="docutils literal notranslate"><span class="pre">a</span></code> en <code class="docutils literal notranslate"><span class="pre">b</span></code> na het uitvoeren van deze regel?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="variabelen-op-de-console">
+<h2>Variabelen op de console<a class="headerlink" href="#variabelen-op-de-console" title="Permalink naar deze titel">¶</a></h2>
+<p>Variabelen kunnen meegegeven worden aan een <code class="docutils literal notranslate"><span class="pre">System.out.println</span></code>-statement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">score</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">woonplaats</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">prijs</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isManager</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+Groningen
+4.95
+true
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dit kan ook gecombineerd worden met tekst:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Score: &quot;</span> <span class="o">+</span> <span class="n">score</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score: 12
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ook complexere combinaties zijn mogelijk:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De prijs van een middag parkeren in &quot;</span><span class="o">+</span><span class="n">woonplaats</span><span class="o">+</span><span class="s">&quot; is €&quot;</span><span class="o">+</span><span class="n">prijs</span><span class="o">+</span><span class="s">&quot;.&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>De prijs van een middag parkeren in Groningen is €4.95.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="typen-in-java">
+<h2>Typen in Java<a class="headerlink" href="#typen-in-java" title="Permalink naar deze titel">¶</a></h2>
+<ul class="simple">
+<li><p>Java heeft 8 verschillende <em>primitieve</em> typen.</p></li>
+<li><p>De meeste daarvan zijn numerieke types, variabelen die een <em>getal</em> bevatten.</p></li>
+<li><p>Numerieke types zijn in twee groepen te verdelen:</p>
+<ul>
+<li><p>gehele getallen</p></li>
+<li><p>floating point getallen.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="gehele-getallen">
+<h3>Gehele getallen<a class="headerlink" href="#gehele-getallen" title="Permalink naar deze titel">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Omvang</p></th>
+<th class="head"><p>Bereik</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>byte</p></td>
+<td><p>8 bits</p></td>
+<td><p>-128 t/m 127</p></td>
+</tr>
+<tr class="row-odd"><td><p>short</p></td>
+<td><p>16 bits</p></td>
+<td><p>-32768 t/m 32767</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>32 bits</p></td>
+<td><p>-2 147 483 648 t/m 2 147 483 647</p></td>
+</tr>
+<tr class="row-odd"><td><p>long</p></td>
+<td><p>64 bits</p></td>
+<td><p>-2^63 t/m 2^63-1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Gehele getallen in Java zijn altijd <em>signed</em>.</p>
+</div>
+<div class="section" id="floating-point-getallen">
+<h3>Floating point getallen<a class="headerlink" href="#floating-point-getallen" title="Permalink naar deze titel">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Omvang</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>float</p></td>
+<td><p>32 bits</p></td>
+</tr>
+<tr class="row-odd"><td><p>double</p></td>
+<td><p>64 bits</p></td>
+</tr>
+</tbody>
+</table>
+<p>Naast de algemene numerieke types heeft Java nog twee aanvullende types, <code class="docutils literal notranslate"><span class="pre">float</span></code> en <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p>
+</div>
+<div class="section" id="overige-types">
+<h3>Overige types<a class="headerlink" href="#overige-types" title="Permalink naar deze titel">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Beschrijving</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>heeft waarde <em>true</em> of <em>false</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>char</p></td>
+<td><p>één karakter</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="primitief">
+<h2>Primitief?<a class="headerlink" href="#primitief" title="Permalink naar deze titel">¶</a></h2>
+<p>Aanduidingen van primitieve types beginnen met een kleine letter.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;Hallo wereld!&quot;</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Maar we hebben eerder ook typen gezien met hoofdletter, bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">String</span></code>. Dit zijn <em>niet</em>-primitieve types. Aanduidingen van niet-primitieve types beginnen met een hoofdletter. Deze worden later behandeld.</p>
+<p>Voor nu is het belangrijk om te weten dat het niet-primitieve type <code class="docutils literal notranslate"><span class="pre">String</span></code> voor strings gebruikt wordt in Java.</p>
+</div>
+<div class="section" id="rekenkundige-operatoren">
+<h2>Rekenkundige operatoren<a class="headerlink" href="#rekenkundige-operatoren" title="Permalink naar deze titel">¶</a></h2>
+<p>Op numerieke types kunnen de basis rekenkundige operatoren gebruikt worden.</p>
+<p>Dit zijn onder andere <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code> en <code class="docutils literal notranslate"><span class="pre">*</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+40
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Het laatste voorbeeld waarbij <code class="docutils literal notranslate"><span class="pre">a</span></code> gedeeld wordt door <code class="docutils literal notranslate"><span class="pre">b</span></code> geeft wellicht een onverwacht resultaat. Het getal 10 delen door 4 levert immers het getal 2,5 op.</p>
+<p>Verklaring: Het type van het resultaat van een operator is gebaseerd op de types waarop de operatie wordt toegepast. In dit voorbeeld: Twee integers worden door elkaar gedeeld. Resultaat komt ook in een integer, als geheel getal.</p>
+<p>Oplossing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">((</span><span class="kt">float</span><span class="o">)</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>De type-aanduiding <em>float</em> tussen haakjes wordt een <em>cast</em>-operator genoemd. Het instrueert de compiler om <code class="docutils literal notranslate"><span class="pre">a</span></code> te behandelen alsof het een <code class="docutils literal notranslate"><span class="pre">float</span></code> is. Daardoor wordt het resultaat ook van het type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>Voor modulo (rest) wordt <code class="docutils literal notranslate"><span class="pre">%</span></code> gebruikt:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">%</span> <span class="mi">8</span><span class="o">);</span> <span class="c1">// 4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="afrondingsfouten">
+<h2>Afrondingsfouten<a class="headerlink" href="#afrondingsfouten" title="Permalink naar deze titel">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="mi">10</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+    <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span>
+    <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>
+<span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+0.9999999999999999
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bij floatingpoint getallen kun je te maken krijgen met afrondingsfouten, deze afrondingsfouten zijn inherent aan floatingpoint types!</p>
+</div>
+<div class="section" id="string-operatoren">
+<h2>String operatoren<a class="headerlink" href="#string-operatoren" title="Permalink naar deze titel">¶</a></h2>
+<p>Rekenkundige operatoren zoals aftrekken, delen en vermenigvuldigen zijn niet mogelijk met strings. Deze geven een <em>compileerfout</em>.</p>
+<p>De <code class="docutils literal notranslate"><span class="pre">+</span></code> operator is wel mogelijk met strings. Deze combineert twee strings tot een nieuwe string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">firstpart</span> <span class="o">=</span> <span class="s">&quot;Hello &quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">secondpart</span> <span class="o">=</span> <span class="s">&quot;world!&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">firstpart</span> <span class="o">+</span> <span class="n">secondpart</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ook complexere combinaties zijn mogelijk:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">greet</span><span class="o">=</span><span class="s">&quot;Hello&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;Hanze students&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">greet</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;!&quot;</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Hanze students!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Combineren met andere types is mogelijk:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span><span class="o">=</span><span class="mi">180</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;Uw score is &quot;</span><span class="o">+</span><span class="n">score</span><span class="o">+</span><span class="s">&quot; punten!&quot;</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">score</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>180
+</pre></div>
+</div>
+</div>
+</div>
+<p>In het bovenstaande voorbeeld wordt de numerieke variabele <em>score</em> <strong>impliciet</strong> omgezet naar een string en vervolgens gecombineerd met de andere strings.</p>
+</div>
+<div class="section" id="maar-in-een-andere-taal">
+<h2>Maar in een andere taal…<a class="headerlink" href="#maar-in-een-andere-taal" title="Permalink naar deze titel">¶</a></h2>
+<p>kan ik wel strings vermenigvuldigen!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ha&quot;</span> <span class="o">*</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>De vermenigvuldigingsoperator <code class="docutils literal notranslate"><span class="pre">*</span></code> kan je in Java niet gebruiken in combinatie met strings. Bij het leren van een nieuwe taal zul je soms zoeken naar een manier om een idee uit te drukken die je misschien uit een andere taal kent, bijvoorbeeld Python. Het kan zijn dat de ontwerpers van een taal er voor gekozen hebben om het anders uit te druken of is het misschien technisch niet mogelijk.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;ha&quot;</span><span class="o">;</span>
+<span class="n">text</span><span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hahahahahahahahahaha
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dit is de oplossing die Java voor dit specifieke probleem heeft waar de <em>methode</em> <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> van het <code class="docutils literal notranslate"><span class="pre">String</span></code> object <code class="docutils literal notranslate"><span class="pre">text</span></code> moet worden aangeroepen voor het aantal gewenste herhalingen. Let op, dit kan pas vanaf Java versie 11.</p>
+</div>
+<div class="section" id="fouten">
+<h2>Fouten<a class="headerlink" href="#fouten" title="Permalink naar deze titel">¶</a></h2>
+<ul class="simple">
+<li><p><em>Compiler</em> fout</p></li>
+<li><p><em>Runtime</em> fout</p></li>
+<li><p><em>Logische</em> fout</p></li>
+</ul>
+<p>Er zijn 3 types fouten die met het compileren of uitvoeren van een programma kunnen optreden.</p>
+<div class="section" id="compiler-fout">
+<h3>Compiler fout<a class="headerlink" href="#compiler-fout" title="Permalink naar deze titel">¶</a></h3>
+<p>Een compiler fout treedt op tijdens het compileren, als een regel geen correcte Java-code bevat.
+Bijvoorbeeld een accolade of puntkomma ontbreekt.</p>
+</div>
+<div class="section" id="runtime-fout">
+<h3>Runtime fout<a class="headerlink" href="#runtime-fout" title="Permalink naar deze titel">¶</a></h3>
+<p>Een run-time fout treedt op tijdens het uitvoeren van een programma. Het compileren is in dat geval wel goed verlopen. Bijvoorbeeld delen door nul.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">ArithmeticException</span><span class="p">:</span> <span class="o">/</span> <span class="n">by</span> <span class="n">zero</span>
+	<span class="n">at</span> <span class="o">.</span><span class="p">(</span><span class="c1">#54:1)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="logische-fout">
+<h3>Logische fout<a class="headerlink" href="#logische-fout" title="Permalink naar deze titel">¶</a></h3>
+<p>Van een logische fout is sprake als code succesvol is gecompileerd en zonder run-time fouten wordt uitgevoerd, maar door een programmeerfout niet het gewenste resultaat geeft.</p>
+<p>Bijvoorbeeld een off-by-one fout:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">naam</span> <span class="o">=</span> <span class="s">&quot;Hanze&quot;</span><span class="o">;</span>
+<span class="kt">char</span> <span class="n">derdeLetter</span> <span class="o">=</span> <span class="n">naam</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De derde letter van &quot;</span> <span class="o">+</span> <span class="n">naam</span> <span class="o">+</span> <span class="s">&quot; is &quot;</span> <span class="o">+</span> <span class="n">derdeLetter</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>De derde letter van Hanze is z
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "java"
+        },
+        kernelOptions: {
+            kernelName: "java",
+            path: "./topics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'java'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="1a_inleiding.html" title="vorige pagina">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">vorige</p>
+                <p class="prevnext-title">Inleiding</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="1c_invoer_en_uitvoer.html" title="volgende pagina">
+            <div class="prevnext-info">
+                <p class="prevnext-label">volgende</p>
+                <p class="prevnext-title">Invoer en uitvoer</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"></a>
+    Alle inhoud op deze site (tenzij anders vermeld) valt onder de <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> licentie.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

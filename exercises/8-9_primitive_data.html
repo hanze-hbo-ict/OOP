@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primitieve gegevenstypen &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Variabelen en toekenningen" href="9a-9_variables_assignment.html" />
+    <link rel="prev" title="Oefeningen 1" href="set_1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="set_1.html">
+   Oefening
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/exercises/8-9_primitive_data.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/misja/OOP1"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Bronopslagplaats"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/misja/OOP1/issues/new?title=Issue%20on%20page%20%2Fexercises/8-9_primitive_data.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open een probleem"><i class="fas fa-lightbulb"></i>open probleem</button></a>
+        <a class="edit-button" href="https://github.com/misja/OOP1/edit/master/exercises/8-9_primitive_data.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="bewerk deze pagina"><i class="fas fa-pencil-alt"></i>suggereren bewerken</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nijpend-tekort">
+   Nijpend tekort
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dubbel-gevaar">
+   Dubbel gevaar
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponentiele-explosie">
+   Exponentiële explosie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#karaktermoord">
+   Karaktermoord
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="primitieve-gegevenstypen">
+<h1>Primitieve gegevenstypen<a class="headerlink" href="#primitieve-gegevenstypen" title="Permalink naar deze titel">¶</a></h1>
+<div class="section" id="nijpend-tekort">
+<h2>Nijpend tekort<a class="headerlink" href="#nijpend-tekort" title="Permalink naar deze titel">¶</a></h2>
+<p>Het volgende programma gebruikt het type <code class="docutils literal notranslate"><span class="pre">short</span></code>, één van de Java primitieve gegevenstypen:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Shortfall</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+<span class="hll">        <span class="kt">short</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">32</span><span class="o">;</span>
+</span><span class="hll">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;A short: &quot;</span> <span class="o">+</span>  <span class="n">value</span><span class="o">);</span>
+</span>    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>In dit programma is op regel 3 <code class="docutils literal notranslate"><span class="pre">value</span></code> een <strong>variabele</strong>, een <em>naam</em> die verwijst naar een deel van het geheugen dat gegevens bevat van een bepaald gegevenstype.</p>
+<p>In dit geval is <code class="docutils literal notranslate"><span class="pre">value</span></code> de naam voor <em>16 bits geheugen</em> dat wordt gebruikt om een geheel getal te representeren. Met andere woorden, het programma kent op regel 5 de waarde 32 toe aan de variabele <code class="docutils literal notranslate"><span class="pre">value</span></code> van type <code class="docutils literal notranslate"><span class="pre">short</span></code>.</p>
+<p>De uitvoer van dit programma is als volgt:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java Shortfall
+<span class="go">A short: 32</span>
+</pre></div>
+</div>
+<p>Op regel 4 in het programma wordt de waarde van de variabele <code class="docutils literal notranslate"><span class="pre">value</span></code> opgehaald en wordt samen met de tekst “A short: ” op scherm geprint.</p>
+<ol>
+<li><p>Compileer <code class="docutils literal notranslate"><span class="pre">Shortfall.java</span></code> en voer het programma uit. Controleer of het volgende wordt geprint:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A short: 32
+</pre></div>
+</div>
+</li>
+<li><p>Pas <code class="docutils literal notranslate"><span class="pre">Shortfall.java</span></code> aan en wijzig de waarde 32 van <code class="docutils literal notranslate"><span class="pre">value</span></code> in een ander (klein) getal, bijvoorbeeld 356. Compileer en voer het programma uit en controleer het resultaat:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java Shortfall
+<span class="go">A short: 356</span>
+</pre></div>
+</div>
+</li>
+<li><p>Verander vervolgens de waarde van <code class="docutils literal notranslate"><span class="pre">value</span></code> naar 35000 en voer het programma nogmaals uit. Dit zal nu een fout geven</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Exception in thread &quot;main&quot; java.lang.Error: Unresolved compilation problem:</span>
+<span class="go">    Type mismatch: cannot convert from int to short</span>
+</pre></div>
+</div>
+<p>Dit getal is blijkbaar te groot voor het gegevenstype <code class="docutils literal notranslate"><span class="pre">short</span></code> (met andere woorden, het kan niet worden gerepresenteerd in 16 bits). Kan je verklaren wat hier gebeurt? Wat is het grootste getal dat met <code class="docutils literal notranslate"><span class="pre">short</span></code> kan  worden gerepresenteerd?</p>
+</li>
+<li><p>Pas het type <code class="docutils literal notranslate"><span class="pre">short</span></code> aan naar <code class="docutils literal notranslate"><span class="pre">int</span></code> (maar verander de waarde 35000 niet) en voer het programma uit. Wat is het verschil? Wat is het grootste getal dat met <code class="docutils literal notranslate"><span class="pre">int</span></code> kan  worden gerepresenteerd?</p></li>
+</ol>
+<div class="admonition attention">
+<p class="admonition-title">Let op</p>
+<p>Let op dat je na <strong>elke wijziging</strong> het programma eerst <em>compilereert</em></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> javac Shortfall.java
+</pre></div>
+</div>
+<p>om het vervolgens te kunnen uitvoeren</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java Shortfall
+</pre></div>
+</div>
+<p>Als je de eerste stap (compileren) vergeet zal altijd de <em>laatst</em> gecompileerde versie van jouw programma worden uitgevoerd en zijn de meeest recente wijzigingen niet zichtbaar!</p>
+<p>Ontwikkelomgevingen als <a class="reference external" href="https://www.jetbrains.com/idea/">IntelliJ</a> vereenvoudigen deze handelingen en zorgen er voor dat de code altijd eerst wordt gecompileerd voordat het wordt uitgevoerd.</p>
+</div>
+</div>
+<div class="section" id="dubbel-gevaar">
+<h2>Dubbel gevaar<a class="headerlink" href="#dubbel-gevaar" title="Permalink naar deze titel">¶</a></h2>
+<p>Het volgende programma gebruikt het primitieve gegevenstype <code class="docutils literal notranslate"><span class="pre">double</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DoubleJeopardy</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="kt">double</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">32</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;A double: &quot;</span> <span class="o">+</span>  <span class="n">value</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>In dit programma is <code class="docutils literal notranslate"><span class="pre">value</span></code> de naam voor een variabele die het gegevenstype <code class="docutils literal notranslate"><span class="pre">double</span></code> gebruikt om zwevendekommagetallen (<em>floating point</em>) weer te geven. Dit gegevenstype gebruikt 64 bits.</p>
+<p>Het is geen probleem om de naam <code class="docutils literal notranslate"><span class="pre">value</span></code> te gebruiken in dit en in het vorige programma. Een naam voor een variabele helpt te beschrijven wat je wilt dat het programma doet. Het reserveert niet permanent een deel van het computergeheugen voor een bepaald gebruik.</p>
+<ol>
+<li><p>Compileer het programma en voer het uit. Verschilt de uitvoer (wat er op het scherm verschijnt) van de uitvoer van de vorige oefening?</p></li>
+<li><p>Verander de 32 in 32.0 en kijk of dat een verschil maakt wanneer je het programma compileert en uitvoert.</p></li>
+<li><p>Probeer nu het programma te “breken”. Verander 32 in een waarde die te groot is voor <code class="docutils literal notranslate"><span class="pre">double</span></code> en je een <em>floating point number too large</em> fout ziet.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>De hoogste waarde van een 64 bit getal is <span class="math notranslate nohighlight">\(2^{63} - 1\)</span>. Je zou hier misschien een wetenschappelijke notatie willen gebruiken om grote getallen uit te drukken. Bijvoorbeeld <span class="math notranslate nohighlight">\(3.14 \times 10^{23}\)</span> kan je schrijven als</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">value</span> <span class="o">=</span> <span class="mf">3.14e23</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="exponentiele-explosie">
+<h2>Exponentiële explosie<a class="headerlink" href="#exponentiele-explosie" title="Permalink naar deze titel">¶</a></h2>
+<p>Het volgende programma gebruikt ook het primitief gegevenstype <code class="docutils literal notranslate"><span class="pre">double</span></code>. Dit programma berekent en schrijft de waarde uit van <code class="docutils literal notranslate"><span class="pre">Math.exp(32)</span></code>. Dit is het getal <span class="math notranslate nohighlight">\(e\)</span> verheven tot de macht 32. (<span class="math notranslate nohighlight">\(e\)</span>, ook wel de <a class="reference external" href="https://nl.wikipedia.org/wiki/E_(wiskunde)">constante van Napier</a> genoemd, is het grondtal van de <a class="reference external" href="https://nl.wikipedia.org/wiki/Natuurlijke_logaritme">natuurlijke logaritme</a>. Maak je hier niet te veel zorgen over. Het punt van het programma is niet de wiskunde maar de zwevendekommagetallen).</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExponentialExplosion</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">double</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">32</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;e to the power value: &quot;</span> <span class="o">+</span>  <span class="n">Math</span><span class="o">.</span><span class="na">exp</span><span class="o">(</span><span class="n">value</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Compileer het programma en voer het uit. Compileert het succesvol en wordt het correct uitgevoerd? Verander nu de 32 in steeds grotere getallen tot iets fout gaat.</p>
+</div>
+<div class="section" id="karaktermoord">
+<h2>Karaktermoord<a class="headerlink" href="#karaktermoord" title="Permalink naar deze titel">¶</a></h2>
+<p>Het volgende programma gebruikt het primitieve gegevenstype <code class="docutils literal notranslate"><span class="pre">char</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CharAssassination</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span> <span class="n">ch</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span> <span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;A char: &quot;</span> <span class="o">+</span>  <span class="n">ch</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>De variabele <code class="docutils literal notranslate"><span class="pre">ch</span></code> is 16 bits geheugen dat het gegevenstype <code class="docutils literal notranslate"><span class="pre">char</span></code> gebruikt om karakters weer te geven. De uitvoer van het programma is:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">A char: A</span>
+</pre></div>
+</div>
+<ol>
+<li><p>Wijzig <code class="docutils literal notranslate"><span class="pre">'A'</span></code> naar <code class="docutils literal notranslate"><span class="pre">'Z'</span></code> en voer het programma uit.</p></li>
+<li><p>Wijzig <code class="docutils literal notranslate"><span class="pre">'A'</span></code> naar <code class="docutils literal notranslate"><span class="pre">'AA'</span></code> en voer het programma uit.</p></li>
+<li><p>Wijzig <code class="docutils literal notranslate"><span class="pre">'A'</span></code> naar <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> en voer het programma uit.</p>
+<p><strong>Let op</strong>: er is een <em>enkele</em> spatie tussen de twee <code class="docutils literal notranslate"><span class="pre">'</span></code> tekens.</p>
+</li>
+<li><p>Wijzig <code class="docutils literal notranslate"><span class="pre">'A'</span></code> naar <code class="docutils literal notranslate"><span class="pre">''</span></code> en voer het programma uit.</p>
+<p><strong>Let op</strong>: er is <em>geen</em> karakter tussen de twee <code class="docutils literal notranslate"><span class="pre">'</span></code> tekens.</p>
+</li>
+<li><p>Wijzig <code class="docutils literal notranslate"><span class="pre">'A'</span></code> naar <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code> en voer het programma uit.</p>
+<p><strong>Let op</strong>: gebruik dubbele (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) in plaats van enkele aanhalingstekens.</p>
+</li>
+</ol>
+<p>Observeer en verklaar wat werkt en wat niet werkt in het bovenstaande.</p>
+<div class="admonition caution">
+<p class="admonition-title">Pas op</p>
+<p>De laatste bewerking zal de volgende fout geven:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">incompatible types: java.lang.String cannot be converted to char</span>
+</pre></div>
+</div>
+<p>Dubbele aanhalingstekens betekenen een gegevenstype <code class="docutils literal notranslate"><span class="pre">String</span></code> en dit is iets anders dan een <code class="docutils literal notranslate"><span class="pre">char</span></code>. Enkele- en dubbele aanhalingstekens hebben speciale betekenis!</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="set_1.html" title="vorige pagina">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">vorige</p>
+                <p class="prevnext-title">Oefeningen 1</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="9a-9_variables_assignment.html" title="volgende pagina">
+            <div class="prevnext-info">
+                <p class="prevnext-label">volgende</p>
+                <p class="prevnext-title">Variabelen en toekenningen</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"></a>
+    Alle inhoud op deze site (tenzij anders vermeld) valt onder de <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> licentie.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

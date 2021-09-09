@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Zoeken" href="../../search.html" />
+    <link rel="next" title="Oefeningen 1" href="../../exercises/set_1.html" />
+    <link rel="prev" title="Hello World in Java" href="../../support/install.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../exercises/set_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/problems/hello_world/index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/misja/OOP1"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Bronopslagplaats"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/misja/OOP1/issues/new?title=Issue%20on%20page%20%2Fproblems/hello_world/index.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open een probleem"><i class="fas fa-lightbulb"></i>open probleem</button></a>
+        <a class="edit-button" href="https://github.com/misja/OOP1/edit/master/problems/hello_world/index.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="bewerk deze pagina"><i class="fas fa-pencil-alt"></i>suggereren bewerken</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doel">
+   Doel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opdracht">
+   Opdracht
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#helloworld-java">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HelloWorld.java
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hifour-java">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       HiFour.java
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ordered-java">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Ordered.java
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deluxeordered-java">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeluxeOrdered.java
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#greatcircle-java">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GreatCircle.java
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rgbtocmyk-java">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       RGBtoCMYK.java
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deluxergbtocmyk-java">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DeluxeRGBtoCMYK.java
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Hello World
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hello-world">
+<h1>Hello World<a class="headerlink" href="#hello-world" title="Permalink naar deze titel">¶</a></h1>
+<div class="section" id="doel">
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">¶</a></h2>
+<ul class="simple">
+<li><p>Een eerste kennismaking met programmeren in Java</p></li>
+<li><p>Het gebruiken van IntelliJ voor het schrijven, compileren uitvoeren van Java programma’s</p></li>
+</ul>
+<!--
+-   Het inleveren van jouw werk in GradeScope
+-->
+</div>
+<div class="section" id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">¶</a></h2>
+<p>Om te beginnen zal je Java en een programmeeromgeving op jouw computer moeten instellen. Volg de <span class="xref myst">stap-voor-stap</span> instructies zorgvuldig.</p>
+<p>Ten tweede, alle opdrachten vereisen dat je een project zip-bestand downloadt. Gebruik de projectmap <code class="docutils literal notranslate"><span class="pre">hello</span></code> die je na de installatie van IntelliJ hebt gedownload. Het is een goed idee om die map ergens veilig op te slaan, samen met alle mappen die je voor volgende opdrachten in deze module aanmaakt.</p>
+<p>Ten derde, lees hoofdstuk <a class="reference external" href="https://books.trinket.io/thinkjava2/chapter1.html">1</a>, <a class="reference external" href="https://books.trinket.io/thinkjava2/chapter2.html">2</a> en <a class="reference external" href="https://books.trinket.io/thinkjava2/chapter3.html">3</a> van het tekstboek<span id="id1">[<a class="reference internal" href="../../about/literatuur.html#id3">DM19</a>]</span>.</p>
+</div>
+<div class="section" id="opdracht">
+<h2>Opdracht<a class="headerlink" href="#opdracht" title="Permalink naar deze titel">¶</a></h2>
+<ul class="simple">
+<li><p>Implementeer de volgende <em>vijf</em> programma’s:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HiFour.java</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ordered.java</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GreatCircle.java</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RGBtoCYMK.java</span></code></p></li>
+</ul>
+</li>
+<li><p>De volgende twee programma’s zijn <strong>optionele</strong> uitdagingen:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DeluxeOrdered.java</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DeluxeRGBtoCYMK.java</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="helloworld-java">
+<h3><code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code><a class="headerlink" href="#helloworld-java" title="Permalink naar deze titel">¶</a></h3>
+<p>Jouw eerste taak is het schrijven van het <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> programma. Kies in IntelliJ <em>File &gt; New &gt; Java Class</em>. Geef het bestand de naam <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> en typ dan het eerste programma van iedereen in: <code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code>.</p>
+<!--
+![](images/image7.png)
+-->
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p><em>Ik begrijp al het jargon in <code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code> niet!</em>  Maak je geen zorgen, je zult de betekenis van alles in het programma in de loop van de cursus ontdekken. Java heeft veel boilerplate code nodig om te beginnen. Lees steeds de relevante hoofdstukken van het boek en stel vragen tijdens het practicum.</p>
+</div>
+</div>
+<div class="section" id="hifour-java">
+<h3><code class="docutils literal notranslate"><span class="pre">HiFour.java</span></code><a class="headerlink" href="#hifour-java" title="Permalink naar deze titel">¶</a></h3>
+<p>Deze oefening demonstreert het gebruik van het <code class="docutils literal notranslate"><span class="pre">String</span></code> datatype en command-line argumenten. Schrijf een programma <code class="docutils literal notranslate"><span class="pre">HiFour.java</span></code> dat vier voornamen als command-line argumenten accepteert en een juiste zin afdrukt met de namen in omgekeerde volgorde.</p>
+<p>Voorbeelden:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java HiFour.java Alice Bob Carol Dave
+<span class="go">Hi Dave, Carol, Bob, and Alice.</span>
+
+<span class="gp">&gt;</span> java HiFour.java Alejandro Bas Chantal Deshi
+<span class="go">Hi Deshi, Chantal, Bas, and Alejandro.</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Let op</p>
+<p>Als ik <code class="docutils literal notranslate"><span class="pre">HiFour</span></code> uitvoer, zie ik de volgende boodschap:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Exception</span> <span class="pre">in</span> <span class="pre">thread</span> <span class="pre">&quot;main&quot;</span> <span class="pre">java.lang.ArrayIndexOutOfBoundsException:</span> <span class="pre">0</span></code></p>
+</div></blockquote>
+<p>Wat betekent dit? Ben je vergeten een command-line argument te typen toen je het programma uitvoerde?</p>
+</div>
+</div>
+<div class="section" id="ordered-java">
+<h3><code class="docutils literal notranslate"><span class="pre">Ordered.java</span></code><a class="headerlink" href="#ordered-java" title="Permalink naar deze titel">¶</a></h3>
+<p>Deze oefening demonstreert het gebruik van de gegevenstypen <code class="docutils literal notranslate"><span class="pre">int</span></code> en <code class="docutils literal notranslate"><span class="pre">boolean</span></code>. Schrijf een programma <code class="docutils literal notranslate"><span class="pre">Ordered.java</span></code> dat drie integer command-line argumenten accepteert, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, en <code class="docutils literal notranslate"><span class="pre">z</span></code>. <em>Definieer</em> een <code class="docutils literal notranslate"><span class="pre">boolean</span></code> variabele waarvan de waarde <code class="docutils literal notranslate"><span class="pre">true</span></code> is als de drie waarden in strikt oplopende volgorde staan (x &lt; y &lt; z) of in strikt aflopende volgorde (x &gt; y &gt; z), en anders <code class="docutils literal notranslate"><span class="pre">false</span></code>. Druk vervolgens deze <code class="docutils literal notranslate"><span class="pre">boolean</span></code> waarde af. Je mag <strong>geen</strong> <code class="docutils literal notranslate"><span class="pre">if</span></code> statements gebruiken.</p>
+<p>Voorbeelden:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java Ordered.java <span class="m">10</span> <span class="m">17</span> <span class="m">49</span>
+<span class="go">true</span>
+
+<span class="gp">&gt;</span> java Ordered.java <span class="m">49</span> <span class="m">17</span> <span class="m">10</span>
+<span class="go">true</span>
+
+<span class="gp">&gt;</span> java Ordered.java <span class="m">10</span> <span class="m">49</span> <span class="m">17</span>
+<span class="go">false</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deluxeordered-java">
+<h3><code class="docutils literal notranslate"><span class="pre">DeluxeOrdered.java</span></code><a class="headerlink" href="#deluxeordered-java" title="Permalink naar deze titel">¶</a></h3>
+<p>Dit is een <strong>optionele</strong> opgave.</p>
+<p>Dit programma, <code class="docutils literal notranslate"><span class="pre">DeluxeOrdered.java</span></code>, voert dezelfde operatie uit als <code class="docutils literal notranslate"><span class="pre">Ordered.java</span></code>. Het accepteert drie <code class="docutils literal notranslate"><span class="pre">int</span></code> command-line argumenten, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, en <code class="docutils literal notranslate"><span class="pre">z</span></code>, en drukt <code class="docutils literal notranslate"><span class="pre">true</span></code> af als de drie waarden ofwel in strikt oplopende volgorde staan (x &lt; y &lt; z) of in strikt aflopende volgorde (x &gt; y &gt; z) en <code class="docutils literal notranslate"><span class="pre">false</span></code> anders. De <strong>uitdaging</strong> is om <code class="docutils literal notranslate"><span class="pre">DeluxeOrdered.java</span></code> te implementeren <strong>zonder</strong> gebruik te maken van de vier vergelijkingsoperatoren <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> en <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
+</div>
+<div class="section" id="greatcircle-java">
+<h3><code class="docutils literal notranslate"><span class="pre">GreatCircle.java</span></code><a class="headerlink" href="#greatcircle-java" title="Permalink naar deze titel">¶</a></h3>
+<p>Deze oefening demonstreert het gebruik van het gegevenstype <code class="docutils literal notranslate"><span class="pre">double</span></code> en Java’s <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html">Math</a> bibliotheek. De afstand van de grote cirkel is de kortste afstand tussen twee punten op het oppervlak van een bol als je gedwongen bent om langs het oppervlak te reizen. Schrijf een programma <code class="docutils literal notranslate"><span class="pre">GreatCircle.java</span></code> dat vier dubbele command-line argumenten <code class="docutils literal notranslate"><span class="pre">x1</span></code>, <code class="docutils literal notranslate"><span class="pre">y1</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>, en <code class="docutils literal notranslate"><span class="pre">y2</span></code> (de breedtegraad en lengtegraad, in graden, van twee punten op het aardoppervlak) accepteert en de grootcirkelafstand (in zeemijlen) tussen deze punten afdrukt. Gebruik de volgende formule, die is afgeleid van de sferische wet van cosinussen:</p>
+<div class="math notranslate nohighlight">
+\[
+distance = 60 \times \arccos{(\sin{x_1} \sin{x_2} + \cos{x_1} \cos{x_2} \cos{(y_1 - y_2}))}
+\]</div>
+<!--
+![](images/image1.png)
+-->
+<p>Deze formule gebruikt <em>graden</em>, terwijl Java’s trigonometrische functies <em>radialen</em> gebruiken. Gebruik <code class="docutils literal notranslate"><span class="pre">Math.toRadians()</span></code> en <code class="docutils literal notranslate"><span class="pre">Math.toDegrees()</span></code> om tussen de twee te converteren. Ter referentie, een zeemijl (ongeveer 1.151 gewone mijlen) is 1/60 van een graad van een boog langs een meridiaan van de Aarde, en dit is de reden voor de 60 in de formule.</p>
+<p>Voorbeelden:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java GreatCircle.java <span class="m">40</span>.35 <span class="m">74</span>.65 <span class="m">48</span>.87 -2.33 // Princeton to Paris
+<span class="go">3185.1779271158425 nautical miles</span>
+
+<span class="gp">&gt;</span> java GreatCircle.java <span class="m">48</span>.87 -2.33 <span class="m">40</span>.35 <span class="m">74</span>.65 // Paris to Princeton
+<span class="go">3185.1779271158425 nautical miles</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Let op</p>
+<p>Mijn uitvoer voor <code class="docutils literal notranslate"><span class="pre">GreatCircle</span></code> komt overeen met de voorbeelduitvoer in de opdrachtspecificatie, behalve in de allerlaatste twee cijfers. Waarom is er deze kleine discrepantie? Is mijn antwoord fout? Heb je vermenigvuldigd met 60 (om de cirkelboog om te zetten naar zeemijlen) voor of na het omzetten van de hoek van radialen naar graden? Computers werken met beperkte precisie, dus algebraïsch gelijkwaardige formules kunnen licht verschillende antwoorden opleveren.</p>
+</div>
+</div>
+<div class="section" id="rgbtocmyk-java">
+<h3><code class="docutils literal notranslate"><span class="pre">RGBtoCMYK.java</span></code><a class="headerlink" href="#rgbtocmyk-java" title="Permalink naar deze titel">¶</a></h3>
+<p>Deze oefening demonstreert het gebruik van type-omzettingen. Er worden verschillende formaten gebruikt om kleur weer te geven. Het primaire formaat voor LCD-schermen, digitale camera’s en webpagina’s - bekend als het <em>RGB-formaat</em> - specificeert bijvoorbeeld het niveau van rood (R), groen (G) en blauw (B) op een gehele schaal van 0 tot en met 255. Het primaire formaat voor het publiceren van boeken en tijdschriften - bekend als het CMYK formaat - specificeert het niveau van cyaan (C), magenta (M), geel (Y), en zwart (K) op een reële schaal van 0.0 tot en met 1.0.</p>
+<p>Schrijf een programma <code class="docutils literal notranslate"><span class="pre">RGBtoCMYK.java</span></code> dat converteert van RGB formaat naar CMYK formaat. Je programma moet drie gehele command-line argumenten accepteren, rood, groen en blauw, de RGB waarden afdrukken, en vervolgens de equivalente CMYK waarden afdrukken met behulp van de volgende wiskundige formules.</p>
+<p>Je mag in deze opdracht <strong>geen</strong> if-statements gebruiken, maar je mag aannemen dat de commandoregel-argumenten niet allemaal tegelijk nul zijn.</p>
+<p>Onthoud dat <code class="docutils literal notranslate"><span class="pre">Math.max(x,</span> <span class="pre">y)</span></code> het maximum van <code class="docutils literal notranslate"><span class="pre">x</span></code> en <code class="docutils literal notranslate"><span class="pre">y</span></code> oplevert.</p>
+<div class="math notranslate nohighlight">
+\[
+white = \max{\left\{\frac{red}{255}, \frac{green}{255}, \frac{blue}{255}  \right\}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+cyan = \left( white - \frac{red}{255} \right) \div white
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+magenta = \left( white - \frac{green}{255} \right) \div white
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+yellow = \left( white - \frac{blue}{255} \right) \div white
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+black = 1 - white
+\]</div>
+<p>CMYK is een subtractieve kleurmenging, omdat de primaire kleuren van wit licht worden afgetrokken om de resulterende kleur te produceren: cyaan absorbeert rood, magenta absorbeert groen, en geel absorbeert blauw.</p>
+<p>Voorbeelden:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">// indigo</span>
+
+<span class="gp">&gt;</span> java RGBtoCMYK.java <span class="m">75</span> <span class="m">0</span> <span class="m">130</span>
+<span class="go">red     = 75</span>
+<span class="go">green   = 0</span>
+<span class="go">blue    = 130</span>
+<span class="go">cyan    = 0.423076923076923</span>
+<span class="go">magenta = 1.0</span>
+<span class="go">yellow  = 0.0</span>
+<span class="go">black   = 0.4901960784313726</span>
+
+<span class="go">// orange</span>
+
+<span class="gp">&gt;</span> java RGBtoCMYK.java <span class="m">255</span> <span class="m">143</span> <span class="m">0</span>
+<span class="go">red     = 255</span>
+<span class="go">green   = 143</span>
+<span class="go">blue    = 0</span>
+<span class="go">cyan    = 0.0</span>
+<span class="go">magenta = 0.4392156862745098</span>
+<span class="go">yellow  = 1.0</span>
+<span class="go">black   = 0.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deluxergbtocmyk-java">
+<h3><code class="docutils literal notranslate"><span class="pre">DeluxeRGBtoCMYK.java</span></code><a class="headerlink" href="#deluxergbtocmyk-java" title="Permalink naar deze titel">¶</a></h3>
+<p>Dit is een <strong>optionele</strong> opgave.</p>
+<p>Dit programma, <code class="docutils literal notranslate"><span class="pre">DeluxeRGBtoCMYK.java</span></code>, voert dezelfde bewerking uit als <code class="docutils literal notranslate"><span class="pre">RGBtoCMYK.java</span></code>, het converteert RGB waarden naar CMYK waarden. De <strong>uitdaging</strong> is om <code class="docutils literal notranslate"><span class="pre">RGBtoCMYK.java</span></code> te implementeren <strong>zonder</strong> gebruik te maken van <code class="docutils literal notranslate"><span class="pre">Math.max</span></code>, <code class="docutils literal notranslate"><span class="pre">Math.min</span></code>, of <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Hello World<a class="headerlink" href="#id2" title="Permalink naar deze titel">¶</a></h2>
+<p>Hier is <a class="reference external" href="http://helloworldcollection.de">Hello World</a> in meer dan 200 verschillende  programmeertalen!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./problems/hello_world"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../../support/install.html" title="vorige pagina">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">vorige</p>
+                <p class="prevnext-title">Hello World in Java</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../../exercises/set_1.html" title="volgende pagina">
+            <div class="prevnext-info">
+                <p class="prevnext-label">volgende</p>
+                <p class="prevnext-title">Oefeningen 1</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"></a>
+    Alle inhoud op deze site (tenzij anders vermeld) valt onder de <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> licentie.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

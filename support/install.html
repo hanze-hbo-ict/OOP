@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World in Java &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Hello World" href="../problems/hello_world/index.html" />
+    <link rel="prev" title="Invoer en uitvoer" href="../topics/1c_invoer_en_uitvoer.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../exercises/set_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/support/install.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/misja/OOP1"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Bronopslagplaats"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/misja/OOP1/issues/new?title=Issue%20on%20page%20%2Fsupport/install.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open een probleem"><i class="fas fa-lightbulb"></i>open probleem</button></a>
+        <a class="edit-button" href="https://github.com/misja/OOP1/edit/master/support/install.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="bewerk deze pagina"><i class="fas fa-pencil-alt"></i>suggereren bewerken</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installeer-java">
+   Installeer Java
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#editor">
+   Editor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-een-project-in-intellij">
+   Open een project in IntelliJ
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maak-een-programma-in-intellij">
+   Maak een programma in IntelliJ
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compileren-en-uitvoeren">
+   Compileren en uitvoeren
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intellij">
+     IntelliJ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commandline">
+     Commandline
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hello-world-in-java">
+<h1>Hello World in Java<a class="headerlink" href="#hello-world-in-java" title="Permalink naar deze titel">¶</a></h1>
+<div class="section" id="installeer-java">
+<h2>Installeer Java<a class="headerlink" href="#installeer-java" title="Permalink naar deze titel">¶</a></h2>
+<p>Voor het compileren en uitvoeren van Java programma’s is een <strong>Java Development Kit</strong> (JDK) nodig. Je zal Java SE Development Kit 11 (JDK 11) gaan gebruiken.</p>
+<div class="admonition important">
+<p class="admonition-title">Belangrijk</p>
+<p>Het kan zijn dat je al eerder een JDK hebt geïnstalleerd. Controleer of dit versie 11 (<em>of hoger</em>) is. Een eenvoudige manier om dit te controleren is om een <em>command line</em> te openen en het volgende commando uit te voeren</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java -version
+</pre></div>
+</div>
+<p>Indien je een foutbericht ziet, of als je niet weet hoe je het bovenstaande moet uitvoeren, volg dan de onderstaande installatiestappen voor jouw besturingssysteem.</p>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="b3bb28ce-3321-4df3-8f2d-680c2acd61ed" name="21c00e53-f14b-4ec9-91c0-1ec6b220f215" type="radio">
+</input><label class="tabbed-label" for="b3bb28ce-3321-4df3-8f2d-680c2acd61ed">
+Windows</label><div class="tabbed-content docutils">
+<p>De JDK die wij aanbevelen is OpenJDK, een <em>open source</em> implementatie van Java SE (Standard Edition). Ga naar <a class="reference external" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> en download een versie voor jouw besturingssysteem.</p>
+<ul class="simple">
+<li><p>Kies OpenJDK 11 LTS (<em>Long Term Support</em>).</p></li>
+<li><p>Je kan kiezen voor een JVM (Java Virtual Machine), HotSpot is een goede keus.</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Let op</p>
+<p>Let op het volgende bij installatie:</p>
+<ul class="simple">
+<li><p><strong>Kies</strong> voor <code class="docutils literal notranslate"><span class="pre">JAVA_HOME</span></code> aan het pad toe te laten toevoegen.</p></li>
+<li><p><strong>Negeer</strong> bij installatie de optie om Oracle licentiesleutels toe te voegen, indien dit wordt gevraagd.</p></li>
+</ul>
+</div>
+</div>
+<input id="e5225767-ae05-47ce-a60e-e01541bad6b9" name="21c00e53-f14b-4ec9-91c0-1ec6b220f215" type="radio">
+</input><label class="tabbed-label" for="e5225767-ae05-47ce-a60e-e01541bad6b9">
+macOS</label><div class="tabbed-content docutils">
+<p>Indien je een package manager als <code class="docutils literal notranslate"><span class="pre">brew</span></code> gebruikt kan je OpenJDK eenvoudig als volgt installeren:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> brew install openjdk
+</pre></div>
+</div>
+<p>Indien je geen package manager gebruikt, volg dan dezelfde instructies voor installatie als bij Windows.</p>
+</div>
+<input id="678e9753-4434-4f73-bdff-3ae8236329bc" name="21c00e53-f14b-4ec9-91c0-1ec6b220f215" type="radio">
+</input><label class="tabbed-label" for="678e9753-4434-4f73-bdff-3ae8236329bc">
+Linux</label><div class="tabbed-content docutils">
+<p>Op Linux distributies is OpenJDK eenvoudig te installeren met package managers als <code class="docutils literal notranslate"><span class="pre">apt</span></code> of <code class="docutils literal notranslate"><span class="pre">yum</span></code>. Voor Debian en afgeleide distributies (bijvoorbeeld Ubuntu of Linux Mint) installeer je als volgt de meest recente OpenJDK versie:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> sudo apt-get install default-jdk
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="editor">
+<h2>Editor<a class="headerlink" href="#editor" title="Permalink naar deze titel">¶</a></h2>
+<p>Java programma’s kunnen met elke teksteditor worden geschreven, wij raden IntelliJ IDEA aan, een ontwikkelomgeving (een IDE, of <em>Integrated Development Environment</em>) specifiek voor Java en op dit moment één van de meest gebruikte toepassingen voor het schrijven van Java programma’s.</p>
+<ul class="simple">
+<li><p>Ga naar <a class="reference external" href="https://www.jetbrains.com/idea/download/">JetBrains</a> en download &amp; installeer <strong>IntelliJ IDEA Community Edition</strong> voor jouw besturingssysteem.</p></li>
+</ul>
+<div class="admonition-andere-editors admonition">
+<p class="admonition-title">Andere editors</p>
+<p>Het kan bijvoorbeeld zijn dat je eerder met <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> (VSCode) hebt gewerkt en dit ook voor Java zou willen gebruiken. Je zal dan VSCode moeten uitbreiden met functionaliteit specifiek voor Java. Het <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack">Java Extension Pack</a> is in dit geval een bundel van nuttige Java extensies om aan VSCode toe te voegen.</p>
+<p>Let op, in deze cursus zal in de voorbeelden en opgaven worden uitgegaan van IntelliJ als standaardeditor voor Java, maar dit is niet verplicht en je mag een andere editor of IDE gebruiken als je wilt (maar wordt niet door ons ondersteund!).</p>
+</div>
+</div>
+<div class="section" id="open-een-project-in-intellij">
+<h2>Open een project in IntelliJ<a class="headerlink" href="#open-een-project-in-intellij" title="Permalink naar deze titel">¶</a></h2>
+<p>Je gaat Java-programma’s ontwikkelen in <em>IntelliJ IDEA Community Edition</em>.</p>
+<p>IntelliJ ordent Java-programma’s in projecten. In deze cursus komt elk project overeen met één programmeeropdracht. Een typisch project bevat Java-programma’s, bijbehorende gegevensbestanden en cursus-specifieke instellingen (zoals compileropties, stijlregels en bibliotheken, of <em>class libraries</em>).</p>
+<div class="admonition-ik-begrijp-dit-niet admonition">
+<p class="admonition-title">Ik begrijp dit niet!</p>
+<p>Maak je geen zorgen als je nog niet weet wat bijvoorbeeld met <em>compileren</em>, <em>compileropties</em> of <em>class libraries</em> wordt bedoeld. De betekenis zal duidelijker worden naarmate de cursus vordert.</p>
+</div>
+<p>Voor elke opdracht ga je een startproject downloaden waarin jij jouw programmacode gaat schrijven.</p>
+<ul>
+<li><p>Download het volgende project voor de eerste programmeeropdracht naar een handige locatie (zoals bijvoorbeeld het <em>Bureaublad</em>).</p>
+<!-- use anchor since it refers to a build file -->
+<ul class="simple">
+<li><p><a href="../projects/hello.zip">hello.zip</a></p></li>
+</ul>
+<p>Pak het project als volgt uit voor jouw besturingssysteem:</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="92d02ac4-3612-4a1f-9bfa-2b3d64dc255b" name="d603ae48-d250-40c6-aac4-a8c106b274d9" type="radio">
+</input><label class="tabbed-label" for="92d02ac4-3612-4a1f-9bfa-2b3d64dc255b">
+Windows</label><div class="tabbed-content docutils">
+<p>Om het zip-bestand uit te pakken, klik je er met de rechtermuisknop op en kies je <em>Alles uitpakken</em>. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
+</div>
+<input id="40dd5d79-631c-461f-9986-6513e0b91eb5" name="d603ae48-d250-40c6-aac4-a8c106b274d9" type="radio">
+</input><label class="tabbed-label" for="40dd5d79-631c-461f-9986-6513e0b91eb5">
+macOS</label><div class="tabbed-content docutils">
+<p><strong>Dubbelklik</strong> op het zip-bestand om het uit te pakken. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
+</div>
+<input id="bdbd4120-aff6-4271-9031-fffeecd06b64" name="d603ae48-d250-40c6-aac4-a8c106b274d9" type="radio">
+</input><label class="tabbed-label" for="bdbd4120-aff6-4271-9031-fffeecd06b64">
+Linux</label><div class="tabbed-content docutils">
+<p>Pak het zip-bestand uit met het volgende commando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> unzip -d hello hello.zip
+</pre></div>
+</div>
+<p>Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
+</div>
+</div>
+</li>
+<li><p>Start IntelliJ:</p></li>
+<li><p>Wanneer je IntelliJ voor de eerste keer start,</p>
+<ul class="simple">
+<li><p>kan <em>IntelliJ</em> he <a class="reference external" href="https://www.jetbrains.com/company/privacy.html">JetBrains privacybeleid</a> weergeven. Scroll naar beneden en <em>accepteer</em>.</p></li>
+<li><p>kan <em>IntelliJ</em> vragen of je anonieme gebruiksstatistieken naar <em>JetBrains</em> wilt sturen. Kies de gewenste optie.</p></li>
+<li><p>zal <em>IntelliJ</em> een welkomstscherm tonen (<em>Welkom bij IntelliJ IDEA</em>).</p></li>
+</ul>
+</li>
+<li><p>Om een project te openen vanuit het welkomstscherm, klikt je op <strong>Openen</strong></p>
+<div class="figure align-default" id="intellij-welcome">
+<img alt="../_images/intellij_welcome.png" src="../_images/intellij_welcome.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Intellij welkomstscherm</span><a class="headerlink" href="#intellij-welcome" title="Permallink naar deze afbeelding">¶</a></p>
+</div>
+<p>Selecteer vervolgens de projectmap.</p>
+<div class="figure align-default" id="intellij-select-project">
+<img alt="../_images/intellij_select_project.png" src="../_images/intellij_select_project.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Selecteer de projectmap</span><a class="headerlink" href="#intellij-select-project" title="Permallink naar deze afbeelding">¶</a></p>
+</div>
+<p>Wanneer je IntelliJ voor de eerste keer opstart kan het een minuut of twee duren om bestanden te <em>indexeren</em>, sommige functies (zoals automatisch importeren) zullen niet beschikbaar zijn totdat dit proces is voltooid.</p>
+<div class="admonition warning">
+<p class="admonition-title">Waarschuwing</p>
+<p>Klik niet op <strong>Nieuw Project</strong>, deze optie is bedoeld voor gevorderde gebruikers. Gebruik ook altijd <strong>Openen</strong>  met een projectmap, <em>niet</em> met een individueel bestand.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="maak-een-programma-in-intellij">
+<h2>Maak een programma in IntelliJ<a class="headerlink" href="#maak-een-programma-in-intellij" title="Permalink naar deze titel">¶</a></h2>
+<p>Nu bent je klaar om uw eerste Java programma te schrijven. IntelliJ heeft veel gespecialiseerde programmeerhulpmiddelen, zoals regelnummering, syntax highlighting, bracket matching, auto indenting, auto formatting, auto importing, variable renaming, en continue code inspectie.</p>
+<ul>
+<li><p>Om een nieuw Java programma te maken:</p>
+<ul class="simple">
+<li><p>Open <em>IntelliJ</em> en het project opnieuw (als je het in de vorige stap hebt gesloten).</p></li>
+</ul>
+<div class="figure align-default" id="intellij-select-project-2">
+<img alt="../_images/intellij_select_project_2.png" src="../_images/intellij_select_project_2.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Open het project</span><a class="headerlink" href="#intellij-select-project-2" title="Permallink naar deze afbeelding">¶</a></p>
+</div>
+<ul>
+<li><p>Klik op de projectnaam in de <em>Project View</em> zijbalk (links), zodat deze gemarkeerd wordt. <!--TODO LIFT specifiek, maak algemeen --></p>
+<!-- TODO screenshot -->
+</li>
+<li><p>Selecteer de menu-optie LIFT → Nieuwe Java Klasse. Als daar om gevraagd wordt, typ dan <strong>HelloWorld</strong> als naam en klik op <strong>OK</strong>.</p></li>
+</ul>
+</li>
+<li><p>Maak in het hoofdvenster van de editor het Java-programma <code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code> precies zoals het er hieronder uitziet. (IntelliJ genereert de grijze boilerplate code automatisch, eventueel met toevoeging van een course header block commentaar).</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+<span class="hll">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello, World&quot;</span><span class="o">);</span>
+</span>    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Als je zelfs maar een puntkomma weglaat, zal het programma niet werken!</p>
+</li>
+<li><p>Terwijl je typt zal <em>IntelliJ</em> verschillende syntactische elementen in verschillende kleuren markeren. Wanneer je een haakje links typt, voegt <em>IntelliJ</em> het bijbehorende haakje rechts toe. Wanneer je een nieuwe regel begint, laat <em>IntelliJ</em> deze inspringen.</p>
+<!-- TODO screenshot -->
+</li>
+<li><p>Om het bestand op te slaan kies je de menuoptie <strong>Bestand → Alles opslaan (Ctrl + S)</strong>. Wanneer u het bestand opslaat, formatteert <em>IntelliJ</em> het (indien nodig) opnieuw.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><em>IntelliJ</em> is zo ingesteld dat wijzigingen die je in jouw bestanden aanbrengt automatisch worden opgeslagen bij verschillende gebeurtenissen (zoals compileren, uitvoeren, sluiten van een bestand of project, of het afsluiten van de IDE). We raden nog steeds aan om <strong>Bestand → Alles opslaan (Ctrl + S)</strong> te gebruiken om uw code opnieuw te formatteren.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="compileren-en-uitvoeren">
+<h2>Compileren en uitvoeren<a class="headerlink" href="#compileren-en-uitvoeren" title="Permalink naar deze titel">¶</a></h2>
+<p>Nu is het tijd om jouw programma uit te voeren (te draaien, of “runnen”). Dit is het meest spannende gedeelte, waarbij de computer de instructies volgt die jij in jouw programma hebt gespecificeerd. Alvorens dit te doen, zal je het programma moeten <em>compileren</em> in een vorm die beter geschikt is om door een computer uit te coeren.</p>
+<p>De commandline is een eenvoudig en krachtig manier om jouw programma’s te besturen (bijv. commandline argumenten, <em>file redirection</em>, en piping). IntelliJ biedt een ingebouwde terminal voor eenvoudige toegang tot de commandoregel.</p>
+<p>Selecteer de menu optie Beeld → Gereedschapsvenster → Terminal (Alt + 2).
+Dit zal een Git Bash terminal starten waar je commando’s kunt typen. Je zult een opdrachtprompt zien die er ongeveer zo uitziet:</p>
+<ul>
+<li><p>Selecteer het programma dat je wilt compileren en uitvoeren in de <em>Project View</em> zijbalk. Het programma zou nu in het hoofdvenster van de editor moeten verschijnen.</p></li>
+<li><p>Om je programma te compileren, selecteer je de menu-optie LIFT → Hercompileer ‘HelloWorld.java’ (Ctrl + B). Als de compilatie slaagt, krijg je een bevestiging in de statusbalk (onderaan).</p>
+<!-- TODO screenshot -- >
+</li>
+</ul>
+<p>Als de compilatie mislukt opent een Recompile-paneel (onderaan), waarin de compileerfouten of waarschuwingen worden aangegeven. Controleer je programma zorgvuldig op typefouten en gebruik de foutmeldingen als leidraad.</p>
+<ul class="simple">
+<li><p>Om je programma uit te voeren, selecteer je de menu-optie LIFT → Run ‘HelloWorld’ with Arguments (Ctrl + E). Aangezien dit programma geen command-line argumenten nodig heeft, klik OK.</p></li>
+</ul>
+<div class="section" id="intellij">
+<h3>IntelliJ<a class="headerlink" href="#intellij" title="Permalink naar deze titel">¶</a></h3>
+</div>
+<div class="section" id="commandline">
+<h3>Commandline<a class="headerlink" href="#commandline" title="Permalink naar deze titel">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./support"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../topics/1c_invoer_en_uitvoer.html" title="vorige pagina">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">vorige</p>
+                <p class="prevnext-title">Invoer en uitvoer</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../problems/hello_world/index.html" title="volgende pagina">
+            <div class="prevnext-info">
+                <p class="prevnext-label">volgende</p>
+                <p class="prevnext-title">Hello World</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"></a>
+    Alle inhoud op deze site (tenzij anders vermeld) valt onder de <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> licentie.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -9,4 +9,4 @@ unzip -d ijava ijava-1.3.0.zip
 cd ijava
 
 # Install
-sudo python3 install.py --user
+python3 install.py

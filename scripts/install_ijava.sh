@@ -12,3 +12,4 @@ cd ijava
 # sudo python3 install.py
 sudo jupyter kernelspec install java/
 jupyter kernelspec list
+ls -l /usr/local/share/jupyter/kernels/java/ijava-1.3.0.jar

@@ -32,10 +32,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        sudo pip install -r requirements.txt
     - name: Install IJava
       run: |
-        ./scripts/install_ijava.sh
+        sudo ./scripts/install_ijava.sh
     # Build the book
     - name: Build the book
       run: |

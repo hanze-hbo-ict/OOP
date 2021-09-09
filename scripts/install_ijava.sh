@@ -9,7 +9,6 @@ unzip -d ijava ijava-1.3.0.zip
 cd ijava
 
 # Install
-# sudo python3 install.py
 sudo jupyter kernelspec install java/
+sudo cp ./kernel.json /usr/local/share/jupyter/kernels/java/
 jupyter kernelspec list
-ls -l /usr/local/share/jupyter/kernels/java/ijava-1.3.0.jar

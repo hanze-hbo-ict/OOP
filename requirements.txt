@@ -1,3 +1,4 @@
+jupyter-client # ijava requirement
 jupyter-book
 matplotlib
 numpy

@@ -9,5 +9,4 @@ unzip -d ijava ijava-1.3.0.zip
 cd ijava
 
 # Install
-#sudo python3 install.py
-sudo jupyter kernelspec install java/
+sudo python3 install.py --user

@@ -1,7 +1,10 @@
 #!/bin/sh
 
 mkdir -p build/projects;
+rm -rf build/projects/*.zip;
+
 cd projects;
+
 
 for i in */
 do

@@ -220,12 +220,16 @@ Motiveer je antwoord kort aan de hand van computerexperimenten. Beschrijf de exp
 * Voer een reeks experimenten uit waarbij het aantal proeven vastligt, maar waarbij `n` verandert - probeer grote waarden voor `n` (bijvorbeeld 100.000)
 * Voer een reeks experimenten uit waarbij `n` vast blijft, maar verander het aantal proeven - probeer grote waarden voor experimenten (bijvoorbeeld 100.000)
 
--->
-
 ## Inleveren
 
 [Stuur]() de bestanden `Bits.java`, `NoonSnooze.java`, `RandomWalker.java`, `RandomWalkers.java` en een ingevulde `readme.txt` in. Je mag ook het optionele java bestand `DeluxeNoonSnooze.java` insturen.
 
+-->
+
 ## Extra
 
 [Hier](https://www.cs.cmu.edu/~pattis/quotations.html) kan je een groot aantal bekende en minder bekende uitspraken vinden over leren programmeren!
+
+---
+
+Copyright © 1999–2021, [Robert Sedgewick](http://www.cs.princeton.edu/~rs/) and [Kevin Wayne](http://www.cs.princeton.edu/~wayne).

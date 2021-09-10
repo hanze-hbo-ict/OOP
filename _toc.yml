@@ -22,33 +22,8 @@ parts:
     title: Practicum
   - file: problems/hello_world/index
     title: Opgave
-  - file: exercises/set_1
+  - file: course/ex_1
     title: Oefening
     sections:
     - file: exercises/8-9_primitive_data
     - file: exercises/9a-9_variables_assignment
-
-# - caption: Week 2
-#   chapters:
-#   - file: course/week_2
-#     title: Introductie
-#   - file: exercises/41_41_for_loop
-#     title: Practicum
-#   - file: exercises/15_15_while_loop
-#     title: Practicum 2
-#   - file: problems/conditionals_loops/index
-#     title: Opgave
-
-# - caption: Week 3
-#   chapters:
-#   - file: course/week_3
-#     title: Introductie
-#   - file: problems/n_body/index
-#     title: Opgave
-
-# - caption: Week 4
-#   chapters:
-#   - file: course/week_4
-#     title: Introductie
-#   - file: problems/recursive_graphics/index
-#     title: Opgave

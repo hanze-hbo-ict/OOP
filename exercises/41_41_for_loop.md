@@ -48,4 +48,5 @@ Het aantal keren dat je de `for`-lus zal moeten laten doorlopen is gelijk aan he
 int numArgs = args.length;
 :::
 ```
-
+---
+Copyright © [Bradley Kjel](http://chortle.ccsu.edu/)

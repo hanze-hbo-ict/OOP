@@ -19,21 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
-    # Install dependencies
-    # - uses: actions/setup-java@v2
-    #   with:
-    #     distribution: 'adopt'
-    #     java-version: '11'
     - name: Install JDK
       run: |
         sudo apt-get update; sudo apt-get -y install default-jdk-headless
-
-    - name: Set up Python 3.8
+    - name: Set up Python 3
       uses: actions/setup-python@v2
       with:
         python-version: "3.x"
-
     - name: Install dependencies
       run: |
         sudo pip install -r requirements.txt
@@ -43,10 +35,11 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
+        ./scripts/package_projects.sh
         jupyter-book build .
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
+      uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html

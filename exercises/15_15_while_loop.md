@@ -65,3 +65,5 @@ schildpad..................153
 ```{note}
 Dit zou bijvoorbeeld gebruikt kunnen worden als onderdeel van een index voor een boek. Om de punten af te drukken, gebruik je `System.out.print(".")` binnen de lus.
 ```
+---
+Copyright © [Bradley Kjel](http://chortle.ccsu.edu/)

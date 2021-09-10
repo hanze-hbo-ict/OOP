@@ -26,9 +26,11 @@ Ten derde, lees hoofdstuk [1](https://books.trinket.io/thinkjava2/chapter1.html)
     *   `GreatCircle.java`
     *   `RGBtoCYMK.java`
 
+<!--
 -   De volgende twee programma's zijn **optionele** uitdagingen:
     *   `DeluxeOrdered.java`
     *   `DeluxeRGBtoCYMK.java`
+-->
 
 ### `HelloWorld.java`
 
@@ -85,11 +87,14 @@ false
 Hoe krijg ik Java zo ver dat het `true` of `false` afdrukt zonder een `if-else` statement? Als `b` een `boolean` variabele is, dan zal `System.out.println(b)` `true` of `false` afdrukken, afhankelijk van de waarde.
 ```
 
+<!--
 ### `DeluxeOrdered.java`
 
 Dit is een **optionele** opgave.
 
 Dit programma, `DeluxeOrdered.java`, voert dezelfde operatie uit als `Ordered.java`. Het accepteert drie `int` command-line argumenten, `x`, `y`, en `z`, en drukt `true` af als de drie waarden ofwel in strikt oplopende volgorde staan (x < y < z) of in strikt aflopende volgorde (x > y > z) en `false` anders. De **uitdaging** is om `DeluxeOrdered.java` te implementeren **zonder** gebruik te maken van de vier vergelijkingsoperatoren `<`, `<=`, `>`, `>=` en `if` statements.
+
+-->
 
 ### `GreatCircle.java`
 
@@ -176,14 +181,18 @@ magenta = 0.4392156862745098
 yellow  = 1.0
 black   = 0.0
 ```
-
+<!--
 ### `DeluxeRGBtoCMYK.java`
 
 Dit is een **optionele** opgave.
 
 Dit programma, `DeluxeRGBtoCMYK.java`, voert dezelfde bewerking uit als `RGBtoCMYK.java`, het converteert RGB waarden naar CMYK waarden. De **uitdaging** is om `RGBtoCMYK.java` te implementeren **zonder** gebruik te maken van `Math.max`, `Math.min`, of `if` statements.
+-->
 
 ## Hello World
 
 Hier is [Hello World](http://helloworldcollection.de) in meer dan 200 verschillende  programmeertalen!
 
+---
+
+Copyright © 1999–2021, [Robert Sedgewick](http://www.cs.princeton.edu/~rs/) and [Kevin Wayne](http://www.cs.princeton.edu/~wayne).

@@ -78,3 +78,5 @@ x = 2.0;
 // los nogmaals de formule op voor x (2.0) en print het resultaat
 :::
 ```
+---
+Copyright © [Bradley Kjel](http://chortle.ccsu.edu/)

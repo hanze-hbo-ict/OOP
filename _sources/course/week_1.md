@@ -18,5 +18,5 @@
 
 Java for Python Programmers:
 
--   [Lets look at a Java Program](https://runestone.academy/runestone/books/published/java4python/Java4Python/firstjavaprogram.html)
+-   [Let's look at a Java Program](https://runestone.academy/runestone/books/published/java4python/Java4Python/firstjavaprogram.html)
 -   [Java Data Types](https://runestone.academy/runestone/books/published/java4python/Java4Python/javadatatypes.html)

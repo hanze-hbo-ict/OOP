@@ -162,3 +162,6 @@ incompatible types: java.lang.String cannot be converted to char
 
 Dubbele aanhalingstekens betekenen een gegevenstype `String` en dit is iets anders dan een `char`. Enkele- en dubbele aanhalingstekens hebben speciale betekenis!
 ```
+
+---
+Copyright © [Bradley Kjel](http://chortle.ccsu.edu/)

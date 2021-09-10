@@ -55,7 +55,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Zoeken" href="../../search.html" />
-    <link rel="next" title="Oefeningen 1" href="../../exercises/set_1.html" />
+    <link rel="next" title="Oefeningen 1" href="../../course/ex_1.html" />
     <link rel="prev" title="Hello World in Java" href="../../support/install.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -149,7 +149,7 @@
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../exercises/set_1.html">
+  <a class="reference internal" href="../../course/ex_1.html">
    Oefening
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -222,24 +222,6 @@
 
             <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/misja/OOP1"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Bronopslagplaats"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/misja/OOP1/issues/new?title=Issue%20on%20page%20%2Fproblems/hello_world/index.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open een probleem"><i class="fas fa-lightbulb"></i>open probleem</button></a>
-        <a class="edit-button" href="https://github.com/misja/OOP1/edit/master/problems/hello_world/index.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="bewerk deze pagina"><i class="fas fa-pencil-alt"></i>suggereren bewerken</button></a>
-    </div>
-</div>
-
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -302,15 +284,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deluxeordered-java">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DeluxeOrdered.java
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#greatcircle-java">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -324,15 +297,6 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        RGBtoCMYK.java
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deluxergbtocmyk-java">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DeluxeRGBtoCMYK.java
       </span>
      </code>
     </a>
@@ -385,13 +349,12 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">RGBtoCYMK.java</span></code></p></li>
 </ul>
 </li>
-<li><p>De volgende twee programma’s zijn <strong>optionele</strong> uitdagingen:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">DeluxeOrdered.java</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">DeluxeRGBtoCYMK.java</span></code></p></li>
 </ul>
-</li>
-</ul>
+<!--
+-   De volgende twee programma's zijn **optionele** uitdagingen:
+    *   `DeluxeOrdered.java`
+    *   `DeluxeRGBtoCYMK.java`
+-->
 <div class="section" id="helloworld-java">
 <h3><code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code><a class="headerlink" href="#helloworld-java" title="Permalink naar deze titel">¶</a></h3>
 <p>Jouw eerste taak is het schrijven van het <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> programma. Kies in IntelliJ <em>File &gt; New &gt; Java Class</em>. Geef het bestand de naam <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> en typ dan het eerste programma van iedereen in: <code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code>.</p>
@@ -437,11 +400,14 @@
 <span class="go">false</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="deluxeordered-java">
-<h3><code class="docutils literal notranslate"><span class="pre">DeluxeOrdered.java</span></code><a class="headerlink" href="#deluxeordered-java" title="Permalink naar deze titel">¶</a></h3>
-<p>Dit is een <strong>optionele</strong> opgave.</p>
-<p>Dit programma, <code class="docutils literal notranslate"><span class="pre">DeluxeOrdered.java</span></code>, voert dezelfde operatie uit als <code class="docutils literal notranslate"><span class="pre">Ordered.java</span></code>. Het accepteert drie <code class="docutils literal notranslate"><span class="pre">int</span></code> command-line argumenten, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, en <code class="docutils literal notranslate"><span class="pre">z</span></code>, en drukt <code class="docutils literal notranslate"><span class="pre">true</span></code> af als de drie waarden ofwel in strikt oplopende volgorde staan (x &lt; y &lt; z) of in strikt aflopende volgorde (x &gt; y &gt; z) en <code class="docutils literal notranslate"><span class="pre">false</span></code> anders. De <strong>uitdaging</strong> is om <code class="docutils literal notranslate"><span class="pre">DeluxeOrdered.java</span></code> te implementeren <strong>zonder</strong> gebruik te maken van de vier vergelijkingsoperatoren <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> en <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
+<!--
+### `DeluxeOrdered.java`
+
+Dit is een **optionele** opgave.
+
+Dit programma, `DeluxeOrdered.java`, voert dezelfde operatie uit als `Ordered.java`. Het accepteert drie `int` command-line argumenten, `x`, `y`, en `z`, en drukt `true` af als de drie waarden ofwel in strikt oplopende volgorde staan (x < y < z) of in strikt aflopende volgorde (x > y > z) en `false` anders. De **uitdaging** is om `DeluxeOrdered.java` te implementeren **zonder** gebruik te maken van de vier vergelijkingsoperatoren `<`, `<=`, `>`, `>=` en `if` statements.
+
+-->
 </div>
 <div class="section" id="greatcircle-java">
 <h3><code class="docutils literal notranslate"><span class="pre">GreatCircle.java</span></code><a class="headerlink" href="#greatcircle-java" title="Permalink naar deze titel">¶</a></h3>
@@ -518,16 +484,20 @@ black = 1 - white
 <span class="go">black   = 0.0</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="deluxergbtocmyk-java">
-<h3><code class="docutils literal notranslate"><span class="pre">DeluxeRGBtoCMYK.java</span></code><a class="headerlink" href="#deluxergbtocmyk-java" title="Permalink naar deze titel">¶</a></h3>
-<p>Dit is een <strong>optionele</strong> opgave.</p>
-<p>Dit programma, <code class="docutils literal notranslate"><span class="pre">DeluxeRGBtoCMYK.java</span></code>, voert dezelfde bewerking uit als <code class="docutils literal notranslate"><span class="pre">RGBtoCMYK.java</span></code>, het converteert RGB waarden naar CMYK waarden. De <strong>uitdaging</strong> is om <code class="docutils literal notranslate"><span class="pre">RGBtoCMYK.java</span></code> te implementeren <strong>zonder</strong> gebruik te maken van <code class="docutils literal notranslate"><span class="pre">Math.max</span></code>, <code class="docutils literal notranslate"><span class="pre">Math.min</span></code>, of <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
+<!--
+### `DeluxeRGBtoCMYK.java`
+
+Dit is een **optionele** opgave.
+
+Dit programma, `DeluxeRGBtoCMYK.java`, voert dezelfde bewerking uit als `RGBtoCMYK.java`, het converteert RGB waarden naar CMYK waarden. De **uitdaging** is om `RGBtoCMYK.java` te implementeren **zonder** gebruik te maken van `Math.max`, `Math.min`, of `if` statements.
+-->
 </div>
 </div>
 <div class="section" id="id2">
 <h2>Hello World<a class="headerlink" href="#id2" title="Permalink naar deze titel">¶</a></h2>
 <p>Hier is <a class="reference external" href="http://helloworldcollection.de">Hello World</a> in meer dan 200 verschillende  programmeertalen!</p>
+<hr class="docutils" />
+<p>Copyright © 1999–2021, <a class="reference external" href="http://www.cs.princeton.edu/~rs/">Robert Sedgewick</a> and <a class="reference external" href="http://www.cs.princeton.edu/~wayne">Kevin Wayne</a>.</p>
 </div>
 </div>
 
@@ -570,7 +540,7 @@ black = 1 - white
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../../exercises/set_1.html" title="volgende pagina">
+        <a class="right-next" href="../../course/ex_1.html" title="volgende pagina">
             <div class="prevnext-info">
                 <p class="prevnext-label">volgende</p>
                 <p class="prevnext-title">Oefeningen 1</p>
@@ -589,13 +559,6 @@ black = 1 - white
         
           Door Hanzehogeschool Groningen<br/>
         
-          <div class="extra_footer">
-            <div>
-<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"></a>
-    Alle inhoud op deze site (tenzij anders vermeld) valt onder de <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> licentie.
-</div>
-
-          </div>
       </p>
     </div>
   </footer>

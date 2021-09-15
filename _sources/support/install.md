@@ -170,6 +170,8 @@ Nu bent je klaar om uw eerste Java programma te schrijven. IntelliJ heeft veel g
     *IntelliJ* is zo ingesteld dat wijzigingen die je in jouw bestanden aanbrengt automatisch worden opgeslagen bij verschillende gebeurtenissen (zoals compileren, uitvoeren, sluiten van een bestand of project, of het afsluiten van de IDE). We raden nog steeds aan om **Bestand → Alles opslaan (Ctrl + S)** te gebruiken om uw code opnieuw te formatteren.
     ```
 
+<!-- TODO meer algemeen beschrijven
+
 ## Compileren en uitvoeren
 
 Nu is het tijd om jouw programma uit te voeren (te draaien, of "runnen"). Dit is het meest spannende gedeelte, waarbij de computer de instructies volgt die jij in jouw programma hebt gespecificeerd. Alvorens dit te doen, zal je het programma moeten *compileren* in een vorm die beter geschikt is om door een computer uit te coeren.
@@ -177,7 +179,7 @@ Nu is het tijd om jouw programma uit te voeren (te draaien, of "runnen"). Dit is
 De commandline is een eenvoudig en krachtig manier om jouw programma's te besturen (bijv. commandline argumenten, *file redirection*, en piping). IntelliJ biedt een ingebouwde terminal voor eenvoudige toegang tot de commandoregel.
 
 Selecteer de menu optie Beeld → Gereedschapsvenster → Terminal (Alt + 2).
-Dit zal een Git Bash terminal starten waar je commando's kunt typen. Je zult een opdrachtprompt zien die er ongeveer zo uitziet:
+Dit zal een terminal starten waar je commando's kunt typen. Je zult een opdrachtprompt zien die er ongeveer zo uitziet:
 
 -   Selecteer het programma dat je wilt compileren en uitvoeren in de *Project View* zijbalk. Het programma zou nu in het hoofdvenster van de editor moeten verschijnen.
 
@@ -192,3 +194,5 @@ Als de compilatie mislukt opent een Recompile-paneel (onderaan), waarin de compi
 ### IntelliJ
 
 ### Commandline
+
+-->

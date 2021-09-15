@@ -158,7 +158,7 @@ Tweede waarde: 2
 Antwoord: 21.0
 ```
 
-Je zal hier condities moeten schrijven waar je `if`-`else` statements voor kan gebruiken, maar misscien zijn `switch` statements ook geschikt?
+Je zal hier condities moeten schrijven waar je `if`-`else` statements voor kan gebruiken, maar misschien zijn `switch` statements ook geschikt?
 
 ## Power users
 

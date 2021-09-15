@@ -38,7 +38,7 @@ Totale kosten: 108
 
 ## Tanken of scheuren
 
-Het bekende *Al's Last Chance Gas station* ligt aan Route 190 aan de rand van Death Valley, Verenigde Staten. Er is geen ander benzinestation in een omtrek van 320 kilometer. Schrijf een programma `LastChanceGas.java` om bestuurders te helpen beslissen of ze moeten tanken. Het programma vraagt naar:
+Het bekende *Al's Last Chance Gas* pompstation ligt aan Route 190 aan de rand van Death Valley, Verenigde Staten. Er is geen ander benzinestation in een omtrek van 320 kilometer. Schrijf een programma `LastChanceGas.java` om bestuurders te helpen beslissen of ze moeten tanken. Het programma vraagt naar:
 
 -   De inhoud van de benzinetank, in liters.
 -   De aanduiding van de benzinemeter in procenten (vol = 100, driekwart vol = 75, enzovoort).

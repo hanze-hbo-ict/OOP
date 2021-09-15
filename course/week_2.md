@@ -2,8 +2,9 @@
 
 ## Onderwerpen
 
--   Methoden
--   Condities en lussen
+-   [Methoden](/topics/2a1_methoden)
+-   [Methoden en testen](/topics/2a2_methoden_en_testen) (aanvullende collegeteksten)
+-   [Condities](/topics/2b_condities_en_logica)
 
 ## Boek
 

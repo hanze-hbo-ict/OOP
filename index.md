@@ -35,7 +35,7 @@
 -   Onderwerpen:
 
     - Methoden
-    - Condities en lussen
+    - Condities
 
 -   Lezen:
 

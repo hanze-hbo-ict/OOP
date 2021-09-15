@@ -1,0 +1,855 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Methoden &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Condities en logica" href="2b_condities_en_logica.html" />
+    <link rel="prev" title="Methoden" href="2a1_methoden.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/topics/2a2_methoden_en_testen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=tree/topics/2a2_methoden_en_testen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-anatomie-van-een-methode">
+   De anatomie van een methode
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methoden-definieren">
+   Methoden definiëren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters-en-argumenten">
+   Parameters en argumenten
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meerdere-parameters">
+     Meerdere parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vraag">
+     Vraag
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terug-naar-main">
+     Terug naar
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       main
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#van-string-naar-int">
+     Van
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       String
+      </span>
+     </code>
+     naar
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       int
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Vraag
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#returnwaarden">
+   Returnwaarden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testen">
+   Testen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#debug-mode">
+     Debug mode
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quiz">
+   Quiz
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vraag-1">
+     Vraag 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vraag-2">
+     Vraag 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vraag-3">
+     Vraag 3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="methoden">
+<h1>Methoden<a class="headerlink" href="#methoden" title="Permalink naar deze titel">¶</a></h1>
+<p>Dit zijn aanvullende collegeteksten.</p>
+<div class="section" id="de-anatomie-van-een-methode">
+<h2>De anatomie van een methode<a class="headerlink" href="#de-anatomie-van-een-methode" title="Permalink naar deze titel">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello World&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Het voorbeeld dat we nu al zo vaak hebben gezien! We hebben hierdoor ook al kennisgemaakt met methoden, in dit geval de methode <code class="docutils literal notranslate"><span class="pre">main</span></code>. Een methode kan niet op zichzelf staan en is altijd een onderdeel van een klasse.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello World&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Laten we de methode stukje bij beetje uitkleden, hier hebben we omringende klasse weggelaten.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>Als we de <em>body</em> van de methode weglaten (alles wat tussen <code class="docutils literal notranslate"><span class="pre">{</span></code> en <code class="docutils literal notranslate"><span class="pre">}</span></code>staat) houden we de <em>signatuur</em> van de functie over.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>En als we tot slot de <em>keywords</em> <code class="docutils literal notranslate"><span class="pre">public</span></code> en <code class="docutils literal notranslate"><span class="pre">static</span></code> weglaten dan bijft uiteindelijk het volgende over en dit is de essentie van een de definitie van een methode.</p>
+<p>Let op, zoals eerder gezegd gaan we later in op de betekenis van deze keywords. Neem voor nu aan (en zeker voor de methode <code class="docutils literal notranslate"><span class="pre">main</span></code>) dat je ze moet gebruiken.</p>
+<blockquote>
+<div><p><em>type</em> <strong>naam</strong> ( <em>parameters</em> )</p>
+</div></blockquote>
+<p>Type en naam moeten altijd gedefinieerd worden, het aantal parameters kan 0 of meer zijn.</p>
+<p>Java is een <em>statisch</em> getypeerde taal en ook voor methoden moet worden aangegeven wat het type van de waarde is die de functie als resultaat teruggeeft. In het geval van <code class="docutils literal notranslate"><span class="pre">main</span></code> is dit niets, oftewel <code class="docutils literal notranslate"><span class="pre">void</span></code> want bedenk dat <code class="docutils literal notranslate"><span class="pre">System.out.println</span></code> alleen maar pixels op het scherm zet…</p>
+</div>
+<div class="section" id="methoden-definieren">
+<h2>Methoden definiëren<a class="headerlink" href="#methoden-definieren" title="Permalink naar deze titel">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">newLine</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;First line.&quot;</span><span class="o">);</span>
+<span class="n">newLine</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Second line.&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First line.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Second line.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In het boek wordt dit voorbeeld gebruikt. Een je ziet hier een nieuwe methode <code class="docutils literal notranslate"><span class="pre">newLine</span></code> met de enige taak een nieuwe regel te printen, een lege regel in dit geval.</p>
+<p>Zodra de methode is gedefinieerd kan het aangeroepen worden, bijvoorbeeld in de methode <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+</div>
+<div class="section" id="parameters-en-argumenten">
+<h2>Parameters en argumenten<a class="headerlink" href="#parameters-en-argumenten" title="Permalink naar deze titel">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printTwice</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">printTwice</span><span class="o">(</span><span class="s">&quot;Don&#39; t make me say this twice!&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Don&#39; t make me say this twice!
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Don&#39; t make me say this twice!
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Een methode kan meerdere argumenten ontvangen, maar dit zal je wel moeten definiëren. Dit betekent dat je naast de <em>naam</em> ook het type moet declareren voor de parameters van de methode!</p>
+<div class="section" id="meerdere-parameters">
+<h3>Meerdere parameters<a class="headerlink" href="#meerdere-parameters" title="Permalink naar deze titel">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printTime</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">hour</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;:&quot;</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">minute</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">printTime</span><span class="o">(</span><span class="mi">11</span><span class="o">,</span> <span class="mi">59</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>59
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Meerdere parameters worden gescheiden door een <em>komma</em>.</p>
+</div>
+<div class="section" id="vraag">
+<h3>Vraag<a class="headerlink" href="#vraag" title="Permalink naar deze titel">¶</a></h3>
+<p>Is deze aanroep juist?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">printTime</span><span class="o">(</span><span class="kt">int</span> <span class="mi">11</span><span class="o">,</span> <span class="kt">int</span> <span class="mi">59</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Nee, dit geeft een syntaxfout, omdat de compiler <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">hour</span></code> en <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">minute</span></code> ziet als variabele declaraties, en niet als <em>expressies</em> die waarden vertegenwoordigen.</p>
+<p>De declaratie van variabelen is al eerder gedaan bij het definiëren van de parameters van de methode <code class="docutils literal notranslate"><span class="pre">printTime</span></code>, jij hoeft deze alleen maar te initialiseren met een concrete waarde.</p>
+</div>
+<div class="section" id="terug-naar-main">
+<h3>Terug naar <code class="docutils literal notranslate"><span class="pre">main</span></code><a class="headerlink" href="#terug-naar-main" title="Permalink naar deze titel">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>De <code class="docutils literal notranslate"><span class="pre">main</span></code> methode is speciaal, het is het <em>entry point</em> voor een programma, de eerste methode die wordt aangeroepen als een programma start. Het opstarten van een programma gaan we vaak doen via de <em>comandline</em>.</p>
+<p>Maar de methode accepteert wel argumenten, waar komen deze vandaan? Met andere woorden, hoe kan bij het opstarten van het programma argumenten worden doorgegeven?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Greeter</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello &quot;</span> <span class="o">+</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java Greeter.java Misja
+<span class="go">Hello Misja</span>
+</pre></div>
+</div>
+<p>In veel Java cursussen wordt vaak voorbij gegaan aan wat de parameter <code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">args</span></code> nu precies betekent en hoe het wordt gebruikt. Wij gaan dat wél doen en aan het gebruik (<code class="docutils literal notranslate"><span class="pre">args[0]</span></code>) kan je misschien al raden dat <code class="docutils literal notranslate"><span class="pre">args</span></code> iets als een lijst van waarden moet zijn waar de waarde op positie 0 in dit geval het doorgegeven argument is.</p>
+<p><code class="docutils literal notranslate"><span class="pre">args</span></code> is een <em>array</em> met elementen van type <code class="docutils literal notranslate"><span class="pre">String</span></code> en we gaan hier later uitgebreid bij arrays stilstaan, inclusief syntax (<code class="docutils literal notranslate"><span class="pre">String[]</span></code>)!</p>
+<p>Meerdere argumenten kan je op deze manier doorgeven, steeds gescheiden door een spatie.</p>
+</div>
+<div class="section" id="van-string-naar-int">
+<h3>Van <code class="docutils literal notranslate"><span class="pre">String</span></code> naar <code class="docutils literal notranslate"><span class="pre">int</span></code><a class="headerlink" href="#van-string-naar-int" title="Permalink naar deze titel">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;42&quot;</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">args</span></code> bevat <em>altijd</em> strings, maar wat als het argument een ander type moet zijn, bijvoorbeeld een <code class="docutils literal notranslate"><span class="pre">int</span></code>? Dan zal je het expliciet moeten omzetten van een <code class="docutils literal notranslate"><span class="pre">String</span></code> naar een <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Vraag<a class="headerlink" href="#id1" title="Permalink naar deze titel">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Wat zou de <em>signatuur</em> van de <code class="docutils literal notranslate"><span class="pre">parseInt</span></code> methode van de klasse <code class="docutils literal notranslate"><span class="pre">Integer</span></code> zijn?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">parseInt</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="returnwaarden">
+<h2>Returnwaarden<a class="headerlink" href="#returnwaarden" title="Permalink naar deze titel">¶</a></h2>
+<p>Gegeven de formule voor het oppervlak van een cirkel</p>
+<div class="math notranslate nohighlight">
+\[
+\pi \cdot r^2
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">calculateArea</span><span class="o">(</span><span class="kt">double</span> <span class="n">radius</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Met het <code class="docutils literal notranslate"><span class="pre">return</span></code> statement laat je de methode een waarde teruggeven, dit moet van het type zijn dat je in de signatuur van de methode hebt aangegeven, in dit geval <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p>
+<p>Gegeven een cirkel met diameter 10</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">calculateArea</span><span class="o">(</span><span class="mf">10.0</span> <span class="o">/</span> <span class="mi">2</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>De straal van een cirkel is de helft van de diameter, het resultaat van deze expressie (<code class="docutils literal notranslate"><span class="pre">10.0</span> <span class="pre">/</span> <span class="pre">2</span></code>) wordt als argument aan <code class="docutils literal notranslate"><span class="pre">calculateArea</span></code> doorgegeven. Waarom <code class="docutils literal notranslate"><span class="pre">10.0</span></code> en niet <code class="docutils literal notranslate"><span class="pre">10</span></code>? <code class="docutils literal notranslate"><span class="pre">calculateArea</span></code> verwacht een waarde van type <code class="docutils literal notranslate"><span class="pre">double</span></code>, de expressie <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">/</span> <span class="pre">2</span></code> zal een <code class="docutils literal notranslate"><span class="pre">int</span></code> opleveren!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">area</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>78.53981633974483
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="testen">
+<h2>Testen<a class="headerlink" href="#testen" title="Permalink naar deze titel">¶</a></h2>
+<p><img alt="Debugging" src="../_images/debugging.jpg" /></p>
+<p>Testen, of <em>debuggen</em>, is een kwestie van perspectief? Wij adviseren een omgekeerde volgorde!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Ik ben nu hier!&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Dit wil niet zeggen dat we print statements afraden als je ergens in de loop van jouw programma de waarde van een variabele wilt weten of waarom het programma een bepaald punt niet lijkt te bereiken. Maar het kan slimmer door gebruik te maken van het gereedschap dat de IDE jou biedt.</p>
+<div class="section" id="debug-mode">
+<h3>Debug mode<a class="headerlink" href="#debug-mode" title="Permalink naar deze titel">¶</a></h3>
+<p><img alt="Intellij breakpoint" src="../_images/intellij_breakpoint.png" /></p>
+<p>Naast elke regel kan je een <em>breakpoint</em> zetten, met een enkele klik en zal zichtbaar worden door een rode stip. Met een breakpoint geef je het punt aan waar je het programma wilt pauzeren om de <em>staat</em> van het programma te inspecteren. Bijvoorbeeld om de waarde van een variabele op dat punt te bekijken.</p>
+<p><img alt="Intellij debug run" src="../_images/intellij_debug_run.png" /></p>
+<p>Rechts-klik op de methode <code class="docutils literal notranslate"><span class="pre">main</span></code> en kies de <em>Debug</em> optie. Het programma zal nu worden gestart en zal worden doorlopen <em>tot</em> het breakpoint, op dat moment wordt de wereld even stilgezet.</p>
+<p><img alt="Intellij debug environment" src="../_images/intellij_debug_env.png" /></p>
+<p>Onderaan in IntelliJ zal een debug <em>view</em> zichtbaar worden waar je de staat van het programma op dat moment kan zien.</p>
+<p><strong>Tutorial: Debug your first Java application</strong></p>
+<p><a class="reference external" href="https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html">Debugging your first java application</a></p>
+<p>Bekijk voor IntelliJ de <a class="reference external" href="https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html">korte inleiding</a> over het gebruik van de debugger. Je zal daar ook zien hoe je een specifieke <em>debug configuratie</em> kan aanmaken, bijvoorbeeld als jouw methode <code class="docutils literal notranslate"><span class="pre">main</span></code> via de commandline argumenten moet kunnen accepteren. Maar meer in het algemeen, blader af en toe de <a class="reference external" href="https://www.jetbrains.com/help/idea/">algemene documentatie</a> door voor de inrichting en gebruik van IntelliJ!</p>
+</div>
+</div>
+<div class="section" id="quiz">
+<h2>Quiz<a class="headerlink" href="#quiz" title="Permalink naar deze titel">¶</a></h2>
+<div class="section" id="vraag-1">
+<h3>Vraag 1<a class="headerlink" href="#vraag-1" title="Permalink naar deze titel">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CubeMethod</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">cube</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">j</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">cube</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java CubeMethod.java <span class="m">5</span>
+</pre></div>
+</div>
+<p>Wat is het resultaat van deze aanroep?</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">5 125</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="vraag-2">
+<h3>Vraag 2<a class="headerlink" href="#vraag-2" title="Permalink naar deze titel">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CubeMethod</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">cube</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">cube</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java CubeMethod.java <span class="m">5</span>
+</pre></div>
+</div>
+<p>Wat is het resultaat van deze aanroep?</p>
+<p>Let op het kleine verschil in de methode <code class="docutils literal notranslate"><span class="pre">cube</span></code>, in het vorige voorbeeld werd <code class="docutils literal notranslate"><span class="pre">j</span></code> als variabele gebruikt, nu <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">CubeMethod.java:5: error: variable i is already defined in method cube(int)</span>
+<span class="go"> int i = i * i * i;</span>
+<span class="go">     ^</span>
+<span class="go">1 error</span>
+<span class="go">error: compilation failed</span>
+</pre></div>
+</div>
+<p>Een <em>compiler</em> fout! De argument variabele <code class="docutils literal notranslate"><span class="pre">i</span></code> is al gedeclareerd en geïnitialiseerd en de naam kan niet worden hergebruikt.</p>
+</div>
+<div class="section" id="vraag-3">
+<h3>Vraag 3<a class="headerlink" href="#vraag-3" title="Permalink naar deze titel">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CubeMethod</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">cube</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">cube</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java CubeMethod.java <span class="m">5</span>
+</pre></div>
+</div>
+<p>Wat is het resultaat van deze aanroep?</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">CubeMethod.java:4: error: missing return statement</span>
+<span class="go">    }</span>
+<span class="go">    ^</span>
+<span class="go">1 error</span>
+<span class="go">error: compilation failed</span>
+</pre></div>
+</div>
+<p>Een <em>compiler</em> fout! Een <em>return</em> statement ontbreekt.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "java"
+        },
+        kernelOptions: {
+            kernelName: "java",
+            path: "./topics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'java'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="2a1_methoden.html" title="vorige pagina">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">vorige</p>
+                <p class="prevnext-title">Methoden</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="2b_condities_en_logica.html" title="volgende pagina">
+            <div class="prevnext-info">
+                <p class="prevnext-label">volgende</p>
+                <p class="prevnext-title">Condities en logica</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

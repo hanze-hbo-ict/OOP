@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debuggen en methoden &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Methoden en condities" href="../problems/calculator/index.html" />
+    <link rel="prev" title="Condities en logica" href="../topics/2b_condities_en_logica.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/exercises/debuggen_en_methoden.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#debuggen">
+   Debuggen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multadd">
+   Multadd
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fermat">
+   Fermat
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="debuggen-en-methoden">
+<h1>Debuggen en methoden<a class="headerlink" href="#debuggen-en-methoden" title="Permalink naar deze titel">¶</a></h1>
+<div class="section" id="debuggen">
+<h2>Debuggen<a class="headerlink" href="#debuggen" title="Permalink naar deze titel">¶</a></h2>
+<p>Je zal fouten maken in code en vooral <em>logische</em> fouten zijn soms lastig op te sporen. We gebruiken IntelliJ als standaardeditor en in deze opgave ga je beter bekend raken met de debug faciliteiten van IntelliJ.</p>
+<p>Ga naar <a class="reference external" href="https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html">Debug your first Java application</a>, dit is onderdeel van de IntelliJ documentatie. Volg deze korte tutorial voor een eerste kennismaking.</p>
+<p>In de tutorial wordt een klasse <code class="docutils literal notranslate"><span class="pre">AverageFinder</span></code> gebruikt die concepten bevat die nog worden behandeld, zoals lussen. Als je moeite hebt dit te lezen kan je het volgende voorbeeld gebruiken voor debuggen</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">calculateArea</span><span class="o">(</span><span class="kt">double</span> <span class="n">radius</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">double</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">double</span> <span class="n">diameter</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">;</span>
+        <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">calculateArea</span><span class="o">(</span><span class="n">diameter</span><span class="o">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">area</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>De correcte uitkomst van de aanroep met diameter 10 zal afgerond 78,54 moeten zijn. maar dat is hier niet het geval. De klasse <code class="docutils literal notranslate"><span class="pre">Circle</span></code> bevat een <em>logische</em> fout, een <em>bug</em>, kan jij deze vinden?</p>
+</div>
+<div class="section" id="multadd">
+<h2>Multadd<a class="headerlink" href="#multadd" title="Permalink naar deze titel">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Deze opgave kan je ook in het boek terugvinden in <a class="reference external" href="https://books.trinket.io/thinkjava2/chapter4.html">hoofdstuk 4</a>.</p>
+</div>
+<p>Veel berekeningen kunnen beknopter worden uitgedrukt met de “multadd” bewerking, die drie operanden neemt en <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">c</span></code> berekent. Sommige processoren bieden zelfs een hardware-implementatie van deze bewerking voor zwevendekommagetallen (<em>floating-point</em> getallen).</p>
+<ol>
+<li><p>Maak een nieuw programma <code class="docutils literal notranslate"><span class="pre">Multadd.java</span></code>.</p></li>
+<li><p>Schrijf een methode <code class="docutils literal notranslate"><span class="pre">multadd</span></code> die drie <code class="docutils literal notranslate"><span class="pre">double</span></code>’s als parameters accepteert en het resultaat van <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">c</span></code> teruggeeft.</p></li>
+<li><p>Schrijf een <code class="docutils literal notranslate"><span class="pre">main</span></code> methode die <code class="docutils literal notranslate"><span class="pre">multadd</span></code> test door het aan te roepen met een paar eenvoudige parameters, zoals <code class="docutils literal notranslate"><span class="pre">1.0,</span> <span class="pre">2.0,</span> <span class="pre">3.0</span></code>.</p></li>
+<li><p>Ook in <code class="docutils literal notranslate"><span class="pre">main</span></code>, gebruik de methode <code class="docutils literal notranslate"><span class="pre">multadd</span></code> om de volgende waarden te berekenen:</p>
+<div class="math notranslate nohighlight" id="equation-one">
+<span class="eqno">(1)<a class="headerlink" href="#equation-one" title="Permalink naar deze formule">¶</a></span>\[\sin \frac{\pi}{4} + \frac{\cos \frac{\pi}{4}}{2}\]</div>
+<div class="math notranslate nohighlight" id="equation-two">
+<span class="eqno">(2)<a class="headerlink" href="#equation-two" title="Permalink naar deze formule">¶</a></span>\[\log 10 + \log 20\]</div>
+</li>
+<li><p>Schrijf een methode <code class="docutils literal notranslate"><span class="pre">expSum</span></code> die een <code class="docutils literal notranslate"><span class="pre">double</span></code> als parameter accepteert en <code class="docutils literal notranslate"><span class="pre">multadd</span></code> gebruikt om te berekenen:</p>
+<div class="math notranslate nohighlight" id="equation-three">
+<span class="eqno">(3)<a class="headerlink" href="#equation-three" title="Permalink naar deze formule">¶</a></span>\[x e^{-x} + \sqrt{1 - e^{-x}}\]</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>De methode om <em>e</em> tot een macht te verheffen is <code class="docutils literal notranslate"><span class="pre">Math.exp</span></code>.</p>
+</div>
+</li>
+</ol>
+<p>In het laatste deel van deze oefening moet je een methode schrijven die een andere methode aanroept die jij geschreven hebt. Wanneer je dat doet, is het een goed idee om de eerste methode zorgvuldig te testen voordat je aan de tweede gaat werken. Anders zul je misschien twee methoden tegelijk moeten debuggen, wat lastig kan zijn.</p>
+<p>Een van de doelen van deze oefening is het oefenen van <em>pattern-matching</em>: de vaardigheid om een specifiek probleem te herkennen als een instantie van een algemene categorie van problemen.</p>
+</div>
+<div class="section" id="fermat">
+<h2>Fermat<a class="headerlink" href="#fermat" title="Permalink naar deze titel">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Deze opgave kan je ook in het boek terugvinden in <a class="reference external" href="https://books.trinket.io/thinkjava2/chapter5.html">hoofdstuk 5</a>.</p>
+</div>
+<p>De <a class="reference external" href="https://nl.wikipedia.org/wiki/Laatste_stelling_van_Fermat">Laatste Stelling van Fermat</a> zegt dat er geen gehele getallen <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> en <span class="math notranslate nohighlight">\(n\)</span> bestaan zodat <span class="math notranslate nohighlight">\(a^n + b^n = c^n\)</span>, behalve als <span class="math notranslate nohighlight">\(n \leq 2\)</span> is.</p>
+<p>Schrijf een programma <code class="docutils literal notranslate"><span class="pre">Fermat.java</span></code> dat vier gehele getallen invoert <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, en <code class="docutils literal notranslate"><span class="pre">n</span></code>) en kijkt of de stelling van Fermat geldt.
+Als <span class="math notranslate nohighlight">\(n\)</span> groter is dan 2 en <span class="math notranslate nohighlight">\(a^n + b^n = c^n\)</span>, dan zou het programma moeten weergeven “Potverdorie, Fermat had geen gelijk!”
+Zo niet, dan moet het programma “Nee, dat werkt niet.” weergeven.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Je zou hier misschien <code class="docutils literal notranslate"><span class="pre">Math.pow</span></code> willen gebruiken.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../topics/2b_condities_en_logica.html" title="vorige pagina">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">vorige</p>
+                <p class="prevnext-title">Condities en logica</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../problems/calculator/index.html" title="volgende pagina">
+            <div class="prevnext-info">
+                <p class="prevnext-label">volgende</p>
+                <p class="prevnext-title">Methoden en condities</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 1117, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 78, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 57, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 558, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 862, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 765, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+Stap 3: Neem de kwadraten van de afstanden en tel ze bij elkaar op.
+------------------
+
+io.github.spencerpark.ijava.execution.CodeEvaluator.eval(CodeEvaluator.java:150)
+io.github.spencerpark.ijava.JavaKernel.evalRaw(JavaKernel.java:276)
+io.github.spencerpark.ijava.JavaKernel.eval(JavaKernel.java:281)
+io.github.spencerpark.jupyter.kernel.BaseKernel.handleExecuteRequest(BaseKernel.java:334)
+io.github.spencerpark.jupyter.channels.ShellChannel.lambda$bind$0(ShellChannel.java:64)
+io.github.spencerpark.jupyter.channels.Loop.lambda$new$0(Loop.java:21)
+io.github.spencerpark.jupyter.channels.Loop.run(Loop.java:78)
+IncompleteSourceException: Stap 3: Neem de kwadraten van de afstanden en tel ze bij elkaar op.
+

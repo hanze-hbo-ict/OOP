@@ -154,7 +154,7 @@ name: data-table-methods
 CSV-database en bijbehorende methoden
 ```
 
-Let op, de STA's kunnen per database verschillen, verwacht dus niet dat elke database de waarden uit de bovenstaande figuur bevat (AGAT, AATG, TATC), wat je hier ziet is een voorbeeld!
+Let op, de STR's kunnen per database verschillen, verwacht dus niet dat elke database de waarden uit de bovenstaande figuur bevat (AGAT, AATG, TATC), wat je hier ziet is een voorbeeld!
 
 ```{tip}
 Elke regel bevat kommagescheiden waarden, gebruik de string `split` methode om de afzonderlijke waarden op te halen. Bijvoorbeeld
@@ -174,7 +174,7 @@ Tot slot zal je een methode moeten schrijven die het maximum aantal opeenvolgend
 public static int maxStrRepeat(String str, String sequence)
 ```
 
-Deze methode heeft als eerste parameter een STA en als tweede parameter een DNA-sequentie. De laatste heb je als tweede argument meegegeven bij de aanroep van jouw programma en heb je eerder al met `readLines` ingelezen. De methode geeft uiteindelijk een `int` terug, het maximum aantal keer dat de STA opeenvolgend in de sequentie voorkomt.
+Deze methode heeft als eerste parameter een STR en als tweede parameter een DNA-sequentie. De laatste heb je als tweede argument meegegeven bij de aanroep van jouw programma en heb je eerder al met `readLines` ingelezen. De methode geeft uiteindelijk een `int` terug, het maximum aantal keer dat de STR opeenvolgend in de sequentie voorkomt.
 
 ## Combineren
 
@@ -199,7 +199,7 @@ Arrays vergelijken kan niet met `==`, gebruik hier de methode `Arrays.equals` vo
 
 ## Testen
 
-Het projectbestand bevat een aantal STA-databases en DNA-sequenties om mee te testen.
+Het projectbestand bevat een aantal STR-databases en DNA-sequenties om mee te testen.
 
 1.  Het volgende geeft als antwoord **Bob**
     ```console

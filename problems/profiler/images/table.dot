@@ -64,13 +64,13 @@ digraph {
 
     >];
 
-    get_stas [
+    get_strs [
         fontname="Courier New, Courier"
         fontsize="14"
         label=<
 
         <table border="0" cellborder="0" cellspacing="0">
-            <tr><td align="left"><b>getStas</b></td></tr>
+            <tr><td align="left"><b>getStrs</b></td></tr>
             <tr><td align="left"><font color="red" point-size="10">String[]</font></td></tr>
         </table>
 
@@ -78,5 +78,5 @@ digraph {
 
     tbl:names -> get_names;
     tbl:values -> get_values
-    tbl:stas -> get_stas
+    tbl:stas -> get_strs
 }

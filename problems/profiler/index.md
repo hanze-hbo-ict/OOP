@@ -50,7 +50,7 @@ In de praktijk weten analisten op welk chromosoom en op welke plaats in het DNA 
 
 ## Opdracht
 
-Jouw taak is een programma te schrijven dat een DNA-sequentie en een CSV-bestand met STR-tellingen voor een lijst van personen inleest en vervolgens uitvoert aan wie het DNA (waarschijnlijk) toebehoort.
+Jouw taak is een programma te schrijven dat een DNA-sequentie en een CSV-bestand met STR-tellingen voor een lijst van personen inleest en vervolgens bepaalt aan wie het DNA (waarschijnlijk) toebehoort.
 
 Vul de klasse `Profile.java` aan, een programma dat identificeert aan wie een DNA-sequentie toebehoort.
 
@@ -141,7 +141,7 @@ Hoe kan je nu de gegevens die je nodig hebt uit deze regels halen? Breek dit pro
 ```java
  public static String[] getNames(String[] lines)
  public static int[][] getValues(String[] lines)
- public static String[] getStas(String[] lines)
+ public static String[] getStrs(String[] lines)
 ```
 
 Elk van deze methoden accepteert de ingelezen bestandsregels `lines` en elk zal een deel van de data uit de tabel als volgt moeten inlezen
@@ -176,7 +176,7 @@ public static int maxStrRepeat(String str, String sequence)
 
 Deze methode heeft als eerste parameter een STR en als tweede parameter een DNA-sequentie. De laatste heb je als tweede argument meegegeven bij de aanroep van jouw programma en heb je eerder al met `readLines` ingelezen. De methode geeft uiteindelijk een `int` terug, het maximum aantal keer dat de STR opeenvolgend in de sequentie voorkomt.
 
-## Combineren
+### Combineren
 
 Je zal nu alle methoden hebben om het probleen op te kunnen lossen.
 

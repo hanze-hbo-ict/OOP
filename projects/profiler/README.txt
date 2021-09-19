@@ -1,0 +1,1 @@
+This directory contains project files to be distributed.

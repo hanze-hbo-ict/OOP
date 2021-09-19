@@ -1,0 +1,82 @@
+digraph {
+
+    // 120dpi png rendering:
+    // dot -Tpng -Gdpi=100 -Nfontname=Helvetica -Efontname=Helvetica -o table.png table.dot
+
+    node [shape=plaintext];
+
+    tbl [
+        fontname="Sans serif"
+        fontsize="14"
+        shape=plaintext
+        label=<
+
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr>
+                <td>name</td>
+                <td bgcolor="lightblue">AGAT</td>
+                <td bgcolor="lightblue">AATG</td>
+                <td bgcolor="lightblue" port="stas">TATC</td>
+            </tr>
+            <tr>
+                <td bgcolor="#f0e3ff">Alice</td>
+                <td bgcolor="yellow">5</td>
+                <td bgcolor="yellow">2</td>
+                <td bgcolor="yellow">8</td>
+            </tr>
+            <tr>
+                <td bgcolor="#f0e3ff" port="names">Bob</td>
+                <td bgcolor="yellow">3</td>
+                <td bgcolor="yellow">7</td>
+                <td bgcolor="yellow">4</td>
+            </tr>
+            <tr>
+                <td bgcolor="#f0e3ff">Charlie</td>
+                <td bgcolor="yellow">6</td>
+                <td bgcolor="yellow" port="values">1</td>
+                <td bgcolor="yellow">5</td>
+            </tr>
+        </table>
+
+    >];
+
+    get_names [
+        fontname="Courier New, Courier"
+        fontsize="14"
+        label=<
+
+        <table border="0" cellborder="0" cellspacing="0">
+            <tr><td align="left"><b>getNames</b></td></tr>
+            <tr><td align="left"><font color="red" point-size="10">String[]</font></td></tr>
+        </table>
+
+    >];
+
+    get_values [
+        fontname="Courier New, Courier"
+        fontsize="14"
+        label=<
+
+        <table border="0" cellborder="0" cellspacing="0">
+            <tr><td align="left"><b>getValues</b></td></tr>
+            <tr><td align="left"><font color="red" point-size="10">int[][]</font></td></tr>
+        </table>
+
+    >];
+
+    get_stas [
+        fontname="Courier New, Courier"
+        fontsize="14"
+        label=<
+
+        <table border="0" cellborder="0" cellspacing="0">
+            <tr><td align="left"><b>getStas</b></td></tr>
+            <tr><td align="left"><font color="red" point-size="10">String[]</font></td></tr>
+        </table>
+
+    >];
+
+    tbl:names -> get_names;
+    tbl:values -> get_values
+    tbl:stas -> get_stas
+}

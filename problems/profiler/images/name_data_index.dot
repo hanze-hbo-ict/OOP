@@ -1,0 +1,58 @@
+digraph G {
+
+    // 120dpi png rendering:
+    // dot -Tpng -Gdpi=100 -Nfontname=Helvetica -Efontname=Helvetica -o name_data_index.png name_data_index.dot
+
+    rankdir=LR;
+
+    node [shape=plaintext];
+
+    tbl_names [
+        fontname="Sans serif"
+        fontsize="14"
+        shape=plaintext
+        label=<
+
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr>
+                <td bgcolor="#f0e3ff" port="name0">Alice</td>
+                <td bgcolor="#f0e3ff" port="name1">Bob</td>
+                <td bgcolor="#f0e3ff" port="name2">Charlie</td>
+            </tr>
+        </table>
+
+    >];
+
+    NW [ label="spacer", style=invis];
+
+    tbl_data [
+        fontname="Sans serif"
+        fontsize="14"
+        shape=plaintext
+        label=<
+
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr>
+                <td bgcolor="yellow" width="33" port="data0">5</td>
+                <td bgcolor="yellow" width="33">2</td>
+                <td bgcolor="yellow" width="33">8</td>
+            </tr>
+            <tr>
+                <td bgcolor="yellow" port="data1">3</td>
+                <td bgcolor="yellow">7</td>
+                <td bgcolor="yellow">4</td>
+            </tr>
+            <tr>
+                <td bgcolor="yellow" port="data2">6</td>
+                <td bgcolor="yellow">1</td>
+                <td bgcolor="yellow">5</td>
+            </tr>
+        </table>
+
+    >];
+
+    tbl_names:name2:s -> NW:w [style=invis]
+    tbl_names:name0:n -> tbl_data:data0:w [label=0, dir=both, color=grey]
+    tbl_names:name1:n -> tbl_data:data1:w [label=1, dir=both, color=grey]
+    tbl_names:name2:e -> tbl_data:data2:w [label=2, dir=both, color=grey]
+}

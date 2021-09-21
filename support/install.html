@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -72,6 +72,10 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../_static/logo_1.png" class="logo" alt="logo">
       
@@ -345,8 +349,8 @@
 <p>Indien je een foutbericht ziet, of als je niet weet hoe je het bovenstaande moet uitvoeren, volg dan de onderstaande installatiestappen voor jouw besturingssysteem.</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="55d31f0d-7153-4970-9eb5-7fb71d8d9d3a" name="320185ab-a411-47e5-9d19-43da79cf68ac" type="radio">
-</input><label class="tabbed-label" for="55d31f0d-7153-4970-9eb5-7fb71d8d9d3a">
+<input checked="checked" id="d1130cc5-1efd-4006-aa26-36e15ef807d2" name="7b243746-8aea-423e-8480-a73e4a77bce3" type="radio">
+</input><label class="tabbed-label" for="d1130cc5-1efd-4006-aa26-36e15ef807d2">
 Windows</label><div class="tabbed-content docutils">
 <p>De JDK die wij aanbevelen is OpenJDK, een <em>open source</em> implementatie van Java SE (Standard Edition). Ga naar <a class="reference external" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> en download een versie voor jouw besturingssysteem.</p>
 <ul class="simple">
@@ -362,8 +366,8 @@ Windows</label><div class="tabbed-content docutils">
 </ul>
 </div>
 </div>
-<input id="899ae991-269c-428d-a2f8-c98f64c82ec3" name="320185ab-a411-47e5-9d19-43da79cf68ac" type="radio">
-</input><label class="tabbed-label" for="899ae991-269c-428d-a2f8-c98f64c82ec3">
+<input id="7274a677-dc03-40fb-9548-f48d99215ea6" name="7b243746-8aea-423e-8480-a73e4a77bce3" type="radio">
+</input><label class="tabbed-label" for="7274a677-dc03-40fb-9548-f48d99215ea6">
 macOS</label><div class="tabbed-content docutils">
 <p>Indien je een package manager als <code class="docutils literal notranslate"><span class="pre">brew</span></code> gebruikt kan je OpenJDK eenvoudig als volgt installeren:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> brew install openjdk
@@ -371,8 +375,8 @@ macOS</label><div class="tabbed-content docutils">
 </div>
 <p>Indien je geen package manager gebruikt, volg dan dezelfde instructies voor installatie als bij Windows.</p>
 </div>
-<input id="f7b8a230-ca03-4d2d-9814-4e1f6e1a9698" name="320185ab-a411-47e5-9d19-43da79cf68ac" type="radio">
-</input><label class="tabbed-label" for="f7b8a230-ca03-4d2d-9814-4e1f6e1a9698">
+<input id="af8601ca-83ce-431a-b5f7-a6bed43f77e5" name="7b243746-8aea-423e-8480-a73e4a77bce3" type="radio">
+</input><label class="tabbed-label" for="af8601ca-83ce-431a-b5f7-a6bed43f77e5">
 Linux</label><div class="tabbed-content docutils">
 <p>Op Linux distributies is OpenJDK eenvoudig te installeren met package managers als <code class="docutils literal notranslate"><span class="pre">apt</span></code> of <code class="docutils literal notranslate"><span class="pre">yum</span></code>. Voor Debian en afgeleide distributies (bijvoorbeeld Ubuntu of Linux Mint) installeer je als volgt de meest recente OpenJDK versie:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> sudo apt-get install default-jdk
@@ -410,18 +414,18 @@ Linux</label><div class="tabbed-content docutils">
 </ul>
 <p>Pak het project als volgt uit voor jouw besturingssysteem:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="7dcb255c-c6ee-4826-95c3-46021590d93b" name="14556616-9462-4f91-a19a-5cd51639fa1e" type="radio">
-</input><label class="tabbed-label" for="7dcb255c-c6ee-4826-95c3-46021590d93b">
+<input checked="checked" id="cc03cf73-61f4-464a-acc9-4b3cd1b94915" name="6218054a-acd4-4933-b3e6-f9d815a9e79c" type="radio">
+</input><label class="tabbed-label" for="cc03cf73-61f4-464a-acc9-4b3cd1b94915">
 Windows</label><div class="tabbed-content docutils">
 <p>Om het zip-bestand uit te pakken, klik je er met de rechtermuisknop op en kies je <em>Alles uitpakken</em>. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
 </div>
-<input id="bde15923-a237-4c3d-b2a2-aab301c743cf" name="14556616-9462-4f91-a19a-5cd51639fa1e" type="radio">
-</input><label class="tabbed-label" for="bde15923-a237-4c3d-b2a2-aab301c743cf">
+<input id="219789cc-2012-4289-9264-57ea3b29339a" name="6218054a-acd4-4933-b3e6-f9d815a9e79c" type="radio">
+</input><label class="tabbed-label" for="219789cc-2012-4289-9264-57ea3b29339a">
 macOS</label><div class="tabbed-content docutils">
 <p><strong>Dubbelklik</strong> op het zip-bestand om het uit te pakken. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
 </div>
-<input id="27abbd04-b494-499b-8d67-fcdddbe9c4c5" name="14556616-9462-4f91-a19a-5cd51639fa1e" type="radio">
-</input><label class="tabbed-label" for="27abbd04-b494-499b-8d67-fcdddbe9c4c5">
+<input id="22151287-44ea-40d3-811e-591ae4c7ebfa" name="6218054a-acd4-4933-b3e6-f9d815a9e79c" type="radio">
+</input><label class="tabbed-label" for="22151287-44ea-40d3-811e-591ae4c7ebfa">
 Linux</label><div class="tabbed-content docutils">
 <p>Pak het zip-bestand uit met het volgende commando:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> unzip -d hello hello.zip
@@ -576,7 +580,7 @@ Als de compilatie mislukt opent een Recompile-paneel (onderaan), waarin de compi
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

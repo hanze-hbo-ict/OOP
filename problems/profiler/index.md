@@ -27,13 +27,13 @@ Eén plaats waar DNA de neiging heeft een hoge genetische diversiteit te hebben 
 
 ![STR](images/strs.png)
 
-Het gebruik van meerdere STR's in plaats van slechts één kan de nauwkeurigheid van DNA-profilering verbeteren. Als de waarschijnlijkheid dat twee mensen hetzelfde aantal herhalingen hebben voor een enkele STR 5% is, en de analist kijkt naar 10 verschillende STRs, dan is de waarschijnlijkheid dat twee DNA-monsters puur toevallig overeenkomen ongeveer 1 op 1 quadriljoen (ervan uitgaande dat alle STRs onafhankelijk van elkaar zijn). Dus als twee DNA-monsters overeenkomen in het aantal herhalingen voor elk van de STR's, dan kan de analist er vrij zeker van zijn dat ze van dezelfde persoon afkomstig zijn.
+Het gebruik van meerdere STR's in plaats van slechts één kan de nauwkeurigheid van DNA-profilering verbeteren. Als de waarschijnlijkheid dat twee mensen hetzelfde aantal herhalingen hebben voor een enkele STR 5% is, en de analist kijkt naar 10 verschillende STR's, dan is de waarschijnlijkheid dat twee DNA-monsters puur toevallig overeenkomen ongeveer 1 op 1 quadriljoen (ervan uitgaande dat alle STR's onafhankelijk van elkaar zijn). Dus als twee DNA-monsters overeenkomen in het aantal herhalingen voor elk van de STR's, dan kan de analist er vrij zeker van zijn dat ze van dezelfde persoon afkomstig zijn.
 
 CODIS, de [DNA-database](https://www.fbi.gov/services/laboratory/biometric-analysis/codis/codis-and-ndis-fact-sheet) van de FBI, gebruikt 20 verschillende STR's als onderdeel van het DNA-profielproces (in Europa worden tien van deze STR’s gebruikt). In Nederland beheert het Nederlands Forensisch Instituut (NFI) verschillende [DNA-databases](https://dnadatabase.forensischinstituut.nl/dna-databaseen).
 
 ### Database
 
-Hoe zou zo'n DNA-database eruit kunnen zien? In zijn eenvoudigste vorm zou je je een DNA database kunnen voorstellen als een CSV bestand, waarin elke rij overeenkomt met een individu, en elke kolom met een bepaalde STR.
+Hoe zou zo'n DNA-database er uit kunnen zien? In zijn eenvoudigste vorm zou je je een DNA database kunnen voorstellen als een CSV bestand, waarin elke rij overeenkomt met een individu, en elke kolom met een bepaalde STR.
 
 ```text
 name,AGAT,AATG,TATC
@@ -42,7 +42,7 @@ Bob,17,22,19
 Charlie,36,18,25
 ```
 
-De gegevens in bovenstaand bestand suggereren dat Alice ergens in haar DNA de sequentie AGAT 28 keer achtereenvolgens herhaald heeft, de sequentie AATG 42 keer herhaald, en TATC 14 keer herhaald. Bob, ondertussen, heeft diezelfde drie STRs respectievelijk 17 keer, 22 keer en 19 keer herhaald. En Charlie heeft dezelfde drie STR's die respectievelijk 36, 18 en 25 keer worden herhaald.
+De gegevens in bovenstaand bestand suggereren dat Alice ergens in haar DNA de sequentie AGAT 28 keer achtereenvolgens herhaald heeft, de sequentie AATG 42 keer herhaald, en TATC 14 keer herhaald. Bob, ondertussen, heeft diezelfde drie STR's respectievelijk 17 keer, 22 keer en 19 keer herhaald. En Charlie heeft dezelfde drie STR's die respectievelijk 36, 18 en 25 keer worden herhaald.
 
 Dus als je een DNA-reeks hebt, hoe kun je dan bepalen van wie die is? Wel, stel je voor dat je in de DNA-reeks zoekt naar de langste opeenvolgende reeks herhaalde AGAT's en ontdekt dat de langste reeks 17 herhalingen lang is. Als je dan ontdekt dat de langste reeks AATG's 22 herhalingen lang is, en de langste reeks TATC's 19 herhalingen lang is, dan zou dat een vrij goed bewijs zijn dat het DNA van Bob is. Het is natuurlijk ook mogelijk dat wanneer je de tellingen voor elk van de STR's neemt, het niet overeenkomt met iemand in je DNA-database, in welk geval je geen overeenkomst hebt.
 
@@ -52,7 +52,7 @@ In de praktijk weten analisten op welk chromosoom en op welke plaats in het DNA 
 
 Jouw taak is een programma te schrijven dat een DNA-sequentie en een CSV-bestand met STR-tellingen voor een lijst van personen inleest en vervolgens bepaalt aan wie het DNA (waarschijnlijk) toebehoort.
 
-Vul de klasse `Profile.java` aan, een programma dat identificeert aan wie een DNA-sequentie toebehoort.
+Vul de klasse `Profile.java` aan, een programma dat identificeert aan wie een DNA-sequentie toebehoort (deze kan je vinden in het projectbestand).
 
 ```java
 import java.util.Arrays;

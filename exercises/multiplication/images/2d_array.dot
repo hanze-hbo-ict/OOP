@@ -1,0 +1,51 @@
+digraph {
+
+    // 120dpi png rendering:
+    // dot -Tpng -Gdpi=100 -Nfontname=Helvetica -Efontname=Helvetica -o 2d_array.png 2d_arrsy.dot
+
+    tbl [
+        fontname="Helvetica, Sans serif"
+        fontsize="12"
+        shape=plaintext
+        label=<
+
+        <table border="0" cellborder="1" cellspacing="0" CELLPADDING="10">
+            <tr>
+                <td bgcolor="lightblue"></td>
+                <td bgcolor="lightblue">Kolom 1</td>
+                <td bgcolor="lightblue">Kolom 2</td>
+                <td bgcolor="lightblue">Kolom 3</td>
+                <td bgcolor="lightblue">Kolom 4</td>
+            </tr>
+            <tr>
+                <td bgcolor="lightblue">Rij 1</td>
+                <td><font face="Courier New, Courier">a[0][0]</font></td>
+                <td><font face="Courier New, Courier">a[0][1]</font></td>
+                <td><font face="Courier New, Courier">a[0][2]</font></td>
+                <td><font face="Courier New, Courier">a[0][3]</font></td>
+            </tr>
+            <tr>
+                <td bgcolor="lightblue">Rij 2</td>
+                <td><font face="Courier New, Courier">a[1][0]</font></td>
+                <td><font face="Courier New, Courier">a[1][1]</font></td>
+                <td><font face="Courier New, Courier">a[1][2]</font></td>
+                <td><font face="Courier New, Courier">a[1][3]</font></td>
+            </tr>
+            <tr>
+                <td bgcolor="lightblue">Rij 3</td>
+                <td><font face="Courier New, Courier">a[2][0]</font></td>
+                <td><font face="Courier New, Courier">a[2][1]</font></td>
+                <td><font face="Courier New, Courier">a[2][2]</font></td>
+                <td><font face="Courier New, Courier">a[2][3]</font></td>
+            </tr>
+            <tr>
+                <td bgcolor="lightblue">Rij 4</td>
+                <td><font face="Courier New, Courier">a[3][0]</font></td>
+                <td><font face="Courier New, Courier">a[3][1]</font></td>
+                <td><font face="Courier New, Courier">a[3][2]</font></td>
+                <td><font face="Courier New, Courier">a[3][3]</font></td>
+            </tr>
+        </table>
+
+    >];
+}

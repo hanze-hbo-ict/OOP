@@ -39,3 +39,6 @@ parse:
 
 bibtex_bibfiles:
   - about/references.bib
+
+launch_buttons:
+   notebook_interface: "jupyterlab"

@@ -1,3 +1,0 @@
-jupyter
-jupyterlab
-jupyter-client

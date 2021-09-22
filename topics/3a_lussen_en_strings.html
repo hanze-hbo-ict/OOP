@@ -1,0 +1,1228 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lussen en strings &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Arrays en referenties" href="3b_arrays_en_referenties.html" />
+    <link rel="prev" title="Week 3" href="../course/week_3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3b_arrays_en_referenties.html">
+     Arrays en referenties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/multiplication/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/profiler/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_3.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/codingbat_arrays_strings.html">
+     CodingBat
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/topics/3a_lussen_en_strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=tree/topics/3a_lussen_en_strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oneindige-lussen">
+   Oneindige lussen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wanneer-stopt-een-lus">
+     Wanneer stopt een lus?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verhogen-en-verlagen">
+   Verhogen en verlagen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntax">
+     Syntax
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#een-subtiel-verschil">
+     Een subtiel verschil
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eindige-lussen">
+   Eindige lussen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eindig-en-oneindig">
+     Eindig en oneindig
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geneste-lussen">
+   Geneste lussen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#karakters">
+   Karakters
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unicode">
+     Unicode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#char-en-string">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       char
+      </span>
+     </code>
+     en
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       String
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings">
+   Strings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#de-lengte-van-een-string">
+     De lengte van een
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       String
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#een-string-doorlopen">
+     Een string doorlopen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#substrings">
+     Substrings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings-vergelijken">
+     Strings vergelijken
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bijzonder-gedrag">
+     Bijzonder gedrag
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#de-boodschap">
+     De boodschap
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lussen-en-strings">
+<h1>Lussen en strings<a class="headerlink" href="#lussen-en-strings" title="Permalink naar deze titel">¶</a></h1>
+<p>Handelingen herhalen en tekstuele data</p>
+<div class="section" id="oneindige-lussen">
+<h2>Oneindige lussen<a class="headerlink" href="#oneindige-lussen" title="Permalink naar deze titel">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> lussen</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Help&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>De conditie is in dit geval altijd waar en de boodschap zal eindeloos worden herhaald, een oneindige lus!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+
+<span class="k">while</span> <span class="o">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Blastoff&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Blastoff
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zolang de conditie <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> waar is zal de body van de lus worden uitgevoerd.</p>
+<div class="section" id="wanneer-stopt-een-lus">
+<h3>Wanneer stopt een lus?<a class="headerlink" href="#wanneer-stopt-een-lus" title="Permalink naar deze titel">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">(</span><span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>         <span class="c1">// n is even</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>                  <span class="c1">// n is odd</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Soms is het moeilijk te bepalen of een lus stopt. Deze lus gaat door tot <code class="docutils literal notranslate"><span class="pre">n</span></code> 1 is (wat de conditie <code class="docutils literal notranslate"><span class="pre">false</span></code> maakt).</p>
+<p>Elke keer dat de lus wordt doorlopen, toont het programma de waarde van <code class="docutils literal notranslate"><span class="pre">n</span></code> en controleert vervolgens of deze even of oneven is. Als het even is, wordt de waarde van <code class="docutils literal notranslate"><span class="pre">n</span></code> door 2 gedeeld. Is het oneven, dan wordt de waarde vervangen door <span class="math notranslate nohighlight">\(3n+1\)</span>. Bijvoorbeeld, als de beginwaarde 3 is, dan is de resulterende reeks 3, 10, 5, 16, 8, 4, 2, 1.</p>
+<p>Aangezien <code class="docutils literal notranslate"><span class="pre">n</span></code> soms toeneemt en soms afneemt, is er geen voor de hand liggend bewijs dat <code class="docutils literal notranslate"><span class="pre">n</span></code> ooit 1 zal bereiken en dat het programma ooit zal eindigen. Voor sommige waarden van <code class="docutils literal notranslate"><span class="pre">n</span></code>, zoals machten van twee, kunnen we bewijzen dat het programma eindigt.</p>
+<p>De moeilijke vraag is dus of dit programma eindigt voor {alle} waarden van <code class="docutils literal notranslate"><span class="pre">n</span></code>. Tot nu toe is niemand er in geslaagd om dit te bewijzen of te weerleggen! Zie voor meer informatie
+Voor meer informatie over dit probleem het[vermoeden van Collatz] (https://nl.wikipedia.org/wiki/Vermoeden_van_Collatz).</p>
+<p>Het vakgebied informatica is geïnteresseerd in dit soort vragen, omdat de antwoorden daarop inzicht geven in de grenzen van wat computers wel en niet kunnen.</p>
+</div>
+</div>
+<div class="section" id="verhogen-en-verlagen">
+<h2>Verhogen en verlagen<a class="headerlink" href="#verhogen-en-verlagen" title="Permalink naar deze titel">¶</a></h2>
+<p>Of <em>incrementeren</em> en <em>decrementeren</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+    <span class="n">i</span><span class="o">++;</span>  <span class="c1">// add 1 to i</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aan het einde van elke iteratie wordt de teller <code class="docutils literal notranslate"><span class="pre">i</span></code> met 1 verhoogd tot de conditie <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">5</span></code> waar is. Je ziet hier <code class="docutils literal notranslate"><span class="pre">i++</span></code> gebruikt worden om <code class="docutils literal notranslate"><span class="pre">i</span></code> met 1 te incrementeren. Dit is niet de enige mogelijke syntax voor deze operatie.</p>
+<div class="section" id="syntax">
+<h3>Syntax<a class="headerlink" href="#syntax" title="Permalink naar deze titel">¶</a></h3>
+<p>Incrementeren</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+=</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n++</span></code></p></li>
+</ol>
+<p>Decrementeren</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-=</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n--</span></code></p></li>
+</ol>
+<p>Drie varianten zijn dus mogelijk om dezelde handeling uit te drukken. Misschien zelfs een vierde want <code class="docutils literal notranslate"><span class="pre">++n</span></code> (of <code class="docutils literal notranslate"><span class="pre">--n</span></code>) is ook mogelijk!</p>
+</div>
+<div class="section" id="een-subtiel-verschil">
+<h3>Een subtiel verschil<a class="headerlink" href="#een-subtiel-verschil" title="Permalink naar deze titel">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">n++</span></code> versus <code class="docutils literal notranslate"><span class="pre">++n</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">i</span><span class="o">++;</span> <span class="c1">// a = 3, i = 4</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="o">++</span><span class="n">a</span><span class="o">;</span> <span class="c1">// b = 4, a = 4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zowel de waarden van <code class="docutils literal notranslate"><span class="pre">i</span></code> als <code class="docutils literal notranslate"><span class="pre">a</span></code> worden geïncrementeerd, het verschil tussen beide is wannéér dit gebeurt, voor of ná de expressie.</p>
+<p><code class="docutils literal notranslate"><span class="pre">++i</span></code> verhoogt het getal <em>voordat</em> de huidige uitdrukking wordt geëvalueerd, terwijl <code class="docutils literal notranslate"><span class="pre">i++</span></code> het getal verhoogt <em>nadat</em> de uitdrukking is geëvalueerd.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">++</span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Incrementeer <strong>voor</strong> de expressie, de waarde 3 wordt teruggegeven.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Als we <code class="docutils literal notranslate"><span class="pre">a</span></code> opvragen dan is de waarde inderdaad 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">++</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Incrementeer <strong>na</strong> de expressie, de waarde 2 wordt teruggegeven (de beginwaarde).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Als <code class="docutils literal notranslate"><span class="pre">b</span></code> vervolgens wordt opgevraagd is het inderdaad geïncrementeerd!</p>
+</div>
+</div>
+<div class="section" id="eindige-lussen">
+<h2>Eindige lussen<a class="headerlink" href="#eindige-lussen" title="Permalink naar deze titel">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> lussen</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+
+<span class="k">while</span> <span class="o">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Blastoff&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Denk terug aan de <code class="docutils literal notranslate"><span class="pre">while</span></code> lus waar we mee zijn begonnen, dit kan worden herschreven naar een <code class="docutils literal notranslate"><span class="pre">for</span></code> lus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">;</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Blastoff&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Blastoff
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">;</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>( <strong>initialisatie ; conditie ; incrementatie of decrementatie</strong> )</p>
+</div></blockquote>
+<ol>
+<li><p>initialisatie</p>
+<p>Hier wordt een variabele geinitialisereerd, dit wordt eenmalig uitgevoerd wanneer de lus start.</p>
+</li>
+<li><p>conditie</p>
+<p>Deze conditie wordt elke keer getest en de lus wordt uitgevoerd zolang deze conditie waar is (<code class="docutils literal notranslate"><span class="pre">true</span></code>).</p>
+</li>
+<li><p>Incrementeren of decrementeren</p>
+<p>Het verhogen of verlagen van de variabele waarde. Dit wordt uitgevoerd bij elke volgende herhaling.</p>
+</li>
+</ol>
+<div class="section" id="eindig-en-oneindig">
+<h3>Eindig en oneindig<a class="headerlink" href="#eindig-en-oneindig" title="Permalink naar deze titel">¶</a></h3>
+<p>Waarom wordt een <code class="docutils literal notranslate"><span class="pre">while</span></code> een oneindige lus genoemd? Je gebruikt deze lus wanneer je niet zeker weet hoeveel keer de lus moet worden doorlopen. Bijvoorbeeld als je een gebruiker vraagt naar een wachtwoord, dan weet je niet van tevoren hoe vaak je de vraag moet herhalen omdat de gebruiker daar meerdere keren over kan doen (wachtwoord vergeten, verkeerd getypt, etc.).</p>
+<p>Een <code class="docutils literal notranslate"><span class="pre">for</span></code> lus gebruik je eerder als je wél weet hoe vaak het zal moeten doorlopen, bijvoorbeeld voor het doorlopen van een array van waarden of een string.</p>
+<p>Maar bedenk, elke <code class="docutils literal notranslate"><span class="pre">while</span></code> lus kan herschreven worden naar een <code class="docutils literal notranslate"><span class="pre">for</span></code> lus en vice versa.</p>
+</div>
+</div>
+<div class="section" id="geneste-lussen">
+<h2>Geneste lussen<a class="headerlink" href="#geneste-lussen" title="Permalink naar deze titel">¶</a></h2>
+<p><img alt="Railway clock" src="../_images/SBB_railway_clock_animated.gif" /></p>
+<p>Voordat de klok een uur kan verspringen zullen eerst alle minuten worden doorlopen…</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">24</span><span class="o">;</span> <span class="n">hour</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">minute</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="o">;</span> <span class="n">minute</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;De tijd is %02d:%02d\n&quot;</span><span class="o">,</span> <span class="n">hour</span><span class="o">,</span> <span class="n">minute</span><span class="o">);</span>
+                <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">De tijd is 00:00</span>
+<span class="go">De tijd is 00:01</span>
+<span class="go">...</span>
+<span class="go">De tijd is 23:58</span>
+<span class="go">De tijd is 23:59</span>
+</pre></div>
+</div>
+<p>De buitenste lus doorloopt de uren, de binnenste lus de minuten. De buitenste lus zal pas een volgende iteratie starten als de binnenste lus in beëindigd.</p>
+</div>
+<div class="section" id="karakters">
+<h2>Karakters<a class="headerlink" href="#karakters" title="Permalink naar deze titel">¶</a></h2>
+<p>Een <code class="docutils literal notranslate"><span class="pre">char</span></code> representeert een enkel karakter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;!&#39;</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let op de enkele aanhalingstekens! Maakt twee karakters een string?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">+</span> <span class="n">c</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>66
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zou een optelling een string opleveren? Nee, het levert een numerieke waarde op!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="mi">66</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B
+</pre></div>
+</div>
+</div>
+</div>
+<p>Maar een <code class="docutils literal notranslate"><span class="pre">int</span></code> kan je <em>casten</em> naar een <code class="docutils literal notranslate"><span class="pre">char</span></code> en in dit geval komt 66 overeen met B. Hoe werkt dit?</p>
+<div class="section" id="unicode">
+<h3>Unicode<a class="headerlink" href="#unicode" title="Permalink naar deze titel">¶</a></h3>
+<p><a class="reference external" href="https://nl.wikipedia.org/wiki/Unicode">Unicode</a> is een superset van <a class="reference external" href="https://nl.wikipedia.org/wiki/ASCII_(tekenset)">ASCII</a></p>
+<p><img alt="ASCII table" src="../_images/ascii_table.png" /></p>
+<p>Een <code class="docutils literal notranslate"><span class="pre">char</span></code> staat voor een <em>code point</em>, een numerieke waarde die voor een karakter staat. De numerieke waarde van “!” is 33, als je dit verdubbelt dan komt je uit op 66, wat staat voor het karakter “B”.</p>
+</div>
+<div class="section" id="char-en-string">
+<h3><code class="docutils literal notranslate"><span class="pre">char</span></code> en <code class="docutils literal notranslate"><span class="pre">String</span></code><a class="headerlink" href="#char-en-string" title="Permalink naar deze titel">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;ha&quot;</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;!&#39;</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aha!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Een karakter toevoegen aan een <code class="docutils literal notranslate"><span class="pre">String</span></code> is dus heel goed mogelijk!</p>
+</div>
+</div>
+<div class="section" id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink naar deze titel">¶</a></h2>
+<p>Een verzameling van <code class="docutils literal notranslate"><span class="pre">char</span></code>’s?</p>
+<div class="section" id="de-lengte-van-een-string">
+<h3>De lengte van een <code class="docutils literal notranslate"><span class="pre">String</span></code><a class="headerlink" href="#de-lengte-van-een-string" title="Permalink naar deze titel">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">fruit</span> <span class="o">=</span> <span class="s">&quot;banana&quot;</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="o">.</span><span class="na">length</span><span class="o">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="een-string-doorlopen">
+<h3>Een string doorlopen<a class="headerlink" href="#een-string-doorlopen" title="Permalink naar deze titel">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">reversed</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">fruit</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="n">reversed</span> <span class="o">=</span> <span class="n">fruit</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">+</span> <span class="n">reversed</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">reversed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ananab
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="substrings">
+<h3>Substrings<a class="headerlink" href="#substrings" title="Permalink naar deze titel">¶</a></h3>
+<p>Een deel van een <code class="docutils literal notranslate"><span class="pre">String</span></code></p>
+<p><img alt="Fruit index" src="../_images/fruit_index.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ban
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nan
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="mi">6</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>De eerste parameter is de start index, deze is <em>inclusief</em>. De stop index is <em>exclusief</em> (tot, en niet tot <em>en met</em>).</p>
+<p>Als je meer vraagt dan de string lang is zal je een lege string als returnwaarde krijgen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>banana
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nana
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">6</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Een stopwaarde is niet noodzakelijk, als je <code class="docutils literal notranslate"><span class="pre">substring</span></code> een enkele parameter aanroept dan zal de returnwaarde een substring zijn vanaf deze index.</p>
+</div>
+<div class="section" id="strings-vergelijken">
+<h3>Strings vergelijken<a class="headerlink" href="#strings-vergelijken" title="Permalink naar deze titel">¶</a></h3>
+<p>Over waarde en identiteit</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;Hallo wereld!&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Dag allemaal!&quot;</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>false
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">==</span></code> betekent een vergelijking van identiteit, of met andere woorden, hebben deze objecten hetzelfde adres in het geheugen?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">b</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>false
+</pre></div>
+</div>
+</div>
+</div>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">equals</span></code> gebruik je voor een vergelijking van waarden, ongeacht de lokatie in het geheugen.</p>
+</div>
+<div class="section" id="bijzonder-gedrag">
+<h3>Bijzonder gedrag<a class="headerlink" href="#bijzonder-gedrag" title="Permalink naar deze titel">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;Hallo wereld!&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hallo wereld!&quot;</span><span class="o">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>true
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">b</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>true
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nu lijken het wel dezelfde objecten wat betreft zowel identiteit als waarde?!? Er is iets bijzonders aan de hand met strings, lees om deze reden <a class="reference internal" href="3c_string_mystery.html"><span class="doc std std-doc">String Mystery</span></a> door voor de achtergrond van dit gedrag, het heeft alles te maken hoe strings worden aangemaakt en optimalisaties die de JVM toepast.</p>
+</div>
+<div class="section" id="de-boodschap">
+<h3>De boodschap<a class="headerlink" href="#de-boodschap" title="Permalink naar deze titel">¶</a></h3>
+<p>Gebruik altijd <code class="docutils literal notranslate"><span class="pre">equals</span></code> als je wilt vergelijken op <em>waarde</em>!</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "java"
+        },
+        kernelOptions: {
+            kernelName: "java",
+            path: "./topics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'java'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../course/week_3.html" title="vorige pagina">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">vorige</p>
+                <p class="prevnext-title">Week 3</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="3b_arrays_en_referenties.html" title="volgende pagina">
+            <div class="prevnext-info">
+                <p class="prevnext-label">volgende</p>
+                <p class="prevnext-title">Arrays en referenties</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

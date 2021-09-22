@@ -48,3 +48,26 @@ parts:
     sections:
     - file: exercises/12_12_if_statements
       title: Condities
+
+- caption: Week 3
+  chapters:
+  - file: course/week_3
+    title: Onderwerpen
+    sections:
+    - file: topics/3a_lussen_en_strings
+      title: Lussen en strings
+    - file: topics/3b_arrays_en_referenties
+      title: Arrays en referenties
+    - file: topics/3c_string_mystery
+      title: String Mystery
+  - file: exercises/multiplication/index
+    title: Practicum
+  - file: problems/profiler/index
+    title: Opgave
+  - file: course/ex_3
+    title: Oefening
+    sections:
+    - file: exercises/string_loops.md
+      title: Strings en lussen
+    - file: exercises/codingbat_arrays_strings
+      title: CodingBat

@@ -10,7 +10,7 @@ data: https://cs50.harvard.edu/x/2021/psets/6/dna/
 ## Doel
 
 -   Oefenen met het schrijven van lussen
--   Oefenen met strings en handelingen op strings
+-   Oefenen met strings
 -   Verder gebruik van arrays
 
 Download en pak het projectbestand <a href="../../projects/profiler.zip">profiler.zip</a> uit. Dit bestand bevat een klasse `Profile.java` die je verder zal gaan uitwerken en databestanden om jouw oplossing te testen.
@@ -33,7 +33,7 @@ CODIS, de [DNA-database](https://www.fbi.gov/services/laboratory/biometric-analy
 
 ### Database
 
-Hoe zou zo'n DNA-database er uit kunnen zien? In zijn eenvoudigste vorm zou je je een DNA database kunnen voorstellen als een CSV bestand, waarin elke rij overeenkomt met een individu, en elke kolom met een bepaalde STR.
+Hoe zou zo'n DNA-database er uit kunnen zien? In zijn eenvoudigste vorm zou je je een DNA database kunnen voorstellen als een CSV (*comma separated values*) bestand, waarin elke rij overeenkomt met een individu, en elke kolom met een bepaalde STR.
 
 ```text
 name,AGAT,AATG,TATC
@@ -270,7 +270,7 @@ Het projectbestand bevat een aantal STR-databases en DNA-sequenties om mee te te
     java Profile.java databases/large.csv sequences/14.txt
     ```
 
-15. Het volgende geeft als antwoord **Severus**
+15. Het volgende geeft als antwoord **Sirius**
     ```console
     java Profile.java databases/large.csv sequences/15.txt
     ```

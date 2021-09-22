@@ -33,7 +33,13 @@ Eenmaal gedefiniëerd kan een array geen andere grootte meer hebben, deze staat 
 
 ## Tweedimensionale arrays
 
-In deze opgave introduceren we een *tweedimensionaal* array, een *array van arrays*. Dit formaat is zeer geschikt om bijvoorbeeld tabulaire data te representeren. Om het voorbeeld van een reeks temperaturen verder te volgen zouden we op deze manier meerdere reeksen kunnen representeren, bijvoorbeeld per maand:
+In deze opgave introduceren we een *tweedimensionaal* array, een *array van arrays*. Dit formaat is zeer geschikt om bijvoorbeeld tabulaire data te representeren.
+
+```{note}
+Een tweedimensionaal array zal je misschien herkennen als een *list of lists*, of een `LoL`, uit de modules Programmeren I&II. Een array is niet mutable, het Python type *tuple* zal hier het dichtst bij in de buurt komt, dus zie een tweedimensionaal array als een *tuple of tuples*.
+```
+
+Om het voorbeeld van een reeks temperaturen verder te volgen zouden we op deze manier meerdere reeksen kunnen representeren, bijvoorbeeld per maand:
 
 ```java
 double[][] = new double[12][31];
@@ -150,6 +156,10 @@ for (int row = 0; ...) {
 }
 ```
 
+```{tip}
+Lees ook de paragraaf [6.4 Nested Loops](https://books.trinket.io/thinkjava2/chapter6.html#sec75) in het boek over geneste lussen.
+```
+
 Het kan zijn dat jouw eerste resultaat vergelijkbaar is met het volgende:
 
 ```text
@@ -164,9 +174,9 @@ In dit geval ben je goed op weg, maar het resultaat is nog niet naar wens voor d
 
 ### Arrays printen
 
-Je zult hebben gemerkt dat je arrays niet zomaar kan printen, er wordt nietstandaard een leesbare structuur geprint maar een cryptische aanduiding naar een geheugenlokatie, bijvoorbeeld `[I@170e4a3d`.
+Je zult hebben gemerkt dat je arrays niet zomaar kan printen, er wordt standaard een niet leesbare structuur getoond die een (cryptische) verwijzing is naar een geheugenlokatie, bijvoorbeeld `[I@170e4a3d`.
 
-Dit is het moment om tegelijkertijd verder te werken aan een methode die dit wel voor ons kan gaan doen.
+Dit is het moment om tegelijkertijd verder te werken aan een methode die dit wel voor jou kan gaan doen, op naar stap 2!
 
 ## Stap 2: tekst
 
@@ -204,9 +214,7 @@ Je zal dit moeten aanpassen en na elke rij een nieuwe regel moeten printen:
 0481216
 ```
 
-Je bent al goed op weg als je dit op scherm krijgt, maar het is nog niet heel netjes. Gebruik per waarde `Sytem.out.printf` om een *geformatteerde* string te maken, en gebruikt daar `%4d` voor.
-
-Dit betekent dat waarden (decimalen in dit geval) altijd worden aangevuld tot 4 karakters. Bijvoorbeeld 1 zal met spaties worden aangevuld tot `"   1"` en 100 tot `" 100"`. Op deze manier heb je in ieder geval voldoende voor tabellen met waarden tot in de honderden!
+Je bent al goed op weg als je dit op scherm krijgt, maar het is nog niet heel netjes. Gebruik per waarde `Sytem.out.printf` om een *geformatteerde* string te maken, en gebruikt daar `%4d` voor. Dit betekent dat waarden (decimalen in dit geval) altijd worden aangevuld tot 4 karakters. Bijvoorbeeld 1 zal met spaties worden aangevuld tot `"   1"` en 100 tot `" 100"`. Op deze manier heb je in ieder geval voldoende voor tabellen met waarden tot in de honderden!
 
 Als het goed is zal je uiteindelijk een geformatteerd resultaat krijgen:
 
@@ -311,6 +319,8 @@ td:not(:first-child).diagonal {
 }
 ```
 
+Open het bestand `index.html` nu in jouw browser.
+
 ### De methode `toHtml`
 
 Maar een methode `toHtml` aan met de volgende signatuur:
@@ -367,7 +377,7 @@ of als:
 
 ### Output redirection
 
-Je wilt natuurlijk direct jouw resultaat in de browser bekijken en zou je het naar `index.html` willen schrijven. Je kan hier gebruik maken van de functionaliteit van jouw systeem voor *input*- en *output* redirection. Om de output naar het scherm (standaard) om te leiden naar een bestand kan je het volgende gebruiken:
+Je wilt graag jouw resultaat in een browser bekijken en de output naar `index.html` schrijven. Je kan hier gebruik maken van de functionaliteit van jouw systeem voor *input*- en *output* redirection. Om de output naar het scherm (standaard) om te leiden naar een bestand kan je het volgende gebruiken:
 
 ```console
 > java MulTable.java 10 -html > index.html

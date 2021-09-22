@@ -10,7 +10,7 @@ Bijvoorbeeld, de volgende zijn allemaal abecedarische woorden:
 > accent, accept, afkoop, afloop, agnost, begijn, bekort, beloop, bemost, chintz, chloor, dekkop, dekmos, dikkop, dikoor, eenoor, effort, floppy, glossy, abelmos, accijns, beknopt, bennoot, bijknop, bijloop, bijnoot, deinoor, deeghouw, knoop
 
 Schrijf een methode `isAbecedarian` die een `String` accepteert en een
-`booleaan` teruggeeft dat aangeeft of het woord abecedarisch is.
+`boolean` teruggeeft die aangeeft of het woord abecedarisch is.
 
 ## Dubbelwoorden
 
@@ -21,7 +21,7 @@ in het woordenboek:
 > dodo, enen, jojo, lala, mama, mimi, papa, bonbon, dumdum, inging, kerker, tamtam, tenten, verver, beriberi, couscous, genegene, taaitaai
 
 Schrijf een methode `isDoubloon` die een `String` accepteert en controleert of het
-een dubbelwoord is. Om hoofdletters te negeren, roep je de `toLowerCase` methode aan voor je controleert.
+een dubbelwoord is. Om hoofdletters te negeren, roep je de `toLowerCase` methode aan van de string voor je controleert.
 
 ```{note}
 De opgaven ABC en Dubbelwoorden kan je ook in het boek terugvinden in [hoofdstuk 6](https://books.trinket.io/thinkjava2/chapter6.html).
@@ -31,5 +31,4 @@ De opgaven ABC en Dubbelwoorden kan je ook in het boek terugvinden in [hoofdstuk
 
 ♔ ♕ ♖ ♗ ♘ ♙ ♚ ♛ ♜ ♝ ♞ ♟
 
-In [Unicode](https://unicode.org) worden karakters door numerieke *code points* gerepresenteerd. Schaakstukken zijn ook [gedefinieerd](https://en.wikipedia.org/wiki/Chess_symbols_in_Unicode) en kunnen als karakters worden gebruikt. Het is een oplopende reeks waar 9812 staat voor de witte koning en 9823 de zwarte pion. Doorloop met een lus deze reeks en print ze als `char` achterelkaar op het scherm.
-
+In [Unicode](https://unicode.org) worden karakters door numerieke *code points* gerepresenteerd. Schaakstukken zijn ook [gedefinieerd](https://en.wikipedia.org/wiki/Chess_symbols_in_Unicode) en kunnen als karakters worden gebruikt. Het is een oplopende reeks die begint met 9812 (witte koning) en eindigt op 9823 (zwarte pion). Doorloop deze reeks met een lus en print elke waarde als een `char`.

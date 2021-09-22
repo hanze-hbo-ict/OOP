@@ -1,12 +1,13 @@
-FROM openjdk:11.0.3-jdk
+FROM ubuntu:xenial
 
 RUN apt-get update
 RUN apt-get install -y python3-pip
+RUN apt-get install -y default-jdk-headless
 
 # add requirements.txt, written this way to gracefully ignore a missing file
 COPY . .
 RUN ([ -f requirements.txt ] \
-    && pip3 install --no-cache-dir -r requirements.txt) \
+    && pip3 install --no-cache-dir -r requirements_binder.txt) \
         || pip3 install --no-cache-dir jupyter jupyterlab jupyter-client
 
 USER root

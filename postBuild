@@ -1,6 +1,6 @@
-#!/binbash
-
 set -e
+
+echo "::: ijava install"
 
 curl -L https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip > ijava-kernel.zip
 

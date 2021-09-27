@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -584,7 +584,7 @@
 <p>Elke keer dat de lus wordt doorlopen, toont het programma de waarde van <code class="docutils literal notranslate"><span class="pre">n</span></code> en controleert vervolgens of deze even of oneven is. Als het even is, wordt de waarde van <code class="docutils literal notranslate"><span class="pre">n</span></code> door 2 gedeeld. Is het oneven, dan wordt de waarde vervangen door <span class="math notranslate nohighlight">\(3n+1\)</span>. Bijvoorbeeld, als de beginwaarde 3 is, dan is de resulterende reeks 3, 10, 5, 16, 8, 4, 2, 1.</p>
 <p>Aangezien <code class="docutils literal notranslate"><span class="pre">n</span></code> soms toeneemt en soms afneemt, is er geen voor de hand liggend bewijs dat <code class="docutils literal notranslate"><span class="pre">n</span></code> ooit 1 zal bereiken en dat het programma ooit zal eindigen. Voor sommige waarden van <code class="docutils literal notranslate"><span class="pre">n</span></code>, zoals machten van twee, kunnen we bewijzen dat het programma eindigt.</p>
 <p>De moeilijke vraag is dus of dit programma eindigt voor {alle} waarden van <code class="docutils literal notranslate"><span class="pre">n</span></code>. Tot nu toe is niemand er in geslaagd om dit te bewijzen of te weerleggen! Zie voor meer informatie
-Voor meer informatie over dit probleem het[vermoeden van Collatz] (https://nl.wikipedia.org/wiki/Vermoeden_van_Collatz).</p>
+Voor meer informatie over dit probleem het <a class="reference external" href="https://nl.wikipedia.org/wiki/Vermoeden_van_Collatz">vermoeden van Collatz</a>.</p>
 <p>Het vakgebied informatica is geïnteresseerd in dit soort vragen, omdat de antwoorden daarop inzicht geven in de grenzen van wat computers wel en niet kunnen.</p>
 </div>
 </div>
@@ -838,14 +838,11 @@ Voor meer informatie over dit probleem het[vermoeden van Collatz] (https://nl.wi
 <h2>Geneste lussen<a class="headerlink" href="#geneste-lussen" title="Permalink naar deze titel">¶</a></h2>
 <p><img alt="Railway clock" src="../_images/SBB_railway_clock_animated.gif" /></p>
 <p>Voordat de klok een uur kan verspringen zullen eerst alle minuten worden doorlopen…</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">24</span><span class="o">;</span> <span class="n">hour</span><span class="o">++)</span> <span class="o">{</span>
             <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">minute</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="o">;</span> <span class="n">minute</span><span class="o">++)</span> <span class="o">{</span>
                 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;De tijd is %02d:%02d\n&quot;</span><span class="o">,</span> <span class="n">hour</span><span class="o">,</span> <span class="n">minute</span><span class="o">);</span>
-                <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">60</span><span class="o">);</span>
             <span class="o">}</span>
         <span class="o">}</span>
     <span class="o">}</span>

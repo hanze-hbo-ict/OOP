@@ -19,7 +19,7 @@ In deze opgave ga je het volgende programmma schrijven
 
 Voordat je aan deze opgave begint zal je eerst het voorbeeld programma `NestedCircles.java` gaan bestuderen en uitvoeren. Dit programma maakt gebruik van de klasse `StdDraw` uit de bibliotheek `stdlib` en je zal deze bibliotheek ook gaan gebruiken in de opgave.
 
-De bibliotheek `stdlib` hoef je niet zelf te downloaden, deze is opgenomen in het projectbestand voor deze opgave. Download het projectbestand <a href="../projects/nested_circles.zip">nested_circles.zip</a> en pak het uit.
+De bibliotheek `stdlib` hoef je niet zelf te downloaden, deze is opgenomen in het projectbestand voor deze opgave. Download het projectbestand <a href="../../projects/nested_circles.zip">nested_circles.zip</a> en pak het uit.
 
 ## Voorbeeld
 

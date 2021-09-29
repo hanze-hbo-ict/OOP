@@ -172,7 +172,7 @@ Alternatieve opdracht:
 
 ## Week 7
 
-collegevije week
+collegevrije week
 
 ## Klassen (week 8)
 
@@ -202,5 +202,5 @@ Proeftoets en afronding
 
 Overwegingen:
 
-- per week 1 opdracht waar feedback op kan worden gegeven door docent via Gradescop
+- per week 1 opdracht waar feedback op kan worden gegeven door de docent via Gradescope
 - rest autograding waar ze tegenaan kunnen werken.

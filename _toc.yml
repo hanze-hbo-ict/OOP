@@ -69,5 +69,24 @@ parts:
     sections:
     - file: exercises/string_loops.md
       title: Strings en lussen
-    - file: exercises/codingbat_arrays_strings
-      title: CodingBat
+    - file: exercises/codingbat_strings
+      title: CodingBat strings
+    - file: exercises/codingbat_arrays
+      title: CodingBat arrays
+
+- caption: Week 4
+  chapters:
+  - file: course/week_4
+    title: Onderwerpen
+    sections:
+    - file: topics/4a_recursie
+      title: Recursie
+  - file: exercises/nested_circles/index
+    title: Practicum
+  - file: problems/recursive_graphics/index
+    title: Opgave
+  - file: course/ex_4
+    title: Oefening
+    sections:
+    - file: exercises/codingbat_recursie
+      title: CodingBat recursie

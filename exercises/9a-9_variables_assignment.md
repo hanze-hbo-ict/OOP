@@ -69,13 +69,17 @@ Maak bij het schrijven van het programma gebruik van de functies "kopiëren" en 
 Als aan een variabele een waarde is toekend betekent het niet dat de variabele daarmee onveranderlijk is geworden. Variabelen zijn "variabel", je kan na een eerste toekenning daar vervolgens nieuwe waarden aan toekennen, bijvoorbeeld
 
 :::{code-block} java
-x = 0.0;
+// declareer een variabele x
+
+double x;
 
 // los de formule op voor x (0.0) en print het resultaat
 
-x = 2.0;
+x = 0.0;
 
 // los nogmaals de formule op voor x (2.0) en print het resultaat
+
+x = 2.0;
 :::
 ```
 ---

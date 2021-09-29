@@ -1,19 +1,66 @@
+---
+source: https://www.cs.princeton.edu/courses/archive/spring14/cos233/assignments/rational/
+---
+
 # Class Design
 
-Het doel van deze opdracht is om je weer op weg te helpen met het programmeren in Java en je eraan te herinneren hoe je nieuwe datatypes (klassen) kunt maken en gebruiken. In het bijzonder implementeert u een klasse met rationale getallen en een clientprogramma dat deze gebruikt om rationele benaderingen van e te berekenen .
+Het doel van deze opdracht is om je weer op weg te helpen met het programmeren in Java en je eraan te herinneren hoe je nieuwe datatypes (klassen) kunt maken en gebruiken. In het bijzonder implementeert je een klasse met rationale getallen en een clientprogramma dat deze gebruikt om rationele benaderingen van $e$ te berekenen .
 
-Het ontwikkelen van een rationeel getal gegevenstype.   Rationale getallen zijn getallen die kunnen worden weergegeven als de verhouding van twee gehele getallen; dat wil zeggen, elk getal p/q waarbij p en q gehele getallen zijn, is een rationaal getal. Java benadert niet-gehele rationale getallen met behulp van floats of doubles, maar deze typen bieden onnauwkeurige representaties. Voor deze opdracht vertegenwoordigt u rationale getallen met een nieuwe Java-klasse, Rational . Deze klasse zou de volgende constructor moeten hebben:
+## Het ontwikkelen van een rationeel getal gegevenstype.
 
-public Rational (lange teller, lange noemer)
+Rationale getallen zijn getallen die kunnen worden weergegeven als de verhouding van twee gehele getallen, dat wil zeggen, elk getal $p/q$ waarbij $p$ en $q$ gehele getallen zijn, is een rationaal getal. Java benadert niet-gehele rationale getallen met behulp van floats of doubles, maar deze typen bieden onnauwkeurige representaties. Voor deze opdracht representeer je rationale getallen met een nieuwe klasse `Rational`.
+
+Deze klasse moet de volgende constructor hebben:
+
+```java
+public Rational (long numerator, long denominator)
+```
+
 en de volgende methoden:
-public Rational add(Rational b) : Voeg het Rational object b toe aan het object en retourneer een nieuwe Rational met de som.
-public Rational vermenigvuldigen (Rational b) : Vermenigvuldig het Rationele object b met het object en retourneer een nieuwe Rational met het product.
-public Rational aftrekken (Rational b) : Trek het Rational object b van het object af en retourneer een nieuw Rational met het verschil.
-public Rational divide (Rational b) : Deel het object door het Rational object b en retourneer een nieuwe Rational met het resultaat.
-public Rational wederkerig() : Geef het omgekeerde van het rationele terug.
-public Rational negate() : Return -1 keer de opgeslagen rationale.
-public String toString () : Retourneert een tekenreeksweergave van het rationale getal. Als de noemer 1 is, drukt u alleen de teller af.
-U kunt dit zien als de interface die u gaat gebruiken om te communiceren met uw gegevenstype rationale getallen. Het doel is om de mogelijke waarden van variabelen met het type en de methoden die dergelijke variabelen manipuleren nauwkeurig te spellen. In dit geval zeggen we dat Rationele getallen paren van lange gehele getallen zijn, en dat we functies zullen hebben voor: het initialiseren ervan; ze afdrukken; optellen/vermenigvuldigen/aftrekken/delen van twee en het resultaat in een derde plaatsen; en het wederkerige van een van hen ontkennen/vinden en het resultaat in een nieuw Rational plaatsen .
+
+```java
+/**
+ * Voeg het Rational object b toe aan het object
+ * en geef een nieuwe Rational terug met de som.
+ */
+public Rational add(Rational b)
+
+/**
+ * Vermenigvuldig het Rational object b met het object
+ * en geef een nieuwe Rational terug met het product.
+ */
+public Rational multiply(Rational b)
+
+/**
+ * Trek het Rational object b af van het object en geef
+ * een nieuwe Rational terug met het verschil.
+ */
+public Rational subtract(Rational b)
+
+/**
+ * Deel het object door het Rational object b en geef
+ * een nieuwe Rational terug met het resultaat.
+ */
+public Rational divide(Rational b)
+
+/**
+ * Geeft de reciproke van het rationale getal terug.
+ */
+public Rational reciprocal()
+
+/**
+ * Geeft -1 keer het opgeslagen rationale getal terug.
+ */
+public Rational negate()
+
+/**
+ * Geeft een string representatie terug van het rationale getal.
+ * Als de noemer 1 is, druk dan alleen de teller af.
+ */
+public String toString()
+```
+
+Je kunt dit zien als de interface die je gaat gebruiken om te communiceren met jouw rationale getallen gegevenstype . Het doel is om de mogelijke waarden van variabelen met het type en de methoden die dergelijke variabelen manipuleren nauwkeurig te uit te schrijven. In dit geval zeggen we dat `Rational` getallen paren van `long` gehele getallen zijn, en dat we functies zullen hebben voor het *initialiseren* ervan, ze *afdrukken*, *optellen/vermenigvuldigen/aftrekken/delen* van twee en het resultaat in een derde plaatsen en het wederkerige van een van hen ontkennen/vinden en het resultaat in een nieuw Rational plaatsen .
 
 Typisch gebruik van deze klasse zou ongeveer kunnen gaan als:
 
@@ -30,7 +77,10 @@ Eerst moet u deze klasse implementeren in een Java-bestand met de naam Rational.
 Terwijl u aan de code voor de klas werkt, maakt u een clientprogramma met de naam RationalClient.java . Als u niet begrijpt wat "cliënt" betekent, lees dan paragraaf 2.2 nog eens door . In de belangrijkste methode, de ontwikkeling van enkele eenvoudige voorbeelden om de functionaliteit van de testen Rational klasse.
 
 Zodra u ervan overtuigd bent dat uw code correct is, schrijft u een methode, public Rational approx_e(int N) , in uw clientprogramma dat de Taylor- reeksuitbreiding gebruikt:
+
+
 e = 1/0! + 1/1! + 1/2! +1/3! + 1/4! + 1/5! + . . .
+
 om de eerste N-termen van de rationele benadering van e te berekenen . Als u problemen heeft met de faculteit, kunt u terugkijken op paragraaf 2.3 over recursie; het is oké om de code te gebruiken die je daar vindt. Druk de waarde af die u krijgt nadat elke term aan de benadering is toegevoegd. De uitvoer voor N = 6 moet zijn:
 1/1 2/1 5/2 32/12 780/288 93888/34560.
 Verbetering van de rationele Rationele klasse.   Er zijn verschillende problemen met onze implementatie van de rationale-getalklasse. Wat gebeurt er met de waarden als we een nauwkeurigere benadering van e proberen te berekenen , bijv. N rond 10? Het vreemde gedrag dat u waarneemt, is het gevolg van overloop . De compiler zal u niet vertellen wanneer de teller of noemer buiten het bereik van gehele getallen valt die lang kunnen worden opgeslagen, dus u moet altijd voorzichtig zijn bij het uitvoeren van numerieke berekeningen.
@@ -84,3 +134,6 @@ public class Euclid {
     }
 }
 ```
+
+---
+Copyright © 2014 Tony Capra, R. Sedgewick, A. LaPaugh, and S. Arora.

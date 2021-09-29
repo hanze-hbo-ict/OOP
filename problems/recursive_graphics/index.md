@@ -4,11 +4,12 @@
 
 * Een bibliotheek van *statische* methodes schrijven die geometrische transformaties op veelhoeken (polygonen) uitvoert.
 * Een programma schrijven dat een Sierpinski driehoek tekent.
-* Een programma ontwerpen en ontwikkelen dat een recursief patroon van eigen ontwerp in beeld brengt.
+* Een programma ontwerpen en ontwikkelen dat een recursief patroon van eigen ontwerp in beeld brengt (optioneel).
+
+<!--
 
 ## Inleiding
 
-<!--
 Read Section 2.3 of the textbook. You may also find it instructive to work through some of the other exercises and look at the solutions on the booksite afterwards. You should also familiarize yourself with the [StdDraw](https://introcs.cs.princeton.edu/java/11cheatsheet/#StdDraw) API.
 -->
 
@@ -16,9 +17,25 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 
 Download en unzip de project zip <a href="../projects/sierpinsky.zip">sierpinsky.zip</a>, die de bestanden bevat die je nodig hebt voor deze opdracht.
 
+```{important}
+Je gaat in deze opgave gebruik maken van de klasse `StdDraw` uit de `stdlib` bibliotheek (deze bibliotheek is opgenomen in het projectbestand).
+
+Bij het uitvoeren van jouw programma op de command line zal je Java moeten vertellen dat je gebruik maakt van deze bibliotheek en dat Java het moet opnemen in het *classpath*. Je zal om deze reden een extra argument bij de aanroep moeten meegeven, bijvoorbeeld voor het eerste deel van deze opgave
+
+:::{code-block} console
+> java -cp lib/stdlib.jar Transform2D.java
+:::
+
+Hetzelfde zal gelden voor het tweede deel van deze opgave waar je een programma `Sierpinski.java` gaat schrijven
+
+:::{code-block} console
+> java -cp lib/stdlib.jar Sierpinski.java 4
+:::
+```
+
 ## Deel I - Een geometrische transformatie bibliotheek
 
-Je zal een bibliotheek van statische methodes schrijven die verschillende geometrische transformaties uitvoert op veelhoeken. Wiskundig wordt een veelhoek gedefinieerd door de opeenvolging van hoekpunten $(x_0, y_0), (x_1, y_1), (x_2, y_2), \ldots$. In Java representeren we een veelhoek door de x- en y-coördinaten van de hoekpunten op te slaan in twee parallelle arrays `x[]` en `y[]`. Bijvoorbeeld:
+Je zal een bibliotheek van statische methodes schrijven die verschillende geometrische transformaties uitvoert op veelhoeken. Wiskundig wordt een veelhoek gedefinieerd door de opeenvolging van hoekpunten $(x_0, y_0), (x_1, y_1), (x_2, y_2), \ldots$. In deze opgave representeren we een veelhoek door de x- en y-coördinaten van de hoekpunten op te slaan in twee *parallelle* arrays `x[]` en `y[]`. Bijvoorbeeld:
 
 ```{figure} images/image15.png
 :name: draw_polygon
@@ -37,7 +54,7 @@ StdDraw.polygon(x, y);
 
 ### `Transform2D.java`
 
-Schrijf een tweedimensionale transformatie bibliotheek `Transform2D.java` door de volgende API te implementeren:
+Schrijf een tweedimensionale transformatie bibliotheek `Transform2D.java` door de volgende methoden te implementeren:
 
 ```java
 public class Transform2D {
@@ -55,14 +72,14 @@ public class Transform2D {
     // Rotates the polygon theta degrees counterclockwise, about the origin.
     public static void rotate(double[] x, double[] y, double theta)
 
-    // Tests each of the API methods by directly calling them.
+    // Tests each of the methods by directly calling them.
     public static void main(String[] args)
 }
 ```
 
 ### Requirements
 
-*   De API verwacht dat de hoeken in *graden* zijn, maar Java's goniometrische functies accepteren de argumenten in *radialen*. Gebruik `Math.toRadians()` om van graden naar radialen te converteren.
+*   De methoden verwachten dat de hoeken in *graden* zijn, maar Java's goniometrische functies accepteren de argumenten in *radialen*. Gebruik `Math.toRadians()` om van graden naar radialen te converteren.
 *   De transformatie methoden `scale()`, `translate()`, en `rotate()` muteren de arrays, terwijl `copy()` een nieuwe array teruggeeft.
 *   De hoofdmethode moet elke methode van de `Transform2D` bibliotheek testen. Met andere woorden, je moet elke `Transform2D` methode aanroepen vanuit `main`. Je moet experimenteren met verschillende gegevens, zodat je zeker weet dat je methoden correct zijn geïmplementeerd.
 *   Je kunt het volgende aannemen over de invoer: de arrays doorgegeven aan `scale()`, `translate()`, en `rotate()` zijn niet `null`, hebben dezelfde lengte, en bevatten niet de waarden `NaN`, `Double.POSITIVE_INFINITY`, of `Double.NEGATIVE_INFINITY`.
@@ -193,7 +210,7 @@ public static void main(String[] args) {
 *   $x_i^\prime = x_i \cos \theta - y_i \sin \theta$
 *   $y_i^\prime = y_i \cos \theta + x_i \sin \theta$
 
-Merk op dat in de vergelijkingen $x_i^prime$ en $y_i^prime$ afhangen van de $x_i$ en $y_i$, respectievelijk. In je implementatie kan je best een **kopie** maken van de $x$ en $y$ arrays voor je de $x^prime$ en $y^prime$ arrays berekent!
+Merk op dat in de vergelijkingen $x_i^\prime$ en $y_i^\prime$ afhangen van de $x_i$ en $y_i$, respectievelijk. In je implementatie kan je best een **kopie** maken van de $x$ en $y$ arrays voor je de $x^\prime$ en $y^\prime$ arrays berekent!
 
 Een voorbeeld van testcode voor `rotate()` staat hieronder. We raden je echter ten zeerste aan om te experimenteren met verschillende **waarden** om te bevestigen dat je methodes werken zoals bedoeld.
 
@@ -256,8 +273,8 @@ public static void main(String[] args) {
 }
 ```
 
-```{note}
-Let op,alle tekeningen zijn gegenereerd met de coördinaten-assen, maar je zult deze niet zien als je alleen de bijgeleverde code gebruikt. Je hoeft de assen *niet* te plotten.
+```{attention}
+Let op, alle figuren die je ziet hebben coördinaten-assen, maar je zult deze niet zien als je alleen de bijgeleverde code voor tests gebruikt. Je hoeft deze assen **niet** te tekenen.
 ```
 
 ```{admonition} Roteren rond een willekeurig punt.
@@ -268,41 +285,44 @@ Hoewel de rotatie code hierboven alleen polygonen rond de oorsprong zal roteren,
 
 ### `main()`
 
-Tests **each** method of the `Transform2D` library by calling it. You should experiment with various data so you are confident that your methods are implemented correctly. Feel free to draw to standard draw using different polygons. You **should not** expect any command-line arguments.
-
 Test **elke** methode van de `Transform2D` bibliotheek door ze aan te roepen. Je moet experimenteren met verschillende waarden, zodat je er zeker van bent dat de methoden correct zijn geïmplementeerd. Voel je vrij om naar standard draw te tekenen met verschillende polygonen. Je **moet** geen command line argumenten te accepteren.
 
 ## Deel II - Sierpinski driehoek
 
-De Sierpinski driehoek[^ftnt1] is een voorbeeld van een fractaal patroon.
+De Sierpinski driehoek is een voorbeeld van een fractaal patroon[^ftnt1].
+
+```{figure} images/image22.png
+:name: sp_1
+Sierpinski driehoek met diepte 0
+```
 
 ```{figure} images/image8.png
 :name: sp_1
-Sierpinski triangle of order 1
+Sierpinski driehoek met diepte 1
 ```
 
 ```{figure} images/image21.png
 :name: sp_2
-Sierpinski triangle of order 2
+Sierpinski driehoek met diepte 2
 ```
 
 ```{figure} images/image20.png
 :name: sp_3
-Sierpinski triangle of order 3
+Sierpinski driehoek met diepte 3
 
 ```{figure} images/image18.png
 :name: sp_4
-Sierpinski triangle of order 4
+Sierpinski driehoek met diepte 4
 ```
 
 ```{figure} images/image12.png
 :name: sp_5
-Sierpinski triangle of order 5
+Sierpinski driehoek met diepte 5
 ```
 
 ```{figure} images/image17.png
 :name: sp_6
-Sierpinski triangle of order 6
+Sierpinski driehoek met diepte 6
 ```
 
 De Poolse wiskundige Wacław Sierpiński beschreef het patroon in 1915, maar het komt al sinds de 13e eeuw voor in de Italiaanse kunst. Hoewel de Sierpinski driehoek er complex uitziet, kan het worden gegenereerd met een korte *recursieve* functie.
@@ -311,7 +331,7 @@ Jouw hoofdtaak is het schrijven van een recursieve functie `sierpinski()` die ee
 
 ### `Sierpinski.java`
 
-Pas een modulair ontwerp toe bij het schrijven van jouw programma, door het te organiseren in vier functies, zoals gespecificeerd in de volgende API:
+Pas een modulair ontwerp toe bij het schrijven van jouw programma, door het te organiseren in vier functies, zoals gespecificeerd in de volgende methoden:
 
 ```java
 public class Sierpinski {
@@ -364,9 +384,7 @@ Layout of an inverted equilateral triangle
 
 ### Mogelijke stappen
 
-These are purely suggestions for how you might make progress. You do not have to follow these steps. Note that your final `Sierpinski.java` program should not be very long (no longer than `Htree.java`, not including comments and blank lines).
-
-Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeken. Je hoeft deze stappen niet te volgen. Merk op dat je uiteindelijke `Sierpinski.java` programma niet erg lang mag zijn
+Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeken. Je hoeft deze stappen niet te volgen. Merk op dat je uiteindelijke `Sierpinski.java` programma niet erg lang zal zijn
 
 <!-- TODO Htree als voorbeeld/practicum
 (niet langer dan `Htree.java`, commentaar en lege regels niet meegerekend).
@@ -394,17 +412,17 @@ Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeke
     * Om je functie te testen, schrijf je `main()` zo dat het een *integer* command line argument `n` accepteert en `sierpinski(n`) aanroept. Je krijgt de volgende uitvoer als je `sierpinski()` aanroept met `n` van 0 tot 5. Zorg ervoor dat je begrijpt hoe deze functie werkt, en waarom de getallen worden afgedrukt in de volgorde waarin dat gebeurt.
 
         ```console
-        > java-introcs Sierpinski 0
+        > java -cp lib/stdlib.jar Sierpinski.java 0
         [geen output]
         ```
 
         ```console
-        > java-introcs Sierpinski 1
+        > java -cp lib/stdlib.jar Sierpinski.java 1
         1
         ```
 
         ```console
-        > java-introcs Sierpinski 2
+        > java -cp lib/stdlib.jar Sierpinski.java 2
         2
         1
         1
@@ -412,7 +430,7 @@ Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeke
         ```
 
         ```console
-        > java-introcs Sierpinski 3
+        > java -cp lib/stdlib.jar Sierpinski.java 3
         3
         2 1 1 1
         2 1 1 1
@@ -420,7 +438,7 @@ Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeke
         ```
 
         ```console
-        > java-introcs Sierpinski 4
+        > java -cp lib/stdlib.jar Sierpinski.java 4
         4
         3 2 1 1 1 2 1 1 1 2 1 1 1
         3 2 1 1 1 2 1 1 1 2 1 1 1
@@ -428,7 +446,7 @@ Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeke
         ```
 
         ```console
-        > java-introcs Sierpinski 5
+        > java -cp lib/stdlib.jar Sierpinski.java 5
         5
         4 3 2 1 1 1 2 1 1 1 2 1 1 1
           3 2 1 1 1 2 1 1 1 2 1 1 1
@@ -444,17 +462,17 @@ Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeke
     *   Wijzig `sierpinski()` zodat het niet alleen `n` afdrukt, maar ook de lengte van de te plotten driehoek. Je functie moet nu twee argumenten hebben: `n` en `length`. De eerste aanroep van `main()` moet `sierpinski(n, 0.5)` zijn, omdat de grootste Sierpinski driehoek zijde lengte 0.5 heeft. Elk opeenvolgend niveau van recursie halveert de lengte. Jouw functie zou de volgende output moeten geven:
 
         ```console
-        > java-introcs Sierpinski 0
+        > java -cp lib/stdlib.jar Sierpinski.java 0
         [geen output]
         ```
 
         ```console
-        > java-introcs Sierpinski 1
+        > java -cp lib/stdlib.jar Sierpinski.java 1
         1 0.5
         ```
 
         ```console
-        > java-introcs Sierpinski 2
+        > java -cp lib/stdlib.jar Sierpinski.java 2
         2 0.5
         1 0.25
         1 0.25
@@ -462,7 +480,7 @@ Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeke
         ```
 
         ```console
-        > java-introcs Sierpinski 3
+        > java -cp lib/stdlib.jar Sierpinski.java 3
         3 0.5
         2 0.25  1 0.125  1 0.125  1 0.125
         2 0.25  1 0.125  1 0.125  1 0.125
@@ -470,7 +488,7 @@ Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeke
         ```
 
         ```console
-        > java-introcs Sierpinski 4
+        > java -cp lib/stdlib.jar Sierpinski.java 4
         4 0.5
         3 0.25  2 0.125  1 0.0625  1 0.0625  1 0.0625
                 2 0.125  1 0.0625  1 0.0625  1 0.0625
@@ -489,19 +507,21 @@ Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeke
 
 Hieronder staan de Sierpinski-driehoeken voor verschillende waarden van `n`.
 
-|  Input                      | Output                  |
-|-----------------------------|-------------------------|
-| `java-introcs Sierpinski 1` | ![](images/image7.png)  |
-| `java-introcs Sierpinski 2` | ![](images/image19.png) |
-| `java-introcs Sierpinski 3` | ![](images/image13.png) |
+|  Input                                      | Output                  |
+|---------------------------------------------|-------------------------|
+| `java -cp lib/stdlib.jar Sierpinski.java 1` | ![](images/image7.png)  |
+| `java -cp lib/stdlib.jar Sierpinski.java 2` | ![](images/image19.png) |
+| `java -cp lib/stdlib.jar Sierpinski.java 3` | ![](images/image13.png) |
 
 ## Deel III - Maak jouw eigen kunstwerk
 
+Dit is een **optionele** opgave.
+
 ### `Art.java`
 
-In dit deel ga je een programma `Art.java` maken dat een recursieve tekening maakt van je eigen ontwerp. In dit deel kan je jouw creativiteit alle ruimte geven, maar hier zijn wat richtlijnen voor het geval je niet zo artistiek bent.
+In dit deel ga je een programma `Art.java` maken dat een recursieve tekening maakt van je eigen ontwerp. In dit deel kan je jouw creativiteit alle ruimte geven, maar hier zijn wat hints voor het geval je niet zo artistiek bent.
 
-Een zeer goede aanpak is om eerst een zelf-verwijzend patroon te kiezen als doel-output. Hier kan je een aantal [inzendingen van studenten zien](https://www.cs.princeton.edu/courses/archive/fall15/cos126/art/index.php) die een vergelijkbare cursus hebben gevolgd. Zie ook de Famous Fractals in [Fractals Unleashed](https://wayback.archive-it.org/3635/20130719033956/http://library.thinkquest.org/26242/full/index.html) voor enkele ideeën. Hier is een [lijst van fractals, per Hausdorff dimensie](https://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension). Sommige plaatjes zijn moeilijker te genereren dan andere (en sommige vereisen trigonometrie).
+Een zeer goede aanpak is om eerst een recursief patroon te kiezen als doel-output. Hier kan je een aantal [inzendingen van studenten zien](https://www.cs.princeton.edu/courses/archive/fall15/cos126/art/index.php) die een vergelijkbare cursus hebben gevolgd. Zie ook de Famous Fractals in [Fractals Unleashed](https://wayback.archive-it.org/3635/20130719033956/http://library.thinkquest.org/26242/full/index.html) voor enkele ideeën. Hier is een [lijst van fractals, per Hausdorff dimensie](https://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension). Sommige plaatjes zijn moeilijker te genereren dan andere (en sommige vereisen trigonometrie).
 
 ### Requirements
 
@@ -510,6 +530,8 @@ Een zeer goede aanpak is om eerst een zelf-verwijzend patroon te kiezen als doel
 3. Je mag de grootte van het tekenvenster niet veranderen (maar je mag wel de schaal veranderen). Voeg *geen* geluid toe.
 4.  Je tekening kan een geometrisch patroon zijn, een willekeurige constructie, of iets anders dat gebruik maakt van recursieve functies.
 5.  Optioneel mag je de `Transform2D` bibliotheek gebruiken die je in deel 1 hebt geïmplementeerd. Je kunt ook extra geometrische transformaties definiëren in `Art.java`, zoals [lijnvermenigvuldiging](https://en.wikipedia.org/wiki/Shear_mapping), spiegeling over de x- of y-as, of roteren om een willekeurig punt (in tegenstelling tot de oorsprong).
+
+<!--
 6.  Je programma moet worden georganiseerd in ten minste drie afzonderlijke functies, inclusief `main()`. Alle functies *uitgezonderd* `main()` moeten **private** zijn.
 7.  Om volledig krediet te krijgen, moet `Art.java` niet iets zijn dat gemakkelijk herschreven kan worden om lussen te gebruiken in plaats van recursie, en sommige aspecten van de recursieve functie-aanroep boom (of hoe parameters of overlapping worden gebruikt) moeten anders zijn dan de voorbeelden in de les (`HTree`, `NestedCircles`, etc.). Je moet **ten minste** twee van de volgende dingen doen om volledig krediet te krijgen voor `Art.java` (en meer doen **kan** een klein beetje extra krediet opleveren):
 
@@ -527,30 +549,25 @@ Een zeer goede aanpak is om eerst een zelf-verwijzend patroon te kiezen als doel
 9.  Je verliest ook punten als je kunstwerk net zo makkelijk zonder recursie kan worden gemaakt (zoals [Factorial.java](https://introcs.cs.princeton.edu/java/23recursion/Factorial.java.html)). Als de recursieve functie-aanroep-boom voor je methode een rechte lijn is, valt hij waarschijnlijk onder deze categorie.
 10.  Je mag GIF, JPG, of PNG bestanden gebruiken in mijn artistieke creatie. Als je dat doet, zorg er dan voor dat je ze samen met je andere bestanden instuurt. Maak in je readme.txt duidelijk welk deel van het ontwerp van jou is en welk deel geleend is van het afbeeldingsbestand.
 
-## FAQ
-
-**De API checker zegt dat ik mijn methodes private moet maken.** Gebruik de access modifier `private` in plaats van `public` in de method signature. Een public methode kan direct in een andere klasse worden aangeroepen; een private methode niet. De enige `public` methode die je in `Art.java` zou moeten hebben is `main()`.
-
-**Waardoor verlies ik punten op het artistieke gedeelte?** We kijken naar drie dingen: de structuur van de code; de structuur van de recursieve functie-aanroep boom en de kunst zelf.
-
 Bijvoorbeeld, de [Quadricross](https://en.wikipedia.org/wiki/File:Quadriccross.gif) ziet er heel anders uit dan de klassikale voorbeelden, maar de code om het te genereren lijkt heel erg op `HTree`, dus is het een slechte keuze. Aan de andere kant, ook al genereert de [Sierpinski curve](https://www.robertdickau.com/sierpinskiarrow.html) uiteindelijk iets dat lijkt op de Sierpinski driehoek, de code is heel anders (waarschijnlijk inclusief een hoekargument in de recursieve methode), en dus zou het volledige punten verdienen.
 
-<!--
-## Submission
-
-Submit `Transform2D.java`, `Sierpinski.java`, `Art.java` (and optional image files), and a completed `readme.txt`.
+```{warning}
+**De API checker zegt dat ik mijn methodes private moet maken.** Gebruik de access modifier `private` in plaats van `public` in de method signature. Een public methode kan direct in een andere klasse worden aangeroepen, een private methode niet. De enige `public` methode die je in `Art.java` zou moeten hebben is `main()`.
+```
 -->
 
 ## Achtergrond
 
 Fractals in het wild. Hier is een Sierpinski driehoek in [klei](https://www.evilmadscientist.com/article.php/fimofractals), een [Sierpinski koekje](https://www.evilmadscientist.com/article.php/fractalcookies), een [fractal pizza](https://slice.seriouseats.com/archives/2010/09/john-riepenhoffs-recursive-pizza.html), en een [Sierpinski hamantaschen](https://seattlelocalfood.com/2011/03/20/sierpinski-hamantaschen-sierpinskitaschen/).
 
+<!--
 Fractale dimensie (optionele afleiding). Op de lagere school heb je geleerd dat de dimensie van een lijnstuk 1 is, de dimensie van een vierkant 2, en de dimensie van een kubus 3. Maar je hebt waarschijnlijk niet geleerd wat er werkelijk bedoeld wordt met de term *dimensie*. Hoe kunnen we wiskundig of rekenkundig uitdrukken wat het betekent? Formeel kunnen we de *Hausdorff dimensie* of *similariteitsdimensie* van een zelfgelijkvormige figuur definiëren door de figuur te verdelen in een aantal zelfgelijkvormige stukken van kleinere omvang. We definiëren de dimensie als de log (# zelfgelijkende stukken) / log (schalingsfactor in elke ruimtelijke richting). We kunnen bijvoorbeeld het eenheidsvierkant ontbinden in vier kleinere vierkanten, elk met een zijde van 1/2; of we kunnen het ontbinden in 25 vierkanten, elk met een zijde van 1/5. Hier is het aantal zelfgelijkvormige stukken 4 (of 25) en de schalingsfactor 2 (of 5). De dimensie van een vierkant is dus 2, want log (4) / log(2) = log (25) / log (5) = 2. Verder kunnen we de eenheids kubus ontbinden in 8 kubussen, elk met zijde lengte 1/2; of we kunnen hem ontbinden in 125 kubussen, elk met zijde lengte 1/5. De dimensie van een kubus is dus log(8) / log (2) = log(125) / log(5) = 3.
 
 We kunnen deze definitie ook direct toepassen op de (verzameling van witte punten in) Sierpinski driehoek. We kunnen de eenheidsdriehoek van Sierpinski ontbinden in drie Sierpinski-driehoeken, elk met zijde 1/2. De dimensie van een Sierpinski-driehoek is dus log (3) / log (2) ≈ 1.585. De dimensie is fractioneel - meer dan een lijnstuk, maar minder dan een vierkant! Bij Euclidische meetkunde is de dimensie altijd een geheel getal; bij fractale meetkunde kan het iets ertussenin zijn. Fractals lijken op veel fysische objecten; bijvoorbeeld de kustlijn van Groot-Brittannië lijkt op een fractal; de fractal dimensie is gemeten op ongeveer 1.25.
+-->
 
 [^ftnt1]: De Poolse wiskundige Wacław Sierpiński beschreef het patroon in 1915, maar het komt al sinds de 13e eeuw voor in de Italiaanse kunst. Hoewel de Sierpinski driehoek er complex uitziet, kan hij worden gegenereerd met een korte recursieve functie.
 
 ---
 
-Copyright © 1999–2021, [Robert Sedgewick](http://www.cs.princeton.edu/~rs/) and [Kevin Wayne](http://www.cs.princeton.edu/~wayne).
+Copyright © 1999–2021, [Robert Sedgewick](http://www.cs.princeton.edu/~rs/) en [Kevin Wayne](http://www.cs.princeton.edu/~wayne).

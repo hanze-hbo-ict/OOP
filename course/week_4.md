@@ -2,7 +2,7 @@
 
 ## Onderwerpen
 
--   Recursie
+-   [Recursie](/topics/4a_recursie)
 -   Immutabiliteit
 
 ## Boek

@@ -41,12 +41,12 @@ sum is: 42
 max is: 9
 ```
 
-```{tip}
+````{tip}
 Het aantal keren dat je de `for`-lus zal moeten laten doorlopen is gelijk aan het aantal argumenten dat je ontvangt. Het aantal elementen in een array kan je als volgt bepalen:
 
-:::{code-block} java
+```java
 int numArgs = args.length;
-:::
 ```
+````
 ---
 Copyright © [Bradley Kjel](http://chortle.ccsu.edu/)

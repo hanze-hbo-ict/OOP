@@ -34,19 +34,20 @@ Hallo
 Hallo
 Hallo
 Hallo
+```
 
-```note
+````note
 Om dit te doen moet je de `length()` methode gebruiken die het aantal karakters in een string telt:
 
-:::{code-block} java
+```java
 String inputString;
 int times;
 
 # ...
 
 times = inputString.length()
-:::
 ```
+````
 
 ## Punten vullen
 

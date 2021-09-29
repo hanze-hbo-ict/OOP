@@ -431,9 +431,7 @@ Kan ik stappen 5A, 5B, en 5C door elkaar gebruiken? Nee. Het is niet alleen een 
 * De netto kracht (arrays `fx[i]` en `fy[i]`) moeten bij elke tijdstap op 0 worden geïnitialiseerd.
 * Schrijf twee geneste for-lussen om de netto kracht te berekenen die door lichaam `j` op lichaam `i` wordt uitgeoefend. Voeg deze waarden toe aan `fx[i]` en `fy[i]`, maar sla het geval over wanneer `i` gelijk is aan `j` (je wilt niet de kracht van lichaam `i` op zichzelf berekenen).
 
-:::{admonition} Tip
-:class: tip
-
+````{tip}
 Kun je, voordat je de netto krachten berekent, twee geneste lussen schrijven die alle paren van lichamen opsommen? Bijvoorbeeld: welke paren worden niet afgedrukt?
 
 ```console
@@ -452,7 +450,7 @@ n = 5
 3-0 3-1 3-2 3-4
 4-0 4-1 4-2 4-3
 ```
-:::
+````
 
 * Zodra je deze waarden hebt berekend, ga je terug naar stap 5B en gebruik je ze om de versnelling te berekenen (in plaats van aan te nemen dat die nul is).
 

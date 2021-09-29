@@ -81,16 +81,16 @@ public static double[] getPair() {
 }
 ```
 
-```{tip}
+````{tip}
 Veel methoden in deze klassen hebben een `double[]` als parameter en zullen de `x` en `y` waarde uit dit array moeten lezen. Een voorbeeld hoe je dit zou kunnen schrijven:
 
-:::{code-block} java
+```java
 double[] values = {1, 2};
 
 double x = values[0];
 double y = values[1]
-:::
 ```
+````
 
 ## Eenvoudige methoden
 

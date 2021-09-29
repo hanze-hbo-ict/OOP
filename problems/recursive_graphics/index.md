@@ -17,21 +17,21 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 
 Download en unzip de project zip <a href="../../projects/sierpinsky.zip">sierpinsky.zip</a>, die de bestanden bevat die je nodig hebt voor deze opdracht.
 
-```{important}
+````{important}
 Je gaat in deze opgave gebruik maken van de klasse `StdDraw` uit de `stdlib` bibliotheek (deze bibliotheek is opgenomen in het projectbestand).
 
 Bij het uitvoeren van jouw programma op de command line zal je Java moeten vertellen dat je gebruik maakt van deze bibliotheek en dat Java het moet opnemen in het *classpath*. Je zal om deze reden een extra argument bij de aanroep moeten meegeven, bijvoorbeeld voor het eerste deel van deze opgave
 
-:::{code-block} console
+```console
 > java -cp lib/stdlib.jar Transform2D.java
-:::
+```
 
 Hetzelfde zal gelden voor het tweede deel van deze opgave waar je een programma `Sierpinski.java` gaat schrijven
 
-:::{code-block} console
+```console
 > java -cp lib/stdlib.jar Sierpinski.java 4
-:::
 ```
+````
 
 ## Deel I - Een geometrische transformatie bibliotheek
 
@@ -292,7 +292,7 @@ Test **elke** methode van de `Transform2D` bibliotheek door ze aan te roepen. Je
 De Sierpinski driehoek is een voorbeeld van een fractaal patroon[^ftnt1].
 
 ```{figure} images/image22.png
-:name: sp_1
+:name: sp_0
 Sierpinski driehoek met diepte 0
 ```
 

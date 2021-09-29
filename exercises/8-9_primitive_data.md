@@ -54,23 +54,23 @@ Op regel 4 in het programma wordt de waarde van de variabele `value` opgehaald e
 
 4.  Pas het type `short` aan naar `int` (maar verander de waarde 35000 niet) en voer het programma uit. Wat is het verschil? Wat is het grootste getal dat met `int` kan  worden gerepresenteerd?
 
-```{attention}
+````{attention}
 Let op dat je na **elke wijziging** het programma eerst *compilereert*
 
-:::{code-block} console
+```console
 > javac Shortfall.java
-:::
+```
 
 om het vervolgens te kunnen uitvoeren
 
-:::{code-block} console
+```console
 > java Shortfall
-:::
+```
 
 Als je de eerste stap (compileren) vergeet zal altijd de *laatst* gecompileerde versie van jouw programma worden uitgevoerd en zijn de meeest recente wijzigingen niet zichtbaar!
 
 Ontwikkelomgevingen als [IntelliJ](https://www.jetbrains.com/idea/) vereenvoudigen deze handelingen en zorgen er voor dat de code altijd eerst wordt gecompileerd voordat het wordt uitgevoerd.
-```
+````
 
 ## Dubbel gevaar
 
@@ -95,13 +95,13 @@ Het is geen probleem om de naam `value` te gebruiken in dit en in het vorige pro
 
 3.  Probeer nu het programma te "breken". Verander 32 in een waarde die te groot is voor `double` en je een *floating point number too large* fout ziet.
 
-    ```{hint}
+    ````{hint}
     De hoogste waarde van een 64 bit getal is $2^{63} - 1$. Je zou hier misschien een wetenschappelijke notatie willen gebruiken om grote getallen uit te drukken. Bijvoorbeeld $3.14 \times 10^{23}$ kan je schrijven als
 
-    :::{code-block} java
+    ```java
     double value = 3.14e23;
-    :::
     ```
+    ````
 
 ## Exponentiële explosie
 
@@ -153,15 +153,15 @@ A char: A
 
 Observeer en verklaar wat werkt en wat niet werkt in het bovenstaande.
 
-```{caution}
+````{caution}
 De laatste bewerking zal de volgende fout geven:
 
-:::{code-block} console
+```console
 incompatible types: java.lang.String cannot be converted to char
-:::
+```
 
 Dubbele aanhalingstekens betekenen een gegevenstype `String` en dit is iets anders dan een `char`. Enkele- en dubbele aanhalingstekens hebben speciale betekenis!
-```
+````
 
 ---
 Copyright © [Bradley Kjel](http://chortle.ccsu.edu/)

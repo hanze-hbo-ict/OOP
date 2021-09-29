@@ -20,12 +20,12 @@ De JDK die wij aanbevelen is OpenJDK, een *open source* implementatie van Java S
 -   Kies OpenJDK 11 LTS (*Long Term Support*).
 -   Je kan kiezen voor een JVM (Java Virtual Machine), HotSpot is een goede keus.
 
-:::{attention}
+```{attention}
 Let op het volgende bij installatie:
 
 -   **Kies** voor `JAVA_HOME` aan het pad toe te laten toevoegen.
 -   **Negeer** bij installatie de optie om Oracle licentiesleutels toe te voegen, indien dit wordt gevraagd.
-:::
+```
 ````
 
 ````{tabbed} macOS

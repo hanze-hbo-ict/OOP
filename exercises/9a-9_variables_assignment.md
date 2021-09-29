@@ -65,10 +65,10 @@ Schrijf het programma met slechts twee variabelen, `x` en `value` (de uitkomst v
 
 Maak bij het schrijven van het programma gebruik van de functies "kopiëren" en "plakken" van je tekstverwerker om te voorkomen dat je dezelfde regels opnieuw moet typen.
 
-```{hint}
+````{hint}
 Als aan een variabele een waarde is toekend betekent het niet dat de variabele daarmee onveranderlijk is geworden. Variabelen zijn "variabel", je kan na een eerste toekenning daar vervolgens nieuwe waarden aan toekennen, bijvoorbeeld
 
-:::{code-block} java
+```java
 // declareer een variabele x
 
 double x;
@@ -80,7 +80,7 @@ x = 0.0;
 // los nogmaals de formule op voor x (2.0) en print het resultaat
 
 x = 2.0;
-:::
 ```
+````
 ---
 Copyright © [Bradley Kjel](http://chortle.ccsu.edu/)

@@ -81,6 +81,8 @@ parts:
     sections:
     - file: topics/4a_recursie
       title: Recursie
+    - file: topics/4b_immutable_objecten
+      title: Immutabiliteit
   - file: exercises/nested_circles/index
     title: Practicum
   - file: problems/recursive_graphics/index
@@ -90,3 +92,5 @@ parts:
     sections:
     - file: exercises/codingbat_recursie
       title: CodingBat recursie
+    - file: exercises/grote_getallen
+      title: Grote getallen

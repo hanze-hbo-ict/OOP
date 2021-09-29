@@ -67,7 +67,7 @@ Typisch gebruik van deze klasse zou ongeveer kunnen gaan als:
 ```java
 Rational a = new Rational (2, 3);
 Rational b = nuw Rational(-1, 3);
-Rationele sum = a.add(b);
+Rational sum = a.add(b);
 System.out.println(sum); // drukt 1/3 af
 System.out.println(a.negate()); // afdrukken -2/3
 ```

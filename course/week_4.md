@@ -3,7 +3,7 @@
 ## Onderwerpen
 
 -   [Recursie](/topics/4a_recursie)
--   Immutabiliteit
+-   [Immutabiliteit](/topics/4b_immutable_objecten)
 
 ## Boek
 

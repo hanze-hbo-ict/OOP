@@ -156,15 +156,15 @@ CSV-database en bijbehorende methoden
 
 Let op, de STR's kunnen per database verschillen, verwacht dus niet dat elke database de waarden uit de bovenstaande figuur bevat (AGAT, AATG, TATC), wat je hier ziet is een voorbeeld!
 
-```{tip}
+````{tip}
 Elke regel bevat kommagescheiden waarden, gebruik de string `split` methode om de afzonderlijke waarden op te halen. Bijvoorbeeld
 
-:::{code-block} java
+```java
 "Alice,5,2,8".split(",")
-:::
+```
 
 levert een `String[]` array op met 4 elementen ("Alice", "5", "2" en "8").
-```
+````
 
 ### De maximale herhaling van een STR
 

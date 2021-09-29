@@ -356,24 +356,24 @@ en *onder* de lus het afsluitend deel:
 </html>
 ```
 
-```{tip}
+````{tip}
 Bedenk dat het voor een browser niet uitmaakt of HTML wel of niet netjes is geformateerd. Bijvoorbeeld, voor een browser maakt het *niet* uit of HTML geschreven wordt als
 
-:::{code-block} html
+```html
 <tr>
     <td class="diagonal">0</td>
     <td>1</td>
     <td>2</td>
     <td>3</td>
 </tr>
-:::
+```
 
 of als:
 
-:::{code-block} html
+```{code-block} html
 <tr><td class="diagonal">0</td><td>1</td><td>2</td><td>3</td></tr>
-:::
 ```
+````
 
 ### Output redirection
 

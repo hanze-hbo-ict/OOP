@@ -195,4 +195,4 @@ Hier is [Hello World](http://helloworldcollection.de) in meer dan 200 verschille
 
 ---
 
-Copyright © 1999–2021, [Robert Sedgewick](http://www.cs.princeton.edu/~rs/) and [Kevin Wayne](http://www.cs.princeton.edu/~wayne).
+Copyright © 1999–2021, [Robert Sedgewick](http://www.cs.princeton.edu/~rs/) en [Kevin Wayne](http://www.cs.princeton.edu/~wayne).

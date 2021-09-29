@@ -35,5 +35,5 @@ public static int factorial(int n) {
 5.  Optioneel: bij de vorige opgave zal je tegen hetzelfde probleem aanlopen zodra de getallen groter worden. Pas jouw recursieve methode `pow` aan zodat het ook het type `BigInteger` gebruikt.
 
 ```{note}
-De opgave Machtsverheffen kan je in het boek vinden in [hoofdstuk 9](https://books.trinket.io/thinkjava2/chapter6.html), de opgave Faculteit in [hoofdstuk 8](https://books.trinket.io/thinkjava2/chapter6.html).
+De opgave Machtsverheffing kan je in het boek vinden in [hoofdstuk 9](https://books.trinket.io/thinkjava2/chapter6.html), de opgave Faculteit in [hoofdstuk 8](https://books.trinket.io/thinkjava2/chapter6.html).
 ```

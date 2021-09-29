@@ -15,7 +15,7 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 
 ### Voorbereiding
 
-Download en unzip de project zip <a href="../projects/sierpinsky.zip">sierpinsky.zip</a>, die de bestanden bevat die je nodig hebt voor deze opdracht.
+Download en unzip de project zip <a href="../../projects/sierpinsky.zip">sierpinsky.zip</a>, die de bestanden bevat die je nodig hebt voor deze opdracht.
 
 ```{important}
 Je gaat in deze opgave gebruik maken van de klasse `StdDraw` uit de `stdlib` bibliotheek (deze bibliotheek is opgenomen in het projectbestand).

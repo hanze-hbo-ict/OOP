@@ -10,7 +10,7 @@
 
 ## Inleiding
 
-Om te beginnen zal je Java en een programmeeromgeving op jouw computer moeten instellen. Volg de [stap-voor-stap](support/install) instructies zorgvuldig.
+Om te beginnen zal je Java en een programmeeromgeving op jouw computer moeten instellen. Volg de [stap-voor-stap](/support/install) instructies zorgvuldig.
 
 Ten tweede, alle opdrachten vereisen dat je een project zip-bestand downloadt. Gebruik de projectmap `hello` die je na de installatie van IntelliJ hebt gedownload. Het is een goed idee om die map ergens veilig op te slaan, samen met alle mappen die je voor volgende opdrachten in deze module aanmaakt.
 
@@ -83,7 +83,7 @@ true
 false
 ```
 
-```{info}
+```{hint}
 Hoe krijg ik Java zo ver dat het `true` of `false` afdrukt zonder een `if-else` statement? Als `b` een `boolean` variabele is, dan zal `System.out.println(b)` `true` of `false` afdrukken, afhankelijk van de waarde.
 ```
 

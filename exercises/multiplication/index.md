@@ -186,7 +186,7 @@ De standaarduitvoer van het programma is een tekstuele representatie van de verm
  public static void toText(int[][] table)
 ```
 
-De methode accepteert een `double[][]`, en dit is het resultaat van de methode `createTable`. Bij het maken van de tabel had je een dubbele lus nodig, en dat zal je ook hier nodig hebben voor het doorlopen van de rijen en de kolomwaarden te kunnen printen. Werk het volgende verder uit:
+De methode accepteert een `int[][]`, en dit is het resultaat van de methode `createTable`. Bij het maken van de tabel had je een dubbele lus nodig, en dat zal je ook hier nodig hebben voor het doorlopen van de rijen en de kolomwaarden te kunnen printen. Werk het volgende verder uit:
 
 ```java
 for (int row = 0; ...) {

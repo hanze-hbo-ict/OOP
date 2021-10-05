@@ -86,15 +86,15 @@ Hier wordt aangeven dat als een nieuw `Cone` object wordt aangemaakt met een neg
 
 De methode `assertEquals` vergelijkt het resultaat van de aangeroepen methode met een te verwachte returnwaarde, de test slaagt indien de waarden gelijk zijn, anders faalt de test.
 
-In deze opgave ga jij de klasse `Cone` schrijven en zal je steeds de tests in de klasse `TestCone` uitvoeren om te zien of jouw oplossing correct is.
+In deze opgave ga jij de klasse `Cone` schrijven en zal je steeds de tests in de klasse `ConeTest` uitvoeren om te zien of jouw oplossing correct is.
 
 ## Opgave
 
-Jouw taak is het schrijven van een klasse `Cone` en je zal gebruik maken van de unittest om jouw oplossing stap voor te testen. De meest eenvoudige manier is om de klasse `TestCone` door de IDE uit te laten voeren.
+Jouw taak is het schrijven van een klasse `Cone` en je zal gebruik maken van de unittest om jouw oplossing stap voor te testen. De meest eenvoudige manier is om de klasse `ConeTest` door de IDE uit te laten voeren.
 
 ![Tests run](images/intellij_tests_run.png)
 
-Het zal je misschien zijn opgevallen dat de klasse `TestCone` geen `main` methode heeft, maar wél kan worden uitgevoerd! Dit is omdat IDE's JUnit kennen en de methoden in de test voor jou één voor één zullen uitvoeren.
+Het zal je misschien zijn opgevallen dat de klasse `ConeTest` geen `main` methode heeft, maar wél kan worden uitgevoerd! Dit is omdat IDE's JUnit kennen en de methoden in de test voor jou één voor één zullen uitvoeren.
 
 ![Tests initial](images/intellij_tests_initial.png)
 
@@ -117,7 +117,7 @@ De klasse `Cone` zal de volgende onderdelen moeten bevatten
 
 -   Constructor(s)
 
-    Constructors maken een nieuwe instantie van een klasse. In dit geval zal een nieuwe instantie worden gecreëerd van de klasse `Cone` met een bepaalde radius en hoogte, uit `ConTest` kan je afleiden dat één constructor nodig is met de volgende signatuur:
+    Constructors maken een nieuwe instantie van een klasse. In dit geval zal een nieuwe instantie worden gecreëerd van de klasse `Cone` met een bepaalde radius en hoogte, uit `ConeTest` kan je afleiden dat één constructor nodig is met de volgende signatuur:
 
     ```java
     public Cone(double radius, double height)
@@ -140,7 +140,7 @@ De klasse `Cone` zal de volgende onderdelen moeten bevatten
 
     -   Andere methoden
 
-        Los van methoden voor toegang tot de velden kunnen andere methoden gespecificeerd worden die relevant zijn, in het geval van een kegel het oppervlak en volume. Uit `TestCone` kan je afleiden dat *twee* aanvullende methoden worden verwacht:
+        Los van methoden voor toegang tot de velden kunnen andere methoden gespecificeerd worden die relevant zijn, in het geval van een kegel het oppervlak en volume. Uit `ConeTest` kan je afleiden dat *twee* aanvullende methoden worden verwacht:
 
         ```java
         public double area()   // calculate and return the area of the cone
@@ -198,7 +198,7 @@ Als je er voor hebt gezorgd dat alle tests kunnen worden uitgevoerd ga je je ver
 
 ### Optioneel
 
-Implementeer een methode `toString` die een tekstrepresentatie geeft van een kegel met een bepaalde afmeting. Kies hier zelf een vorm, bijvoorbeeld `"Cone: heigth 10.0, radius: 5.0"`. Breid de klasse `TestCone` uit met een methode die het resultaat van `toString` test, je kan ook hier de methode `assertEquals` gebruiken zoals je het in andere tests gebruikt ziet worden.
+Implementeer een methode `toString` die een tekstrepresentatie geeft van een kegel met een bepaalde afmeting. Kies hier zelf een vorm, bijvoorbeeld `"Cone: heigth 10.0, radius: 5.0"`. Breid de klasse `ConeTest` uit met een methode die het resultaat van `toString` test, je kan ook hier de methode `assertEquals` gebruiken zoals je het in andere tests gebruikt ziet worden.
 
 ## Tot slot
 

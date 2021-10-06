@@ -94,3 +94,15 @@ parts:
       title: CodingBat recursie
     - file: exercises/grote_getallen
       title: Grote getallen
+
+- caption: Week 5
+  chapters:
+  - file: course/week_5
+    title: Onderwerpen
+    sections:
+    - file: topics/5a_mutable_klassen_en_objecten
+      title: Mutable klassen en objecten
+    - file: topics/5b_klassen_ontwerpen
+      title: Klassen ontwerpen
+  - file: exercises/cone/index
+    title: Practicum

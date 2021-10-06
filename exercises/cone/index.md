@@ -113,7 +113,7 @@ De klasse `Cone` zal de volgende onderdelen moeten bevatten
     private double radius; // radius of the circular base
     ```
 
-    Toegang tot lezen en schrijven van deze velden zijn per conventie altijd `private` waar mee aangegeven wordt dat alleen de klasse `Cone` toegang heeft tot deze waarden.
+    Toegang tot lezen en schrijven van deze velden zijn per conventie altijd `private` waar mee aangegeven wordt dat alleen methoden van de klasse `Cone` toegang hebben tot deze waarden.
 
 -   Constructor(s)
 

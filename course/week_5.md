@@ -8,7 +8,7 @@
 
 ## Boek
 
--   Hoffdstuk 10: [Mutable Objects](https://books.trinket.io/thinkjava2/chapter10.html)
+-   Hoofdstuk 10: [Mutable Objects](https://books.trinket.io/thinkjava2/chapter10.html)
 -   Hoofdstuk 11: [Designing Classes](https://books.trinket.io/thinkjava2/chapter11.html)
 
 ## Optioneel

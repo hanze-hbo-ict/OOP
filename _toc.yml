@@ -106,3 +106,5 @@ parts:
       title: Klassen ontwerpen
   - file: exercises/cone/index
     title: Practicum
+  - file: problems/class_design/index
+    title: Opgave

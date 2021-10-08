@@ -616,9 +616,19 @@
 e = 1/0! + 1/1! + 1/2! +1/3! + 1/4! + 1/5! + \cdots
 \]</div>
 <p>Je zal hier ook een methode voor de berekening van de faculteit nodig hebben, een versie kan je vinden in de <a class="reference internal" href="../../topics/4a_recursie.html"><span class="doc std std-doc">inleiding</span></a> over recursie. Print steeds de waarde die je krijgt nadat elke term aan de benadering is toegevoegd. De uitvoer voor <code class="docutils literal notranslate"><span class="pre">N</span></code> is 6 zal als volgt zijn:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> java RationalClient.java <span class="m">6</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> javac RationalClient.java
+<span class="gp">&gt;</span> java RationalClient <span class="m">6</span>
 <span class="go">1/1 2/1 5/2 32/12 780/288 93888/34560</span>
 </pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Waarschuwing</p>
+<p>Let op dat in dit geval het volgende niet zal werken</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java RationalClient.java 6</span>
+</pre></div>
+</div>
+<p>Tot nu toe is dit een gemakkelijke manier geweest om programma’s uit te voeren maar het heeft een belangrijke beperking: het werkt aleen maar als een programma in een enkel bestand past. Dit is hier niet het geval omdat de klasse <code class="docutils literal notranslate"><span class="pre">Rational</span></code> die door <code class="docutils literal notranslate"><span class="pre">RationalClient</span></code> wordt gebruikt in een ander bestand is geschreven (<code class="docutils literal notranslate"><span class="pre">Rational.java</span></code>).</p>
+<p>Vanwege deze beperking zal je <code class="docutils literal notranslate"><span class="pre">RationalClent.java</span></code> altijd eerst moeten compileren voordat je het kan uitvoeren.</p>
 </div>
 </div>
 <div class="section" id="rational-verbeteren">

@@ -102,9 +102,22 @@ $$
 Je zal hier ook een methode voor de berekening van de faculteit nodig hebben, een versie kan je vinden in de [inleiding](/topics/4a_recursie) over recursie. Print steeds de waarde die je krijgt nadat elke term aan de benadering is toegevoegd. De uitvoer voor `N` is 6 zal als volgt zijn:
 
 ```console
-> java RationalClient.java 6
+> javac RationalClient.java
+> java RationalClient 6
 1/1 2/1 5/2 32/12 780/288 93888/34560
 ```
+
+````{warning}
+Let op dat in dit geval het volgende niet zal werken
+
+```console
+java RationalClient.java 6
+```
+
+Tot nu toe is dit een gemakkelijke manier geweest om programma's uit te voeren maar het heeft een belangrijke beperking: het werkt aleen maar als een programma in een enkel bestand past. Dit is hier niet het geval omdat de klasse `Rational` die door `RationalClient` wordt gebruikt in een ander bestand is geschreven (`Rational.java`).
+
+Vanwege deze beperking zal je `RationalClent.java` altijd eerst moeten compileren voordat je het kan uitvoeren.
+````
 
 ## `Rational` verbeteren
 

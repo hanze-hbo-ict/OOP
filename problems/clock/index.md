@@ -9,7 +9,7 @@
 
 ## Inleiding
 
-In het hoofdstuk [Designig Classes](https://books.trinket.io/thinkjava2/chapter11.html), wordt een klasse `Time` besproken voor het representeren van tijd. Het is een kennismaking met de verschillende onderdelen van een Java klasse zoals velden, constructors en methoden. De implementatie van deze klasse is niet volledig *logisch correct*, het is je misschien opgevallen dat bijvoorbeeld met de mutator methoden (de *setters*) uren, minuten en seconden op elke mogelijke waarde kunnen worden gegeven:
+In het hoofdstuk [Designig Classes](https://books.trinket.io/thinkjava2/chapter11.html), wordt een klasse `Time` besproken voor het representeren van tijd. Het is een kennismaking met de verschillende onderdelen van een Java klasse zoals velden, constructors en methoden. De implementatie van deze klasse is niet volledig *logisch correct*, het is je misschien opgevallen dat bijvoorbeeld met de mutator methoden (de *setters*) uren, minuten en seconden elke mogelijke waarde kan worden gegeven:
 
 ```java
 public void setHour(int hour) {

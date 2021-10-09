@@ -101,7 +101,7 @@ De eerste stap zal zijn om om de typen van de velden `hour` en `minute` te wijzi
 De unittest `ClockTest` blijf je steeds bij al deze stappen uitvoeren voor het controleren van jouw aanpassingen. Het is belangrijk te beseffen dat de *interface* van `Clock` niet verandert en je alleen maar de interne werking aan het aanpassen bent. De unittest controleert of de interface ongewijzigt blijft, het maakt voor de tests niets uit of je `NumberDisplay` wel of niet gebruikt zolang het gewenste gedrag maar niet verandert.
 
 ````{admonition} Trapsgewijs verhogen
-De methode `increment` in de klasse `NumberDisplay` geeft een `boolean` waarde terug om aan te geven of de waarde een limiet heeft bereikt en is teruggesprongen. Als dit gebeurt voor minuten, dan zal ook de waarde van uren ook moeten worden geïncrementeeerd. Hoe zou je deze trapsgewijze (of *cascading*) incrementatie met behulp deze `boolean` returnwaarde kunnen uitwerken?
+De methode `increment` in de klasse `NumberDisplay` geeft een `boolean` waarde terug om aan te geven of de waarde een limiet heeft bereikt en is teruggesprongen. Als dit gebeurt voor minuten, dan zal ook de waarde van uren ook moeten worden geïncrementeeerd. Hoe zou je deze trapsgewijze (of *cascading*) incrementatie met behulp van deze `boolean` returnwaarde kunnen uitwerken?
 ````
 
 ## Deel 4: expansie

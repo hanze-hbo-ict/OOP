@@ -76,17 +76,17 @@ public class NumberDisplayTest {
     }
 
     @Test
-    @DisplayName("Should return the value after increment")
-    public void testIncrementReturnsCurrent() {
-        NumberDisplay hour = new NumberDisplay(24);
+    @DisplayName("Increment within limit should return false")
+    public void testIncrementWithinLimit() {
+        NumberDisplay hour = new NumberDisplay(12);
 
-        int result = hour.increment();
+        boolean result = hour.increment();
 
-        assertEquals(1, result);
+        assertFalse(result);
     }
 
     @Test
-    @DisplayName("Increment should indicate a rollover")
+    @DisplayName("Increment should indicate a rollover with true")
     public void testIncrementShouldRollover() {
         boolean result;
         NumberDisplay other;

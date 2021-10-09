@@ -73,9 +73,9 @@ Het algemene gedrag dat we zojuist hebben geabstraheerd kunnen we vastleggen in 
 
 Als je verder denkt zou volgens dit principe ook eenvoudig seconden of misschien zelfs een display met ochtend- of middagtijd mogelijk zijn als uren tot 12 in plaats van 24 lopen (AM of PM, bijvoorbeeld met 0 tot 2 als bereik).
 
-### De klasse `NumDisplay`
+### De klasse `NumberDisplay`
 
-Volgens dit idee van modulariteit ga je een klasse `NumDisplay` schrijven die verantwoordelijk is voor een enkel element van een display. Deze klasse beheert een enkele waarde met een bijbehorende limiet.
+Volgens dit idee van modulariteit ga je een klasse `NumberDisplay` schrijven die verantwoordelijk is voor een enkel element van een display. Deze klasse beheert een enkele waarde met een bijbehorende limiet.
 
 Verplaats de unittest `NumberDisplayTest.java` die je kan vinden in `part_2/` naar `src/test/java/` (de directory `part_2` kan je vervolgens verwijderen). Deze unittest bevat tests voor het te verwachten gedrag, implementeer de klasse `NumberDisplay` volgens deze specificatie. Voorlopig hoef je met de klasse `Clock` nog niets te doen, dit zal volgen in deel 3.
 
@@ -110,7 +110,7 @@ Nu de aanpassingen van `Clock` compleet zijn ga je het display uitbreiden met ee
 
 ![Clock display seconds](images/clock_display_seconds.png)
 
-In dit geval wordt de interface van de klasse `Clock` wél aangepast, bijvoorbeeld omdat nu seconden kunnen worden gezet en ook het volledige display wordt gewijzigd (3 displayelementen in plaats van 2), denk hier aan de methoden `toString`.
+In dit geval wordt de interface van de klasse `Clock` wél aangepast, bijvoorbeeld omdat nu seconden kunnen worden gezet en ook het volledige display wordt gewijzigd (van 2 naar 3 displayelementen), denk hier aan de methode `toString`.
 
 1.  Pas de unittest `ClockTest` aan (of breid uit) om het gewijzigd gedrag te kunnen testen.
 2.  Breid de `Clock` uit met een display voor seconden.

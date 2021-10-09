@@ -108,3 +108,8 @@ parts:
     title: Practicum
   - file: problems/class_design/index
     title: Opgave
+  - file: course/ex_5
+    title: Oefening
+    sections:
+    - file: problems/clock/index
+      title: Klassen ontwerpen

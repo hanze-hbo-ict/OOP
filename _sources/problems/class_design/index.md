@@ -93,7 +93,7 @@ Schrijf een programma `RationalCient.java` op dezelfde lokatie als `Rational.jav
 public static Rational approxE(int N)
 ```
 
-Implementeer in `RationalClient` de methode `approxE` met de bovenstaande signatuur. In deze methode ga je een [Taylorreeks](https://nl.wikipedia.org/wiki/Taylorreeks) gebruiken om de eerste `N`-termen van de rationele benadering van $e$ te berekenen. Deze reeks is als volgt
+Implementeer in `RationalClient` de methode `approxE` met de bovenstaande signatuur. In deze methode ga je een [Taylorreeks](https://nl.wikipedia.org/wiki/Taylorreeks) gebruiken om de eerste `N`-termen van de rationale benadering van $e$ te berekenen. Deze reeks is als volgt
 
 $$
 e = 1/0! + 1/1! + 1/2! +1/3! + 1/4! + 1/5! + \cdots

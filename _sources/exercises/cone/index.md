@@ -206,6 +206,7 @@ In paragraaf [A.7 Testing with JUnit](https://books.trinket.io/thinkjava2/append
 
 ```java
 import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
 
 public class SeriesTest extends TestCase {
 

@@ -4,7 +4,7 @@ source: https://www.cs.princeton.edu/courses/archive/spring14/cos233/assignments
 
 # Klassen ontwerpen
 
-Doel:
+## Doel
 
 -   Het ontwerpen van klassen
 -   Typen gebruiken als parameter en als returnwaarde
@@ -116,16 +116,16 @@ Implementeer de klasse `Rational` op basis van de hierboven gegeven beschrijving
 Schrijf een programma `RationalCient.java` op dezelfde lokatie als `Rational.java`. Dit programma gaat het type `Rational` gebruiken.
 
 ```java
-public static Rational approxE(int N)
+public static Rational approxE(int n)
 ```
 
-Implementeer in `RationalClient` de methode `approxE` met de bovenstaande signatuur. In deze methode ga je een [Taylorreeks](https://nl.wikipedia.org/wiki/Taylorreeks) gebruiken om de eerste `N`-termen van de rationale benadering van $e$ te berekenen. Deze reeks is als volgt
+Implementeer in `RationalClient` de methode `approxE` met de bovenstaande signatuur. In deze methode ga je een [Taylorreeks](https://nl.wikipedia.org/wiki/Taylorreeks) gebruiken om de eerste `n`-termen van de rationale benadering van $e$ te berekenen. Deze reeks is als volgt
 
 $$
 e = 1/0! + 1/1! + 1/2! +1/3! + 1/4! + 1/5! + \cdots
 $$
 
-Je zal hier ook een methode voor de berekening van de faculteit nodig hebben, een versie kan je vinden in de [inleiding](/topics/4a_recursie) over recursie. Print steeds de waarde die je krijgt nadat elke term aan de benadering is toegevoegd. De uitvoer voor `N` is 6 zal als volgt zijn:
+Je zal hier ook een methode voor de berekening van de faculteit nodig hebben, een versie kan je vinden in de [inleiding](/topics/4a_recursie) over recursie. Print steeds de waarde die je krijgt nadat elke term aan de benadering is toegevoegd. De uitvoer voor `n` is 6 zal als volgt zijn:
 
 ```console
 > javac RationalClient.java
@@ -147,7 +147,7 @@ Vanwege deze beperking zal je `RationalClent.java` altijd eerst moeten compilere
 
 ## `Rational` verbeteren
 
-Er zijn verschillende problemen met onze implementatie van de rationele getalklasse. Als we proberen een nauwkeurigere benadering van $e$ te berekenen, bijvoorbeeld `N` rond 10, wat gebeurt er met de waarden? Het vreemde gedrag dat je waarneemt is het resultaat van *overflow*. De compiler zal je niet vertellen wanneer de teller of noemer zich buiten het bereik van gehele getallen bevindt die in een `long` kunnen worden opgeslagen, dus je moet altijd voorzichtig zijn bij het uitvoeren van numerieke berekeningen.
+Er zijn verschillende problemen met onze implementatie van de rationele getalklasse. Als we proberen een nauwkeurigere benadering van $e$ te berekenen, bijvoorbeeld `n` rond 10, wat gebeurt er met de waarden? Het vreemde gedrag dat je waarneemt is het resultaat van *overflow*. De compiler zal je niet vertellen wanneer de teller of noemer zich buiten het bereik van gehele getallen bevindt die in een `long` kunnen worden opgeslagen, dus je moet altijd voorzichtig zijn bij het uitvoeren van numerieke berekeningen.
 
 Er zijn een paar relatief eenvoudige wijzigingen die we kunnen aanbrengen in de klasse `Rational` om overflow voor nog een aantal termen van de benadering te voorkomen. Merk ten eerste op dat onze rationele getallen niet altijd in hun meest eenvoudige vorm worden opgeslagen. In de vierde term in het bovenstaande voorbeeld zijn bijvoorbeeld zowel teller als noemer deelbaar door 4, dus we slaan het resultaat liever op als `8/3` in plaats van `32/12`.
 

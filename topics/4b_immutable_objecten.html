@@ -4,7 +4,8 @@
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Immutable objecten &#8212; Objectgeoriënteerd Programmeren I</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +35,7 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -42,10 +43,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -95,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -107,7 +108,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 1
  </span>
@@ -173,7 +174,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 2
  </span>
@@ -234,7 +235,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 3
  </span>
@@ -305,7 +306,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 4
  </span>
@@ -366,7 +367,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 5
  </span>
@@ -420,6 +421,50 @@
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
  </li>
 </ul>
 
@@ -562,12 +607,12 @@
         
               <div>
                 
-  <div class="section" id="immutable-objecten">
+  <section class="tex2jax_ignore mathjax_ignore" id="immutable-objecten">
 <h1>Immutable objecten<a class="headerlink" href="#immutable-objecten" title="Permalink naar deze titel">¶</a></h1>
 <p>In object georiënteerde programmeertalen worden objecten gebruikt om gegevens in op te slaan.
 Via klassen worden bijbehorende methodes beschikbaar gesteld.</p>
 <p>Objecten waarvan gegevens (er wordt ook wel gesproken van ‘eigenschappen’) niet gewijzigd kunnen worden worden immutable genoemd.</p>
-<div class="section" id="primitieve-types-vs-objecten">
+<section id="primitieve-types-vs-objecten">
 <h2>Primitieve types vs. objecten<a class="headerlink" href="#primitieve-types-vs-objecten" title="Permalink naar deze titel">¶</a></h2>
 <p>In Java wordt onderscheid te maken tussen primitieve types en objecten.
 Objecten zijn niet-primitieve types.</p>
@@ -580,13 +625,13 @@ Objecten zijn niet-primitieve types.</p>
 <p>Ook een array is een niet-primitief type (ongeacht het type van de elementen). Daarom is ook een array een referentie:
 <img alt="Memory array" src="../_images/mem_array.png" /></p>
 <p>De ==-operator vergelijkt de waarde van een variabele. Als deze op objecten wordt toegepast, wordt de inhoud van objecten niet vergeleken. Daarom wordt voor het vergelijken van de inhoud van objecten de methode equals gebruikt.</p>
-</div>
-<div class="section" id="het-keyword-null">
+</section>
+<section id="het-keyword-null">
 <h2>Het keyword null<a class="headerlink" href="#het-keyword-null" title="Permalink naar deze titel">¶</a></h2>
 <p>Een <em>niet-primitieve</em> is een <em>referentie</em>. Het keyword <em>null</em> representeert een speciale waarde die betekent dat er geen verwijzing naar een object is. Of eenvoudig gezegd: Er is (nog) geen object.</p>
 <p>Voorbeeld:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span> <span class="c1">// String-variabele, die niet naar een String-object verwijst</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">combo</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span> <span class="c1">// Array-variabele, die niet naar een array verwijst</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span> <span class="c1">// String-variabele, die niet naar een String-object verwijst</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">combo</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span> <span class="c1">// Array-variabele, die niet naar een array verwijst</span>
 </pre></div>
 </div>
 <p>Een geheugen-diagram met de waarde <em>null</em> kan als volgt worden weergegeven:
@@ -594,11 +639,11 @@ Objecten zijn niet-primitieve types.</p>
 <p>Als een methode wordt gebruikt van een object met de waarde <em>null</em>, dan treedt een <em>NullPointerException</em> op:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
 <span class="c1">//if (name==null) {</span>
 <span class="c1">//    System.out.println(&quot;Welke name?&quot;);</span>
 <span class="c1">//} else {</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="na">length</span><span class="p">());</span>
 <span class="c1">//}</span>
 </pre></div>
 </div>
@@ -612,8 +657,8 @@ Objecten zijn niet-primitieve types.</p>
 </div>
 </div>
 <p>Dit geldt ook voor het benaderen van een element van een array met waarde <em>null</em>.</p>
-</div>
-<div class="section" id="strings">
+</section>
+<section id="strings">
 <h2>Strings<a class="headerlink" href="#strings" title="Permalink naar deze titel">¶</a></h2>
 <p>De klasse <strong>String</strong> bevat veel verschillende methoden voor strings.</p>
 <p>Met echter geen van deze methoden is een string te veranderen.</p>
@@ -623,9 +668,9 @@ Objecten zijn niet-primitieve types.</p>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Alan Turing&quot;</span><span class="o">;</span>
-<span class="n">name</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Alan Turing&quot;</span><span class="p">;</span>
+<span class="n">name</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -639,9 +684,9 @@ Objecten zijn niet-primitieve types.</p>
 <p>Daarom geeft de methode toUpperCase() een nieuwe string terug:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Alan Turing&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">nameUpper</span><span class="o">=</span><span class="n">name</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">nameUpper</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Alan Turing&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">nameUpper</span><span class="o">=</span><span class="n">name</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nameUpper</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -654,9 +699,9 @@ Objecten zijn niet-primitieve types.</p>
 <p>Het is niet nodig om een nieuwe variabele te declareren. De huidige variabele hergebruiken, kan ook:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Alan Turing&quot;</span><span class="o">;</span>
-<span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">nameUpper</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Alan Turing&quot;</span><span class="p">;</span>
+<span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nameUpper</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -671,9 +716,9 @@ Objecten zijn niet-primitieve types.</p>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">zin</span><span class="o">=</span><span class="s">&quot;Java is een moeilijke programmeertaal&quot;</span><span class="o">;</span>
-<span class="n">zin</span> <span class="o">=</span> <span class="n">zin</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">&quot;moeilijke&quot;</span><span class="o">,</span> <span class="s">&quot;mooie&quot;</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">zin</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">zin</span><span class="o">=</span><span class="s">&quot;Java is een moeilijke programmeertaal&quot;</span><span class="p">;</span>
+<span class="n">zin</span> <span class="o">=</span> <span class="n">zin</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">&quot;moeilijke&quot;</span><span class="p">,</span> <span class="s">&quot;mooie&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zin</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -684,8 +729,8 @@ Objecten zijn niet-primitieve types.</p>
 </div>
 </div>
 <p>Dat strings <em>immutable</em> zijn, is een bewuste keuze van de ontwerpers van Java. Het maakt geheugenbeheer eenvoudiger. Ook voorkomt het dat een string onbedoeld verandert als er meerdere referenties zijn.</p>
-</div>
-<div class="section" id="wrapper-classes">
+</section>
+<section id="wrapper-classes">
 <h2>Wrapper classes<a class="headerlink" href="#wrapper-classes" title="Permalink naar deze titel">¶</a></h2>
 <p>Soms is het nodig dat primitieve types eigenschappen hebben van een niet-primitief type: Opslaan van referentie in plaats van waarde of de beschikbaarheid van methodes.</p>
 <p>Oplossing: Wrapper-classes.</p>
@@ -710,17 +755,17 @@ Objecten zijn niet-primitieve types.</p>
 </tr>
 </tbody>
 </table>
-<div class="section" id="wrapper-classes-tbv-methodes">
+<section id="wrapper-classes-tbv-methodes">
 <h3>Wrapper classes tbv. methodes<a class="headerlink" href="#wrapper-classes-tbv-methodes" title="Permalink naar deze titel">¶</a></h3>
 <p>Primitieve types hebben geen methodes omdat het geen objecten zijn. Wrapper classes bieden de nodige methodes.</p>
 <p>De methodes parseInt en toString van de wrapper-class Integer zetten strings om naar integers, en andersom.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">getalStr</span><span class="o">=</span><span class="s">&quot;123&quot;</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">getal</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">getalStr</span><span class="o">);</span>
-<span class="n">getal</span><span class="o">++;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getal</span><span class="o">);</span> <span class="c1">// 124</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">getalStr</span><span class="o">=</span><span class="s">&quot;123&quot;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">getal</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">getalStr</span><span class="p">);</span>
+<span class="n">getal</span><span class="o">++</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">getal</span><span class="p">);</span> <span class="c1">// 124</span>
 </pre></div>
 </div>
 </div>
@@ -732,9 +777,9 @@ Objecten zijn niet-primitieve types.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">getal</span><span class="o">=</span><span class="mi">65000</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">getalStr</span><span class="o">=</span><span class="n">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">getal</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Het getal &quot;</span><span class="o">+</span><span class="n">getal</span><span class="o">+</span><span class="s">&quot; bevat &quot;</span><span class="o">+</span><span class="n">getalStr</span><span class="o">.</span><span class="na">length</span><span class="o">()+</span><span class="s">&quot; cijfers.&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">getal</span><span class="o">=</span><span class="mi">65000</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">getalStr</span><span class="o">=</span><span class="n">Integer</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">getal</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Het getal &quot;</span><span class="o">+</span><span class="n">getal</span><span class="o">+</span><span class="s">&quot; bevat &quot;</span><span class="o">+</span><span class="n">getalStr</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; cijfers.&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -744,19 +789,19 @@ Objecten zijn niet-primitieve types.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="opslaan-van-referentie">
+</section>
+<section id="opslaan-van-referentie">
 <h3>Opslaan van referentie<a class="headerlink" href="#opslaan-van-referentie" title="Permalink naar deze titel">¶</a></h3>
 <p>In sommige gevallen is een referentie nodig in plaats van een waarde.</p>
 <p>Op verschillende manieren kan een integer worden omgezet naar een niet-primitieve:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">getal1</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
-<span class="n">Integer</span> <span class="n">getal2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
-<span class="n">Integer</span> <span class="n">getal3</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span> <span class="c1">// autoboxing</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getal1</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getal2</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getal3</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">getal1</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">Integer</span> <span class="n">getal2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">Integer</span> <span class="n">getal3</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// autoboxing</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">getal1</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">getal2</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">getal3</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -769,47 +814,47 @@ Objecten zijn niet-primitieve types.</p>
 </div>
 </div>
 <p>Dit is ook voor de andere primitieve types mogelijk, op vergelijkbare wijze.</p>
-</div>
-</div>
-<div class="section" id="commandline-argumenten">
+</section>
+</section>
+<section id="commandline-argumenten">
 <h2>Commandline argumenten<a class="headerlink" href="#commandline-argumenten" title="Permalink naar deze titel">¶</a></h2>
 <p>Het argument van de main-methode is van het type String[], een string array.</p>
 <p>Deze wordt gebruikt om te achterhalen welke commandline-argumenten zijn meegegeven bij de start van een programma.</p>
 <p>Voorbeeld:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Commandline</span> <span class="o">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Commandline</span> <span class="p">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
-        <span class="kt">int</span> <span class="n">choice</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Gekozen: &quot;</span><span class="o">+</span><span class="n">args</span><span class="o">[</span><span class="n">choice</span><span class="o">]);</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">choice</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gekozen: &quot;</span><span class="o">+</span><span class="n">args</span><span class="o">[</span><span class="n">choice</span><span class="o">]</span><span class="p">);</span>
+    <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Als een applicatie werkt met argumenten via de commandline, dan is het belangrijk om deze te controleren om foutmeldingen te voorkomen. Dit wordt validatie genoemd.</p>
 <p>Voorbeeld:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Commandline</span> <span class="o">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Commandline</span> <span class="p">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">chooseRandomName</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">names</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
-        <span class="kt">int</span> <span class="n">choice</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">names</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">names</span><span class="o">[</span><span class="n">choice</span><span class="o">];</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">chooseRandomName</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">choice</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">names</span><span class="o">[</span><span class="n">choice</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Geef tenminste twee namen mee op de commandline.&quot;</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Gekozen: &quot;</span> <span class="o">+</span> <span class="n">chooseRandomName</span><span class="o">(</span><span class="n">args</span><span class="o">));</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Geef tenminste twee namen mee op de commandline.&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gekozen: &quot;</span> <span class="o">+</span> <span class="n">chooseRandomName</span><span class="p">(</span><span class="n">args</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Uitgebreid voorbeeld:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Fibonacci</span> <span class="o">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Fibonacci</span> <span class="p">{</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * Geeft het n-de getal in de rij van Fibonacci</span>
@@ -817,57 +862,57 @@ Objecten zijn niet-primitieve types.</p>
 <span class="cm">   * @param n Het n-de getal in de rij van Fibonacci</span>
 <span class="cm">   * @return Het getal in de rij van Fibonacci</span>
 <span class="cm">   */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">g0</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">g1</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-            <span class="kt">int</span> <span class="n">g2</span><span class="o">=</span><span class="n">g0</span><span class="o">+</span><span class="n">g1</span><span class="o">;</span>
-            <span class="n">g0</span><span class="o">=</span><span class="n">g1</span><span class="o">;</span>
-            <span class="n">g1</span><span class="o">=</span><span class="n">g2</span><span class="o">;</span>
-            <span class="n">n</span><span class="o">--;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">g0</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">g0</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">g1</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">g2</span><span class="o">=</span><span class="n">g0</span><span class="o">+</span><span class="n">g1</span><span class="p">;</span>
+            <span class="n">g0</span><span class="o">=</span><span class="n">g1</span><span class="p">;</span>
+            <span class="n">g1</span><span class="o">=</span><span class="n">g2</span><span class="p">;</span>
+            <span class="n">n</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">g0</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">stringContainsInteger</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="kt">char</span> <span class="n">ch</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-            <span class="k">if</span> <span class="o">((</span><span class="n">ch</span><span class="o">&lt;</span><span class="sc">&#39;0&#39;</span><span class="o">)</span> <span class="o">||</span> <span class="o">(</span><span class="n">ch</span><span class="o">&gt;</span><span class="sc">&#39;9&#39;</span><span class="o">))</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">stringContainsInteger</span><span class="p">(</span><span class="n">String</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">char</span> <span class="n">ch</span><span class="o">=</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">((</span><span class="n">ch</span><span class="o">&lt;</span><span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">ch</span><span class="o">&gt;</span><span class="sc">&#39;9&#39;</span><span class="p">))</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span><span class="o">!=</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Geef op de commandline aan het hoeveelste getal in de reeks van Fibonacci bepaald moet worden.&quot;</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">stringContainsInteger</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]))</span> <span class="o">{</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">fib</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">])));</span>
-            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Ongeldig getal&quot;</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="o">!=</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Geef op de commandline aan het hoeveelste getal in de reeks van Fibonacci bepaald moet worden.&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">stringContainsInteger</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">)));</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ongeldig getal&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="de-klasse-biginteger">
+</section>
+<section id="de-klasse-biginteger">
 <h2>De klasse BigInteger<a class="headerlink" href="#de-klasse-biginteger" title="Permalink naar deze titel">¶</a></h2>
 <p>Integers hebben een maximale grootte. Er kunnen grotere getallen opgeslagen worden gemaakt worden door gebruik te maken van het primitieve type long, maar ook daarmee zijn getallen eindig.</p>
 <p>De klasse BigInteger biedt de mogelijkheid om met (in theorie) oneindig grote integers te werken.</p>
 <p>Maken van BigInteger objecten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">BigInteger</span> <span class="n">b1</span><span class="o">=</span><span class="n">BigInteger</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">149</span><span class="o">);</span> <span class="c1">// Aan de hand van een long</span>
-<span class="n">BigInteger</span> <span class="n">b2</span><span class="o">=</span><span class="k">new</span> <span class="n">BigInteger</span><span class="o">(</span><span class="s">&quot;50000000000000000000000000000000000000000&quot;</span><span class="o">);</span> <span class="c1">// Aan de hand van een string</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b1</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b2</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">BigInteger</span> <span class="n">b1</span><span class="o">=</span><span class="n">BigInteger</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">149</span><span class="p">);</span> <span class="c1">// Aan de hand van een long</span>
+<span class="n">BigInteger</span> <span class="n">b2</span><span class="o">=</span><span class="k">new</span> <span class="n">BigInteger</span><span class="p">(</span><span class="s">&quot;50000000000000000000000000000000000000000&quot;</span><span class="p">);</span> <span class="c1">// Aan de hand van een string</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -883,10 +928,10 @@ Objecten zijn niet-primitieve types.</p>
 <p>Een volledige lijst van methoden is hier te vinden: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigInteger.html</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">BigInteger</span> <span class="n">b3</span><span class="o">=</span><span class="n">b1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">b2</span><span class="o">);</span> <span class="c1">// b3=b1+b2</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b3</span><span class="o">);</span>
-<span class="n">b3</span><span class="o">=</span><span class="n">b3</span><span class="o">.</span><span class="na">multiply</span><span class="o">(</span><span class="n">BigInteger</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">20</span><span class="o">));</span> <span class="c1">// b3=b3*20</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b3</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">BigInteger</span> <span class="n">b3</span><span class="o">=</span><span class="n">b1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span> <span class="c1">// b3=b1+b2</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b3</span><span class="p">);</span>
+<span class="n">b3</span><span class="o">=</span><span class="n">b3</span><span class="p">.</span><span class="na">multiply</span><span class="p">(</span><span class="n">BigInteger</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span> <span class="c1">// b3=b3*20</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b3</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -900,8 +945,8 @@ Objecten zijn niet-primitieve types.</p>
 <p>BigIntegers kunnen heel groot worden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">BigInteger</span> <span class="n">b4</span><span class="o">=</span><span class="n">b3</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span> <span class="c1">// b4=b3^20;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b4</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">BigInteger</span> <span class="n">b4</span><span class="o">=</span><span class="n">b3</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span> <span class="c1">// b4=b3^20;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b4</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -913,8 +958,8 @@ Objecten zijn niet-primitieve types.</p>
 </div>
 <p>De methoden van BigInteger wijzigen de waarde niet. Reden: BigIntegers zijn <u>immutable</u>.</p>
 <p>Daarom wordt de uitkomst van een rekenkundige operatie door de methode teruggegeven, in een nieuw BigInteger-object. Dit is vergelijkbaar met wat string-methoden doen.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

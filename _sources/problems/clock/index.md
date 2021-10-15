@@ -63,13 +63,13 @@ Bedenk ook dat soms methoden vereenvoudigd kunnen worden, bijvoorbeeld hoe zou j
 
 ### Abstractie
 
-Een display van een klok kan je zien als een display met vier tekens (twee voor de uren en twee voor de minuten). Laten we nu op zoek gaan naar wat de gemenschappelijke kenmerken zijn voor de uren en de minuten want het display kan je ook zien als twee afzonderlijke displays met elk twee cijfers (één paar voor uren en één paar voor minuten).
+Een display van een klok kan je zien als een display met vier tekens (twee voor de uren en twee voor de minuten). Laten we nu op zoek gaan naar wat de gemeenschappelijke kenmerken zijn voor de uren en de minuten want het display kan je ook zien als twee afzonderlijke displays met elk twee cijfers (één paar voor uren en één paar voor minuten).
 
 Als we kijken naar gedrag zal één paar beginnen bij 0 en en telkens met 1 worden verhoogd tot het maximum van 23 wordt bereikt (uren), de ander zal van 0 tot een maximum van 59 lopen (minuten). Meer algemeen kan je zeggen dat beide objecten zijn die tellen van 0 tot een bepaalde *limiet*, waarna weer wordt begonnen met tellen vanaf 0 (ze lopen over).
 
 ### Modulariteit
 
-Het algemene gedrag dat we zojuist hebben geabstraheerd kunnen we vastleggen in een een definitie, oftwel een klasse. Ook vanuit het oogpunt van het scheiden van verantwoordelijkheden valt daar iets over te zeggen, de eigenlijke verantwoordelijkheid van een `Clock` is het organiseren en beheren van displayelementen, en niet het specifieke gedrag daarvan.
+Het algemene gedrag dat we zojuist hebben bepaald kunnen we vastleggen in een een definitie, oftwel een klasse. Ook vanuit het oogpunt van het scheiden van verantwoordelijkheden valt daar iets over te zeggen, de eigenlijke verantwoordelijkheid van een `Clock` is het organiseren en beheren van displayelementen, en niet het specifieke gedrag daarvan.
 
 Als je verder denkt zou volgens dit principe ook eenvoudig seconden of misschien zelfs een display met ochtend- of middagtijd mogelijk zijn als uren tot 12 in plaats van 24 lopen (AM of PM, bijvoorbeeld met 0 tot 2 als bereik).
 

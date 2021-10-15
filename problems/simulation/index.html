@@ -1,0 +1,836 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Simulaties &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Zoeken" href="../../search.html" />
+    <link rel="prev" title="Stuiterbal" href="../../exercises/bouncing_balls/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3b_arrays_en_referenties.html">
+     Arrays en referenties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/multiplication/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../profiler/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_3.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_strings.html">
+     CodingBat strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_arrays.html">
+     CodingBat arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_4.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/nested_circles/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../recursive_graphics/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_4.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_recursie.html">
+     CodingBat recursie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_5.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/cone/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../class_design/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_5.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../clock/index.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Opgave
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/problems/simulation/index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doel">
+   Doel:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#achtergrond">
+   Achtergrond
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#het-spel">
+   Het spel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-spelregels">
+   De spelregels
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#het-delen-van-de-kaarten">
+     Het delen van de kaarten
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strijd">
+     Strijd
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oorlog">
+     Oorlog
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technisch-gelijkspel">
+     Technisch gelijkspel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opgave">
+   Opgave
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uitvoeren">
+     Uitvoeren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testen">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tot-slot">
+   Tot slot
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="simulaties">
+<h1>Simulaties<a class="headerlink" href="#simulaties" title="Permalink naar deze titel">¶</a></h1>
+<p><img alt="Aces" src="../../_images/aces.png" /></p>
+<section id="doel">
+<h2>Doel:<a class="headerlink" href="#doel" title="Permalink naar deze titel">¶</a></h2>
+<ul class="simple">
+<li><p>Een programma schrijven om een kaartspel te simuleren.</p></li>
+<li><p>Oefenen met het kiezen en gebruiken van relevante datastructuren.</p></li>
+<li><p>Oefenen met het opdelen van programma in afzonderlijke methoden.</p></li>
+<li><p>Oefenen met het schrijven van unittests.</p></li>
+<li><p>Testen van code met behulp van unittests.</p></li>
+</ul>
+<p>In deze opgaven ga je de volgende twee klassen uitbreiden:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">War.java</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WarTest.java</span></code></p></li>
+</ul>
+<p>Het begin van deze twee klassen kan je vinden in het projectbestand <a href="../../projects/simulation.zip">simulation.zip</a>. Download dit bestand, pak het uit en importeer het in jouw IDE (het bevat een <a class="reference external" href="https://maven.apache.org/">Maven</a> configuratiebestand).</p>
+</section>
+<section id="achtergrond">
+<h2>Achtergrond<a class="headerlink" href="#achtergrond" title="Permalink naar deze titel">¶</a></h2>
+<p>In deze opgave ga je een versie schrijven van het kaartspel <a class="reference external" href="https://nl.wikipedia.org/wiki/Oorlogje_(kaartspel)">oorlogje</a> (of “War”, in het Engels) om de uitkomst van het spel te kunnen <em>simuleren</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>In hoofdstukken 12 (<a class="reference external" href="https://books.trinket.io/thinkjava2/chapter12.html">Arrays of Objects</a>) tot en met 14 (<a class="reference external" href="https://books.trinket.io/thinkjava2/chapter14.html">Extending Classes</a>) worden kaartspellen als voorbeeld gebruikt en hoe deze objectgeoriënteerd kunnen worden vormgegeven.</p>
+<p>Objectoriëntatie is een programmeerparadigma waar abstractie en modularisatie centraal staat en dit zie je uitgedrukt worden in klassen als <code class="docutils literal notranslate"><span class="pre">Card</span></code>, <code class="docutils literal notranslate"><span class="pre">Deck</span></code> en <code class="docutils literal notranslate"><span class="pre">Pile</span></code> die ieder een eigen verantwoordelijkheid hebben en in samenhang met elkaar werken. Het kunnen aanwijzen van klassen en deze uitwerken is niet altijd even eenvoudig, laat staan het bepalen hoe deze met elkaar interacteren.</p>
+<p>Deze opgave reduceert deze complexiteit tot data, en handelingen op data. Lees de hoofdstukken uit het boek vooral door (en de bijbehorende oppgaven!), we hopen dat je met deze opgave een beter begrip krijgt van het vormgeven van data en handelingen op deze data en hoe je dit uiteindelijk objectgeoriënteerd kan uitwerken.</p>
+</div>
+<p>Het doel van deze opdracht is om met gebruik van bekende datastructuren als <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> data vorm te geven en te bepalen welke methoden noodzakelijke zijn om de spelregels van spel oorlogje uit te kunnen drukken.</p>
+</section>
+<section id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">¶</a></h2>
+<p><a class="reference external" href="https://nl.wikipedia.org/wiki/Oorlogje_(kaartspel)">Oorlogje</a> is een kaartspel voor twee spelers, dat gewoonlijk gespeeld wordt met een standaard spel speelkaarten van 52 kaarten. Het is ook een interessant probleem voor verschillende andere toepassingen, in deze opdracht ga je een simulatie implementeren van een versie van oorlogje gebaseerd op een tekstuele beschrijving van het spel.</p>
+<p>Deze versie van oorlogje is <em>deterministisch</em>, dat wil zeggen dat er <strong>geen</strong> willekeur in het spel is. De winnaar kan volledig bepaald worden op basis van de startstapel. Simulaties zijn een manier om de uitkomsten van zowel <em>deterministische</em> als <em>niet-deterministische</em> situaties te vinden. Niet-deterministische simulaties worden meestal vele malen uitgevoerd, en de resultaten worden op een of andere manier samengevoegd (bijvoorbeeld om de meest waarschijnlijke uitkomst te vinden, of de mediane uitkomst, een gemiddelde, etc.).</p>
+<p>In tegenstelling tot vorige opdrachten en oefeningen is deze keer <em>geen</em> volledige set van unittests in het project beschikbaar om te helpen met geautomatiseerd testen of bij het ontwerpproces. Je zult de regels van het spel uit de tekst die volgt moeten vertalen naar code, moeten beslissen of en hoe je het programma opdeelt in methodes, en je eigen tests moeten schrijven.</p>
+</section>
+<section id="het-spel">
+<h2>Het spel<a class="headerlink" href="#het-spel" title="Permalink naar deze titel">¶</a></h2>
+<p>Het spel oorlogje wordt gespeeld door de stapel kaarten onder twee spelers te verdelen. Elke speler speelt een kaart en deze twee kaarten worden met elkaar vergeleken in een “gevecht”. De kaart met de hoogste waarde (of rang, want de kleuren doen er niet toe) wint de strijd, en de speler van de winnende kaart neemt beide kaarten (de “oorlogsbuit”) en legt ze onder aan zijn of haar stapel.</p>
+<p>In geval van gelijke stand wordt de “oorlog” verklaard. Elke speler deelt nog drie kaarten uit als extra buit. Daarna speelt elke speler nog een kaart. De winnaar van deze strijd neemt alle 10 kaarten (of meer, in geval van herhaalde gelijke stand).</p>
+<p>Herhaal dit proces totdat een speler geen kaarten meer heeft en tot verliezer wordt uitgeroepen.</p>
+</section>
+<section id="de-spelregels">
+<h2>De spelregels<a class="headerlink" href="#de-spelregels" title="Permalink naar deze titel">¶</a></h2>
+<p>De kaarten worden voorgesteld als gehele getallen. In een klassiek spel oorlogje variëren de waarden van 2 tot 14, maar jouw implementatie gaat werken met het type <code class="docutils literal notranslate"><span class="pre">int</span></code> en een niet-negatief aantal kaarten.</p>
+<section id="het-delen-van-de-kaarten">
+<h3>Het delen van de kaarten<a class="headerlink" href="#het-delen-van-de-kaarten" title="Permalink naar deze titel">¶</a></h3>
+<p>De vorm van het initiële “kaartspel” is een <code class="docutils literal notranslate"><span class="pre">ArrayList&lt;Integer&gt;</span></code>, en deze collectie (of <em>stapel</em>) van kaarten moet worden uitgedeeld aan de twee spelers, A en B. Het uitdelen van de kaarten houdt in dat de kaarten afwisselend aan elke speler worden gegeven, dat wil zeggen, de eerste kaart aan speler A, de tweede aan speler B, de derde aan speler A, enzovoort. Elke speler legt in deze volgorde de kaarten op de eigen stapel.</p>
+<figure class="align-default" id="stack">
+<img alt="../../_images/stack.png" src="../../_images/stack.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">De boven- en onderkant van een stapel kaarten</span><a class="headerlink" href="#stack" title="Permallink naar deze afbeelding">¶</a></p>
+</figcaption>
+</figure>
+<p>Bijvoorbeeld, als de beginstapel de waarden <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code> bevat en we delen alle kaarten uit, dan zou de stapel van speler A de waarden <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4]</span></code> bevatten en die van speler B de waarden <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">5]</span></code>. De “bovenkant” van elk van deze stapels is de linkerkant, dat wil zeggen, de eerstvolgende kaart die speler A zal spelen is 2 (zie <a class="reference internal" href="#stack"><span class="std std-numref">Fig. 31</span></a>).</p>
+</section>
+<section id="strijd">
+<h3>Strijd<a class="headerlink" href="#strijd" title="Permalink naar deze titel">¶</a></h3>
+<p>De spelers gaan vervolgens een reeks gevechten aan. Om een gevecht te beginnen, nemen ze elk de bovenste kaart van hun stapel en leggen ze die op een tijdelijke “aflegstapel”, in de volgorde A’s kaart en dan B’s kaart. Als beide spelers geen kaarten op hun stapel hebben voordat ze een kaart op de aflegstapel leggen, is het gelijkspel (en is het spel afgelopen). Als slechts één van de spelers geen kaarten in zijn stapel heeft, dan verliest deze speler (en is het spel afgelopen).</p>
+<p>Als de waarde van een kaart numeriek groter is dan die van de ander, dan wint de speler die deze kaart heeft uitgespeeld. De inhoud van de aflegstapel wordt toegevoegd, in volgorde, aan de onderkant van de stapel van de winnaar (en de aflegstapel wordt vervolgens leeggemaakt). Als er slechts twee kaarten zijn, komt de kaart van speler A altijd voor de kaart van speler B, ongeacht welke speler het gevecht heeft gewonnen.</p>
+<p>Om het eerste gevecht te beginnen, zou speler A een 2 spelen en speler B een 3. Hun kaartenreeksen zouden dan respectievelijk uit <code class="docutils literal notranslate"><span class="pre">[4]</span></code> en <code class="docutils literal notranslate"><span class="pre">[5]</span></code> bestaan, tot het gevecht beslist is. Speler B wint dit gevecht, en zou dus de twee kaarten, in de aangegeven volgorde, aan zijn stapel toevoegen. Speler A’s kaartspel is nog steeds <code class="docutils literal notranslate"><span class="pre">[4]</span></code>, en speler B’s kaartspel is nu <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>. Ze spelen het volgende gevecht, B wint opnieuw, en A’s kaartspel is nu leeg. Bij het begin van het volgende gevecht heeft A geen kaarten meer en is de verliezer van het spel.</p>
+</section>
+<section id="oorlog">
+<h3>Oorlog<a class="headerlink" href="#oorlog" title="Permalink naar deze titel">¶</a></h3>
+<p>De “oorlog” wordt verklaard als de strijd gaat tussen twee kaarten met gelijke waarde. In dit geval moet speler A moet nog eens <em>drie</em> kaarten, in volgorde, op de aflegstapel leggen, en B doet hetzelfde. De spelers strijden dan opnieuw. Merk op dat voordat deze tweede slag begint de stapel nu <em>acht</em> kaarten bevat, de twee van de eerste slag en de zes van de oorlog. Als een speler deze tweede slag wint, verzamelt hij alle tien kaarten (de vorige acht, plus de twee van deze slag), in volgorde, onderop de eigen stapel.</p>
+<p>Als er nog een oorlog komt, dan zullen er 16 kaarten op de stapel liggen voor de derde slag (de twee van de eerste slag, de zes van de eerste oorlog, de twee van de tweede slag en de zes van de tweede oorlog) en een totaal van 18 kaarten die aan de winnaar van de derde slag worden toegekend. De oorlogen gaan door totdat een speler een slag wint, of het spel eindigt omdat één of beide spelers geen kaarten meer hebben.</p>
+<p>Net als tijdens een veldslag is het gelijkspel als beide spelers niet in staat zijn om de vereiste drie kaarten tijdens dezelfde oorlog af te leggen. Als slechts één speler er niet in slaagt om drie kaarten af te leggen tijdens een oorlog, verliest deze.</p>
+<p>Bijvoorbeeld, stel dat speler A <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">5,</span> <span class="pre">4]</span></code> heeft en speler B <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">11,</span> <span class="pre">6,</span> <span class="pre">4]</span></code>.</p>
+<p>Eerst zou elke speler de bovenste kaart spelen, die beide 2 zijn. Dus de stapel met buit zou <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">2]</span></code> bevatten en er zou een oorlog ontstaan. Speler A voegt de bovenste drie kaarten van de stapel toe aan de buit, en speler B doet hetzelfde. De stapel met buit bevat nu <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">2,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">11]</span></code>. De stapel van speler A bevat <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">4]</span></code> en die van speler B <code class="docutils literal notranslate"><span class="pre">[6,</span> <span class="pre">4]</span></code>.</p>
+<p>Tijd voor de volgende slag. Beide spelers nemen de bovenste kaart van hun stapel en voegen deze toe aan de stapel met buit, die nu <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">2,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">11,</span> <span class="pre">5,</span> <span class="pre">6]</span></code> bevat. Speler B wint deze slag (5 tegen 6), en voegt dus de hele stapel buit toe aan de eigen stapel. Speler A’s stapel is nu maar <code class="docutils literal notranslate"><span class="pre">[4]</span></code>, en speler B’s stapel is nu <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">11,</span> <span class="pre">5,</span> <span class="pre">6]</span></code>.</p>
+<p>De volgende slag veroorzaakt weer een oorlog, maar speler A zal zonder kaarten komen te zitten en dus verliezen.</p>
+<p>Neem nu het voorbeeld van A’s stapel met <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> en dat van B met <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">4]</span></code>. Ook al heeft A meer kaarten dan B, ze zullen allebei geen kaarten meer hebben tijdens de oorlog en het spel zal eindigen in een gelijkspel.</p>
+</section>
+<section id="technisch-gelijkspel">
+<h3>Technisch gelijkspel<a class="headerlink" href="#technisch-gelijkspel" title="Permalink naar deze titel">¶</a></h3>
+<p>Het spel ga je in een simulatie spelen en (praktisch) zal je een grens moeten trekken voor gelijkspel: als na de 1000ste slag in een oorlogsspel geen van beide spelers heeft gewonnen, dan wordt het spel gelijkspel verklaard (want we hebben niet de hele dag de tijd!)</p>
+</section>
+</section>
+<section id="opgave">
+<h2>Opgave<a class="headerlink" href="#opgave" title="Permalink naar deze titel">¶</a></h2>
+<p>Implementeer de methode <code class="docutils literal notranslate"><span class="pre">findWinner</span></code> in <code class="docutils literal notranslate"><span class="pre">War.java</span></code> en voeg andere methoden toe waar nodig. Het is mogelijk om andere klassen toe te voegen aan de directory <code class="docutils literal notranslate"><span class="pre">src/main/java</span></code>, maar dat zal voor deze opgave <em>niet</em> nodig zijn.</p>
+<p>Een voorbeeld van methoden die je kan implementeren zijn terugkerende handelingen voor stapels kaarten, bijvoorbeeld de kaart van de bovenkant van de stapel trekken en kaarten aan de onderkant toevoegen. Deze handelingen zouden goede kandidaten zijn voor op zichzelf staande methoden, bijvoorbeeld</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">drawCard</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stack</span><span class="p">)</span>  <span class="c1">// take and return from top</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addCard</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stack</span><span class="p">,</span> <span class="kt">int</span> <span class="n">card</span><span class="p">)</span>  <span class="c1">// add to bottom</span>
+</pre></div>
+</div>
+<p>De parameter <code class="docutils literal notranslate"><span class="pre">stack</span></code> kan hier een stapel van een speler zijn waar je gebruik maakt van de <em>immutabiliteit</em> van een <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> object: het object zelf wijzigt niet maar de elementen daarvan kunnen wél worden aangepast.</p>
+<p>Andere onderdelen waar je bij stil zal moeten staan zijn de velden van de klasse, oftwel de <em>data</em>, bijvoorbeeld de stapels kaarten van spelers A en B.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Je leest in de signatuur van de methode <code class="docutils literal notranslate"><span class="pre">findWinner</span></code> dat het een <code class="docutils literal notranslate"><span class="pre">int</span></code> als resultaat geeft. De <em>betekenis</em> van deze returnwaarde kan je lezen in de meegeleverde unittest <code class="docutils literal notranslate"><span class="pre">WarTest.java</span></code> waar je uit kan afleiden dat <code class="docutils literal notranslate"><span class="pre">0</span></code> staat voor gelijkspel, <code class="docutils literal notranslate"><span class="pre">1</span></code> dat speler A heeft gewonnen en <code class="docutils literal notranslate"><span class="pre">-1</span></code> dat speler B heeft gewonnen.</p>
+<p>De waarden <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code> en <code class="docutils literal notranslate"><span class="pre">-1</span></code> zijn een abstracte notaties van mogelijke eindsituaties, en zijn niet heel duidelijk voor ons (althans, de <em>intentie</em> is niet direct duidelijk). Je kan deze waarden zien als <em>constanten</em>, waarden die nadat ze zijn geinitialiseerd niet meer kunnen veranderen. Java kent hier het <em>keyword</em> <code class="docutils literal notranslate"><span class="pre">final</span></code> voor en je zou deze waarden als volgt als velden aan de klasse kunnen toevoegen</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">WIN_A</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DRAW</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">WIN_B</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Let op, de conventie is om waarden die een constante vertegenwoordigen met hoofletters te schrijven. Het gemak (en duidelijkheid!) is nu dat je in het geval dat bijvoorbeeld speler B wint met een <em>naam</em> het resultaat kan teruggeven (<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">WIN_B</span></code>) in plaats van een <em>waarde</em> (<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">-1</span></code>).</p>
+</div>
+<section id="uitvoeren">
+<h3>Uitvoeren<a class="headerlink" href="#uitvoeren" title="Permalink naar deze titel">¶</a></h3>
+<p>Het zal je zijn opgevallen dat <code class="docutils literal notranslate"><span class="pre">findWinner</span></code> een <em>statische</em> methode is (net als de speciale methode <code class="docutils literal notranslate"><span class="pre">main</span></code>). Statische methoden zijn als functies, ze kunnen direct worden aangeroepen op de klasse zelf zonder dat daar een <em>instantie</em> van de klasse voor nodig is.</p>
+<p>Je kan deze opdracht uitvoeren met alleen maar statische methoden, of je kan een <code class="docutils literal notranslate"><span class="pre">War</span></code> object maken en instantiëren en de methodes daarvan aanroepen. Met andere woorden, behandel <code class="docutils literal notranslate"><span class="pre">findWinner</span></code> zoals je de methode <code class="docutils literal notranslate"><span class="pre">main</span></code> in een programma zou behandelen. We raden deze laatste aanpak voor deze opgave aan en als je hier voor kiest zou de klasse en de methode <code class="docutils literal notranslate"><span class="pre">findWinner</span></code> er ongeveer als volgt uit kunnen zien:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">War</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">deck</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">War</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">deck</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">deck</span> <span class="o">=</span> <span class="n">deck</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">simulateGame</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">/// ...</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">findWinner</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">deck</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">War</span> <span class="n">w</span> <span class="o">=</span> <span class="k">new</span> <span class="n">War</span><span class="p">(</span><span class="n">deck</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">w</span><span class="p">.</span><span class="na">simulateGame</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// create a deck</span>
+
+        <span class="c1">// print the result</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="testen">
+<h3>Testen<a class="headerlink" href="#testen" title="Permalink naar deze titel">¶</a></h3>
+<p>Het is aan te raden om extra unittests te schrijven om je stapsgewijs te helpen  naar de juiste oplossing toe te werken. Hier zijn enkele eenvoudige gevallen die je kan overwegen, om je op weg te helpen zijn de eerste vier al opgenomen in de meegeleverde unittest .</p>
+<ul class="simple">
+<li><p>Een leeg startspel.</p></li>
+<li><p>Een kaartspel met één kaart.</p></li>
+<li><p>Een kaartspel met twee kaarten, waarvan de eerste kaart meer waard is.</p></li>
+<li><p>Een kaartspel met twee kaarten, tweede kaart met hogere waarde.</p></li>
+<li><p>Een kaartspel met twee kaarten, gelijke waarde.</p></li>
+<li><p>Startdecks die resulteren in de voorbeelden die in de opdrachtbeschrijving worden gegeven.</p></li>
+<li><p>Een aangepaste versie van het bovenstaande waarbij de andere speler wint.</p></li>
+<li><p>Een kaartspel dat resulteert in een technisch gelijkspel.</p></li>
+<li><p>Een kaartspel dat resulteert in een gelijkspel tijdens een oorlog.</p></li>
+<li><p>Een startspel dat resulteert in een opeenvolging van een gevecht, oorlog en gevecht met minstens drie oorlogen.</p></li>
+<li><p>Een startspel dat resulteert in een oorlog waarbij speler A wint omdat speler B geen kaarten meer heeft tijdens de oorlog.</p></li>
+<li><p>Een startspel dat resulteert in een oorlog waarbij speler B wint omdat speler A geen kaarten meer heeft tijdens de oorlog.</p></li>
+</ul>
+</section>
+</section>
+<section id="tot-slot">
+<h2>Tot slot<a class="headerlink" href="#tot-slot" title="Permalink naar deze titel">¶</a></h2>
+<p>De implemenatie van <code class="docutils literal notranslate"><span class="pre">War</span></code> kan in minder dan 100 regels geschreven worden, en zal voornamelijk bestaan uit <code class="docutils literal notranslate"><span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">then</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span></code> statements en <code class="docutils literal notranslate"><span class="pre">while</span></code> en <code class="docutils literal notranslate"><span class="pre">for</span></code> lussen. Deze zullen zijn verdeeld over een aantal methoden, samen met een klein aantal instantie variabelen om de huidige staat van het spel bij te houden.</p>
+<p>Je hoeft <em>geen</em> recursie te gebruiken in deze opdracht, en verwacht dat je twee keer zoveel regels code zal schrijven voor de tests dan voor de implementatie van de klasse!</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./problems/simulation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../../exercises/bouncing_balls/index.html" title="vorige pagina">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">vorige</p>
+                <p class="prevnext-title">Stuiterbal</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

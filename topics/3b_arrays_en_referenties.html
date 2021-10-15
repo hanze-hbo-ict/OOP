@@ -4,7 +4,8 @@
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Arrays en referenties &#8212; Objectgeoriënteerd Programmeren I</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +35,7 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -42,10 +43,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -95,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -107,7 +108,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 1
  </span>
@@ -173,7 +174,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 2
  </span>
@@ -234,7 +235,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 3
  </span>
@@ -305,7 +306,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 4
  </span>
@@ -366,7 +367,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 5
  </span>
@@ -420,6 +421,50 @@
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
  </li>
 </ul>
 
@@ -560,16 +605,16 @@
         
               <div>
                 
-  <div class="section" id="arrays-en-referenties">
+  <section class="tex2jax_ignore mathjax_ignore" id="arrays-en-referenties">
 <h1>Arrays en referenties<a class="headerlink" href="#arrays-en-referenties" title="Permalink naar deze titel">¶</a></h1>
 <p>Een <strong>array</strong> is een datastructuur, waarbij meerdere waardes van een bepaald datatype opgeslagen worden.</p>
 <p>Dit biedt de mogelijkheid om aan één variabele meerdere waardes toe te kennen.</p>
 <p>Een waarde in een <strong>array</strong> wordt een element genoemd. Elk element heeft een <strong>index</strong>, een getal dat de positie van het <strong>element</strong> in de <strong>array</strong> aangeeft. Een <strong>index</strong> wordt geteld vanaf 0.</p>
 <p>Een waarde (<strong>element</strong>) in een <strong>array</strong> wordt benaderd door tussen blokhaken de <strong>index</strong> te zetten van het gewenste <strong>element</strong>, bijvoorbeeld</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">scores</span><span class="o">[</span><span class="mi">2</span><span class="o">]);</span> <span class="c1">// De derde score</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">scores</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">);</span> <span class="c1">// De derde score</span>
 </pre></div>
 </div>
-<div class="section" id="arrays-declareren-en-maken">
+<section id="arrays-declareren-en-maken">
 <h2>Arrays declareren en maken<a class="headerlink" href="#arrays-declareren-en-maken" title="Permalink naar deze titel">¶</a></h2>
 <p>Een <strong>array</strong> wordt als volgt gedeclareerd:</p>
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;[]</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span>
@@ -578,45 +623,45 @@
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">scores</span><span class="o">;</span> <span class="c1">// Array van integers met naam &#39;scores&#39;</span>
-<span class="n">String</span><span class="o">[]</span> <span class="n">namen</span><span class="o">;</span> <span class="c1">// Array van strings met naam &#39;namen&#39;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">scores</span><span class="p">;</span> <span class="c1">// Array van integers met naam &#39;scores&#39;</span>
+<span class="n">String</span><span class="o">[]</span> <span class="n">namen</span><span class="p">;</span> <span class="c1">// Array van strings met naam &#39;namen&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Een alternatieve wijze om <strong>arrays</strong> te declareren is:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;[];</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;[]</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Voordat een <strong>array</strong> kan worden gebruikt, moet deze worden gemaakt. De declaratie geeft namelijk alleen maar aan dat er een <strong>array</strong> is waar de gedeclareerde variabele naar verwijst, maar daarmee bestaat de daadwerkelijke <strong>array</strong> nog niet.</p>
 <p>Array maken:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span><span class="o">[&lt;</span><span class="n">aantal</span> <span class="n">elementen</span><span class="o">&gt;];</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span><span class="o">[&lt;</span><span class="n">aantal</span> <span class="n">elementen</span><span class="o">&gt;]</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span> <span class="c1">// Array met 10 integers</span>
-<span class="n">namen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">30</span><span class="o">];</span> <span class="c1">// Array met 30 strings</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span> <span class="c1">// Array met 10 integers</span>
+<span class="n">namen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">30</span><span class="o">]</span><span class="p">;</span> <span class="c1">// Array met 30 strings</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Het declareren en maken van de <strong>array</strong> kan ook gecombineerd worden:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;[]</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span><span class="o">[&lt;</span><span class="n">aantal</span> <span class="n">elementen</span><span class="o">&gt;];</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;[]</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span><span class="o">[&lt;</span><span class="n">aantal</span> <span class="n">elementen</span><span class="o">&gt;]</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">scores</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span> <span class="c1">// Array met 10 integers</span>
-<span class="n">String</span><span class="o">[]</span> <span class="n">namen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">30</span><span class="o">];</span> <span class="c1">// Array met 30 strings</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">scores</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span> <span class="c1">// Array met 10 integers</span>
+<span class="n">String</span><span class="o">[]</span> <span class="n">namen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">30</span><span class="o">]</span><span class="p">;</span> <span class="c1">// Array met 30 strings</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="arrays-gebruiken">
+</section>
+<section id="arrays-gebruiken">
 <h2>Arrays gebruiken<a class="headerlink" href="#arrays-gebruiken" title="Permalink naar deze titel">¶</a></h2>
 <p>Het benaderen van een <strong>element</strong>, gebeurt door de <strong>index</strong> tussen blokhaken achter de naam van de <strong>array</strong> te plaatsen:</p>
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;[&lt;</span><span class="n">index</span><span class="o">&gt;]</span>
@@ -625,12 +670,12 @@
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="mi">5</span><span class="o">;</span>
-<span class="n">scores</span><span class="o">[</span><span class="mi">1</span><span class="o">]=</span><span class="mi">10</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Score met index 1: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
-<span class="n">namen</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="s">&quot;Henk&quot;</span><span class="o">;</span>
-<span class="n">namen</span><span class="o">[</span><span class="mi">1</span><span class="o">]=</span><span class="s">&quot;Els&quot;</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">namen</span><span class="o">[</span><span class="mi">0</span><span class="o">]+</span><span class="s">&quot; en &quot;</span><span class="o">+</span><span class="n">namen</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">scores</span><span class="o">[</span><span class="mi">1</span><span class="o">]=</span><span class="mi">10</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score met index 1: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+<span class="n">namen</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="s">&quot;Henk&quot;</span><span class="p">;</span>
+<span class="n">namen</span><span class="o">[</span><span class="mi">1</span><span class="o">]=</span><span class="s">&quot;Els&quot;</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">namen</span><span class="o">[</span><span class="mi">0</span><span class="o">]+</span><span class="s">&quot; en &quot;</span><span class="o">+</span><span class="n">namen</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -649,19 +694,19 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="arrays-initialiseren">
+</section>
+<section id="arrays-initialiseren">
 <h2>Arrays initialiseren<a class="headerlink" href="#arrays-initialiseren" title="Permalink naar deze titel">¶</a></h2>
 <p>Ook <strong>elementen</strong> die nog niet een waarde toegekend hebben gekregen, zijn te benaderen.</p>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">scores</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">];</span>
-<span class="n">scores</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="mi">10</span><span class="o">;</span>
-<span class="n">scores</span><span class="o">[</span><span class="mi">2</span><span class="o">]=</span><span class="mi">5</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Score index 0: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Score index 1: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Score index 2: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="mi">2</span><span class="o">]);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">scores</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+<span class="n">scores</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="mi">10</span><span class="p">;</span>
+<span class="n">scores</span><span class="o">[</span><span class="mi">2</span><span class="o">]=</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score index 0: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score index 1: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score index 2: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -714,36 +759,36 @@ Voor niet-numerieke types wordt een waarde toegekend die enigszins vergelijkbaar
 </table>
 <p>De waarde <em>null</em> is van toepassing op niet-primitieve types en betekent dat een <strong>instantie</strong> (in dit geval een string) niet aanwezig is.</p>
 <p>Een array kan ook in één keer geïntialiseerd worden door de waardes tussen accolades te plaatsen:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;[]</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span> <span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;[]</span> <span class="o">{</span> <span class="n">waarde1</span><span class="o">,</span> <span class="n">waarde2</span><span class="o">,</span> <span class="n">etc</span><span class="o">..</span> <span class="o">};</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;[]</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span> <span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;[]</span> <span class="p">{</span> <span class="n">waarde1</span><span class="p">,</span> <span class="n">waarde2</span><span class="p">,</span> <span class="n">etc</span><span class="p">..</span> <span class="p">};</span>
 </pre></div>
 </div>
 <p>of</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;[]</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">{</span> <span class="n">waarde1</span><span class="o">,</span> <span class="n">waarde2</span><span class="o">,</span> <span class="n">etc</span><span class="o">..</span> <span class="o">};</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;[]</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span> <span class="n">waarde1</span><span class="p">,</span> <span class="n">waarde2</span><span class="p">,</span> <span class="n">etc</span><span class="p">..</span> <span class="p">};</span>
 </pre></div>
 </div>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">scores</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">22</span> <span class="o">};</span>
-<span class="n">String</span><span class="o">[]</span> <span class="n">namen</span> <span class="o">=</span> <span class="o">{</span> <span class="s">&quot;Henk&quot;</span><span class="o">,</span> <span class="s">&quot;Jan&quot;</span><span class="o">,</span> <span class="s">&quot;Els&quot;</span> <span class="o">};</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">scores</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span> <span class="p">};</span>
+<span class="n">String</span><span class="o">[]</span> <span class="n">namen</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;Henk&quot;</span><span class="p">,</span> <span class="s">&quot;Jan&quot;</span><span class="p">,</span> <span class="s">&quot;Els&quot;</span> <span class="p">};</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Als initialisatie in één keer plaatsvindt, dan kan het <em>new</em>-keyword achterwege worden gelaten.
 Deze wijze van initialiseren heeft wel beperkingen: Alleen mogelijk in combinatie met declaratie van een array, en alle waardes moeten meegegeven worden (gedeeltelijk initialiseren kan niet).</p>
-</div>
-<div class="section" id="arrays-weergeven">
+</section>
+<section id="arrays-weergeven">
 <h2>Arrays weergeven<a class="headerlink" href="#arrays-weergeven" title="Permalink naar deze titel">¶</a></h2>
 <p>Een <strong>array</strong> printen op de console, laat niet de waardes zien:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">scores</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">scores</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[I@703a3b6b
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[I@3028380c
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -756,9 +801,9 @@ Deze wijze van initialiseren heeft wel beperkingen: Alleen mogelijk in combinati
 <p>Dit is eenvoudig te realiseren met een for-loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Score index &quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">&quot;: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score index &quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">&quot;: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -787,9 +832,9 @@ Deze wijze van initialiseren heeft wel beperkingen: Alleen mogelijk in combinati
 <p>Om fouten te voorkomen, wordt meestal de length-property van een array gebruikt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">scores</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Score index &quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">&quot;: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">scores</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score index &quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">&quot;: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -820,20 +865,20 @@ Deze wijze van initialiseren heeft wel beperkingen: Alleen mogelijk in combinati
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="arrays-doorlopen">
+</section>
+<section id="arrays-doorlopen">
 <h2>Arrays doorlopen<a class="headerlink" href="#arrays-doorlopen" title="Permalink naar deze titel">¶</a></h2>
 <p>Met een loop kan een array worden doorlopen. Niet alleen om te printen, maar ook voor operaties op de elementen.</p>
 <p>Bijvoorbeeld alle scores met 1 verhogen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">scores</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-    <span class="n">scores</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">scores</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="mi">1</span><span class="o">;</span> <span class="c1">// score met 1 verhogen</span>
-<span class="o">}</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Nieuwe scores:&quot;</span><span class="o">);</span>
-<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">scores</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Score index &quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">&quot;: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">scores</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">scores</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">scores</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// score met 1 verhogen</span>
+<span class="p">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nieuwe scores:&quot;</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">scores</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score index &quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">&quot;: &quot;</span><span class="o">+</span><span class="n">scores</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -872,19 +917,19 @@ Deze wijze van initialiseren heeft wel beperkingen: Alleen mogelijk in combinati
 </div>
 <p>Uiteraard kan in plaats van een for-loop ook een while-loop worden gebruikt.</p>
 <p>Per situatie moet worden bekeken welk type loop het meest geschikt is.</p>
-</div>
-<div class="section" id="arrays-kopieeren">
+</section>
+<section id="arrays-kopieeren">
 <h2>Arrays kopieëren<a class="headerlink" href="#arrays-kopieeren" title="Permalink naar deze titel">¶</a></h2>
 <p>Wat gebeurt er als een array aan een andere variabele wordt toegekend?
 Uiteraard moet deze variabele een array van hetzelfde type zijn.</p>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">20</span> <span class="o">};</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">b</span><span class="o">;</span>
-<span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
-<span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]++;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="n">b</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span> <span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="p">;</span>
+<span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]++</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="n">b</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -904,13 +949,13 @@ Uiteraard moet deze variabele een array van hetzelfde type zijn.</p>
 <p>Een array kan gekopiëerd worden, door een array van hetzelfde type en dezelfde grootte te maken, en de elementen stuk voor stuk te kopieëren met een for-loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">20</span> <span class="o">};</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
-<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-    <span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-<span class="o">}</span>
-<span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]++;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="n">b</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span> <span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]++</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="n">b</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -930,27 +975,27 @@ Uiteraard moet deze variabele een array van hetzelfde type zijn.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">20</span> <span class="o">};</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span> <span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">copyOf</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="willekeurige-getallen">
+</section>
+<section id="willekeurige-getallen">
 <h2>Willekeurige getallen<a class="headerlink" href="#willekeurige-getallen" title="Permalink naar deze titel">¶</a></h2>
 <p>Soms is het nodig dat een computerprogramma onvoorspelbaar is. Bijvoorbeeld spelletjes. Een computer is daarom in staat om willekeurige getallen te generen.</p>
 <p>Met Java kan dat op de volgende wijze:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
-<span class="kt">int</span> <span class="n">willekeurigGetal</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span> <span class="c1">// Willekeurig getal, van 0 tot 100 (99 is het hoogste getal)</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">willekeurigGetal</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">willekeurigGetal</span><span class="o">=</span><span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// Willekeurig getal, van 0 tot 100 (99 is het hoogste getal)</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">willekeurigGetal</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -963,10 +1008,10 @@ Uiteraard moet deze variabele een array van hetzelfde type zijn.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">[]</span> <span class="n">namen</span> <span class="o">=</span> <span class="o">{</span> <span class="s">&quot;Henk&quot;</span><span class="o">,</span> <span class="s">&quot;Els&quot;</span><span class="o">,</span> <span class="s">&quot;Jan&quot;</span><span class="o">,</span> <span class="s">&quot;Moniek&quot;</span> <span class="o">};</span>
-<span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
-<span class="n">String</span> <span class="n">willekeurigeNaam</span><span class="o">=</span><span class="n">namen</span><span class="o">[</span><span class="n">random</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">namen</span><span class="o">.</span><span class="na">length</span><span class="o">)];</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">willekeurigeNaam</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">[]</span> <span class="n">namen</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;Henk&quot;</span><span class="p">,</span> <span class="s">&quot;Els&quot;</span><span class="p">,</span> <span class="s">&quot;Jan&quot;</span><span class="p">,</span> <span class="s">&quot;Moniek&quot;</span> <span class="p">};</span>
+<span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+<span class="n">String</span> <span class="n">willekeurigeNaam</span><span class="o">=</span><span class="n">namen</span><span class="o">[</span><span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">namen</span><span class="p">.</span><span class="na">length</span><span class="p">)</span><span class="o">]</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">willekeurigeNaam</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -979,23 +1024,23 @@ Uiteraard moet deze variabele een array van hetzelfde type zijn.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="enhanced-for-loop">
+</section>
+<section id="enhanced-for-loop">
 <h2>Enhanced for-loop<a class="headerlink" href="#enhanced-for-loop" title="Permalink naar deze titel">¶</a></h2>
 <p>Voor de standaard for-loop om een array te doorlopen is een alternatief: De enhanced for-loop. Deze wordt ook wel for-each loop genoemd.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">values</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="mi">5</span> <span class="o">};</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">values</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
 <span class="c1">// Standaard for-loop</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">values</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">values</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">values</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">values</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
 <span class="c1">// Bovenstaande loop is de vervangen door:</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">value</span> <span class="o">:</span> <span class="n">values</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">value</span> <span class="p">:</span> <span class="n">values</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1052,8 +1097,8 @@ Uiteraard moet deze variabele een array van hetzelfde type zijn.</p>
 </div>
 <p>Voordeel van de enhanced for-loop is de eenvoudige syntax.
 Er is dan echter geen index beschikbaar. Per situatie moet worden bekeken welk type loop het meest geschikt is.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

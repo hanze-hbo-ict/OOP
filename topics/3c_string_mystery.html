@@ -4,7 +4,8 @@
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>The strange case of String &#8212; Objectgeoriënteerd Programmeren I</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +35,7 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -42,10 +43,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -95,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -107,7 +108,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 1
  </span>
@@ -173,7 +174,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 2
  </span>
@@ -234,7 +235,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 3
  </span>
@@ -305,7 +306,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 4
  </span>
@@ -366,7 +367,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 5
  </span>
@@ -420,6 +421,50 @@
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
  </li>
 </ul>
 
@@ -530,21 +575,21 @@
         
               <div>
                 
-  <div class="section" id="the-strange-case-of-string">
+  <section class="tex2jax_ignore mathjax_ignore" id="the-strange-case-of-string">
 <h1>The strange case of <code class="docutils literal notranslate"><span class="pre">String</span></code><a class="headerlink" href="#the-strange-case-of-string" title="Permalink naar deze titel">¶</a></h1>
 <p>Over de gelijkwaardigheid van strings.</p>
-<div class="section" id="equality-operator">
+<section id="equality-operator">
 <h2>Equality operator<a class="headerlink" href="#equality-operator" title="Permalink naar deze titel">¶</a></h2>
 <p>Voor het vergelijken van waarden wordt de gelijkheid-operator <code class="docutils literal notranslate"><span class="pre">==</span></code> gebruikt. Laten we dit eens proberen voor typen die we al gezien hebben, hele getallen (<code class="docutils literal notranslate"><span class="pre">int</span></code>) en strings (<code class="docutils literal notranslate"><span class="pre">String</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">number_one</span> <span class="o">=</span> <span class="mi">42</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">number_two</span> <span class="o">=</span> <span class="mi">42</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">number_three</span> <span class="o">=</span> <span class="mi">43</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">number_one</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">number_two</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">number_three</span> <span class="o">=</span> <span class="mi">43</span><span class="p">;</span>
 
-<span class="n">String</span> <span class="n">string_one</span> <span class="o">=</span> <span class="s">&quot;Hello world!&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">string_two</span> <span class="o">=</span> <span class="s">&quot;Hello world!&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">string_three</span> <span class="o">=</span> <span class="s">&quot;Hello again!&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">string_one</span> <span class="o">=</span> <span class="s">&quot;Hello world!&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">string_two</span> <span class="o">=</span> <span class="s">&quot;Hello world!&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">string_three</span> <span class="o">=</span> <span class="s">&quot;Hello again!&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -602,7 +647,7 @@
 <p>Tot zover alles goed! Maar er is iets speciaals met <code class="docutils literal notranslate"><span class="pre">String</span></code>. Het is geen primitief type zoals <code class="docutils literal notranslate"><span class="pre">int</span></code>, maar een klasse, zodat we <code class="docutils literal notranslate"><span class="pre">String</span></code> instanties kunnen maken met het <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">string_four</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&quot;Hello world!&quot;</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">string_four</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -635,7 +680,7 @@
 <p>Hmm, dit is vreemd omdat ze hetzelfde zouden moeten zijn … ? Laten we een variatie proberen door een tweede instantie te maken met dezelfde waarde.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">string_five</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&quot;Hello world!&quot;</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">string_five</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -676,7 +721,7 @@
 <p>Het vergelijken van een kopie werkt zoals verwacht. Wanneer we een <code class="docutils literal notranslate"><span class="pre">String</span></code> object inspecteren zullen we zien dat het een <code class="docutils literal notranslate"><span class="pre">equals</span></code> methode heeft. Zou dit iets zijn wat we kunnen of moeten gebruiken? (het boek zegt dat we dat zouden moeten doen!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">string_four</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">string_five</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">string_four</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">string_five</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -691,15 +736,15 @@
 <li><p>Het bestaan van de <em>String Constant Pool</em></p></li>
 <li><p>Het verschil tussen <code class="docutils literal notranslate"><span class="pre">String</span></code> <em>literals</em> en <code class="docutils literal notranslate"><span class="pre">String</span></code> <em>objects</em></p></li>
 </ol>
-</div>
-<div class="section" id="string-literals-en-string-objects">
+</section>
+<section id="string-literals-en-string-objects">
 <h2>String literals en String objects<a class="headerlink" href="#string-literals-en-string-objects" title="Permalink naar deze titel">¶</a></h2>
 <p>We hebben gezien dat we op twee manieren strings kunnen maken. Deze eerste toewijzingsnotatie wordt een <em>string literal</em> genoemd:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">string_one</span> <span class="o">=</span> <span class="s">&quot;Hallo wereld!&quot;</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">string_one</span> <span class="o">=</span> <span class="s">&quot;Hallo wereld!&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>De tweede notatie heet een string <em>object</em>, omdat dit de manier is waarop we normaal gesproken instanties maken in Java:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">string_four</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&quot;Hello world!&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">string_four</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Zowel <code class="docutils literal notranslate"><span class="pre">string_one</span></code> als <code class="docutils literal notranslate"><span class="pre">string_two</span></code> zullen <code class="docutils literal notranslate"><span class="pre">String</span></code> instanties zijn, d.w.z. ze zullen van hetzelfde <em>type</em> zijn. Maar waarom evalueren ze niet als waar wanneer ze met elkaar vergeleken worden? Dit heeft alles te maken met het feit dat Java iets extra’s doet als het om string-literals gaat, en dit is waar de <em>String Constant Pool</em> in het spel komt …</p>
@@ -707,8 +752,8 @@
 <p>De reden waarom dit wordt gedaan is vanwege efficiëntie: het is een <em>optimalisatie</em> stap.  Wanneer je veel string-literals maakt met dezelfde waarde (bijv. “Hallo wereld!”) dan zal er slechts één object in het geheugen worden bewaard en dit verklaart waarom de gelijkheid-operator <code class="docutils literal notranslate"><span class="pre">==</span></code> werkt zoals verwacht met string-literals: als ze gelijk zijn dan zullen ze verwijzen naar hetzelfde object in de pool!</p>
 <p>In tegenstelling tot string-literals worden <em>string objecten</em> niet in de pool bewaard, twee string-objecten die met dezelfde waarde worden aangemaakt zullen echt twee aparte objecten zijn. En omdat de gelijkheidsoperator <code class="docutils literal notranslate"><span class="pre">==</span></code> gebonden is aan het pool-gedrag (d.w.z. controleren of de objectwaarde in de pool zit of niet) zal het vergelijken van twee verschillende string-objecten mislukken. Dit is waarom men expliciet de <code class="docutils literal notranslate"><span class="pre">equals</span></code> methode moet gebruiken om de <em>eigenlijke waarde</em> van verschillende string objecten te vergelijken.</p>
 <p>Voor velen (en zeker voor mensen die nieuw zijn in de Java taal) kan dit gedrag een grote bron van verwarring (en frustratie!) zijn.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

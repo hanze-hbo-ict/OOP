@@ -4,7 +4,8 @@
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Condities en logica &#8212; Objectgeoriënteerd Programmeren I</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +35,7 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -42,10 +43,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -95,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -107,7 +108,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 1
  </span>
@@ -173,7 +174,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 2
  </span>
@@ -234,7 +235,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 3
  </span>
@@ -305,7 +306,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 4
  </span>
@@ -366,7 +367,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 5
  </span>
@@ -420,6 +421,50 @@
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
  </li>
 </ul>
 
@@ -589,10 +634,10 @@
         
               <div>
                 
-  <div class="section" id="condities-en-logica">
+  <section class="tex2jax_ignore mathjax_ignore" id="condities-en-logica">
 <h1>Condities en logica<a class="headerlink" href="#condities-en-logica" title="Permalink naar deze titel">¶</a></h1>
 <p>Het is mogelijk om een programma te schrijven dat altijd hetzelfde doet, ongeacht de invoer. Dit is echter meestal niet wenselijk. Wat een programma doet hangt vaak af van de invoer. Met condities en conditionele statements kan een programma beslissingen nemen en code onder bepaalde voorwaarden uitvoeren.</p>
-<div class="section" id="relationele-operatoren">
+<section id="relationele-operatoren">
 <h2>Relationele operatoren<a class="headerlink" href="#relationele-operatoren" title="Permalink naar deze titel">¶</a></h2>
 <p>Java heeft zes relationele operatoren.</p>
 <p>Relationele operatoren zijn operatoren die de relatie tussen twee waardes checken, en teruggeven of deze relatie van toepassing is of niet.</p>
@@ -632,24 +677,24 @@
 <li><p>Vuistregel: Meestel geldt dat de relationele operatoren gebruikt worden met primitieve types.</p></li>
 <li><p>Gebruik relationele operatoren niet voor het vergelijken van strings. Het vergelijken van strings vindt op een andere manier plaats.</p></li>
 </ul>
-</div>
-<div class="section" id="if-statement">
+</section>
+<section id="if-statement">
 <h2>If-statement<a class="headerlink" href="#if-statement" title="Permalink naar deze titel">¶</a></h2>
 <p>Een if-statement kan gebruikt worden om code alleen onder een bepaalde voorwaarde uit te voeren.</p>
 <p>De voorwaarde wordt omschreven met een relationele operator.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(&lt;</span><span class="n">relationele</span> <span class="n">operator</span><span class="o">&gt;)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">relationele</span> <span class="n">operator</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// code die wordt uigevoerd als de relationele operator &#39;waar&#39; is</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is een positief getal.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is een positief getal.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -662,22 +707,22 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="else-keyword">
+</section>
+<section id="else-keyword">
 <h2>Else-keyword<a class="headerlink" href="#else-keyword" title="Permalink naar deze titel">¶</a></h2>
 <p>In sommige gevallen is het de bedoeling dat een (ander) blok code wordt uitgevoerd als de relationele operator niet ‘waar’ is.</p>
 <p>Dit is te realiseren met twee afzonderlijke if-statements.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">5</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is 5.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">!=</span><span class="mi">5</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is NIET 5.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is 5.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">!=</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is NIET 5.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -692,24 +737,24 @@
 </div>
 <p>Dit  is omslachtig, omdat er een tweede if-statement moet worden geschreven, met een relationele operator die tegengesteld is aan die van het eerste if-statement.</p>
 <p>Een eenvoudiger wijze om dit te bereiken is gebruik van het else-keyword:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(&lt;</span><span class="n">relationele</span> <span class="n">operator</span><span class="o">&gt;)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">relationele</span> <span class="n">operator</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// code die wordt uigevoerd als de relationele operator &#39;waar&#39; is</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="c1">// code die wordt uigevoerd als de relationele operator NIET &#39;waar&#39; is</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Het keyword else wordt altijd gebruikt als onderdeel van een if-statement. Zelfstandige else-statements bestaan niet. Een if..else-statement bevat twee blokken code, die één van beide wordt uitgevoerd.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">5</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is 5.&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is NIET 5.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is 5.&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is NIET 5.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -722,25 +767,25 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="nesting-en-chaining">
+</section>
+<section id="nesting-en-chaining">
 <h2>Nesting en chaining<a class="headerlink" href="#nesting-en-chaining" title="Permalink naar deze titel">¶</a></h2>
 <p>Soms is het nodig dat er meer dan twee verschillende stukken code zijn, die afhankelijk van voorwaarden worden uitgevoerd.</p>
 <p>Voorbeeld:
 Een conditie die afhankelijk van de waarde van <em>x</em> op het scherm print of deze 0 is, positief (&gt;0) of negatief (&lt;0).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is een positief getal.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is een negatief getal.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is een positief getal.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is een negatief getal.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -757,14 +802,14 @@ Een conditie die afhankelijk van de waarde van <em>x</em> op het scherm print of
 <p>Omdat er sprake is van drie mogelijkheden, zouden twee if-else statements gebruikt kunnen worden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{}</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is een positief getal.&quot;</span><span class="o">);</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is een negatief getal.&quot;</span><span class="o">);</span>
-    <span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is een positief getal.&quot;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is een negatief getal.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -782,14 +827,14 @@ Een conditie die afhankelijk van de waarde van <em>x</em> op het scherm print of
 <p>In deze situatie kan in plaats van <em>nesting</em> ook <em>chaining</em> worden gebruikt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=-</span><span class="mi">1</span><span class="o">;</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is een positief getal.&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is een negatief getal.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is een positief getal.&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is een negatief getal.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -807,14 +852,14 @@ Een conditie die afhankelijk van de waarde van <em>x</em> op het scherm print of
 <p>Naast de keuze tussen <em>chaining</em> en <em>nesting</em> kan ook de volgorde veranderd worden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=-</span><span class="mi">1</span><span class="o">;</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is een negatief getal.&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is een positief getal.&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De waarde van x is 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is een negatief getal.&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is een positief getal.&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De waarde van x is 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -828,27 +873,27 @@ Een conditie die afhankelijk van de waarde van <em>x</em> op het scherm print of
 </div>
 </div>
 <p>De bovenstaande drie voorbeelden zijn gelijkwaardig. Afhankelijk van leesbaarheid, efficiëntie en persoonlijke voorkeur wordt een werkwijze gekozen. Vaak zijn meerdere mogelijke werkwijzen juist.</p>
-</div>
-<div class="section" id="switch-statement">
+</section>
+<section id="switch-statement">
 <h2>Switch-statement<a class="headerlink" href="#switch-statement" title="Permalink naar deze titel">¶</a></h2>
 <p>Het switch-statement is een constructie om een reeks vergelijkbare <em>chained</em> if-statements te vervangen met de relationele operator <code class="docutils literal notranslate"><span class="pre">==</span></code>.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;The value of x is &quot;</span><span class="o">);</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;one&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;two&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;three&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">4</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;four&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;an unknown number&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;The value of x is &quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;two&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;three&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;four&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;an unknown number&quot;</span><span class="p">);</span>
+<span class="p">}</span>
     
 </pre></div>
 </div>
@@ -868,25 +913,25 @@ Een conditie die afhankelijk van de waarde van <em>x</em> op het scherm print of
 <p>Bovenstaande if-statements kunnen vervangen worden door deze switch-constructie:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">11</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">11</span><span class="p">;</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;The value of x is &quot;</span><span class="o">);</span>
-<span class="k">switch</span> <span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;one&quot;</span><span class="o">);</span>
-        <span class="k">break</span><span class="o">;</span>
-    <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;two&quot;</span><span class="o">);</span>
-        <span class="k">break</span><span class="o">;</span>
-    <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;three&quot;</span><span class="o">);</span>
-        <span class="k">break</span><span class="o">;</span>
-    <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;four&quot;</span><span class="o">);</span>
-        <span class="k">break</span><span class="o">;</span>
-    <span class="k">default</span><span class="o">:</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;an unknown number&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;The value of x is &quot;</span><span class="p">);</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;two&quot;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;three&quot;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;four&quot;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;an unknown number&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -913,8 +958,8 @@ Het <strong>keyword</strong> <em>break</em> wordt gebruikt om aan te geven dat u
 <li><p>default
 Het <strong>keyword</strong> <em>default</em> wordt gebruikt om aan te geven dat bij een waarde waarop géén van de case-statements van toepassing is de code direct na default wordt uitgevoerd. Een default-statement is niet verplicht.</p></li>
 </ul>
-</div>
-<div class="section" id="logische-operatoren">
+</section>
+<section id="logische-operatoren">
 <h2>Logische operatoren<a class="headerlink" href="#logische-operatoren" title="Permalink naar deze titel">¶</a></h2>
 <p>Naast de relationele operatoren, heeft Java drie logische operatoren.</p>
 <p>Java heeft zes relationele operatoren.</p>
@@ -930,7 +975,7 @@ Het <strong>keyword</strong> <em>default</em> wordt gebruikt om aan te geven dat
 <td><p>en</p></td>
 <td><p>als beide kanten <em>true</em> zijn, dan is de uitkomst <em>true</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\|\|</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">||</span></code></p></td>
 <td><p>of</p></td>
 <td><p>als beide kanten <em>false</em> zijn, dan is de uitkomst <em>false</em></p></td>
 </tr>
@@ -940,20 +985,20 @@ Het <strong>keyword</strong> <em>default</em> wordt gebruikt om aan te geven dat
 </tr>
 </tbody>
 </table>
-<div class="section" id="operator">
+<section id="operator">
 <h3>&amp;&amp;-operator<a class="headerlink" href="#operator" title="Permalink naar deze titel">¶</a></h3>
 <p>De <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>-operator kan gebruikt worden voor if-statements met meerdere condities die allemaal waar moeten zijn.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;x en y zijn beide 0.&quot;</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x en y zijn beide 0.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -969,12 +1014,12 @@ Het <strong>keyword</strong> <em>default</em> wordt gebruikt om aan te geven dat
 <p>De twee if-statements, kunnen vervangen door één if-statement met <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>-operator:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;x en y zijn beide 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x en y zijn beide 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -987,21 +1032,21 @@ Het <strong>keyword</strong> <em>default</em> wordt gebruikt om aan te geven dat
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h3>||-operator<a class="headerlink" href="#id1" title="Permalink naar deze titel">¶</a></h3>
 <p>De ||-operator kan gebruikt worden voor if-statements met meerdere condities waarvan tenminste één waar moet zijn.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Tenminste één van beide variabelen is 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Tenminste één van beide variabelen is 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tenminste één van beide variabelen is 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tenminste één van beide variabelen is 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1018,12 +1063,12 @@ Het <strong>keyword</strong> <em>default</em> wordt gebruikt om aan te geven dat
 <p>De twee if-statements, kunnen vervangen worden door één if-statement met ||-operator:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span> <span class="o">||</span> <span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Tenminste één van beide variabelen is 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span> <span class="o">||</span> <span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tenminste één van beide variabelen is 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1036,45 +1081,45 @@ Het <strong>keyword</strong> <em>default</em> wordt gebruikt om aan te geven dat
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h3>!-operator<a class="headerlink" href="#id2" title="Permalink naar deze titel">¶</a></h3>
 <p>De <code class="docutils literal notranslate"><span class="pre">!</span></code>-operator inverteert een conditie.</p>
 <p>Inverteren betekent in dit geval: <em>true</em> wordt <em>false</em> en <em>false</em> wordt *true.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="o">(!(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">5</span><span class="o">))</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;x is niet kleiner dan 5&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x is niet kleiner dan 5&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>De relationele operator moet tussen haakjes staan om te voorkomen dat de !-operator op x toegepast wo</p>
 <p>If-statements met de !-operator kunnen herschreven worden naar if-statements zonder !-operator.</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(!(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">5</span><span class="o">))</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>kan ook geschreven worden als</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">5</span><span class="o">)</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="de-wetten-van-de-morgan">
+</section>
+</section>
+<section id="de-wetten-van-de-morgan">
 <h2>De wetten van De Morgan<a class="headerlink" href="#de-wetten-van-de-morgan" title="Permalink naar deze titel">¶</a></h2>
 <p>Soms is een expressie nodig bestaande uit een mix van relationele en logische operatoren.</p>
 <p>Bijvoorbeeld een if-statement om te controleren of x en y géén van beide 0 zijn:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span>
-<span class="k">if</span> <span class="o">(!(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span> <span class="o">||</span> <span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="o">))</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;x en y zijn allebei niet 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span> <span class="o">||</span> <span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x en y zijn allebei niet 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1097,11 +1142,11 @@ Het <strong>keyword</strong> <em>default</em> wordt gebruikt om aan te geven dat
 <p>Het voorbeeld kan met de wetten van De Morgan als volgt herschreven worden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span>
-<span class="k">if</span> <span class="o">(!(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">!(</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="o">))</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;x en y zijn allebei niet 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x en y zijn allebei niet 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1118,11 +1163,11 @@ Het <strong>keyword</strong> <em>default</em> wordt gebruikt om aan te geven dat
 De inverse (tegengestelde) van gelijk aan 0 is ongelijk aan 0. De ongelijkheid-operator != toepassen maakt het if-statement beter leesbaar:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">!=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span><span class="o">!=</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;x en y zijn allebei niet 0.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">!=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x en y zijn allebei niet 0.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1135,17 +1180,17 @@ De inverse (tegengestelde) van gelijk aan 0 is ongelijk aan 0. De ongelijkheid-o
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="boolean-type">
+</section>
+<section id="boolean-type">
 <h2>Boolean type<a class="headerlink" href="#boolean-type" title="Permalink naar deze titel">¶</a></h2>
 <p>Relationele en logische operatoren geven <em>true</em> of <em>false</em> terug. Daarom kunnen ze ook in booleans opgeslagen worden.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">7</span><span class="o">;</span>
-<span class="kt">boolean</span> <span class="n">x_smaller_than_y</span> <span class="o">=</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">y</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x_smaller_than_y</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">7</span><span class="p">;</span>
+<span class="kt">boolean</span> <span class="n">x_smaller_than_y</span> <span class="o">=</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">y</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x_smaller_than_y</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1162,12 +1207,12 @@ De inverse (tegengestelde) van gelijk aan 0 is ongelijk aan 0. De ongelijkheid-o
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">light</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">light</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Het licht is aan&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Het licht is uit&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">light</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">light</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Het licht is aan&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Het licht is uit&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1181,27 +1226,27 @@ De inverse (tegengestelde) van gelijk aan 0 is ongelijk aan 0. De ongelijkheid-o
 </div>
 </div>
 <p>De statements</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">light</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">light</span><span class="p">)</span> <span class="p">{</span>
 </pre></div>
 </div>
 <p>en</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">light</span><span class="o">==</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">light</span><span class="o">==</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
 </pre></div>
 </div>
 <p>zijn gelijkwaardig.</p>
 <p>Dit geldt ook voor de statements</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(!</span><span class="n">light</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">light</span><span class="p">)</span> <span class="p">{</span>
 </pre></div>
 </div>
 <p>en</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">light</span><span class="o">==</span><span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">light</span><span class="o">==</span><span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="invoer-valideren">
+</section>
+<section id="invoer-valideren">
 <h2>Invoer valideren<a class="headerlink" href="#invoer-valideren" title="Permalink naar deze titel">¶</a></h2>
 <p>Een mogelijke toepassing van if-statements is het valideren van invoer. Valideren is controleren of invoer wel geldig is.</p>
-<div class="section" id="voorbeeld-leeftijd-kat-in-mensenjaren">
+<section id="voorbeeld-leeftijd-kat-in-mensenjaren">
 <h3>Voorbeeld: Leeftijd kat in mensenjaren<a class="headerlink" href="#voorbeeld-leeftijd-kat-in-mensenjaren" title="Permalink naar deze titel">¶</a></h3>
 <p>De gebruiker voert de leeftijd van een kat in, in jaren. Vervolgens print het programma de leeftijd van de kat in mensenjaren.</p>
 <p>Als eerste is code nodig om de leeftijd van de kat om te rekenen naar een vergelijkbaar aantal mensenjaren.</p>
@@ -1211,15 +1256,15 @@ De inverse (tegengestelde) van gelijk aan 0 is ongelijk aan 0. De ongelijkheid-o
 <p>Het is wenselijk om dit in een afzonderlijke methode te doen, zodat de logica wordt gescheiden van de interactie met de gebruiker.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">leeftijdKatNaarMens</span><span class="o">(</span><span class="kt">int</span> <span class="n">aantaljaren</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">aantaljaren</span><span class="o">==</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="mi">15</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">aantaljaren</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="mi">16</span><span class="o">+</span><span class="n">aantaljaren</span><span class="o">*</span><span class="mi">4</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">leeftijdKatNaarMens</span><span class="p">(</span><span class="kt">int</span> <span class="n">aantaljaren</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">aantaljaren</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">15</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">aantaljaren</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">16</span><span class="o">+</span><span class="n">aantaljaren</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1228,7 +1273,7 @@ De inverse (tegengestelde) van gelijk aan 0 is ongelijk aan 0. De ongelijkheid-o
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Testen</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">leeftijdKatNaarMens</span><span class="o">(</span><span class="mi">10</span><span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">leeftijdKatNaarMens</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -1244,13 +1289,13 @@ De inverse (tegengestelde) van gelijk aan 0 is ongelijk aan 0. De ongelijkheid-o
 <p>Vervolgens kan de interactie met de gebruiker geprogrammeerd worden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Wat is de leeftijd van de kat, in mensenjaren?&quot;</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Leeftijd van de kat (in jaren) ?&quot;</span><span class="o">);</span>
-<span class="n">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">leeftijdkat</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
-<span class="kt">int</span> <span class="n">leeftijdkat_mensenjaren</span><span class="o">=</span><span class="n">leeftijdKatNaarMens</span><span class="o">(</span><span class="n">leeftijdkat</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De leeftijd van de kat in mensenjaren is &quot;</span><span class="o">+</span><span class="n">leeftijdkat_mensenjaren</span><span class="o">+</span><span class="s">&quot; jaar.&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Wat is de leeftijd van de kat, in mensenjaren?&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Leeftijd van de kat (in jaren) ?&quot;</span><span class="p">);</span>
+<span class="n">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">leeftijdkat</span><span class="o">=</span><span class="n">s</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">leeftijdkat_mensenjaren</span><span class="o">=</span><span class="n">leeftijdKatNaarMens</span><span class="p">(</span><span class="n">leeftijdkat</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De leeftijd van de kat in mensenjaren is &quot;</span><span class="o">+</span><span class="n">leeftijdkat_mensenjaren</span><span class="o">+</span><span class="s">&quot; jaar.&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1283,20 +1328,20 @@ Bijvoorbeeld een negatieve leeftijd. Of een leeftijd die onwaarschijnlijk hoog i
 <p>Validatie zorgt er voor dat de gebruiker gewaarschuwd wordt bij ongeldige invoer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Wat is de leeftijd van de kat, in mensenjaren?&quot;</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Leeftijd van de kat (in jaren) ?&quot;</span><span class="o">);</span>
-<span class="n">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">leeftijdkat</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Wat is de leeftijd van de kat, in mensenjaren?&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Leeftijd van de kat (in jaren) ?&quot;</span><span class="p">);</span>
+<span class="n">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">leeftijdkat</span><span class="o">=</span><span class="n">s</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">leeftijdkat</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Leeftijd kat negatief. Moet de kat nog geboren worden?&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">leeftijdkat</span><span class="o">&gt;</span><span class="mi">45</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De ingevoerde leeftijd klopt waarschijnlijk niet. De oudste kat ooit is 38 jaar geworden..&quot;</span><span class="o">);</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">leeftijdkat_mensenjaren</span><span class="o">=</span><span class="n">leeftijdKatNaarMens</span><span class="o">(</span><span class="n">leeftijdkat</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De leeftijd van de kat in mensenjaren is &quot;</span><span class="o">+</span><span class="n">leeftijdkat_mensenjaren</span><span class="o">+</span><span class="s">&quot; jaar.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">leeftijdkat</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Leeftijd kat negatief. Moet de kat nog geboren worden?&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">leeftijdkat</span><span class="o">&gt;</span><span class="mi">45</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De ingevoerde leeftijd klopt waarschijnlijk niet. De oudste kat ooit is 38 jaar geworden..&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">leeftijdkat_mensenjaren</span><span class="o">=</span><span class="n">leeftijdKatNaarMens</span><span class="p">(</span><span class="n">leeftijdkat</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De leeftijd van de kat in mensenjaren is &quot;</span><span class="o">+</span><span class="n">leeftijdkat_mensenjaren</span><span class="o">+</span><span class="s">&quot; jaar.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1309,9 +1354,9 @@ Leeftijd kat negatief. Moet de kat nog geboren worden?
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

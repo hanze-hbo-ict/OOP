@@ -4,7 +4,8 @@
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Variabelen en operatoren &#8212; Objectgeoriënteerd Programmeren I</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +35,7 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -42,10 +43,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -95,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -107,7 +108,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 1
  </span>
@@ -173,7 +174,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 2
  </span>
@@ -234,7 +235,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 3
  </span>
@@ -305,7 +306,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 4
  </span>
@@ -366,7 +367,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 5
  </span>
@@ -420,6 +421,50 @@
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
  </li>
 </ul>
 
@@ -638,9 +683,9 @@
         
               <div>
                 
-  <div class="section" id="variabelen-en-operatoren">
+  <section class="tex2jax_ignore mathjax_ignore" id="variabelen-en-operatoren">
 <h1>Variabelen en operatoren<a class="headerlink" href="#variabelen-en-operatoren" title="Permalink naar deze titel">¶</a></h1>
-<div class="section" id="variabelen">
+<section id="variabelen">
 <h2>Variabelen<a class="headerlink" href="#variabelen" title="Permalink naar deze titel">¶</a></h2>
 <p><strong>Datatypen</strong></p>
 <ul class="simple">
@@ -650,14 +695,14 @@
 <li><p>…</p></li>
 </ul>
 <p>Variabelen hebben altijd een datatype, ongeacht de taal. De wijze van toekenning van waarden aan variabelen, en daarmee de typen, kunnen verschillen. We gaan een onderscheid maken tussen <em>dynamisch</em>- en <em>statisch</em> getypeerde talen.</p>
-<div class="section" id="dynamisch-en-statisch-getypeerde-talen">
+<section id="dynamisch-en-statisch-getypeerde-talen">
 <h3>Dynamisch- en statisch getypeerde talen<a class="headerlink" href="#dynamisch-en-statisch-getypeerde-talen" title="Permalink naar deze titel">¶</a></h3>
 <p><em>Dynamisch</em> getypeerd</p>
 <blockquote>
 <div><p>Het type wordt bepaald tijdens uitvoering van een programma aan de hand van de waarde die aan de variabele wordt toegekend, het type kan veranderen door toekenning van andere waarden.</p>
 </div></blockquote>
 <p>Voorbeelden van <em>dynamisch</em> getypeerde talen zijn Python, PHP en JavaScript.</p>
-<div class="section" id="voorbeeld">
+<section id="voorbeeld">
 <h4>Voorbeeld<a class="headerlink" href="#voorbeeld" title="Permalink naar deze titel">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;tien&quot;</span>
@@ -669,9 +714,9 @@
 <div><p>Het type wordt vooraf vastgelegd (gedeclareerd) en het type kan niet veranderen.</p>
 </div></blockquote>
 <p>Java is een statisch getypeerde programmeertaal waar alle variabelen <em>vóór</em> gebruik gedeclareerd moeten  worden. Een ander voorbeeld van een statisch getypeerde taal is C.</p>
-</div>
-</div>
-<div class="section" id="variabelen-declareren">
+</section>
+</section>
+<section id="variabelen-declareren">
 <h3>Variabelen declareren<a class="headerlink" href="#variabelen-declareren" title="Permalink naar deze titel">¶</a></h3>
 <p>Het declareren van een variabele vindt plaats met de volgende syntax:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;type&gt; &lt;naam&gt;
@@ -679,25 +724,25 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span><span class="o">;</span>         <span class="c1">// variabele met naam &#39;score&#39; en type int</span>
-<span class="n">String</span> <span class="n">woonplaats</span><span class="o">;</span> <span class="c1">// variabele met naam &#39;woonplaats&#39; en type String</span>
-<span class="kt">double</span> <span class="n">prijs</span><span class="o">;</span>      <span class="c1">// variabele met naam &#39;prijs&#39; en type double</span>
-<span class="kt">boolean</span> <span class="n">isManager</span><span class="o">;</span> <span class="c1">// variabele met naam &#39;isManager&#39; en type boolean</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span><span class="p">;</span>         <span class="c1">// variabele met naam &#39;score&#39; en type int</span>
+<span class="n">String</span> <span class="n">woonplaats</span><span class="p">;</span> <span class="c1">// variabele met naam &#39;woonplaats&#39; en type String</span>
+<span class="kt">double</span> <span class="n">prijs</span><span class="p">;</span>      <span class="c1">// variabele met naam &#39;prijs&#39; en type double</span>
+<span class="kt">boolean</span> <span class="n">isManager</span><span class="p">;</span> <span class="c1">// variabele met naam &#39;isManager&#39; en type boolean</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>De variabelen hebben hier nog geen waarde, je <em>verklaart</em> hier alleen dat je een variabele van een bepaald type gaat gebruiken, de daadwerkelijke waarde zal pas later worden gezet (<em>geïnitialisereerd</em>).</p>
-</div>
-<div class="section" id="variabelen-initialiseren">
+</section>
+<section id="variabelen-initialiseren">
 <h3>Variabelen initialiseren<a class="headerlink" href="#variabelen-initialiseren" title="Permalink naar deze titel">¶</a></h3>
 <p>Als een variabele eenmaal is gedeclareerd, dan kan daar een waarde aan worden toegekend.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
-<span class="n">woonplaats</span> <span class="o">=</span> <span class="s">&quot;Groningen&quot;</span><span class="o">;</span>
-<span class="n">prijs</span> <span class="o">=</span> <span class="mf">4.95</span><span class="o">;</span>
-<span class="n">isManager</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="n">woonplaats</span> <span class="o">=</span> <span class="s">&quot;Groningen&quot;</span><span class="p">;</span>
+<span class="n">prijs</span> <span class="o">=</span> <span class="mf">4.95</span><span class="p">;</span>
+<span class="n">isManager</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -716,25 +761,25 @@
 </div>
 </div>
 <p>Dit geeft een fout. Als het type eenmaal is gedeclareed dan mag geen waarde van een ander type worden toegekend!</p>
-</div>
-<div class="section" id="declareren-en-initialiseren">
+</section>
+<section id="declareren-en-initialiseren">
 <h3>Declareren én initialiseren<a class="headerlink" href="#declareren-en-initialiseren" title="Permalink naar deze titel">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">woonplaats</span> <span class="o">=</span> <span class="s">&quot;Groningen&quot;</span><span class="o">;</span>
-<span class="kt">double</span> <span class="n">prijs</span> <span class="o">=</span> <span class="mf">4.95</span><span class="o">;</span>
-<span class="kt">boolean</span> <span class="n">isManager</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">woonplaats</span> <span class="o">=</span> <span class="s">&quot;Groningen&quot;</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">prijs</span> <span class="o">=</span> <span class="mf">4.95</span><span class="p">;</span>
+<span class="kt">boolean</span> <span class="n">isManager</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Declareren en initialiseren kan in één regel!</p>
-</div>
-</div>
-<div class="section" id="dynamische-versus-statische-toekenning">
+</section>
+</section>
+<section id="dynamische-versus-statische-toekenning">
 <h2>Dynamische versus statische toekenning<a class="headerlink" href="#dynamische-versus-statische-toekenning" title="Permalink naar deze titel">¶</a></h2>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><img alt="statisch 1b" src="../_images/1a_static.png" /></p>
@@ -751,13 +796,13 @@
 <p>Een verwijzing wordt nu gemaakt naar een <em>nieuw</em> object, een <em>string</em> in dit geval. De verwijzing naar het vorige object bestaat niet meer en het object zal op een gegeven moment uit het geheugen worden verwijderd (<em>garbage collection</em>).</p>
 <p>Strikt (technisch) gezien zou je kunnen stellen dat het objecttype niet verandert, alleen maar de verwijzing.</p>
 <p>Je kan je misschien nu afvragen welke benadering (statisch of dynamisch) beter is. Ons antwoord is dat het niet een kwestie van beter of slechter is, beide hebben hun voor- en nadelen.</p>
-</div>
-<div class="section" id="variabelen-en-geheugen">
+</section>
+<section id="variabelen-en-geheugen">
 <h2>Variabelen en geheugen<a class="headerlink" href="#variabelen-en-geheugen" title="Permalink naar deze titel">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -765,7 +810,7 @@
 <p>De bovenstaande declaraties plaatsen <em>twee</em> integers in het geheugen. De toekenning <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a</span></code> plaatst de <strong>waarde</strong> van <code class="docutils literal notranslate"><span class="pre">a</span></code> in <code class="docutils literal notranslate"><span class="pre">b</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -795,16 +840,16 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="variabelen-op-de-console">
+</section>
+<section id="variabelen-op-de-console">
 <h2>Variabelen op de console<a class="headerlink" href="#variabelen-op-de-console" title="Permalink naar deze titel">¶</a></h2>
 <p>Variabelen kunnen meegegeven worden aan een <code class="docutils literal notranslate"><span class="pre">System.out.println</span></code>-statement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">score</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">woonplaats</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">prijs</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">isManager</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">score</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">woonplaats</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">prijs</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isManager</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -820,7 +865,7 @@ true
 <p>Dit kan ook gecombineerd worden met tekst:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Score: &quot;</span> <span class="o">+</span> <span class="n">score</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score: &quot;</span> <span class="o">+</span> <span class="n">score</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -833,7 +878,7 @@ true
 <p>Ook complexere combinaties zijn mogelijk:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De prijs van een middag parkeren in &quot;</span><span class="o">+</span><span class="n">woonplaats</span><span class="o">+</span><span class="s">&quot; is €&quot;</span><span class="o">+</span><span class="n">prijs</span><span class="o">+</span><span class="s">&quot;.&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De prijs van een middag parkeren in &quot;</span><span class="o">+</span><span class="n">woonplaats</span><span class="o">+</span><span class="s">&quot; is €&quot;</span><span class="o">+</span><span class="n">prijs</span><span class="o">+</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -843,8 +888,8 @@ true
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="typen-in-java">
+</section>
+<section id="typen-in-java">
 <h2>Typen in Java<a class="headerlink" href="#typen-in-java" title="Permalink naar deze titel">¶</a></h2>
 <ul class="simple">
 <li><p>Java heeft 8 verschillende <em>primitieve</em> typen.</p></li>
@@ -856,7 +901,7 @@ true
 </ul>
 </li>
 </ul>
-<div class="section" id="gehele-getallen">
+<section id="gehele-getallen">
 <h3>Gehele getallen<a class="headerlink" href="#gehele-getallen" title="Permalink naar deze titel">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
@@ -885,8 +930,8 @@ true
 </tbody>
 </table>
 <p>Gehele getallen in Java zijn altijd <em>signed</em>.</p>
-</div>
-<div class="section" id="floating-point-getallen">
+</section>
+<section id="floating-point-getallen">
 <h3>Floating point getallen<a class="headerlink" href="#floating-point-getallen" title="Permalink naar deze titel">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
@@ -904,8 +949,8 @@ true
 </tbody>
 </table>
 <p>Naast de algemene numerieke types heeft Java nog twee aanvullende types, <code class="docutils literal notranslate"><span class="pre">float</span></code> en <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p>
-</div>
-<div class="section" id="overige-types">
+</section>
+<section id="overige-types">
 <h3>Overige types<a class="headerlink" href="#overige-types" title="Permalink naar deze titel">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
@@ -922,31 +967,31 @@ true
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="section" id="primitief">
+</section>
+</section>
+<section id="primitief">
 <h2>Primitief?<a class="headerlink" href="#primitief" title="Permalink naar deze titel">¶</a></h2>
 <p>Aanduidingen van primitieve types beginnen met een kleine letter.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;Hallo wereld!&quot;</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;Hallo wereld!&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Maar we hebben eerder ook typen gezien met hoofdletter, bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">String</span></code>. Dit zijn <em>niet</em>-primitieve types. Aanduidingen van niet-primitieve types beginnen met een hoofdletter. Deze worden later behandeld.</p>
 <p>Voor nu is het belangrijk om te weten dat het niet-primitieve type <code class="docutils literal notranslate"><span class="pre">String</span></code> voor strings gebruikt wordt in Java.</p>
-</div>
-<div class="section" id="rekenkundige-operatoren">
+</section>
+<section id="rekenkundige-operatoren">
 <h2>Rekenkundige operatoren<a class="headerlink" href="#rekenkundige-operatoren" title="Permalink naar deze titel">¶</a></h2>
 <p>Op numerieke types kunnen de basis rekenkundige operatoren gebruikt worden.</p>
 <p>Dit zijn onder andere <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code> en <code class="docutils literal notranslate"><span class="pre">*</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -963,7 +1008,7 @@ true
 <p>Oplossing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">((</span><span class="kt">float</span><span class="o">)</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="kt">float</span><span class="p">)</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -977,8 +1022,8 @@ true
 <p>Voor modulo (rest) wordt <code class="docutils literal notranslate"><span class="pre">%</span></code> gebruikt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">%</span> <span class="mi">8</span><span class="o">);</span> <span class="c1">// 4</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="mi">8</span><span class="p">);</span> <span class="c1">// 4</span>
 </pre></div>
 </div>
 </div>
@@ -988,16 +1033,16 @@ true
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="afrondingsfouten">
+</section>
+<section id="afrondingsfouten">
 <h2>Afrondingsfouten<a class="headerlink" href="#afrondingsfouten" title="Permalink naar deze titel">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="mi">10</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
     <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span>
     <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>
-<span class="o">);</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1009,17 +1054,17 @@ true
 </div>
 </div>
 <p>Bij floatingpoint getallen kun je te maken krijgen met afrondingsfouten, deze afrondingsfouten zijn inherent aan floatingpoint types!</p>
-</div>
-<div class="section" id="string-operatoren">
+</section>
+<section id="string-operatoren">
 <h2>String operatoren<a class="headerlink" href="#string-operatoren" title="Permalink naar deze titel">¶</a></h2>
 <p>Rekenkundige operatoren zoals aftrekken, delen en vermenigvuldigen zijn niet mogelijk met strings. Deze geven een <em>compileerfout</em>.</p>
 <p>De <code class="docutils literal notranslate"><span class="pre">+</span></code> operator is wel mogelijk met strings. Deze combineert twee strings tot een nieuwe string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">firstpart</span> <span class="o">=</span> <span class="s">&quot;Hello &quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">secondpart</span> <span class="o">=</span> <span class="s">&quot;world!&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">firstpart</span> <span class="o">+</span> <span class="n">secondpart</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">firstpart</span> <span class="o">=</span> <span class="s">&quot;Hello &quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">secondpart</span> <span class="o">=</span> <span class="s">&quot;world!&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">firstpart</span> <span class="o">+</span> <span class="n">secondpart</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1032,10 +1077,10 @@ true
 <p>Ook complexere combinaties zijn mogelijk:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">greet</span><span class="o">=</span><span class="s">&quot;Hello&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;Hanze students&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">greet</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;!&quot;</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">greet</span><span class="o">=</span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;Hanze students&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">greet</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;!&quot;</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1048,9 +1093,9 @@ true
 <p>Combineren met andere types is mogelijk:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span><span class="o">=</span><span class="mi">180</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;Uw score is &quot;</span><span class="o">+</span><span class="n">score</span><span class="o">+</span><span class="s">&quot; punten!&quot;</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">score</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span><span class="o">=</span><span class="mi">180</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;Uw score is &quot;</span><span class="o">+</span><span class="n">score</span><span class="o">+</span><span class="s">&quot; punten!&quot;</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">score</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1061,8 +1106,8 @@ true
 </div>
 </div>
 <p>In het bovenstaande voorbeeld wordt de numerieke variabele <em>score</em> <strong>impliciet</strong> omgezet naar een string en vervolgens gecombineerd met de andere strings.</p>
-</div>
-<div class="section" id="maar-in-een-andere-taal">
+</section>
+<section id="maar-in-een-andere-taal">
 <h2>Maar in een andere taal…<a class="headerlink" href="#maar-in-een-andere-taal" title="Permalink naar deze titel">¶</a></h2>
 <p>kan ik wel strings vermenigvuldigen!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ha&quot;</span> <span class="o">*</span> <span class="mi">10</span>
@@ -1071,8 +1116,8 @@ true
 <p>De vermenigvuldigingsoperator <code class="docutils literal notranslate"><span class="pre">*</span></code> kan je in Java niet gebruiken in combinatie met strings. Bij het leren van een nieuwe taal zul je soms zoeken naar een manier om een idee uit te drukken die je misschien uit een andere taal kent, bijvoorbeeld Python. Het kan zijn dat de ontwerpers van een taal er voor gekozen hebben om het anders uit te druken of is het misschien technisch niet mogelijk.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;ha&quot;</span><span class="o">;</span>
-<span class="n">text</span><span class="o">.</span><span class="na">repeat</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;ha&quot;</span><span class="p">;</span>
+<span class="n">text</span><span class="p">.</span><span class="na">repeat</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1083,8 +1128,8 @@ true
 </div>
 </div>
 <p>Dit is de oplossing die Java voor dit specifieke probleem heeft waar de <em>methode</em> <code class="docutils literal notranslate"><span class="pre">repeat()</span></code> van het <code class="docutils literal notranslate"><span class="pre">String</span></code> object <code class="docutils literal notranslate"><span class="pre">text</span></code> moet worden aangeroepen voor het aantal gewenste herhalingen. Let op, dit kan pas vanaf Java versie 11.</p>
-</div>
-<div class="section" id="fouten">
+</section>
+<section id="fouten">
 <h2>Fouten<a class="headerlink" href="#fouten" title="Permalink naar deze titel">¶</a></h2>
 <ul class="simple">
 <li><p><em>Compiler</em> fout</p></li>
@@ -1092,19 +1137,19 @@ true
 <li><p><em>Logische</em> fout</p></li>
 </ul>
 <p>Er zijn 3 types fouten die met het compileren of uitvoeren van een programma kunnen optreden.</p>
-<div class="section" id="compiler-fout">
+<section id="compiler-fout">
 <h3>Compiler fout<a class="headerlink" href="#compiler-fout" title="Permalink naar deze titel">¶</a></h3>
 <p>Een compiler fout treedt op tijdens het compileren, als een regel geen correcte Java-code bevat.
 Bijvoorbeeld een accolade of puntkomma ontbreekt.</p>
-</div>
-<div class="section" id="runtime-fout">
+</section>
+<section id="runtime-fout">
 <h3>Runtime fout<a class="headerlink" href="#runtime-fout" title="Permalink naar deze titel">¶</a></h3>
 <p>Een run-time fout treedt op tijdens het uitvoeren van een programma. Het compileren is in dat geval wel goed verlopen. Bijvoorbeeld delen door nul.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1116,16 +1161,16 @@ Bijvoorbeeld een accolade of puntkomma ontbreekt.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="logische-fout">
+</section>
+<section id="logische-fout">
 <h3>Logische fout<a class="headerlink" href="#logische-fout" title="Permalink naar deze titel">¶</a></h3>
 <p>Van een logische fout is sprake als code succesvol is gecompileerd en zonder run-time fouten wordt uitgevoerd, maar door een programmeerfout niet het gewenste resultaat geeft.</p>
 <p>Bijvoorbeeld een off-by-one fout:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">naam</span> <span class="o">=</span> <span class="s">&quot;Hanze&quot;</span><span class="o">;</span>
-<span class="kt">char</span> <span class="n">derdeLetter</span> <span class="o">=</span> <span class="n">naam</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;De derde letter van &quot;</span> <span class="o">+</span> <span class="n">naam</span> <span class="o">+</span> <span class="s">&quot; is &quot;</span> <span class="o">+</span> <span class="n">derdeLetter</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">naam</span> <span class="o">=</span> <span class="s">&quot;Hanze&quot;</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">derdeLetter</span> <span class="o">=</span> <span class="n">naam</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De derde letter van &quot;</span> <span class="o">+</span> <span class="n">naam</span> <span class="o">+</span> <span class="s">&quot; is &quot;</span> <span class="o">+</span> <span class="n">derdeLetter</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1135,9 +1180,9 @@ Bijvoorbeeld een accolade of puntkomma ontbreekt.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

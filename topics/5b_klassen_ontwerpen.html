@@ -4,7 +4,8 @@
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Klassen ontwerpen &#8212; Objectgeoriënteerd Programmeren I</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +35,7 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -42,10 +43,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -95,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -107,7 +108,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 1
  </span>
@@ -173,7 +174,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 2
  </span>
@@ -234,7 +235,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 3
  </span>
@@ -305,7 +306,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 4
  </span>
@@ -366,7 +367,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 5
  </span>
@@ -420,6 +421,50 @@
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
  </li>
 </ul>
 
@@ -606,10 +651,10 @@
         
               <div>
                 
-  <div class="section" id="klassen-ontwerpen">
+  <section class="tex2jax_ignore mathjax_ignore" id="klassen-ontwerpen">
 <h1>Klassen ontwerpen<a class="headerlink" href="#klassen-ontwerpen" title="Permalink naar deze titel">¶</a></h1>
 <p>Nieuwe typen maken</p>
-<div class="section" id="abstractie">
+<section id="abstractie">
 <h2>Abstractie<a class="headerlink" href="#abstractie" title="Permalink naar deze titel">¶</a></h2>
 <p>Het verbergen van detail</p>
 <p><code class="docutils literal notranslate"><span class="pre">BigInteger</span></code></p>
@@ -656,16 +701,16 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;Hello world!&quot;</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;Hello world!&quot;</span><span class="p">;</span>
 
-<span class="n">hello</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
-<span class="n">hello</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span>
+<span class="n">hello</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">hello</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Hetzelfde geldt voor <code class="docutils literal notranslate"><span class="pre">String</span></code> het verbergt veel detail en biedt een manier om een collectie van <code class="docutils literal notranslate"><span class="pre">char</span></code>’s te beheren en daar handelingen op uit te voeren.</p>
 <p>Abstractie is het op een meer algemene manier mogelijk maken van handelingen op data door het verbergen van acherliggende details.</p>
-</div>
-<div class="section" id="data-en-methoden">
+</section>
+<section id="data-en-methoden">
 <h2>Data en methoden<a class="headerlink" href="#data-en-methoden" title="Permalink naar deze titel">¶</a></h2>
 <p>Wat is tijd?</p>
 <div class="cell docutils container">
@@ -701,12 +746,12 @@
 </div>
 </div>
 <p>Seconden en fracties van seconden?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mf">12.1253762</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mf">12.1253762</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Hoe zou je seconden en fracties van seconden kunnen toevoegen?  Het eenvoudigst is om seconden in dat geval als <code class="docutils literal notranslate"><span class="pre">double</span></code> te definiëren, maar dat type past niet in het het gekozen type <code class="docutils literal notranslate"><span class="pre">int[]</span></code> om tijd te representeren.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
-<span class="n">time</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1253762</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="n">time</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1253762</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Een andere mogelijkheid is om het tijd array te vergroten naar vier <code class="docutils literal notranslate"><span class="pre">int</span></code> posities. Is dit voldoende om alle informatie over tijd op te slaan? Hoe complex gaat de data worden?</p>
@@ -715,7 +760,7 @@
 <li><p>zomer- en wintertijd</p></li>
 </ul>
 <p>Tijd is relatief en om een volledige representatie te kunnen geven zullen we op zoek moeten gaan naar een datatype om deze complexiteit uit te kunnen drukken.</p>
-<div class="section" id="handelingen">
+<section id="handelingen">
 <h3>Handelingen<a class="headerlink" href="#handelingen" title="Permalink naar deze titel">¶</a></h3>
 <p>De regels van tijd</p>
 <div class="cell docutils container">
@@ -732,7 +777,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;De tijd is %02d:%02d&quot;</span><span class="o">,</span> <span class="n">time</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">time</span><span class="o">[</span><span class="mi">1</span><span class="o">])</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;De tijd is %02d:%02d&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span> <span class="n">time</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -745,10 +790,10 @@
 <p>Tijd uitgedrukt in uren, minuten en seconden is gebonden aan regels, waarden kunnen niet zomaar gezet worden. In het geval seconden 60 bereikt zal het terug naar 0 moeten springen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">time</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">time</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="n">time</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">time</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">time</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">time</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -756,16 +801,16 @@
 <p>Maar ook uren moeten gecorrigeerd worden, daar zal naar 0 moeten worden gesprongen als het 24 heeft bereikt!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">time</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="mi">24</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">time</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">time</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="mi">24</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">time</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;De tijd is %02d:%02d&quot;</span><span class="o">,</span> <span class="n">time</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">time</span><span class="o">[</span><span class="mi">1</span><span class="o">])</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;De tijd is %02d:%02d&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span> <span class="n">time</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -775,9 +820,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="typen">
+</section>
+</section>
+<section id="typen">
 <h2>Typen<a class="headerlink" href="#typen" title="Permalink naar deze titel">¶</a></h2>
 <p>Het type <code class="docutils literal notranslate"><span class="pre">String</span></code></p>
 <p>Terug naar typen die we kennen, bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">String</span></code> voor het representeren van tekst.</p>
@@ -792,7 +837,7 @@
 <p>Deze notatie is er voor ons gemak, en wordt een <em>string literal</em> genoemd.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">hallo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&quot;Hallo wereld!&quot;</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">hallo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;Hallo wereld!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -801,7 +846,7 @@
 <p><strong>Handelingen</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -814,79 +859,79 @@
 <p>Op een string (een collectie <code class="docutils literal notranslate"><span class="pre">char</span></code>’s) zijn bepaalde regels van toepassing. De volgorde van de karakters staat vast, maar ook handelingen zijn aan regels gebonden, bijvoorbeeld <a class="reference external" href="https://home.unicode.org/">Unicode</a> wat noodzakelijke informatie is om in dit geval tekst naar hoofdletters om te zetten.</p>
 <p>Nooit heb je direct toegang tot de collectie van <code class="docutils literal notranslate"><span class="pre">char</span></code>’s in een <code class="docutils literal notranslate"><span class="pre">String</span></code> object, deze is afgeschermd en alleen via methoden van het object heb je een beperkte (maar wel nuttige!) toegang tot informatie (<code class="docutils literal notranslate"><span class="pre">charAt</span></code>) en transformaties als <code class="docutils literal notranslate"><span class="pre">toUpperCase</span></code>.</p>
 <p>Het type <code class="docutils literal notranslate"><span class="pre">String</span></code> is een abstractie, het combineert data en handelingen die alles te maken hebben met <em>tekstuele</em> data.</p>
-</div>
-<div class="section" id="het-type-time">
+</section>
+<section id="het-type-time">
 <h2>Het type <code class="docutils literal notranslate"><span class="pre">Time</span></code><a class="headerlink" href="#het-type-time" title="Permalink naar deze titel">¶</a></h2>
 <p>In een ideale wereld …</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">23</span><span class="o">,</span> <span class="mi">59</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">59</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>In een ideale wereld zouden we ons een type <code class="docutils literal notranslate"><span class="pre">Time</span></code> wensen waarmee we objecten die tijd representeren zouden kunnen aanmaken, net als <code class="docutils literal notranslate"><span class="pre">String</span></code>!</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">23</span><span class="o">,</span> <span class="mi">59</span><span class="o">,</span> <span class="mf">12.1253762</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mf">12.1253762</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Waar we naast uren en minuten ook seconden en fracties van seconden zouden kunnen zetten als we willen</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">23</span><span class="o">,</span> <span class="mi">59</span><span class="o">,</span> <span class="mf">12.1253762</span><span class="o">,</span> <span class="s">&quot;Europe/Paris&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mf">12.1253762</span><span class="p">,</span> <span class="s">&quot;Europe/Paris&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>maar ook andere informatie over tijd zouden willen toevoegen, bijvoorbeeld een tijdzone.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd_2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">9</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd_2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
 
-<span class="n">tijd</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">tijd_2</span><span class="o">);</span>
+<span class="n">tijd</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">tijd_2</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>En wat te denken van handelingen, bijvoorbeeld twee tijden met elkaar vergelijken</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd_3</span> <span class="o">=</span> <span class="n">tijd</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">tijd_2</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd_3</span> <span class="o">=</span> <span class="n">tijd</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">tijd_2</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>of twee tijden bij elkaar optellen (of misschien zelfs aftrekken) waar automatisch rekening wordt gehouden met het verspringen van uren, minuten en seconden</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;De tijd is %s&quot;</span><span class="o">,</span> <span class="n">tijd</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;De tijd is %s&quot;</span><span class="p">,</span> <span class="n">tijd</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>en tijd te kunnen printen als een string, zonder omslachtige <code class="docutils literal notranslate"><span class="pre">%02d</span></code> formattering!</p>
-</div>
-<div class="section" id="klassen">
+</section>
+<section id="klassen">
 <h2>Klassen<a class="headerlink" href="#klassen" title="Permalink naar deze titel">¶</a></h2>
 <p>Klassen zijn de blauwdruk van een type</p>
 <p><img alt="Een blauwdruk" src="../_images/blueprint.png" /></p>
-</div>
-<div class="section" id="data">
+</section>
+<section id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink naar deze titel">¶</a></h2>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Data van een klasse worden velden (of properties) genoemd, in dit geval <code class="docutils literal notranslate"><span class="pre">hour</span></code>, <code class="docutils literal notranslate"><span class="pre">minute</span></code> en <code class="docutils literal notranslate"><span class="pre">second</span></code> voor het representeren van tijd. Merk op dat we niet meer de beperking hebben van een enkel type!</p>
-</div>
-<div class="section" id="constructor">
+</section>
+<section id="constructor">
 <h2>Constructor<a class="headerlink" href="#constructor" title="Permalink naar deze titel">¶</a></h2>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="p">{</span>
     
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="p">;</span>
 
-    <span class="kd">public</span> <span class="nf">Time</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Time</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">();</span>
 </pre></div>
 </div>
-<div class="section" id="kenmerken-van-een-constructor">
+<section id="kenmerken-van-een-constructor">
 <h3>Kenmerken van een constructor<a class="headerlink" href="#kenmerken-van-een-constructor" title="Permalink naar deze titel">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Time</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Time</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -895,74 +940,74 @@
 <li><p>zijn <code class="docutils literal notranslate"><span class="pre">public</span></code></p></li>
 </ul>
 <p>Constructors lijken op methoden, maar hebben een paar belangrijke verschillen.</p>
-</div>
-<div class="section" id="this">
+</section>
+<section id="this">
 <h3><code class="docutils literal notranslate"><span class="pre">this</span></code><a class="headerlink" href="#this" title="Permalink naar deze titel">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Time</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Time</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>De verwijzing naar zichzelf (het object!).</p>
 <p><code class="docutils literal notranslate"><span class="pre">this</span></code> verwijst naar zichzelf, het “ik”. <code class="docutils literal notranslate"><span class="pre">this</span></code> is binnen constructors (en ook methoden) altijd aanwezig.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="p">{</span>
     
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="p">;</span>
 
-    <span class="kd">public</span> <span class="nf">Time</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Time</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
     
-    <span class="kd">public</span> <span class="nf">Time</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Time</span><span class="p">(</span><span class="kt">int</span> <span class="n">hour</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">23</span><span class="o">,</span> <span class="mi">59</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">59</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Meerdere constructors mogen zolang de signatuur maar anders is.</p>
-</div>
-</div>
-<div class="section" id="getters-en-setters">
+</section>
+</section>
+<section id="getters-en-setters">
 <h2>Getters en setters<a class="headerlink" href="#getters-en-setters" title="Permalink naar deze titel">¶</a></h2>
 <p><em>Accessors</em> en <em>mutators</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="p">;</span>
     
-    <span class="kd">public</span> <span class="nf">Time</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Time</span><span class="p">(</span><span class="kt">int</span> <span class="n">hour</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tijd</span><span class="o">.</span><span class="na">hour</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tijd</span><span class="p">.</span><span class="na">hour</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -976,21 +1021,21 @@
 <p>We hebben door het gebruik van de <em>access modifier</em> <code class="docutils literal notranslate"><span class="pre">private</span></code> nu de garantie dat de waarden niet zomaar gewijzigd kunnen worden (we hebben de waarden <em>immutable</em> gemaakt).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="p">;</span>
     
-    <span class="kd">public</span> <span class="nf">Time</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Time</span><span class="p">(</span><span class="kt">int</span> <span class="n">hour</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
     
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getHour</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">hour</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getHour</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">hour</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -998,14 +1043,14 @@
 <p>De conventie is, als toegang nodig is, om dit via methoden te doen waar de naam van de methode duidelijk maakt wat de bedoeling is, in dit geval <code class="docutils literal notranslate"><span class="pre">getHour</span></code>, <em>haal de waarde van hour</em> op. Deze methode wordt een <em>getter</em> (of <em>accessor</em>) genoemd.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tijd</span><span class="o">.</span><span class="na">getHour</span><span class="o">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tijd</span><span class="p">.</span><span class="na">getHour</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1017,25 +1062,25 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="p">;</span>
     
-    <span class="kd">public</span> <span class="nf">Time</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Time</span><span class="p">(</span><span class="kt">int</span> <span class="n">hour</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
     
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getHour</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">hour</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getHour</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">hour</span><span class="p">;</span>
+    <span class="p">}</span>
     
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHour</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHour</span><span class="p">(</span><span class="kt">int</span> <span class="n">hour</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1043,21 +1088,21 @@
 <p>Net als bij getters voor het opvragen van waarden worden voor het zetten van waarden methoden gebruikt. Deze <em>setters</em> (of <em>mutators</em>) volgen dezelfde conventie wat betreft naameving, in het geval voor de waarde <code class="docutils literal notranslate"><span class="pre">hour</span></code> de methode <code class="docutils literal notranslate"><span class="pre">setHour</span></code> die een enkele parameter accepteert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tijd</span><span class="o">.</span><span class="na">setHour</span><span class="o">(</span><span class="mi">24</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tijd</span><span class="p">.</span><span class="na">setHour</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tijd</span><span class="o">.</span><span class="na">getHour</span><span class="o">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tijd</span><span class="p">.</span><span class="na">getHour</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1067,51 +1112,51 @@
 </div>
 </div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHour</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHour</span><span class="p">(</span><span class="kt">int</span> <span class="n">hour</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="p">;</span>
     
-    <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">&gt;=</span> <span class="mi">24</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">&gt;=</span> <span class="mi">24</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Waarden kunnen in het geval van tijd niet zomaar gezet worden, er zijn regels. Een setter is een prima lokatie om een controle op de waarde uit te voeren, bijvoorbeeld als de waarde die een gebruiker deze methode heeft meegegeven het veld <code class="docutils literal notranslate"><span class="pre">hour</span></code> groter of gelijk aan 24 heeft gemaakt.</p>
-</div>
-<div class="section" id="equals">
+</section>
+<section id="equals">
 <h2><code class="docutils literal notranslate"><span class="pre">equals</span></code><a class="headerlink" href="#equals" title="Permalink naar deze titel">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="p">;</span>
     
-    <span class="kd">public</span> <span class="nf">Time</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Time</span><span class="p">(</span><span class="kt">int</span> <span class="n">hour</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
     
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getHour</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">hour</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getHour</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">hour</span><span class="p">;</span>
+    <span class="p">}</span>
     
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getMinute</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">minute</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getMinute</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">minute</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getSecond</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">second</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getSecond</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">second</span><span class="p">;</span>
+    <span class="p">}</span>
     
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Time</span> <span class="n">that</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">final</span> <span class="kt">double</span> <span class="n">DELTA</span> <span class="o">=</span> <span class="mf">0.001</span><span class="o">;</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">==</span> <span class="n">that</span><span class="o">.</span><span class="na">getHour</span><span class="o">()</span>
-            <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">==</span> <span class="n">that</span><span class="o">.</span><span class="na">getMinute</span><span class="o">()</span>
-            <span class="o">&amp;&amp;</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">-</span> <span class="n">that</span><span class="o">.</span><span class="na">getSecond</span><span class="o">())</span> <span class="o">&lt;</span> <span class="n">DELTA</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Time</span> <span class="n">that</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">final</span> <span class="kt">double</span> <span class="n">DELTA</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">;</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">==</span> <span class="n">that</span><span class="p">.</span><span class="na">getHour</span><span class="p">()</span>
+            <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">==</span> <span class="n">that</span><span class="p">.</span><span class="na">getMinute</span><span class="p">()</span>
+            <span class="o">&amp;&amp;</span> <span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">-</span> <span class="n">that</span><span class="p">.</span><span class="na">getSecond</span><span class="p">())</span> <span class="o">&lt;</span> <span class="n">DELTA</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1119,15 +1164,15 @@
 <p>De methode <code class="docutils literal notranslate"><span class="pre">equals</span></code> ken je onder andere van de klasse <code class="docutils literal notranslate"><span class="pre">String</span></code>, het is een methode om twee objecten op <em>waarde</em> te kunnen vergelijken. Deze methode kunnen wij ook voor <code class="docutils literal notranslate"><span class="pre">Time</span></code> objecten toepassen waar je vergelijkt of uren, minuten en seconden overeenkomen (of niet).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd_1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
-<span class="n">Time</span> <span class="n">tijd_2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">22</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd_1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+<span class="n">Time</span> <span class="n">tijd_2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tijd_1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">tijd_2</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tijd_1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">tijd_2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1137,27 +1182,27 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="tostring">
+</section>
+<section id="tostring">
 <h2><code class="docutils literal notranslate"><span class="pre">toString</span></code><a class="headerlink" href="#tostring" title="Permalink naar deze titel">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">second</span><span class="p">;</span>
     
-    <span class="kd">public</span> <span class="nf">Time</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Time</span><span class="p">(</span><span class="kt">int</span> <span class="n">hour</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">second</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
     
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%02d:%02d:%04.1f&quot;</span><span class="o">,</span> 
-            <span class="k">this</span><span class="o">.</span><span class="na">hour</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">minute</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">second</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%02d:%02d:%04.1f&quot;</span><span class="p">,</span> 
+            <span class="k">this</span><span class="p">.</span><span class="na">hour</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">minute</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">second</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1165,14 +1210,14 @@
 <p>Als je <code class="docutils literal notranslate"><span class="pre">Time</span></code> objecten zou willen printen dan krijg je een cryptische string terug met een verwijzing naar een geheugenlokatie, net zoals je eerder hebt gezien bij het printen van arrays. De methode <code class="docutils literal notranslate"><span class="pre">toString</span></code> geeft een string representatie terug en deze methode wordt ook gebruikt (aangeroepen) door bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">System.out.println</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">tijd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Time</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">tijd</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">tijd</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1182,8 +1227,8 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

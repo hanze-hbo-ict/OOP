@@ -4,7 +4,8 @@
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Methoden &#8212; Objectgeoriënteerd Programmeren I</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +35,7 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -42,10 +43,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -95,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -107,7 +108,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 1
  </span>
@@ -173,7 +174,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 2
  </span>
@@ -234,7 +235,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 3
  </span>
@@ -305,7 +306,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 4
  </span>
@@ -366,7 +367,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 5
  </span>
@@ -420,6 +421,50 @@
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
  </li>
 </ul>
 
@@ -560,32 +605,32 @@
         
               <div>
                 
-  <div class="section" id="methoden">
+  <section class="tex2jax_ignore mathjax_ignore" id="methoden">
 <h1>Methoden<a class="headerlink" href="#methoden" title="Permalink naar deze titel">¶</a></h1>
 <p>Om een (regulier) programma in Java te schrijven, is de main-methode vereist. In de praktijk bestaat een programma echter uit veel methodes dan alleen main.</p>
-<div class="section" id="nieuwe-methodes-definieren">
+<section id="nieuwe-methodes-definieren">
 <h2>Nieuwe methodes definiëren<a class="headerlink" href="#nieuwe-methodes-definieren" title="Permalink naar deze titel">¶</a></h2>
 <p>Een nieuwe methode kan als volgt worden gedefiniëerd in Java:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;()</span> <span class="o">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
 	<span class="c1">// code van de methode</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printAdresDoorenveste</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hanzehogeschool Van Doorenveste&quot;</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Zernikeplein 11&quot;</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;9747 AS  Groningen&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printAdresDoorenveste</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hanzehogeschool Van Doorenveste&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Zernikeplein 11&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;9747 AS  Groningen&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">printAdresDoorenveste</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">printAdresDoorenveste</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -614,38 +659,38 @@
 <p>Een <strong>keyword</strong> is een gereserveerd woord gebruikt in een programmeertaal, die een specifieke betekenis heeft voor de compiler (of interpreter).</p>
 <p>Het <strong>keyword</strong> <em>void</em> geeft aan dat de methode niets teruggeeft.</p>
 <p>De <strong>keywords</strong> <em>public</em> en <em>static</em> hebben te maken met de beschikbaarheid van een <strong>methode</strong>. Voor dit moment gebruiken we deze <strong>keywords</strong> zonder specifiek op deze keywords in te gaan.</p>
-</div>
-<div class="section" id="volgorde-van-uitvoering">
+</section>
+<section id="volgorde-van-uitvoering">
 <h2>Volgorde van uitvoering<a class="headerlink" href="#volgorde-van-uitvoering" title="Permalink naar deze titel">¶</a></h2>
 <p>Wat verschijnt op het scherm? In welke volgorde worden de methodes uitgevoerd?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">test1</span><span class="o">();</span>
-    <span class="n">test2</span><span class="o">();</span>
-    <span class="n">test3</span><span class="o">();</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">test1</span><span class="p">();</span>
+    <span class="n">test2</span><span class="p">();</span>
+    <span class="n">test3</span><span class="p">();</span>
+<span class="p">}</span>
 
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test3</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">test1</span><span class="o">();</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Test 3&quot;</span><span class="o">);</span>
-    <span class="n">test1</span><span class="o">();</span>
-<span class="o">}</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test2</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Test 2&quot;</span><span class="o">);</span>
-    <span class="n">test3</span><span class="o">();</span>
-<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test3</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">test1</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Test 3&quot;</span><span class="p">);</span>
+    <span class="n">test1</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test2</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Test 2&quot;</span><span class="p">);</span>
+    <span class="n">test3</span><span class="p">();</span>
+<span class="p">}</span>
 
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test1</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Test 1 !&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test1</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Test 1 !&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Methodes worden niet altijd op volgorde van plaats in de code uitgevoerd. De volgorde van uitvoering wordt bepaald door het moment van aanroep. Verder kan een methode aanweiz zijn</p>
-</div>
-<div class="section" id="redenen-om-methoden-te-schrijven">
+</section>
+<section id="redenen-om-methoden-te-schrijven">
 <h2>Redenen om methoden te schrijven<a class="headerlink" href="#redenen-om-methoden-te-schrijven" title="Permalink naar deze titel">¶</a></h2>
 <p>Er zijn verschillende redenen om methoden te schrijven:</p>
 <ul class="simple">
@@ -655,29 +700,29 @@ Methoden bieden de mogelijkheid om een reeks statements te groeperen en een naam
 In plaats van duplicate code, kan code herhaald worden door een methode meerdere  aan te roepen.</p></li>
 <li><p>Probleem opdelen i</p></li>
 </ul>
-</div>
-<div class="section" id="parameters-en-argumenten">
+</section>
+<section id="parameters-en-argumenten">
 <h2>Parameters en argumenten<a class="headerlink" href="#parameters-en-argumenten" title="Permalink naar deze titel">¶</a></h2>
 <p>Veel methodes vereisen <em>argumenten</em>. Een <em>argument</em> is een waarde die wordt meegegeven bij aanroep van een methode. Dit kan één argument zijn, maar ook meerdere argumenten.</p>
 <p><em>Argumenten</em> worden bij aanroep meegegeven door ze tussen haakjes te plaatsen, die na de naam van de methode staan.</p>
 <p>De argumenten worden toegekend aan variabelen die in de methode definitie staan. Deze variabelen worden <em>parameters</em> genoemd.</p>
 <p>Een nieuwe methode met een argument kan als volgt worden gedefiniëerd in Java:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;(&lt;</span><span class="n">argument</span> <span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">argument</span> <span class="n">naam</span><span class="o">&gt;)</span> <span class="o">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">argument</span> <span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">argument</span> <span class="n">naam</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
 	<span class="c1">// code van de methode</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printAdresDoorenveste</span><span class="o">(</span><span class="n">String</span> <span class="n">naam</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hanzehogeschool Van Doorenveste&quot;</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;t.a.v. &quot;</span><span class="o">+</span><span class="n">naam</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Zernikeplein 11&quot;</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;9747 AS  Groningen&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printAdresDoorenveste</span><span class="p">(</span><span class="n">String</span> <span class="n">naam</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hanzehogeschool Van Doorenveste&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;t.a.v. &quot;</span><span class="o">+</span><span class="n">naam</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Zernikeplein 11&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;9747 AS  Groningen&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="n">printAdresDoorenveste</span><span class="o">(</span><span class="s">&quot;Meneer de Vries&quot;</span><span class="o">);</span>
+<span class="n">printAdresDoorenveste</span><span class="p">(</span><span class="s">&quot;Meneer de Vries&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -708,21 +753,21 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="meerdere-parameters">
+</section>
+<section id="meerdere-parameters">
 <h2>Meerdere parameters<a class="headerlink" href="#meerdere-parameters" title="Permalink naar deze titel">¶</a></h2>
 <p>Het is mogelijk om meerdere <em>argumenten</em> mee te geven aan een methode. De methode heeft dan meerdere <em>parameters</em> nodig. Deze parameters worden door een komma gescheiden meegegeven.</p>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printAdresDoorenveste</span><span class="o">(</span><span class="n">String</span> <span class="n">naam</span><span class="o">,</span> <span class="n">String</span> <span class="n">kamernummer</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hanzehogeschool Van Doorenveste&quot;</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;t.a.v. &quot;</span><span class="o">+</span><span class="n">naam</span><span class="o">+</span><span class="s">&quot;, kamer nummer &quot;</span><span class="o">+</span><span class="n">kamernummer</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Zernikeplein 11&quot;</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;9747 AS  Groningen&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printAdresDoorenveste</span><span class="p">(</span><span class="n">String</span> <span class="n">naam</span><span class="p">,</span> <span class="n">String</span> <span class="n">kamernummer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hanzehogeschool Van Doorenveste&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;t.a.v. &quot;</span><span class="o">+</span><span class="n">naam</span><span class="o">+</span><span class="s">&quot;, kamer nummer &quot;</span><span class="o">+</span><span class="n">kamernummer</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Zernikeplein 11&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;9747 AS  Groningen&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="n">printAdresDoorenveste</span><span class="o">(</span><span class="s">&quot;meneer Jansen&quot;</span><span class="o">,</span> <span class="s">&quot;D222&quot;</span><span class="o">);</span>
+<span class="n">printAdresDoorenveste</span><span class="p">(</span><span class="s">&quot;meneer Jansen&quot;</span><span class="p">,</span> <span class="s">&quot;D222&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -753,8 +798,8 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="methodes-van-klasse-math">
+</section>
+<section id="methodes-van-klasse-math">
 <h2>Methodes van klasse Math<a class="headerlink" href="#methodes-van-klasse-math" title="Permalink naar deze titel">¶</a></h2>
 <p>Naast eigen geschreven methodes, bevat Java zelf ook veel methodes die standaard meegeleverd worden.</p>
 <p>Een voorbeeld daarvan zijn de methodes uit de klasse <em>Math</em>. Deze klasse bevat een uitgebreide collectie wiskundige methodes.</p>
@@ -762,10 +807,10 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">wortel16</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">16</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">wortel16</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">oppervlakte</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)(</span> <span class="mf">3.14</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span> <span class="o">);</span> <span class="c1">// Oppervlakte van een cirkel met een diameter van 10 centimeter</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">oppervlakte</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">wortel16</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">wortel16</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">oppervlakte</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span> <span class="mf">3.14</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span> <span class="p">);</span> <span class="c1">// Oppervlakte van een cirkel met een diameter van 10 centimeter</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">oppervlakte</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -790,10 +835,10 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">oppervlakte</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span><span class="n">Math</span><span class="o">.</span><span class="na">round</span><span class="o">(</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span> <span class="o">);</span> <span class="c1">// Oppervlakte van een cirkel met een diameter van 10 centimeter</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Oppervlakte is: &quot;</span><span class="o">+</span><span class="n">oppervlakte</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">oppervlakte</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span> <span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span> <span class="p">);</span> <span class="c1">// Oppervlakte van een cirkel met een diameter van 10 centimeter</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Oppervlakte is: &quot;</span><span class="o">+</span><span class="n">oppervlakte</span><span class="p">);</span>
 <span class="c1">// Compositie</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Oppervlakte is: &quot;</span><span class="o">+</span><span class="n">Math</span><span class="o">.</span><span class="na">round</span><span class="o">(</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span> <span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Oppervlakte is: &quot;</span><span class="o">+</span><span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span> <span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span> <span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -813,20 +858,20 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 </div>
 </div>
 <p>Contanten zorgen voor leesbaarheid. Daarnaast maken ze het programmeren gemakkelijker doordat de programmeur niet hoeft te weten wat de exacte waarde is.</p>
-</div>
-<div class="section" id="return-waardes">
+</section>
+<section id="return-waardes">
 <h2>Return waardes<a class="headerlink" href="#return-waardes" title="Permalink naar deze titel">¶</a></h2>
 <p>Het is mogelijk om een methode een waarde terug te laten geven.</p>
 <p>In dat geval staat op de plaats van het <strong>keyword</strong> <em>void</em> Het datatype van deze waarde.</p>
 <p>Bijvoorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">oppervlakte_driehoek</span><span class="o">(</span><span class="kt">double</span> <span class="n">basis</span><span class="o">,</span> <span class="kt">double</span> <span class="n">hoogte</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">basis</span> <span class="o">*</span> <span class="n">hoogte</span> <span class="o">/</span><span class="mi">2</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">oppervlakte_driehoek</span><span class="p">(</span><span class="kt">double</span> <span class="n">basis</span><span class="p">,</span> <span class="kt">double</span> <span class="n">hoogte</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">basis</span> <span class="o">*</span> <span class="n">hoogte</span> <span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="kt">double</span> <span class="n">oppervlakte</span> <span class="o">=</span> <span class="n">oppervlakte_driehoek</span><span class="o">(</span><span class="mi">8</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">oppervlakte</span><span class="o">);</span>
+<span class="kt">double</span> <span class="n">oppervlakte</span> <span class="o">=</span> <span class="n">oppervlakte_driehoek</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">oppervlakte</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -843,13 +888,13 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Print het aantal seconden dat is vertreken na middennacht op een bepaald tijdstip</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">seconden_na_middennacht</span><span class="o">(</span><span class="kt">int</span> <span class="n">uur</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minuut</span><span class="o">,</span> <span class="kt">int</span> <span class="n">seconde</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">aantal_minuten</span> <span class="o">=</span> <span class="n">uur</span><span class="o">*</span><span class="mi">60</span><span class="o">+</span><span class="n">minuut</span><span class="o">;</span>
-    <span class="k">return</span> <span class="n">aantal_minuten</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="n">seconde</span><span class="o">;</span>
-<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">seconden_na_middennacht</span><span class="p">(</span><span class="kt">int</span> <span class="n">uur</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minuut</span><span class="p">,</span> <span class="kt">int</span> <span class="n">seconde</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">aantal_minuten</span> <span class="o">=</span> <span class="n">uur</span><span class="o">*</span><span class="mi">60</span><span class="o">+</span><span class="n">minuut</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">aantal_minuten</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="n">seconde</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="n">seconden_na_middennacht</span><span class="o">(</span><span class="mi">16</span><span class="o">,</span><span class="mi">37</span><span class="o">,</span><span class="mi">10</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Aantal seconden na middennacht om 16:37:10 is: &quot;</span><span class="o">+</span><span class="n">s</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="n">seconden_na_middennacht</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aantal seconden na middennacht om 16:37:10 is: &quot;</span><span class="o">+</span><span class="n">s</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -862,8 +907,8 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="incrementeel-ontwikkelen">
+</section>
+<section id="incrementeel-ontwikkelen">
 <h2>Incrementeel ontwikkelen<a class="headerlink" href="#incrementeel-ontwikkelen" title="Permalink naar deze titel">¶</a></h2>
 <p>Een veel gemaakte beginnersfout is te veel code in één keer proberen te schrijven zonder tussentijds testen. Als het niet correct werkt, is het lastig te verklaren waarom.</p>
 <p>Een betere benadering is <strong>incrementeel ontwikkelen</strong></p>
@@ -873,11 +918,11 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 <p>Stap 1: Functie schrijven zonder inhoud, die tijdelijk een vaste waarde terug geeft.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="o">(</span><span class="kt">double</span> <span class="n">x1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="p">(</span><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">distance</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">1</span><span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -893,15 +938,15 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 <p>Stap 2: Bereken de horizontale (<em>dx</em>) en de verticale afstand (*dy).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="o">(</span><span class="kt">double</span> <span class="n">x1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">double</span> <span class="n">dx</span><span class="o">=</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">dy</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="o">;</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dx</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dy</span><span class="o">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="p">(</span><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span><span class="o">=</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dx</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dy</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">distance</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">1</span><span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -928,7 +973,7 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Stap</span> <span class="mi">3</span><span class="o">:</span> <span class="n">Neem</span> <span class="n">de</span> <span class="n">kwadraten</span> <span class="n">van</span> <span class="n">de</span> <span class="n">afstanden</span> <span class="n">en</span> <span class="n">tel</span> <span class="n">ze</span> <span class="n">bij</span> <span class="n">elkaar</span> <span class="n">op</span><span class="o">.</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Stap</span> <span class="mi">3</span><span class="p">:</span> <span class="n">Neem</span> <span class="n">de</span> <span class="n">kwadraten</span> <span class="n">van</span> <span class="n">de</span> <span class="n">afstanden</span> <span class="n">en</span> <span class="n">tel</span> <span class="n">ze</span> <span class="n">bij</span> <span class="n">elkaar</span> <span class="n">op</span><span class="p">.</span>
 </pre></div>
 </div>
 </div>
@@ -941,15 +986,15 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="o">(</span><span class="kt">double</span> <span class="n">x1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">double</span> <span class="n">dx</span><span class="o">=</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">dy</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">dsquare</span> <span class="o">=</span> <span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="o">;</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dsquare</span><span class="o">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="p">(</span><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span><span class="o">=</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dsquare</span> <span class="o">=</span> <span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dsquare</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">distance</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">1</span><span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -963,16 +1008,16 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 <p>Stap 4: Neem de wortel van de opgetelde kwadraten van de afstanden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="o">(</span><span class="kt">double</span> <span class="n">x1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">double</span> <span class="n">dx</span><span class="o">=</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">dy</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">dsquare</span> <span class="o">=</span> <span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">result</span><span class="o">=</span><span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">dsquare</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="p">(</span><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span><span class="o">=</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dsquare</span> <span class="o">=</span> <span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">result</span><span class="o">=</span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">dsquare</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">distance</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">1</span><span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -986,15 +1031,15 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 <p>Stap 5: Resultaat teruggeven.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="o">(</span><span class="kt">double</span> <span class="n">x1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">double</span> <span class="n">dx</span><span class="o">=</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">dy</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">dsquare</span> <span class="o">=</span> <span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">result</span><span class="o">=</span><span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">dsquare</span><span class="o">);</span>
-    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="p">(</span><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span><span class="o">=</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dsquare</span> <span class="o">=</span> <span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">result</span><span class="o">=</span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">dsquare</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">distance</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">1</span><span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -1007,13 +1052,13 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 <p>Stap 6: Minder variabelen gebruiken</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="o">(</span><span class="kt">double</span> <span class="n">x1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="o">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">double</span> <span class="n">dx</span><span class="o">=</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">dy</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="o">;</span>
-    <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">distance</span><span class="p">(</span><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span><span class="o">=</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span><span class="o">=</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">distance</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">1</span><span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -1023,8 +1068,8 @@ In plaats van duplicate code, kan code herhaald worden door een methode meerdere
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

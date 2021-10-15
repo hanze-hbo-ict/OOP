@@ -113,3 +113,19 @@ parts:
     sections:
     - file: problems/clock/index
       title: Klassen ontwerpen
+
+- caption: Week 6
+  chapters:
+  - file: course/week_6
+    title: Onderwerpen
+    sections:
+    - file: topics/6a_static_en_collections
+      title: Static en collections
+    - file: topics/6b_javadoc
+      title: Javadoc
+    - file: topics/6c_testen
+      title: Testen
+  - file: exercises/bouncing_balls/index
+    title: Practicum
+  - file: problems/simulation/index
+    title: Opgave

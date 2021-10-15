@@ -1,0 +1,29 @@
+digraph {
+
+    // 120dpi png rendering:
+    // dot -Tpng -Gdpi=120 -Nfontname=Helvetica -Efontname=Helvetica -o stack.png stack.dot
+
+    node [shape=plaintext];
+
+    deck [
+        fontname="Sans serif"
+        fontsize="14"
+        shape=plaintext
+        label=<
+
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr>
+            <td width="20%" port="top">[2,</td>
+            <td width="20%">4,</td>
+            <td width="20%">6,</td>
+            <td width="20%" port="bottom">8]</td>
+        </tr>
+        </table>
+    >];
+
+    top [label="Boven"]
+    bottom [label="Onder"]
+
+    top -> deck:top [headport=w]
+    bottom -> deck:bottom [headport=e]
+}

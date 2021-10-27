@@ -1,0 +1,32 @@
+    // dot -Tpng -Gdpi=100 -Nfontname=Helvetica -Efontname=Helvetica -o address_uml.png address_uml.dot
+
+digraph Location {
+
+    fontname = "Bitstream Vera Sans"
+    fontsize = 10
+
+    node [
+        fontname = "Bitstream Vera Sans"
+        fontsize = 10
+        shape = "record"
+    ]
+
+    edge [
+        arrowtail = "empty"
+    ]
+
+    Location [
+        label = "{Location|- latitude : double\l- longitude : double\l|\l|+ getLatitude(): double\l+ getLongitude(): double\l}"
+    ]
+
+    Address [
+        label = "{Address|- city : String\l- street : String\l- number : String \l- zipCode : String\l- country : String\l|\l|+ toString(): String\l}"
+    ]
+
+    POI [
+        label = "{PointOfInterest|- name : String\l- type : String\l|\l|+ getName(): String\l+ getType(): String\l}"
+    ]
+
+Location -> Address [dir=back]
+Location -> POI [dir=back]
+}

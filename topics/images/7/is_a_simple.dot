@@ -1,0 +1,11 @@
+digraph {
+
+    // dot -Tpng -Gdpi=80 -Nfontname=Helvetica -Efontname=Helvetica -o is_a_simple.png is_a_simple.dot
+
+    rankdir=TB
+    node [shape=square, fixedsize=true, width=1]
+    edge [arrowtail="empty"]
+
+    Location -> Address [dir=back]
+    Location:e -> Address:e [arrowhead=none, style=dashed, color=grey, label="\"is a\""]
+}

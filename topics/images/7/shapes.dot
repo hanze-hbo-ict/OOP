@@ -1,0 +1,19 @@
+digraph {
+    // dot -Tpng -Gdpi=80 -Nfontname=Helvetica -Efontname=Helvetica -o shapes.png shapes.dot
+
+    node [shape=square, fixedsize=true, width=1]
+    edge [arrowtail="empty"]
+
+    Shape
+    Circle
+    Triangle
+    Rectangle
+    Cone
+    Cylinder
+
+    Shape -> Rectangle [dir=back]
+    Shape -> Circle [dir=back]
+    Shape -> Triangle [dir=back]
+    Circle -> Cone [dir=back]
+    Circle -> Cylinder [dir=back]
+}

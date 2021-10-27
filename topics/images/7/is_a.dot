@@ -1,0 +1,16 @@
+digraph {
+
+    // dot -Tpng -Gdpi=80 -Nfontname=Helvetica -Efontname=Helvetica -o is_a.png is_a.dot
+
+    rankdir=TB
+    node [shape=square, fixedsize=true, width=1.3]
+    edge [arrowtail="empty"]
+
+    base [label="Base Class"]
+    derived [label="Derived Class"]
+
+
+    base -> derived [dir=back]
+    Superclass -> Subclass [dir=back]
+    Parent -> Child [dir=back]
+}

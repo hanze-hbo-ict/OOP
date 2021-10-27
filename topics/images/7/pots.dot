@@ -1,0 +1,18 @@
+digraph {
+    // dot -Tpng -Gdpi=80 -Nfontname=Helvetica -Efontname=Helvetica -o pots.png pots.dot
+
+    node [shape=square, fixedsize=true, width=1.2]
+    edge [arrowtail="empty"]
+
+    Pot
+    CoffeePot
+    TeaPot
+
+    Pot -> TeaPot [dir=back]
+    Pot -> CoffeePot [dir=back]
+    CoffeePot -> EspressoPot [dir=back]
+
+    EspressoPot:e -> CoffeePot:e [arrowhead=none, style=dashed, color=grey, label="\"is a\""]
+    CoffeePot:e -> Pot:e [arrowhead=none, style=dashed, color=grey, label="\"is a\""]
+    TeaPot:w -> Pot:w [arrowhead=none, style=dashed, color=grey, label=is_a,  label="\"is a\""]
+}

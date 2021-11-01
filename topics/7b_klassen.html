@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Klassen &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Verhuur" href="../problems/verhuur/index.html" />
+    <link rel="prev" title="Klassen hergebruiken" href="7a_klassen_hergebruiken.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3b_arrays_en_referenties.html">
+     Arrays en referenties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/multiplication/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/profiler/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_3.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/codingbat_strings.html">
+     CodingBat strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/codingbat_arrays.html">
+     CodingBat arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_4.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/nested_circles/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/recursive_graphics/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_4.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/codingbat_recursie.html">
+     CodingBat recursie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_5.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/cone/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/class_design/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_5.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/clock/index.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../course/week_8.html">
+   Onderwerpen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="7a_klassen_hergebruiken.html">
+     Overerving en abstracte klassen
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Meer over klassen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/verhuur/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/topics/7b_klassen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/7b_klassen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kwaliteitscriteria">
+   Kwaliteitscriteria
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-modifiers">
+   Access modifiers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#klasse-definitie">
+   Klasse definitie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instantievariabelen">
+   Instantievariabelen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes">
+   Methodes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructor">
+   Constructor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getters-en-setters">
+   Getters en setters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constanten">
+   Constanten
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="klassen">
+<h1>Klassen<a class="headerlink" href="#klassen" title="Permalink naar deze titel">¶</a></h1>
+<p>Hoe is een klasse in Java opgebouwd?</p>
+<section id="kwaliteitscriteria">
+<h2>Kwaliteitscriteria<a class="headerlink" href="#kwaliteitscriteria" title="Permalink naar deze titel">¶</a></h2>
+<p>Om kwalitatief goede klassen te schrijven in Java, dient een klasse in ieder geval aan de volgende criteria te voldoen:</p>
+<ul class="simple">
+<li><p>Coherent; De klasse heeft een duidelijk gedefinieerde en afgebakende taak</p></li>
+<li><p>Voldoet aan conventies; De code voldoet aan de algemene Java codeconventies</p></li>
+<li><p>Gedocumenteerd; De klasse is gedocumenteerd (Javadoc)</p></li>
+<li><p>Klasse werkt functioneel correct; Testen, bijvoorbeeld door middel van unittests</p></li>
+</ul>
+</section>
+<section id="access-modifiers">
+<h2>Access modifiers<a class="headerlink" href="#access-modifiers" title="Permalink naar deze titel">¶</a></h2>
+<p><em>Access modifiers</em> bepalen welke andere klassen toegang hebben tot een variabele, methode of klasse.</p>
+<p>Er zijn 4 <em>access modifiers</em>.</p>
+<p>De keywords die een access modifier bepalen zijn <strong>public</strong>, <strong>protected</strong> en <strong>private</strong>.</p>
+<p>Als geen access modifier keyword wordt gebruikt, dan geldt de access modifier <em>default</em>.</p>
+<p>Voor <em>public</em> geldt dat een methode of variabele toegankelijk is vanuit alle klassen.</p>
+<p>Voor <em>private</em> geldt dat een methode of variabele alleen toegankelijk is vanuit de klasse zelf.</p>
+</section>
+<section id="klasse-definitie">
+<h2>Klasse definitie<a class="headerlink" href="#klasse-definitie" title="Permalink naar deze titel">¶</a></h2>
+<p>Een klasse wordt als volgt gedefinieerd:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>[abstract] [access modifier] class &lt;naam&gt; [extends &lt;parent&gt;] {
+    
+}
+</pre></div>
+</div>
+<p>abstract: Het keyword <em>abstract</em> definieert een klasse als <em>abstracte klasse</em>.</p>
+<p>extends: Het keyword <em>extends</em> regelt overerving.</p>
+<p>Voor de naam van een klasse geldt dat de eerste letter altijd een hoofdletter moet zijn. De naam is niet volledig in hoofdletters geschreven. De naam bestaat uit tenminste 2 tekens.</p>
+</section>
+<section id="instantievariabelen">
+<h2>Instantievariabelen<a class="headerlink" href="#instantievariabelen" title="Permalink naar deze titel">¶</a></h2>
+<p>Instantievariabelen zijn variabelen die beschikbaar zijn in de hele klasse. De declaratie is vergelijkbaar met variabelen in methodes, mogelijk aangevuld met keywords voor klassen. Ook in een klasse mogelijk om variabelen direct te initialiseren.</p>
+<p>Een instantievariabele wordt als volgt gedefinieerd:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="kd">static</span><span class="o">]</span> <span class="o">[</span><span class="n">access</span> <span class="n">modifier</span><span class="o">]</span> <span class="o">[</span><span class="kd">final</span><span class="o">]</span> <span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>static: Het keyword <em>static</em> plaatst de variabele in de statische context (op klasseniveau in plaats van instantie).</p>
+<p>final: De waarde kan na initialisatie niet meer veranderen.</p>
+<p>De access modifier van een instantievariabele is altijd <em>private</em> (met uitzondering van constanten).</p>
+<p>De naam van een variabele begint altijd met een kleine letter (met uitzondering van constanten).</p>
+</section>
+<section id="methodes">
+<h2>Methodes<a class="headerlink" href="#methodes" title="Permalink naar deze titel">¶</a></h2>
+<p>Een methode wordt als volgt gedefinieerd:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="kd">static</span><span class="o">]</span> <span class="o">[</span><span class="kd">abstract</span><span class="o">/</span><span class="kd">final</span><span class="o">]</span> <span class="o">[</span><span class="n">access</span> <span class="n">modifier</span><span class="o">]</span> <span class="o">&lt;</span><span class="n">returntype</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span><span class="p">(</span><span class="o">[</span><span class="n">parameters</span><span class="o">]</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>static: Het keyword <strong>static</strong> plaatst de methode in de statische context (aan te roepen op klasseniveau)
+abstract: Het keyword <strong>abstract</strong> maakt een methode <em>abstract</em>.
+final: Het keyword <strong>final</strong> bepaalt dat een methode niet te overriden is.</p>
+<p>De access modifier van een methode is alleen <em>public</em> als de methode beschikbaar moet zijn buiten de klasse. Een methode die alleen binnen de klasse wordt gebruikt, moet <em>private</em> zijn.</p>
+<p>De naam van een methode begint altijd met een kleine letter (met uitzondering van constructors).</p>
+</section>
+<section id="constructor">
+<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink naar deze titel">¶</a></h2>
+<p>Een <em>constructor</em> is een bijzonder methode. Deze wordt uitgevoerd als een object wordt gemaakt met het keyword <strong>new</strong>.</p>
+<p>Een constructor wordt als volgt gedefinieerd:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="n">access</span> <span class="n">modifier</span><span class="o">]</span> <span class="o">&lt;</span><span class="n">naam</span> <span class="n">van</span> <span class="n">klasse</span><span class="o">&gt;</span><span class="p">(</span><span class="o">[</span><span class="n">parameters</span><span class="o">]</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Belangrijkste verschil tussen een constructor en een reguliere methode is dat er geen returntype is.</p>
+<p>Omdat de constructor altijd dezelfde naam heeft als de klasse, begint de naam van een constructor altijd met een hoofdletter.</p>
+<p>In de code staan constructors boven de methodes.</p>
+<p>Een klasse kan meerdere constructors hebben (met verschillende definities).</p>
+<p>Constructors kunnen automatisch door een IDE (zoals IntelliJ) gegenereerd worden.</p>
+</section>
+<section id="getters-en-setters">
+<h2>Getters en setters<a class="headerlink" href="#getters-en-setters" title="Permalink naar deze titel">¶</a></h2>
+<p>Klasse variabelen zijn in principe altijd <em>private</em>.</p>
+<p>Getters en setters zijn (reguliere) methoden om de instantievariabelen vanuit andere klassen te kunnen benaderen of veranderen.</p>
+<p>getter: Geeft de waarde van een variabele terug.</p>
+<p>Definitie:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="n">get</span><span class="o">&lt;</span><span class="n">naam</span> <span class="n">van</span> <span class="n">variabele</span><span class="p">,</span> <span class="n">eerste</span> <span class="n">letter</span> <span class="n">hoofdletter</span><span class="o">&gt;</span><span class="p">():</span>
+</pre></div>
+</div>
+<p>setter: Wijzigt de waarde van een variabele</p>
+<p>Definitie setter:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="n">set</span><span class="o">&lt;</span><span class="n">naam</span> <span class="n">van</span> <span class="n">variabele</span><span class="p">,</span> <span class="n">eerste</span> <span class="n">letter</span> <span class="n">hoofdletter</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span> <span class="n">van</span> <span class="n">de</span> <span class="n">variabele</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Voorbeeld getter en setter van de variabele score (integer):</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">getScore</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">score</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setScore</span><span class="p">(</span><span class="kt">int</span> <span class="n">score</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">score</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Getters en setters kunnen automatisch door een IDE (zoals IntelliJ) gegenereerd worden.</p>
+</section>
+<section id="constanten">
+<h2>Constanten<a class="headerlink" href="#constanten" title="Permalink naar deze titel">¶</a></h2>
+<p>Een constante is een variabele met een vaste waarde.</p>
+<p>Voor constanten gelden in Java de volgende conventies:</p>
+<ul class="simple">
+<li><p>De naam is volledig met hoofdletters geschreven</p></li>
+<li><p>Constanten zijn altijd <strong>public static final</strong></p></li>
+</ul>
+<p>Voorbeeld:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159265359</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">SERVER_IP</span> <span class="o">=</span> <span class="s">&quot;192.168.1.1&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "java"
+        },
+        kernelOptions: {
+            kernelName: "java",
+            path: "./topics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'java'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="7a_klassen_hergebruiken.html" title="vorige pagina">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">vorige</p>
+                <p class="prevnext-title">Klassen hergebruiken</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../problems/verhuur/index.html" title="volgende pagina">
+            <div class="prevnext-info">
+                <p class="prevnext-label">volgende</p>
+                <p class="prevnext-title">Verhuur</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

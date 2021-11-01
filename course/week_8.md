@@ -1,10 +1,9 @@
-# Week 6
+# Week 8
 
 ## Onderwerpen
 
--   [Static en collecties](/topics/6a_static_en_collections)
--   [Javadoc](/topics/6b_javadoc)
--   [Testen](/topics/6c_testen)
+-   [Overerving en abstracte klassen](/topics/7a_klassen_hergebruiken)
+-   [Meer over klassen](/topics/7b_klassen)
 
 ## Boek
 

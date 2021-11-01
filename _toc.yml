@@ -129,3 +129,15 @@ parts:
     title: Practicum
   - file: problems/simulation/index
     title: Opgave
+
+- caption: Week 8
+  chapters:
+  - file: course/week_8
+    title: Onderwerpen
+    sections:
+    - file: topics/7a_klassen_hergebruiken
+      title: Overerving en abstracte klassen
+    - file: topics/7b_klassen
+      title: Meer over klassen
+  - file: problems/verhuur/index
+    title: Opgave

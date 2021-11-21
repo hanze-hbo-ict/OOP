@@ -1,0 +1,52 @@
+@startuml
+!theme cerulean-outline
+
+class Book {
+    -author : String
+    -title : String
+    -isbn : String
+
+    +getAuthor() : String
+    +getIsbn() : String
+    +getTitle() : String
+    +setAuthor(author : String) : void
+    +setIsbn(isbn : String) : void
+    +setTitle(title : String) : void
+    +toString() : String
+}
+
+interface Comparable {
+    +compareTo(obj : Object) : int
+}
+
+abstract class LibraryBook extends Book implements Comparable {
+    -callNum : String
+    +getCallNum() : String
+    +compareTo(that : LibraryBook) : int
+    +toString() : String
+    {abstract} +checkout(patron : String, dueDate: String) : void
+    {abstract} +returned() : void
+    {abstract} +circulationStatus() : String
+}
+
+class ReferenceBook extends LibraryBook {
+    -collection : String
+
+    +getCollection() : String
+    +setCollection(collection : String) : void
+    +checkout(patron : String, dueDate: String) : void
+    +returned() : void
+    +circulationStatus() : String
+    +toString() : String
+}
+
+class CirculatingBook extends LibraryBook {
+    -currentHolder : String
+    -dueDate : String
+
+    +checkout(patron : String, dueDate: String) : void
+    +returned() : void
+    +circulationStatus() : String
+    +toString() : String
+}
+@enduml

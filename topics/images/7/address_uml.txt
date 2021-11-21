@@ -1,0 +1,33 @@
+@startuml
+!theme cerulean-outline
+
+class Location {
+    -latitude : double
+    -longitude : double
+
+    +getLatitude() : double
+    +getLongitude() : double
+}
+
+class Address extends Location {
+    -city : String
+    -street : String
+    -number : String
+    -zipCode : String
+    -country : String
+
+    +getCity() : String
+    +getStreet() : String
+    +getNumber() : String
+    +getZipCode() : String
+    +getCountry() : String
+}
+
+class PointOfInterest extends Location {
+    -name : String
+    -type : String
+
+    +getName() : String
+    +getType() : String
+}
+@enduml

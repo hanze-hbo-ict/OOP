@@ -1,0 +1,13 @@
+@startuml
+!theme cerulean-outline
+
+class Library {
+    -books : List<LibraryBook>
+
+    +addBook(book: LibraryBook) : void
+    +checkout(patron : String, dueDate : String, callNum : String) : void
+    +returned(callNum : String) : void
+    +sortLibrary() : void
+    +printLibrary() : void
+}
+@enduml

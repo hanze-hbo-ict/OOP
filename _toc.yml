@@ -141,3 +141,17 @@ parts:
       title: Meer over klassen
   - file: problems/verhuur/index
     title: Opgave
+
+- caption: Week 9
+  chapters:
+  - file: course/week_9
+    title: Onderwerpen
+    sections:
+    - file: topics/8_interfaces
+    - file: topics/8b_exceptions
+  - file: exercises/library/index
+    title: Practicum
+  - file: exercises/exceptions_gooien
+    title: Oefening 1
+  - file: exercises/exceptions_gebruiken
+    title: Oefening 2

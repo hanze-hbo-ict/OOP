@@ -1,0 +1,37 @@
+@startuml
+!theme cerulean-outline
+
+interface Iterable
+interface Collection
+interface List
+interface Queue
+interface Set
+interface SortedSet
+interface NavigableSet
+
+class ArrayList
+class LinkedList
+class PriorityQueue
+
+class HashSet
+class LinkedHashSet
+class TreeSet
+
+hide members
+
+Iterable <|-- Collection
+Collection <|-- List
+Collection <|-- Queue
+Collection <|-- Set
+
+List <|.. ArrayList
+List <|.. LinkedList
+Queue <|.. LinkedList
+Queue <|.. PriorityQueue
+
+Set <|.. HashSet
+HashSet <|-- LinkedHashSet
+Set <|-- SortedSet
+SortedSet <|-- NavigableSet
+NavigableSet <|.. TreeSet
+@enduml

@@ -690,18 +690,33 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#klasse-coin">
-   Klasse Coin
+  <a class="reference internal nav-link" href="#de-klasse-coin">
+   De klasse
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Coin
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#klasse-market">
-   Klasse Market
+  <a class="reference internal nav-link" href="#de-klasse-market">
+   De klasse
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Market
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#klasse-main">
-   Klasse Main
+  <a class="reference internal nav-link" href="#de-klasse-main">
+   De klasse
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Main
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -717,9 +732,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stap-2-van-klasse-market-een-observable-maken">
    Stap 2: Van klasse
-   <strong>
-    Market
-   </strong>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Market
+    </span>
+   </code>
    een observable maken
   </a>
  </li>
@@ -745,7 +762,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#de-klasse-cryptoalltimehighnotification">
-   De klasse CryptoAlltimeHighNotification
+   De klasse
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     CryptoAlltimeHighNotification
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -776,19 +798,19 @@
 <h2>Crypto currencies<a class="headerlink" href="#crypto-currencies" title="Permalink naar deze titel">¶</a></h2>
 <p>Deze opgave gaat over de koersen van crypto currencies.</p>
 <p>De waarde van cryptomunten (zoals bitcoin) verandert voortdurend. In realtime koersoverzichten is te zien dat de koers van cryptomunten voortdurend verandert (fluctueert).</p>
-<p>In deze opgave staan twee classes centraal: Coin en Market.</p>
-<p>De klasse Coin representeert een cryptomunt. De klasse Market bevat cryptomunten en zorgt ervoor fluctuatie wordt gesimuleerd.</p>
-<p>Verder is er een klasse Main, die er voor zorgt dat alle klassen worden gemaakt en met elkaar worden gekoppeld.</p>
+<p>In deze opgave staan twee classes centraal: <code class="docutils literal notranslate"><span class="pre">Coin</span></code> en <code class="docutils literal notranslate"><span class="pre">Market</span></code>.</p>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">Coin</span></code> representeert een cryptomunt. De klasse <code class="docutils literal notranslate"><span class="pre">Market</span></code> bevat cryptomunten en zorgt ervoor fluctuatie wordt gesimuleerd.</p>
+<p>Verder is er een klasse <code class="docutils literal notranslate"><span class="pre">Main</span></code>, die er voor zorgt dat alle klassen worden gemaakt en met elkaar worden gekoppeld.</p>
 <div class="admonition note">
 <p class="admonition-title">Notitie</p>
 <p>Simulatie
 De simulatie van de cryptomarkt in deze opgave is een sterk vereenvoudige versie van de werkelijkheid. Zo is in werkelijkheid de ene cryptomunt meer volatiel (veranderlijkheid van koers) dan de andere, terwijl in deze simulatie de cryptomunten op dezelfde wijze (willekeurig) van koers veranderen.</p>
 </div>
 </section>
-<section id="klasse-coin">
-<h2>Klasse Coin<a class="headerlink" href="#klasse-coin" title="Permalink naar deze titel">¶</a></h2>
+<section id="de-klasse-coin">
+<h2>De klasse <code class="docutils literal notranslate"><span class="pre">Coin</span></code><a class="headerlink" href="#de-klasse-coin" title="Permalink naar deze titel">¶</a></h2>
 <p>Maak een nieuw project. Maak binnen het project een package met de naam <strong>crypto</strong>.</p>
-<p>Maak in de package crypto de klasse Coin met de volgende inhoud:</p>
+<p>Maak in de package crypto de klasse <code class="docutils literal notranslate"><span class="pre">Coin</span></code> met de volgende inhoud:</p>
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">crypto</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
@@ -820,13 +842,13 @@ De simulatie van de cryptomarkt in deze opgave is een sterk vereenvoudige versie
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>De klasse <strong>Coin</strong> heeft twee instantie-variabelen: <strong>name</strong> en <strong>price</strong>. De variabele <strong>name</strong> is de naam van de munt en <strong>prijs</strong> de prijs (waarde) in euro’s.</p>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">Coin</span></code> heeft twee instantie-variabelen: <strong>name</strong> en <strong>price</strong>. De variabele <strong>name</strong> is de naam van de munt en <strong>prijs</strong> de prijs (waarde) in euro’s.</p>
 <p>Ze worden geïnitialiseerd via de constructor en kunnen worden opgevraagd via getters.</p>
 <p>De methode <strong>fluctuate</strong> verandert willekeurig de koers. De parameter <strong>norm</strong> bevat de normale koersverandering, een fractie. Daar wordt willekeurig een aanpassing van -0.05 tot 0.05 aan gedaan.</p>
 </section>
-<section id="klasse-market">
-<h2>Klasse Market<a class="headerlink" href="#klasse-market" title="Permalink naar deze titel">¶</a></h2>
-<p>De klasse <strong>Market</strong> is een gesimuleerde cryptomarkt.</p>
+<section id="de-klasse-market">
+<h2>De klasse <code class="docutils literal notranslate"><span class="pre">Market</span></code><a class="headerlink" href="#de-klasse-market" title="Permalink naar deze titel">¶</a></h2>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">Market</span></code> is een gesimuleerde cryptomarkt.</p>
 <p>Voeg deze klasse toe aan het project, aan de hand van onderstaande code:</p>
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">crypto</span><span class="p">;</span>
 
@@ -905,25 +927,25 @@ De simulatie van de cryptomarkt in deze opgave is een sterk vereenvoudige versie
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>De belangrijkste instantie-variabele is <strong>coins</strong>. Deze bevat een lijst van aanwezige coins in de market. Met de methoden <strong>addCoin</strong> en <strong>removeCoin</strong> kunnen deze worden toegevoegd en verwijderd.</p>
-<p>Informatie over de coins op de market kan opgehaald worden met de methodes <strong>getNumberOfCoins</strong>, <strong>getCoinName</strong> en <strong>getCoinPrice</strong>.</p>
-<p>De methode <strong>fluctuate</strong> laat de koersen fluctueren door de methode <strong>fluctuate</strong> van elke coin aan te roepen.</p>
-<p>Meest complexe deel van de klasse <strong>Market</strong> is de constructor.</p>
+<p>De belangrijkste instantie-variabele is <code class="docutils literal notranslate"><span class="pre">coins</span></code>. Deze bevat een lijst van aanwezige coins in de market. Met de methoden <code class="docutils literal notranslate"><span class="pre">addCoin</span></code> en <code class="docutils literal notranslate"><span class="pre">removeCoin</span></code> kunnen deze worden toegevoegd en verwijderd.</p>
+<p>Informatie over de coins op de market kan opgehaald worden met de methodes <code class="docutils literal notranslate"><span class="pre">getNumberOfCoins</span></code>, <code class="docutils literal notranslate"><span class="pre">getCoinName</span></code> en <code class="docutils literal notranslate"><span class="pre">getCoinPrice</span></code>.</p>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">fluctuate</span></code> laat de koersen fluctueren door de methode <code class="docutils literal notranslate"><span class="pre">fluctuate</span></code> van elke coin aan te roepen.</p>
+<p>Meest complexe deel van de klasse <code class="docutils literal notranslate"><span class="pre">Market</span></code> is de constructor.</p>
 <p>De regel</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="n">Thread</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="na">start</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>zorgt ervoor dat een <em>thread</em> wordt aangemaakt met het <strong>market</strong>-oject (<em>this</em>). Deze thread wordt direct gestart.</p>
+<p>zorgt ervoor dat een <em>thread</em> wordt aangemaakt met het <code class="docutils literal notranslate"><span class="pre">Market</span></code>-oject (<em>this</em>). Deze thread wordt direct gestart.</p>
 <p>De regel</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">coins</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">synchronizedList</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">());</span>
 </pre></div>
 </div>
-<p>maakt een <em>thread safe</em> ArrayList aan. Deze heeft exact dezelfde functionaliteit als een reguliere arraylist, maar is geschikt om binnen een multi threaded programma te gebruiken.</p>
-<p>De <strong>run</strong>-methode bevat de code die wordt uitgevoerd door de <em>thread</em>. Deze methode bevat een oneindige loop. Als eerste wordt de methode <strong>fluctuate</strong> aangeroepen. Vervolgens wordt een pauze ingelast met een willekeurige tijdsduur tussen 0,3 en 2,0 seconden. Daardoor zijn niet alleen de omvang van de koersveranderingen willekeurig, maar ook het moment waarop de koers verandert.</p>
+<p>maakt een <em>thread safe</em> <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> aan. Deze heeft exact dezelfde functionaliteit als een reguliere arraylist, maar is geschikt om binnen een multi threaded programma te gebruiken.</p>
+<p>De <code class="docutils literal notranslate"><span class="pre">run</span></code>-methode bevat de code die wordt uitgevoerd door de <em>thread</em>. Deze methode bevat een oneindige loop. Als eerste wordt de methode <code class="docutils literal notranslate"><span class="pre">fluctuate</span></code> aangeroepen. Vervolgens wordt een pauze ingelast met een willekeurige tijdsduur tussen 0,3 en 2,0 seconden. Daardoor zijn niet alleen de omvang van de koersveranderingen willekeurig, maar ook het moment waarop de koers verandert.</p>
 </section>
-<section id="klasse-main">
-<h2>Klasse Main<a class="headerlink" href="#klasse-main" title="Permalink naar deze titel">¶</a></h2>
-<p>Maak een klasse <strong>Main</strong> met een <em>main-methode</em>.</p>
+<section id="de-klasse-main">
+<h2>De klasse <code class="docutils literal notranslate"><span class="pre">Main</span></code><a class="headerlink" href="#de-klasse-main" title="Permalink naar deze titel">¶</a></h2>
+<p>Maak een klasse <code class="docutils literal notranslate"><span class="pre">Main</span></code> met een <em>main-methode</em>.</p>
 <p>Met de onderstaande code wordt de market gemaakt, drie cryptomunten en worden deze munten toegevoegd aan de market:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="n">Market</span> <span class="n">market</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Market</span><span class="p">();</span>
     <span class="n">market</span><span class="p">.</span><span class="na">addCoin</span><span class="p">(</span><span class="k">new</span> <span class="n">Coin</span><span class="p">(</span><span class="s">&quot;BTC Bitcoin&quot;</span><span class="p">,</span> <span class="mi">51000</span><span class="p">));</span>
@@ -954,45 +976,45 @@ De simulatie van de cryptomarkt in deze opgave is een sterk vereenvoudige versie
 <h2>Observer pattern<a class="headerlink" href="#observer-pattern" title="Permalink naar deze titel">¶</a></h2>
 <p>Het programma bevat twee threads: De market, die voor de koersschommelingen zorgt, en de main-thread, die de koersen weergeeft.</p>
 <p>Er is geen communicatie tussen de threads. Daarom worden koersveranderingen niet onmiddellijk weergegeven. Of worden de koersen opnieuw weergegeven terwijl er geen sprake is van koersverandering.</p>
-<p>Een mogelijke oplossing voor dit probleem is de code om koersen weer te geven toevoegen aan <strong>Market</strong>, of om de methode om de koersen weer te geven vanuit <strong>Market</strong> aanroepen.</p>
-<p>Dit is echter niet gewenst. De <strong>Market</strong> zou volledig onafhankelijk moeten kunnen functioneren van weergave.</p>
-<p>Het observer pattern biedt de mogelijkheid voor <em>loose coupling</em> tussen Market en weergave.</p>
-<p>Daarbij is de klasse om weergave te regelen een <em>observer</em>, en is de Market <em>observable</em> (ook wel <em>subject</em> genoemd).</p>
+<p>Een mogelijke oplossing voor dit probleem is de code om koersen weer te geven toevoegen aan <code class="docutils literal notranslate"><span class="pre">Market</span></code>, of om de methode om de koersen weer te geven vanuit <code class="docutils literal notranslate"><span class="pre">Market</span></code> aanroepen.</p>
+<p>Dit is echter niet gewenst. De <code class="docutils literal notranslate"><span class="pre">Market</span></code> zou volledig onafhankelijk moeten kunnen functioneren van weergave.</p>
+<p>Het observer pattern biedt de mogelijkheid voor <em>loose coupling</em> tussen <code class="docutils literal notranslate"><span class="pre">Market</span></code> en weergave.</p>
+<p>Daarbij is de klasse om weergave te regelen een <em>observer</em>, en is de <code class="docutils literal notranslate"><span class="pre">Market</span></code> <em>observable</em> (ook wel <em>subject</em> genoemd).</p>
 <p>In vier stappen wordt het bestaande project aangepast aan het observer pattern.</p>
 </section>
 <section id="stap-1-interfaces-maken">
 <h2>Stap 1: Interfaces maken<a class="headerlink" href="#stap-1-interfaces-maken" title="Permalink naar deze titel">¶</a></h2>
 <p>Maak de interfaces voor de observer en observable (subject).</p>
-<p>De interface Subject bevat de volgende methode-definities:</p>
+<p>De interface <code class="docutils literal notranslate"><span class="pre">Subject</span></code> bevat de volgende methode-definities:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerObserver</span><span class="p">(</span><span class="n">Observer</span> <span class="n">o</span><span class="p">);</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeObserver</span><span class="p">(</span><span class="n">Observer</span> <span class="n">o</span><span class="p">);</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">notifyObservers</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>De interface Observer bevat de volgende methode-definitie:</p>
+<p>De interface <code class="docutils literal notranslate"><span class="pre">Observer</span></code> bevat de volgende methode-definitie:</p>
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="n">Market</span> <span class="n">market</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
 <section id="stap-2-van-klasse-market-een-observable-maken">
-<h2>Stap 2: Van klasse <strong>Market</strong> een observable maken<a class="headerlink" href="#stap-2-van-klasse-market-een-observable-maken" title="Permalink naar deze titel">¶</a></h2>
+<h2>Stap 2: Van klasse <code class="docutils literal notranslate"><span class="pre">Market</span></code> een observable maken<a class="headerlink" href="#stap-2-van-klasse-market-een-observable-maken" title="Permalink naar deze titel">¶</a></h2>
 <ul class="simple">
-<li><p>Laat de klasse Market de interface Subject implementeren</p></li>
-<li><p>Voeg de volgende klasse-variabele toe aan Market:</p></li>
+<li><p>Laat de klasse <code class="docutils literal notranslate"><span class="pre">Market</span></code> de interface <code class="docutils literal notranslate"><span class="pre">Subject</span></code> implementeren</p></li>
+<li><p>Voeg de volgende klasse-variabele toe aan <code class="docutils literal notranslate"><span class="pre">Market</span></code>:</p></li>
 </ul>
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Observer</span><span class="o">&gt;</span> <span class="n">observers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Schrijf implementaties voor de methoden <strong>registerObserver</strong> en <strong>removeObserver</strong>. Dit zijn eenvoudige methodes, om een observer toe te voegen aan of te verwijderen uit de lijst <strong>observers</strong>.</p></li>
-<li><p>Schrijf de implementatie voor de methode <strong>notifyObservers</strong>. Deze methode bestaat uit een loop door de lijst <strong>observers</strong>. In de loop wordt de methode <strong>update</strong> van elke observer aangeroepen, met argument <em>this</em>.</p></li>
+<li><p>Schrijf implementaties voor de methoden <code class="docutils literal notranslate"><span class="pre">registerObserver</span></code> en <code class="docutils literal notranslate"><span class="pre">removeObserver</span></code>. Dit zijn eenvoudige methodes, om een observer toe te voegen aan of te verwijderen uit de lijst <code class="docutils literal notranslate"><span class="pre">observers</span></code>.</p></li>
+<li><p>Schrijf de implementatie voor de methode <code class="docutils literal notranslate"><span class="pre">notifyObservers</span></code>. Deze methode bestaat uit een loop door de lijst <code class="docutils literal notranslate"><span class="pre">observers</span></code>. In de loop wordt de methode <code class="docutils literal notranslate"><span class="pre">update</span></code> van elke observer aangeroepen, met argument <em>this</em>.</p></li>
 </ul>
 <p>Test of het programma nog functioneert. Als het goed is, heeft de toegevoegde functionaliteit geen invloer op de werking van het programma.</p>
 </section>
 <section id="stap-3-een-observer-maken">
 <h2>Stap 3: Een observer maken<a class="headerlink" href="#stap-3-een-observer-maken" title="Permalink naar deze titel">¶</a></h2>
-<p>Maak een klasse met de naam <strong>CryptoConsole</strong>, die de interface <strong>Observer</strong> implementeert.</p>
-<p>Schrijf de implementatie voor de methode <strong>update</strong>.</p>
+<p>Maak een klasse met de naam <code class="docutils literal notranslate"><span class="pre">CryptoConsole</span></code>, die de interface <code class="docutils literal notranslate"><span class="pre">Observer</span></code> implementeert.</p>
+<p>Schrijf de implementatie voor de methode <code class="docutils literal notranslate"><span class="pre">update</span></code>.</p>
 <p>Deze methode bevat de code om de munten en koersen weer te geven die al in de main-methode staat:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;=========&quot;</span><span class="p">);</span>
     <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">market</span><span class="p">.</span><span class="na">getNumberOfCoins</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -1014,25 +1036,25 @@ De simulatie van de cryptomarkt in deze opgave is een sterk vereenvoudige versie
 <section id="een-extra-observer">
 <h2>Een extra observer<a class="headerlink" href="#een-extra-observer" title="Permalink naar deze titel">¶</a></h2>
 <p>Naast <em>loose coupling</em> tussen weergave van de coins en de market biedt het observer pattern ook de mogelijkheid om verschillende, onafhankelijk van elkaar functionerende, weergaven te maken.</p>
-<p>De klasse <strong>CryptoAlltimeHighNotification</strong> is een observer die van een bepaalde coin een melding op de console afdrukt als de koers een recordhoogte bereikt.</p>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">CryptoAlltimeHighNotification</span></code> is een observer die van een bepaalde coin een melding op de console afdrukt als de koers een recordhoogte bereikt.</p>
 <p>Bijvoorbeeld in het geval van Bitcoin:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Alltime high!! BTC Bitcoin € 65238.094771831886
 </pre></div>
 </div>
-<p>Een instantie van <strong>CryptoAlltimeHighNotification</strong> moet één specifieke coin in de gaten houden.</p>
-<p>In de huidige versie van de klasse <strong>Market</strong> worden coins benaderd aan de hand van een index. Dit is echter geen <em>unieke identifier</em> voor een coin. De index kan veranderen als een coin verwijderd wordt.</p>
+<p>Een instantie van <code class="docutils literal notranslate"><span class="pre">CryptoAlltimeHighNotification</span></code> moet één specifieke coin in de gaten houden.</p>
+<p>In de huidige versie van de klasse <code class="docutils literal notranslate"><span class="pre">Market</span></code> worden coins benaderd aan de hand van een index. Dit is echter geen <em>unieke identifier</em> voor een coin. De index kan veranderen als een coin verwijderd wordt.</p>
 <p>Elke cryptomunt heeft een eigen afkorting. Deze wordt ook wel <em>code</em> genoemd. Zo is de afkorting BTC voor Bitcoin, en XRP voor Ripple.</p>
 <p>Dit is een geschikte <em>unieke identifier</em>.</p>
-<p>Om munten te vinden op basis van afkorting, moeten eerst de klassen <strong>Coin</strong> en <strong>Market</strong> worden aangepast.</p>
+<p>Om munten te vinden op basis van afkorting, moeten eerst de klassen <code class="docutils literal notranslate"><span class="pre">Coin</span></code> en <code class="docutils literal notranslate"><span class="pre">Market</span></code> worden aangepast.</p>
 </section>
 <section id="code-als-unieke-identifier">
 <h2>Code als unieke identifier<a class="headerlink" href="#code-als-unieke-identifier" title="Permalink naar deze titel">¶</a></h2>
-<p>Voeg de klasse variabele <strong>code</strong>, type <strong>String</strong> toe aan de klasse <strong>Coin</strong>.</p>
+<p>Voeg de klasse variabele <code class="docutils literal notranslate"><span class="pre">code</span></code>, type <code class="docutils literal notranslate"><span class="pre">String</span></code> toe aan de klasse <code class="docutils literal notranslate"><span class="pre">Coin</span></code>.</p>
 <p>Pas de constructor aan, zodat deze de volgende definitie krijgt:</p>
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Coin</span><span class="p">(</span><span class="n">String</span> <span class="n">code</span><span class="p">,</span> <span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">double</span> <span class="n">price</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Maak een <em>getter</em> voor <strong>code</strong>.</p>
+<p>Maak een <em>getter</em> voor <code class="docutils literal notranslate"><span class="pre">code</span></code>.</p>
 <p>Voeg aan de klasse Market de volgende methodes toe:</p>
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getCoinName</span><span class="p">(</span><span class="n">String</span> <span class="n">code</span><span class="p">)</span>
     <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getCoinPrice</span><span class="p">(</span><span class="n">String</span> <span class="n">code</span><span class="p">)</span>
@@ -1042,19 +1064,19 @@ De simulatie van de cryptomarkt in deze opgave is een sterk vereenvoudige versie
 <div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>    <span class="kd">private</span> <span class="n">Coin</span> <span class="nf">findCoinByCode</span><span class="p">(</span><span class="n">String</span> <span class="n">code</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Tot slot dienen er nog kleine aanpassingen te worden gedaan aan de code die de instanties maakt van <strong>Coin</strong>.</p>
+<p>Tot slot dienen er nog kleine aanpassingen te worden gedaan aan de code die de instanties maakt van <code class="docutils literal notranslate"><span class="pre">Coin</span></code>.</p>
 </section>
 <section id="de-klasse-cryptoalltimehighnotification">
-<h2>De klasse CryptoAlltimeHighNotification<a class="headerlink" href="#de-klasse-cryptoalltimehighnotification" title="Permalink naar deze titel">¶</a></h2>
-<p>Maak de klasse <strong>CryptoAlltimeHighNotification</strong>. Deze implementeert de interface <strong>Observer</strong>.</p>
-<p>De klasse <strong>CryptoAlltimeHighNotification</strong> heeft de volgende klasse-variabelen:</p>
+<h2>De klasse <code class="docutils literal notranslate"><span class="pre">CryptoAlltimeHighNotification</span></code><a class="headerlink" href="#de-klasse-cryptoalltimehighnotification" title="Permalink naar deze titel">¶</a></h2>
+<p>Maak de klasse <code class="docutils literal notranslate"><span class="pre">CryptoAlltimeHighNotification</span></code>. Deze implementeert de interface <code class="docutils literal notranslate"><span class="pre">Observer</span></code>.</p>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">CryptoAlltimeHighNotification</span></code> heeft de volgende klasse-variabelen:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="kd">private</span> <span class="n">String</span> <span class="n">code</span><span class="p">;</span> <span class="c1">// afkorting van de munt</span>
     <span class="kd">private</span> <span class="kt">double</span> <span class="n">highestPrice</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>De variabele <strong>code</strong> wordt door middel van de constructor geïnitialiseerd.</p>
-<p>Schrijf de implementatie van de methode <strong>update</strong>.
-Deze methode vraagt de prijs op van de coin, en controleert of deze hoger is dan <strong>highestprice</strong>. Zo ja, print op de console een melding en actualiseer de waarde van <strong>highestprice</strong>.</p>
+<p>De variabele <code class="docutils literal notranslate"><span class="pre">code</span></code> wordt door middel van de constructor geïnitialiseerd.</p>
+<p>Schrijf de implementatie van de methode <code class="docutils literal notranslate"><span class="pre">update</span></code>.
+Deze methode vraagt de prijs op van de coin, en controleert of deze hoger is dan <code class="docutils literal notranslate"><span class="pre">highestprice</span></code>. Zo ja, print op de console een melding en actualiseer de waarde van <code class="docutils literal notranslate"><span class="pre">highestprice</span></code>.</p>
 <p>Bijvoorbeeld in het geval van Bitcoin:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Alltime high!! BTC Bitcoin € 65238.094771831886
 </pre></div>
@@ -1064,30 +1086,30 @@ Deze methode vraagt de prijs op van de coin, en controleert of deze hoger is dan
 </section>
 <section id="standaard-klassen-voor-het-observer-pattern-gebruiken">
 <h2>Standaard klassen voor het observer pattern gebruiken<a class="headerlink" href="#standaard-klassen-voor-het-observer-pattern-gebruiken" title="Permalink naar deze titel">¶</a></h2>
-<p>Java bevat standaard ondersteuning voor het observer-pattern door middel van de interface Observer en de klasse Observable.</p>
+<p>Java bevat standaard ondersteuning voor het observer-pattern door middel van de interface <code class="docutils literal notranslate"><span class="pre">Observer</span></code> en de klasse <code class="docutils literal notranslate"><span class="pre">Observable</span></code>.</p>
 <p>Documentatie:
 https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Observer.html
 https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Observable.html</p>
 <div class="admonition note">
 <p class="admonition-title">Notitie</p>
-<p>Hoewel <strong>java.util.Observer</strong> en <strong>java.util.Observable</strong> vanaf Java 9 worden beschouwd als <em>deprecated</em>, is het een goede oefening om het observer pattern ook met deze generieke interface en klasse te proberen. De reden dat ze <em>deprecated</em> zijn is dat men van mening is dat het originele observer pattern te beperkt is. Zo biedt het geen standaard regels als het gaat om de volgorde waarin de update-methode van observers wordt aangeroepen.</p>
+<p>Hoewel <code class="docutils literal notranslate"><span class="pre">java.util.Observer</span></code> en <code class="docutils literal notranslate"><span class="pre">java.util.Observable</span></code> vanaf Java 9 worden beschouwd als <em>deprecated</em>, is het een goede oefening om het observer pattern ook met deze generieke interface en klasse te proberen. De reden dat ze <em>deprecated</em> zijn is dat men van mening is dat het originele observer pattern te beperkt is. Zo biedt het geen standaard regels als het gaat om de volgorde waarin de update-methode van observers wordt aangeroepen.</p>
 </div>
 <p>Maak een kopie van de package crypto. Verwijder in de kopie de interfaces Observer en Subject.</p>
-<p>Laat de klasse <strong>Market</strong> de klasse <strong>Observable</strong> (uit <em>package</em> <strong>java.util</strong>) extenden.</p>
-<p>Verwijder de code voor het observer-pattern (de variabele <strong>observers</strong> en de methodes <strong>registerObserver</strong>, <strong>removeObserver</strong> en <strong>notifyObservers</strong>) uit <strong>Market</strong>.</p>
-<p>Laat de klasse <strong>CryptoConsole</strong> de interface <strong>Observable</strong> (uit <em>package</em> <strong>java.util</strong>) implementeren.</p>
-<p>De methode <strong>update</strong> uit <strong>java.util.Observer</strong> heeft een andere definitie. Deze is meer generiek. Implementeer de juiste methode update.</p>
-<p>Het market-object kan uit de parameter <strong>observable</strong> gehaald worden met behulp van een cast:</p>
+<p>Laat de klasse <code class="docutils literal notranslate"><span class="pre">Market</span></code> de klasse <strong>Observable</strong> (uit <em>package</em> <code class="docutils literal notranslate"><span class="pre">java.util</span></code>) extenden.</p>
+<p>Verwijder de code voor het observer-pattern (de variabele <code class="docutils literal notranslate"><span class="pre">observers</span></code> en de methodes <code class="docutils literal notranslate"><span class="pre">registerObserver</span></code>, <code class="docutils literal notranslate"><span class="pre">removeObserver</span></code> en <code class="docutils literal notranslate"><span class="pre">notifyObservers</span></code>) uit <code class="docutils literal notranslate"><span class="pre">Market</span></code>.</p>
+<p>Laat de klasse <code class="docutils literal notranslate"><span class="pre">CryptoConsole</span></code> de interface <code class="docutils literal notranslate"><span class="pre">Observable</span></code> (uit <em>package</em> <code class="docutils literal notranslate"><span class="pre">java.util</span></code>) implementeren.</p>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">update</span></code> uit <code class="docutils literal notranslate"><span class="pre">java.util.Observer</span></code> heeft een andere definitie. Deze is meer generiek. Implementeer de juiste methode update.</p>
+<p>Het market-object kan uit de parameter <code class="docutils literal notranslate"><span class="pre">observable</span></code> gehaald worden met behulp van een cast:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Market</span> <span class="n">market</span> <span class="o">=</span> <span class="p">(</span><span class="n">Market</span><span class="p">)</span><span class="n">observable</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Ook CryptoAlltimeHighNotification dient aangepast te worden.</p>
+<p>Ook <code class="docutils literal notranslate"><span class="pre">CryptoAlltimeHighNotification</span></code> dient aangepast te worden.</p>
 <p>Tenslotte nog twee kleine aanpassingen om het werkend te krijgen:</p>
 <ul class="simple">
-<li><p>In plaats van <strong>registerObserver</strong> bevat <strong>Java.util.Observable</strong> de methode <strong>addObserver</strong>.</p></li>
-<li><p>Om er voor te zorgen dat de update-methode van de observers wordt aangeroepen, moet vóór het aanroepen van <strong>notifyObservers</strong> in <strong>market</strong> de methode <strong>setChanged</strong> aangeroepen worden!</p></li>
+<li><p>In plaats van <code class="docutils literal notranslate"><span class="pre">registerObserver</span></code> bevat <code class="docutils literal notranslate"><span class="pre">java.util.Observable</span></code> de methode <code class="docutils literal notranslate"><span class="pre">addObserver</span></code>.</p></li>
+<li><p>Om er voor te zorgen dat de update-methode van de observers wordt aangeroepen, moet vóór het aanroepen van <code class="docutils literal notranslate"><span class="pre">notifyObservers</span></code> in <code class="docutils literal notranslate"><span class="pre">Market</span></code> de methode <code class="docutils literal notranslate"><span class="pre">setChanged</span></code> aangeroepen worden!</p></li>
 </ul>
-<p>Als aanroep van <strong>setChanged</strong> wordt vergeten, dan lijkt het alsof het hele observer pattern om onverklaarbare redenen niet functioneert!</p>
+<p>Als aanroep van <code class="docutils literal notranslate"><span class="pre">setChanged</span></code> wordt vergeten, dan lijkt het alsof het hele observer pattern om onverklaarbare redenen niet functioneert!</p>
 </section>
 </section>
 

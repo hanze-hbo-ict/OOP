@@ -539,12 +539,56 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../exercises/exceptions_gooien.html">
-   Oefening 1
+   Opgave 1
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../exercises/exceptions_gebruiken.html">
-   Oefening 2
+   Opgave 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 10
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_10.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/9a_design_patterns.html">
+     Design Patterns
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/9b_threads.html">
+     Threads
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/9c_observer_pattern.html">
+     Observer pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/observer_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/exceptions_en_bestanden.html">
+   Oefening
   </a>
  </li>
 </ul>
@@ -613,6 +657,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#design-patterns">
+   Design Patterns
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -623,25 +680,35 @@
                 
   <section class="tex2jax_ignore mathjax_ignore" id="literatuur">
 <h1>Literatuur<a class="headerlink" href="#literatuur" title="Permalink naar deze titel">¶</a></h1>
-<p>In deze cursus wordt de programmeertaal Java gebruikt, het begeleidend boek is <em>Think Java: How to Think Like a Computer Scientist</em><span id="id1">[<a class="reference internal" href="#id4">DM19</a>]</span>. Een PDF versie van dit boek is te vinden op <a class="reference external" href="https://greenteapress.com/wp/think-java-2e/">https://greenteapress.com/wp/think-java-2e/</a>.  Wij verwijzen hier en daar ook naar de <a class="reference external" href="https://books.trinket.io/thinkjava2/">online versie</a> van dit boek op <a class="reference external" href="https://trinket.io/">Trinket</a>. Dit is een <em>interactieve</em> versie waar je tegelijkertijd code fragmenten kan schrijven en uitvoeren.</p>
+<p>In deze cursus wordt de programmeertaal Java gebruikt, het begeleidend boek is <em>Think Java: How to Think Like a Computer Scientist</em><span id="id1">[<a class="reference internal" href="#id6">DM19</a>]</span>. Een PDF versie van dit boek is te vinden op <a class="reference external" href="https://greenteapress.com/wp/think-java-2e/">https://greenteapress.com/wp/think-java-2e/</a>.  Wij verwijzen hier en daar ook naar de <a class="reference external" href="https://books.trinket.io/thinkjava2/">online versie</a> van dit boek op <a class="reference external" href="https://trinket.io/">Trinket</a>. Dit is een <em>interactieve</em> versie waar je tegelijkertijd code fragmenten kan schrijven en uitvoeren.</p>
 <p><img alt="Think Java: How to Think Like a Computer Scientist" src="../_images/think_java_2nd.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Alle code die in het boek wordt gebruikt kan je vinden op <a class="reference external" href="https://github.com/ChrisMayfield/ThinkJavaCode2">https://github.com/ChrisMayfield/ThinkJavaCode2</a>.</p>
 </div>
-<p>Als je een student aan de Hanzehogeschool bent is het zeer waarschijnlijk dat je Python als eerste taal hebt geleerd. Je zult veel overeenkomsten met Java zien, maar ook voldoende verschillen! Om deze reden verwijzen we ook soms naar <a class="reference external" href="https://fpl.cs.depaul.edu/jriely/java4python/index.html">Java for Python Programmers</a> waar de twee talen naast elkaar worden gezet. Dit materiaal is ter ondersteuning en kan jou helpen sneller bepaalde syntax en concepten te begrijpen<span id="id2">[<a class="reference internal" href="#id6">MR13</a>]</span>.</p>
-<!--
-![Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition](images/design_patterns_2nd.png)
--->
-<p id="id3"><dl class="citation">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">DM19</a></span></dt>
+<p>Als je een student aan de Hanzehogeschool bent is het zeer waarschijnlijk dat je Python als eerste taal hebt geleerd. Je zult veel overeenkomsten met Java zien, maar ook voldoende verschillen! Om deze reden verwijzen we ook soms naar <a class="reference external" href="https://fpl.cs.depaul.edu/jriely/java4python/index.html">Java for Python Programmers</a> waar de twee talen naast elkaar worden gezet. Dit materiaal is ter ondersteuning en kan jou helpen sneller bepaalde syntax en concepten te begrijpen<span id="id2">[<a class="reference internal" href="#id8">MR13</a>]</span>.</p>
+<section id="design-patterns">
+<h2>Design Patterns<a class="headerlink" href="#design-patterns" title="Permalink naar deze titel">¶</a></h2>
+<p>Vanaf week 10 (Objectgeoriënteerd Programmeren 2) wordt gebruik gemaakt van het boek <em>Design Patterns: Building Extensible &amp; Maintainable Object-Oriented Software</em><span id="id3">[<a class="reference internal" href="#id7">FR20</a>]</span>.</p>
+<p><img alt="Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition" src="../_images/design_patterns_2nd.png" /></p>
+<p>Design patterns zijn algemene oplossingen voor veel voorkomende software problemen. Deze design patterns zijn niet specifiek voor Java en zijn van toepassing op alle objectgeoriënteerde talen hoewel de <em>relevantie</em> per taal kan verschillen, bijvoorbeeld omdat een taal bepaalde fuctionaliteit heeft die een patroon overbodig maakt.</p>
+<p>Voor een vergelijking met Python zou je <a class="reference external" href="https://python-patterns.guide/">Python Design Patterns</a> misschien interessant vinden<span id="id4">[<a class="reference internal" href="#id9">Rho18</a>]</span>. Deze site neemt alle design patterns door die ook in deze cursus worden behandeld, inclusief een discussie over de relevantie en eventuele alternatieven voor Python.</p>
+<p id="id5"><dl class="citation">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">DM19</a></span></dt>
 <dd><p>Allen B. Downey and Chris Mayfield. <em>Think Java: How to Think Like a Computer Scientist</em>. O'Reilly Media, 2019. ISBN 978-1492072508. URL: <a class="reference external" href="https://greenteapress.com/wp/think-java-2e/">https://greenteapress.com/wp/think-java-2e/</a>.</p>
 </dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">MR13</a></span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">FR20</a></span></dt>
+<dd><p>Eric Freeman and Elisabeth Robson. <em>Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition</em>. O'Reilly Media, 2020. ISBN 978-1492078005.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">MR13</a></span></dt>
 <dd><p>Brad Miller and James Riely. Java for python programmers. 2013. URL: <a class="reference external" href="https://fpl.cs.depaul.edu/jriely/java4python/index.html">https://fpl.cs.depaul.edu/jriely/java4python/index.html</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id4">Rho18</a></span></dt>
+<dd><p>Brandon Rhodes. Python design patterns. 2018. URL: <a class="reference external" href="https://python-patterns.guide/">https://python-patterns.guide/</a>.</p>
 </dd>
 </dl>
 </p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

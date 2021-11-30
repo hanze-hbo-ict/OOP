@@ -539,12 +539,56 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../exercises/exceptions_gooien.html">
-   Oefening 1
+   Opgave 1
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../exercises/exceptions_gebruiken.html">
-   Oefening 2
+   Opgave 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 10
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_10.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/9a_design_patterns.html">
+     Design Patterns
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/9b_threads.html">
+     Threads
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/9c_observer_pattern.html">
+     Observer pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/observer_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/exceptions_en_bestanden.html">
+   Oefening
   </a>
  </li>
 </ul>
@@ -663,8 +707,8 @@
 <p>Indien je een foutbericht ziet, of als je niet weet hoe je het bovenstaande moet uitvoeren, volg dan de onderstaande installatiestappen voor jouw besturingssysteem.</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="9a6ef690-9015-4a6d-ba57-ad881a0eecfd" name="6bcdf0f9-d150-455d-bf5b-8a4b8413c728" type="radio">
-</input><label class="tabbed-label" for="9a6ef690-9015-4a6d-ba57-ad881a0eecfd">
+<input checked="checked" id="898fc4c5-64ca-405a-9840-cdeb6e752380" name="858712d0-2a4f-4ef8-ae5e-ad2a32d4bd18" type="radio">
+</input><label class="tabbed-label" for="898fc4c5-64ca-405a-9840-cdeb6e752380">
 Windows</label><div class="tabbed-content docutils">
 <p>De JDK die wij aanbevelen is OpenJDK, een <em>open source</em> implementatie van Java SE (Standard Edition). Ga naar <a class="reference external" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> en download een versie voor jouw besturingssysteem.</p>
 <ul class="simple">
@@ -680,8 +724,8 @@ Windows</label><div class="tabbed-content docutils">
 </ul>
 </div>
 </div>
-<input id="0210bd23-f3b0-4da2-a1fb-4434654ed609" name="6bcdf0f9-d150-455d-bf5b-8a4b8413c728" type="radio">
-</input><label class="tabbed-label" for="0210bd23-f3b0-4da2-a1fb-4434654ed609">
+<input id="41c07d90-3628-42b5-bc31-297c5309e0fd" name="858712d0-2a4f-4ef8-ae5e-ad2a32d4bd18" type="radio">
+</input><label class="tabbed-label" for="41c07d90-3628-42b5-bc31-297c5309e0fd">
 macOS</label><div class="tabbed-content docutils">
 <p>Indien je een package manager als <code class="docutils literal notranslate"><span class="pre">brew</span></code> gebruikt kan je OpenJDK eenvoudig als volgt installeren:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; brew install openjdk</span>
@@ -689,8 +733,8 @@ macOS</label><div class="tabbed-content docutils">
 </div>
 <p>Indien je geen package manager gebruikt, volg dan dezelfde instructies voor installatie als bij Windows.</p>
 </div>
-<input id="3c62331a-97e7-4dd8-a688-2c8833aa6e86" name="6bcdf0f9-d150-455d-bf5b-8a4b8413c728" type="radio">
-</input><label class="tabbed-label" for="3c62331a-97e7-4dd8-a688-2c8833aa6e86">
+<input id="9ef1bce0-fd90-458d-b3ed-85ea01be17b5" name="858712d0-2a4f-4ef8-ae5e-ad2a32d4bd18" type="radio">
+</input><label class="tabbed-label" for="9ef1bce0-fd90-458d-b3ed-85ea01be17b5">
 Linux</label><div class="tabbed-content docutils">
 <p>Op Linux distributies is OpenJDK eenvoudig te installeren met package managers als <code class="docutils literal notranslate"><span class="pre">apt</span></code> of <code class="docutils literal notranslate"><span class="pre">yum</span></code>. Voor Debian en afgeleide distributies (bijvoorbeeld Ubuntu of Linux Mint) installeer je als volgt de meest recente OpenJDK versie:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; sudo apt-get install default-jdk</span>
@@ -728,18 +772,18 @@ Linux</label><div class="tabbed-content docutils">
 </ul>
 <p>Pak het project als volgt uit voor jouw besturingssysteem:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="0d1ed201-2061-4c2a-ad35-f0f6d56eeae4" name="ac21ca2d-8161-4495-9b92-9560f3bc2692" type="radio">
-</input><label class="tabbed-label" for="0d1ed201-2061-4c2a-ad35-f0f6d56eeae4">
+<input checked="checked" id="89728add-cf42-452c-b797-acca6a395762" name="c611e8a7-cac2-454c-b880-dd134debe247" type="radio">
+</input><label class="tabbed-label" for="89728add-cf42-452c-b797-acca6a395762">
 Windows</label><div class="tabbed-content docutils">
 <p>Om het zip-bestand uit te pakken, klik je er met de rechtermuisknop op en kies je <em>Alles uitpakken</em>. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
 </div>
-<input id="917c9c97-d3d4-494c-a794-6abd4f6b3096" name="ac21ca2d-8161-4495-9b92-9560f3bc2692" type="radio">
-</input><label class="tabbed-label" for="917c9c97-d3d4-494c-a794-6abd4f6b3096">
+<input id="7b4b9d95-f255-47ff-8688-b026880de758" name="c611e8a7-cac2-454c-b880-dd134debe247" type="radio">
+</input><label class="tabbed-label" for="7b4b9d95-f255-47ff-8688-b026880de758">
 macOS</label><div class="tabbed-content docutils">
 <p><strong>Dubbelklik</strong> op het zip-bestand om het uit te pakken. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
 </div>
-<input id="15ce8e6e-f8cd-4520-9f3c-1e907d8f078f" name="ac21ca2d-8161-4495-9b92-9560f3bc2692" type="radio">
-</input><label class="tabbed-label" for="15ce8e6e-f8cd-4520-9f3c-1e907d8f078f">
+<input id="c89bc061-8c98-4399-8dbb-70549df2fdb7" name="c611e8a7-cac2-454c-b880-dd134debe247" type="radio">
+</input><label class="tabbed-label" for="c89bc061-8c98-4399-8dbb-70549df2fdb7">
 Linux</label><div class="tabbed-content docutils">
 <p>Pak het zip-bestand uit met het volgende commando:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; unzip -d hello hello.zip</span>

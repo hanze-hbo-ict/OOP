@@ -143,18 +143,18 @@ Download het projectbestand <a href="../../projects/library.zip">library.zip</a>
 
         ```java
         /**
-        * Implementation of Comparable's compareTo method
-        *
-        * @param that: LibraryBook object being compared
-        * @return 0 if call numbers of this and that match
-        *         < 0 if call number of this comes before call number of lib
-        *         > 0 otherwise
-        */
+         * Implementation of Comparable's compareTo method
+         *
+         * @param that: LibraryBook object being compared
+         * @return 0 if call numbers of this and that match
+         *         < 0 if call number of this comes before call number of lib
+         *         > 0 otherwise
+         */
         public int compareTo(LibraryBook that)
 
         /**
-        * @return title, author, ISBN, call number as a String for printing
-        */
+         * @return title, author, ISBN, call number as a String for printing
+         */
         public String toString()
         ```
 

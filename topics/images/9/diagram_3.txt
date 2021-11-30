@@ -1,0 +1,27 @@
+@startuml
+!theme cerulean-outline
+
+class Player {
+    +drive(vehicle: Vehicle)
+}
+
+abstract class Vehicle {
+    {abstract} +accelerate()
+    {abstract} +brake()
+}
+
+class Car extends Vehicle {
+    +accelerate()
+    +brake()
+}
+
+class Truck extends Vehicle {
+    +accelerate()
+    +brake()
+}
+
+class Boat extends Vehicle {
+    +accelerate()
+    +brake()
+}
+@enduml

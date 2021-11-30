@@ -1,0 +1,30 @@
+@startuml
+!theme cerulean-outline
+
+class SpeechSynthesizer {
+    toSpeech(object : Readable)
+}
+
+interface Readable {
+    {abstract} read() : String
+}
+
+interface Encryptable {
+    {abstract} encrypt(content : String) : String
+    {abstract} decrypt(content : String) : String
+}
+
+class TextMessage implements Readable, Encryptable {
+    read() : String
+    encrypt(content : String) : String
+    decrypt(content : String) : String
+}
+
+class Ebook implements Readable {
+    read() : String
+}
+
+class WebPage implements Readable {
+    read() : String
+}
+@enduml

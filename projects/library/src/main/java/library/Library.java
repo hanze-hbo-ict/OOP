@@ -25,8 +25,9 @@ public class Library {
 	 */
 	public void printLibrary() {
 		System.out.println("\nListing of books in the library\n");
-		for (LibraryBook book : books)
+		for (LibraryBook book : books) {
 			System.out.println(book);
+		}
 		System.out.println("End of book listing\n");
 	}
 

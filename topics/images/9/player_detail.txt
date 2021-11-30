@@ -1,0 +1,8 @@
+@startuml
+!theme cerulean-outline
+
+class Player {
+    +drive(driveable: Driveable)
+    +collide(breakable: Breakable)
+}
+@enduml

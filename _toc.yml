@@ -152,6 +152,22 @@ parts:
   - file: exercises/library/index
     title: Practicum
   - file: exercises/exceptions_gooien
-    title: Oefening 1
+    title: Opgave 1
   - file: exercises/exceptions_gebruiken
-    title: Oefening 2
+    title: Opgave 2
+
+- caption: Week 10
+  chapters:
+  - file: course/week_10
+    title: Onderwerpen
+    sections:
+      - file: topics/9a_design_patterns
+        title: Design Patterns
+      - file: topics/9b_threads
+        title: Threads
+      - file: topics/9c_observer_pattern
+        title: Observer pattern
+  - file: exercises/observer_pattern
+    title: Practicum
+  - file: exercises/exceptions_en_bestanden
+    title: Oefening

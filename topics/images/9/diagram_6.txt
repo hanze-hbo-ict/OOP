@@ -1,0 +1,39 @@
+@startuml
+!theme cerulean-outline
+
+class Player {
+    +drive(driveable: Driveable)
+    +collide(breakable: Breakable)
+}
+
+interface Driveable {
+    {abstract} +accelerate()
+    {abstract} +brake()
+}
+
+interface Breakable {
+    {abstract} +break()
+}
+
+class Car implements Driveable, Breakable {
+    +accelerate()
+    +brake()
+    +break()
+}
+
+class Truck implements Driveable, Breakable {
+    +accelerate()
+    +brake()
+    +break()
+}
+
+class Boat implements Driveable, Breakable {
+    +accelerate()
+    +brake()
+    +break()
+}
+
+class Building implements Breakable {
+    +break()
+}
+@enduml

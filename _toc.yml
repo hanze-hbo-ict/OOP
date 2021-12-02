@@ -169,5 +169,7 @@ parts:
         title: Observer pattern
   - file: exercises/observer_pattern
     title: Practicum
+  - file: problems/connect4/index
+    title: Opgave
   - file: exercises/exceptions_en_bestanden
     title: Oefening

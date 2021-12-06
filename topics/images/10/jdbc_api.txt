@@ -1,0 +1,45 @@
+@startuml
+!theme cerulean-outline
+
+rectangle Program
+
+rectangle jdbc [
+    JDBC API
+]
+
+rectangle mysql [
+    MySQL JDBC Driver
+]
+
+rectangle postgresql [
+    PostgreSQL JDBC Driver
+]
+
+rectangle sqlite [
+    SQLite JDBC Driver
+]
+
+database mysql_db [
+    MySQL
+    Local / Remote
+]
+
+database postgresql_db [
+    PostgreSQL
+    Local / Remote
+]
+
+database sqlite_db [
+    SQLite
+    File / Memory
+]
+
+Program <--> jdbc
+jdbc <--> mysql
+jdbc <--> postgresql
+jdbc <--> sqlite
+
+mysql <--> mysql_db
+postgresql <--> postgresql_db
+sqlite <--> sqlite_db
+@enduml

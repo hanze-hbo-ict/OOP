@@ -1,0 +1,10 @@
+@startuml
+!theme cerulean-outline
+
+class DocumentBuilder {
+    -Factory : factory
+
+    +DocumentBuilder(factory : Factory)
+    +createDocument() : void
+}
+@enduml

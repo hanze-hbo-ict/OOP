@@ -1,0 +1,17 @@
+@startuml
+!theme cerulean-outline
+
+interface Creator {
+    {abstract} +factoryMethod() : Product
+}
+
+class ConcreteCreator implements Creator {
+    +factoryMethod() : Product
+}
+
+class Product {
+}
+
+hide Product members
+ConcreteCreator --> Product
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+!theme cerulean-outline
+
+interface DocumentFactory {
+    {abstract} +makeDocument(mimeType : String) : Document
+}
+
+class TextFactory implements DocumentFactory {
+    +makeDocument(mimeType : String) : Document
+}
+
+class ImageFactory implements DocumentFactory {
+    +makeDocument(mimeType : String) : Image
+}
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+!theme cerulean-outline
+
+interface Document {
+    {abstract} +open() : void
+    {abstract} +close() : void
+    {abstract} +save(filename : String) : void
+}
+
+class HTMLDocument implements Document {
+    +open() : void
+    +close() : void
+    +save(filename : String) : void
+}
+
+class JSONDocument implements Document {
+    +open() : void
+    +close() : void
+    +save(filename : String) : void
+}
+
+class TEXDocument implements Document {
+    +open() : void
+    +close() : void
+    +save(filename : String) : void
+}
+@enduml

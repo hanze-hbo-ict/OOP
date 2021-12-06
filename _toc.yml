@@ -173,3 +173,15 @@ parts:
     title: Opgave
   - file: exercises/exceptions_en_bestanden
     title: Oefening
+
+- caption: Week 11
+  chapters:
+  - file: course/week_11
+    title: Onderwerpen
+    sections:
+    - file: topics/10a_decorator
+      title: Decorator Pattern
+    - file: topics/10b_factory
+      title: Factory Pattern
+  - file: exercises/pizza/index
+    title: Practicum

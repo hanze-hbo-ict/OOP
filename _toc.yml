@@ -184,4 +184,10 @@ parts:
     - file: topics/10b_factory
       title: Factory Pattern
   - file: exercises/pizza/index
-    title: Practicum
+    title: Practicum decorator
+  - file: exercises/cats/index
+    title: Practicum decorator 2
+  - file: exercises/logger
+    title: Practicum factory
+  - file: problems/pizza/index
+    title: Opgave factory

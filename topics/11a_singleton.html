@@ -1,0 +1,1198 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Singleton pattern &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Command pattern" href="11b_command.html" />
+    <link rel="prev" title="Week 12" href="../course/week_12.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3b_arrays_en_referenties.html">
+     Arrays en referenties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/multiplication/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/profiler/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_3.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/codingbat_strings.html">
+     CodingBat strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/codingbat_arrays.html">
+     CodingBat arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_4.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/nested_circles/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/recursive_graphics/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_4.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/codingbat_recursie.html">
+     CodingBat recursie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_5.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/cone/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/class_design/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_5.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/clock/index.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_8.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7a_klassen_hergebruiken.html">
+     Overerving en abstracte klassen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7b_klassen.html">
+     Meer over klassen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/verhuur/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_9.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8_interfaces.html">
+     Interfaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8b_exceptions.html">
+     Foutafhandeling en exceptions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/library/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/exceptions_gooien.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/exceptions_gebruiken.html">
+   Opgave 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 10
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_10.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9a_design_patterns.html">
+     Design Patterns
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9b_threads.html">
+     Threads
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9c_observer_pattern.html">
+     Observer pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/observer_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/connect4/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/exceptions_en_bestanden.html">
+   Oefening
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 11
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_11.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10a_decorator.html">
+     Decorator Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10b_factory.html">
+     Factory Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/pizza/index.html">
+   Practicum decorator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/cats/index.html">
+   Practicum decorator 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/logger.html">
+   Practicum factory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/pizza/index.html">
+   Opgave factory
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../course/week_12.html">
+   Onderwerpen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Singleton Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11b_command.html">
+     Command Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/singleton_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/logger/index.html">
+   Opgave singleton 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/counter/index.html">
+   Opgave singleton 2
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/topics/11a_singleton.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/11a_singleton.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#globaal">
+   Globaal?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mogelijkheden">
+   Mogelijkheden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#voorbeelden">
+   Voorbeelden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementatie">
+   Implementatie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#voorbeeld">
+   Voorbeeld
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problemen">
+   Problemen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verantwoord-gebruik">
+   Verantwoord gebruik
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mail-service">
+   Mail Service
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testen">
+     Testen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternatief">
+     Alternatief
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="singleton-pattern">
+<h1>Singleton pattern<a class="headerlink" href="#singleton-pattern" title="Permalink naar deze titel">¶</a></h1>
+<blockquote>
+<div><p>zorgt dat nooit meer dan één instantie van de klasse bestaat en geeft globale toegang tot deze instantie</p>
+</div></blockquote>
+<section id="globaal">
+<h2>Globaal?<a class="headerlink" href="#globaal" title="Permalink naar deze titel">¶</a></h2>
+<p>Wat zijn globale variabelen in Java?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mogelijkheden">
+<h2>Mogelijkheden<a class="headerlink" href="#mogelijkheden" title="Permalink naar deze titel">¶</a></h2>
+<ul class="simple">
+<li><p>controle op het creëren van instanties</p></li>
+<li><p><em>beperken</em> van het aantal instanties</p></li>
+<li><p>kan uitgebreid worden naar een <em>factory</em> pattern</p></li>
+<li><p>helpt afhankelijkeden te verbergen</p></li>
+<li><p>centraal punt, gemakkelijk te onderhouden (vergelijk met <em>factory</em> pattern)</p></li>
+</ul>
+</section>
+<section id="voorbeelden">
+<h2>Voorbeelden<a class="headerlink" href="#voorbeelden" title="Permalink naar deze titel">¶</a></h2>
+<ul class="simple">
+<li><p>driver objects</p></li>
+<li><p>database connecties</p></li>
+<li><p>caching en thread pool</p></li>
+<li><p>logging</p></li>
+</ul>
+</section>
+<section id="implementatie">
+<h2>Implementatie<a class="headerlink" href="#implementatie" title="Permalink naar deze titel">¶</a></h2>
+<p><img alt="Singleton" src="../_images/singleton.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="p">;</span>
+
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> is met <code class="docutils literal notranslate"><span class="pre">static</span></code> een veld van de <em>klasse</em>, niet van een <em>instantie</em></p></li>
+<li><p>de constructor is <code class="docutils literal notranslate"><span class="pre">private</span></code>, alleen de klasse zelf kan instantiëren!</p></li>
+<li><p>de methode <code class="docutils literal notranslate"><span class="pre">getInstance</span></code> controleert op de enkele instantie</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Singleton</span> <span class="n">first</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">.</span><span class="na">getInstance</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Singleton</span> <span class="n">second</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">.</span><span class="na">getInstance</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">==</span> <span class="n">second</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>true
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="voorbeeld">
+<h2>Voorbeeld<a class="headerlink" href="#voorbeeld" title="Permalink naar deze titel">¶</a></h2>
+<p><img alt="Python None" src="../_images/python_none.png" /></p>
+<p><img alt="Python None instance" src="../_images/python_none_instance.png" /></p>
+<p>In Python is álles een object, zo ook <code class="docutils literal notranslate"><span class="pre">None</span></code> (en <code class="docutils literal notranslate"><span class="pre">True</span></code> en <code class="docutils literal notranslate"><span class="pre">False</span></code> …). Het object <code class="docutils literal notranslate"><span class="pre">None</span></code>wordt gebruikt om een lege waarde te representeren (vergelijk dit met <code class="docutils literal notranslate"><span class="pre">null</span></code> in Java). Let op, dit object heeft verder geen enkele verantwoordelijkheid.</p>
+</section>
+<section id="problemen">
+<h2>Problemen<a class="headerlink" href="#problemen" title="Permalink naar deze titel">¶</a></h2>
+<p>Threading, een enkele instantie is niet gegarandeerd!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">();</span>
+
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Een optie om dit te voorkomen is door een instantie te creëren zonder dat dit op verzoek pas gebeurt (eagerly creation).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kd">volatile</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="p">;</span>
+
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">synchronized</span> <span class="p">(</span><span class="n">Singleton</span><span class="p">.</span><span class="na">class</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Een tweede optie om thread-safety te garanderen is <em>double-checked locking</em> toe te passen. Alleen bij een eerste check (<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">null</span></code>) wordt gesyncroniseerd, dat wil zeggen dat steeds maar één thread dit blok mag uitvoeren.</p>
+<p>In combinatie met het <em>keyword</em> <code class="docutils literal notranslate"><span class="pre">volatile</span></code> wordt gegarandeerd dat in dit geval maar één instantie wordt aangemaakt. Synchroniseren van threads heeft een een impact op de efficiency, op deze wijze blijft dit beperkt.</p>
+<p>Het effect van het keyword <code class="docutils literal notranslate"><span class="pre">volatile</span></code> heeft te maken met geheugenbeheer en hoe wijzigingen in caching een effect hebben op threads. In <a class="reference external" href="https://www.baeldung.com/java-volatile">Guide to the Volatile Keyword in Java</a> kan je meer lezen over de praktische kant van geheugen in threaded applicaties.</p>
+</section>
+<section id="verantwoord-gebruik">
+<h2>Verantwoord gebruik<a class="headerlink" href="#verantwoord-gebruik" title="Permalink naar deze titel">¶</a></h2>
+<p>Is singleton een <em>anti pattern</em>?</p>
+<ul class="simple">
+<li><p>overtreedt het principe van <em>single responsibility</em></p></li>
+<li><p>tight coupling</p></li>
+<li><p>moeilijk te testen</p></li>
+</ul>
+<p>Een singleton heeft twee verantwoordelijkheden, ten eerste het bijhouden van een enkele instantie en ten tweede de functionaliteit van de klasse zelf, dit overtreedt het principe dat een klasse een enkele verantwoordelijkheid zou moeten hebben.</p>
+<p>Verder heeft een singleton de karakteristieken van een globale variabele, waarmee client klassen “intieme” kennis nodig hebben van deze singleton en waarmee ze <em>tightly coupled</em> zijn.</p>
+<p>Deze tight coupling heeft ook als gevolg dat het moeilijk is om methoden afzonderlijk te testen, omdat altijd de singleton als constante in de weg zit (je moet altijd in combinatie testen).</p>
+</section>
+<section id="mail-service">
+<h2>Mail Service<a class="headerlink" href="#mail-service" title="Permalink naar deze titel">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MailService</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">MailService</span> <span class="n">instance</span><span class="p">;</span>
+
+    <span class="kd">private</span> <span class="nf">MailService</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">MailService</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailService</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// connects with SMTP server and sends mail</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendMail</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Mail sent.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Stel dat je in jouw applicatie mail moet versturen. Het is voor te stellen dat je dit als singleton zou willen implementeren. Naast dat deze klasse verantwoordelijkheid heeft voor het beheren van een enkele instantie van zichzelf heeft het ook een tweede verantwoordelijkheid (het versturen van email).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MailClient</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendPaymentReminder</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">MailService</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">sendMail</span><span class="p">(</span><span class="s">&quot;The message&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Het gebruik is nu eenvoudig, mail valt direct te versturen via de singleton.</p>
+<section id="testen">
+<h3>Testen<a class="headerlink" href="#testen" title="Permalink naar deze titel">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MailClientTest</span> <span class="p">{</span>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testSendPaymentReminder</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Test the correct working of sending a payment reminder</span>
+
+        <span class="c1">// We would like to mock the MailService singleton to check</span>
+        <span class="c1">// if sendMail was correctly called, but we can&#39;t ...</span>
+
+        <span class="c1">// And what&#39;s worse ... the singleton instance</span>
+        <span class="c1">// will be the same for every next test we will run.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Je wilt deze methode van <code class="docutils literal notranslate"><span class="pre">MailClient</span></code> natuurlijk ook testen, maar dan loop je tegen een probleem aan waar je wilt testen of de methode inderdaad een bericht verstuurt. Met andere woorden, je wilt testen of de methode <code class="docutils literal notranslate"><span class="pre">sendMail</span></code> correct wordt aangeroepen en niet zozeer dat mail wordt verstuurd.</p>
+<p>Bovendien, als een singleton eenmaal is geïnstantieerd dan zal dit voor elke volgende test dezelfde waarde hebben.</p>
+</section>
+<section id="alternatief">
+<h3>Alternatief<a class="headerlink" href="#alternatief" title="Permalink naar deze titel">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Mailable</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendMail</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MailService</span> <span class="kd">implements</span> <span class="n">Mailable</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendMail</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+       <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In dit geval zal je moeten bekijken hoe je deze <em>tight coupling</em> kan wijzigen en misschien zelfs of de voordelen van een singleton in dit specifieke geval gaan opwegen tegen de nadelen.</p>
+<p>Het probleem dat je van een singleton niet kunt erven zou je in ieder geval kunnen verhelpen door het op een interface te baseren, en waar de concrete implementatie een singleton zou kunnen zijn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MailClient</span> <span class="p">{</span>
+   <span class="kd">private</span> <span class="kd">final</span> <span class="n">Mailable</span> <span class="n">mailService</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">MailClient</span><span class="p">(</span><span class="n">Mailable</span> <span class="n">singleton</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">mailService</span> <span class="o">=</span> <span class="n">singleton</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendPaymentReminder</span><span class="p">(){</span>
+       <span class="n">mailService</span><span class="p">.</span><span class="na">sendMail</span><span class="p">(</span><span class="s">&quot;The message&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In plaast van de singleton als “globale variabele” aan te roepen zou je nu kunnen kiezen om de singleton expliciet als parameter door te geven, en waar je nu voldoende hebt aan de <em>interface</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MockMailService</span> <span class="kd">implements</span> <span class="n">Mailable</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">messageRecieved</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">MockMailService</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendMail</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">messageRecieved</span> <span class="o">=</span> <span class="n">message</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getMessageRecieved</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">messageRecieved</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Omdat je met een interface werkt is het nu ook eenvoudig om een <em>mock</em> <code class="docutils literal notranslate"><span class="pre">MailService</span></code> klasse te schrijven die je kan gegruiken in tests.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MailClientTest</span> <span class="p">{</span>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testSendPaymentReminder</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">MockMailService</span> <span class="n">mock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MockMailService</span><span class="p">();</span>
+        <span class="n">MailClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailClient</span><span class="p">(</span><span class="n">mock</span><span class="p">);</span>
+
+        <span class="n">client</span><span class="p">.</span><span class="na">sendPaymentReminder</span><span class="p">();</span>
+
+        <span class="c1">// test if mail service was called</span>
+        <span class="n">assertEquals</span><span class="p">(</span><span class="s">&quot;The message&quot;</span><span class="p">,</span> <span class="n">mock</span><span class="p">.</span><span class="na">getMessageRecieved</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Met deze wijziging kan je nu de onderdelen afzonderlijk en isolatie van elkaar testen. Voor tests kan je nu een klasse schrijven die <code class="docutils literal notranslate"><span class="pre">MailService</span></code> simuleert (een <em>mock</em> klasse) en gebruiken om te testen of deze inderdaad wordt aangeroepen.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "java"
+        },
+        kernelOptions: {
+            kernelName: "java",
+            path: "./topics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'java'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../course/week_12.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Week 12</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="11b_command.html" title="volgende pagina">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Command pattern</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -652,6 +652,28 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_12.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/11a_singleton.html">
+     Singleton Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/11b_command.html">
+     Command Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../exercises/singleton_pattern.html">
    Practicum
@@ -783,8 +805,8 @@
 <p>Indien je een foutbericht ziet, of als je niet weet hoe je het bovenstaande moet uitvoeren, volg dan de onderstaande installatiestappen voor jouw besturingssysteem.</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="177410bd-6fb0-4b31-8cbf-e7aafb4ea6b5" name="3e8efb94-91d8-4a23-b5e2-d310617c9f7e" type="radio">
-</input><label class="tabbed-label" for="177410bd-6fb0-4b31-8cbf-e7aafb4ea6b5">
+<input checked="checked" id="8c72eadb-c955-4d94-baf0-a1c7cdedb87d" name="d44b54b6-7810-44db-abe4-485cbfed8ec5" type="radio">
+</input><label class="tabbed-label" for="8c72eadb-c955-4d94-baf0-a1c7cdedb87d">
 Windows</label><div class="tabbed-content docutils">
 <p>De JDK die wij aanbevelen is OpenJDK, een <em>open source</em> implementatie van Java SE (Standard Edition). Ga naar <a class="reference external" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> en download een versie voor jouw besturingssysteem.</p>
 <ul class="simple">
@@ -800,8 +822,8 @@ Windows</label><div class="tabbed-content docutils">
 </ul>
 </div>
 </div>
-<input id="8406cad8-0e6d-428c-bb53-25c4a9c88ac0" name="3e8efb94-91d8-4a23-b5e2-d310617c9f7e" type="radio">
-</input><label class="tabbed-label" for="8406cad8-0e6d-428c-bb53-25c4a9c88ac0">
+<input id="cae0f5ac-ca90-4348-9112-6ba114d32aa6" name="d44b54b6-7810-44db-abe4-485cbfed8ec5" type="radio">
+</input><label class="tabbed-label" for="cae0f5ac-ca90-4348-9112-6ba114d32aa6">
 macOS</label><div class="tabbed-content docutils">
 <p>Indien je een package manager als <code class="docutils literal notranslate"><span class="pre">brew</span></code> gebruikt kan je OpenJDK eenvoudig als volgt installeren:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; brew install openjdk</span>
@@ -809,8 +831,8 @@ macOS</label><div class="tabbed-content docutils">
 </div>
 <p>Indien je geen package manager gebruikt, volg dan dezelfde instructies voor installatie als bij Windows.</p>
 </div>
-<input id="2cbd2f8c-352f-4b3c-94b0-5909396fd23e" name="3e8efb94-91d8-4a23-b5e2-d310617c9f7e" type="radio">
-</input><label class="tabbed-label" for="2cbd2f8c-352f-4b3c-94b0-5909396fd23e">
+<input id="d7ff8441-c5ae-4949-8932-005153a51427" name="d44b54b6-7810-44db-abe4-485cbfed8ec5" type="radio">
+</input><label class="tabbed-label" for="d7ff8441-c5ae-4949-8932-005153a51427">
 Linux</label><div class="tabbed-content docutils">
 <p>Op Linux distributies is OpenJDK eenvoudig te installeren met package managers als <code class="docutils literal notranslate"><span class="pre">apt</span></code> of <code class="docutils literal notranslate"><span class="pre">yum</span></code>. Voor Debian en afgeleide distributies (bijvoorbeeld Ubuntu of Linux Mint) installeer je als volgt de meest recente OpenJDK versie:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; sudo apt-get install default-jdk</span>
@@ -848,18 +870,18 @@ Linux</label><div class="tabbed-content docutils">
 </ul>
 <p>Pak het project als volgt uit voor jouw besturingssysteem:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="4fecfb5c-6b00-4f65-ac90-0656b1be89c1" name="945286d1-d8e9-4960-9664-a99377a5fe81" type="radio">
-</input><label class="tabbed-label" for="4fecfb5c-6b00-4f65-ac90-0656b1be89c1">
+<input checked="checked" id="7987fca1-c657-497a-997c-ae8c77318e61" name="3396ffe1-dceb-49ea-bedd-bde21c064ad8" type="radio">
+</input><label class="tabbed-label" for="7987fca1-c657-497a-997c-ae8c77318e61">
 Windows</label><div class="tabbed-content docutils">
 <p>Om het zip-bestand uit te pakken, klik je er met de rechtermuisknop op en kies je <em>Alles uitpakken</em>. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
 </div>
-<input id="5cd88274-30b1-4a8c-afbb-ce896a4668bd" name="945286d1-d8e9-4960-9664-a99377a5fe81" type="radio">
-</input><label class="tabbed-label" for="5cd88274-30b1-4a8c-afbb-ce896a4668bd">
+<input id="3caa9f01-65be-4565-b200-1c6fe03a002c" name="3396ffe1-dceb-49ea-bedd-bde21c064ad8" type="radio">
+</input><label class="tabbed-label" for="3caa9f01-65be-4565-b200-1c6fe03a002c">
 macOS</label><div class="tabbed-content docutils">
 <p><strong>Dubbelklik</strong> op het zip-bestand om het uit te pakken. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
 </div>
-<input id="4c8f3df3-0d9b-4fb8-a64e-0bbe5a774cf6" name="945286d1-d8e9-4960-9664-a99377a5fe81" type="radio">
-</input><label class="tabbed-label" for="4c8f3df3-0d9b-4fb8-a64e-0bbe5a774cf6">
+<input id="ed5b3b7e-7db5-4d1d-87cf-1053dfc8dfcd" name="3396ffe1-dceb-49ea-bedd-bde21c064ad8" type="radio">
+</input><label class="tabbed-label" for="ed5b3b7e-7db5-4d1d-87cf-1053dfc8dfcd">
 Linux</label><div class="tabbed-content docutils">
 <p>Pak het zip-bestand uit met het volgende commando:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; unzip -d hello hello.zip</span>

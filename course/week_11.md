@@ -2,6 +2,7 @@
 
 ## Onderwerpen
 
+-   [Decorator Pattern](/topics/10a_decorator)
 -   [Factory Patterns](/topics/10b_factory)
 
 

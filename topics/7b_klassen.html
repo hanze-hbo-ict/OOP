@@ -646,6 +646,28 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/singleton_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/logger/index.html">
+   Opgave singleton 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/counter/index.html">
+   Opgave singleton 2
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -809,7 +831,7 @@
 <section id="klasse-definitie">
 <h2>Klasse definitie<a class="headerlink" href="#klasse-definitie" title="Permalink naar deze titel">¶</a></h2>
 <p>Een klasse wordt als volgt gedefinieerd:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>[abstract] [access modifier] class &lt;naam&gt; [extends &lt;parent&gt;] {
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>[abstract] [access modifier] class &lt;naam&gt; [extends &lt;parent&gt;] {
     
 }
 </pre></div>
@@ -822,7 +844,7 @@
 <h2>Instantievariabelen<a class="headerlink" href="#instantievariabelen" title="Permalink naar deze titel">¶</a></h2>
 <p>Instantievariabelen zijn variabelen die beschikbaar zijn in de hele klasse. De declaratie is vergelijkbaar met variabelen in methodes, mogelijk aangevuld met keywords voor klassen. Ook in een klasse mogelijk om variabelen direct te initialiseren.</p>
 <p>Een instantievariabele wordt als volgt gedefinieerd:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="kd">static</span><span class="o">]</span> <span class="o">[</span><span class="n">access</span> <span class="n">modifier</span><span class="o">]</span> <span class="o">[</span><span class="kd">final</span><span class="o">]</span> <span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="kd">static</span><span class="o">]</span> <span class="o">[</span><span class="n">access</span> <span class="n">modifier</span><span class="o">]</span> <span class="o">[</span><span class="kd">final</span><span class="o">]</span> <span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>static: Het keyword <em>static</em> plaatst de variabele in de statische context (op klasseniveau in plaats van instantie).</p>
@@ -833,7 +855,7 @@
 <section id="methodes">
 <h2>Methodes<a class="headerlink" href="#methodes" title="Permalink naar deze titel">¶</a></h2>
 <p>Een methode wordt als volgt gedefinieerd:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="kd">static</span><span class="o">]</span> <span class="o">[</span><span class="kd">abstract</span><span class="o">/</span><span class="kd">final</span><span class="o">]</span> <span class="o">[</span><span class="n">access</span> <span class="n">modifier</span><span class="o">]</span> <span class="o">&lt;</span><span class="n">returntype</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span><span class="p">(</span><span class="o">[</span><span class="n">parameters</span><span class="o">]</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="kd">static</span><span class="o">]</span> <span class="o">[</span><span class="kd">abstract</span><span class="o">/</span><span class="kd">final</span><span class="o">]</span> <span class="o">[</span><span class="n">access</span> <span class="n">modifier</span><span class="o">]</span> <span class="o">&lt;</span><span class="n">returntype</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span><span class="o">&gt;</span><span class="p">(</span><span class="o">[</span><span class="n">parameters</span><span class="o">]</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>static: Het keyword <strong>static</strong> plaatst de methode in de statische context (aan te roepen op klasseniveau)
@@ -846,7 +868,7 @@ final: Het keyword <strong>final</strong> bepaalt dat een methode niet te overri
 <h2>Constructor<a class="headerlink" href="#constructor" title="Permalink naar deze titel">¶</a></h2>
 <p>Een <em>constructor</em> is een bijzonder methode. Deze wordt uitgevoerd als een object wordt gemaakt met het keyword <strong>new</strong>.</p>
 <p>Een constructor wordt als volgt gedefinieerd:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="n">access</span> <span class="n">modifier</span><span class="o">]</span> <span class="o">&lt;</span><span class="n">naam</span> <span class="n">van</span> <span class="n">klasse</span><span class="o">&gt;</span><span class="p">(</span><span class="o">[</span><span class="n">parameters</span><span class="o">]</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="n">access</span> <span class="n">modifier</span><span class="o">]</span> <span class="o">&lt;</span><span class="n">naam</span> <span class="n">van</span> <span class="n">klasse</span><span class="o">&gt;</span><span class="p">(</span><span class="o">[</span><span class="n">parameters</span><span class="o">]</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Belangrijkste verschil tussen een constructor en een reguliere methode is dat er geen returntype is.</p>
@@ -866,11 +888,11 @@ final: Het keyword <strong>final</strong> bepaalt dat een methode niet te overri
 </div>
 <p>setter: Wijzigt de waarde van een variabele</p>
 <p>Definitie setter:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="n">set</span><span class="o">&lt;</span><span class="n">naam</span> <span class="n">van</span> <span class="n">variabele</span><span class="p">,</span> <span class="n">eerste</span> <span class="n">letter</span> <span class="n">hoofdletter</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span> <span class="n">van</span> <span class="n">de</span> <span class="n">variabele</span><span class="o">&gt;</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="n">set</span><span class="o">&lt;</span><span class="n">naam</span> <span class="n">van</span> <span class="n">variabele</span><span class="p">,</span> <span class="n">eerste</span> <span class="n">letter</span> <span class="n">hoofdletter</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">naam</span> <span class="n">van</span> <span class="n">de</span> <span class="n">variabele</span><span class="o">&gt;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Voorbeeld getter en setter van de variabele score (integer):</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">getScore</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">getScore</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">score</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -890,7 +912,7 @@ final: Het keyword <strong>final</strong> bepaalt dat een methode niet te overri
 <li><p>Constanten zijn altijd <strong>public static final</strong></p></li>
 </ul>
 <p>Voorbeeld:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159265359</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159265359</span><span class="p">;</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">SERVER_IP</span> <span class="o">=</span> <span class="s">&quot;192.168.1.1&quot;</span><span class="p">;</span>
 </pre></div>
 </div>

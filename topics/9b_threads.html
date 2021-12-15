@@ -646,6 +646,28 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/singleton_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/logger/index.html">
+   Opgave singleton 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/counter/index.html">
+   Opgave singleton 2
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -825,12 +847,12 @@ Multithreading is een groot onderwerp, waar complete boeken over zijn geschreven
 <p>De methode <strong>run</strong> voert het daadwerkelijke tellen uit.</p>
 <p>De methode <strong>Thread.sleep</strong> zorgt voor een pauze. Omdat deze mogelijk de checked exception <strong>InterruptedException</strong> gooit, is een <em>try..catch-block</em> noodzakelijk.</p>
 <p>Vanuit een main-methode is het eenvoudig om een aantal tellers te maken en uit te voeren:</p>
-<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>    Counter c1 = new Counter(&quot;Counter 1&quot;, 20, 200);
-    Counter c2 = new Counter(&quot;Counter 2&quot;, 10, 700);
-    Counter c3 = new Counter(&quot;Counter 3&quot;, 10, 340);
-    c1.run();
-    c2.run();
-    c3.run();
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="n">Counter</span> <span class="n">c1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Counter</span><span class="p">(</span><span class="s">&quot;Counter 1&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="n">Counter</span> <span class="n">c2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Counter</span><span class="p">(</span><span class="s">&quot;Counter 2&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">700</span><span class="p">);</span>
+    <span class="n">Counter</span> <span class="n">c3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Counter</span><span class="p">(</span><span class="s">&quot;Counter 3&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">340</span><span class="p">);</span>
+    <span class="n">c1</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+    <span class="n">c2</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+    <span class="n">c3</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>De tellers worden <u>achter elkaar</u> uitgevoerd. Eerst teller 1, dan teller 2 en tot slot teller 3. Teller 1 gaat duidelijk sneller dan teller 2. Maar het gebeurt achter elkaar, in een volledig voorspelbare volgorde.</p>
@@ -848,7 +870,7 @@ Multithreading is een groot onderwerp, waar complete boeken over zijn geschreven
 <section id="de-klasse-counter-in-een-thread">
 <h2>De klasse Counter in een thread<a class="headerlink" href="#de-klasse-counter-in-een-thread" title="Permalink naar deze titel">¶</a></h2>
 <p>Voordat de Counter met een thread kan worden gebruikt, dient een kleine aanpassing te worden gemaakt: Counter moet de interface <strong>Runnable</strong> implementeren:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Counter</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Counter</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="p">{</span>
 
     <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">maxvalue</span><span class="p">;</span>
@@ -878,11 +900,11 @@ Multithreading is een groot onderwerp, waar complete boeken over zijn geschreven
 </pre></div>
 </div>
 <p>De interface Runnable bevat één methode:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">run</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">run</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Vervolgens kan de Counter met een thread worden uitgevoerd:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>    <span class="n">Counter</span> <span class="n">c1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Counter</span><span class="p">(</span><span class="s">&quot;Counter 1&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="n">Counter</span> <span class="n">c1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Counter</span><span class="p">(</span><span class="s">&quot;Counter 1&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
     <span class="n">Counter</span> <span class="n">c2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Counter</span><span class="p">(</span><span class="s">&quot;Counter 2&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">700</span><span class="p">);</span>
     <span class="n">Counter</span> <span class="n">c3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Counter</span><span class="p">(</span><span class="s">&quot;Counter 3&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">340</span><span class="p">);</span>
     <span class="n">Thread</span> <span class="n">t1</span><span class="o">=</span><span class="k">new</span> <span class="n">Thread</span><span class="p">(</span><span class="n">c1</span><span class="p">);</span>

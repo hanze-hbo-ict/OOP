@@ -646,6 +646,28 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="singleton_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/logger/index.html">
+   Opgave singleton 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/counter/index.html">
+   Opgave singleton 2
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -1130,7 +1152,7 @@ https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Observabl
 <p>Maak een kopie van de package crypto. Verwijder in de kopie de interfaces Observer en Subject.</p>
 <p>Laat de klasse <strong>Market</strong> de klasse <strong>Observable</strong> (uit <em>package</em> <strong>java.util</strong>) extenden.</p>
 <p>Verwijder de code voor het observer-pattern (de variabele <strong>observers</strong> en de methodes <strong>registerObserver</strong>, <strong>removeObserver</strong> en <strong>notifyObservers</strong>) uit <strong>Market</strong>.</p>
-<p>Laat de klasse <strong>CryptoConsole</strong> de interface <strong>Observable</strong> (uit <em>package</em> <strong>java.util</strong>) implementeren.</p>
+<p>Laat de klasse <strong>CryptoConsole</strong> de interface <strong>Observer</strong> (uit <em>package</em> <strong>java.util</strong>) implementeren.</p>
 <p>De methode <strong>update</strong> uit <strong>java.util.Observer</strong> heeft een andere definitie. Deze is meer generiek. Implementeer de juiste methode update.</p>
 <p>Het market-object kan uit de parameter <strong>observable</strong> gehaald worden met behulp van een cast:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Market</span> <span class="n">market</span> <span class="o">=</span> <span class="p">(</span><span class="n">Market</span><span class="p">)</span><span class="n">observable</span><span class="p">;</span>

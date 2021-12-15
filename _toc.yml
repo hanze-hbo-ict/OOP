@@ -191,3 +191,12 @@ parts:
     title: Practicum factory
   - file: problems/pizza/index
     title: Opgave factory
+
+- caption: Week 12
+  chapters:
+  - file: exercises/singleton_pattern
+    title: Practicum
+  - file: problems/logger/index
+    title: Opgave singleton 1
+  - file: problems/counter/index
+    title: Opgave singleton 2

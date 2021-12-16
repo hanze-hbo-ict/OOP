@@ -202,7 +202,9 @@ parts:
     - file: topics/11b_command
       title: Command Pattern
   - file: exercises/singleton_pattern
-    title: Practicum
+    title: Practicum 1
+  - file: exercises/command_pattern
+    title: Practicum 2
   - file: problems/logger/index
     title: Opgave singleton 1
   - file: problems/counter/index

@@ -1,0 +1,1547 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Iterator Pattern &#8212; Objectgeoriënteerd Programmeren I</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="prev" title="Week 13" href="../course/week_13.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/syllabus.html">
+   Welkom
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3b_arrays_en_referenties.html">
+     Arrays en referenties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/multiplication/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/profiler/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_3.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/codingbat_strings.html">
+     CodingBat strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/codingbat_arrays.html">
+     CodingBat arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_4.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/nested_circles/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/recursive_graphics/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_4.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/codingbat_recursie.html">
+     CodingBat recursie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_5.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/cone/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/class_design/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_5.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/clock/index.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/bouncing_balls/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_8.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7a_klassen_hergebruiken.html">
+     Overerving en abstracte klassen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7b_klassen.html">
+     Meer over klassen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/verhuur/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_9.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8_interfaces.html">
+     Interfaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8b_exceptions.html">
+     Foutafhandeling en exceptions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/library/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/exceptions_gooien.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/exceptions_gebruiken.html">
+   Opgave 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 10
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_10.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9a_design_patterns.html">
+     Design Patterns
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9b_threads.html">
+     Threads
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9c_observer_pattern.html">
+     Observer pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/observer_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/connect4/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/exceptions_en_bestanden.html">
+   Oefening
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 11
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_11.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10a_decorator.html">
+     Decorator Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10b_factory.html">
+     Factory Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/pizza/index.html">
+   Practicum decorator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/cats/index.html">
+   Practicum decorator 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/logger.html">
+   Practicum factory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/pizza/index.html">
+   Opgave factory
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_12.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11a_singleton.html">
+     Singleton Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11b_command.html">
+     Command Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/singleton_pattern.html">
+   Practicum 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/logger/index.html">
+   Opgave singleton 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/counter/index.html">
+   Opgave singleton 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 13
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../course/week_13.html">
+   Onderwerpen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Iterator Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
+                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/topics/12b_iterator.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
+        title="Volledig scherm"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/12b_iterator.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhoud
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementatie">
+   Implementatie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#een-voorbeeld">
+   Een voorbeeld
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meer-leden">
+     Meer leden
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nog-meer-leden">
+     Nog meer leden
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#twee-problemen">
+     Twee problemen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-each-lussen">
+   For-each lussen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterator-s">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Iterator
+      </span>
+     </code>
+     ’s
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterable-s">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Iterable
+      </span>
+     </code>
+     ’s
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#family-als-iterable">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Family
+      </span>
+     </code>
+     als
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Iterable
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#een-ander-voorbeeld">
+   Een ander voorbeeld
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tightly-coupled">
+     Tightly coupled
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-op">
+   Let op
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="iterator-pattern">
+<h1>Iterator Pattern<a class="headerlink" href="#iterator-pattern" title="Permalink naar deze titel">¶</a></h1>
+<blockquote>
+<div><p>Een manier om de elementen van een geaggregeerd object sequentieel te doorlopen zonder kennis te hebben van de onderliggende representatie.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>een <em>geaggregeerd object</em>: een verzameling of collectie van iets</p></li>
+<li><p><em>sequentieel</em> doorlopen: veronderstelt een vaste volgorde</p></li>
+</ul>
+<p>Collecties of verzamelingen ken je, denk bijvoorbeeld aan een array of <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>, dit zijn ook typen waar de volgorde vaststaat (je benadert ze op index). Maar ook jouw eigen typen kunnen een verzameling van dingen representeren waar je sequentieel doorheen zou willen stappen.</p>
+<section id="implementatie">
+<h2>Implementatie<a class="headerlink" href="#implementatie" title="Permalink naar deze titel">¶</a></h2>
+<p><img alt="Iterator Pattern" src="../_images/iterator_pattern.png" /></p>
+<p>In plaats van aggregate zal je ook vaak de term <em>collection</em> gebruikt zien worden.</p>
+</section>
+<section id="een-voorbeeld">
+<h2>Een voorbeeld<a class="headerlink" href="#een-voorbeeld" title="Permalink naar deze titel">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Family</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">members</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Family</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">members</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addMember</span><span class="p">(</span><span class="n">String</span> <span class="n">fullName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">parts</span> <span class="o">=</span> <span class="n">fullName</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">parts</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">members</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">parts</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getMembers</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">members</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">Family</span></code> representeert (op eenvoudige) wijze een familie met familieleden, en deze worden bijgehouden in een collectie (de <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> <code class="docutils literal notranslate"><span class="pre">members</span></code>). We zullen zien dat aan deze uitwerking een aantal bezwaren kleven!</p>
+<p><img alt="The Simpsons" src="../_images/simpsons.jpg" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Family</span> <span class="n">fam</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Family</span><span class="p">(</span><span class="s">&quot;Simpson&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Marge Simpson&quot;</span><span class="p">);</span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Homer Simpson&quot;</span><span class="p">);</span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Bart Simpson&quot;</span><span class="p">);</span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Lisa Simpson&quot;</span><span class="p">);</span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Maggie Simpson&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="meer-leden">
+<h3>Meer leden<a class="headerlink" href="#meer-leden" title="Permalink naar deze titel">¶</a></h3>
+<p><img alt="Brian Griffin" src="../_images/brian_griffin.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Brian Griffin&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">members</span> <span class="o">=</span> <span class="n">fam</span><span class="p">.</span><span class="na">getMembers</span><span class="p">();</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">members</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">members</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Homer
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bart
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lisa
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maggie
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>De implementatie doet wat het moet doen, het accepteert via de <code class="docutils literal notranslate"><span class="pre">addMember</span></code> methode alleen leden gelijk aan de familienaam van de instantie.</p>
+</section>
+<section id="nog-meer-leden">
+<h3>Nog meer leden<a class="headerlink" href="#nog-meer-leden" title="Permalink naar deze titel">¶</a></h3>
+<p><img alt="Stewie Griffin" src="../_images/stewie_griffin.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">members</span> <span class="o">=</span> <span class="n">fam</span><span class="p">.</span><span class="na">getMembers</span><span class="p">();</span>
+
+<span class="n">members</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Stewie&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>true
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">members</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">members</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">fam</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Homer Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bart Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lisa Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maggie Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stewie Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Maar Stewie is lid van de Griffin familie, niet van de Simpsons!</p>
+<p>Omdat we via <code class="docutils literal notranslate"><span class="pre">getMembers</span></code> toegang hebben tot de (mutable) <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> <code class="docutils literal notranslate"><span class="pre">members</span></code> is het mogelijk deze direct aan te passen, buiten de klasse om, en dit is niet de bedoeling.</p>
+<p>Snel Stewie maar weer verwijderen …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">members</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;Stewie&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>true
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="twee-problemen">
+<h3>Twee problemen<a class="headerlink" href="#twee-problemen" title="Permalink naar deze titel">¶</a></h3>
+<p>Het vorige bevat twee problemen, welke?</p>
+<ul class="simple">
+<li><p>te veel kennis van de onderliggende representatie</p></li>
+<li><p>onvoldoende encapsulatie</p></li>
+</ul>
+<p>We hebben te veel kennis van de onderliggende representie nodig, bijvoorbeeld dat leden van de familie in een <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> worden bewaard om ze sequentieel te kunnen doorlopen met een <code class="docutils literal notranslate"><span class="pre">for</span></code>-lus.</p>
+<p>Met de methode <code class="docutils literal notranslate"><span class="pre">addMembers</span></code> zorgen we voor encapsulatie, de klasse is verantwoordelijk voor het toevoegen van leden. Maar de methode <code class="docutils literal notranslate"><span class="pre">getMembers</span></code> “lekt” teveel detail, het interne object waar leden in worden bijgehouden.</p>
+<p>Hoe kunnen we deze twee problemen vermijden, maar toch door de leden van deze familie itereren?</p>
+</section>
+</section>
+<section id="for-each-lussen">
+<h2>For-each lussen<a class="headerlink" href="#for-each-lussen" title="Permalink naar deze titel">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">t</span> <span class="p">:</span> <span class="n">tList</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Assume we have a List&lt;T&gt; named tList</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Dit is de algemene syntax voor for-each lussen (of ook wel een <em>enhanced for loop</em> in Java genoemd). <code class="docutils literal notranslate"><span class="pre">getMembers</span></code>  gaf een <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> terug waar je met dit type lus door de elementen kon itereren:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">members</span> <span class="o">=</span> <span class="n">fam</span><span class="p">.</span><span class="na">getMembers</span><span class="p">();</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">person</span><span class="p">:</span> <span class="n">members</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wat maakt <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> nu zo bijzonder dat het met een andere syntax kan worden doorlopen? Een syntax waar geen index hoeft te worden bijgehouden om het element op te vragen, maar je tóch sequentieel doorheen kan stappen?</p>
+<p>Je zal zien dat <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> helemaal niet zo speciaal is, en is het gewoon een bijzonder voorbeeld van een veel algemener idee, dat we ook voor onze eigen klassen kunnen gebruiken.</p>
+<section id="iterator-s">
+<h3><code class="docutils literal notranslate"><span class="pre">Iterator</span></code>’s<a class="headerlink" href="#iterator-s" title="Permalink naar deze titel">¶</a></h3>
+<p>Stel …</p>
+<ul class="simple">
+<li><p>we weten niet of een object op index te bevragen is</p></li>
+<li><p>we hebben geen kennis van for-each</p></li>
+</ul>
+<p>Welk type lus blijft over?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// setup things ...</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">something</span> <span class="n">is</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do suff ... </span>
+<span class="p">}</span>
+
+<span class="c1">// use results ...</span>
+</pre></div>
+</div>
+<p>While lussen zijn goed om zolang het nodig is handelingen te herhalen. For-each lussen blijven in essentie doorlussen zolang er nog meer items te verwerken zijn.</p>
+<p>Dus misschien ziet de essentie van het gedrag van onze for-each lus, wanneer uitgedrukt als een while lus, er als volgt uit:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">hasMoreElements</span><span class="p">(</span><span class="n">tList</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">T</span> <span class="n">t</span> <span class="o">=</span> <span class="n">nextItemOf</span><span class="p">(</span><span class="n">tList</span><span class="p">);</span>
+
+    <span class="c1">// do stuff with t </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Dit veronderstelt wel dat <code class="docutils literal notranslate"><span class="pre">tList</span></code> een staat bijhoudt (van het eerstvolgende element)!</p>
+<p>Het bovenstaande zal niet echt werken, omdat de functies <code class="docutils literal notranslate"><span class="pre">hasMoreElements</span></code> en <code class="docutils literal notranslate"><span class="pre">nextItemOf</span></code> tussen aanroepen door extra gegevens zouden moeten bijhouden, anders zouden ze elke keer dezelfde antwoorden geven. Maar deze twee functies lijken een elegante, eenvoudige manier om het proces van itereren over gegevens te beschrijven: zolang er meer gegevens zijn, haal het volgende item op en verwerk het, en herhaal het voor het volgende element.</p>
+<p>Om deze reden zouden we deze twee functies willen behouden, maar we moeten de toestand (of <em>staat</em>) bijhouden om ze goed te laten werken. Daarom moeten we een nieuw object maken, wiens enige verantwoordelijkheid is om ons te helpen itereren over <code class="docutils literal notranslate"><span class="pre">tList</span></code>.</p>
+<p>Bovendien, als we het zo formuleren, klinkt dit gedrag niet erg specifiek voor <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>’s, we zouden over bijna alles kunnen itereren!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nc">Iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="c1">// Does this sequence have at least one more value?</span>
+    <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="p">();</span>
+
+    <span class="c1">// Get the next value in this sequence</span>
+    <span class="c1">// EFFECT: Advance the iterator to the subsequent value</span>
+    <span class="n">T</span> <span class="nf">next</span><span class="p">();</span>
+    
+    <span class="c1">// EFFECT: Remove the item just returned by next()</span>
+    <span class="c1">// NOTE: This method may not be supported by every iterator,</span>
+    <span class="c1">// ignore it for now</span>
+    <span class="kt">void</span> <span class="nf">remove</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Laten we zeggen dat een object <em>iterable</em> is als er een <code class="docutils literal notranslate"><span class="pre">Iterator</span></code> implementatie voor bestaat. Dat klinkt als een interface en deze is al voor ons gedefinieerd door Java in <code class="docutils literal notranslate"><span class="pre">java.util.Iterator</span></code>!</p>
+<p>De enige taak van een <code class="docutils literal notranslate"><span class="pre">Iterator</span></code> is het bijhouden van een staat die nodig is om één voor één waarden te produceren uit een sequentie, of het nu een <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> of iets anders is. We zullen zo meteen zien hoe we deze interface kunnen implementeren, laten we zien hoe we het kunnen gebruiken.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">listIter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayListIterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">aList</span><span class="p">);</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">listIter</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">T</span> <span class="n">t</span> <span class="o">=</span> <span class="n">listIter</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+    <span class="c1">// do stuff with t</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="iterable-s">
+<h3><code class="docutils literal notranslate"><span class="pre">Iterable</span></code>’s<a class="headerlink" href="#iterable-s" title="Permalink naar deze titel">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">familyIter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FamilyIterator</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    
+<span class="k">while</span> <span class="p">(</span><span class="n">familyIter</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">person</span> <span class="o">=</span> <span class="n">familyIter</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+    <span class="c1">// do stuff with person</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Tot zover gaat het goed, we kunnen het gedrag van een for-each lus beschrijven in termen van een while lus over een <code class="docutils literal notranslate"><span class="pre">Iterator</span></code>. Maar hoe weet Java wat voor iterator het moet construeren? Tenslotte is de <code class="docutils literal notranslate"><span class="pre">ArrayListIterator</span></code> hierboven echt specifiek voor <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>’s en bijvoorbeeld een <code class="docutils literal notranslate"><span class="pre">FamilyIterator</span></code> alleen voor <code class="docutils literal notranslate"><span class="pre">Family</span></code>’s.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">person</span><span class="p">:</span> <span class="n">fam</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Als we willen dat onze for-each loops over andere soorten dingen werken (bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">Family</span></code>), hebben we een ander mechanisme nodig. Laten we zeggen dat een object iterable is als er een <code class="docutils literal notranslate"><span class="pre">Iterator</span></code> implementatie voor bestaat. Dit klinkt als een andere interface!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Represents anything that can be iterated over</span>
+<span class="kd">interface</span> <span class="nc">Iterable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="c1">// Returns an iterator over this collection</span>
+    <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ook deze interface is al gedefinieerd door Java, en deze interface dwingt af dat als een object <em>iterable</em> wil zijn er ook een <code class="docutils literal notranslate"><span class="pre">Iterator</span></code> implementatie voor moet bestaan.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="c1">// lots of other details ...</span>
+
+    <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ArrayListIterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In de werkelijke Java implementatie van <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> zal je iets als in het bovenstaande letterlijk terugzien.</p>
+</section>
+<section id="family-als-iterable">
+<h3><code class="docutils literal notranslate"><span class="pre">Family</span></code> als <code class="docutils literal notranslate"><span class="pre">Iterable</span></code><a class="headerlink" href="#family-als-iterable" title="Permalink naar deze titel">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Family</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">members</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Family</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">members</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addMember</span><span class="p">(</span><span class="n">String</span> <span class="n">fullName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">parts</span> <span class="o">=</span> <span class="n">fullName</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">parts</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">members</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">parts</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">members</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We kunnen hier gebruik maken van het feit dat, omdat we door de familieleden willen itereren, we een <em>iterator</em> teruggeven voor de <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> <code class="docutils literal notranslate"><span class="pre">members</span></code>. Met andere woorden in dit geval hoeven we geen aparte <code class="docutils literal notranslate"><span class="pre">FamilyIterator</span></code> te gebruiken.</p>
+<p>Mochten we in de toekomst een andere structuur willen kiezen dan hoeven we alleen maar een andere implementatie voor de <code class="docutils literal notranslate"><span class="pre">Iterator</span></code> terug te geven. Clients die <code class="docutils literal notranslate"><span class="pre">Family</span></code> gebruiken hoeven daar verder niets van te weten en kunnen nog steeds met een for-each lus de elementen doorlopen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Family</span> <span class="n">fam</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Family</span><span class="p">(</span><span class="s">&quot;Simpson&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Marge Simpson&quot;</span><span class="p">);</span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Homer Simpson&quot;</span><span class="p">);</span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Bart Simpson&quot;</span><span class="p">);</span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Lisa Simpson&quot;</span><span class="p">);</span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="s">&quot;Maggie Simpson&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">person</span> <span class="p">:</span> <span class="n">fam</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">person</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">fam</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Homer Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bart Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lisa Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maggie Simpson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="een-ander-voorbeeld">
+<h2>Een ander voorbeeld<a class="headerlink" href="#een-ander-voorbeeld" title="Permalink naar deze titel">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Het idee van <em>iterables</em> is in Python ingebakken, het is onderdeel van de taal. Hoe vaak heb je de Python functie <code class="docutils literal notranslate"><span class="pre">range</span></code> wel niet gebruikt om een reeks van getallen te doorlopen?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">i</span> <span class="p">:</span> <span class="k">new</span> <span class="n">Range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Hoe zouden we gebruik kunnen maken van het Iterator pattern om een <code class="docutils literal notranslate"><span class="pre">Range</span></code> implementatie te maken die Python’s <code class="docutils literal notranslate"><span class="pre">range</span></code> simuleert?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Range</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">start</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">stop</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Range</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">stop</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">stop</span> <span class="o">=</span> <span class="n">stop</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Range</span><span class="p">(</span><span class="kt">int</span> <span class="n">stop</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getStart</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">start</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getStop</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">stop</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">RangeIterator</span> <span class="nf">iterator</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">RangeIterator</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Om te beginnen een klasse <code class="docutils literal notranslate"><span class="pre">Range</span></code> die die de methode <code class="docutils literal notranslate"><span class="pre">interator</span></code> implementeert en een <code class="docutils literal notranslate"><span class="pre">RangeIterator</span></code> teruggeeft. Leet ook op dat de klasse een de instantie (<code class="docutils literal notranslate"><span class="pre">this</span></code>) als parameter doorgeeft aan <code class="docutils literal notranslate"><span class="pre">RangeIterator</span></code>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RangeIterator</span> <span class="kd">implements</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">Range</span> <span class="n">range</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nextIndex</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">RangeIterator</span><span class="p">(</span><span class="n">Range</span> <span class="n">range</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">range</span> <span class="o">=</span> <span class="n">range</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">nextIndex</span> <span class="o">=</span> <span class="n">range</span><span class="p">.</span><span class="na">getStart</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">nextIndex</span> <span class="o">&lt;</span> <span class="n">range</span><span class="p">.</span><span class="na">getStop</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">next</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">nextIndex</span><span class="p">;</span>
+        <span class="n">nextIndex</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">index</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">remove</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="n">UnsupportedOperationException</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>De enige veratwoordelijkheid van deze klasse is om een staat bij te houden, in dit geval de eerstvolgende index (<code class="docutils literal notranslate"><span class="pre">nextIndex</span></code>).</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">i</span> <span class="p">:</span> <span class="k">new</span> <span class="n">Range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Met deze implementatie kan een reeks worden doorlopen met een for-each lus.</p>
+<section id="tightly-coupled">
+<h3>Tightly coupled<a class="headerlink" href="#tightly-coupled" title="Permalink naar deze titel">¶</a></h3>
+<p>Dit is een duidelijk geval van <em>tight coupling</em> want de klasse <code class="docutils literal notranslate"><span class="pre">RangeIterator</span></code> is afhankelijk van de klasse <code class="docutils literal notranslate"><span class="pre">Range</span></code> (en vice versa) en deze afhankelijkheid is in dit geval onvermijdelijk.</p>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">RangeIterator</span></code> is ook een klasse waarvan je zou willen dat een client deze niet zou kunnen instantiëren, het is iets dat in het ideale geval alleen door de klasse <code class="docutils literal notranslate"><span class="pre">Range</span></code> zou moeten kunnen om deze intieme relatie te “verbergen”.</p>
+<p>Je zal in de (Java) praktijk vaak <em>inner classes</em> gebruikt zien worden om dit probleem op te lossen. Net als velden zoals je ze kent kunnen in Java ook klassen als een veld worden gedefiniëerd, en worden daarmee een klasse in een klasse.</p>
+<p>Een inner class heeft (net als methoden) daarmee ook toegang tot <code class="docutils literal notranslate"><span class="pre">this</span></code>, de instantie van de “omsluitende” klasse.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Range</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">start</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">stop</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Range</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">stop</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">stop</span> <span class="o">=</span> <span class="n">stop</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Range</span><span class="p">(</span><span class="kt">int</span> <span class="n">stop</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">RangeIterator</span> <span class="nf">iterator</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">RangeIterator</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">RangeIterator</span> <span class="kd">implements</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">nextIndex</span><span class="p">;</span>
+
+        <span class="kd">public</span> <span class="nf">RangeIterator</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">nextIndex</span> <span class="o">=</span> <span class="n">Range</span><span class="p">.</span><span class="na">this</span><span class="p">.</span><span class="na">start</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">nextIndex</span> <span class="o">&lt;</span> <span class="n">Range</span><span class="p">.</span><span class="na">this</span><span class="p">.</span><span class="na">stop</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">next</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">nextIndex</span><span class="p">;</span>
+            <span class="n">nextIndex</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">index</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">remove</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">UnsupportedOperationException</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>De <code class="docutils literal notranslate"><span class="pre">Iterator</span></code> als inner class, let op dat de toegang tot <code class="docutils literal notranslate"><span class="pre">this</span></code> verloopt via de omsluitende klasse (bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">Range.this.start</span></code>). Het lijkt op de aanroep van een <em>statisch</em> veld <code class="docutils literal notranslate"><span class="pre">this</span></code>, maar in dit geval wijst het naar de instantie van de omsluitende klasse!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">i</span> <span class="p">:</span> <span class="k">new</span> <span class="n">Range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="let-op">
+<h2>Let op<a class="headerlink" href="#let-op" title="Permalink naar deze titel">¶</a></h2>
+<p>Een andere gedachte zou zijn om zowel <code class="docutils literal notranslate"><span class="pre">Iterator</span></code> als <code class="docutils literal notranslate"><span class="pre">Iterable</span></code> in een enkele klasse te implementeren. Doe dit <strong>niet</strong>, want ze hebben ieder een eigen verantwoordelijkheid.</p>
+<p>Een <code class="docutils literal notranslate"><span class="pre">Iterator</span></code> is van nature <em>stateful</em>, dat wil zeggen dat als je er iteraties mee uitvoert, het steeds blik op de wereld moet bijwerken (een veranderende staat). Een <code class="docutils literal notranslate"><span class="pre">Iterable</span></code> heeft andere verantwoordelijkheden en moet <em>alleen</em> maar nieuwe <em>iterators</em> kunnen maken.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "java"
+        },
+        kernelOptions: {
+            kernelName: "java",
+            path: "./topics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'java'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../course/week_13.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Week 13</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          Door Hanzehogeschool Groningen<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -209,3 +209,11 @@ parts:
     title: Opgave singleton 1
   - file: problems/counter/index
     title: Opgave singleton 2
+
+- caption: Week 13
+  chapters:
+  - file: course/week_13
+    title: Onderwerpen
+    sections:
+    - file: topics/12b_iterator
+      title: Iterator Pattern

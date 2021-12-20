@@ -1,0 +1,26 @@
+@startuml
+!theme cerulean-outline
+interface Aggregate {
+    {abstract} +iterator() : Iterator
+}
+
+interface Iterator {
+    {abstract} +next() : T
+    {abstract} +hasNext() : boolean
+}
+
+class ConcreteAggregate implements Aggregate {
+    +iterator() : Iterator
+}
+
+class ConcreteIterator implements Iterator {
+    +next() : T
+    +hasNext() : boolean
+}
+
+
+Aggregate -[hidden]> Iterator
+ConcreteAggregate -[hidden]> ConcreteIterator
+
+ConcreteAggregate --o ConcreteIterator : <<has>>
+@enduml

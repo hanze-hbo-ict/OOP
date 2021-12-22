@@ -713,6 +713,11 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/iterator/index.html">
+   Practicum iterator
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -1210,7 +1215,7 @@ Een unchecked exception is een exception die niet verplicht afgehandeld hoeft te
 <h2>Error<a class="headerlink" href="#error" title="Permalink naar deze titel">¶</a></h2>
 <p>Een error is een gebeurtenis die onherstelbaar is. Daarom heeft het in de regel weinig zin om ze op te vangen met <strong>catch</strong>. In de regel treden errors alleen op vanuit de Java virtuele machine.</p>
 <p>Errors worden niet gebruikt of afgehandeld in normale programma’s.</p>
-<p>Een error overerft van de klasse <strong>Error</strong>, https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html</p>
+<p>Een error overerft van de klasse <strong>Error</strong>, <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html">https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html</a></p>
 <p>Het onderstaande voorbeeld triggert een error vanuit de Java virtuele machine:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">trigger_error</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">trigger_error</span><span class="p">();</span> <span class="c1">// oneindige recursie</span>
@@ -1223,7 +1228,7 @@ Een unchecked exception is een exception die niet verplicht afgehandeld hoeft te
 <h2>Checked exception<a class="headerlink" href="#checked-exception" title="Permalink naar deze titel">¶</a></h2>
 <p>Een checked exception is een exception die verplicht afgehandeld moet worden met een try..catch-block.</p>
 <p>Een checked exception wordt gebruikt als een fout mogelijk afgehandeld kan worden, en deze fout niet het gevolg is van een fout van de programmeur. Bijvoorbeeld netwerk- of schijffouten. Dit zijn fouten die buiten de invloed van de programmeur liggen.</p>
-<p>Checked exception overerven van de klasse <strong>Exception</strong> maar <u>niet</u> van de klasse <strong>RuntimeException</strong>: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html</p>
+<p>Checked exception overerven van de klasse <strong>Exception</strong> maar <u>niet</u> van de klasse <strong>RuntimeException</strong>: <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html</a></p>
 <p>Code met een niet afgehandelde checked exception compileert niet.</p>
 <p>De meest voorkomende checked exception is IOException, die onder andere optreedt bij allerlei I/O fouten bij het openen, lezen en schrijven van bestanden.</p>
 <p>In het onderstaande voorbeeld wordt de IOException afgehandeld:</p>
@@ -1256,7 +1261,7 @@ Een unchecked exception is een exception die niet verplicht afgehandeld hoeft te
 <section id="unchecked-exception">
 <h2>Unchecked exception<a class="headerlink" href="#unchecked-exception" title="Permalink naar deze titel">¶</a></h2>
 <p>Een unchecked exception kan afgehandeld worden, maar het is niet verplicht.</p>
-<p>Een unchecked exception wordt ook wel runtime exception genoemd. Deze overerft van de klasse RuntimeException: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html.</p>
+<p>Een unchecked exception wordt ook wel runtime exception genoemd. Deze overerft van de klasse RuntimeException: <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html">https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html</a>.</p>
 <p>Een unchecked exception wordt gebruikt als de fout het gevolg is van eenn fout van de programmeur. Daarom is het in de regel niet wenselijk om een unchecked exception af te handelen. Als een dergelijke exception optreedt, dan is dat een indicatie dat in de code iets gecorrigeerd moet worden.</p>
 <p>Unchecked exceptions treden op bij bijvoorbeeld een integer delen door 0 of het benaderen van een niet-bestaand element in een array.</p>
 <p>In het onderstaande voorbeeld treden unchecked exceptions op:</p>
@@ -1392,9 +1397,9 @@ Een unchecked exception is een exception die niet verplicht afgehandeld hoeft te
 <h2>Lezen over exceptions<a class="headerlink" href="#lezen-over-exceptions" title="Permalink naar deze titel">¶</a></h2>
 <p>Meer weten over exceptions? De onderstaande bronnen bevatten diepgaande informatie over exceptions.</p>
 <ul class="simple">
-<li><p>https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html</p></li>
-<li><p>https://www.baeldung.com/java-exceptions</p></li>
-<li><p>https://www.programiz.com/java-programming/exceptions</p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html">https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html</a></p></li>
+<li><p><a class="reference external" href="https://www.baeldung.com/java-exceptions">https://www.baeldung.com/java-exceptions</a></p></li>
+<li><p><a class="reference external" href="https://www.programiz.com/java-programming/exceptions">https://www.programiz.com/java-programming/exceptions</a></p></li>
 </ul>
 </section>
 </section>

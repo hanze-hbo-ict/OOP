@@ -36,6 +36,7 @@ parse:
     - deflist
     - dollarmath
     - amsmath
+    - linkify
 
 bibtex_bibfiles:
   - about/references.bib

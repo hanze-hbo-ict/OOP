@@ -217,3 +217,5 @@ parts:
     sections:
     - file: topics/12b_iterator
       title: Iterator Pattern
+  - file: exercises/iterator/index
+    title: Practicum iterator

@@ -44,7 +44,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -680,6 +680,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/command_pattern.html">
+   Practicum 2
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../problems/logger/index.html">
    Opgave singleton 1
   </a>
@@ -764,7 +769,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -782,7 +787,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Inhoud
@@ -817,7 +822,45 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Hello World in Java</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhoud </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installeer-java">
+   Installeer Java
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#editor">
+   Editor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-een-project-in-intellij">
+   Open een project in IntelliJ
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maak-een-programma-in-intellij">
+   Maak een programma in IntelliJ
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="hello-world-in-java">
@@ -834,8 +877,8 @@
 <p>Indien je een foutbericht ziet, of als je niet weet hoe je het bovenstaande moet uitvoeren, volg dan de onderstaande installatiestappen voor jouw besturingssysteem.</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="aad7fcd1-987c-4878-b643-6ac13387dc71" name="c6cd27cc-8dc4-4848-a81e-eb0af29c04c4" type="radio">
-</input><label class="tabbed-label" for="aad7fcd1-987c-4878-b643-6ac13387dc71">
+<input checked="checked" id="726ecd3e-8e13-4077-8a93-f93533d26a09" name="e2841edd-9c0e-44df-b386-af50c47a4c2e" type="radio">
+</input><label class="tabbed-label" for="726ecd3e-8e13-4077-8a93-f93533d26a09">
 Windows</label><div class="tabbed-content docutils">
 <p>De JDK die wij aanbevelen is OpenJDK, een <em>open source</em> implementatie van Java SE (Standard Edition). Ga naar <a class="reference external" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> en download een versie voor jouw besturingssysteem.</p>
 <ul class="simple">
@@ -851,8 +894,8 @@ Windows</label><div class="tabbed-content docutils">
 </ul>
 </div>
 </div>
-<input id="1485c291-3b3b-4fc5-a43d-418a36b72c22" name="c6cd27cc-8dc4-4848-a81e-eb0af29c04c4" type="radio">
-</input><label class="tabbed-label" for="1485c291-3b3b-4fc5-a43d-418a36b72c22">
+<input id="e8c99cd2-dabd-445a-a6fa-8091f23518f2" name="e2841edd-9c0e-44df-b386-af50c47a4c2e" type="radio">
+</input><label class="tabbed-label" for="e8c99cd2-dabd-445a-a6fa-8091f23518f2">
 macOS</label><div class="tabbed-content docutils">
 <p>Indien je een package manager als <code class="docutils literal notranslate"><span class="pre">brew</span></code> gebruikt kan je OpenJDK eenvoudig als volgt installeren:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; brew install openjdk</span>
@@ -860,8 +903,8 @@ macOS</label><div class="tabbed-content docutils">
 </div>
 <p>Indien je geen package manager gebruikt, volg dan dezelfde instructies voor installatie als bij Windows.</p>
 </div>
-<input id="c4da216f-27fd-4b65-b644-376c7048d117" name="c6cd27cc-8dc4-4848-a81e-eb0af29c04c4" type="radio">
-</input><label class="tabbed-label" for="c4da216f-27fd-4b65-b644-376c7048d117">
+<input id="b59b8487-99db-46ee-9b1e-3ce9e29173ed" name="e2841edd-9c0e-44df-b386-af50c47a4c2e" type="radio">
+</input><label class="tabbed-label" for="b59b8487-99db-46ee-9b1e-3ce9e29173ed">
 Linux</label><div class="tabbed-content docutils">
 <p>Op Linux distributies is OpenJDK eenvoudig te installeren met package managers als <code class="docutils literal notranslate"><span class="pre">apt</span></code> of <code class="docutils literal notranslate"><span class="pre">yum</span></code>. Voor Debian en afgeleide distributies (bijvoorbeeld Ubuntu of Linux Mint) installeer je als volgt de meest recente OpenJDK versie:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; sudo apt-get install default-jdk</span>
@@ -899,18 +942,18 @@ Linux</label><div class="tabbed-content docutils">
 </ul>
 <p>Pak het project als volgt uit voor jouw besturingssysteem:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="aab772b8-8c66-45f0-9021-d14170ed1798" name="8a6dae07-c9d4-48a2-babd-f048446d30b9" type="radio">
-</input><label class="tabbed-label" for="aab772b8-8c66-45f0-9021-d14170ed1798">
+<input checked="checked" id="cfdba847-3d7d-480c-8afc-672ef66624fc" name="5b03399c-a4cf-4ca4-8ea2-d531d60c15d7" type="radio">
+</input><label class="tabbed-label" for="cfdba847-3d7d-480c-8afc-672ef66624fc">
 Windows</label><div class="tabbed-content docutils">
 <p>Om het zip-bestand uit te pakken, klik je er met de rechtermuisknop op en kies je <em>Alles uitpakken</em>. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
 </div>
-<input id="73765d45-d7af-4a63-b37c-e64bf4b64bc4" name="8a6dae07-c9d4-48a2-babd-f048446d30b9" type="radio">
-</input><label class="tabbed-label" for="73765d45-d7af-4a63-b37c-e64bf4b64bc4">
+<input id="e45c1852-7399-4399-91f0-ea6cea2616f4" name="5b03399c-a4cf-4ca4-8ea2-d531d60c15d7" type="radio">
+</input><label class="tabbed-label" for="e45c1852-7399-4399-91f0-ea6cea2616f4">
 macOS</label><div class="tabbed-content docutils">
 <p><strong>Dubbelklik</strong> op het zip-bestand om het uit te pakken. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
 </div>
-<input id="e734bc33-1620-4025-99f8-8c2d6d41838b" name="8a6dae07-c9d4-48a2-babd-f048446d30b9" type="radio">
-</input><label class="tabbed-label" for="e734bc33-1620-4025-99f8-8c2d6d41838b">
+<input id="d735f455-052f-4f8a-a008-3e8ff145fb06" name="5b03399c-a4cf-4ca4-8ea2-d531d60c15d7" type="radio">
+</input><label class="tabbed-label" for="d735f455-052f-4f8a-a008-3e8ff145fb06">
 Linux</label><div class="tabbed-content docutils">
 <p>Pak het zip-bestand uit met het volgende commando:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; unzip -d hello hello.zip</span>
@@ -1041,8 +1084,8 @@ Als de compilatie mislukt opent een Recompile-paneel (onderaan), waarin de compi
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="../topics/1c_invoer_en_uitvoer.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
@@ -1059,18 +1102,16 @@ Als de compilatie mislukt opent een Recompile-paneel (onderaan), waarin de compi
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          Door Hanzehogeschool Groningen<br/>
-        
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      Door Hanzehogeschool Groningen<br/>
+    
+  </p>
+</footer>
 </main>
 
 

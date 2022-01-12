@@ -1,0 +1,9 @@
+// dot -Tpng:cairo -Gdpi=100 -Nfontname=Helvetica -Efontname=Helvetica -o fsm_1.png fsm_1.dot
+
+digraph g {
+   rankdir="LR";
+   edge[splines="curved"]
+   OFF -> DIM [label="push button"];
+   DIM -> BRIGHT [label="push button"];
+   BRIGHT -> OFF [label="push button"];
+}

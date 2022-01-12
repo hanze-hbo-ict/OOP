@@ -219,3 +219,13 @@ parts:
       title: Iterator Pattern
   - file: exercises/iterator/index
     title: Practicum iterator
+
+- caption: Week 14
+  chapters:
+  - file: course/week_14
+    title: Onderwerpen
+    sections:
+    - file: topics/13a_state
+      title: State Pattern
+  - file: exercises/pinautomaat/index
+    title: Practicum state

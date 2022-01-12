@@ -1,0 +1,22 @@
+@startuml
+!theme cyborg-outline
+
+class Context {
+    +request() : void
+    -state : State
+}
+
+interface State {
+    {abstract} +handle()
+}
+
+class ConcreteStateA implements State {
+    +handle()
+}
+
+class ConcreteStateB implements State {
+    +handle()
+}
+
+Context o-- State
+@enduml

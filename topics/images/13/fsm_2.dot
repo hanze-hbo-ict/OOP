@@ -1,0 +1,14 @@
+// dot -Tpng:cairo -Gdpi=100 -Nfontname=Helvetica -Efontname=Helvetica -o fsm_1.png fsm_1.dot
+
+digraph g {
+   rankdir="LR";
+   edge[splines="curved"]
+   O [label="Ordered"]
+   D [label="Delivered"]
+   R [label="Received"]
+
+   O -> D [label="next"]
+   D -> R [label="next"]
+   R -> D [label="prev"]
+   D -> O [label="prev"]
+}

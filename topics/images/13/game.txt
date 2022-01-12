@@ -1,0 +1,46 @@
+@startuml
+!theme cerulean-outline
+
+class Player {
+    +attack() : void
+    +fireBomb() : void
+    +fireGunblade() : void
+    +fireLaserPistol() : void
+    +firePistol() : void
+    +survive() : void
+    +dead() : void
+}
+
+class Game {
+    -state : State
+    -player : Player
+
+    +setState(state : State) : void
+    +gameAction() : void
+}
+
+interface State {
+    {abstract} +action(player : Player) : void
+}
+
+class HealthyState implements State {
+    +action(player : Player) : void
+}
+
+class DeadState implements State {
+    +action(player : Player) : void
+}
+
+class SurvivalState implements State {
+    +action(player : Player) : void
+}
+
+together {
+    class Player
+    class Game
+    interface State
+}
+
+Game --> State
+Game --> Player
+@enduml

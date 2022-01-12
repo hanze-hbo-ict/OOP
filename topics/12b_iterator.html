@@ -724,6 +724,35 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 14
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_14.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13a_state.html">
+     State Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/pinautomaat/index.html">
+   Practicum state
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -1476,7 +1505,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Om te beginnen een klasse <code class="docutils literal notranslate"><span class="pre">Range</span></code> die die de methode <code class="docutils literal notranslate"><span class="pre">interator</span></code> implementeert en een <code class="docutils literal notranslate"><span class="pre">RangeIterator</span></code> teruggeeft. Leet ook op dat de klasse een de instantie (<code class="docutils literal notranslate"><span class="pre">this</span></code>) als parameter doorgeeft aan <code class="docutils literal notranslate"><span class="pre">RangeIterator</span></code>.</p>
+<p>Om te beginnen is een klasse <code class="docutils literal notranslate"><span class="pre">Range</span></code> nodig die de methode <code class="docutils literal notranslate"><span class="pre">interator</span></code> implementeert en een <code class="docutils literal notranslate"><span class="pre">RangeIterator</span></code> teruggeeft. Let ook op dat de klasse een de instantie (<code class="docutils literal notranslate"><span class="pre">this</span></code>) als parameter doorgeeft aan <code class="docutils literal notranslate"><span class="pre">RangeIterator</span></code>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RangeIterator</span> <span class="kd">implements</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="kd">private</span> <span class="n">Range</span> <span class="n">range</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">nextIndex</span><span class="p">;</span>

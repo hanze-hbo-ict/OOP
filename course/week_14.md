@@ -2,7 +2,8 @@
 
 ## Onderwerpen
 
--   [State Pattern](/topics/13a_state)
+-   [Composite Pattern](/topics/13a_composite)
+-   [State Pattern](/topics/13b_state)
 
 ## Boek
 

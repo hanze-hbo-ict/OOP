@@ -225,7 +225,9 @@ parts:
   - file: course/week_14
     title: Onderwerpen
     sections:
-    - file: topics/13a_state
+    - file: topics/13a_composite
+      title: Composite Pattern
+    - file: topics/13b_state
       title: State Pattern
   - file: exercises/pinautomaat/index
     title: Practicum state

@@ -741,7 +741,12 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../topics/13a_state.html">
+    <a class="reference internal" href="../topics/13a_composite.html">
+     Composite Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/13b_state.html">
      State Pattern
     </a>
    </li>
@@ -906,8 +911,8 @@
 <p>Indien je een foutbericht ziet, of als je niet weet hoe je het bovenstaande moet uitvoeren, volg dan de onderstaande installatiestappen voor jouw besturingssysteem.</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="7111c476-20ba-4d96-a7ec-038c5346bc5b" name="57b67b8f-0bde-46bd-acf6-9b5d33242257" type="radio">
-</input><label class="tabbed-label" for="7111c476-20ba-4d96-a7ec-038c5346bc5b">
+<input checked="checked" id="a598d932-47e3-4713-99de-d6023c952dff" name="cacedbdc-36ba-4520-af50-73d947ad8182" type="radio">
+</input><label class="tabbed-label" for="a598d932-47e3-4713-99de-d6023c952dff">
 Windows</label><div class="tabbed-content docutils">
 <p>De JDK die wij aanbevelen is OpenJDK, een <em>open source</em> implementatie van Java SE (Standard Edition). Ga naar <a class="reference external" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> en download een versie voor jouw besturingssysteem.</p>
 <ul class="simple">
@@ -923,8 +928,8 @@ Windows</label><div class="tabbed-content docutils">
 </ul>
 </div>
 </div>
-<input id="0a3031e3-85a9-42a1-9e87-c57a6a79edfd" name="57b67b8f-0bde-46bd-acf6-9b5d33242257" type="radio">
-</input><label class="tabbed-label" for="0a3031e3-85a9-42a1-9e87-c57a6a79edfd">
+<input id="8525fe37-35ed-4c90-bb77-916fb7af6800" name="cacedbdc-36ba-4520-af50-73d947ad8182" type="radio">
+</input><label class="tabbed-label" for="8525fe37-35ed-4c90-bb77-916fb7af6800">
 macOS</label><div class="tabbed-content docutils">
 <p>Indien je een package manager als <code class="docutils literal notranslate"><span class="pre">brew</span></code> gebruikt kan je OpenJDK eenvoudig als volgt installeren:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; brew install openjdk</span>
@@ -932,8 +937,8 @@ macOS</label><div class="tabbed-content docutils">
 </div>
 <p>Indien je geen package manager gebruikt, volg dan dezelfde instructies voor installatie als bij Windows.</p>
 </div>
-<input id="310197ca-07e5-4ac6-90f5-ca59cd56243f" name="57b67b8f-0bde-46bd-acf6-9b5d33242257" type="radio">
-</input><label class="tabbed-label" for="310197ca-07e5-4ac6-90f5-ca59cd56243f">
+<input id="80e109f1-0af5-410d-b54a-25d9fddf247d" name="cacedbdc-36ba-4520-af50-73d947ad8182" type="radio">
+</input><label class="tabbed-label" for="80e109f1-0af5-410d-b54a-25d9fddf247d">
 Linux</label><div class="tabbed-content docutils">
 <p>Op Linux distributies is OpenJDK eenvoudig te installeren met package managers als <code class="docutils literal notranslate"><span class="pre">apt</span></code> of <code class="docutils literal notranslate"><span class="pre">yum</span></code>. Voor Debian en afgeleide distributies (bijvoorbeeld Ubuntu of Linux Mint) installeer je als volgt de meest recente OpenJDK versie:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; sudo apt-get install default-jdk</span>
@@ -971,18 +976,18 @@ Linux</label><div class="tabbed-content docutils">
 </ul>
 <p>Pak het project als volgt uit voor jouw besturingssysteem:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="6aa5e567-b5f8-46b8-b789-9e023d540493" name="5e1036bb-fd8b-4d8f-b2e8-ad4b9b4d8da4" type="radio">
-</input><label class="tabbed-label" for="6aa5e567-b5f8-46b8-b789-9e023d540493">
+<input checked="checked" id="f51313a9-bbdf-465f-83bd-7dfc35937ddf" name="0428e01e-3ca5-4015-9148-07391c8ff8d0" type="radio">
+</input><label class="tabbed-label" for="f51313a9-bbdf-465f-83bd-7dfc35937ddf">
 Windows</label><div class="tabbed-content docutils">
 <p>Om het zip-bestand uit te pakken, klik je er met de rechtermuisknop op en kies je <em>Alles uitpakken</em>. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
 </div>
-<input id="c97c2666-1ba5-4727-b8c6-223250b5e28d" name="5e1036bb-fd8b-4d8f-b2e8-ad4b9b4d8da4" type="radio">
-</input><label class="tabbed-label" for="c97c2666-1ba5-4727-b8c6-223250b5e28d">
+<input id="45b05675-e921-4696-89bc-188e257d203e" name="0428e01e-3ca5-4015-9148-07391c8ff8d0" type="radio">
+</input><label class="tabbed-label" for="45b05675-e921-4696-89bc-188e257d203e">
 macOS</label><div class="tabbed-content docutils">
 <p><strong>Dubbelklik</strong> op het zip-bestand om het uit te pakken. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
 </div>
-<input id="49551113-19a0-4f07-9da7-dcfc259522dd" name="5e1036bb-fd8b-4d8f-b2e8-ad4b9b4d8da4" type="radio">
-</input><label class="tabbed-label" for="49551113-19a0-4f07-9da7-dcfc259522dd">
+<input id="f7a70592-2f94-41ef-a977-fd32f99ec236" name="0428e01e-3ca5-4015-9148-07391c8ff8d0" type="radio">
+</input><label class="tabbed-label" for="f7a70592-2f94-41ef-a977-fd32f99ec236">
 Linux</label><div class="tabbed-content docutils">
 <p>Pak het zip-bestand uit met het volgende commando:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; unzip -d hello hello.zip</span>

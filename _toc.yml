@@ -231,3 +231,7 @@ parts:
       title: State Pattern
   - file: exercises/pinautomaat/index
     title: Practicum state
+  - file: problems/ordering_products/index
+    title: Opgave state 1
+  - file : problems/mix_case/index
+    title: Opgave state 2

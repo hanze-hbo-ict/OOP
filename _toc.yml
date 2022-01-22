@@ -240,6 +240,8 @@ parts:
   chapters:
   - file: course/week_15
     title: Onderwerpen
+  - file: exercises/composite/index
+    title: Practicum composite
   - file: problems/patterns/1_alle_patterns
     title: Opgave 1
   - file: problems/patterns/2_alle_patterns

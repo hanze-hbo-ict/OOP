@@ -1,2 +1,2 @@
-jupyter-client # ijava requirement
 jupyter-book
+markupsafe==2.0.1 # 02/09/22 Github build issue

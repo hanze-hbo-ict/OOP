@@ -8,8 +8,9 @@
 
     <title>Klassen hergebruiken &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Zoeken" href="../search.html" />
@@ -63,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,17 +104,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -797,91 +813,164 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/topics/7a_klassen_hergebruiken.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/7a_klassen_hergebruiken.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/7a_klassen_hergebruiken.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/topics/7a_klassen_hergebruiken.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#compositie">
    Compositie
@@ -971,12 +1060,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Klassen hergebruiken</h1>
@@ -985,7 +1073,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1082,103 +1170,104 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="klassen-hergebruiken">
-<h1>Klassen hergebruiken<a class="headerlink" href="#klassen-hergebruiken" title="Permalink naar deze titel">¶</a></h1>
+<h1>Klassen hergebruiken<a class="headerlink" href="#klassen-hergebruiken" title="Permalink naar deze titel">#</a></h1>
 <p>Overerving en abstracte klassen</p>
 <section id="compositie">
-<h2>Compositie<a class="headerlink" href="#compositie" title="Permalink naar deze titel">¶</a></h2>
+<h2>Compositie<a class="headerlink" href="#compositie" title="Permalink naar deze titel">#</a></h2>
 <p><strong>Has a</strong> relaties</p>
 <p><em>Een persoon heeft een adres</em></p>
 <p>Het idee van compositie heb je al gebruikt, dit is wannneer instanties van klassen verwijzingen hebben naar andere klassen.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Address</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">city</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">street</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">number</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">zipCode</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">country</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Address</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">city</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">street</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">zipCode</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">country</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Neem als voorbeeld een klasse <code class="docutils literal notranslate"><span class="pre">Address</span></code> die een adres representeert (deze klasse is natuurlijk niet compleet met alleen maar velden, het gaat immers om een voorbeeld!).</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">Address</span> <span class="n">address</span><span class="p">;</span>
-    
-    <span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">Address</span> <span class="n">address</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">address</span> <span class="o">=</span> <span class="n">address</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">address</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">address</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">address</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Een person heeft een adress, je ziet hier dat het veld <code class="docutils literal notranslate"><span class="pre">address</span></code> in deze klasse verwijst naar de klasse <code class="docutils literal notranslate"><span class="pre">Address</span></code>, elke <em>instantie</em> van de klasse <code class="docutils literal notranslate"><span class="pre">Person</span></code> zal een verwijzing bevatten naar een instantie van de klasse <code class="docutils literal notranslate"><span class="pre">Address</span></code>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">city</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">street</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">number</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">zipCode</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">country</span><span class="p">;</span>
-    
-    <span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">String</span> <span class="n">city</span><span class="p">,</span> <span class="p">...)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">city</span> <span class="o">=</span> <span class="n">city</span><span class="p">;</span>
-        <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">city</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">street</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">zipCode</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">country</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">city</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Het bovenstaande had ook gekund, maar het is een beter ontwerp om het als zelfstandige entiteiten te beschouwen en als aparte klassen (typen!) te beschrijven.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Company</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">Address</span> <span class="n">address</span><span class="p">;</span>
-    
-    <span class="kd">public</span> <span class="nf">Company</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">Address</span> <span class="n">address</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">address</span> <span class="o">=</span> <span class="n">address</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Company</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">address</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Company</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">Address</span><span class="w"> </span><span class="n">address</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">address</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Het is bijvoorbeeld heel goed mogelijk dat je met andere klassen te maken hebt die een adres bevatten, bijvoorbeeld een <code class="docutils literal notranslate"><span class="pre">Company</span></code>. Je hergebruikt de klasse <code class="docutils literal notranslate"><span class="pre">Address</span></code> in een steeds verschillende context. Voeg een nieuw veld toe aan een <code class="docutils literal notranslate"><span class="pre">Address</span></code> en het is in alle klassen die er een “has a” relatie mee hebben te gebruiken.</p>
 </section>
 <section id="overerving">
-<h2>Overerving<a class="headerlink" href="#overerving" title="Permalink naar deze titel">¶</a></h2>
+<h2>Overerving<a class="headerlink" href="#overerving" title="Permalink naar deze titel">#</a></h2>
 <p><strong>Is a</strong> relaties</p>
 <p><em>Een adres is een lokatie</em></p>
 <p><img alt="Is a" src="../_images/is_a_simple.png" /></p>
 <p>Een lokatie is een abstractie van een adres (de meer <em>algemene</em> vorm)</p>
 <p>We aan hier op zoek naar de abstractie van een adres. Een adres is een lokatie (een punt op deze aarde), maar een lokatie is niet een adres! Een lokatie is de meer algemene vorm waar een adres een verbijzondering van is (bijvoorbeeld, een adres heeft altijd een brievenbus).</p>
 <section id="in-code">
-<h3>In code<a class="headerlink" href="#in-code" title="Permalink naar deze titel">¶</a></h3>
+<h3>In code<a class="headerlink" href="#in-code" title="Permalink naar deze titel">#</a></h3>
 <p><img alt="Location UML" src="../_images/address_uml.png" /></p>
 <p>Je ziet hier de <em>is a</em> relatie tussen een adres en lokatie om het verschil duidelijk te maken. We hebben er ook een <em>point of interest</em> aan toegevoegd als een aparte entiteit die ook een <em>is a</em> relatie heeft met een lokatie. Het laatste ken je misschien wel van online kaarten waar bijvoorbeeld een bekende lokatie mee wordt aangegeven, bijvoorbeeld een plek voor een prachtig uitzicht over een stad (type panorama?).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Location</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">latitude</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">longitude</span><span class="p">;</span>
-    
-    <span class="kd">public</span> <span class="nf">Location</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">latitude</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-        <span class="n">longitude</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kd">public</span> <span class="nf">Location</span><span class="p">(</span><span class="kt">double</span> <span class="n">latitude</span><span class="p">,</span> <span class="kt">double</span> <span class="n">longitude</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">latitude</span> <span class="o">=</span> <span class="n">latitude</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">longitude</span> <span class="o">=</span> <span class="n">longitude</span><span class="p">;</span>
-    <span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Location</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">longitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Location</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">longitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Location</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">longitude</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">latitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">longitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getLatitude</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">latitude</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getLatitude</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">latitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getLongitude</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">longitude</span><span class="p">;</span>
-    <span class="p">}</span>    
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getLongitude</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">longitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">    </span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1186,7 +1275,7 @@
 <p>De klasse <code class="docutils literal notranslate"><span class="pre">Location</span></code> representeert een lokatie, een punt op de aarde met een breedte- en lengtegraad.</p>
 </section>
 <section id="een-point-of-interest">
-<h3>Een <em>Point of Interest</em><a class="headerlink" href="#een-point-of-interest" title="Permalink naar deze titel">¶</a></h3>
+<h3>Een <em>Point of Interest</em><a class="headerlink" href="#een-point-of-interest" title="Permalink naar deze titel">#</a></h3>
 <p>Een <em>landmark</em> (herkenningspunt)</p>
 <blockquote>
 <div><p>an object or feature of a landscape or town that is easily seen and recognized from a distance, especially one that enables someone to establish their location.</p>
@@ -1195,24 +1284,24 @@
 <p>Dit is een bekend herkenningspunt, de Martinitoren!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PointOfInterest</span> <span class="kd">extends</span> <span class="n">Location</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">type</span><span class="p">;</span>
-    
-    <span class="kd">public</span> <span class="nf">PointOfInterest</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">String</span> <span class="n">type</span><span class="p">,</span> <span class="kt">double</span> <span class="n">latitude</span><span class="p">,</span> <span class="kt">double</span> <span class="n">longitude</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">);</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">type</span> <span class="o">=</span> <span class="n">type</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getType</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">type</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PointOfInterest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Location</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">type</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PointOfInterest</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">longitude</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span><span class="w"> </span><span class="n">longitude</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">type</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getType</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">type</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1220,28 +1309,28 @@
 <p>Een <code class="docutils literal notranslate"><span class="pre">PointOfInterest</span></code> als een speciaal type lokatie dat een bijzondere of interessante lokatie voorstelt.</p>
 </section>
 <section id="syntax">
-<h3>Syntax<a class="headerlink" href="#syntax" title="Permalink naar deze titel">¶</a></h3>
+<h3>Syntax<a class="headerlink" href="#syntax" title="Permalink naar deze titel">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">extends</span></code></strong></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PointOfInterest</span> <span class="kd">extends</span> <span class="n">Location</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PointOfInterest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Location</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Maak een klasse een <em>subklasse</em> van een andere klasse.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">super</span></code></strong></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">super</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">super</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span><span class="w"> </span><span class="n">longitude</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Roep een constructor aan van de bovenliggende (super) klasse.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PointOfInterest</span> <span class="n">martiniToren</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PointOfInterest</span><span class="p">(</span>
-    <span class="s">&quot;Martinitoren&quot;</span><span class="p">,</span> <span class="s">&quot;landmark&quot;</span><span class="p">,</span> <span class="mf">53.2193635</span><span class="p">,</span> <span class="mf">6.5681139</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PointOfInterest</span><span class="w"> </span><span class="n">martiniToren</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PointOfInterest</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;Martinitoren&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;landmark&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">53.2193635</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5681139</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">martiniToren</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">martiniToren</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1253,7 +1342,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">martiniToren</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">martiniToren</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1266,7 +1355,7 @@
 <p>Dit zijn de methoden van de klasse <code class="docutils literal notranslate"><span class="pre">PointOfInterest</span></code>, maar we <em>erven</em> van de klasse <code class="docutils literal notranslate"><span class="pre">Location</span></code> en dit betekent dat de klasse de methoden van deze klasse kent!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">martiniToren</span><span class="p">.</span><span class="na">getLatitude</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">martiniToren</span><span class="p">.</span><span class="na">getLatitude</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1278,7 +1367,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">martiniToren</span><span class="p">.</span><span class="na">getLongitude</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">martiniToren</span><span class="p">.</span><span class="na">getLongitude</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1291,11 +1380,11 @@
 </section>
 </section>
 <section id="de-is-a-relatie">
-<h2>De <em>is a</em> relatie<a class="headerlink" href="#de-is-a-relatie" title="Permalink naar deze titel">¶</a></h2>
+<h2>De <em>is a</em> relatie<a class="headerlink" href="#de-is-a-relatie" title="Permalink naar deze titel">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PointOfInterest</span> <span class="n">martiniToren</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PointOfInterest</span><span class="p">(</span>
-    <span class="s">&quot;Martinitoren&quot;</span><span class="p">,</span> <span class="s">&quot;landmark&quot;</span><span class="p">,</span> <span class="mf">53.2193635</span><span class="p">,</span> <span class="mf">6.5681139</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PointOfInterest</span><span class="w"> </span><span class="n">martiniToren</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PointOfInterest</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;Martinitoren&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;landmark&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">53.2193635</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5681139</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1303,54 +1392,54 @@
 <p>Eerder hebben het bovenstaande geschreven, waar we een nieuw object <code class="docutils literal notranslate"><span class="pre">martiniToren</span></code> hebben aangemaakt van type <code class="docutils literal notranslate"><span class="pre">PointOfInterest</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Location</span> <span class="n">martiniToren</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PointOfInterest</span><span class="p">(</span>
-    <span class="s">&quot;Martinitoren&quot;</span><span class="p">,</span> <span class="s">&quot;landmark&quot;</span><span class="p">,</span> <span class="mf">53.2193635</span><span class="p">,</span> <span class="mf">6.5681139</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Location</span><span class="w"> </span><span class="n">martiniToren</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PointOfInterest</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;Martinitoren&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;landmark&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">53.2193635</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5681139</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Omdat een <code class="docutils literal notranslate"><span class="pre">PointOfInterest</span></code> een <code class="docutils literal notranslate"><span class="pre">Location</span></code> is (de <em>is a</em> relatie) kunnen we het ook op deze manier schrijven. Het object <code class="docutils literal notranslate"><span class="pre">martiniToren</span></code> is een <code class="docutils literal notranslate"><span class="pre">Location</span></code> en wel in het bijzonder een <code class="docutils literal notranslate"><span class="pre">PointOfInterest</span></code>!</p>
 <section id="quiz">
-<h3>Quiz<a class="headerlink" href="#quiz" title="Permalink naar deze titel">¶</a></h3>
+<h3>Quiz<a class="headerlink" href="#quiz" title="Permalink naar deze titel">#</a></h3>
 <p>Kan dit?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PointOfInterest</span> <span class="n">martiniToren</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Location</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PointOfInterest</span><span class="w"> </span><span class="n">martiniToren</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Location</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Nee, dit kan niet, een <code class="docutils literal notranslate"><span class="pre">Location</span></code> is geen <code class="docutils literal notranslate"><span class="pre">PointOfInterest</span></code>!</p>
 </section>
 <section id="een-voorbeeld">
-<h3>Een voorbeeld<a class="headerlink" href="#een-voorbeeld" title="Permalink naar deze titel">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<h3>Een voorbeeld<a class="headerlink" href="#een-voorbeeld" title="Permalink naar deze titel">#</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span><span class="w"></span>
 
-<span class="p">...</span>
+<span class="p">...</span><span class="w"></span>
 
-<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Tot nu toe heb je nieuwe instanties op deze manier geschreven, waar je het type aangeeft van de variabele (<code class="docutils literal notranslate"><span class="pre">ArrayList&lt;String&gt;</span> <span class="pre">names</span></code>) en waar dit type overeenkomt met de klasse waar een instantie van wordt gemaakt (<code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ArrayList&lt;&gt;()</span></code>).</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Het bovenstande zal je vaak zien in Java code waar je uit kan afleiden dat een <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> een <em>is a</em> relatie heeft met <code class="docutils literal notranslate"><span class="pre">List</span></code>.</p>
 </section>
 <section id="terminologie">
-<h3>Terminologie<a class="headerlink" href="#terminologie" title="Permalink naar deze titel">¶</a></h3>
+<h3>Terminologie<a class="headerlink" href="#terminologie" title="Permalink naar deze titel">#</a></h3>
 <p><img alt="Is a relaties" src="../_images/is_a.png" /></p>
 <p>Als het gaat om overerving zal je vaak verschillende termen gebruikt zien worden, bijvoorbeeld <em>base</em>- en <em>derived</em>, <em>sub</em>- en <em>super</em> en <em>child</em>- en <em>parent</em> klassen. Met allen wordt steeds hetzelfde bedoeld.</p>
 </section>
 <section id="beperkingen">
-<h3>Beperkingen<a class="headerlink" href="#beperkingen" title="Permalink naar deze titel">¶</a></h3>
+<h3>Beperkingen<a class="headerlink" href="#beperkingen" title="Permalink naar deze titel">#</a></h3>
 <p><em>Single inheritance</em></p>
 <p>Een klasse kan maar van een enkele klasse erven.</p>
 <p>In Java kan maar van één klasse worden geërfd. Voor andere talen kan dit verschillen, bijvoorbeeld Python kan van meerdere klassen erven (<em>multiple inheritance</em>).</p>
 </section>
 </section>
 <section id="concreet-of-abstract">
-<h2>Concreet of abstract<a class="headerlink" href="#concreet-of-abstract" title="Permalink naar deze titel">¶</a></h2>
+<h2>Concreet of abstract<a class="headerlink" href="#concreet-of-abstract" title="Permalink naar deze titel">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Location</span> <span class="n">somePoint</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Location</span><span class="p">(</span><span class="mf">53.2410797</span><span class="p">,</span> <span class="mf">6.5318127</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Location</span><span class="w"> </span><span class="n">somePoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Location</span><span class="p">(</span><span class="mf">53.2410797</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5318127</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1359,84 +1448,84 @@
 <p>Je zou misschien willen uitdrukken dat het <em>niet</em> de bedoeling is dat instanties van <code class="docutils literal notranslate"><span class="pre">Location</span></code> worden gemaakt, maar alleen van de ondeliggende meer concrete klassen (<code class="docutils literal notranslate"><span class="pre">Address</span></code> of <code class="docutils literal notranslate"><span class="pre">PointOfInterest</span></code>).</p>
 <p><img alt="Kitten" src="../_images/kitten.png" /></p>
 <p>Laten we dit idee (een <em>abstracte</em> klasse waar liever geen instanties van worden gemaakt) verkennen aan de hand van huisdieren.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-        
-    <span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">sleep</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&quot;Zzzzzzzz&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">isHungry</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&quot;Meoweoweowoeoeoew!!!&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cat</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Cat</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">sleep</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Zzzzzzzz&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">isHungry</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Meoweoweowoeoeoew!!!&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Dit zou een kat kunnen representeren die we kunnen laten slapen en kunnen vragen of het hongerig is.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-        
-    <span class="kd">public</span> <span class="nf">Dog</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">sleep</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&quot;Zzzzzzzz&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">isHungry</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&quot;Woofwoofwoofwooooof!&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">sleep</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Zzzzzzzz&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">isHungry</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Woofwoofwoofwooooof!&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Op dezelfde manier kan een hond worden gerepresenteerd, waar het enige verschil de methode <code class="docutils literal notranslate"><span class="pre">isHungry</span></code> is, een hond blaft en een kat miauwt.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pet</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-        
-    <span class="kd">public</span> <span class="nf">Pet</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-    <span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Pet</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Pet</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">sleep</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&quot;Zzzzzzzz&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">isHungry</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="p">;</span> <span class="c1">// ... ?</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">sleep</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Zzzzzzzz&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">isHungry</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ... ?</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De meer abstracte representatie van een hond of kat kan een klasse <code class="docutils literal notranslate"><span class="pre">Pet</span></code> zijn waar de klassen <code class="docutils literal notranslate"><span class="pre">Cat</span></code> en <code class="docutils literal notranslate"><span class="pre">Dog</span></code> van erven. Het is wel de vraag wat de waarde van de methode <code class="docutils literal notranslate"><span class="pre">isHungry</span></code> van deze klasse zou moeten zijn. Dit is een geval waar je zou willen dat geen instanties van <code class="docutils literal notranslate"><span class="pre">Pet</span></code> mogen worden gemaakt omdat deze specifieke methode door onderliggende klassen moet worden geïmplementeerd.</p>
 <section id="de-abstracte-klasse-pet">
-<h3>De <em>abstracte</em> klasse <code class="docutils literal notranslate"><span class="pre">Pet</span></code><a class="headerlink" href="#de-abstracte-klasse-pet" title="Permalink naar deze titel">¶</a></h3>
+<h3>De <em>abstracte</em> klasse <code class="docutils literal notranslate"><span class="pre">Pet</span></code><a class="headerlink" href="#de-abstracte-klasse-pet" title="Permalink naar deze titel">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pet</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-        
-    <span class="kd">public</span> <span class="nf">Pet</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">sleep</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&quot;Zzzzzzzz&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">abstract</span> <span class="kd">public</span> <span class="n">String</span> <span class="nf">isHungry</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Pet</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Pet</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">sleep</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Zzzzzzzz&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">isHungry</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Pet</span> <span class="n">aPet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pet</span><span class="p">(</span><span class="s">&quot;Fifi&quot;</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Pet</span><span class="w"> </span><span class="n">aPet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pet</span><span class="p">(</span><span class="s">&quot;Fifi&quot;</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1451,12 +1540,12 @@
 <p>In het bijzonder wordt hier aangegeven dat de methode <code class="docutils literal notranslate"><span class="pre">isHungry</span></code> abstract is, het is een definitie die in onderliggende klassen concreet moet worden gemaakt. Verder zal het je opvallen dat het verder kenmerken heeft van een reguliere klasse, het heeft bijvoorbeeld een constructor en een methode <code class="docutils literal notranslate"><span class="pre">sleep</span></code> die <em>niet</em> abstract is.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="n">Pet</span> <span class="p">{</span>
-        
-    <span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cat</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pet</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Cat</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1475,31 +1564,31 @@
 <p>Erven van <code class="docutils literal notranslate"><span class="pre">Pet</span></code> kan wel, maar dan zal de methode <code class="docutils literal notranslate"><span class="pre">isHungry</span></code> moeten worden geïmplementeerd voor de klasse <code class="docutils literal notranslate"><span class="pre">Cat</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="n">Pet</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cat</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pet</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">isHungry</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&quot;Meoweoweowoeoeoew!!!&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Cat</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">isHungry</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Meoweoweowoeoeoew!!!&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Pet</span> <span class="n">mocha</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">(</span><span class="s">&quot;Mocha&quot;</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Pet</span><span class="w"> </span><span class="n">mocha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">(</span><span class="s">&quot;Mocha&quot;</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mocha</span><span class="p">.</span><span class="na">isHungry</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mocha</span><span class="p">.</span><span class="na">isHungry</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1511,7 +1600,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mocha</span><span class="p">.</span><span class="na">sleep</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mocha</span><span class="p">.</span><span class="na">sleep</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1524,7 +1613,7 @@
 </section>
 </section>
 <section id="een-hierarchie-van-klassen">
-<h2>Een hiërarchie van klassen<a class="headerlink" href="#een-hierarchie-van-klassen" title="Permalink naar deze titel">¶</a></h2>
+<h2>Een hiërarchie van klassen<a class="headerlink" href="#een-hierarchie-van-klassen" title="Permalink naar deze titel">#</a></h2>
 <p><img alt="Pots" src="../_images/pots.png" /></p>
 <p>De <em>is a</em> relatie hoeft niet beperkt te blijven tot een enkelvoudige overerving, in dit geval erft <code class="docutils literal notranslate"><span class="pre">EspressoPot</span></code> van <code class="docutils literal notranslate"><span class="pre">CoffeePot</span></code>, die vervolgens weer erft van <code class="docutils literal notranslate"><span class="pre">Pot</span></code>.</p>
 <p><img alt="Shapes" src="../_images/shapes.png" /></p>
@@ -1554,9 +1643,11 @@
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../course/week_8.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1572,23 +1663,27 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

@@ -8,8 +8,9 @@
 
     <title>Stuiterbal &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,41 +20,40 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Zoeken" href="../../search.html" />
     <link rel="next" title="Simulaties" href="../../problems/simulation/index.html" />
@@ -65,7 +65,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +88,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,17 +106,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -799,12 +815,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -812,61 +833,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/exercises/bouncing_balls/index.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/exercises/bouncing_balls/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#doel">
    Doel
@@ -916,12 +993,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Stuiterbal</h1>
@@ -930,7 +1006,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -987,14 +1063,15 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="stuiterbal">
-<h1>Stuiterbal<a class="headerlink" href="#stuiterbal" title="Permalink naar deze titel">¶</a></h1>
+<h1>Stuiterbal<a class="headerlink" href="#stuiterbal" title="Permalink naar deze titel">#</a></h1>
 <p><img alt="Bouncing balls" src="../../_images/bouncing_balls.gif" /></p>
 <section id="doel">
-<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">¶</a></h2>
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">#</a></h2>
 <ul class="simple">
 <li><p>Klassen ontwerpen</p></li>
 <li><p>Begrip van het verschil tussen een statische- en object context</p></li>
@@ -1005,129 +1082,129 @@
 <p>Download en pak het projectbestand <a href="../../projects/bouncing_balls.zip">bouncing_balls.zip</a> uit. Dit project bevat een begin van de klasse <code class="docutils literal notranslate"><span class="pre">Ball</span></code> die je in de opgave verder gaat uitwerken. Verder bevat het een (Maven) projectconfiguratie die zorgt dat zowel Junit (voor het eventueel schrijven van tests) als <code class="docutils literal notranslate"><span class="pre">stdlib</span></code> (voor het kunnen tekenen van <code class="docutils literal notranslate"><span class="pre">Ball</span></code> objecten) in de IDE te gebruiken zijn.</p>
 </section>
 <section id="inleiding">
-<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">¶</a></h2>
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">#</a></h2>
 <figure class="align-default" id="position-vector">
 <img alt="../../_images/position.png" src="../../_images/position.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Positievector</span><a class="headerlink" href="#position-vector" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Positievector</span><a class="headerlink" href="#position-vector" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <p>Een punt in een tweedimensionale ruimte wordt beschreven als een <em>vector</em>. Deze vector (de <em>positievector</em> <span class="math notranslate nohighlight">\(\vec{r}\)</span>) zijn de coordinaten <span class="math notranslate nohighlight">\((r_x, r_y)\)</span> ten opzichte van een oorsprong <span class="math notranslate nohighlight">\(O\)</span>, zie <a class="reference internal" href="#position-vector"><span class="std std-numref">Fig. 29</span></a>.</p>
 <figure class="align-default" id="addition-vector">
 <img alt="../../_images/addition.png" src="../../_images/addition.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Optelling van vectoren</span><a class="headerlink" href="#addition-vector" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Optelling van vectoren</span><a class="headerlink" href="#addition-vector" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <p>Snelheid kan ook als een vector worden beschreven (de <em>snelheidsvector</em> <span class="math notranslate nohighlight">\(\vec{v}\)</span>) waarin de mate van verandering per tijdseenheid wordt gedefinieerd. In een tweedimensionale ruimte zal dit de verplaatsing <span class="math notranslate nohighlight">\((v_x, v_y)\)</span> zijn voor <span class="math notranslate nohighlight">\(\vec{r}\)</span>. Om twee vectoren op te tellen worden de overeenkomstige componenten opgeteld <a class="reference internal" href="#equation-vector-addition">(8)</a>.</p>
 <div class="math notranslate nohighlight" id="equation-vector-addition">
-<span class="eqno">(8)<a class="headerlink" href="#equation-vector-addition" title="Permalink naar deze formule">¶</a></span>\[\vec{r} + \vec{v} = (r_x + v_x, r_y + v_y)\]</div>
+<span class="eqno">(8)<a class="headerlink" href="#equation-vector-addition" title="Permalink naar deze formule">#</a></span>\[\vec{r} + \vec{v} = (r_x + v_x, r_y + v_y)\]</div>
 <p>Voor elke verandering per tijdseenheid zal de nieuwe positievector <span class="math notranslate nohighlight">\(\vec{r}\)</span> dus het resultaat zijn van <span class="math notranslate nohighlight">\(\vec{r} + \vec{v}\)</span>.</p>
 </section>
 <section id="opgave">
-<h2>Opgave<a class="headerlink" href="#opgave" title="Permalink naar deze titel">¶</a></h2>
+<h2>Opgave<a class="headerlink" href="#opgave" title="Permalink naar deze titel">#</a></h2>
 <p>In deze opgave ga je een klasse <code class="docutils literal notranslate"><span class="pre">Ball</span></code> uitwerken die een punt in een tweedimensionale ruimte representeert, met een bepaalde snelheid. Deze klasse zal als data een <em>positievector</em> en een <em>snelheidsvecor</em> moeten bevatten, en een <em>radius</em> die de grootte van de bal aangeeft.</p>
 <p>De ruimte waarin de het object zicht in beweegt is begrensd en je zal rekening moeten houden met het geval dat wanneer deze grens wordt bereikt het object een andere richting op zal moeten “stuiteren” (met andere woorden, de <em>snelheidsvecor</em> zal op dat moment wijzigen).</p>
 <p>De klasse <code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> uit de <code class="docutils literal notranslate"><span class="pre">stdlib</span></code> bibliotheek ga je in deze opgave weer gebruiken voor het tekenen van objecten. De coördinaten van het vlak waar je op gaat tekenen zijn als volgt, waar de oorsporong <span class="math notranslate nohighlight">\(O\)</span> gelijk is aan <span class="math notranslate nohighlight">\((0, 0)\)</span></p>
 <p><img alt="Canvas coordinates" src="../../_images/canvas_coordinates.png" /></p>
 </section>
 <section id="mogelijke-stappen">
-<h2>Mogelijke stappen<a class="headerlink" href="#mogelijke-stappen" title="Permalink naar deze titel">¶</a></h2>
+<h2>Mogelijke stappen<a class="headerlink" href="#mogelijke-stappen" title="Permalink naar deze titel">#</a></h2>
 <section id="velden-en-constructor">
-<h3>Velden en constructor<a class="headerlink" href="#velden-en-constructor" title="Permalink naar deze titel">¶</a></h3>
+<h3>Velden en constructor<a class="headerlink" href="#velden-en-constructor" title="Permalink naar deze titel">#</a></h3>
 <p>De eerste gedachte bij de beschrijving van <em>vectoren</em> en hoe je dit als <em>datastructuur</em> zou kunnen vormgeven zal misschien een array met twee elementen zijn. Dit is geen vreemde gedachte, maar bedenk dat je in een klasse niet direct aan dit soort structuren gebonden bent, je hebt een <em>keuze</em> om de vorm van de data te bepalen. Wij raden je aan om de volgende velden voor de klassen te definiëren:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// position vector r</span>
-<span class="kd">private</span> <span class="kt">double</span> <span class="n">rx</span><span class="p">;</span>
-<span class="kd">private</span> <span class="kt">double</span> <span class="n">ry</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// position vector r</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rx</span><span class="p">;</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ry</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// velocity vector v</span>
-<span class="kd">private</span> <span class="kt">double</span> <span class="n">vx</span><span class="p">;</span>
-<span class="kd">private</span> <span class="kt">double</span> <span class="n">vy</span><span class="p">;</span>
+<span class="c1">// velocity vector v</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">vx</span><span class="p">;</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">vy</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// ball radius</span>
-<span class="kd">private</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+<span class="c1">// ball radius</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De constructor van de klasse <code class="docutils literal notranslate"><span class="pre">Ball</span></code> zal velden moeten initialiseren. Schrijf een constructor (<em>zonder</em> parameters) en initialieer de velden als volgt:</p>
 <ul>
 <li><p>de beginpositie <span class="math notranslate nohighlight">\((r_x, r_y)\)</span> is altijd gelijk aan de oorsprong <span class="math notranslate nohighlight">\(O\)</span></p></li>
 <li><p>de snelheid <span class="math notranslate nohighlight">\((v_x, v_y)\)</span> bepaal je willekeurig, het volgende zou een goede optie kunnen zijn voor zowel <span class="math notranslate nohighlight">\(v_x\)</span> als <span class="math notranslate nohighlight">\(v_y\)</span></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="mf">0.015</span> <span class="o">-</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.03</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="mf">0.015</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.03</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
 <li><p>de radius zet je ook willekeurig, de volgende variatie op het bovenstaande is een mogelijke optie:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="mf">0.025</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.05</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="mf">0.025</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.05</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
 </ul>
 </section>
 <section id="beweging">
-<h3>Beweging<a class="headerlink" href="#beweging" title="Permalink naar deze titel">¶</a></h3>
+<h3>Beweging<a class="headerlink" href="#beweging" title="Permalink naar deze titel">#</a></h3>
 <p>Met elke tijdseenheid zal het object op basis van de positievector en snelheidsvector een nieuwe positie kijgen (een nieuwe positievector). Het object heeft te maken met grenzen, het kan tegen een horizontale- (boven- en onderkant van het vlak) of verticale (linker- of rechterkant van het vlak) grens aanlopen.</p>
 <p>Bij een verticale grens zal vectorcomponent <span class="math notranslate nohighlight">\(v_y\)</span> van richting veranderen en bij een horizontale grens vectorcomponent <span class="math notranslate nohighlight">\(v_y\)</span>. Beredeneer ook voor jezelf waarom dit zo is.</p>
 <p>Scrijf de volgende twee methoden die zullen moeten controleren of een grens is bereikt en zo nodig de snelheidsvector aanpassen.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// bounce off vertical wall by reflecting x-velocity</span>
-<span class="kd">private</span> <span class="kt">void</span> <span class="nf">bounceOffVerticalWall</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// bounce off vertical wall by reflecting x-velocity</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bounceOffVerticalWall</span><span class="p">()</span><span class="w"></span>
 
-<span class="c1">// bounce off horizontal wall by reflecting y-velocity</span>
-<span class="kd">private</span> <span class="kt">void</span> <span class="nf">bounceOffHorizontalWall</span><span class="p">()</span>
+<span class="c1">// bounce off horizontal wall by reflecting y-velocity</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bounceOffHorizontalWall</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Controleer in deze methoden of een grens is bereikt en pas indien nodig de snelheidsvector aan. Bedenk dat de optelling van een positievector met een snelheidsvector de volgende positie geeft. Indien deze de grens overschrijdt (de waarde 1, want dat is het bereik van het veld), dan pas je de snelheidsvector aan. Houd er ook rekening mee dat de bal een radius heeft, neem dit mee in de berekening!</p>
 <p>De positievector ga je in deze twee methoden niet aanpassen, dit ga je doen in de volgende methode:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// move the ball one step</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// move the ball one step</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De methode <code class="docutils literal notranslate"><span class="pre">move</span></code> zal eerst <code class="docutils literal notranslate"><span class="pre">bounceOffVerticalWall</span></code> en <code class="docutils literal notranslate"><span class="pre">bounceOffHorizontalWall</span></code> aanroepen. Vervolgens zal het de positievector aanpassen als optelling van de snelheidsvector.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>De verandering van richting zal de <em>negatie</em> van een component betekenen. Je kan hier de volgende syntax voor gebruiken:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span><span class="p">;</span>  <span class="c1">// x now has value -1</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="p">;</span><span class="w">  </span><span class="c1">// x now has value -1</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="tekenen">
-<h3>Tekenen<a class="headerlink" href="#tekenen" title="Permalink naar deze titel">¶</a></h3>
+<h3>Tekenen<a class="headerlink" href="#tekenen" title="Permalink naar deze titel">#</a></h3>
 <p>De data en handelingen voor een <code class="docutils literal notranslate"><span class="pre">Ball</span></code> object heb je nu uitgewerkt en je gaat nog één methode toevoegen voor het tekenen van een object. Neem de volgende methode over, je ziet dat hier weer <code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> gebruikt gaat worden:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// draw the ball, but not the background</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">draw</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLACK</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">radius</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// draw the ball, but not the background</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLACK</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">rx</span><span class="p">,</span><span class="w"> </span><span class="n">ry</span><span class="p">,</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Deze methode is compleet, het staat je natuurlijk vrij een andere kleur te kiezen (<em>random</em> of niet).</p>
 </section>
 <section id="informatie">
-<h3>Informatie<a class="headerlink" href="#informatie" title="Permalink naar deze titel">¶</a></h3>
+<h3>Informatie<a class="headerlink" href="#informatie" title="Permalink naar deze titel">#</a></h3>
 <p>Het kan handig zijn om een <code class="docutils literal notranslate"><span class="pre">toString</span></code> methode toe te voegen om voor jezelf informatie te kunnen printen over een object, bijvoorbeeld</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
-    <span class="n">result</span> <span class="o">+=</span> <span class="s">&quot;position: (&quot;</span> <span class="o">+</span> <span class="n">rx</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">ry</span> <span class="o">+</span> <span class="s">&quot;) &quot;</span><span class="p">;</span>
-    <span class="n">result</span> <span class="o">+=</span> <span class="s">&quot;velocity: (&quot;</span> <span class="o">+</span> <span class="n">vx</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">vy</span> <span class="o">+</span> <span class="s">&quot;) &quot;</span><span class="p">;</span>
-    <span class="n">result</span> <span class="o">+=</span> <span class="s">&quot;radius: &quot;</span> <span class="o">+</span> <span class="n">radius</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;position: (&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ry</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;) &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;velocity: (&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;) &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;radius: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
 
-    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="stuiteren">
-<h3>Stuiteren<a class="headerlink" href="#stuiteren" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stuiteren<a class="headerlink" href="#stuiteren" title="Permalink naar deze titel">#</a></h3>
 <p>De klasse <code class="docutils literal notranslate"><span class="pre">Ball</span></code> is nu compleet, het doel is nu één of meer ballen in een ruime te laten stuiteren. Dit ga je doen door de methode <code class="docutils literal notranslate"><span class="pre">main</span></code> aan te vullen:</p>
 <ol>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">main</span></code> ga je een een <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> initialiseren (bijvoorbeeld met de naam <code class="docutils literal notranslate"><span class="pre">balls</span></code>) waar je instanties van <code class="docutils literal notranslate"><span class="pre">Ball</span></code> aan toe gaat voegen. Begin eerst met een enkele bal, voeg later meer toe zodra je zeker bent dat alles correct werkt.</p></li>
 <li><p>Vervolgens ga je het veld opzetten waar de ballen in moeten gaan bewegen, dit is waar je de grenzen zet. Neem het volgende over:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// initialize standard drawing</span>
-<span class="n">StdDraw</span><span class="p">.</span><span class="na">setXscale</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">1.0</span><span class="p">);</span>
-<span class="n">StdDraw</span><span class="p">.</span><span class="na">setYscale</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">1.0</span><span class="p">);</span>
-<span class="n">StdDraw</span><span class="p">.</span><span class="na">enableDoubleBuffering</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// initialize standard drawing</span><span class="w"></span>
+<span class="n">StdDraw</span><span class="p">.</span><span class="na">setXscale</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">StdDraw</span><span class="p">.</span><span class="na">setYscale</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">StdDraw</span><span class="p">.</span><span class="na">enableDoubleBuffering</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1137,19 +1214,19 @@
 </div>
 </li>
 <li><p>Voeg nu de lus voor de animatie toe, dit is de lus waar bij elke iteratie de ballen worden bewogen met de methode <code class="docutils literal notranslate"><span class="pre">move</span></code> en getekend worden met <code class="docutils literal notranslate"><span class="pre">draw</span></code>. Gebruik de volgende structuur en vul de ontbrekende onderdelen aan waar je door de lijst van ballen gaat:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// clear canvas and set backgound</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">clear</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">GRAY</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// clear canvas and set backgound</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">clear</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">GRAY</span><span class="p">);</span><span class="w"></span>
 
-    <span class="k">for</span> <span class="p">(...)</span> <span class="p">{</span>  <span class="c1">// iterate though the list of balls</span>
-        <span class="c1">// move the ball</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(...)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// iterate though the list of balls</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// move the ball</span><span class="w"></span>
 
-        <span class="c1">// draw the ball</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="c1">// draw the ball</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>     <span class="c1">// show the balls on canvas</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">pause</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>  <span class="c1">// pause before the next cycle</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">show</span><span class="p">();</span><span class="w">     </span><span class="c1">// show the balls on canvas</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">pause</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w">  </span><span class="c1">// pause before the next cycle</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
@@ -1180,9 +1257,11 @@
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../topics/6c_testen.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1198,23 +1277,27 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

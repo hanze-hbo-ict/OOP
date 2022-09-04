@@ -8,8 +8,9 @@
 
     <title>Recursieve graphics &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,41 +20,40 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Zoeken" href="../../search.html" />
     <link rel="next" title="Oefeningen 4" href="../../course/ex_4.html" />
@@ -65,7 +65,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +88,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,17 +106,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -799,12 +815,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -812,61 +833,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/problems/recursive_graphics/index.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/problems/recursive_graphics/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#doel">
    Doel
@@ -999,12 +1076,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Recursieve graphics</h1>
@@ -1013,7 +1089,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1153,13 +1229,14 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="recursieve-graphics">
-<h1>Recursieve graphics<a class="headerlink" href="#recursieve-graphics" title="Permalink naar deze titel">¶</a></h1>
+<h1>Recursieve graphics<a class="headerlink" href="#recursieve-graphics" title="Permalink naar deze titel">#</a></h1>
 <section id="doel">
-<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">¶</a></h2>
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">#</a></h2>
 <ul class="simple">
 <li><p>Een bibliotheek van <em>statische</em> methodes schrijven die geometrische transformaties op veelhoeken (polygonen) uitvoert.</p></li>
 <li><p>Een programma schrijven dat een Sierpinski driehoek tekent.</p></li>
@@ -1172,7 +1249,7 @@
 Read Section 2.3 of the textbook. You may also find it instructive to work through some of the other exercises and look at the solutions on the booksite afterwards. You should also familiarize yourself with the [StdDraw](https://introcs.cs.princeton.edu/java/11cheatsheet/#StdDraw) API.
 -->
 <section id="voorbereiding">
-<h3>Voorbereiding<a class="headerlink" href="#voorbereiding" title="Permalink naar deze titel">¶</a></h3>
+<h3>Voorbereiding<a class="headerlink" href="#voorbereiding" title="Permalink naar deze titel">#</a></h3>
 <p>Download en unzip de project zip <a href="../../projects/sierpinsky.zip">sierpinsky.zip</a>, die de bestanden bevat die je nodig hebt voor deze opdracht.</p>
 <div class="admonition important">
 <p class="admonition-title">Belangrijk</p>
@@ -1189,49 +1266,49 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 </section>
 </section>
 <section id="deel-i-een-geometrische-transformatie-bibliotheek">
-<h2>Deel I - Een geometrische transformatie bibliotheek<a class="headerlink" href="#deel-i-een-geometrische-transformatie-bibliotheek" title="Permalink naar deze titel">¶</a></h2>
+<h2>Deel I - Een geometrische transformatie bibliotheek<a class="headerlink" href="#deel-i-een-geometrische-transformatie-bibliotheek" title="Permalink naar deze titel">#</a></h2>
 <p>Je zal een bibliotheek van statische methodes schrijven die verschillende geometrische transformaties uitvoert op veelhoeken. Wiskundig wordt een veelhoek gedefinieerd door de opeenvolging van hoekpunten <span class="math notranslate nohighlight">\((x_0, y_0), (x_1, y_1), (x_2, y_2), \ldots\)</span>. In deze opgave representeren we een veelhoek door de x- en y-coördinaten van de hoekpunten op te slaan in twee <em>parallelle</em> arrays <code class="docutils literal notranslate"><span class="pre">x[]</span></code> en <code class="docutils literal notranslate"><span class="pre">y[]</span></code>. Bijvoorbeeld:</p>
 <figure class="align-default" id="draw-polygon">
 <img alt="../../_images/image15.png" src="../../_images/image15.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> and polygon</span><a class="headerlink" href="#draw-polygon" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> and polygon</span><a class="headerlink" href="#draw-polygon" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// a polygon with these four vertices:</span>
-<span class="c1">// (0, 0), (1, 0), (1, 2), (0, 1)</span>
-<span class="kt">double</span> <span class="n">x</span><span class="o">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span>
-<span class="kt">double</span> <span class="n">y</span><span class="o">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="p">};</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// a polygon with these four vertices:</span><span class="w"></span>
+<span class="c1">// (0, 0), (1, 0), (1, 2), (0, 1)</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 
-<span class="c1">// Draw the polygon</span>
-<span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+<span class="c1">// Draw the polygon</span><span class="w"></span>
+<span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <section id="transform2d-java">
-<h3><code class="docutils literal notranslate"><span class="pre">Transform2D.java</span></code><a class="headerlink" href="#transform2d-java" title="Permalink naar deze titel">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">Transform2D.java</span></code><a class="headerlink" href="#transform2d-java" title="Permalink naar deze titel">#</a></h3>
 <p>Schrijf een tweedimensionale transformatie bibliotheek <code class="docutils literal notranslate"><span class="pre">Transform2D.java</span></code> door de volgende methoden te implementeren:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Transform2D</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Transform2D</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="c1">// Returns a new array object that is an exact copy of the given array.</span>
-    <span class="c1">// The given array is not mutated.</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span><span class="o">[]</span> <span class="nf">copy</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span> <span class="n">array</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// Returns a new array object that is an exact copy of the given array.</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// The given array is not mutated.</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="p">)</span><span class="w"></span>
 
-    <span class="c1">// Scales the polygon by the factor alpha.</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">scale</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span><span class="o">[]</span> <span class="n">y</span><span class="p">,</span> <span class="kt">double</span> <span class="n">alpha</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// Scales the polygon by the factor alpha.</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"></span>
 
-    <span class="c1">// Translates the polygon by (dx, dy).</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">translate</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span><span class="o">[]</span> <span class="n">y</span><span class="p">,</span> <span class="kt">double</span> <span class="n">dx</span><span class="p">,</span> <span class="kt">double</span> <span class="n">dy</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// Translates the polygon by (dx, dy).</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">translate</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dy</span><span class="p">)</span><span class="w"></span>
 
-    <span class="c1">// Rotates the polygon theta degrees counterclockwise, about the origin.</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">rotate</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span><span class="o">[]</span> <span class="n">y</span><span class="p">,</span> <span class="kt">double</span> <span class="n">theta</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// Rotates the polygon theta degrees counterclockwise, about the origin.</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">rotate</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">theta</span><span class="p">)</span><span class="w"></span>
 
-    <span class="c1">// Tests each of the methods by directly calling them.</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="c1">// Tests each of the methods by directly calling them.</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="requirements">
-<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink naar deze titel">¶</a></h3>
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink naar deze titel">#</a></h3>
 <ul class="simple">
 <li><p>De methoden verwachten dat de hoeken in <em>graden</em> zijn, maar Java’s goniometrische functies accepteren de argumenten in <em>radialen</em>. Gebruik <code class="docutils literal notranslate"><span class="pre">Math.toRadians()</span></code> om van graden naar radialen te converteren.</p></li>
 <li><p>De transformatie methoden <code class="docutils literal notranslate"><span class="pre">scale()</span></code>, <code class="docutils literal notranslate"><span class="pre">translate()</span></code>, en <code class="docutils literal notranslate"><span class="pre">rotate()</span></code> muteren de arrays, terwijl <code class="docutils literal notranslate"><span class="pre">copy()</span></code> een nieuwe array teruggeeft.</p></li>
@@ -1242,45 +1319,45 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 </ul>
 </section>
 <section id="copy">
-<h3><code class="docutils literal notranslate"><span class="pre">copy()</span></code><a class="headerlink" href="#copy" title="Permalink naar deze titel">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">copy()</span></code><a class="headerlink" href="#copy" title="Permalink naar deze titel">#</a></h3>
 <p><em>Kopieert</em> de gegeven array in een nieuw array object. De gegeven array wordt niet gemuteerd.</p>
 <p>De transformatie methoden (hieronder) muteren een gegeven veelhoek. Dit betekent dat de parallelle arrays die de veelhoek representeren worden veranderd door de transformatie methoden. Het is vaak nuttig om een kopie van de veelhoek op te slaan voordat een transformatie wordt toegepast.</p>
 <p>Bijvoorbeeld:</p>
 <figure class="align-default" id="draw-copy">
 <img alt="../../_images/image9.png" src="../../_images/image9.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> polygon copy</span><a class="headerlink" href="#draw-copy" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> polygon copy</span><a class="headerlink" href="#draw-copy" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Set the x- and y-scale</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Set the x- and y-scale</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Create original polygon</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">y</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="p">};</span>
+<span class="w">    </span><span class="c1">// Create original polygon</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 
-    <span class="c1">// Copy original polygon</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">cx</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">cy</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Copy original polygon</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">cx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">copy</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">cy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">copy</span><span class="p">(</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Rotate and translate the copy</span>
-    <span class="n">rotate</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.0</span><span class="p">);</span>
-    <span class="n">translate</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Rotate and translate the copy</span><span class="w"></span>
+<span class="w">    </span><span class="n">rotate</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span><span class="w"> </span><span class="n">cy</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">45.0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">translate</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span><span class="w"> </span><span class="n">cy</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Draw the copy in blue</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLUE</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Draw the copy in blue</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLUE</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span><span class="w"> </span><span class="n">cy</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Draw the original polygon in red</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">RED</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="c1">// Draw the original polygon in red</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">RED</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="scale">
-<h3><code class="docutils literal notranslate"><span class="pre">scale()</span></code><a class="headerlink" href="#scale" title="Permalink naar deze titel">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">scale()</span></code><a class="headerlink" href="#scale" title="Permalink naar deze titel">#</a></h3>
 <p><em>Schaalt</em> de coördinaten van elk punt <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> met een factor <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(x_i^\prime = \alpha x_i\)</span></p></li>
@@ -1290,33 +1367,33 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 <figure class="align-default" id="draw-scale">
 <img alt="../../_images/image3.png" src="../../_images/image3.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> scaled polygon</span><a class="headerlink" href="#draw-scale" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> scaled polygon</span><a class="headerlink" href="#draw-scale" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Set the x- and y-scale</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">5.0</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Set the x- and y-scale</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">5.0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Create polygon</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">y</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="p">};</span>
+<span class="w">    </span><span class="c1">// Create polygon</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 
-    <span class="c1">// Draw original polygon in red</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">RED</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Draw original polygon in red</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">RED</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Scale polygon by 2.0</span>
-    <span class="n">scale</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Scale polygon by 2.0</span><span class="w"></span>
+<span class="w">    </span><span class="n">scale</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Draw scaled polygon in blue</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLUE</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="c1">// Draw scaled polygon in blue</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLUE</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="translate">
-<h3><code class="docutils literal notranslate"><span class="pre">translate()</span></code><a class="headerlink" href="#translate" title="Permalink naar deze titel">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">translate()</span></code><a class="headerlink" href="#translate" title="Permalink naar deze titel">#</a></h3>
 <p>De <em>translatie</em> van elk punt <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> met een gegeven verschuiving <span class="math notranslate nohighlight">\((d_x, d_y)\)</span>.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( x_i^\prime = x_i + d_x\)</span></p></li>
@@ -1326,35 +1403,35 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 <figure class="align-default" id="draw-translate">
 <img alt="../../_images/image4.png" src="../../_images/image4.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> translated polygon</span><a class="headerlink" href="#draw-translate" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> translated polygon</span><a class="headerlink" href="#draw-translate" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Set the x- and y-scale</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">5.0</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Set the x- and y-scale</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">5.0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Create polygon</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">y</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="p">};</span>
+<span class="w">    </span><span class="c1">// Create polygon</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 
-    <span class="c1">// Draw original polygon in red</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">RED</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Draw original polygon in red</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">RED</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Translate polygon by</span>
-    <span class="c1">// 2.0 in the x-direction</span>
-    <span class="c1">// 1.0 in the y-direction</span>
-    <span class="n">translate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Translate polygon by</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 2.0 in the x-direction</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 1.0 in the y-direction</span><span class="w"></span>
+<span class="w">    </span><span class="n">translate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Draw translated polygon in blue</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLUE</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="c1">// Draw translated polygon in blue</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLUE</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="rotate">
-<h3><code class="docutils literal notranslate"><span class="pre">rotate()</span></code><a class="headerlink" href="#rotate" title="Permalink naar deze titel">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">rotate()</span></code><a class="headerlink" href="#rotate" title="Permalink naar deze titel">#</a></h3>
 <p><em>Roteert</em> elk punt <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> met <span class="math notranslate nohighlight">\(\theta\)</span> graden tegen de klok in rond de oorsprong.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(x_i^\prime = x_i \cos \theta - y_i \sin \theta\)</span></p></li>
@@ -1365,56 +1442,56 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 <figure class="align-default" id="draw-rotate">
 <img alt="../../_images/image16.png" src="../../_images/image16.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> rotated polygon</span><a class="headerlink" href="#draw-rotate" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> rotated polygon</span><a class="headerlink" href="#draw-rotate" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Set the x- and y-scale</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">5.0</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Set the x- and y-scale</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">5.0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Create polygon</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span> <span class="p">};</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">y</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="p">};</span>
+<span class="w">    </span><span class="c1">// Create polygon</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 
-    <span class="c1">// Draw original polygon in red</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">RED</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Draw original polygon in red</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">RED</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Rotate polygon by 45 degrees ccw</span>
-    <span class="n">rotate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Rotate polygon by 45 degrees ccw</span><span class="w"></span>
+<span class="w">    </span><span class="n">rotate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mf">45.0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Draw rotated polygon in blue</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLUE</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="c1">// Draw rotated polygon in blue</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLUE</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Een veelhoek hoeft zich niet op de oorsprong te bevinden om te kunnen roteren, je kan elke veelhoek om de oorsprong roteren met dezelfde methode. Bijvoorbeeld:</p>
 <figure class="align-default" id="draw-rotate-any">
 <img alt="../../_images/image5.png" src="../../_images/image5.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> rotate and draw polygon at any point</span><a class="headerlink" href="#draw-rotate-any" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> rotate and draw polygon at any point</span><a class="headerlink" href="#draw-rotate-any" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Set the x- and y-scale</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">5.0</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Set the x- and y-scale</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">5.0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Create polygon</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="p">};</span>
-    <span class="kt">double</span><span class="o">[]</span> <span class="n">y</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="w">    </span><span class="c1">// Create polygon</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 
-    <span class="c1">// Draw original polygon in red</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">RED</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Draw original polygon in red</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">RED</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Rotate polygon by 90 degrees ccw</span>
-    <span class="n">rotate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Rotate polygon by 90 degrees ccw</span><span class="w"></span>
+<span class="w">    </span><span class="n">rotate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mf">90.0</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Draw rotated polygon in blue</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLUE</span><span class="p">);</span>
-    <span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="c1">// Draw rotated polygon in blue</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLUE</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">polygon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition attention">
@@ -1427,40 +1504,40 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 </div>
 </section>
 <section id="main">
-<h3><code class="docutils literal notranslate"><span class="pre">main()</span></code><a class="headerlink" href="#main" title="Permalink naar deze titel">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">main()</span></code><a class="headerlink" href="#main" title="Permalink naar deze titel">#</a></h3>
 <p>Test <strong>elke</strong> methode van de <code class="docutils literal notranslate"><span class="pre">Transform2D</span></code> bibliotheek door ze aan te roepen. Je moet experimenteren met verschillende waarden, zodat je er zeker van bent dat de methoden correct zijn geïmplementeerd. Voel je vrij om naar standard draw te tekenen met verschillende polygonen. Je <strong>moet</strong> geen command line argumenten te accepteren.</p>
 </section>
 </section>
 <section id="deel-ii-sierpinski-driehoek">
-<h2>Deel II - Sierpinski driehoek<a class="headerlink" href="#deel-ii-sierpinski-driehoek" title="Permalink naar deze titel">¶</a></h2>
+<h2>Deel II - Sierpinski driehoek<a class="headerlink" href="#deel-ii-sierpinski-driehoek" title="Permalink naar deze titel">#</a></h2>
 <p>De Sierpinski driehoek is een voorbeeld van een fractaal patroon<a class="footnote-reference brackets" href="#ftnt1" id="id1">1</a>.</p>
 <figure class="align-default" id="sp-0">
 <img alt="../../_images/image22.png" src="../../_images/image22.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Sierpinski driehoek met diepte 0</span><a class="headerlink" href="#sp-0" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Sierpinski driehoek met diepte 0</span><a class="headerlink" href="#sp-0" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="sp-1">
 <img alt="../../_images/image8.png" src="../../_images/image8.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Sierpinski driehoek met diepte 1</span><a class="headerlink" href="#sp-1" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Sierpinski driehoek met diepte 1</span><a class="headerlink" href="#sp-1" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="sp-2">
 <img alt="../../_images/image21.png" src="../../_images/image21.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Sierpinski driehoek met diepte 2</span><a class="headerlink" href="#sp-2" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Sierpinski driehoek met diepte 2</span><a class="headerlink" href="#sp-2" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="sp-3">
 <img alt="../../_images/image20.png" src="../../_images/image20.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Sierpinski driehoek met diepte 3</span><a class="headerlink" href="#sp-3" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Sierpinski driehoek met diepte 3</span><a class="headerlink" href="#sp-3" title="Permallink naar deze afbeelding">#</a></p>
 <div class="legend">
 <figure class="align-default" id="sp-4">
 <img alt="../../_images/image18.png" src="../../_images/image18.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Sierpinski driehoek met diepte 4</span><a class="headerlink" href="#sp-4" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Sierpinski driehoek met diepte 4</span><a class="headerlink" href="#sp-4" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1469,64 +1546,64 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 <figure class="align-default" id="sp-5">
 <img alt="../../_images/image12.png" src="../../_images/image12.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Sierpinski driehoek met diepte 5</span><a class="headerlink" href="#sp-5" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Sierpinski driehoek met diepte 5</span><a class="headerlink" href="#sp-5" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="sp-6">
 <img alt="../../_images/image17.png" src="../../_images/image17.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Sierpinski driehoek met diepte 6</span><a class="headerlink" href="#sp-6" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Sierpinski driehoek met diepte 6</span><a class="headerlink" href="#sp-6" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <p>De Poolse wiskundige Wacław Sierpiński beschreef het patroon in 1915, maar het komt al sinds de 13e eeuw voor in de Italiaanse kunst. Hoewel de Sierpinski driehoek er complex uitziet, kan het worden gegenereerd met een korte <em>recursieve</em> functie.</p>
 <p>Jouw hoofdtaak is het schrijven van een recursieve functie <code class="docutils literal notranslate"><span class="pre">sierpinski()</span></code> die een Sierpinski driehoek van orde <em>n</em> naar standaard draw plot. Denk recursief: <code class="docutils literal notranslate"><span class="pre">sierpinski()</span></code> moet één gevulde gelijkzijdige driehoek tekenen (naar beneden gericht) en daarna zichzelf drie keer recursief aanroepen (met een passende stopconditie). Het moet 1 gevulde driehoek tekenen voor n = 1; 4 gevulde driehoeken voor n = 2; en 13 gevulde driehoeken voor n = 3; enzovoort.</p>
 <section id="sierpinski-java">
-<h3><code class="docutils literal notranslate"><span class="pre">Sierpinski.java</span></code><a class="headerlink" href="#sierpinski-java" title="Permalink naar deze titel">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">Sierpinski.java</span></code><a class="headerlink" href="#sierpinski-java" title="Permalink naar deze titel">#</a></h3>
 <p>Pas een modulair ontwerp toe bij het schrijven van jouw programma, door het te organiseren in vier functies, zoals gespecificeerd in de volgende methoden:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sierpinski</span> <span class="p">{</span>
-    <span class="c1">// Height of an equilateral triangle with the specified side length.</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">height</span><span class="p">(</span><span class="kt">double</span> <span class="n">length</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Sierpinski</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Height of an equilateral triangle with the specified side length.</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">height</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"></span>
 
-    <span class="c1">// Draws a filled equilateral triangle with the specified side length</span>
-    <span class="c1">// whose bottom vertex is (x, y).</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">filledTriangle</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">,</span> <span class="kt">double</span> <span class="n">length</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// Draws a filled equilateral triangle with the specified side length</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// whose bottom vertex is (x, y).</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">filledTriangle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"></span>
 
-    <span class="c1">// Draws a Sierpinski triangle of order n, such that the largest filled</span>
-    <span class="c1">// triangle has the specified side length and bottom vertex (x, y).</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sierpinski</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">,</span> <span class="kt">double</span> <span class="n">length</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// Draws a Sierpinski triangle of order n, such that the largest filled</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// triangle has the specified side length and bottom vertex (x, y).</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sierpinski</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"></span>
 
-    <span class="c1">// Takes an integer command-line argument n;</span>
-    <span class="c1">// draws the outline of an upwards equilateral triangle of length 1</span>
-    <span class="c1">// whose bottom-left vertex is (0, 0) and bottom-right vertex is (1, 0);</span>
-    <span class="c1">// and draws a Sierpinski triangle of order n that fits inside the outline.</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="c1">// Takes an integer command-line argument n;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// draws the outline of an upwards equilateral triangle of length 1</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// whose bottom-left vertex is (0, 0) and bottom-right vertex is (1, 0);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// and draws a Sierpinski triangle of order n that fits inside the outline.</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De formule voor de <em>hoogte</em> van een gelijkzijdige driehoek met zijde <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(h = s \times \frac{\sqrt{3}}{2}\)</span>.</p>
 <figure class="align-default" id="sp-heigth">
 <img alt="../../_images/image14.png" src="../../_images/image14.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Height of an equilateral triangle of side length s</span><a class="headerlink" href="#sp-heigth" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Height of an equilateral triangle of side length s</span><a class="headerlink" href="#sp-heigth" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <p>Hier is de indeling van de oorspronkelijke gelijkzijdige driehoek. Het bovenste punt ligt op <span class="math notranslate nohighlight">\((\frac{1}{2}, \frac{\sqrt{3}}{2})\)</span>.</p>
 <figure class="align-default" id="sp-initial">
 <img alt="../../_images/image11.png" src="../../_images/image11.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Layout of the initial equilateral triangle</span><a class="headerlink" href="#sp-initial" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Layout of the initial equilateral triangle</span><a class="headerlink" href="#sp-initial" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <p>Hier is de indeling van een omgekeerde gelijkzijdige driehoek.</p>
 <figure class="align-default" id="sp-inverted">
 <img alt="../../_images/image6.png" src="../../_images/image6.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Layout of an inverted equilateral triangle</span><a class="headerlink" href="#sp-inverted" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Layout of an inverted equilateral triangle</span><a class="headerlink" href="#sp-inverted" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id2">
-<h3>Requirements<a class="headerlink" href="#id2" title="Permalink naar deze titel">¶</a></h3>
+<h3>Requirements<a class="headerlink" href="#id2" title="Permalink naar deze titel">#</a></h3>
 <ol class="simple">
 <li><p>Om een <em>gevulde</em> gelijkzijdige driehoek te tekenen, moet je de methode <code class="docutils literal notranslate"><span class="pre">StdDraw.filledPolygon()</span></code> aanroepen met de juiste argumenten.</p></li>
 <li><p>Om een <em>ongevulde</em> gelijkzijdige driehoek te tekenen, moet je de methode <code class="docutils literal notranslate"><span class="pre">StdDraw.polygon()</span></code> met de juiste argumenten aanroepen.</p></li>
@@ -1535,7 +1612,7 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 </ol>
 </section>
 <section id="mogelijke-stappen">
-<h3>Mogelijke stappen<a class="headerlink" href="#mogelijke-stappen" title="Permalink naar deze titel">¶</a></h3>
+<h3>Mogelijke stappen<a class="headerlink" href="#mogelijke-stappen" title="Permalink naar deze titel">#</a></h3>
 <p>Dit zijn slechts suggesties voor hoe je gemakkelijk vooruitgang zou kunnen boeken. Je hoeft deze stappen niet te volgen. Merk op dat je uiteindelijke <code class="docutils literal notranslate"><span class="pre">Sierpinski.java</span></code> programma niet erg lang zal zijn</p>
 <!-- TODO Htree als voorbeeld/practicum
 (niet langer dan `Htree.java`, commentaar en lege regels niet meegerekend).
@@ -1669,15 +1746,15 @@ Read Section 2.3 of the textbook. You may also find it instructive to work throu
 </section>
 </section>
 <section id="deel-iii-maak-jouw-eigen-kunstwerk">
-<h2>Deel III - Maak jouw eigen kunstwerk<a class="headerlink" href="#deel-iii-maak-jouw-eigen-kunstwerk" title="Permalink naar deze titel">¶</a></h2>
+<h2>Deel III - Maak jouw eigen kunstwerk<a class="headerlink" href="#deel-iii-maak-jouw-eigen-kunstwerk" title="Permalink naar deze titel">#</a></h2>
 <p>Dit is een <strong>optionele</strong> opgave.</p>
 <section id="art-java">
-<h3><code class="docutils literal notranslate"><span class="pre">Art.java</span></code><a class="headerlink" href="#art-java" title="Permalink naar deze titel">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">Art.java</span></code><a class="headerlink" href="#art-java" title="Permalink naar deze titel">#</a></h3>
 <p>In dit deel ga je een programma <code class="docutils literal notranslate"><span class="pre">Art.java</span></code> maken dat een recursieve tekening maakt van je eigen ontwerp. In dit deel kan je jouw creativiteit alle ruimte geven, maar hier zijn wat hints voor het geval je niet zo artistiek bent.</p>
 <p>Een zeer goede aanpak is om eerst een recursief patroon te kiezen als doel-output. Hier kan je een aantal <a class="reference external" href="https://www.cs.princeton.edu/courses/archive/fall15/cos126/art/index.php">inzendingen van studenten zien</a> die een vergelijkbare cursus hebben gevolgd. Zie ook de Famous Fractals in <a class="reference external" href="https://wayback.archive-it.org/3635/20130719033956/http://library.thinkquest.org/26242/full/index.html">Fractals Unleashed</a> voor enkele ideeën. Hier is een <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension">lijst van fractals, per Hausdorff dimensie</a>. Sommige plaatjes zijn moeilijker te genereren dan andere (en sommige vereisen trigonometrie).</p>
 </section>
 <section id="id3">
-<h3>Requirements<a class="headerlink" href="#id3" title="Permalink naar deze titel">¶</a></h3>
+<h3>Requirements<a class="headerlink" href="#id3" title="Permalink naar deze titel">#</a></h3>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Art.java</span></code> moet <strong>één</strong> (1) geheel command-line argument <code class="docutils literal notranslate"><span class="pre">n</span></code> accepteren dat de diepte van de recursie bepaalt.</p></li>
 <li><p>Jouw tekening <strong>moet</strong> binnen het tekenvenster blijven als <code class="docutils literal notranslate"><span class="pre">n</span></code> tussen 1 en 6 inclusief is. <!-- (De autograder zal geen waarden van n buiten dit bereik testen) --></p></li>
@@ -1712,7 +1789,7 @@ Bijvoorbeeld, de [Quadricross](https://en.wikipedia.org/wiki/File:Quadriccross.g
 </section>
 </section>
 <section id="achtergrond">
-<h2>Achtergrond<a class="headerlink" href="#achtergrond" title="Permalink naar deze titel">¶</a></h2>
+<h2>Achtergrond<a class="headerlink" href="#achtergrond" title="Permalink naar deze titel">#</a></h2>
 <p>Fractals in het wild. Hier is een Sierpinski driehoek in <a class="reference external" href="https://www.evilmadscientist.com/article.php/fimofractals">klei</a>, een <a class="reference external" href="https://www.evilmadscientist.com/article.php/fractalcookies">Sierpinski koekje</a>, een <a class="reference external" href="https://slice.seriouseats.com/archives/2010/09/john-riepenhoffs-recursive-pizza.html">fractal pizza</a>, en een <a class="reference external" href="https://seattlelocalfood.com/2011/03/20/sierpinski-hamantaschen-sierpinskitaschen/">Sierpinski hamantaschen</a>.</p>
 <!--
 Fractale dimensie (optionele afleiding). Op de lagere school heb je geleerd dat de dimensie van een lijnstuk 1 is, de dimensie van een vierkant 2, en de dimensie van een kubus 3. Maar je hebt waarschijnlijk niet geleerd wat er werkelijk bedoeld wordt met de term *dimensie*. Hoe kunnen we wiskundig of rekenkundig uitdrukken wat het betekent? Formeel kunnen we de *Hausdorff dimensie* of *similariteitsdimensie* van een zelfgelijkvormige figuur definiëren door de figuur te verdelen in een aantal zelfgelijkvormige stukken van kleinere omvang. We definiëren de dimensie als de log (# zelfgelijkende stukken) / log (schalingsfactor in elke ruimtelijke richting). We kunnen bijvoorbeeld het eenheidsvierkant ontbinden in vier kleinere vierkanten, elk met een zijde van 1/2; of we kunnen het ontbinden in 25 vierkanten, elk met een zijde van 1/5. Hier is het aantal zelfgelijkvormige stukken 4 (of 25) en de schalingsfactor 2 (of 5). De dimensie van een vierkant is dus 2, want log (4) / log(2) = log (25) / log (5) = 2. Verder kunnen we de eenheids kubus ontbinden in 8 kubussen, elk met zijde lengte 1/2; of we kunnen hem ontbinden in 125 kubussen, elk met zijde lengte 1/5. De dimensie van een kubus is dus log(8) / log (2) = log(125) / log(5) = 3.
@@ -1752,9 +1829,11 @@ We kunnen deze definitie ook direct toepassen op de (verzameling van witte punte
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../exercises/nested_circles/index.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1770,23 +1849,27 @@ We kunnen deze definitie ook direct toepassen op de (verzameling van witte punte
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

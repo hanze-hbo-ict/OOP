@@ -8,8 +8,9 @@
 
     <title>Practicum decorator pattern &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Zoeken" href="../../search.html" />
@@ -63,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,17 +104,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -797,91 +813,164 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/exercises/pizza/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/exercises/pizza/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/exercises/pizza/index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/exercises/pizza/index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#doel">
    Doel
@@ -959,12 +1048,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Practicum decorator pattern</h1>
@@ -973,7 +1061,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1058,70 +1146,71 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="practicum-decorator-pattern">
-<h1>Practicum decorator pattern<a class="headerlink" href="#practicum-decorator-pattern" title="Permalink naar deze titel">¶</a></h1>
+<h1>Practicum decorator pattern<a class="headerlink" href="#practicum-decorator-pattern" title="Permalink naar deze titel">#</a></h1>
 <section id="doel">
-<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">¶</a></h2>
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">#</a></h2>
 <ul class="simple">
 <li><p>Kennismaken met het decorator pattern</p></li>
 </ul>
 </section>
 <section id="pizza">
-<h2>Pizza!<a class="headerlink" href="#pizza" title="Permalink naar deze titel">¶</a></h2>
+<h2>Pizza!<a class="headerlink" href="#pizza" title="Permalink naar deze titel">#</a></h2>
 <p>Deze opgave gaat over pizza’s.</p>
 <p>Er zijn oneindig veel verschillende pizza’s: Met ham, met champignons, met tonijn, met bacon, en combinaties van al deze ingrediënten. Voor al deze pizza’s een klasse maken is problematisch door de schijnbaar oneindige hoeveelheid combinaties. Het decorator pattern is een mogelijke oplossing voor dit probleem.</p>
 <p>Hoewel dit niet een real-world toepassing is van Java, is een pizza-metafoor een geschikte manier om het decorator pattern inzichtelijk te maken.</p>
 </section>
 <section id="klasse-pizza">
-<h2>Klasse Pizza<a class="headerlink" href="#klasse-pizza" title="Permalink naar deze titel">¶</a></h2>
+<h2>Klasse Pizza<a class="headerlink" href="#klasse-pizza" title="Permalink naar deze titel">#</a></h2>
 <p>Maak een nieuw project.</p>
 <p>Maak een klasse <strong>BasicPizza</strong> met de volgende inhoud:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BasicPizza</span> <span class="p">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasicPizza</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="mf">8.0</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">8.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&quot;Pizza&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Pizza&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De klasse <strong>BasicPizza</strong> heeft twee methodes: Een methode om de prijs op te vragen en een methode om de beschrijving op te vragen.</p>
 </section>
 <section id="pizza-met-ham">
-<h2>Pizza met ham,<a class="headerlink" href="#pizza-met-ham" title="Permalink naar deze titel">¶</a></h2>
+<h2>Pizza met ham,<a class="headerlink" href="#pizza-met-ham" title="Permalink naar deze titel">#</a></h2>
 <p>De klasse <strong>BasicPizza</strong> representeert een basis pizza, zonder extra’s.</p>
 <p>De klasse <strong>PizzaWithHam</strong> is een pizza met ham. Omdat dit een basis pizza is met één toevoeging, is <strong>PizzaWithHam</strong> een childclass van <strong>BasicPizza</strong>:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PizzaWithHam</span> <span class="kd">extends</span> <span class="n">BasicPizza</span> <span class="p">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PizzaWithHam</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasicPizza</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">getPrice</span><span class="p">()</span><span class="o">+</span><span class="mf">2.0</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">getPrice</span><span class="p">()</span><span class="o">+</span><span class="mf">2.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">getDesription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; Ham&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">getDesription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; Ham&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Zowel <strong>getPrice</strong> als <strong>getDescription</strong> roepen de methode uit de superclass aan (met behulp van <em>keyword</em> <strong>super</strong>), en voegen daar iets extra’s aan toe wat van toepassing is op de toevoeging van ham.</p>
 </section>
 <section id="klasse-main">
-<h2>Klasse Main<a class="headerlink" href="#klasse-main" title="Permalink naar deze titel">¶</a></h2>
+<h2>Klasse Main<a class="headerlink" href="#klasse-main" title="Permalink naar deze titel">#</a></h2>
 <p>Maak een klasse <strong>Main</strong> met een <em>main-methode</em>.</p>
 <p>Met de onderstaande code worden twee pizza’s gemaakt en informatie wordt afgedrukt op het scherm:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="n">BasicPizza</span> <span class="n">pizza1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BasicPizza</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza1</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza1</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
-    <span class="n">PizzaWithHam</span> <span class="n">pizza2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PizzaWithHam</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza2</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza2</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">BasicPizza</span><span class="w"> </span><span class="n">pizza1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BasicPizza</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza1</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza1</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">PizzaWithHam</span><span class="w"> </span><span class="n">pizza2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PizzaWithHam</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza2</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza2</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Als het goed is, is de uitvoer als volgt:</p>
@@ -1131,46 +1220,46 @@ Pizza Ham, € 10.0
 </div>
 </section>
 <section id="nog-meer-pizza-s">
-<h2>Nog meer pizza’s<a class="headerlink" href="#nog-meer-pizza-s" title="Permalink naar deze titel">¶</a></h2>
+<h2>Nog meer pizza’s<a class="headerlink" href="#nog-meer-pizza-s" title="Permalink naar deze titel">#</a></h2>
 <p>Uiteraard zijn er nog veel meer pizza’s.</p>
 <p>Bijvoorbeeld pizza met champignons:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PizzaWithMushrooms</span> <span class="kd">extends</span> <span class="n">BasicPizza</span> <span class="p">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PizzaWithMushrooms</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasicPizza</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">getPrice</span><span class="p">()</span><span class="o">+</span><span class="mf">1.5</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">getPrice</span><span class="p">()</span><span class="o">+</span><span class="mf">1.5</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; Mushrooms&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; Mushrooms&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Naast verschillende ingrediënten, zijn ook combinaties van ingrediënten mogelijk.</p>
 <p>Bijvoorbeeld een pizza met ham en champignons:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PizzaWithHamAndMushrooms</span> <span class="kd">extends</span> <span class="n">BasicPizza</span> <span class="p">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PizzaWithHamAndMushrooms</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasicPizza</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">getPrice</span><span class="p">()</span><span class="o">+</span><span class="mf">3.5</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">getPrice</span><span class="p">()</span><span class="o">+</span><span class="mf">3.5</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; Ham Mushrooms&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-<span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; Ham Mushrooms&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Maak de bovenstaande klassen.</p>
 <p>Vul <strong>main</strong> aan met de volgende regels:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>        <span class="n">PizzaWithMushrooms</span> <span class="n">pizza3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PizzaWithMushrooms</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza3</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza3</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
-        <span class="n">PizzaWithHamAndMushrooms</span> <span class="n">pizza4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PizzaWithHamAndMushrooms</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza4</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza4</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="w">        </span><span class="n">PizzaWithMushrooms</span><span class="w"> </span><span class="n">pizza3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PizzaWithMushrooms</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza3</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza3</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">PizzaWithHamAndMushrooms</span><span class="w"> </span><span class="n">pizza4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PizzaWithHamAndMushrooms</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza4</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza4</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Als het goed is, is de uitvoer als volgt:</p>
@@ -1182,7 +1271,7 @@ Pizza Ham Mushrooms, € 11.5
 </div>
 </section>
 <section id="combinaties">
-<h2>Combinaties<a class="headerlink" href="#combinaties" title="Permalink naar deze titel">¶</a></h2>
+<h2>Combinaties<a class="headerlink" href="#combinaties" title="Permalink naar deze titel">#</a></h2>
 <p>Hoeveel combinaties zijn mogelijk met 2 ingrediënten? Bijvoorbeeld ham en champignons..</p>
 <ul class="simple">
 <li><p>Pizza zonder extra’s</p></li>
@@ -1198,7 +1287,7 @@ Volgens bovenstaande redenering 16 combinaties.</p>
 <p>Dit betekent dat er 16 klassen nodig zijn voor 4 ingrediënten, met de nodige duplicate code. Als de prijs van één ingrediënt aangepast wordt, dan moet dit in meerdere klassen aangepast worden.</p>
 </section>
 <section id="decorator-pattern">
-<h2>Decorator pattern<a class="headerlink" href="#decorator-pattern" title="Permalink naar deze titel">¶</a></h2>
+<h2>Decorator pattern<a class="headerlink" href="#decorator-pattern" title="Permalink naar deze titel">#</a></h2>
 <p>Het decorator pattern is een oplossing voor het probleem van grote aantallen combinaties en duplicate code.</p>
 <p><img alt="decorator.png" src="../../_images/decorator1.png" /></p>
 <p>De interface <strong>Component</strong> bevat de functionaliteit die elke pizza heeft: <strong>getPrice</strong> en <strong>getDescription</strong>.</p>
@@ -1207,136 +1296,136 @@ Volgens bovenstaande redenering 16 combinaties.</p>
 <p>In vijf stappen wordt het bestaande project aangepast aan het decorator pattern.</p>
 </section>
 <section id="stap-1-interface-pizza-component-maken">
-<h2>Stap 1: Interface Pizza (component) maken<a class="headerlink" href="#stap-1-interface-pizza-component-maken" title="Permalink naar deze titel">¶</a></h2>
+<h2>Stap 1: Interface Pizza (component) maken<a class="headerlink" href="#stap-1-interface-pizza-component-maken" title="Permalink naar deze titel">#</a></h2>
 <p>Maak de interface <strong>Pizza</strong>.</p>
 <p>De interface <strong>Pizza</strong> bevat de volgende methode-definities:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Pizza</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Pizza</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">();</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">();</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="stap-2-klasse-basispizza-de-interface-pizza-laten-implementeren">
-<h2>Stap 2: Klasse BasisPizza de interface Pizza laten implementeren<a class="headerlink" href="#stap-2-klasse-basispizza-de-interface-pizza-laten-implementeren" title="Permalink naar deze titel">¶</a></h2>
+<h2>Stap 2: Klasse BasisPizza de interface Pizza laten implementeren<a class="headerlink" href="#stap-2-klasse-basispizza-de-interface-pizza-laten-implementeren" title="Permalink naar deze titel">#</a></h2>
 <p>Laat de klassa <strong>BasisPizza</strong> de interface <strong>Pizza</strong> implementeren.</p>
 <p>Gebruik de annotatie <strong>&#64;Override</strong> bij de methodes die in de interface gedefiniëerd zijn.</p>
 <p>Na deze veranderingen is de klasse <strong>BasicPizza</strong> als volgt:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BasicPizza</span> <span class="kd">implements</span> <span class="n">Pizza</span> <span class="p">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BasicPizza</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Pizza</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="mf">8.0</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">8.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&quot;Pizza&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Pizza&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Test of het programma nog functioneert. Als het goed is, heeft de toegevoegde interface geen invloed op de werking van het programma.</p>
 <p>In <strong>main</strong> kunnen de verschillende datatypes van de gedeclareerde variabelen aangepast worden naar <strong>Pizza</strong>. De interface wordt dan als datatype gebruikt. Dit maakt code eenvoudiger:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">Pizza</span> <span class="n">pizza1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BasicPizza</span><span class="p">();</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza1</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza1</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
-<span class="n">Pizza</span> <span class="n">pizza2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PizzaWithHam</span><span class="p">();</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza2</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza2</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
-<span class="n">Pizza</span> <span class="n">pizza3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PizzaWithMushrooms</span><span class="p">();</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza3</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza3</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
-<span class="n">Pizza</span> <span class="n">pizza4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PizzaWithHamAndMushrooms</span><span class="p">();</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza4</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza4</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">Pizza</span><span class="w"> </span><span class="n">pizza1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BasicPizza</span><span class="p">();</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza1</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza1</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
+<span class="n">Pizza</span><span class="w"> </span><span class="n">pizza2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PizzaWithHam</span><span class="p">();</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza2</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza2</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
+<span class="n">Pizza</span><span class="w"> </span><span class="n">pizza3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PizzaWithMushrooms</span><span class="p">();</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza3</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza3</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
+<span class="n">Pizza</span><span class="w"> </span><span class="n">pizza4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PizzaWithHamAndMushrooms</span><span class="p">();</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza4</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza4</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="stap-3-abstracte-klassa-pizzadecorator-maken">
-<h2>Stap 3: Abstracte klassa PizzaDecorator maken<a class="headerlink" href="#stap-3-abstracte-klassa-pizzadecorator-maken" title="Permalink naar deze titel">¶</a></h2>
+<h2>Stap 3: Abstracte klassa PizzaDecorator maken<a class="headerlink" href="#stap-3-abstracte-klassa-pizzadecorator-maken" title="Permalink naar deze titel">#</a></h2>
 <p>De abstracte klasse <strong>PizzaDecorator</strong> is de superklasse van alle decorators.</p>
 <p>Maak een klasse met de naam <strong>PizzaDecorator</strong>, die de interface <strong>Pizza</strong> implementeert.</p>
 <p>Deze klasse heeft een instantievariabele <strong>pizza</strong>, met datatype <strong>Pizza</strong>. Deze wordt geïnitialiseerd via de constructor:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PizzaDecorator</span> <span class="kd">implements</span> <span class="n">Pizza</span> <span class="p">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PizzaDecorator</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Pizza</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Pizza</span> <span class="n">pizza</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Pizza</span><span class="w"> </span><span class="n">pizza</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">PizzaDecorator</span><span class="p">(</span><span class="n">Pizza</span> <span class="n">pizza</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">pizza</span> <span class="o">=</span> <span class="n">pizza</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PizzaDecorator</span><span class="p">(</span><span class="n">Pizza</span><span class="w"> </span><span class="n">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">pizza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pizza</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Omdat de klasse abstract is, is het niet nodig om de methodes uit de interface <strong>Pizza</strong> te implementeren. Als het wenselijk is dat er een standaard implementatie is, dan is het mogelijk om in de abstracte basisklasse voor de decorator een implementatie te schrijven. In dit geval is dat echter niet wenselijk, omdat voor elk ingrediënt zowel prijs als beschrijving verandert.</p>
 </section>
 <section id="stap-4-concrete-decorators-decoratorham-en-decoratormushrooms-maken">
-<h2>Stap 4: Concrete decorators DecoratorHam en DecoratorMushrooms maken<a class="headerlink" href="#stap-4-concrete-decorators-decoratorham-en-decoratormushrooms-maken" title="Permalink naar deze titel">¶</a></h2>
+<h2>Stap 4: Concrete decorators DecoratorHam en DecoratorMushrooms maken<a class="headerlink" href="#stap-4-concrete-decorators-decoratorham-en-decoratormushrooms-maken" title="Permalink naar deze titel">#</a></h2>
 <p>Maak een klasse <strong>DecoratorHam</strong> die overerft van <strong>PizzaDecorator</strong>. Maak ook de noodzakelijke constructor.</p>
 <p>Implementeer de methodes <strong>getPrice</strong> en <strong>getDescription</strong> als volgt:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DecoratorHam</span> <span class="kd">extends</span> <span class="n">PizzaDecorator</span> <span class="p">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DecoratorHam</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">PizzaDecorator</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">DecoratorHam</span><span class="p">(</span><span class="n">Pizza</span> <span class="n">pizza</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">pizza</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">DecoratorHam</span><span class="p">(</span><span class="n">Pizza</span><span class="w"> </span><span class="n">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">pizza</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">pizza</span><span class="p">.</span><span class="na">getPrice</span><span class="p">()</span><span class="o">+</span><span class="mf">2.0</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pizza</span><span class="p">.</span><span class="na">getPrice</span><span class="p">()</span><span class="o">+</span><span class="mf">2.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">pizza</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; Ham&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pizza</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; Ham&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Doe hetzelfde voor <strong>decoratorMushrooms</strong>:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DecoratorMushrooms</span> <span class="kd">extends</span> <span class="n">PizzaDecorator</span> <span class="p">{</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DecoratorMushrooms</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">PizzaDecorator</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">DecoratorMushrooms</span><span class="p">(</span><span class="n">Pizza</span> <span class="n">pizza</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">pizza</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">DecoratorMushrooms</span><span class="p">(</span><span class="n">Pizza</span><span class="w"> </span><span class="n">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">pizza</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">pizza</span><span class="p">.</span><span class="na">getPrice</span><span class="p">()</span><span class="o">+</span><span class="mf">1.5</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pizza</span><span class="p">.</span><span class="na">getPrice</span><span class="p">()</span><span class="o">+</span><span class="mf">1.5</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">pizza</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; Mushrooms&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pizza</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; Mushrooms&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="stap-5-objecten-maken-met-decorators">
-<h2>Stap 5. Objecten maken met decorators<a class="headerlink" href="#stap-5-objecten-maken-met-decorators" title="Permalink naar deze titel">¶</a></h2>
+<h2>Stap 5. Objecten maken met decorators<a class="headerlink" href="#stap-5-objecten-maken-met-decorators" title="Permalink naar deze titel">#</a></h2>
 <p>De laatste stap is het maken van objecten op de nieuwe wijze, met decorators.</p>
 <p>Een basis pizza wordt gemaakt door een instantie te maken van <strong>BasicPizza</strong>. Dat is niet veranderd.</p>
 <p>Maar ook bij het maken van een pizza met extra’s wordt een instantie van <strong>BasicPizza</strong> gebruikt en meegegeven aan één of meer decorators.</p>
 <p>Zo wordt een pizza met ham gemaakt met het statement:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="n">DecoratorHam</span><span class="p">(</span><span class="k">new</span> <span class="n">BasicPizza</span><span class="p">())</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span><span class="w"> </span><span class="n">DecoratorHam</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicPizza</span><span class="p">())</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Pas <strong>main</strong> zo aan, dat pizza-instanties met decorators worden gemaakt:</p>
-<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span>        <span class="n">Pizza</span> <span class="n">pizza1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BasicPizza</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza1</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza1</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
-        <span class="n">Pizza</span> <span class="n">pizza2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DecoratorHam</span><span class="p">(</span><span class="k">new</span> <span class="n">BasicPizza</span><span class="p">());</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza2</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza2</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
-        <span class="n">Pizza</span> <span class="n">pizza3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DecoratorMushrooms</span><span class="p">(</span><span class="k">new</span> <span class="n">BasicPizza</span><span class="p">());</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza3</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza3</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
-        <span class="n">Pizza</span> <span class="n">pizza4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DecoratorHam</span><span class="p">(</span><span class="k">new</span> <span class="n">DecoratorMushrooms</span><span class="p">(</span><span class="k">new</span> <span class="n">BasicPizza</span><span class="p">()));</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza4</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizza4</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="w">        </span><span class="n">Pizza</span><span class="w"> </span><span class="n">pizza1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BasicPizza</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza1</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza1</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">Pizza</span><span class="w"> </span><span class="n">pizza2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DecoratorHam</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicPizza</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza2</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza2</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">Pizza</span><span class="w"> </span><span class="n">pizza3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DecoratorMushrooms</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicPizza</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza3</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza3</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">Pizza</span><span class="w"> </span><span class="n">pizza4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DecoratorHam</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DecoratorMushrooms</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicPizza</span><span class="p">()));</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizza4</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizza4</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De klasse <strong>BasicPizza</strong> en alle combinaties van decorators leveren een object op van het datatype <strong>Pizza</strong>.</p>
 <p>De klassen <strong>PizzaWithHam</strong>, <strong>PizzaWithMushrooms</strong> en <strong>PizzaWithHamAndMushrooms</strong> zijn overbodig geworden en kunnen eventueel verwijderd worden.</p>
 </section>
 <section id="extra-decorators">
-<h2>Extra decorators<a class="headerlink" href="#extra-decorators" title="Permalink naar deze titel">¶</a></h2>
+<h2>Extra decorators<a class="headerlink" href="#extra-decorators" title="Permalink naar deze titel">#</a></h2>
 <p>Als het decorator pattern is geïmplementeerd, is het gemakkelijk om decorators toe te voegen.</p>
 <p>Maak een decorator voor een pizza met ui: <strong>DecoratorOnions</strong>. Uien kosten 1 euro.</p>
 <p>Voeg onderstaande regels toe aan main:</p>
@@ -1355,7 +1444,7 @@ Volgens bovenstaande redenering 16 combinaties.</p>
 </div>
 </section>
 <section id="nog-meer-pizza">
-<h2>Nog meer pizza<a class="headerlink" href="#nog-meer-pizza" title="Permalink naar deze titel">¶</a></h2>
+<h2>Nog meer pizza<a class="headerlink" href="#nog-meer-pizza" title="Permalink naar deze titel">#</a></h2>
 <p>Voeg tot slot nog een decorator toe van een ingrediënt naar keuze.</p>
 <p>Hoeveel verschillende klassen zijn nodig om zonder het decorator pattern te gebruiken voor elke combinatie van ingrediënten pizza’s te maken?</p>
 </section>
@@ -1383,9 +1472,11 @@ Volgens bovenstaande redenering 16 combinaties.</p>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../topics/10b_factory.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1401,23 +1492,27 @@ Volgens bovenstaande redenering 16 combinaties.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

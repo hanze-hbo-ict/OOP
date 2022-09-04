@@ -8,8 +8,9 @@
 
     <title>Hello World in Java &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Zoeken" href="../search.html" />
@@ -63,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,17 +104,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -797,12 +813,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -810,61 +831,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/support/install.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/support/install.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installeer-java">
    Installeer Java
@@ -887,12 +964,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Hello World in Java</h1>
@@ -901,7 +977,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -931,13 +1007,14 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="hello-world-in-java">
-<h1>Hello World in Java<a class="headerlink" href="#hello-world-in-java" title="Permalink naar deze titel">¶</a></h1>
+<h1>Hello World in Java<a class="headerlink" href="#hello-world-in-java" title="Permalink naar deze titel">#</a></h1>
 <section id="installeer-java">
-<h2>Installeer Java<a class="headerlink" href="#installeer-java" title="Permalink naar deze titel">¶</a></h2>
+<h2>Installeer Java<a class="headerlink" href="#installeer-java" title="Permalink naar deze titel">#</a></h2>
 <p>Voor het compileren en uitvoeren van Java programma’s is een <strong>Java Development Kit</strong> (JDK) nodig. Je zal Java SE Development Kit 11 (JDK 11) gaan gebruiken.</p>
 <div class="admonition important">
 <p class="admonition-title">Belangrijk</p>
@@ -947,45 +1024,9 @@
 </div>
 <p>Indien je een foutbericht ziet, of als je niet weet hoe je het bovenstaande moet uitvoeren, volg dan de onderstaande installatiestappen voor jouw besturingssysteem.</p>
 </div>
-<div class="tabbed-set docutils">
-<input checked="checked" id="0bb11b73-b345-4cdb-b5b7-c63cb3f6d9a4" name="39fd5b9f-112b-4e68-be9a-03888278be36" type="radio">
-</input><label class="tabbed-label" for="0bb11b73-b345-4cdb-b5b7-c63cb3f6d9a4">
-Windows</label><div class="tabbed-content docutils">
-<p>De JDK die wij aanbevelen is OpenJDK, een <em>open source</em> implementatie van Java SE (Standard Edition). Ga naar <a class="reference external" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> en download een versie voor jouw besturingssysteem.</p>
-<ul class="simple">
-<li><p>Kies OpenJDK 11 LTS (<em>Long Term Support</em>).</p></li>
-<li><p>Je kan kiezen voor een JVM (Java Virtual Machine), HotSpot is een goede keus.</p></li>
-</ul>
-<div class="admonition attention">
-<p class="admonition-title">Let op</p>
-<p>Let op het volgende bij installatie:</p>
-<ul class="simple">
-<li><p><strong>Kies</strong> voor <code class="docutils literal notranslate"><span class="pre">JAVA_HOME</span></code> aan het pad toe te laten toevoegen.</p></li>
-<li><p><strong>Negeer</strong> bij installatie de optie om Oracle licentiesleutels toe te voegen, indien dit wordt gevraagd.</p></li>
-</ul>
-</div>
-</div>
-<input id="77ab994b-a0e5-45e3-b986-ce3537ae1d81" name="39fd5b9f-112b-4e68-be9a-03888278be36" type="radio">
-</input><label class="tabbed-label" for="77ab994b-a0e5-45e3-b986-ce3537ae1d81">
-macOS</label><div class="tabbed-content docutils">
-<p>Indien je een package manager als <code class="docutils literal notranslate"><span class="pre">brew</span></code> gebruikt kan je OpenJDK eenvoudig als volgt installeren:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; brew install openjdk</span>
-</pre></div>
-</div>
-<p>Indien je geen package manager gebruikt, volg dan dezelfde instructies voor installatie als bij Windows.</p>
-</div>
-<input id="aaeccaad-3e72-42c9-8228-71e3d2cef835" name="39fd5b9f-112b-4e68-be9a-03888278be36" type="radio">
-</input><label class="tabbed-label" for="aaeccaad-3e72-42c9-8228-71e3d2cef835">
-Linux</label><div class="tabbed-content docutils">
-<p>Op Linux distributies is OpenJDK eenvoudig te installeren met package managers als <code class="docutils literal notranslate"><span class="pre">apt</span></code> of <code class="docutils literal notranslate"><span class="pre">yum</span></code>. Voor Debian en afgeleide distributies (bijvoorbeeld Ubuntu of Linux Mint) installeer je als volgt de meest recente OpenJDK versie:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; sudo apt-get install default-jdk</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="editor">
-<h2>Editor<a class="headerlink" href="#editor" title="Permalink naar deze titel">¶</a></h2>
+<h2>Editor<a class="headerlink" href="#editor" title="Permalink naar deze titel">#</a></h2>
 <p>Java programma’s kunnen met elke teksteditor worden geschreven, wij raden IntelliJ IDEA aan, een ontwikkelomgeving (een IDE, of <em>Integrated Development Environment</em>) specifiek voor Java en op dit moment één van de meest gebruikte toepassingen voor het schrijven van Java programma’s.</p>
 <ul class="simple">
 <li><p>Ga naar <a class="reference external" href="https://www.jetbrains.com/idea/download/">JetBrains</a> en download &amp; installeer <strong>IntelliJ IDEA Community Edition</strong> voor jouw besturingssysteem.</p></li>
@@ -997,7 +1038,7 @@ Linux</label><div class="tabbed-content docutils">
 </div>
 </section>
 <section id="open-een-project-in-intellij">
-<h2>Open een project in IntelliJ<a class="headerlink" href="#open-een-project-in-intellij" title="Permalink naar deze titel">¶</a></h2>
+<h2>Open een project in IntelliJ<a class="headerlink" href="#open-een-project-in-intellij" title="Permalink naar deze titel">#</a></h2>
 <p>Je gaat Java-programma’s ontwikkelen in <em>IntelliJ IDEA Community Edition</em>.</p>
 <p>IntelliJ ordent Java-programma’s in projecten. In deze cursus komt elk project overeen met één programmeeropdracht. Een typisch project bevat Java-programma’s, bijbehorende gegevensbestanden en cursus-specifieke instellingen (zoals compileropties, stijlregels en bibliotheken, of <em>class libraries</em>).</p>
 <div class="admonition-ik-begrijp-dit-niet admonition">
@@ -1012,27 +1053,6 @@ Linux</label><div class="tabbed-content docutils">
 <li><p><a href="../projects/hello.zip">hello.zip</a></p></li>
 </ul>
 <p>Pak het project als volgt uit voor jouw besturingssysteem:</p>
-<div class="tabbed-set docutils">
-<input checked="checked" id="02c2808f-38d5-4535-b47e-4e804c27896f" name="57ae7506-88b0-4ebd-84fc-038416bd7926" type="radio">
-</input><label class="tabbed-label" for="02c2808f-38d5-4535-b47e-4e804c27896f">
-Windows</label><div class="tabbed-content docutils">
-<p>Om het zip-bestand uit te pakken, klik je er met de rechtermuisknop op en kies je <em>Alles uitpakken</em>. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
-</div>
-<input id="a2ee664f-b549-49fb-89cc-ae6d8bb5093d" name="57ae7506-88b0-4ebd-84fc-038416bd7926" type="radio">
-</input><label class="tabbed-label" for="a2ee664f-b549-49fb-89cc-ae6d8bb5093d">
-macOS</label><div class="tabbed-content docutils">
-<p><strong>Dubbelklik</strong> op het zip-bestand om het uit te pakken. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
-</div>
-<input id="1e6cc8df-52b2-4c86-8a43-9395f1bb7f94" name="57ae7506-88b0-4ebd-84fc-038416bd7926" type="radio">
-</input><label class="tabbed-label" for="1e6cc8df-52b2-4c86-8a43-9395f1bb7f94">
-Linux</label><div class="tabbed-content docutils">
-<p>Pak het zip-bestand uit met het volgende commando:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; unzip -d hello hello.zip</span>
-</pre></div>
-</div>
-<p>Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval <code class="docutils literal notranslate"><span class="pre">hello</span></code>). Het zip-bestand kan je nu verwijderen.</p>
-</div>
-</div>
 </li>
 <li><p>Start IntelliJ:</p></li>
 <li><p>Wanneer je IntelliJ voor de eerste keer start,</p>
@@ -1046,14 +1066,14 @@ Linux</label><div class="tabbed-content docutils">
 <figure class="align-default" id="intellij-welcome">
 <img alt="../_images/intellij_welcome.png" src="../_images/intellij_welcome.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Intellij welkomstscherm</span><a class="headerlink" href="#intellij-welcome" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Intellij welkomstscherm</span><a class="headerlink" href="#intellij-welcome" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <p>Selecteer vervolgens de projectmap.</p>
 <figure class="align-default" id="intellij-select-project">
 <img alt="../_images/intellij_select_project.png" src="../_images/intellij_select_project.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Selecteer de projectmap</span><a class="headerlink" href="#intellij-select-project" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Selecteer de projectmap</span><a class="headerlink" href="#intellij-select-project" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <p>Wanneer je IntelliJ voor de eerste keer opstart kan het een minuut of twee duren om bestanden te <em>indexeren</em>, sommige functies (zoals automatisch importeren) zullen niet beschikbaar zijn totdat dit proces is voltooid.</p>
@@ -1065,7 +1085,7 @@ Linux</label><div class="tabbed-content docutils">
 </ul>
 </section>
 <section id="maak-een-programma-in-intellij">
-<h2>Maak een programma in IntelliJ<a class="headerlink" href="#maak-een-programma-in-intellij" title="Permalink naar deze titel">¶</a></h2>
+<h2>Maak een programma in IntelliJ<a class="headerlink" href="#maak-een-programma-in-intellij" title="Permalink naar deze titel">#</a></h2>
 <p>Nu bent je klaar om uw eerste Java programma te schrijven. IntelliJ heeft veel gespecialiseerde programmeerhulpmiddelen, zoals regelnummering, syntax highlighting, bracket matching, auto indenting, auto formatting, auto importing, variable renaming, en continue code inspectie.</p>
 <ul>
 <li><p>Om een nieuw Java programma te maken:</p>
@@ -1075,7 +1095,7 @@ Linux</label><div class="tabbed-content docutils">
 <figure class="align-default" id="intellij-select-project-2">
 <img alt="../_images/intellij_select_project_2.png" src="../_images/intellij_select_project_2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Open het project</span><a class="headerlink" href="#intellij-select-project-2" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Open het project</span><a class="headerlink" href="#intellij-select-project-2" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -1086,11 +1106,11 @@ Linux</label><div class="tabbed-content docutils">
 </ul>
 </li>
 <li><p>Maak in het hoofdvenster van de editor het Java-programma <code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code> precies zoals het er hieronder uitziet. (IntelliJ genereert de grijze boilerplate code automatisch, eventueel met toevoeging van een course header block commentaar).</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-<span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, World&quot;</span><span class="p">);</span>
-</span>    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, World&quot;</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Als je zelfs maar een puntkomma weglaat, zal het programma niet werken!</p>
@@ -1155,9 +1175,11 @@ Als de compilatie mislukt opent een Recompile-paneel (onderaan), waarin de compi
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../topics/1c_invoer_en_uitvoer.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1173,23 +1195,27 @@ Als de compilatie mislukt opent een Recompile-paneel (onderaan), waarin de compi
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

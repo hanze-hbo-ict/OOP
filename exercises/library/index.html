@@ -8,8 +8,9 @@
 
     <title>Bibliotheek &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Zoeken" href="../../search.html" />
@@ -63,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,17 +104,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -797,12 +813,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -810,61 +831,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/exercises/library/index.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/exercises/library/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#doel">
    Doel
@@ -952,12 +1029,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Bibliotheek</h1>
@@ -966,7 +1042,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1061,14 +1137,15 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="bibliotheek">
-<h1>Bibliotheek<a class="headerlink" href="#bibliotheek" title="Permalink naar deze titel">¶</a></h1>
+<h1>Bibliotheek<a class="headerlink" href="#bibliotheek" title="Permalink naar deze titel">#</a></h1>
 <p><img alt="Trinity College Library" src="../../_images/trinity-college-library.png" /></p>
 <section id="doel">
-<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">¶</a></h2>
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">#</a></h2>
 <p>Oefenen met:</p>
 <ul class="simple">
 <li><p>overerving</p></li>
@@ -1077,12 +1154,12 @@
 </ul>
 </section>
 <section id="inleiding">
-<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">¶</a></h2>
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">#</a></h2>
 <p>In deze opgave ga je een klassenhiërarchie uitwerken die boeken in een bibliotheek representeert. Zie <a class="reference internal" href="#book-uml"><span class="std std-numref">Fig. 32</span></a> voor een schematische weergave van de relevante klassen.</p>
 <figure class="align-default" id="book-uml">
 <img alt="../../_images/diagram.png" src="../../_images/diagram.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Klassendiagram bibliotheekboeken</span><a class="headerlink" href="#book-uml" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Klassendiagram bibliotheekboeken</span><a class="headerlink" href="#book-uml" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <p>De klasse <code class="docutils literal notranslate"><span class="pre">Book</span></code> modelleert informatie die gemeenschappelijk is voor alle boeken.</p>
@@ -1092,10 +1169,10 @@
 <p>Een <code class="docutils literal notranslate"><span class="pre">CirculatingBook</span></code> staat op de planken tot het wordt uitgeleend, en het boek wordt weer op de planken geplaatst als het wordt teruggebracht.</p>
 </section>
 <section id="de-klasse-book-en-subklassen">
-<h2>De klasse <code class="docutils literal notranslate"><span class="pre">Book</span></code> en subklassen<a class="headerlink" href="#de-klasse-book-en-subklassen" title="Permalink naar deze titel">¶</a></h2>
+<h2>De klasse <code class="docutils literal notranslate"><span class="pre">Book</span></code> en subklassen<a class="headerlink" href="#de-klasse-book-en-subklassen" title="Permalink naar deze titel">#</a></h2>
 <p>Schema <a class="reference internal" href="#book-uml"><span class="std std-numref">Fig. 32</span></a> geeft naast de klassen ook beknopt weer welke velden en methoden moeten worden geimplementeerd. Een meer gedetailleerde beschrijving van deze klassen volgt.</p>
 <section id="de-klasse-book">
-<h3>De klasse <code class="docutils literal notranslate"><span class="pre">Book</span></code><a class="headerlink" href="#de-klasse-book" title="Permalink naar deze titel">¶</a></h3>
+<h3>De klasse <code class="docutils literal notranslate"><span class="pre">Book</span></code><a class="headerlink" href="#de-klasse-book" title="Permalink naar deze titel">#</a></h3>
 <p>De klasse <code class="docutils literal notranslate"><span class="pre">Book</span></code> modelleert informatie die alle boeken gemeen hebben. Elk boek heeft</p>
 <ul class="simple">
 <li><p>Velden</p>
@@ -1117,7 +1194,7 @@
 <p>Binnen de klasse <code class="docutils literal notranslate"><span class="pre">Book</span></code> en de bijbehorende subklassen kunnen deze velden direct worden gebruikt, maar gebruik door andere klassen en objecten moet worden gedaan via getters en setters.</p>
 </section>
 <section id="de-klasse-librarybook">
-<h3>De klasse <code class="docutils literal notranslate"><span class="pre">LibraryBook</span></code><a class="headerlink" href="#de-klasse-librarybook" title="Permalink naar deze titel">¶</a></h3>
+<h3>De klasse <code class="docutils literal notranslate"><span class="pre">LibraryBook</span></code><a class="headerlink" href="#de-klasse-librarybook" title="Permalink naar deze titel">#</a></h3>
 <p>De klasse <code class="docutils literal notranslate"><span class="pre">LibraryBook</span></code> modelleert informatie die gebruikelijk is voor <em>bibliotheekboeken</em>. Naast auteur, titel en ISBN hebben bibliotheekboeken nummercodes, en bibliotheekboeken worden op volgorde van nummercode in de rekken opgeslagen. Bovendien kunnen veel bibliotheekboeken uitgeleend worden (circuleren). Naast velden en methoden van boeken, heeft elk bibliotheekboek</p>
 <ul class="simple">
 <li><p>Velden</p>
@@ -1142,7 +1219,7 @@
 <p>Omdat sommige methoden wel gedefinieerd maar niet geïmplementeerd zijn, is <code class="docutils literal notranslate"><span class="pre">LibraryBook</span></code> een <em>abstracte</em> klasse.</p>
 </section>
 <section id="de-klasse-referencebook">
-<h3>De klasse <code class="docutils literal notranslate"><span class="pre">ReferenceBook</span></code><a class="headerlink" href="#de-klasse-referencebook" title="Permalink naar deze titel">¶</a></h3>
+<h3>De klasse <code class="docutils literal notranslate"><span class="pre">ReferenceBook</span></code><a class="headerlink" href="#de-klasse-referencebook" title="Permalink naar deze titel">#</a></h3>
 <p>De klasse <code class="docutils literal notranslate"><span class="pre">ReferenceBook</span></code> modelleert een naslagwerk. Naslagwerken zijn ondergebracht in een specifieke collectie en naslagwerken circuleren niet (worden niet uitgeleend).</p>
 <p>Naast velden en methoden van bibliotheekboeken, heeft een naslagwerk</p>
 <ul class="simple">
@@ -1165,7 +1242,7 @@
 <p>Met de methoden <code class="docutils literal notranslate"><span class="pre">checkout</span></code>, <code class="docutils literal notranslate"><span class="pre">returned</span></code> en <code class="docutils literal notranslate"><span class="pre">circulationStatus</span></code> geïmplementeerd voor <code class="docutils literal notranslate"><span class="pre">LibraryBook</span></code> is dit nu een volledig geïmplementeerde klasse.</p>
 </section>
 <section id="de-klasse-circulatingbook">
-<h3>De klasse <code class="docutils literal notranslate"><span class="pre">CirculatingBook</span></code><a class="headerlink" href="#de-klasse-circulatingbook" title="Permalink naar deze titel">¶</a></h3>
+<h3>De klasse <code class="docutils literal notranslate"><span class="pre">CirculatingBook</span></code><a class="headerlink" href="#de-klasse-circulatingbook" title="Permalink naar deze titel">#</a></h3>
 <p>De klasse <code class="docutils literal notranslate"><span class="pre">CirculatingBook</span></code> modelleert boeken die kunnen worden uitgeeend. Wanneer een boek wordt uitgeleend wordt informatie opgeslagen over de klant die het boek heeft geleend en wanneer het moet worden teruggebracht. Naast de velden en methodes van bibliotheekboeken, heeft een <code class="docutils literal notranslate"><span class="pre">CirculatingBook</span></code></p>
 <ul class="simple">
 <li><p>Velden</p>
@@ -1187,7 +1264,7 @@
 </ul>
 </section>
 <section id="de-interface-comparable">
-<h3>De interface <code class="docutils literal notranslate"><span class="pre">Comparable</span></code><a class="headerlink" href="#de-interface-comparable" title="Permalink naar deze titel">¶</a></h3>
+<h3>De interface <code class="docutils literal notranslate"><span class="pre">Comparable</span></code><a class="headerlink" href="#de-interface-comparable" title="Permalink naar deze titel">#</a></h3>
 <p>Veel Java-klassen verwachten een imlementatie van de <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> interface. De klasse <code class="docutils literal notranslate"><span class="pre">Collections</span></code> bevat bijvoorbeeld methoden voor het sorteren en doorzoeken van een <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> met <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> elementen. Door een <code class="docutils literal notranslate"><span class="pre">compareTo</span></code>-methode te definiëren kunnen toepassingen van de klasse <code class="docutils literal notranslate"><span class="pre">LibraryBook</span></code> dus veel extra bewerkingen gebruiken zonder veel extra werk!</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1196,7 +1273,7 @@
 </section>
 </section>
 <section id="opgave">
-<h2>Opgave<a class="headerlink" href="#opgave" title="Permalink naar deze titel">¶</a></h2>
+<h2>Opgave<a class="headerlink" href="#opgave" title="Permalink naar deze titel">#</a></h2>
 <p>Download het projectbestand <a href="../../projects/library.zip">library.zip</a> en pak het uit. Implementeer in dit project de klassen zoals hierboven zijn beschreven, gebruik ook het schema in <a class="reference internal" href="#book-uml"><span class="std std-numref">Fig. 32</span></a> als hulpmiddel.</p>
 <ul>
 <li><p>de klasse <code class="docutils literal notranslate"><span class="pre">Book</span></code></p></li>
@@ -1205,14 +1282,14 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">String</span></code> veld <code class="docutils literal notranslate"><span class="pre">callNumber</span></code> (nummercode)</p></li>
 <li><p>getters en setters</p></li>
 <li><p>abstracte methoden met de volgende signatuur:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span> <span class="n">String</span> <span class="nf">circulationStatus</span><span class="p">();</span>
-<span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">checkout</span><span class="p">(</span><span class="n">String</span> <span class="n">patron</span><span class="p">,</span> <span class="n">String</span> <span class="n">dueDate</span><span class="p">);</span>
-<span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">returned</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">circulationStatus</span><span class="p">();</span><span class="w"></span>
+<span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkout</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">patron</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">dueDate</span><span class="p">);</span><span class="w"></span>
+<span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">returned</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
 <li><p>geïmplementeerde constructor</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LibraryBook</span><span class="p">(</span><span class="n">String</span> <span class="n">author</span><span class="p">,</span> <span class="n">String</span> <span class="n">title</span><span class="p">,</span> <span class="n">String</span> <span class="n">isbn</span><span class="p">,</span> <span class="n">String</span> <span class="n">callNum</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LibraryBook</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">author</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">isbn</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">callNum</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
@@ -1224,13 +1301,13 @@
 <span class="cm"> * @return 0 if call numbers of this and that match</span>
 <span class="cm"> *         &lt; 0 if call number of this comes before call number of lib</span>
 <span class="cm"> *         &gt; 0 otherwise</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="p">(</span><span class="n">LibraryBook</span> <span class="n">that</span><span class="p">)</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">LibraryBook</span><span class="w"> </span><span class="n">that</span><span class="p">)</span><span class="w"></span>
 
 <span class="cm">/**</span>
 <span class="cm"> * @return title, author, ISBN, call number as a String for printing</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Merk op dat <code class="docutils literal notranslate"><span class="pre">toString</span></code> de abstracte methode <code class="docutils literal notranslate"><span class="pre">circulationStatus</span></code> kan aanroepen, hoewel de details van <code class="docutils literal notranslate"><span class="pre">circulationStatus</span></code> zullen worden geïmplementeerd in subklassen.</p>
@@ -1241,12 +1318,12 @@
 <li><p>de klasse <code class="docutils literal notranslate"><span class="pre">CirculatingBook</span></code></p></li>
 </ul>
 <section id="testen">
-<h3>Testen<a class="headerlink" href="#testen" title="Permalink naar deze titel">¶</a></h3>
+<h3>Testen<a class="headerlink" href="#testen" title="Permalink naar deze titel">#</a></h3>
 <p>De klasse <code class="docutils literal notranslate"><span class="pre">Library</span></code> is gegeven, je kan deze klasse gebruiken voor het schrijven van tests en voor het controleren of je de interface <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> correct hebt geïmplementeerd. Zie figuur <a class="reference internal" href="#lib-uml"><span class="std std-numref">Fig. 33</span></a> voor een schematische weergave van deze klasse.</p>
 <figure class="align-default" id="lib-uml">
 <img alt="../../_images/library.png" src="../../_images/library.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">De klasse <code class="docutils literal notranslate"><span class="pre">Library</span></code></span><a class="headerlink" href="#lib-uml" title="Permallink naar deze afbeelding">¶</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">De klasse <code class="docutils literal notranslate"><span class="pre">Library</span></code></span><a class="headerlink" href="#lib-uml" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <p>Het is aan te raden verdere testcases te schrijven voor belangrijke methoden, bijvoorbeeld om de correcte werking van de methoden <code class="docutils literal notranslate"><span class="pre">checkout</span></code>, <code class="docutils literal notranslate"><span class="pre">returned</span></code> en <code class="docutils literal notranslate"><span class="pre">circulationStatus</span></code> te controleren.</p>
@@ -1276,9 +1353,11 @@
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../topics/8b_exceptions.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1294,23 +1373,27 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

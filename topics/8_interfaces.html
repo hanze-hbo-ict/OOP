@@ -8,8 +8,9 @@
 
     <title>Interfaces &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Zoeken" href="../search.html" />
@@ -63,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,17 +104,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -797,91 +813,164 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/topics/8_interfaces.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/8_interfaces.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/8_interfaces.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/topics/8_interfaces.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#de-term-interface">
    De term interface
@@ -955,12 +1044,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Interfaces</h1>
@@ -969,7 +1057,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1050,52 +1138,53 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="interfaces">
-<h1>Interfaces<a class="headerlink" href="#interfaces" title="Permalink naar deze titel">¶</a></h1>
+<h1>Interfaces<a class="headerlink" href="#interfaces" title="Permalink naar deze titel">#</a></h1>
 <section id="de-term-interface">
-<h2>De term interface<a class="headerlink" href="#de-term-interface" title="Permalink naar deze titel">¶</a></h2>
+<h2>De term interface<a class="headerlink" href="#de-term-interface" title="Permalink naar deze titel">#</a></h2>
 <p><img alt="Interface vertaling" src="../_images/interface_translation.png" /></p>
 <p>Een goede Nederlandse vertaling voor het voor het Engelse woord <em>interface</em> bestaat helaas niet. “Koppel” is het beste wat Google Translate ons te bieden en is niet heel betekenisvol!</p>
 <p><img alt="Interface definition" src="../_images/interface_definition.png" /></p>
 <p>De definitie van <em>interface</em> maakt al meer duidelijk, een punt waar twee systemen bij elkaar komen en met elkaar interacteren.</p>
 <section id="user-interface">
-<h3>User Interface<a class="headerlink" href="#user-interface" title="Permalink naar deze titel">¶</a></h3>
+<h3>User Interface<a class="headerlink" href="#user-interface" title="Permalink naar deze titel">#</a></h3>
 <p><img alt="Tic-tac-toe UI" src="../_images/tic-tac-toe-ui.png" /></p>
 <p>Een <em>user interface</em> kennen we beter als term, waar we de (vaak grafische) voorkant bedoelen van een systeem waarmee de gebruiker interacteert. Vaak is dit een beperkte toegang tot functionaliteit, het achterliggende systeem zal vaak complexer zijn maar heeft daar middels deze <em>interface</em> geen toegang toe.</p>
 </section>
 <section id="application-programming-interface">
-<h3>Application Programming Interface<a class="headerlink" href="#application-programming-interface" title="Permalink naar deze titel">¶</a></h3>
+<h3>Application Programming Interface<a class="headerlink" href="#application-programming-interface" title="Permalink naar deze titel">#</a></h3>
 <p><img alt="Discord API" src="../_images/discord_api.png" /></p>
 <p>Programmatische toegang tot systemen gebeurt vaak via een <em>application programming interface</em> (API) waarbij een geselecteerde set van methoden zijn aan te roepen vanuit andere programma’s.</p>
 </section>
 <section id="een-klasse-als-interface">
-<h3>Een klasse als interface<a class="headerlink" href="#een-klasse-als-interface" title="Permalink naar deze titel">¶</a></h3>
+<h3>Een klasse als interface<a class="headerlink" href="#een-klasse-als-interface" title="Permalink naar deze titel">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Location</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">latitude</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">longitude</span><span class="p">;</span>
-    
-    <span class="kd">public</span> <span class="nf">Location</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">latitude</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-        <span class="n">longitude</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kd">public</span> <span class="nf">Location</span><span class="p">(</span><span class="kt">double</span> <span class="n">latitude</span><span class="p">,</span> <span class="kt">double</span> <span class="n">longitude</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">latitude</span> <span class="o">=</span> <span class="n">latitude</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">longitude</span> <span class="o">=</span> <span class="n">longitude</span><span class="p">;</span>
-    <span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Location</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">longitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Location</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">longitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Location</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">longitude</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">latitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">longitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getLatitude</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">latitude</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getLatitude</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">latitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getLongitude</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">longitude</span><span class="p">;</span>
-    <span class="p">}</span>    
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getLongitude</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">longitude</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">    </span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1104,48 +1193,48 @@
 </section>
 </section>
 <section id="tekst-lezen">
-<h2>Tekst lezen<a class="headerlink" href="#tekst-lezen" title="Permalink naar deze titel">¶</a></h2>
+<h2>Tekst lezen<a class="headerlink" href="#tekst-lezen" title="Permalink naar deze titel">#</a></h2>
 <p><img alt="Text readers" src="../_images/text_readers.png" /></p>
 <p>Tekst lezen doen we op veel manieren, bijvoorbeeld met tekstberichten via SMS, WhatsApp of Discord, maar ook via andere media als bijvoorbeeld eBooks of webpagina’s. Als we deze media in klassen willen vormgeven dan zullen dit verschillende klassen worden (bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">TextMessage</span></code> en <code class="docutils literal notranslate"><span class="pre">Ebook</span></code>) want een teksbericht is écht iets anders dan een eBook of webpagina.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextMessage</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TextMessage</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ebook</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ebook</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Beide zullen tekst <em>moeten</em> kunnen lezen, om deze reden zou je graag willen dat de <em>interface</em> van de klassen een publieke methode <code class="docutils literal notranslate"><span class="pre">read</span></code> heeft. Zoals je weet kan dit kan worden opgelost met een abstracte klasse waar beide klassen van erven.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">ReadableThing</span> <span class="p">{</span>
-    <span class="kd">abstract</span> <span class="n">String</span> <span class="nf">read</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ReadableThing</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextMessage</span> <span class="kd">extends</span> <span class="n">ReadableThing</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TextMessage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ReadableThing</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ebook</span> <span class="kd">extends</span> <span class="n">ReadableThing</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ebook</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ReadableThing</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Bij het vormgeven van een klassenhiërarchie probeer je altijd de meer abstracte vorm te vinden, maar in dit geval is het onduidelijk. Wat is de meer abstracte vorm van een <code class="docutils literal notranslate"><span class="pre">TextMessage</span></code> of <code class="docutils literal notranslate"><span class="pre">Ebook</span></code>? Een <code class="docutils literal notranslate"><span class="pre">ReadableThing</span></code>? Of iets anders? Je zal het met ons eens zijn dat dit een lastig geval is want het wordt nu wel héél abstract en misschien zelfs wat gekunsteld …</p>
 <p>We hebben hier te maken met een ontwerpprobleem, want eigenlijk zijn we hier niet op zoek naar de meest abstracte vorm van deze klassen, maar naar een manier om aan te geven dat de interface van de klassen een methode <code class="docutils literal notranslate"><span class="pre">read</span></code> <em>moet</em> hebben (los van een eventuele klassenhiërarchie).</p>
 </section>
 <section id="interface">
-<h2><code class="docutils literal notranslate"><span class="pre">interface</span></code><a class="headerlink" href="#interface" title="Permalink naar deze titel">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">interface</span></code><a class="headerlink" href="#interface" title="Permalink naar deze titel">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Readable</span> <span class="p">{</span>
-    <span class="n">String</span> <span class="nf">read</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Readable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1160,171 +1249,171 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">interface</span></code> methoden zijn standaard <code class="docutils literal notranslate"><span class="pre">abstract</span></code> en <code class="docutils literal notranslate"><span class="pre">public</span></code></p></li>
 </ul>
 <p>Een interface lijkt op een klassedefinitie en in het bijzonder een <em>abstracte</em> klasse, maar kent een paar belangrijke verschillen!</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Readable</span> <span class="p">{</span>
-    <span class="n">String</span> <span class="nf">read</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Readable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextMessage</span> <span class="kd">implements</span> <span class="n">Readable</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TextMessage</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Readable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ebook</span> <span class="kd">implements</span> <span class="n">Readable</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ebook</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Readable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Voor het implementeren van een <code class="docutils literal notranslate"><span class="pre">interface</span></code> door een klasse zie je dat het <em>keyword</em> <code class="docutils literal notranslate"><span class="pre">implements</span></code> wordt gebruikt, in tegenstelling tot <code class="docutils literal notranslate"><span class="pre">extends</span></code> in het geval van het <em>overerven</em> van klassen (zowel <em>absracte</em> als concrete klassen).</p>
 <section id="single-inheritance">
-<h3>Single inheritance<a class="headerlink" href="#single-inheritance" title="Permalink naar deze titel">¶</a></h3>
+<h3>Single inheritance<a class="headerlink" href="#single-inheritance" title="Permalink naar deze titel">#</a></h3>
 <p>Klassen kunnen maar van één klasse overerven.</p>
 <p>Maar klassen kunnnen meerdere interfaces implementeren!</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Encryptable</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Encryptable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">String</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">);</span>
-    
-    <span class="n">String</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Als het gaat om het lezen van tekst zal encyptie vaak een rol spelen, bijvoorbeeld om een tekstbericht veilig van een zender naar een ontvanger te transporteren. Maar ook als het gaat om eBooks waar een uitgever de tekst pas leesbaar wil maken als een gebruiker na een aankoop een sleutel ontvangt om het boek te mogen lezen. In beide gevallen zal tekst zowel <em>versleuteld</em> als <em>ontsleuteld</em> moeten kunnen worden.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Readable</span> <span class="p">{</span>
-    <span class="n">String</span> <span class="nf">read</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Readable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Encryptable</span> <span class="p">{</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Encryptable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">String</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">);</span>
-    
-    <span class="n">String</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextMessage</span> <span class="kd">implements</span> <span class="n">Readable</span><span class="p">,</span> <span class="n">Encryptable</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-    
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-    
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TextMessage</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Readable</span><span class="p">,</span><span class="w"> </span><span class="n">Encryptable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Je ziet hier de syntax voor het implementeren van meerdere <code class="docutils literal notranslate"><span class="pre">interface</span></code>’s, steeds gescheiden door een komma. Alle methoden die zijn gedefinieerd in de <code class="docutils literal notranslate"><span class="pre">interface</span></code>’s moeten natuurlijk allemaal worden geïmplenteerd door de klassen!</p>
 </section>
 <section id="compositie">
-<h3>Compositie<a class="headerlink" href="#compositie" title="Permalink naar deze titel">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">SafeReadable</span> <span class="kd">extends</span> <span class="n">Readable</span> <span class="p">{</span>
-    <span class="n">String</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">);</span>
-    
-    <span class="n">String</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">);</span>
-<span class="p">}</span>
+<h3>Compositie<a class="headerlink" href="#compositie" title="Permalink naar deze titel">#</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">SafeReadable</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Readable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Interfaces kennen het principe van overerving met hetzelfde keyword <code class="docutils literal notranslate"><span class="pre">extends</span></code>. Op deze manier kan je een verbijzondering maken van de interface <code class="docutils literal notranslate"><span class="pre">Readable</span></code> die methoden voor encryptie definieert (die eerder in de interface <code class="docutils literal notranslate"><span class="pre">Encryptable</span></code> waren gedefinieerd). Maar ook hier komt het weer neer op een ontwerpbeslissing waar de vraag moet worden beantwoord of deze combinatie noodzakelijk of nuttig is (of niet). Wat denk jij?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextMessage</span> <span class="kd">implements</span> <span class="n">SafeReadable</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-    
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-    
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TextMessage</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">SafeReadable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Je zal straks het Java <em>collections framework</em> als voorbeeld zien waar heel duidelijk voor deze vorm van compositie is gekozen !</p>
 </section>
 <section id="interface-als-type">
-<h3><code class="docutils literal notranslate"><span class="pre">interface</span></code> als <em>type</em><a class="headerlink" href="#interface-als-type" title="Permalink naar deze titel">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">interface</span></code> als <em>type</em><a class="headerlink" href="#interface-als-type" title="Permalink naar deze titel">#</a></h3>
 <p>Laten we het voorgaande nu een <em>concreet</em> maken met de implementatie van de interface <code class="docutils literal notranslate"><span class="pre">Readable</span></code> door de concrete klassen <code class="docutils literal notranslate"><span class="pre">TextMessage</span></code> en <code class="docutils literal notranslate"><span class="pre">Ebook</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextMessage</span> <span class="kd">implements</span> <span class="n">Readable</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">sender</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">content</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TextMessage</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Readable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">sender</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">TextMessage</span><span class="p">(</span><span class="n">String</span> <span class="n">sender</span><span class="p">,</span> <span class="n">String</span> <span class="n">content</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">sender</span> <span class="o">=</span> <span class="n">sender</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">content</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">TextMessage</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sender</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">content</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getSender</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">sender</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getSender</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">sender</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">content</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">content</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ebook</span> <span class="kd">implements</span> <span class="n">Readable</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">pages</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">pageNumber</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ebook</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Readable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pages</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pageNumber</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">Ebook</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">pages</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">pages</span> <span class="o">=</span> <span class="n">pages</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Ebook</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pages</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">pages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pages</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">pages</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">pages</span><span class="p">.</span><span class="na">size</span><span class="p">();</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">pages</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">pages</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">String</span> <span class="n">page</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">pages</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span><span class="p">);</span>
-        <span class="n">nextPage</span><span class="p">();</span>
-        <span class="k">return</span> <span class="n">page</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">pages</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">nextPage</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">page</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">nextPage</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span> <span class="o">%</span> <span class="k">this</span><span class="p">.</span><span class="na">pages</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">nextPage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">pages</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">pageNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Readable</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextMessage</span><span class="p">(</span><span class="s">&quot;ope&quot;</span><span class="p">,</span> <span class="s">&quot;It&#39;s going great!&quot;</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="na">read</span><span class="p">());</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Readable</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TextMessage</span><span class="p">(</span><span class="s">&quot;ope&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;It&#39;s going great!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="na">read</span><span class="p">());</span><span class="w"></span>
 
-<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Readable</span><span class="o">&gt;</span> <span class="n">textMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<span class="n">textMessage</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">TextMessage</span><span class="p">(</span><span class="s">&quot;private number&quot;</span><span class="p">,</span> <span class="s">&quot;I hid the body.&quot;</span><span class="p">));</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Readable</span><span class="o">&gt;</span><span class="w"> </span><span class="n">textMessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="n">textMessage</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">TextMessage</span><span class="p">(</span><span class="s">&quot;private number&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;I hid the body.&quot;</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1343,13 +1432,13 @@
 <p>Een interface is een “type”, in dit geval kan worden gezegd dat variable <code class="docutils literal notranslate"><span class="pre">message</span></code> van type <code class="docutils literal notranslate"><span class="pre">Readable</span></code> is omdat de klasse <code class="docutils literal notranslate"><span class="pre">TextMessage</span></code> de interface <code class="docutils literal notranslate"><span class="pre">Readable</span></code> implementeert (en de methode <code class="docutils literal notranslate"><span class="pre">read</span></code> aangeroept die concreet is geïmplementeerd in <code class="docutils literal notranslate"><span class="pre">TextMessage</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">pages</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<span class="n">pages</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Split your methods into short, readable entities.&quot;</span><span class="p">);</span>
-<span class="n">pages</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Separate the user-interface logic from the application logic.&quot;</span><span class="p">);</span>
-<span class="n">pages</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Always program a small part initially that solves a part of the problem.&quot;</span><span class="p">);</span>
-<span class="n">pages</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Practice makes the master. Try out different things for yourself and work on your own projects.&quot;</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="n">pages</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Split your methods into short, readable entities.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">pages</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Separate the user-interface logic from the application logic.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">pages</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Always program a small part initially that solves a part of the problem.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">pages</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Practice makes the master. Try out different things for yourself and work on your own projects.&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">Ebook</span> <span class="n">book</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ebook</span><span class="p">(</span><span class="s">&quot;Tips for programming.&quot;</span><span class="p">,</span> <span class="n">pages</span><span class="p">);</span>
+<span class="n">Ebook</span><span class="w"> </span><span class="n">book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ebook</span><span class="p">(</span><span class="s">&quot;Tips for programming.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pages</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1357,11 +1446,11 @@
 <p>Maar in dit geval is meer specificiteit nodig, een <code class="docutils literal notranslate"><span class="pre">Readable</span></code> is geen <code class="docutils literal notranslate"><span class="pre">Ebook</span></code> omdat methoden worden aangeroepen die specifiek zijn voor een <code class="docutils literal notranslate"><span class="pre">Ebook</span></code> en niet gedefinieerd zijn in de interface <code class="docutils literal notranslate"><span class="pre">Readable</span></code> (in dit geval de methode <code class="docutils literal notranslate"><span class="pre">pages</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">page</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">page</span> <span class="o">&lt;</span> <span class="n">book</span><span class="p">.</span><span class="na">pages</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">book</span><span class="p">.</span><span class="na">read</span><span class="p">());</span>
-    <span class="n">page</span> <span class="o">=</span> <span class="n">page</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">page</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">book</span><span class="p">.</span><span class="na">pages</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">book</span><span class="p">.</span><span class="na">read</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1395,24 +1484,24 @@
 </section>
 </section>
 <section id="een-praktisch-voorbeeld">
-<h2>Een praktisch voorbeeld<a class="headerlink" href="#een-praktisch-voorbeeld" title="Permalink naar deze titel">¶</a></h2>
+<h2>Een praktisch voorbeeld<a class="headerlink" href="#een-praktisch-voorbeeld" title="Permalink naar deze titel">#</a></h2>
 <p><img alt="Collections Framework" src="../_images/collections.png" /></p>
 <p>Het Java <em>collections framework</em> is een voorbeeld waar veel gebruik gemaakt wordt van interfaces.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Simone&quot;</span><span class="p">);</span>
-<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;ONBEKEND&quot;</span><span class="p">);</span>
-<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Dion&quot;</span><span class="p">);</span>
-<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Kars&quot;</span><span class="p">);</span>
-<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Zonne&quot;</span><span class="p">);</span>
-<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;David&quot;</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Simone&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;ONBEKEND&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Dion&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Kars&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Zonne&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;David&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1424,22 +1513,22 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">names</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">names</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">iter</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
-    
-    <span class="k">if</span> <span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;ONBEKEND&quot;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">iter</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iter</span><span class="p">.</span><span class="na">next</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;ONBEKEND&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">iter</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1480,58 +1569,58 @@
 <p>Terzijde, je zag dat we via de iterator ook elementen <em>veilig</em> kunnen verwijderen!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-    
-    <span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Family</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">members</span><span class="p">;</span>
-    
-    <span class="kd">public</span> <span class="nf">Family</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">members</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addMember</span><span class="p">(</span><span class="n">Person</span> <span class="n">member</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">members</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">members</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Family</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="n">members</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Family</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addMember</span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">member</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">members</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">member</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">iterator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">members</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Family</span> <span class="n">fam</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Family</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Family</span><span class="w"> </span><span class="n">fam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Family</span><span class="p">();</span><span class="w"></span>
 
-<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Suzanne&quot;</span><span class="p">));</span>
-<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Peter&quot;</span><span class="p">));</span>
-<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Marlies&quot;</span><span class="p">));</span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Suzanne&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Peter&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">fam</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Marlies&quot;</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">Person</span> <span class="n">member</span><span class="p">:</span> <span class="n">fam</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">member</span><span class="p">:</span><span class="w"> </span><span class="n">fam</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1558,11 +1647,11 @@
 </div>
 </section>
 <section id="een-ander-voorbeeld">
-<h2>Een ander voorbeeld<a class="headerlink" href="#een-ander-voorbeeld" title="Permalink naar deze titel">¶</a></h2>
+<h2>Een ander voorbeeld<a class="headerlink" href="#een-ander-voorbeeld" title="Permalink naar deze titel">#</a></h2>
 <p>De interface <code class="docutils literal notranslate"><span class="pre">Comparable</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">names</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1574,14 +1663,14 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">names</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">names</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1616,9 +1705,11 @@
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../course/week_9.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1634,23 +1725,27 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

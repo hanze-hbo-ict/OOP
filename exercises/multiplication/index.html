@@ -8,8 +8,9 @@
 
     <title>Arrays en lussen &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,41 +20,40 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Zoeken" href="../../search.html" />
     <link rel="next" title="Strings en lussen" href="../../problems/profiler/index.html" />
@@ -65,7 +65,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +88,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,17 +106,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -799,12 +815,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -812,61 +833,117 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/exercises/multiplication/index.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/exercises/multiplication/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#arrays">
    Arrays
@@ -935,12 +1012,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Arrays en lussen</h1>
@@ -949,7 +1025,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1025,43 +1101,44 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="arrays-en-lussen">
-<h1>Arrays en lussen<a class="headerlink" href="#arrays-en-lussen" title="Permalink naar deze titel">¶</a></h1>
+<h1>Arrays en lussen<a class="headerlink" href="#arrays-en-lussen" title="Permalink naar deze titel">#</a></h1>
 <section id="arrays">
-<h2>Arrays<a class="headerlink" href="#arrays" title="Permalink naar deze titel">¶</a></h2>
+<h2>Arrays<a class="headerlink" href="#arrays" title="Permalink naar deze titel">#</a></h2>
 <p>Een array is <em>sequentie</em>, een type dat meerdere elementen van een bepaald type kan bevatten. Indien je de waarden al weet, dan kan je een array van type <code class="docutils literal notranslate"><span class="pre">int</span></code> als volgt initialiseren:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">pi</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Een waarde van een array zet je op basis van een index, bijvoorbeeld:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>In veel gevallen zal je de waarden van het array (nog) niet weten, maar wel de grootte en zal je een leeg array met deze grootte moeten initialiseren. Het volgende voorbeeld initialiseert een <em>leeg</em> array met 31 posities, bijvoorbeeld voor een reeks van temperaturen in een maand:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">[]</span> <span class="n">temp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="mi">31</span><span class="o">]</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[</span><span class="mi">31</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Vervolgens kan je de waarden op basis van een index zetten, te beginnen met 0, het eerste element:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mf">23.4</span><span class="p">;</span>
-<span class="n">temp</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mf">21.0</span><span class="p">;</span>
-<span class="n">temp</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mf">22.9</span><span class="p">;</span>
-<span class="p">...</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">23.4</span><span class="p">;</span><span class="w"></span>
+<span class="n">temp</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">21.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">temp</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">22.9</span><span class="p">;</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Eenmaal gedefiniëerd kan een array geen andere grootte meer hebben, deze staat vast. Het is bijvoorbeeld niet meer mogelijk het uit te breiden met nieuwe waarden!</p>
 </section>
 <section id="tweedimensionale-arrays">
-<h2>Tweedimensionale arrays<a class="headerlink" href="#tweedimensionale-arrays" title="Permalink naar deze titel">¶</a></h2>
+<h2>Tweedimensionale arrays<a class="headerlink" href="#tweedimensionale-arrays" title="Permalink naar deze titel">#</a></h2>
 <p>In deze opgave introduceren we een <em>tweedimensionaal</em> array, een <em>array van arrays</em>. Dit formaat is zeer geschikt om bijvoorbeeld tabulaire data te representeren.</p>
 <div class="admonition note">
 <p class="admonition-title">Notitie</p>
 <p>Een tweedimensionaal array zal je misschien herkennen als een <em>list of lists</em>, of een <code class="docutils literal notranslate"><span class="pre">LoL</span></code>, uit de modules Programmeren I&amp;II. Een array is niet mutable, het Python type <em>tuple</em> zal hier het dichtst bij in de buurt komt, dus zie een tweedimensionaal array als een <em>tuple of tuples</em>.</p>
 </div>
 <p>Om het voorbeeld van een reeks temperaturen verder te volgen zouden we op deze manier meerdere reeksen kunnen representeren, bijvoorbeeld per maand:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">[][]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="mi">12</span><span class="o">][</span><span class="mi">31</span><span class="o">]</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">[][]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[</span><span class="mi">12</span><span class="o">][</span><span class="mi">31</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We geven hier aan dat we een nieuw array initialiseren met 12 posities, waar elke positie een <code class="docutils literal notranslate"><span class="pre">double[]</span></code> array zal moeten zijn met 31 posities. Deze structuur zou je als volgt kunnen zien:</p>
@@ -1074,22 +1151,22 @@
 </pre></div>
 </div>
 <p>Het ophalen van waarden volgt hetzelfde patroon als een enkelvoudig array. Bijvoorbeeld, om van het eerste element (de eerste maand, januari) de eerste waarde (meting op 1 januari) op te halen zal de syntax als volgt zijn:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">newYearsDayTemp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">newYearsDayTemp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>En voor de laatste dag van het jaar:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">newYearsEveTemp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">[</span><span class="mi">12</span><span class="o">][</span><span class="mi">31</span><span class="o">]</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">newYearsEveTemp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="o">[</span><span class="mi">12</span><span class="o">][</span><span class="mi">31</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Dit patroon volg je ook voor het <em>zetten</em> van waarden, bijvoorbeeld:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">42</span>  <span class="c1">// 1 april!</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">42</span><span class="w">  </span><span class="c1">// 1 april!</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Tot slot zie je hier samengevat hoe je de verschillende posities in een tweedimensionaal array kan benaderen. Raak hier mee bekend, want je gaat deze structuur gebruiken in de volgende opgave.</p>
 <p><img alt="2d array" src="../../_images/2d_array.png" /></p>
 </section>
 <section id="opgave">
-<h2>Opgave<a class="headerlink" href="#opgave" title="Permalink naar deze titel">¶</a></h2>
+<h2>Opgave<a class="headerlink" href="#opgave" title="Permalink naar deze titel">#</a></h2>
 <p>Een vermenigvuldigingstabel ziet er als volgt uit</p>
 <p><img alt="Vermenigvuldigingstabel" src="../../_images/mul_table.png" /></p>
 <p>Met een vermenigvuldigingstabel kan het resultaat van een vermenigvuldiging worden opgezocht, bijvoorbeeld om het resultaat van 4 x 4 op te zoeken kijk je waar de kolommen en rijen elkaar kruisen op positie 4 (dit is 16).</p>
@@ -1098,7 +1175,7 @@
 <li><p>Maak om de beginnen een klasse <code class="docutils literal notranslate"><span class="pre">MulTable</span></code> met een <code class="docutils literal notranslate"><span class="pre">main</span></code> methode.</p></li>
 </ul>
 <section id="functionaliteit">
-<h3>Functionaliteit<a class="headerlink" href="#functionaliteit" title="Permalink naar deze titel">¶</a></h3>
+<h3>Functionaliteit<a class="headerlink" href="#functionaliteit" title="Permalink naar deze titel">#</a></h3>
 <p>Jouw oplossing zal aan het volgende moeten voldoen:</p>
 <ul>
 <li><p>In tegenstelling tot het boverstaande voorbeeld zal jouw vermenigvuldigingstabel als <em>eerste</em> rij en <em>eerste</em> kolom moeten aangeven om welk getal het gaat, bijvoorbeeld:</p>
@@ -1132,28 +1209,28 @@
 </section>
 </section>
 <section id="stap-1-de-tabel">
-<h2>Stap 1: de tabel<a class="headerlink" href="#stap-1-de-tabel" title="Permalink naar deze titel">¶</a></h2>
+<h2>Stap 1: de tabel<a class="headerlink" href="#stap-1-de-tabel" title="Permalink naar deze titel">#</a></h2>
 <p>Schrijf een methode <code class="docutils literal notranslate"><span class="pre">createTable</span></code> met de volgende signatuur:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">createTable</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="nf">createTable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Deze methode geeft een <code class="docutils literal notranslate"><span class="pre">int[][]</span></code> terug en is het resultaat van de vermenigvuldigingen voor een grootte <code class="docutils literal notranslate"><span class="pre">size</span></code>. Bijvoorbeeld, voor <code class="docutils literal notranslate"><span class="pre">size</span></code> 4 zal de stuctuur van de tabel als volgt zijn:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span>
-    <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span>
-    <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">},</span>
-    <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">},</span>
-    <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Wat opvalt is dat de uiteindelijke structuur 5 x 5 is, dus <span class="math notranslate nohighlight">\(N + 1\)</span>.</p>
 <p>Je zal hier een <em>dubbele</em> (geneste) lus moeten schrijven waar de buitenste lus de rijen zal doorlopen en de binnenste lus de kolomwaarden voor elke rij zal moeten zetten. Je ziet hier een begin, werk dit verder uit:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">...)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">...)</span> <span class="p">{</span>
-        <span class="n">table</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span> <span class="o">=</span> <span class="p">...;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">table</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition tip">
@@ -1170,23 +1247,23 @@
 </div>
 <p>In dit geval ben je goed op weg, maar het resultaat is nog niet naar wens voor de buitenste rij en kolom! Bedenk hoe je dit probleem binnen de lussen kan oplossen, je zou bijvoorbeeld kunnen controleren op bepaalde waarden van <code class="docutils literal notranslate"><span class="pre">row</span></code> en <code class="docutils literal notranslate"><span class="pre">column</span></code> en afhankelijk daarvan waarden zetten.</p>
 <section id="arrays-printen">
-<h3>Arrays printen<a class="headerlink" href="#arrays-printen" title="Permalink naar deze titel">¶</a></h3>
+<h3>Arrays printen<a class="headerlink" href="#arrays-printen" title="Permalink naar deze titel">#</a></h3>
 <p>Je zult hebben gemerkt dat je arrays niet zomaar kan printen, er wordt standaard een niet leesbare structuur getoond die een (cryptische) verwijzing is naar een geheugenlokatie, bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">[I&#64;170e4a3d</span></code>.</p>
 <p>Dit is het moment om tegelijkertijd verder te werken aan een methode die dit wel voor jou kan gaan doen, op naar stap 2!</p>
 </section>
 </section>
 <section id="stap-2-tekst">
-<h2>Stap 2: tekst<a class="headerlink" href="#stap-2-tekst" title="Permalink naar deze titel">¶</a></h2>
+<h2>Stap 2: tekst<a class="headerlink" href="#stap-2-tekst" title="Permalink naar deze titel">#</a></h2>
 <p>De standaarduitvoer van het programma is een tekstuele representatie van de vermenigvuldigingstabel. Maak daarvoor de methode <code class="docutils literal notranslate"><span class="pre">toText</span></code> met de volgende signatuur:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">toText</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">table</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">toText</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">table</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De methode accepteert een <code class="docutils literal notranslate"><span class="pre">int[][]</span></code>, en dit is het resultaat van de methode <code class="docutils literal notranslate"><span class="pre">createTable</span></code>. Bij het maken van de tabel had je een dubbele lus nodig, en dat zal je ook hier nodig hebben voor het doorlopen van de rijen en de kolomwaarden te kunnen printen. Werk het volgende verder uit:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">...)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">...)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">table</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">table</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Het <code class="docutils literal notranslate"><span class="pre">println</span></code> statement zoals gegeven zal je moeten aanpassen, nu zal het alle waarden over alle rijen achter elkaar printen, bijvoorbeeld:</p>
@@ -1221,11 +1298,11 @@
 </div>
 </section>
 <section id="stap-3-html">
-<h2>Stap 3: HTML<a class="headerlink" href="#stap-3-html" title="Permalink naar deze titel">¶</a></h2>
+<h2>Stap 3: HTML<a class="headerlink" href="#stap-3-html" title="Permalink naar deze titel">#</a></h2>
 <p><img alt="HTML tabel" src="../../_images/html_table.png" /></p>
 <p>In deze stap ga je het resultaat niet als platte tekst maar als HTML uitvoeren.</p>
 <section id="voorbeeld">
-<h3>Voorbeeld<a class="headerlink" href="#voorbeeld" title="Permalink naar deze titel">¶</a></h3>
+<h3>Voorbeeld<a class="headerlink" href="#voorbeeld" title="Permalink naar deze titel">#</a></h3>
 <p>Je kan alvast zien wat het resultaat gaan worden. Kopieer het volgende in een bestand <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, dit is het resultaat van een 3 x 3 tabel.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1303,9 +1380,9 @@
 <p>Open het bestand <code class="docutils literal notranslate"><span class="pre">index.html</span></code> nu in jouw browser.</p>
 </section>
 <section id="de-methode-tohtml">
-<h3>De methode <code class="docutils literal notranslate"><span class="pre">toHtml</span></code><a class="headerlink" href="#de-methode-tohtml" title="Permalink naar deze titel">¶</a></h3>
+<h3>De methode <code class="docutils literal notranslate"><span class="pre">toHtml</span></code><a class="headerlink" href="#de-methode-tohtml" title="Permalink naar deze titel">#</a></h3>
 <p>Maar een methode <code class="docutils literal notranslate"><span class="pre">toHtml</span></code> aan met de volgende signatuur:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">toHtml</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">table</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">toHtml</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">table</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Deze methode lijkt heel erg veel op de <code class="docutils literal notranslate"><span class="pre">toText</span></code> methode, kopieer daarom ook de <em>body</em> van <code class="docutils literal notranslate"><span class="pre">toText</span></code> naar <code class="docutils literal notranslate"><span class="pre">toHtml</span></code> als een basis die je verder gaat aanpassen.</p>
@@ -1347,7 +1424,7 @@
 </div>
 </section>
 <section id="output-redirection">
-<h3>Output redirection<a class="headerlink" href="#output-redirection" title="Permalink naar deze titel">¶</a></h3>
+<h3>Output redirection<a class="headerlink" href="#output-redirection" title="Permalink naar deze titel">#</a></h3>
 <p>Je wilt graag jouw resultaat in een browser bekijken en de output naar <code class="docutils literal notranslate"><span class="pre">index.html</span></code> schrijven. Je kan hier gebruik maken van de functionaliteit van jouw systeem voor <em>input</em>- en <em>output</em> redirection. Om de output naar het scherm (standaard) om te leiden naar een bestand kan je het volgende gebruiken:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; java MulTable.java 10 -html &gt; index.html</span>
 </pre></div>
@@ -1379,9 +1456,11 @@
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../topics/3c_string_mystery.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1397,23 +1476,27 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

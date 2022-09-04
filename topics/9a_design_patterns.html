@@ -8,8 +8,9 @@
 
     <title>Design patterns &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Zoeken" href="../search.html" />
@@ -63,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,17 +104,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -797,91 +813,164 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/topics/9a_design_patterns.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/9a_design_patterns.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/9a_design_patterns.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/topics/9a_design_patterns.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#voordelen">
    Voordelen
@@ -938,12 +1027,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Design patterns</h1>
@@ -952,7 +1040,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1016,11 +1104,12 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="design-patterns">
-<h1>Design patterns<a class="headerlink" href="#design-patterns" title="Permalink naar deze titel">¶</a></h1>
+<h1>Design patterns<a class="headerlink" href="#design-patterns" title="Permalink naar deze titel">#</a></h1>
 <blockquote>
 <div><p>Design patterns zijn algemene oplossingen voor veel voorkomende problemen binnen een specifiek domein</p>
 </div></blockquote>
@@ -1031,7 +1120,7 @@
 <p><img alt="Design Patterns" src="../_images/design_patterns.png" /></p>
 <p>In object georiënteerd software design is ook sprake van design patterns. Dit zijn algemeen bruikbare patronen, maar kunnen meer of minder relevant zijn per taal, omdat de taal bepaalde kenmerken of gedrag heeft die sommige patronen overbodig of mnder relevant maakt. De design patterns die de auteurs (ook soms de <em>gang of four</em> genoemd) bespraken hebben een duidelijke oorsprong in de taal C++ maar zijn ook toepasbaar in talen als Java en C#.</p>
 <section id="voordelen">
-<h2>Voordelen<a class="headerlink" href="#voordelen" title="Permalink naar deze titel">¶</a></h2>
+<h2>Voordelen<a class="headerlink" href="#voordelen" title="Permalink naar deze titel">#</a></h2>
 <ul class="simple">
 <li><p>gemeenschappelijk vocabulair</p></li>
 <li><p>worden begrepen door anderen</p></li>
@@ -1040,20 +1129,20 @@
 <p>Net als bij schaken hebben de design patterns namen gekregen, namen die elke software ontwikkelaar kent. Het is met andere woorden een gedeeld <em>vocabulair</em> geworden waar iedereen zal weten wat je bedoelt en dit maakt het mogelijk om een gesprek over het <em>ontwerp</em> te voeren en niet direct over de specifieke <em>details</em> van een oplossing.</p>
 </section>
 <section id="bekende-patronen">
-<h2>Bekende patronen<a class="headerlink" href="#bekende-patronen" title="Permalink naar deze titel">¶</a></h2>
+<h2>Bekende patronen<a class="headerlink" href="#bekende-patronen" title="Permalink naar deze titel">#</a></h2>
 <p><img alt="MVC" src="../_images/mvc.png" /></p>
 <p>Design patterns heb je eerder gezien, bijvoorbeeld het Model View Controller (MVC) patroon dat werd gebruikt bij Webtechnologie I, waar de verantwoordelijkheden duidelijk werden gescheiden. Het <em>model</em> was verantwoordelijk voor de CRUD operaties, de <em>view</em> voor het tonen van het resultaat (met behulp van templates) en de <em>controller</em> die het geheel orkestreert (dit waren de functies die verantwoordelijk waren voor een <em>route</em>).</p>
 <p>Minder goed zichtbaar was de interactie van een model met een achterliggende database, waar maar één databaseconnectie wordt onderhouden in plaats van één connectie per gebruiker (de bezoeker van een webpagina). Het laatste is inefficiënt en de onderliggende implementatie zal moeten zorgen dat maar één connectie mag bestaan. Dit idee zal je later terugzien in het <em>singleton</em> pattern.</p>
 </section>
 <section id="een-eerder-voorbeeld">
-<h2>Een eerder voorbeeld<a class="headerlink" href="#een-eerder-voorbeeld" title="Permalink naar deze titel">¶</a></h2>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextMessage</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<h2>Een eerder voorbeeld<a class="headerlink" href="#een-eerder-voorbeeld" title="Permalink naar deze titel">#</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TextMessage</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ebook</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ebook</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -1061,7 +1150,7 @@
 <li><p>en we verwachten andere typen, bijvoorbeeld webpagina</p></li>
 </ul>
 <section id="eerste-gedachte">
-<h3>Eerste gedachte<a class="headerlink" href="#eerste-gedachte" title="Permalink naar deze titel">¶</a></h3>
+<h3>Eerste gedachte<a class="headerlink" href="#eerste-gedachte" title="Permalink naar deze titel">#</a></h3>
 <ul class="simple">
 <li><p>een bovenliggende klasse met een methode <code class="docutils literal notranslate"><span class="pre">read</span></code> (implementatie)</p></li>
 </ul>
@@ -1070,33 +1159,33 @@
 <li><p>maar we zijn eigenljk op zoek naar de meer <em>algemene</em> kenmerken (gedrag)</p></li>
 </ul>
 <p>We zijn met andere woorden op zoek naar een manier om de functionaliteit of gedrag af te dwingen (een “contract”) en niet zozeer een <em>concrete implementatie</em> (bijvoorbeeld een implementatie van de methode <code class="docutils literal notranslate"><span class="pre">read</span></code> in een bovenliggende klasse waar we deze methode in onderliggende klassen per geval aanpassen).</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Readable</span> <span class="p">{</span>
-    <span class="n">String</span> <span class="nf">read</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Readable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Encryptable</span> <span class="p">{</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Encryptable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">String</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">);</span>
-    
-    <span class="n">String</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextMessage</span> <span class="kd">implements</span> <span class="n">Readable</span><span class="p">,</span> <span class="n">Encryptable</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-    
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-    
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span> <span class="n">content</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TextMessage</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Readable</span><span class="p">,</span><span class="w"> </span><span class="n">Encryptable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">read</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Het idee van het definiëren van gedrag in de vorm van methoden konden we vormgeven door middel van interfaces die klassen implementeren. Zo bepaalde de interface <code class="docutils literal notranslate"><span class="pre">Readable</span></code> dat een methode <code class="docutils literal notranslate"><span class="pre">read</span></code> moet worden geïmplementeerd, maar ook eventueel andere methoden, bijvoorbeeld het geval dat een bericht versleuteld kan zijn (en de klasse ook de interface <code class="docutils literal notranslate"><span class="pre">Encryptable</span></code> moet implementeren).</p>
@@ -1106,25 +1195,25 @@
 </section>
 </section>
 <section id="een-ander-voorbeeld">
-<h2>Een ander voorbeeld<a class="headerlink" href="#een-ander-voorbeeld" title="Permalink naar deze titel">¶</a></h2>
+<h2>Een ander voorbeeld<a class="headerlink" href="#een-ander-voorbeeld" title="Permalink naar deze titel">#</a></h2>
 <p><img alt="Diagram 1" src="../_images/diagram_1.png" /></p>
 <p>Stel je ontwerpt de volgende versie van het spel “Big Car Theft” waar de speler zich met verschillende voertuigen kan voortbewegen. Als eerste <em>proof of concept</em> beperk je je tot versnellen en afremmen, een eerste impleentatie zou intuïtief als het bovenstaande schema kunnen worden weergegeven.</p>
 <p><img alt="Diagram 2" src="../_images/diagram_2.png" /></p>
 <p>Als onderdeel van de proof of concept heb je een klasse <code class="docutils literal notranslate"><span class="pre">Car</span></code> toegevoegd, en je gaat verder uitbreiden. Een klasse <code class="docutils literal notranslate"><span class="pre">Truck</span></code> wordt onderdeel worden van de mogelijke voetuigen en je breidt de klasse <code class="docutils literal notranslate"><span class="pre">Player</span></code> uit met een methode <code class="docutils literal notranslate"><span class="pre">drive</span></code> die naast een <code class="docutils literal notranslate"><span class="pre">Car</span></code> ook een <code class="docutils literal notranslate"><span class="pre">Truck</span></code> weet te bewegen. Dit kan omdat je weet van <em>method overloading</em>, je kan een methode meerdere keren definiëren zolang de signatuur uniek is.</p>
 <section id="abstractie">
-<h3>Abstractie<a class="headerlink" href="#abstractie" title="Permalink naar deze titel">¶</a></h3>
+<h3>Abstractie<a class="headerlink" href="#abstractie" title="Permalink naar deze titel">#</a></h3>
 <p><img alt="Diagram 3" src="../_images/diagram_3.png" /></p>
 <p>Game designers gaan zich nu met het spel bemoeien en vragen ook om een boot te implementeren. Maar de plannen gaan verder, het is zelfs de bedoeling om fietsen, vliegtuigen, onderzeeboten, jetpacks en ruimtestations toe voegen!</p>
 <p>Een volgende (voor de hand liggende) oplossingsrichting zou het implementeren van een abstracte klasse <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> kunnen zijn om toekomstige implementaties mogelijk te maken. Je ziet dat we nu probleemloos een klasse <code class="docutils literal notranslate"><span class="pre">Boat</span></code> kunnen toevoegen!</p>
 </section>
 <section id="verantwoordelijkheid">
-<h3>Verantwoordelijkheid<a class="headerlink" href="#verantwoordelijkheid" title="Permalink naar deze titel">¶</a></h3>
+<h3>Verantwoordelijkheid<a class="headerlink" href="#verantwoordelijkheid" title="Permalink naar deze titel">#</a></h3>
 <p><img alt="Diagram 4" src="../_images/diagram_4.png" /></p>
 <p>De game krijgt een volgende uitbreiding, objecten moeten ook kapot kunnen gaan na een botsing en je definieert in de abstracte klasse <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> de methode <code class="docutils literal notranslate"><span class="pre">break</span></code>. Dit kan voor verwarring zorgen al is het alleen maar omdat de namen <code class="docutils literal notranslate"><span class="pre">brake</span></code> en <code class="docutils literal notranslate"><span class="pre">break</span></code> veel op elkaar lijken!</p>
 <p>Los van de mogelijke verwarring, de twee methoden horen bij verschillende scenario’s maar kunnen zelfs per object verschillen (bijvorbeeld, sommige objecten kunnen niet breken in het spel). De volgende gedachte gaat nu uit naar het definiëren van twee verschillende klassen voor deze scenario’s om verantwoordelijkheden te kunnen scheiden, bijvoorbeeld in de vorm van een klasse <code class="docutils literal notranslate"><span class="pre">Drivable</span></code> en <code class="docutils literal notranslate"><span class="pre">Breakable</span></code>.</p>
 </section>
 <section id="interfaces">
-<h3>Interfaces<a class="headerlink" href="#interfaces" title="Permalink naar deze titel">¶</a></h3>
+<h3>Interfaces<a class="headerlink" href="#interfaces" title="Permalink naar deze titel">#</a></h3>
 <p><img alt="Diagram 5" src="../_images/diagram_5.png" /></p>
 <p>Je weet inmiddels dat dit idee van twee meer algemene klassen niet gaat werken, een klasse kan niet van meerdere klassen erven. Maar meer algemeen, je bent niet zozeer geïntereseerd in mogelijk bovenliggende klassen (implementatie) maar meer in het kunnen <em>afdwingen</em> van functionaliteit (de methoden <code class="docutils literal notranslate"><span class="pre">brake</span></code> of <code class="docutils literal notranslate"><span class="pre">break</span></code>, afhankelijk van de context).</p>
 <p><img alt="Diagram 6" src="../_images/diagram_6.png" /></p>
@@ -1134,7 +1223,7 @@
 <p>Je ziet hier hopelijk een bekend patroon in terug, het voorbeeld waar we een <code class="docutils literal notranslate"><span class="pre">TexMessage</span></code>, <code class="docutils literal notranslate"><span class="pre">Ebook</span></code> en meer gingen modelleren!</p>
 </section>
 <section id="ontwerpprincipes">
-<h3>Ontwerpprincipes<a class="headerlink" href="#ontwerpprincipes" title="Permalink naar deze titel">¶</a></h3>
+<h3>Ontwerpprincipes<a class="headerlink" href="#ontwerpprincipes" title="Permalink naar deze titel">#</a></h3>
 <blockquote>
 <div><p>Identificeer de aspecten die variëren en scheid ze van wat onveranderlijk is.</p>
 </div></blockquote>
@@ -1146,7 +1235,7 @@
 </section>
 </section>
 <section id="id1">
-<h2>Design Patterns<a class="headerlink" href="#id1" title="Permalink naar deze titel">¶</a></h2>
+<h2>Design Patterns<a class="headerlink" href="#id1" title="Permalink naar deze titel">#</a></h2>
 <ol>
 <li><p><strong>Creational Patterns</strong></p>
 <p>Patronen die objecten <em>creëren</em>, in plaats van objecten direct te instantiëren.</p>
@@ -1200,9 +1289,11 @@
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../course/week_10.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1218,23 +1309,27 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

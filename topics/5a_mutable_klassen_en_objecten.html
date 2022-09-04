@@ -8,8 +8,9 @@
 
     <title>Mutable objects &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Zoeken" href="../search.html" />
@@ -63,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,17 +104,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -797,91 +813,164 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/topics/5a_mutable_klassen_en_objecten.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/5a_mutable_klassen_en_objecten.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/topics/5a_mutable_klassen_en_objecten.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/topics/5a_mutable_klassen_en_objecten.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#klasse-point">
    Klasse Point
@@ -924,12 +1013,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Mutable objects</h1>
@@ -938,7 +1026,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -988,24 +1076,25 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="mutable-objects">
-<h1>Mutable objects<a class="headerlink" href="#mutable-objects" title="Permalink naar deze titel">¶</a></h1>
+<h1>Mutable objects<a class="headerlink" href="#mutable-objects" title="Permalink naar deze titel">#</a></h1>
 <p>Objecten waarvan gegevens (er wordt ook wel gesproken van ‘eigenschappen’) gewijzigd kunnen worden worden <em>mutable</em> genoemd.</p>
 <section id="klasse-point">
-<h2>Klasse Point<a class="headerlink" href="#klasse-point" title="Permalink naar deze titel">¶</a></h2>
+<h2>Klasse Point<a class="headerlink" href="#klasse-point" title="Permalink naar deze titel">#</a></h2>
 <p>Point is een mutable klasse. Objecten van het type Point zijn mutable objecten.</p>
 <p>Documentatie: <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Point.html">https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Point.html</a></p>
 <p>Nieuwe punt maken:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.awt.Point</span><span class="p">;</span>
-<span class="n">Point</span> <span class="n">punt</span><span class="p">;</span>
-<span class="n">punt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De x-coördinaat is: &quot;</span> <span class="o">+</span> <span class="n">punt</span><span class="p">.</span><span class="na">getX</span><span class="p">());</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.awt.Point</span><span class="p">;</span><span class="w"></span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt</span><span class="p">;</span><span class="w"></span>
+<span class="n">punt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De x-coördinaat is: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">punt</span><span class="p">.</span><span class="na">getX</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1021,10 +1110,10 @@ De x-coördinaat is: 3.0
 <p>Locatie veranderen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">punt</span><span class="p">.</span><span class="na">setLocation</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De x-coördinaat is: &quot;</span> <span class="o">+</span> <span class="n">punt</span><span class="p">.</span><span class="na">getX</span><span class="p">());</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De y-coördinaat is: &quot;</span> <span class="o">+</span> <span class="n">punt</span><span class="p">.</span><span class="na">getY</span><span class="p">());</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">punt</span><span class="p">.</span><span class="na">setLocation</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De x-coördinaat is: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">punt</span><span class="p">.</span><span class="na">getX</span><span class="p">());</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;De y-coördinaat is: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">punt</span><span class="p">.</span><span class="na">getY</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1040,17 +1129,17 @@ De y-coördinaat is: 4.0
 <p>Daarom geeft de methode <strong>setLocation</strong> niets terug. De methode heeft direct effect op het object waarvan de methode wordt aangeroepen.</p>
 </section>
 <section id="objecten-als-parameters">
-<h2>Objecten als parameters<a class="headerlink" href="#objecten-als-parameters" title="Permalink naar deze titel">¶</a></h2>
+<h2>Objecten als parameters<a class="headerlink" href="#objecten-als-parameters" title="Permalink naar deze titel">#</a></h2>
 <p>Het is mogelijk om <em>objecten</em> als <em>parameters</em> door te geven bij aanroep van <em>methoden</em>, net zoals <em>primitieven</em>.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printPoint</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="n">p</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">p</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printPoint</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;(&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;)&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">punt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-<span class="n">printPoint</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span>
+<span class="n">punt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">printPoint</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1063,15 +1152,15 @@ De y-coördinaat is: 4.0
 <p>Een ander voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">calculateDistance</span><span class="p">(</span><span class="n">Point</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Point</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">p2</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span> <span class="o">-</span> <span class="n">p1</span><span class="p">.</span><span class="na">getX</span><span class="p">();</span>
-    <span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">p2</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span> <span class="o">-</span> <span class="n">p1</span><span class="p">.</span><span class="na">getY</span><span class="p">();</span>
-    <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateDistance</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="na">getX</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="na">getY</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dy</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">Point</span> <span class="n">punt1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-<span class="n">Point</span> <span class="n">punt2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calculateDistance</span><span class="p">(</span><span class="n">punt1</span><span class="p">,</span> <span class="n">punt2</span><span class="p">));</span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calculateDistance</span><span class="p">(</span><span class="n">punt1</span><span class="p">,</span><span class="w"> </span><span class="n">punt2</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1085,15 +1174,15 @@ De y-coördinaat is: 4.0
 <p>Het voorbeeld zal er dan als volgt uit zien:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">calculateDistance</span><span class="p">(</span><span class="kt">int</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateDistance</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dy</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">Point</span> <span class="n">punt1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-<span class="n">Point</span> <span class="n">punt2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calculateDistance</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">punt1</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">punt1</span><span class="p">.</span><span class="na">getY</span><span class="p">(),</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">punt2</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">punt2</span><span class="p">.</span><span class="na">getY</span><span class="p">()));</span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calculateDistance</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">punt1</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">punt1</span><span class="p">.</span><span class="na">getY</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">punt2</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">punt2</span><span class="p">.</span><span class="na">getY</span><span class="p">()));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1107,8 +1196,8 @@ De y-coördinaat is: 4.0
 <p>Overigens heeft de klasse Point al een methode om afstand tussen 2 punten te bepalen. In dat geval is het schrijven van een eigen methode overbodig:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt1</span><span class="p">.</span><span class="na">distance</span><span class="p">(</span><span class="n">punt2</span><span class="p">));</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt2</span><span class="p">.</span><span class="na">distance</span><span class="p">(</span><span class="n">punt1</span><span class="p">));</span> <span class="c1">// kan ook</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt1</span><span class="p">.</span><span class="na">distance</span><span class="p">(</span><span class="n">punt2</span><span class="p">));</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt2</span><span class="p">.</span><span class="na">distance</span><span class="p">(</span><span class="n">punt1</span><span class="p">));</span><span class="w"> </span><span class="c1">// kan ook</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1121,17 +1210,17 @@ De y-coördinaat is: 4.0
 </div>
 </section>
 <section id="objecten-als-return-waardes">
-<h2>Objecten als return-waardes<a class="headerlink" href="#objecten-als-return-waardes" title="Permalink naar deze titel">¶</a></h2>
+<h2>Objecten als return-waardes<a class="headerlink" href="#objecten-als-return-waardes" title="Permalink naar deze titel">#</a></h2>
 <p>Net zoals het mogelijk is om ojecten als parameters door te geven bij aanroep van methoden, zo is het ook mogelijk om objecten terug te geven als resultaat.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Point</span> <span class="nf">createStartpoint</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="nf">createStartpoint</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">Point</span> <span class="n">punt</span> <span class="o">=</span> <span class="n">createStartpoint</span><span class="p">();</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createStartpoint</span><span class="p">();</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1144,18 +1233,18 @@ De y-coördinaat is: 4.0
 <p>Immutable objecten kunnen veranderd worden, ook onbedoeld!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Point</span> <span class="nf">getPointBetween</span><span class="p">(</span><span class="n">Point</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Point</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">punt1</span><span class="p">.</span><span class="na">x</span><span class="o">=</span><span class="p">(</span><span class="n">punt1</span><span class="p">.</span><span class="na">x</span><span class="o">+</span><span class="n">punt2</span><span class="p">.</span><span class="na">x</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-    <span class="n">punt1</span><span class="p">.</span><span class="na">y</span><span class="o">=</span><span class="p">(</span><span class="n">punt1</span><span class="p">.</span><span class="na">y</span><span class="o">+</span><span class="n">punt2</span><span class="p">.</span><span class="na">y</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">punt1</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="nf">getPointBetween</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">punt1</span><span class="p">.</span><span class="na">x</span><span class="o">=</span><span class="p">(</span><span class="n">punt1</span><span class="p">.</span><span class="na">x</span><span class="o">+</span><span class="n">punt2</span><span class="p">.</span><span class="na">x</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">punt1</span><span class="p">.</span><span class="na">y</span><span class="o">=</span><span class="p">(</span><span class="n">punt1</span><span class="p">.</span><span class="na">y</span><span class="o">+</span><span class="n">punt2</span><span class="p">.</span><span class="na">y</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">punt1</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">Point</span> <span class="n">punt1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-<span class="n">Point</span> <span class="n">punt2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="n">Point</span> <span class="n">punt3</span> <span class="o">=</span> <span class="n">getPointBetween</span><span class="p">(</span><span class="n">punt1</span><span class="p">,</span> <span class="n">punt2</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt1</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt2</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt3</span><span class="p">);</span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getPointBetween</span><span class="p">(</span><span class="n">punt1</span><span class="p">,</span><span class="w"> </span><span class="n">punt2</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt1</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt2</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt3</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1172,18 +1261,18 @@ java.awt.Point[x=6,y=2]
 <p>Correcte methode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Point</span> <span class="nf">getPointBetween</span><span class="p">(</span><span class="n">Point</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Point</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">double</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">punt1</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span><span class="o">+</span><span class="n">punt2</span><span class="p">.</span><span class="na">getX</span><span class="p">())</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">punt1</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span><span class="o">+</span><span class="n">punt2</span><span class="p">.</span><span class="na">getY</span><span class="p">())</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Point</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">x</span><span class="p">,(</span><span class="kt">int</span><span class="p">)</span><span class="n">y</span><span class="p">);</span> <span class="c1">// (int) -&gt; cast van double naar integer</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="nf">getPointBetween</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">punt1</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span><span class="o">+</span><span class="n">punt2</span><span class="p">.</span><span class="na">getX</span><span class="p">())</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">punt1</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span><span class="o">+</span><span class="n">punt2</span><span class="p">.</span><span class="na">getY</span><span class="p">())</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">x</span><span class="p">,(</span><span class="kt">int</span><span class="p">)</span><span class="n">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// (int) -&gt; cast van double naar integer</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">Point</span> <span class="n">punt1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-<span class="n">Point</span> <span class="n">punt2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="n">Point</span> <span class="n">punt3</span> <span class="o">=</span> <span class="n">getPointBetween</span><span class="p">(</span><span class="n">punt1</span><span class="p">,</span> <span class="n">punt2</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt1</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt2</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt3</span><span class="p">);</span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="n">Point</span><span class="w"> </span><span class="n">punt3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getPointBetween</span><span class="p">(</span><span class="n">punt1</span><span class="p">,</span><span class="w"> </span><span class="n">punt2</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt1</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt2</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt3</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1198,14 +1287,14 @@ java.awt.Point[x=6,y=2]
 <p>De objecten waar meegegeven argumenten naar verwijzen blijven ongewijzigd. Het gevraagde punt wordt door de functie teruggegeven. Dit correcte gedrag is te bereiken door de objecten waar argumenten naar verwijzen niet te veranderen. In het geval een object als resultaat wordt teruggegeven, dient in de regel een nieuw object te worden gemaakt.</p>
 </section>
 <section id="klasse-rectangle">
-<h2>Klasse Rectangle<a class="headerlink" href="#klasse-rectangle" title="Permalink naar deze titel">¶</a></h2>
+<h2>Klasse Rectangle<a class="headerlink" href="#klasse-rectangle" title="Permalink naar deze titel">#</a></h2>
 <p>De klasse Rectangle representeert een rechthoek. Ook deze klasse is mutable.</p>
 <p>Rectangle maken:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.awt.Rectangle</span><span class="p">;</span>
-<span class="n">Rectangle</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.awt.Rectangle</span><span class="p">;</span><span class="w"></span>
+<span class="n">Rectangle</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1220,8 +1309,8 @@ java.awt.Point[x=6,y=2]
 <p>Locatie veranderen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="na">setLocation</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">.</span><span class="na">setLocation</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1238,14 +1327,14 @@ java.awt.Point[x=6,y=2]
 <p>Een voorbeeld van een methode waarbij zowel de parameter als de return-waarde objecten zijn:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Point</span> <span class="nf">findCenter</span><span class="p">(</span><span class="n">Rectangle</span> <span class="n">box</span><span class="p">)</span> <span class="p">{</span>
-<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="na">x</span> <span class="o">+</span> <span class="n">box</span><span class="p">.</span><span class="na">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">box</span><span class="p">.</span><span class="na">y</span> <span class="o">+</span> <span class="n">box</span><span class="p">.</span><span class="na">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-<span class="k">return</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="nf">findCenter</span><span class="p">(</span><span class="n">Rectangle</span><span class="w"> </span><span class="n">box</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="na">width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="na">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">Point</span> <span class="n">center</span> <span class="o">=</span> <span class="n">findCenter</span><span class="p">(</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">30</span> <span class="p">));</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">center</span><span class="p">);</span>
+<span class="n">Point</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findCenter</span><span class="p">(</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">));</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">center</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1257,16 +1346,16 @@ java.awt.Point[x=6,y=2]
 </div>
 </section>
 <section id="referenties">
-<h2>Referenties<a class="headerlink" href="#referenties" title="Permalink naar deze titel">¶</a></h2>
+<h2>Referenties<a class="headerlink" href="#referenties" title="Permalink naar deze titel">#</a></h2>
 <p>Ter herinnering: Als je een object toekent aan een variabele, dan wordt een referentie naar dat object toegekend.</p>
 <p>Er kunnen meerdere referenties zijn naar hetzelfde object.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Rectangle</span> <span class="n">box1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-<span class="n">Rectangle</span> <span class="n">box2</span> <span class="o">=</span> <span class="n">box1</span><span class="p">;</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box2</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Rectangle</span><span class="w"> </span><span class="n">box1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="n">Rectangle</span><span class="w"> </span><span class="n">box2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">box1</span><span class="p">;</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box2</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1283,9 +1372,9 @@ java.awt.Rectangle[x=0,y=0,width=100,height=200]
 <p>Verandering van het (mutable) object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">box1</span><span class="p">.</span><span class="na">grow</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box2</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">box1</span><span class="p">.</span><span class="na">grow</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box1</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">box2</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1303,17 +1392,17 @@ java.awt.Rectangle[x=-50,y=-50,width=200,height=300]
 <p>Code met verschillende verwijzingen naar hetzelfde object kan verwarrend zijn!</p>
 </section>
 <section id="garbage-collector">
-<h2>Garbage collector<a class="headerlink" href="#garbage-collector" title="Permalink naar deze titel">¶</a></h2>
+<h2>Garbage collector<a class="headerlink" href="#garbage-collector" title="Permalink naar deze titel">#</a></h2>
 <p>Met het <em>keyword</em> <strong>new</strong> wordt een <em>object</em> gemaakt, maar hoe wordt een <em>object</em> verwijderd?</p>
 <p>Vuistregel: Een <em>object</em> bestaat niet meer, op het moment dat er geen <em>referenties</em> meer zijn.</p>
 <p>De <em>garbage collector</em> in de Java virtuele machine ruimt deze objecten op, zodat het geheugen dat deze objecten innemen weer beschikbaar komt.</p>
 <p>Voorbeeld:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Point</span> <span class="n">punt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span>
-<span class="n">punt</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Point</span><span class="w"> </span><span class="n">punt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span><span class="w"></span>
+<span class="n">punt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">punt</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1327,20 +1416,20 @@ null
 <p>Zodra de referentie punt de waarde null krijgt, heeft het object, dat op de eerste regel wordt gemaakt, geen referentie meer. Het object bestaat dan nog wel, maar zal op een gegeven moment worden opgeruimd door de garbage collector. Wanneer dit precies gebeurt, is niet te beïnvloeden.</p>
 </section>
 <section id="klasse-stringbuilder">
-<h2>Klasse StringBuilder<a class="headerlink" href="#klasse-stringbuilder" title="Permalink naar deze titel">¶</a></h2>
+<h2>Klasse StringBuilder<a class="headerlink" href="#klasse-stringbuilder" title="Permalink naar deze titel">#</a></h2>
 <p>Strings zijn immutable.</p>
 <p>Hoeveel objecten worden gemaakt in het onderstaande voorbeeld?:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">duplicateText</span><span class="p">(</span><span class="n">String</span> <span class="n">text</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">String</span> <span class="n">result</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="o">+</span><span class="n">text</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">duplicateText</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="o">+</span><span class="n">text</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="n">duplicateText</span><span class="p">(</span><span class="s">&quot;Hoi&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="p">);</span> <span class="c1">// Hoeveel strings worden hier gemaakt?</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="w"> </span><span class="n">duplicateText</span><span class="p">(</span><span class="s">&quot;Hoi&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">// Hoeveel strings worden hier gemaakt?</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1358,15 +1447,15 @@ Hoewel deze worden opgeruimd door de <em>garbage collector</em>, is dit niet eff
 <p>De methode <strong>duplicateText</strong> kan aangepast worden, zodat <em>StringBuilder</em> wordt gebruikt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">duplicateText_sb</span><span class="p">(</span><span class="n">String</span> <span class="n">text</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">StringBuilder</span> <span class="n">result</span><span class="o">=</span><span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">result</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">result</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">duplicateText_sb</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">result</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">result</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">text</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="n">duplicateText_sb</span><span class="p">(</span><span class="s">&quot;Hoi&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="w"> </span><span class="n">duplicateText_sb</span><span class="p">(</span><span class="s">&quot;Hoi&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1378,7 +1467,7 @@ Hoewel deze worden opgeruimd door de <em>garbage collector</em>, is dit niet eff
 </div>
 </section>
 <section id="mutable-vs-immutable">
-<h2>Mutable vs Immutable<a class="headerlink" href="#mutable-vs-immutable" title="Permalink naar deze titel">¶</a></h2>
+<h2>Mutable vs Immutable<a class="headerlink" href="#mutable-vs-immutable" title="Permalink naar deze titel">#</a></h2>
 <p>Klassen en objecten zijn mutable of immutable.</p>
 <p>Beide hebben voor- en nadelen.</p>
 <p>Immutable klassen en objecten worden gebruikt voor betrouwbaarheid, performance en eenvoud.</p>
@@ -1411,9 +1500,11 @@ Hoewel deze worden opgeruimd door de <em>garbage collector</em>, is dit niet eff
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../course/week_5.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1429,23 +1520,27 @@ Hoewel deze worden opgeruimd door de <em>garbage collector</em>, is dit niet eff
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

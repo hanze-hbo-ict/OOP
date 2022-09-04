@@ -8,8 +8,9 @@
 
     <title>Practicum composite pattern &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Zoeken" href="../../search.html" />
@@ -63,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,17 +104,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -797,91 +813,164 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/exercises/composite/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/exercises/composite/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/exercises/composite/index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/exercises/composite/index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#doel">
    Doel
@@ -956,12 +1045,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Practicum composite pattern</h1>
@@ -970,7 +1058,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1052,19 +1140,20 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="practicum-composite-pattern">
-<h1>Practicum composite pattern<a class="headerlink" href="#practicum-composite-pattern" title="Permalink naar deze titel">¶</a></h1>
+<h1>Practicum composite pattern<a class="headerlink" href="#practicum-composite-pattern" title="Permalink naar deze titel">#</a></h1>
 <section id="doel">
-<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">¶</a></h2>
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">#</a></h2>
 <ul class="simple">
 <li><p>Kennismaken met het composite pattern</p></li>
 </ul>
 </section>
 <section id="menu">
-<h2>Menu<a class="headerlink" href="#menu" title="Permalink naar deze titel">¶</a></h2>
+<h2>Menu<a class="headerlink" href="#menu" title="Permalink naar deze titel">#</a></h2>
 <p>Voor dit practicum wordt een menu gemaakt, waarmee programma’s gestart kunnen worden.</p>
 <p>Voorbeeld van een menu:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>*** Main menu ***
@@ -1081,33 +1170,33 @@
 <p>Elke menuoptie is een instantie van de klasse <strong>MenuOption</strong>. Alleen de optie 0. quit is <em>hard coded</em>.</p>
 </section>
 <section id="klasse-menuoption">
-<h2>Klasse MenuOption<a class="headerlink" href="#klasse-menuoption" title="Permalink naar deze titel">¶</a></h2>
+<h2>Klasse MenuOption<a class="headerlink" href="#klasse-menuoption" title="Permalink naar deze titel">#</a></h2>
 <p>Klasse <strong>MenuOption</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MenuOption</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MenuOption</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">commandline</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">commandline</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">MenuOption</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">,</span> <span class="n">String</span> <span class="n">commandline</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">commandline</span> <span class="o">=</span> <span class="n">commandline</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MenuOption</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">commandline</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">commandline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">commandline</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">title</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;*** Executing &quot;</span><span class="o">+</span><span class="n">commandline</span><span class="o">+</span><span class="s">&quot; ***&quot;</span><span class="p">);</span>
-        <span class="n">String</span><span class="o">[]</span> <span class="n">params</span> <span class="o">=</span> <span class="n">commandline</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
-        <span class="k">try</span> <span class="p">{</span>
-            <span class="n">Runtime</span><span class="p">.</span><span class="na">getRuntime</span><span class="p">().</span><span class="na">exec</span><span class="p">(</span><span class="n">params</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Execution of &quot;</span><span class="o">+</span><span class="n">commandline</span><span class="o">+</span><span class="s">&quot; failed: &quot;</span><span class="o">+</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">execute</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;*** Executing &quot;</span><span class="o">+</span><span class="n">commandline</span><span class="o">+</span><span class="s">&quot; ***&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">commandline</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Runtime</span><span class="p">.</span><span class="na">getRuntime</span><span class="p">().</span><span class="na">exec</span><span class="p">(</span><span class="n">params</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Execution of &quot;</span><span class="o">+</span><span class="n">commandline</span><span class="o">+</span><span class="s">&quot; failed: &quot;</span><span class="o">+</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Een menuoptie heeft twee belangrijke eigenschappen: Een titel, die wordt weergegeven in het menu, en een commandline waarmee het programma gestart wordt. Dit zijn de instantievariabelen <strong>title</strong> en <strong>commandline</strong>. Deze worden geïnitialiseerd via de constructor. Voor <strong>title</strong> is een getter aanwezig, zodat de gebruikersinterface in staat is om de titel weer te geven in het menu.</p>
@@ -1116,119 +1205,119 @@
 <p>Of een programma aanwezig is, hangt ook sterk af van het besturingssysteem. In dit practicum wordt gebruik gemaakt van een veelvoorkomende programma’s in Windows of Linux (Ubuntu). Mochten deze programma’s niet aanwezig zijn, of je maakt gebruik van macOS, dan zul je geen programma gestart zien worden. Dat is geen grote belemmering voor dit practicum, omdat er ook een mededeling wordt geprint.</p>
 </section>
 <section id="menuoption-gebruiken">
-<h2>MenuOption gebruiken<a class="headerlink" href="#menuoption-gebruiken" title="Permalink naar deze titel">¶</a></h2>
+<h2>MenuOption gebruiken<a class="headerlink" href="#menuoption-gebruiken" title="Permalink naar deze titel">#</a></h2>
 <p>Hieronder staat een eenvoudige implementatie van een menu:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MenuOption</span><span class="o">&gt;</span> <span class="n">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MenuOption</span><span class="o">&gt;</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
 
 <span class="cm">/* Linux:</span>
 <span class="cm">menu.add(new MenuOption(&quot;Terminal&quot;, &quot;gnome-terminal&quot;));</span>
 <span class="cm">menu.add(new MenuOption(&quot;Tekst editor&quot;, &quot;gedit&quot;));</span>
 <span class="cm">menu.add(new MenuOption(&quot;LibreOffice Writer&quot;, &quot;libreoffice --writer&quot;));</span>
 <span class="cm">menu.add(new MenuOption(&quot;LibreOffice Calc&quot;, &quot;libreoffice --calc&quot;));</span>
-<span class="cm">*/</span>
-<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Paint&quot;</span><span class="p">,</span> <span class="s">&quot;mspaint&quot;</span><span class="p">));</span>
-<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Notepad&quot;</span><span class="p">,</span> <span class="s">&quot;notepad&quot;</span><span class="p">));</span>
-<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Word&quot;</span><span class="p">,</span> <span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE&quot;</span><span class="p">));</span>
-<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Excel&quot;</span><span class="p">,</span> <span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE&quot;</span><span class="p">));</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Paint&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mspaint&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Notepad&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;notepad&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Word&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Excel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE&quot;</span><span class="p">));</span><span class="w"></span>
 
-<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-<span class="kt">int</span> <span class="n">choice</span><span class="p">;</span>
-<span class="k">do</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;*** Main menu ***&quot;</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">menu</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;. &quot;</span> <span class="o">+</span> <span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">getTitle</span><span class="p">());</span>
-    <span class="p">}</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;0. Quit&quot;</span><span class="p">);</span>
-    <span class="n">choice</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span>
-    <span class="k">if</span> <span class="p">((</span><span class="n">choice</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">choice</span> <span class="o">&lt;=</span> <span class="n">menu</span><span class="p">.</span><span class="na">size</span><span class="p">()))</span> <span class="p">{</span>
-        <span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">choice</span> <span class="o">-</span> <span class="mi">1</span><span class="p">).</span><span class="na">execute</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">choice</span><span class="o">!=</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">choice</span><span class="p">;</span><span class="w"></span>
+<span class="k">do</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;*** Main menu ***&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;. &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">getTitle</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;0. Quit&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">choice</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">choice</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="na">size</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">choice</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">).</span><span class="na">execute</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="p">(</span><span class="n">choice</span><span class="o">!=</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Maak een nieuw project. Neem de klasse <strong>MenuOption</strong> over. Maak een klasse <strong>Main</strong> met een <em>main-methode</em>. Neem in de <em>main-methode</em> de bovenstaande code en test het menu.</p>
 </section>
 <section id="verbetering-van-het-menu">
-<h2>Verbetering van het menu<a class="headerlink" href="#verbetering-van-het-menu" title="Permalink naar deze titel">¶</a></h2>
+<h2>Verbetering van het menu<a class="headerlink" href="#verbetering-van-het-menu" title="Permalink naar deze titel">#</a></h2>
 <p>De menuopties worden opgeslagen in een <strong>ArrayList</strong>. De titel van het menu is <em>hard coded</em>.</p>
 <p>Een mogelijke verbetering is een klasse <strong>Menu</strong>, waarmee een menu wordt gerepresenteerd. De code in <em>main</em> kan dan uitsluitend nog code voor het maken van het menu en de menuopties, en de gebruikersinterface.</p>
 <p>Klasse <strong>Menu</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Menu</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Menu</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MenuOption</span><span class="o">&gt;</span> <span class="n">menuOptions</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MenuOption</span><span class="o">&gt;</span><span class="w"> </span><span class="n">menuOptions</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">Menu</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">menuOptions</span><span class="o">=</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Menu</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">menuOptions</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">title</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="n">MenuOption</span> <span class="n">menuOption</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">menuOptions</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">menuOption</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">MenuOption</span><span class="w"> </span><span class="n">menuOption</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">menuOptions</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">menuOption</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">MenuOption</span> <span class="nf">getMenuOption</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">menuOptions</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">number</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">MenuOption</span><span class="w"> </span><span class="nf">getMenuOption</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">menuOptions</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">number</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">menuOptionCount</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">menuOptions</span><span class="p">.</span><span class="na">size</span><span class="p">();</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">menuOptionCount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">menuOptions</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De methode <strong>getMenuOption</strong> telt vanaf 1 bij het nummeren van menuopties. Dit is praktisch, omdat het overeenkomt met de getallen die bij de opties horen.</p>
 <p>Een aantal kleine aanpassingen in de <em>main-methode</em> zorgen ervoor dat klasse <strong>Menu</strong> wordt gebruikt:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Menu</span> <span class="n">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Menu</span><span class="p">(</span><span class="s">&quot;Main menu&quot;</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Menu</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Menu</span><span class="p">(</span><span class="s">&quot;Main menu&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="cm">/* Linux:</span>
 <span class="cm">menu.add(new MenuOption(&quot;Terminal&quot;, &quot;gnome-terminal&quot;));</span>
 <span class="cm">menu.add(new MenuOption(&quot;Tekst editor&quot;, &quot;gedit&quot;));</span>
 <span class="cm">menu.add(new MenuOption(&quot;LibreOffice Writer&quot;, &quot;libreoffice --writer&quot;));</span>
 <span class="cm">menu.add(new MenuOption(&quot;LibreOffice Calc&quot;, &quot;libreoffice --calc&quot;));</span>
-<span class="cm">*/</span>
-<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Paint&quot;</span><span class="p">,</span> <span class="s">&quot;mspaint&quot;</span><span class="p">));</span>
-<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Notepad&quot;</span><span class="p">,</span> <span class="s">&quot;notepad&quot;</span><span class="p">));</span>
-<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Word&quot;</span><span class="p">,</span> <span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE&quot;</span><span class="p">));</span>
-<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Excel&quot;</span><span class="p">,</span> <span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE&quot;</span><span class="p">));</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Paint&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mspaint&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Notepad&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;notepad&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Word&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">menu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Excel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE&quot;</span><span class="p">));</span><span class="w"></span>
 
-<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-<span class="kt">int</span> <span class="n">choice</span><span class="p">;</span>
-<span class="k">do</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;*** &quot;</span><span class="o">+</span><span class="n">menu</span><span class="p">.</span><span class="na">getTitle</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; ***&quot;</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">number</span><span class="o">&lt;=</span><span class="n">menu</span><span class="p">.</span><span class="na">menuOptionCount</span><span class="p">();</span> <span class="n">number</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">MenuOption</span> <span class="n">menuOption</span> <span class="o">=</span> <span class="n">menu</span><span class="p">.</span><span class="na">getMenuOption</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="s">&quot;. &quot;</span> <span class="o">+</span> <span class="n">menuOption</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span>
-    <span class="p">}</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;0. Quit&quot;</span><span class="p">);</span>
-    <span class="n">choice</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span>
-    <span class="k">if</span> <span class="p">((</span><span class="n">choice</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">choice</span> <span class="o">&lt;=</span> <span class="n">menu</span><span class="p">.</span><span class="na">menuOptionCount</span><span class="p">()))</span> <span class="p">{</span>
-        <span class="n">menu</span><span class="p">.</span><span class="na">getMenuOption</span><span class="p">(</span><span class="n">choice</span><span class="p">).</span><span class="na">execute</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">choice</span><span class="o">!=</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">choice</span><span class="p">;</span><span class="w"></span>
+<span class="k">do</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;*** &quot;</span><span class="o">+</span><span class="n">menu</span><span class="p">.</span><span class="na">getTitle</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; ***&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">number</span><span class="o">&lt;=</span><span class="n">menu</span><span class="p">.</span><span class="na">menuOptionCount</span><span class="p">();</span><span class="w"> </span><span class="n">number</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">MenuOption</span><span class="w"> </span><span class="n">menuOption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="na">getMenuOption</span><span class="p">(</span><span class="n">number</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;. &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">menuOption</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;0. Quit&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">choice</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">choice</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">menu</span><span class="p">.</span><span class="na">menuOptionCount</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">menu</span><span class="p">.</span><span class="na">getMenuOption</span><span class="p">(</span><span class="n">choice</span><span class="p">).</span><span class="na">execute</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="p">(</span><span class="n">choice</span><span class="o">!=</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De belangrijkste aanpassing is het maken van een menu: De menuopties worden niet toegevoegd aan een arraylist maar aan een menu-object. De menutitel is niet meer <em>hard coded</em>, maar een eigenschap van een menu-object. De loop om de menuopties weer te geven is een beetje aangepast omdat de opties uit het menu-object komen. Dit geldt ook voor de regel die de methode <em>execute()</em> aanroept.</p>
 <p>Neem de klasse <strong>Menu</strong> over. Voer de wijzigingen door en test het menu.</p>
 </section>
 <section id="uitbreiding-van-het-menu">
-<h2>Uitbreiding van het menu<a class="headerlink" href="#uitbreiding-van-het-menu" title="Permalink naar deze titel">¶</a></h2>
+<h2>Uitbreiding van het menu<a class="headerlink" href="#uitbreiding-van-het-menu" title="Permalink naar deze titel">#</a></h2>
 <p>Een mogelijke uitbreiding van het menu is het mogelijk maken van submenu’s. Zo kan er een submenu komen voor Word en Excel (of LibreOffice Calc en Writer), dat op te roepen is vanuit het hoofdmenu.</p>
 <p>Denk na op welke manier dit geïmplementeerd kan worden. Welke mogelijkheden zijn er?</p>
 </section>
 <section id="problemen">
-<h2>Problemen<a class="headerlink" href="#problemen" title="Permalink naar deze titel">¶</a></h2>
+<h2>Problemen<a class="headerlink" href="#problemen" title="Permalink naar deze titel">#</a></h2>
 <p>Probleem met de uitbreiding is dat een submenu iets heel anders is dan een menuoptie. Een (sub)menu zou twee lijsten bij moeten houden. Dat is onpraktisch. Daarnaast is het dan niet mogelijk om in een (sub)menu afwisselend menuopties en submenu’s te gebruiken (omdat er twee lijsten zijn, die achter elkaar gebruikt zullen worden).</p>
 <p>Een mogelijke klasse <strong>SubMenu</strong> zal sterk lijken op de klasse <strong>Menu</strong>. In hoeverre zijn het start-menu en een submenu technisch gezien niet exact hetzelfde? Eigenlijk is bijna alle benodigde code al aanwezig met de klasse <strong>Menu</strong>!</p>
 <p>Een mogelijke oplossing is in een menu in de lijst van menuopties zowel menuopties als (sub)menu’s op te nemen. Dit kan door de klasse <strong>MenuOption</strong> en <strong>Menu</strong> een <em>interface</em> te laten implementeren. Deze <em>interface</em> hoeft niet eens definities van methodes te bevatten (een lege interface is toegestaan!), maar dient dan als datatype voor de <em>arraylist</em>.</p>
@@ -1236,7 +1325,7 @@
 <p>Dit is een belangrijk onderdeel van het <em>composite pattern</em>. Het <em>composite pattern</em> biedt de mogelijkheid om een enkel object (menuoptie) en een verzameling objecten (menu dat menuopties en andere menu’s bevat) op vergelijkbare wijze te gebruiken. Daarin wordt niet alleen voorzien van een gemeenschappelijk datatype maar wordt ook zoveel mogelijk functionaliteit overeenkomstig gemaakt.</p>
 </section>
 <section id="composite-pattern">
-<h2>Composite pattern<a class="headerlink" href="#composite-pattern" title="Permalink naar deze titel">¶</a></h2>
+<h2>Composite pattern<a class="headerlink" href="#composite-pattern" title="Permalink naar deze titel">#</a></h2>
 <p>Het composite pattern voorziet in de mogelijkheid om binnen een hiërarchie van objecten een object dat één enkel element representeert op dezelfde manier te benaderen als een object dat een verzameling elementen representeert (en vice versa)”</p>
 <p><img alt="composite_pattern.png" src="../../_images/composite_pattern.png" /></p>
 <p>Het composite pattern gaat uit van twee soorten componenten: <strong>Leaf</strong> en <strong>Composite</strong>.</p>
@@ -1246,31 +1335,31 @@
 <p><strong>Composite</strong> en <strong>Leaf</strong> hebben gedeelde functionaliteit in de vorm van overeenkomende methodes. Deze zijn gedefiniëerd in <strong>Component</strong>. Indien de methodes voor <strong>Composite</strong> en <strong>Leaf</strong> hetzelfde zijn, dan kan de implementatie in <strong>Component</strong> mits dit een abstracte klasse is.</p>
 </section>
 <section id="het-composite-pattern-toepassing-op-het-menu">
-<h2>Het composite pattern toepassing op het menu<a class="headerlink" href="#het-composite-pattern-toepassing-op-het-menu" title="Permalink naar deze titel">¶</a></h2>
+<h2>Het composite pattern toepassing op het menu<a class="headerlink" href="#het-composite-pattern-toepassing-op-het-menu" title="Permalink naar deze titel">#</a></h2>
 <p>Bij het toepassen van het <em>composite pattern</em> dient een keuze gemaakt te worden tussen een <em>interface</em> of <em>abstracte klasse</em>. Zowel <strong>Menu</strong> als <strong>MenuOption</strong> hebben een titel die geïnitialiseerd wordt via de constructor en waarvoor een getter aanwezig is. De functionaliteit met betrekking tot de titel in een <em>abstracte klasse</em> onderbrengen vermindert duplicate code.</p>
 <p>Voor de herkenbaarheid van het <em>composite pattern</em> wordt de naam <strong>Component</strong> gebruikt voor de abstract klasse.</p>
 <p>De klasse <strong>MenuOption</strong> wordt een <em>leaf</em> class en de klasse <strong>Menu</strong> wordt een <em>composite</em> class. De namen <strong>MenuOption</strong> en <strong>Menu</strong> blijven gebruikt worden, omdat deze beschrijvender zijn dan de generieke benamingen Leaf en Composite.</p>
 <section id="stap-1-abstracte-klasse-component-maken">
-<h3>Stap 1. Abstracte klasse Component maken<a class="headerlink" href="#stap-1-abstracte-klasse-component-maken" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stap 1. Abstracte klasse Component maken<a class="headerlink" href="#stap-1-abstracte-klasse-component-maken" title="Permalink naar deze titel">#</a></h3>
 <p>De abstracte klasse <strong>Component</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Component</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Component</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">Component</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Component</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">title</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Neem deze klasse over in het project.</p>
 </section>
 <section id="stap-2-de-leaf-en-en-composite-klassen-maken">
-<h3>Stap 2. De leaf en en composite klassen maken<a class="headerlink" href="#stap-2-de-leaf-en-en-composite-klassen-maken" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stap 2. De leaf en en composite klassen maken<a class="headerlink" href="#stap-2-de-leaf-en-en-composite-klassen-maken" title="Permalink naar deze titel">#</a></h3>
 <p>Dit is de belangrijke stap bij het implementeren van het composite pattern.</p>
 <p>Bijna alle code uit de huidige versie van het menu wordt gebruikt.</p>
 <p>De klasse <strong>MenuOption</strong> aanpassen, zodat het een leaf klasse wordt:</p>
@@ -1285,52 +1374,52 @@
 <p>Voer de benodigde aanpassingen door.</p>
 </section>
 <section id="stap-3-de-leaf-en-composite-klassen-gebruiken">
-<h3>Stap 3. De leaf en composite klassen gebruiken<a class="headerlink" href="#stap-3-de-leaf-en-composite-klassen-gebruiken" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stap 3. De leaf en composite klassen gebruiken<a class="headerlink" href="#stap-3-de-leaf-en-composite-klassen-gebruiken" title="Permalink naar deze titel">#</a></h3>
 <p>In de mainmethode wordt het nieuwe menu en submenu als volgt gemaakt:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Menu</span> <span class="n">mainmenu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Menu</span><span class="p">(</span><span class="s">&quot;Main menu&quot;</span><span class="p">);</span>
-<span class="n">Menu</span> <span class="n">officemenu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Menu</span><span class="p">(</span><span class="s">&quot;Office&quot;</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Menu</span><span class="w"> </span><span class="n">mainmenu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Menu</span><span class="p">(</span><span class="s">&quot;Main menu&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">Menu</span><span class="w"> </span><span class="n">officemenu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Menu</span><span class="p">(</span><span class="s">&quot;Office&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="cm">/* Linux:</span>
 <span class="cm">mainmenu.add(new MenuOption(&quot;Terminal&quot;, &quot;gnome-terminal&quot;));</span>
 <span class="cm">mainmenu.add(new MenuOption(&quot;Tekst editor&quot;, &quot;gedit&quot;));</span>
 <span class="cm">officemenu.add(new MenuOption(&quot;LibreOffice Calc&quot;, &quot;libreoffice --calc&quot;));</span>
 <span class="cm">officemenu.add(new MenuOption(&quot;LibreOffice Writer&quot;, &quot;libreoffice --writer&quot;));</span>
-<span class="cm"> */</span>
-<span class="n">mainmenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Paint&quot;</span><span class="p">,</span> <span class="s">&quot;mspaint&quot;</span><span class="p">));</span>
-<span class="n">mainmenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Notepad&quot;</span><span class="p">,</span> <span class="s">&quot;notepad&quot;</span><span class="p">));</span>
-<span class="n">officemenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Word&quot;</span><span class="p">,</span> <span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE&quot;</span><span class="p">));</span>
-<span class="n">officemenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Excel&quot;</span><span class="p">,</span> <span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE&quot;</span><span class="p">));</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">mainmenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Paint&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mspaint&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">mainmenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Notepad&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;notepad&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">officemenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Word&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">officemenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">(</span><span class="s">&quot;Microsoft Excel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE&quot;</span><span class="p">));</span><span class="w"></span>
 
-<span class="n">mainmenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">officemenu</span><span class="p">);</span>
-<span class="n">officemenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">mainmenu</span><span class="p">);</span>
+<span class="n">mainmenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">officemenu</span><span class="p">);</span><span class="w"></span>
+<span class="n">officemenu</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">mainmenu</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">Menu</span> <span class="n">currentMenu</span> <span class="o">=</span> <span class="n">mainmenu</span><span class="p">;</span>
+<span class="n">Menu</span><span class="w"> </span><span class="n">currentMenu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mainmenu</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Pas de mainmethode aan, zodat het menu-object <strong>currentMenu</strong> wordt gebruikt en de methodes met aangepaste namen worden aangeroepen.</p>
 <p>Werkt het menu nog? Wat gebeurt er als Microsoft Office (of LibreOffice) wordt gekozen?</p>
 <p>Het laatste wat nog moet gebeuren is code toevoegen die een submenu gebruikt:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="n">Component</span> <span class="n">menuItem</span> <span class="o">=</span> <span class="n">currentMenu</span><span class="p">.</span><span class="na">getMenuItem</span><span class="p">(</span><span class="n">choice</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">Component</span><span class="w"> </span><span class="n">menuItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentMenu</span><span class="p">.</span><span class="na">getMenuItem</span><span class="p">(</span><span class="n">choice</span><span class="p">);</span><span class="w"></span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">menuItem</span> <span class="k">instanceof</span> <span class="n">MenuOption</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">((</span><span class="n">MenuOption</span><span class="p">)</span><span class="n">menuItem</span><span class="p">).</span><span class="na">execute</span><span class="p">();</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">menuItem</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">MenuOption</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">((</span><span class="n">MenuOption</span><span class="p">)</span><span class="n">menuItem</span><span class="p">).</span><span class="na">execute</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">menuItem</span> <span class="k">instanceof</span> <span class="n">Menu</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">currentMenu</span><span class="o">=</span><span class="p">(</span><span class="n">Menu</span><span class="p">)</span><span class="n">menuItem</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">menuItem</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Menu</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">currentMenu</span><span class="o">=</span><span class="p">(</span><span class="n">Menu</span><span class="p">)</span><span class="n">menuItem</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Plaats deze code op de juiste plaats in de <em>main-methode</em>, binnen het if-statement waarmee wordt vastgesteld dat de keuze van de gebruiker overeenkomt met een menuitem.</p>
 </section>
 </section>
 <section id="testen-en-afronden">
-<h2>Testen en afronden<a class="headerlink" href="#testen-en-afronden" title="Permalink naar deze titel">¶</a></h2>
+<h2>Testen en afronden<a class="headerlink" href="#testen-en-afronden" title="Permalink naar deze titel">#</a></h2>
 <p>Het <em>composite pattern</em> is toegepast om het menu flexibeler te maken.</p>
 <p>Test het menu. Voeg eventueel nog een submenu toe.</p>
 </section>
 <section id="extra-uitdaging">
-<h2>Extra uitdaging<a class="headerlink" href="#extra-uitdaging" title="Permalink naar deze titel">¶</a></h2>
+<h2>Extra uitdaging<a class="headerlink" href="#extra-uitdaging" title="Permalink naar deze titel">#</a></h2>
 <p>Voeg aan de klasse <strong>Menu</strong> een implementatie toe van het <em>iterator-pattern</em>, zodat met een enhanched for-loop de menuitems kunnen worden nagelopen.</p>
 </section>
 </section>
@@ -1357,9 +1446,11 @@
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../course/week_15.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1375,23 +1466,27 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

@@ -8,8 +8,9 @@
 
     <title>Practicum iterator pattern &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Zoeken" href="../../search.html" />
@@ -63,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,17 +104,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -797,91 +813,164 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/exercises/iterator/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/exercises/iterator/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/exercises/iterator/index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/exercises/iterator/index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#doel">
    Doel
@@ -941,12 +1030,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Practicum iterator pattern</h1>
@@ -955,7 +1043,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1022,140 +1110,141 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="practicum-iterator-pattern">
-<h1>Practicum iterator pattern<a class="headerlink" href="#practicum-iterator-pattern" title="Permalink naar deze titel">¶</a></h1>
+<h1>Practicum iterator pattern<a class="headerlink" href="#practicum-iterator-pattern" title="Permalink naar deze titel">#</a></h1>
 <section id="doel">
-<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">¶</a></h2>
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">#</a></h2>
 <ul class="simple">
 <li><p>Kennismaken met het iterator pattern</p></li>
 </ul>
 </section>
 <section id="team">
-<h2>Team<a class="headerlink" href="#team" title="Permalink naar deze titel">¶</a></h2>
+<h2>Team<a class="headerlink" href="#team" title="Permalink naar deze titel">#</a></h2>
 <p>Bij deze opgave wordt gebruik gemaakt van een klasse Team. Elk team heeft een aantal leden.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Team</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Team</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MAX_NUMBER_OF_MEMBERS</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_NUMBER_OF_MEMBERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
 
-    <span class="n">Person</span><span class="o">[]</span> <span class="n">members</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">[</span><span class="n">MAX_NUMBER_OF_MEMBERS</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Person</span><span class="o">[]</span><span class="w"> </span><span class="n">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="o">[</span><span class="n">MAX_NUMBER_OF_MEMBERS</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addMember</span><span class="p">(</span><span class="n">Person</span> <span class="n">newMember</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">MAX_NUMBER_OF_MEMBERS</span> <span class="o">&amp;&amp;</span> <span class="n">members</span><span class="o">[</span><span class="n">i</span><span class="o">]!=</span><span class="kc">null</span><span class="p">)</span> <span class="p">{</span> <span class="n">i</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">MAX_NUMBER_OF_MEMBERS</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">members</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">newMember</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;Cannot add new member to team with maximum numbers of members&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addMember</span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">newMember</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">MAX_NUMBER_OF_MEMBERS</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">members</span><span class="o">[</span><span class="n">i</span><span class="o">]!=</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">MAX_NUMBER_OF_MEMBERS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">members</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">newMember</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;Cannot add new member to team with maximum numbers of members&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">Person</span><span class="o">[]</span> <span class="nf">getMembers</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">members</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Person</span><span class="o">[]</span><span class="w"> </span><span class="nf">getMembers</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">members</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De klasse team heeft twee methoden: <strong>addMember</strong> en <strong>getMembers</strong>. Deze zijn bedoeld om leden toe te voegen aan een team en om de leden op te vragen.</p>
 <p>Om de klasse werkend te krijgen is ook de klasse <strong>Persoon</strong> nodig, het datatype dat wordt gebruikt voor teamleden:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">firstname</span><span class="p">,</span> <span class="n">lastname</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">firstname</span><span class="p">,</span><span class="w"> </span><span class="n">lastname</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="n">String</span> <span class="n">firstname</span><span class="p">,</span> <span class="n">String</span> <span class="n">lastname</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">firstname</span> <span class="o">=</span> <span class="n">firstname</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">lastname</span> <span class="o">=</span> <span class="n">lastname</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">firstname</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lastname</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">firstname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">firstname</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">lastname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lastname</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getFirstname</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">firstname</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getFirstname</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">firstname</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getLastname</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">lastname</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getLastname</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">lastname</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">firstname</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="n">lastname</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">firstname</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="n">lastname</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Neem deze 2 klassen over in een nieuw project (of package).</p>
 <p>Maak ook een klasse <strong>Main</strong> met een <strong>main</strong>-methode, om twee teams met leden te maken:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="n">Person</span> <span class="n">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Jan&quot;</span><span class="p">,</span> <span class="s">&quot;de Vries&quot;</span><span class="p">);</span>
-    <span class="n">Person</span> <span class="n">person2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Aukje&quot;</span><span class="p">,</span> <span class="s">&quot;De Jong&quot;</span><span class="p">);</span>
-    <span class="n">Person</span> <span class="n">person3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Els&quot;</span><span class="p">,</span> <span class="s">&quot;Visser&quot;</span><span class="p">);</span>
-    <span class="n">Person</span> <span class="n">person4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Hans&quot;</span><span class="p">,</span> <span class="s">&quot;Jansen&quot;</span><span class="p">);</span>
-    <span class="n">Person</span> <span class="n">person5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Jelmer&quot;</span><span class="p">,</span> <span class="s">&quot;Bakker&quot;</span><span class="p">);</span>
-    <span class="n">Team</span> <span class="n">team1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Team</span><span class="p">();</span>
-    <span class="n">Team</span> <span class="n">team2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Team</span><span class="p">();</span>
-    <span class="n">team1</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person1</span><span class="p">);</span>
-    <span class="n">team1</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person2</span><span class="p">);</span>
-    <span class="n">team1</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person3</span><span class="p">);</span>
-    <span class="n">team1</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person4</span><span class="p">);</span>
-    <span class="n">team2</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person5</span><span class="p">);</span>
-    <span class="n">team2</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person3</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">person1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Jan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;de Vries&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">person2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Aukje&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;De Jong&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">person3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Els&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Visser&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">person4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Hans&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jansen&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">person5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Jelmer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bakker&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Team</span><span class="w"> </span><span class="n">team1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Team</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">Team</span><span class="w"> </span><span class="n">team2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Team</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">team1</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">team1</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">team1</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person3</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">team1</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person4</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">team2</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person5</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">team2</span><span class="p">.</span><span class="na">addMember</span><span class="p">(</span><span class="n">person3</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="leden-weergeven">
-<h2>Leden weergeven<a class="headerlink" href="#leden-weergeven" title="Permalink naar deze titel">¶</a></h2>
+<h2>Leden weergeven<a class="headerlink" href="#leden-weergeven" title="Permalink naar deze titel">#</a></h2>
 <p>Teamleden weergeven is dankzij de methode <strong>getMembers</strong> niet heel moeilijk:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Leden team 1:&quot;</span><span class="p">);</span>
-    <span class="n">Person</span><span class="o">[]</span> <span class="n">membersTeam1</span> <span class="o">=</span> <span class="n">team1</span><span class="p">.</span><span class="na">getMembers</span><span class="p">();</span>
-    <span class="k">for</span><span class="p">(</span><span class="n">Person</span> <span class="n">member</span> <span class="p">:</span> <span class="n">membersTeam1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">member</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Leden team 1:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Person</span><span class="o">[]</span><span class="w"> </span><span class="n">membersTeam1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">team1</span><span class="p">.</span><span class="na">getMembers</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">member</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">membersTeam1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">member</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Leden team 2:&quot;</span><span class="p">);</span>
-    <span class="n">Person</span><span class="o">[]</span> <span class="n">membersTeam2</span> <span class="o">=</span> <span class="n">team2</span><span class="p">.</span><span class="na">getMembers</span><span class="p">();</span>
-    <span class="k">for</span><span class="p">(</span><span class="n">Person</span> <span class="n">member</span> <span class="p">:</span> <span class="n">membersTeam2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">member</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Leden team 2:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Person</span><span class="o">[]</span><span class="w"> </span><span class="n">membersTeam2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">team2</span><span class="p">.</span><span class="na">getMembers</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">member</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">membersTeam2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">member</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Deze aanpak heeft wel nadelen. Welke nadelen heeft de methode <strong>getMembers</strong>?</p>
 <p>Het iterator pattern biedt een uniforme methode om een verzameling elementen stuk voor stuk bij langs te lopen.</p>
 </section>
 <section id="iterator-pattern">
-<h2>Iterator pattern<a class="headerlink" href="#iterator-pattern" title="Permalink naar deze titel">¶</a></h2>
+<h2>Iterator pattern<a class="headerlink" href="#iterator-pattern" title="Permalink naar deze titel">#</a></h2>
 <p><img alt="iteratorpattern.png" src="../../_images/iteratorpattern.png" /></p>
 <p>De kern van het Iterator-pattern wordt door twee interfaces gevormd: <strong>Aggregate</strong> en <strong>Iterator</strong>.</p>
 <p>De klasse die een verzameling elementen bevat (of representeert) implementeert <strong>Aggregate</strong>. Deze bevat de methode om een Iterator te maken.</p>
 <p>De <em>iterator</em> is een klasse die de interface <strong>Iterator</strong> implementeerd. Deze bevat methodes om alle aanwezige elementen op te vragen.</p>
 </section>
 <section id="stap-1-interface-aggregate-implementeren">
-<h2>Stap 1. Interface Aggregate implementeren<a class="headerlink" href="#stap-1-interface-aggregate-implementeren" title="Permalink naar deze titel">¶</a></h2>
+<h2>Stap 1. Interface Aggregate implementeren<a class="headerlink" href="#stap-1-interface-aggregate-implementeren" title="Permalink naar deze titel">#</a></h2>
 <p>De interface <strong>Aggregate</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Aggregate</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Aggregate</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Iterator</span> <span class="nf">createIterator</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Iterator</span><span class="w"> </span><span class="nf">createIterator</span><span class="p">();</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Neem deze interface over in het project en laat de klasse <strong>Team</strong> deze interface implementeren.</p>
 <p>De methode <strong>createIterator</strong> kan nog niet volledig ingevuld worden. Voor nu kan volstaan worden met <em>return null</em>.</p>
 <section id="stap-2-iterator-maken">
-<h3>Stap 2. Iterator maken<a class="headerlink" href="#stap-2-iterator-maken" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stap 2. Iterator maken<a class="headerlink" href="#stap-2-iterator-maken" title="Permalink naar deze titel">#</a></h3>
 <p>Dit is de grootste stap bij het implementeren van het iterator pattern.</p>
 <p>De iterator implementeert de interface <strong>Iterator</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Iterator</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Iterator</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="p">();</span>
-    <span class="n">Person</span> <span class="nf">next</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasNext</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="nf">next</span><span class="p">();</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Maak de klasse <strong>TeamIterator</strong> die voldoet aan de volgende eigenschappen:</p>
@@ -1172,59 +1261,59 @@
 <li><p>Er zijn implementaties van <strong>next</strong> en <strong>hasNext</strong></p></li>
 </ul>
 <p>Dit zijn mogelijke implementaties van <strong>next</strong> en <strong>hasNext</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">members</span><span class="p">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">members</span><span class="o">[</span><span class="n">i</span><span class="o">]!=</span><span class="kc">null</span><span class="p">;</span>
-    <span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasNext</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">members</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">members</span><span class="o">[</span><span class="n">i</span><span class="o">]!=</span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Person</span> <span class="nf">next</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">hasNext</span><span class="p">())</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="n">members</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span><span class="p">;</span>
-        <span class="p">};</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;Iterator is already done.&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="nf">next</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">members</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">};</span><span class="w"></span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;Iterator is already done.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="stap-3-de-iterator-maken-en-retourneren">
-<h3>Stap 3. De iterator maken en retourneren<a class="headerlink" href="#stap-3-de-iterator-maken-en-retourneren" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stap 3. De iterator maken en retourneren<a class="headerlink" href="#stap-3-de-iterator-maken-en-retourneren" title="Permalink naar deze titel">#</a></h3>
 <p>Zorg ervoor dat de methode <strong>createIterator</strong> een instantie maakt van de iterator en retourneert.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="k">new</span> <span class="n">TeamIterator</span><span class="p">(</span><span class="n">members</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TeamIterator</span><span class="p">(</span><span class="n">members</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="stap-4-de-iterator-gebruiken">
-<h3>Stap 4. De iterator gebruiken<a class="headerlink" href="#stap-4-de-iterator-gebruiken" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stap 4. De iterator gebruiken<a class="headerlink" href="#stap-4-de-iterator-gebruiken" title="Permalink naar deze titel">#</a></h3>
 <p>De iterator gebruiken gaat als volgt:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>    <span class="n">Iterator</span> <span class="n">team1iterator</span> <span class="o">=</span> <span class="n">team1</span><span class="p">.</span><span class="na">createIterator</span><span class="p">();</span>
-    <span class="k">while</span><span class="p">(</span><span class="n">team1iterator</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span> <span class="p">{</span>
-        <span class="n">Person</span> <span class="n">member</span> <span class="o">=</span> <span class="n">team1iterator</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
-    <span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">Iterator</span><span class="w"> </span><span class="n">team1iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">team1</span><span class="p">.</span><span class="na">createIterator</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">team1iterator</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">member</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">team1iterator</span><span class="p">.</span><span class="na">next</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Probeer dit zelf ook te doen voor team 2.</p>
 </section>
 <section id="onvolmaaktheden">
-<h3>Onvolmaaktheden<a class="headerlink" href="#onvolmaaktheden" title="Permalink naar deze titel">¶</a></h3>
+<h3>Onvolmaaktheden<a class="headerlink" href="#onvolmaaktheden" title="Permalink naar deze titel">#</a></h3>
 <p>De huidige uitvoering van het pattern bevat een belangrijke onvolmaaktheid: De interface <strong>Iterator</strong> bevat een verwijzing naar de klasse <strong>Person</strong>. Dat maakt het onmogelijk om deze interface generiek te gebruiken.</p>
 <p>Een van de manieren om dat te voorkomen is datatype <strong>Person</strong> vervangen door <strong>Object</strong>. Nadeel is dat typecasting dan nodig is.</p>
 <p>Een goede oplossing is het gebruik van <em>generics</em>. Dit is echter vrij specifiek voor Java, <a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/generics/types.html">https://docs.oracle.com/javase/tutorial/java/generics/types.html</a></p>
 </section>
 <section id="verbeteren-door-middel-van-generics">
-<h3>Verbeteren door middel van generics<a class="headerlink" href="#verbeteren-door-middel-van-generics" title="Permalink naar deze titel">¶</a></h3>
+<h3>Verbeteren door middel van generics<a class="headerlink" href="#verbeteren-door-middel-van-generics" title="Permalink naar deze titel">#</a></h3>
 <p>De interface <strong>Iterator</strong> kan als volgt aangepast worden aan het gebruik van <em>generics</em>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="p">();</span>
-    <span class="n">T</span> <span class="nf">next</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasNext</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="nf">next</span><span class="p">();</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>De klasse <strong>TeamIterator</strong> geeft bij de klassedefinitie het datatype voor de iterator door:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TeamIterator</span> <span class="kd">implements</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TeamIterator</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Tot slot dient in de main-methode bij de declaratie van de iterator aangegeven te worden dat het om een iterator met datatype <strong>Persoon</strong> gaat:</p>
@@ -1233,7 +1322,7 @@
 </div>
 </section>
 <section id="meegeleverd-interator-pattern">
-<h3>Meegeleverd interator pattern<a class="headerlink" href="#meegeleverd-interator-pattern" title="Permalink naar deze titel">¶</a></h3>
+<h3>Meegeleverd interator pattern<a class="headerlink" href="#meegeleverd-interator-pattern" title="Permalink naar deze titel">#</a></h3>
 <p>Java heeft uitgebreide ondersteuning voor het iterator-pattern meegeleverd.</p>
 <p>Het iterator pattern wordt verzorgt door de interfaces <strong>Iterator</strong> en <strong>Iterable</strong>.</p>
 <p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html">https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html</a>
@@ -1241,17 +1330,17 @@
 <p>Maak een kopie van de package, verwijder de interface <strong>Iterator</strong> en <strong>Aggregate</strong>, en implementeer het iterator pattern met de standaard in Java aanwezige interfaces <strong>java.util.Iterator</strong> en <strong>java.util.Iterable</strong>.</p>
 <p>Houd er rekening mee dat <strong>createIterator</strong> kortweg <strong>iterator</strong> genoemd wordt door Oracle.</p>
 <p>Als dit is gelukt, dan wordt het volgende mogelijk:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">Person</span> <span class="n">member</span> <span class="p">:</span> <span class="n">team1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">member</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">team1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Of nog korter:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">team1</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">team1</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Als dit niet werkt, dan is het probleem mogelijk dat bij de klassendefinities van <strong>Team</strong> en <strong>TeamIterator</strong> niet in beide gevallen aan de interface het datatype <strong>Person</strong> is meegegeven:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Team</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Team</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Een enhanched for-loop is mogelijk in combinatie met een eigen gemaakt klasse! Java ‘weet’ wanneer dit kan doordat de interface <strong>Iterable</strong> geïmplementeerd is.</p>
@@ -1281,9 +1370,11 @@
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../topics/12b_iterator.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1299,23 +1390,27 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

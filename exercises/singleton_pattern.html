@@ -8,8 +8,9 @@
 
     <title>Practicum singleton pattern &#8212; Objectgeoriënteerd Programmeren I</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Zoeken" href="../search.html" />
@@ -63,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -89,17 +104,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Zoek in dit boek ..." aria-label="Zoek in dit boek ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about/syllabus.html">
-   Welkom
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Over deze cursus
  </span>
@@ -797,91 +813,164 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Schakel navigatie" aria-controls="site-navigation"
-                title="Schakel navigatie" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download deze pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/exercises/singleton_pattern.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download het bronbestand" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Afdrukken naar pdf"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Volledig scherm"
-        title="Volledig scherm"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/exercises/singleton_pattern.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lancering Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhoud
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/misja/OOP1/main?urlpath=lab/tree/exercises/singleton_pattern.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/exercises/singleton_pattern.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#doel">
    Doel
@@ -948,12 +1037,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Practicum singleton pattern</h1>
@@ -962,7 +1050,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhoud </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1036,19 +1124,20 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="practicum-singleton-pattern">
-<h1>Practicum singleton pattern<a class="headerlink" href="#practicum-singleton-pattern" title="Permalink naar deze titel">¶</a></h1>
+<h1>Practicum singleton pattern<a class="headerlink" href="#practicum-singleton-pattern" title="Permalink naar deze titel">#</a></h1>
 <section id="doel">
-<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">¶</a></h2>
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">#</a></h2>
 <ul class="simple">
 <li><p>Kennismaken met het singleton pattern</p></li>
 </ul>
 </section>
 <section id="pizza-factory">
-<h2>Pizza factory<a class="headerlink" href="#pizza-factory" title="Permalink naar deze titel">¶</a></h2>
+<h2>Pizza factory<a class="headerlink" href="#pizza-factory" title="Permalink naar deze titel">#</a></h2>
 <p>Bij deze opgave wordt gebruik gemaakt van pizza factories, klassen met een methode waarmee verschillende pizza-objecten worden gemaakt.</p>
 <p>Er zijn twee mogelijkheden om deze factories te verkrijgen:</p>
 <ol class="simple">
@@ -1058,55 +1147,55 @@ Maak een nieuw project en kopieëer de klasse <strong>PizzaFactoryItalia</strong
 </ol>
 <p>Maak een nieuw project en neem onderstaande klassen en interfaces over.</p>
 <p>Interface <strong>Pizza</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Pizza</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Pizza</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">();</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">();</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Interface <strong>PizzaFactory</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PizzaFactory</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PizzaFactory</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">Pizza</span> <span class="nf">createPizza</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Pizza</span><span class="w"> </span><span class="nf">createPizza</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Interface <strong>PizzaFactoryItalia</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PizzaFactoryItalia</span> <span class="kd">implements</span> <span class="n">PizzaFactory</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PizzaFactoryItalia</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">PizzaFactory</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Pizza</span> <span class="nf">createPizza</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">Pizza</span><span class="p">()</span> <span class="p">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">()</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
-            <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Pizza</span><span class="w"> </span><span class="nf">createPizza</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pizza</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="p">()</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="s">&quot;Pizzaria Italia pizza &quot;</span><span class="o">+</span><span class="n">name</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">};</span>
-    <span class="p">}</span>
+<span class="w">            </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescription</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Pizzaria Italia pizza &quot;</span><span class="o">+</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="de-klasse-pizzafactoryitalia-gebruiken">
-<h2>De klasse PizzaFactoryItalia gebruiken<a class="headerlink" href="#de-klasse-pizzafactoryitalia-gebruiken" title="Permalink naar deze titel">¶</a></h2>
+<h2>De klasse PizzaFactoryItalia gebruiken<a class="headerlink" href="#de-klasse-pizzafactoryitalia-gebruiken" title="Permalink naar deze titel">#</a></h2>
 <p>Maak de klasse <strong>Main</strong>. Maak in deze klasse de main-methode, met daarin de volgende regels code:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PizzaFactory</span> <span class="n">pizzaFactoryItalia</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PizzaFactoryItalia</span><span class="p">();</span>
-<span class="n">Pizza</span> <span class="n">pizzaHawaii</span> <span class="o">=</span> <span class="n">pizzaFactoryItalia</span><span class="p">.</span><span class="na">createPizza</span><span class="p">(</span><span class="s">&quot;Hawaii&quot;</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizzaHawaii</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span> <span class="n">pizzaHawaii</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PizzaFactory</span><span class="w"> </span><span class="n">pizzaFactoryItalia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PizzaFactoryItalia</span><span class="p">();</span><span class="w"></span>
+<span class="n">Pizza</span><span class="w"> </span><span class="n">pizzaHawaii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pizzaFactoryItalia</span><span class="p">.</span><span class="na">createPizza</span><span class="p">(</span><span class="s">&quot;Hawaii&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pizzaHawaii</span><span class="p">.</span><span class="na">getDescription</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;, € &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">pizzaHawaii</span><span class="p">.</span><span class="na">getPrice</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="de-factory-op-meer-plekken-gebruiken">
-<h2>De factory op meer plekken gebruiken<a class="headerlink" href="#de-factory-op-meer-plekken-gebruiken" title="Permalink naar deze titel">¶</a></h2>
+<h2>De factory op meer plekken gebruiken<a class="headerlink" href="#de-factory-op-meer-plekken-gebruiken" title="Permalink naar deze titel">#</a></h2>
 <p>Stel dat op meerdere plekken binnen een project pizza’s gemaakt moeten worden met behulp van <strong>PizzaFactoryItalia</strong>. Hoe is dat te realiseren?</p>
 <ul class="simple">
 <li><p>Overal waar dat nodig is instanties maken van <strong>PizzaFactoryItalia</strong></p></li>
@@ -1130,56 +1219,56 @@ Maak een nieuw project en kopieëer de klasse <strong>PizzaFactoryItalia</strong
 <p>Nadeel: Het pattern is niet onomstreden. Complicaties bij testen. Verbloemde afhankelijkheden.</p>
 </section>
 <section id="het-singleton-pattern">
-<h2>Het singleton pattern<a class="headerlink" href="#het-singleton-pattern" title="Permalink naar deze titel">¶</a></h2>
+<h2>Het singleton pattern<a class="headerlink" href="#het-singleton-pattern" title="Permalink naar deze titel">#</a></h2>
 <p>Het <em>singleton pattern</em> biedt de mogelijkheid om één instantie van een klasse overal beschikbaar te hebben.</p>
 <p>In vier stappen wordt het <em>singleton pattern</em> toegepast op de klasse <strong>PizzaFactoryItalia</strong>.</p>
 <p>Het <em>singleton pattern</em> maakt geen gebruik van ondersteunende klassen en interfaces. Code ten behoeve van het <em>singleton pattern</em> wordt toegevoegd aan de klasse waar het om gaat, de klasse waarvan maximaal één instantie mag bestaan die overal beschikbaar is.</p>
 <section id="stap-1-constructor-private-maken">
-<h3>Stap 1. Constructor private maken<a class="headerlink" href="#stap-1-constructor-private-maken" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stap 1. Constructor private maken<a class="headerlink" href="#stap-1-constructor-private-maken" title="Permalink naar deze titel">#</a></h3>
 <p>Maak de constructor van <strong>PizzaFactoryItalia</strong> private.</p>
 <p>Als er geen constructor aanwezig is, dan is het nodig om eerste een expliciete standaard constructor te maken:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">PizzaFactoryItalia</span><span class="p">()</span> <span class="p">{</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="nf">PizzaFactoryItalia</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Verander <em>public</em> in <em>private</em>.</p>
 <p>Als het goed is, zullen <em>new</em>-statements met <strong>PizzaFactoryItalia</strong> buiten de klasse <strong>PizzaFactoryItalia</strong> niet meer mogelijk zijn. De klasse <strong>Main</strong> zal niet meer compileren zolang het statement <strong>new PizzaFactoryItalia()</strong> nog aanwezig is. Dat is te bedoeling. Hiermee wordt voorkomen dat er toch meerdere instanties van de klasse <strong>PizzaFactoryItalia</strong> worden gemaakt.</p>
 </section>
 <section id="stap-2-klasse-variabele-instance-maken">
-<h3>Stap 2. Klasse-variabele <strong>instance</strong> maken<a class="headerlink" href="#stap-2-klasse-variabele-instance-maken" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stap 2. Klasse-variabele <strong>instance</strong> maken<a class="headerlink" href="#stap-2-klasse-variabele-instance-maken" title="Permalink naar deze titel">#</a></h3>
 <p>Maak een <em>private</em> en <em>static</em> klasse-variabele met de naam <strong>instance</strong> en type <strong>PizzaFactoryItalia</strong> in de klasse <strong>PizzaFactoryItalia</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kd">static</span> <span class="n">PizzaFactoryItalia</span> <span class="n">instance</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">PizzaFactoryItalia</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="stap-3-methode-getinstance-maken">
-<h3>Stap 3. Methode <strong>getInstance</strong> maken<a class="headerlink" href="#stap-3-methode-getinstance-maken" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stap 3. Methode <strong>getInstance</strong> maken<a class="headerlink" href="#stap-3-methode-getinstance-maken" title="Permalink naar deze titel">#</a></h3>
 <p>Maak de methode <strong>getInstance</strong> in de klasse <strong>PizzaFactoryItalia</strong>. Deze methode is <em>public</em>, <em>static</em> en heeft als return-type <strong>PizzaFactoryItalia</strong>.</p>
 <p>Deze methode geeft de waarde van de variabele <strong>instance</strong> terug. Als <strong>instance</strong> de waarde <em>null</em> heeft, dan wordt eerst een instantie van <strong>PizzaFactoryItalia</strong> gemaakt en in <strong>instance</strong> opgeslagen:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">PizzaFactoryItalia</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">instance</span><span class="o">==</span><span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PizzaFactoryItalia</span><span class="p">();</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">instance</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">PizzaFactoryItalia</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">instance</span><span class="o">==</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PizzaFactoryItalia</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="stap-4-de-methode-getinstance-gebruiken">
-<h3>Stap 4. De methode <strong>getInstance</strong> gebruiken<a class="headerlink" href="#stap-4-de-methode-getinstance-gebruiken" title="Permalink naar deze titel">¶</a></h3>
+<h3>Stap 4. De methode <strong>getInstance</strong> gebruiken<a class="headerlink" href="#stap-4-de-methode-getinstance-gebruiken" title="Permalink naar deze titel">#</a></h3>
 <p>Vervang elk new-statement voor de klasse <strong>PizzaFactoryItalia</strong> door een aanroep van de methode <strong>getInstance</strong> van de klasse <strong>PizzaFactoryItalia</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="n">PizzaFactoryItalia</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">new</span><span class="w"> </span><span class="n">PizzaFactoryItalia</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 <p>wordt dan vervangen door</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PizzaFactoryItalia</span><span class="p">.</span><span class="na">getInstance</span><span class="p">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">PizzaFactoryItalia</span><span class="p">.</span><span class="na">getInstance</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Pas de main-methode aan zodat deze weer functioneert met het singleton pattern.</p>
 </section>
 </section>
 <section id="nog-een-keer-oefenen">
-<h2>Nog een keer oefenen<a class="headerlink" href="#nog-een-keer-oefenen" title="Permalink naar deze titel">¶</a></h2>
+<h2>Nog een keer oefenen<a class="headerlink" href="#nog-een-keer-oefenen" title="Permalink naar deze titel">#</a></h2>
 <p>Pas het singleton pattern ook toe op de klasse <strong>PizzaFactoryMilaan</strong>.</p>
 <p>Maak met behulp van de instantie een pizza in de main-methode.</p>
 <p>De klasse <strong>PizzaFactoryMilaan</strong> kan overgenomen worden van het project waar ook <strong>PizzaFactoryItalia</strong> vandaan komt. Als de klasse <strong>PizzaFactoryMilaan</strong> niet beschikbaar is, maak dan een klasse <strong>PizzaFactoryMilaan</strong> met behulp van de in dit practicum gegeven versie van <strong>PizzaFactoryItalia</strong>.</p>
@@ -1208,9 +1297,11 @@ Maak een nieuw project en kopieëer de klasse <strong>PizzaFactoryItalia</strong
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../topics/11b_command.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1226,23 +1317,27 @@ Maak een nieuw project en kopieëer de klasse <strong>PizzaFactoryItalia</strong
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Door Hanzehogeschool Groningen<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

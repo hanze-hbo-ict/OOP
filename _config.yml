@@ -1,5 +1,5 @@
 # Book settings
-title: Objectgeoriënteerd Programmeren I
+title: Objectgeoriënteerd Programmeren
 author: Hanzehogeschool Groningen
 logo: images/logo_1.png
 copyright: ""
@@ -19,7 +19,7 @@ html:
   navbar_number_sections: false
 
 repository:
-  url: https://github.com/misja/OOP1
+  url: https://github.com/hanze-hbo-ict/OOP
   path_to_book: ""
   branch: main
 

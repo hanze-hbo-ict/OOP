@@ -1,13 +1,5 @@
 # Week 1
 
-## Onderwerpen
-
--   De programmeertaal Java
-    -   variabelen, typen en operatoren
-    -   Input en output
--   Java programma's schrijven en uitvoeren
--   De ontwikkelomgeving (IDE) IntelliJ
-
 ## Boek
 
 -   Hoofdstuk 1: [Computer Programming](https://books.trinket.io/thinkjava2/chapter1.html)

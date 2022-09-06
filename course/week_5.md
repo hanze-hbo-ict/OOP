@@ -1,15 +1,10 @@
 # Week 5
 
-## Onderwerpen
-
--   [Mutabiliteit](/topics/5a_mutable_klassen_en_objecten)
--   [Klassen ontwerpen](/topics/5b_klassen_ontwerpen)
-
-
 ## Boek
 
--   Hoofdstuk 10: [Mutable Objects](https://books.trinket.io/thinkjava2/chapter10.html)
--   Hoofdstuk 11: [Designing Classes](https://books.trinket.io/thinkjava2/chapter11.html)
+-   Hoofdstuk 12: [Arrays of Objects](https://books.trinket.io/thinkjava2/chapter12.html)
+-   Hoofdstuk 13: [Objects of Arrays](https://books.trinket.io/thinkjava2/chapter13.html)
+-   Hoofdstuk 14: [Extending Classes](https://books.trinket.io/thinkjava2/chapter14.html)
 
 ## Optioneel
 

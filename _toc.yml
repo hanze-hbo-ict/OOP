@@ -6,18 +6,17 @@ parts:
 - caption: Over deze cursus
   chapters:
   - file: about/literatuur
-
 - caption: Week 1
   chapters:
   - file: course/week_1
     title: Onderwerpen
     sections:
-      - file: topics/1a_inleiding
-        title: Inleiding
-      - file: topics/1b_variabelen_en_operatoren
-        title: Variabelen en operatoren
-      - file: topics/1c_invoer_en_uitvoer
-        title: Invoer en uitvoer
+    - file: topics/1a_inleiding
+      title: Inleiding
+    - file: topics/1b_variabelen_en_operatoren
+      title: Variabelen en operatoren
+    - file: topics/1c_invoer_en_uitvoer
+      title: Invoer en uitvoer
   - file: support/install
     title: Practicum
   - file: problems/hello_world/index
@@ -39,6 +38,12 @@ parts:
       title: Methoden en testen
     - file: topics/2b_condities_en_logica
       title: Condities en logica
+    - file: topics/3a_lussen_en_strings
+      title: Lussen en strings
+    - file: topics/3c_string_mystery
+      title: String Mystery
+    - file: topics/4a_recursie
+      title: Recursie
   - file: exercises/debuggen_en_methoden
     title: Practicum
   - file: problems/calculator/index
@@ -48,18 +53,22 @@ parts:
     sections:
     - file: exercises/12_12_if_statements
       title: Condities
+    - file: exercises/string_loops.md
+      title: Strings en lussen
+    - file: exercises/codingbat_strings
+      title: CodingBat strings
 
 - caption: Week 3
   chapters:
   - file: course/week_3
     title: Onderwerpen
     sections:
-    - file: topics/3a_lussen_en_strings
-      title: Lussen en strings
     - file: topics/3b_arrays_en_referenties
       title: Arrays en referenties
-    - file: topics/3c_string_mystery
-      title: String Mystery
+    - file: topics/4b_immutable_objecten
+      title: Immutabiliteit
+    - file: topics/5a_mutable_klassen_en_objecten
+      title: Mutable klassen en objecten
   - file: exercises/multiplication/index
     title: Practicum
   - file: problems/profiler/index
@@ -67,56 +76,37 @@ parts:
   - file: course/ex_3
     title: Oefening
     sections:
-    - file: exercises/string_loops.md
-      title: Strings en lussen
-    - file: exercises/codingbat_strings
-      title: CodingBat strings
     - file: exercises/codingbat_arrays
       title: CodingBat arrays
+    - file: exercises/grote_getallen
+      title: Grote getallen
 
 - caption: Week 4
   chapters:
   - file: course/week_4
     title: Onderwerpen
     sections:
-    - file: topics/4a_recursie
-      title: Recursie
-    - file: topics/4b_immutable_objecten
-      title: Immutabiliteit
-  - file: exercises/nested_circles/index
+    - file: topics/5b_klassen_ontwerpen
+      title: Klassen ontwerpen
+    - file: topics/9b_threads
+      title: Threads
+  - file: exercises/cone/index
     title: Practicum
-  - file: problems/recursive_graphics/index
+  # - file: exercises/nested_circles/index
+  #   title: Practicum
+  - file: problems/class_design/index
     title: Opgave
+  # - file: problems/recursive_graphics/index
+  #   title: Opgave
   - file: course/ex_4
     title: Oefening
     sections:
     - file: exercises/codingbat_recursie
       title: CodingBat recursie
-    - file: exercises/grote_getallen
-      title: Grote getallen
 
 - caption: Week 5
   chapters:
   - file: course/week_5
-    title: Onderwerpen
-    sections:
-    - file: topics/5a_mutable_klassen_en_objecten
-      title: Mutable klassen en objecten
-    - file: topics/5b_klassen_ontwerpen
-      title: Klassen ontwerpen
-  - file: exercises/cone/index
-    title: Practicum
-  - file: problems/class_design/index
-    title: Opgave
-  - file: course/ex_5
-    title: Oefening
-    sections:
-    - file: problems/clock/index
-      title: Klassen ontwerpen
-
-- caption: Week 6
-  chapters:
-  - file: course/week_6
     title: Onderwerpen
     sections:
     - file: topics/6a_static_en_collections
@@ -125,124 +115,133 @@ parts:
       title: Javadoc
     - file: topics/6c_testen
       title: Testen
-  - file: exercises/bouncing_balls/index
-    title: Practicum
+  - file: course/ex_5
+    title: Oefening
+    sections:
+    - file: problems/clock/index
+      title: Klassen ontwerpen
   - file: problems/simulation/index
     title: Opgave
+
+- caption: Week 6
+  chapters:
+  - file: course/week_6
+    title: Onderwerpen
+    sections:
+    - file: topics/7a_klassen_hergebruiken
+      title: Overerving en abstracte klassen
+  - file: exercises/library/index
+    title: Practicum
+  - file: exercises/bouncing_balls/index
+    title: Opgave 1
+  - file: problems/verhuur/index
+    title: Opgave 2
 
 - caption: Week 8
   chapters:
   - file: course/week_8
     title: Onderwerpen
     sections:
-    - file: topics/7a_klassen_hergebruiken
-      title: Overerving en abstracte klassen
     - file: topics/7b_klassen
       title: Meer over klassen
-  - file: problems/verhuur/index
-    title: Opgave
-
-- caption: Week 9
-  chapters:
-  - file: course/week_9
-    title: Onderwerpen
-    sections:
     - file: topics/8_interfaces
     - file: topics/8b_exceptions
-  - file: exercises/library/index
-    title: Practicum
   - file: exercises/exceptions_gooien
     title: Opgave 1
   - file: exercises/exceptions_gebruiken
     title: Opgave 2
-
-- caption: Week 10
-  chapters:
-  - file: course/week_10
-    title: Onderwerpen
-    sections:
-      - file: topics/9a_design_patterns
-        title: Design Patterns
-      - file: topics/9b_threads
-        title: Threads
-      - file: topics/9c_observer_pattern
-        title: Observer pattern
-  - file: exercises/observer_pattern
-    title: Practicum
-  - file: problems/connect4/index
-    title: Opgave
   - file: exercises/exceptions_en_bestanden
     title: Oefening
 
-- caption: Week 11
-  chapters:
-  - file: course/week_11
-    title: Onderwerpen
-    sections:
-    - file: topics/10a_decorator
-      title: Decorator Pattern
-    - file: topics/10b_factory
-      title: Factory Pattern
-  - file: exercises/pizza/index
-    title: Practicum decorator
-  - file: exercises/cats/index
-    title: Practicum decorator 2
-  - file: exercises/logger
-    title: Practicum factory
-  - file: problems/pizza/index
-    title: Opgave factory
+# - caption: Week 9
+#   chapters:
+#   - file: course/week_9
+#     title: Onderwerpen
+#     sections:
 
-- caption: Week 12
-  chapters:
-  - file: course/week_12
-    title: Onderwerpen
-    sections:
-    - file: topics/11a_singleton
-      title: Singleton Pattern
-    - file: topics/11b_command
-      title: Command Pattern
-  - file: exercises/singleton_pattern
-    title: Practicum 1
-  - file: exercises/command_pattern
-    title: Practicum 2
-  - file: problems/logger/index
-    title: Opgave singleton 1
-  - file: problems/counter/index
-    title: Opgave singleton 2
+# - caption: Week 10
+#   chapters:
+#   - file: course/week_10
+#     title: Onderwerpen
+#     sections:
+#       - file: topics/9a_design_patterns
+#         title: Design Patterns
+#       - file: topics/9c_observer_pattern
+#         title: Observer pattern
+#   - file: exercises/observer_pattern
+#     title: Practicum
+#   - file: problems/connect4/index
+#     title: Opgave
 
-- caption: Week 13
-  chapters:
-  - file: course/week_13
-    title: Onderwerpen
-    sections:
-    - file: topics/12b_iterator
-      title: Iterator Pattern
-  - file: exercises/iterator/index
-    title: Practicum iterator
+# - caption: Week 11
+#   chapters:
+#   - file: course/week_11
+#     title: Onderwerpen
+#     sections:
+#     - file: topics/10a_decorator
+#       title: Decorator Pattern
+#     - file: topics/10b_factory
+#       title: Factory Pattern
+#   - file: exercises/pizza/index
+#     title: Practicum decorator
+#   - file: exercises/cats/index
+#     title: Practicum decorator 2
+#   - file: exercises/logger
+#     title: Practicum factory
+#   - file: problems/pizza/index
+#     title: Opgave factory
 
-- caption: Week 14
-  chapters:
-  - file: course/week_14
-    title: Onderwerpen
-    sections:
-    - file: topics/13a_composite
-      title: Composite Pattern
-    - file: topics/13b_state
-      title: State Pattern
-  - file: exercises/pinautomaat/index
-    title: Practicum state
-  - file: problems/ordering_products/index
-    title: Opgave state 1
-  - file : problems/mix_case/index
-    title: Opgave state 2
+# - caption: Week 12
+#   chapters:
+#   - file: course/week_12
+#     title: Onderwerpen
+#     sections:
+#     - file: topics/11a_singleton
+#       title: Singleton Pattern
+#     - file: topics/11b_command
+#       title: Command Pattern
+#   - file: exercises/singleton_pattern
+#     title: Practicum 1
+#   - file: exercises/command_pattern
+#     title: Practicum 2
+#   - file: problems/logger/index
+#     title: Opgave singleton 1
+#   - file: problems/counter/index
+#     title: Opgave singleton 2
 
-- caption: Week 15
-  chapters:
-  - file: course/week_15
-    title: Onderwerpen
-  - file: exercises/composite/index
-    title: Practicum composite
-  - file: problems/patterns/1_alle_patterns
-    title: Opgave 1
-  - file: problems/patterns/2_alle_patterns
-    title: Opgave 2
+# - caption: Week 13
+#   chapters:
+#   - file: course/week_13
+#     title: Onderwerpen
+#     sections:
+#     - file: topics/12b_iterator
+#       title: Iterator Pattern
+#   - file: exercises/iterator/index
+#     title: Practicum iterator
+
+# - caption: Week 14
+#   chapters:
+#   - file: course/week_14
+#     title: Onderwerpen
+#     sections:
+#     - file: topics/13a_composite
+#       title: Composite Pattern
+#     - file: topics/13b_state
+#       title: State Pattern
+#   - file: exercises/pinautomaat/index
+#     title: Practicum state
+#   - file: problems/ordering_products/index
+#     title: Opgave state 1
+#   - file : problems/mix_case/index
+#     title: Opgave state 2
+
+# - caption: Week 15
+#   chapters:
+#   - file: course/week_15
+#     title: Onderwerpen
+#   - file: exercises/composite/index
+#     title: Practicum composite
+#   - file: problems/patterns/1_alle_patterns
+#     title: Opgave 1
+#   - file: problems/patterns/2_alle_patterns
+#     title: Opgave 2

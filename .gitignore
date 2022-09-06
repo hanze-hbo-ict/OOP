@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.class
 
 # C extensions
 *.so
@@ -132,3 +133,5 @@ _build/
 graphics/
 sets/
 topics/*.html
+notes.txt
+

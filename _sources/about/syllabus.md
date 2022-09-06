@@ -12,4 +12,6 @@ public class HelloWorld {
 }
 ```
 
-Welkom bij Objectgeoriënteerd Programmeren I.
+Welkom bij Objectgeoriënteerd Programmeren!
+
+Dit werkboek bevat de onderwerpen voor zowel *Objectgeoriënteerd Programmeren I* als *Objectgeoriënteerd Programmeren II*. Je kan hier het materiaal terugvinden dat tijdens college wordt gebruikt en practicum-, huiswerk- en oefenopgaven.

@@ -1,6 +1,6 @@
 # Literatuur
 
-In deze cursus wordt de programmeertaal Java gebruikt, het begeleidend boek is *Think Java: How to Think Like a Computer Scientist*{cite}`Downey_Allen_B_2019-12-24`. Een PDF versie van dit boek is te vinden op [https://greenteapress.com/wp/think-java-2e/](https://greenteapress.com/wp/think-java-2e/).  Wij verwijzen hier en daar ook naar de [online versie](https://books.trinket.io/thinkjava2/) van dit boek op [Trinket](https://trinket.io/). Dit is een *interactieve* versie waar je tegelijkertijd code fragmenten kan schrijven en uitvoeren.
+In deze cursus wordt de programmeertaal Java gebruikt, voor **Objectgeoriënteerd programmeren I** is het begeleidend boek *Think Java: How to Think Like a Computer Scientist*{cite}`Downey_Allen_B_2019-12-24`. Een PDF versie van dit boek is te vinden op [https://greenteapress.com/wp/think-java-2e/](https://greenteapress.com/wp/think-java-2e/).  Wij verwijzen hier en daar ook naar de [online versie](https://books.trinket.io/thinkjava2/) van dit boek op [Trinket](https://trinket.io/). Dit is een *interactieve* versie waar je tegelijkertijd code fragmenten kan schrijven en uitvoeren.
 
 ![Think Java: How to Think Like a Computer Scientist](images/think_java_2nd.png)
 
@@ -12,7 +12,7 @@ Als je een student aan de Hanzehogeschool bent is het zeer waarschijnlijk dat je
 
 ## Design Patterns
 
-Vanaf week 10 (Objectgeoriënteerd Programmeren 2) wordt gebruik gemaakt van het boek *Design Patterns: Building Extensible & Maintainable Object-Oriented Software*{cite}`Freeman_Eric2020-12-29`.
+Bij **Objectgeoriënteerd Programmeren II** (het logisch vervolg op Objectgeoriënteerd Programmeren I) wordt gebruik gemaakt van het boek *Design Patterns: Building Extensible & Maintainable Object-Oriented Software*{cite}`Freeman_Eric2020-12-29`.
 
 ![Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition](images/design_patterns_2nd.png)
 

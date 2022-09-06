@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Grote getallen &#8212; Objectgeoriënteerd Programmeren I</title>
+    <title>Grote getallen &#8212; Objectgeoriënteerd Programmeren</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Zoeken" href="../search.html" />
-    <link rel="next" title="Week 5" href="../course/week_5.html" />
-    <link rel="prev" title="CodingBat" href="codingbat_recursie.html" />
+    <link rel="next" title="Week 4" href="../course/week_4.html" />
+    <link rel="prev" title="CodingBat" href="codingbat_arrays.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="nl">
     
@@ -101,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../_static/logo_1.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren I</h1>
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -226,6 +226,21 @@ const thebe_selector_output = ".output, .cell_output"
      Condities en logica
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/4a_recursie.html">
+     Recursie
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -253,6 +268,16 @@ const thebe_selector_output = ".output, .cell_output"
      Condities
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="codingbat_strings.html">
+     CodingBat strings
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -261,7 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
   Week 3
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/week_3.html">
    Onderwerpen
@@ -273,18 +298,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../topics/3a_lussen_en_strings.html">
-     Lussen en strings
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../topics/3b_arrays_en_referenties.html">
      Arrays en referenties
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../topics/3c_string_mystery.html">
-     String Mystery
+    <a class="reference internal" href="../topics/4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
     </a>
    </li>
   </ul>
@@ -299,29 +324,24 @@ const thebe_selector_output = ".output, .cell_output"
    Opgave
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../course/ex_3.html">
    Oefening
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="string_loops.html">
-     Strings en lussen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="codingbat_strings.html">
-     CodingBat strings
-    </a>
-   </li>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="codingbat_arrays.html">
      CodingBat arrays
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Grote getallen
     </a>
    </li>
   </ul>
@@ -332,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
   Week 4
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/week_4.html">
    Onderwerpen
@@ -344,45 +364,40 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../topics/4a_recursie.html">
-     Recursie
+    <a class="reference internal" href="../topics/5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../topics/4b_immutable_objecten.html">
-     Immutabiliteit
+    <a class="reference internal" href="../topics/9b_threads.html">
+     Threads
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="nested_circles/index.html">
+  <a class="reference internal" href="cone/index.html">
    Practicum
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../problems/recursive_graphics/index.html">
+  <a class="reference internal" href="../problems/class_design/index.html">
    Opgave
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/ex_4.html">
    Oefening
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="codingbat_recursie.html">
      CodingBat recursie
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Grote getallen
     </a>
    </li>
   </ul>
@@ -405,26 +420,21 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../topics/5a_mutable_klassen_en_objecten.html">
-     Mutable klassen en objecten
+    <a class="reference internal" href="../topics/6a_static_en_collections.html">
+     Static en collections
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../topics/5b_klassen_ontwerpen.html">
-     Klassen ontwerpen
+    <a class="reference internal" href="../topics/6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/6c_testen.html">
+     Testen
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cone/index.html">
-   Practicum
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/class_design/index.html">
-   Opgave
-  </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/ex_5.html">
@@ -442,6 +452,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/simulation/index.html">
+   Opgave
+  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -461,30 +476,25 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../topics/6a_static_en_collections.html">
-     Static en collections
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/6b_javadoc.html">
-     Javadoc
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/6c_testen.html">
-     Testen
+    <a class="reference internal" href="../topics/7a_klassen_hergebruiken.html">
+     Overerving en abstracte klassen
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="bouncing_balls/index.html">
+  <a class="reference internal" href="library/index.html">
    Practicum
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../problems/simulation/index.html">
-   Opgave
+  <a class="reference internal" href="bouncing_balls/index.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems/verhuur/index.html">
+   Opgave 2
   </a>
  </li>
 </ul>
@@ -505,39 +515,10 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../topics/7a_klassen_hergebruiken.html">
-     Overerving en abstracte klassen
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../topics/7b_klassen.html">
      Meer over klassen
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/verhuur/index.html">
-   Opgave
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 9
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../course/week_9.html">
-   Onderwerpen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../topics/8_interfaces.html">
      Interfaces
@@ -551,11 +532,6 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="library/index.html">
-   Practicum
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="exceptions_gooien.html">
    Opgave 1
   </a>
@@ -565,251 +541,9 @@ const thebe_selector_output = ".output, .cell_output"
    Opgave 2
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 10
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../course/week_10.html">
-   Onderwerpen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/9a_design_patterns.html">
-     Design Patterns
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/9b_threads.html">
-     Threads
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/9c_observer_pattern.html">
-     Observer pattern
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="observer_pattern.html">
-   Practicum
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/connect4/index.html">
-   Opgave
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exceptions_en_bestanden.html">
    Oefening
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 11
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../course/week_11.html">
-   Onderwerpen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/10a_decorator.html">
-     Decorator Pattern
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/10b_factory.html">
-     Factory Pattern
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pizza/index.html">
-   Practicum decorator
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cats/index.html">
-   Practicum decorator 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="logger.html">
-   Practicum factory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/pizza/index.html">
-   Opgave factory
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 12
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../course/week_12.html">
-   Onderwerpen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/11a_singleton.html">
-     Singleton Pattern
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/11b_command.html">
-     Command Pattern
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="singleton_pattern.html">
-   Practicum 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="command_pattern.html">
-   Practicum 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/logger/index.html">
-   Opgave singleton 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/counter/index.html">
-   Opgave singleton 2
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 13
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../course/week_13.html">
-   Onderwerpen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/12b_iterator.html">
-     Iterator Pattern
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="iterator/index.html">
-   Practicum iterator
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 14
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../course/week_14.html">
-   Onderwerpen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/13a_composite.html">
-     Composite Pattern
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../topics/13b_state.html">
-     State Pattern
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pinautomaat/index.html">
-   Practicum state
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/ordering_products/index.html">
-   Opgave state 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/mix_case/index.html">
-   Opgave state 2
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 15
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../course/week_15.html">
-   Onderwerpen
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="composite/index.html">
-   Practicum composite
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/patterns/1_alle_patterns.html">
-   Opgave 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/patterns/2_alle_patterns.html">
-   Opgave 2
   </a>
  </li>
 </ul>
@@ -1057,17 +791,17 @@ Onthoud ook dat alles wat tot de macht nul verheven is, 1 is.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="codingbat_recursie.html" title="vorige pagina">
+    <a class='left-prev' id="prev-link" href="codingbat_arrays.html" title="vorige pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">vorige</p>
             <p class="prev-next-title">CodingBat</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../course/week_5.html" title="volgende pagina">
+    <a class='right-next' id="next-link" href="../course/week_4.html" title="volgende pagina">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">volgende</p>
-        <p class="prev-next-title">Week 5</p>
+        <p class="prev-next-title">Week 4</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

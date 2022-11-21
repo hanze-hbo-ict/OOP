@@ -229,7 +229,7 @@ parts:
   - file : problems/mix_case/index
     title: Opgave state 2
 
-- caption: Week 14
+- caption: Week 15
   chapters:
   - file: course/week_15
     title: Onderwerpen

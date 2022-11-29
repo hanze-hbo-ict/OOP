@@ -1,4 +1,4 @@
-# Week 14
+# Week 15
 
 ## Onderwerpen
 
@@ -6,6 +6,5 @@ In deze week worden de laatste patterns behandeld waarbij je de volgende hoofdst
 
 ## Boek
 
--   Hoofdstuk 12 "Patterns of Patterns"
 -   Hoofdstuk 13 "Patterns in the Real World"
 -   Hoofdstuk 14 "Leftover Patterns"

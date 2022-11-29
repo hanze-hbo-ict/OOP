@@ -8,4 +8,4 @@
 ## Boek
 
 -   Hoofdstuk 10 "The State of Things"
--   Hoofdstuk 11 "Controlling Object Access"
+-   Hoofdstuk 12 "Patterns of Patterns"

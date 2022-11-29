@@ -2,9 +2,12 @@
 
 ## Onderwerpen
 
--   [Interfaces](/topics/8_interfaces)
--   [Exceptions](/topics/8b_exceptions)
+-   [Design Patterns](/topics/9a_design_patterns)
+-   [Observer pattern](/topics/9c_observer_pattern)
 
 ## Boek
 
--   Hoofdstuk 17: [Advanced Topics](https://books.trinket.io/thinkjava2/chapter17.html)
+In deze week wordt een begin gemaakt met het boek *Design Patterns: Building Extensible & Maintainable Object-Oriented Software*{cite}`Freeman_Eric2020-12-29`.
+
+-   Hoofdstuk 1 "Welcome to Design Patterns"
+-   Hoofdstuk 2 "Keeping your Objects in the Know"

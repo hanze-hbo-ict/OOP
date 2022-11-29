@@ -2,11 +2,10 @@
 
 ## Onderwerpen
 
--   [Decorator Pattern](/topics/10a_decorator)
--   [Factory Patterns](/topics/10b_factory)
-
+-   [Singleton Pattern](/topics/11a_singleton)
+-   [Command Pattern](/topics/11b_command)
 
 ## Boek
 
--   Hoofdstuk 3 "Decorating Objects"
--   Hoofdstuk 4 "Baking with OO Goodness"
+-   Hoofdstuk 5 "One-of-a-Kind Objects"
+-   Hoofdstuk 6 "Encapsuling Invocation"

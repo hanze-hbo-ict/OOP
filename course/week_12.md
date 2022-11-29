@@ -2,10 +2,12 @@
 
 ## Onderwerpen
 
--   [Singleton Pattern](/topics/11a_singleton)
--   [Command Pattern](/topics/11b_command)
+-   Adapter Pattern
+-   Facade Pattern
+-   Template Method Pattern
+
 
 ## Boek
 
--   Hoofdstuk 5 "One-of-a-kind Objects"
--   Hoofdstuk 6 "Encapsulating Invocation"
+-   Hoofdstuk 7 "Being Adaptive"
+-   Hoofdstuk 8 "Encapsulating Algorithms"

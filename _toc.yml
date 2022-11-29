@@ -155,7 +155,7 @@ parts:
 
 - caption: Week 9
   chapters:
-  - file: course/week_10
+  - file: course/week_9
     title: Onderwerpen
     sections:
       - file: topics/9a_design_patterns
@@ -169,7 +169,7 @@ parts:
 
 - caption: Week 10
   chapters:
-  - file: course/week_11
+  - file: course/week_10
     title: Onderwerpen
     sections:
     - file: topics/10a_decorator
@@ -187,7 +187,7 @@ parts:
 
 - caption: Week 11
   chapters:
-  - file: course/week_12
+  - file: course/week_11
     title: Onderwerpen
     sections:
     - file: topics/11a_singleton
@@ -205,37 +205,41 @@ parts:
 
 - caption: Week 12
   chapters:
+  - file: course/week_12
+    title: Onderwerpen
+
+- caption: Week 13
+  chapters:
   - file: course/week_13
     title: Onderwerpen
     sections:
     - file: topics/12b_iterator
       title: Iterator Pattern
-  - file: exercises/iterator/index
-    title: Practicum iterator
-
-- caption: Week 13
-  chapters:
-  - file: course/week_14
-    title: Onderwerpen
-    sections:
     - file: topics/13a_composite
       title: Composite Pattern
-    - file: topics/13b_state
-      title: State Pattern
-  - file: exercises/pinautomaat/index
-    title: Practicum state
+  - file: exercises/iterator/index
+    title: Practicum iterator
+  - file: exercises/composite/index
+    title: Practicum composite
   - file: problems/ordering_products/index
     title: Opgave state 1
   - file : problems/mix_case/index
     title: Opgave state 2
 
-- caption: Week 15
+- caption: Week 14
   chapters:
-  - file: course/week_15
+  - file: course/week_14
     title: Onderwerpen
-  - file: exercises/composite/index
-    title: Practicum composite
+  - file: topics/13b_state
+    title: State Pattern
+  - file: exercises/pinautomaat/index
+    title: Practicum state
   - file: problems/patterns/1_alle_patterns
     title: Opgave 1
   - file: problems/patterns/2_alle_patterns
     title: Opgave 2
+
+- caption: Week 15
+  chapters:
+  - file: course/week_15
+    title: Onderwerpen

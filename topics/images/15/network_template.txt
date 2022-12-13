@@ -1,0 +1,32 @@
+@startuml
+!theme cerulean-outline
+
+abstract class Network {
+  -userName
+  -password
+
+  +post(message) : boolean
+  {abstract} +logIn(userName, password) : boolean
+  {abstract} +sendData(data) : boolean
+  {abstract} +logOut() : void
+
+}
+
+class Facebook extends Network {
+  +logIn(userName, password) : boolean
+  +sendData(data) : boolean
+  +logOut() : void
+}
+
+class Twitter extends Network {
+  +logIn(userName, password) : boolean
+  +sendData(data) : boolean
+  +logOut() : void
+}
+
+class Instagram extends Network {
+  +logIn(userName, password) : boolean
+  +sendData(data) : boolean
+  +logOut() : void
+}
+@enduml

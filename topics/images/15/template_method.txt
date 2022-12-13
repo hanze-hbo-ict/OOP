@@ -1,0 +1,27 @@
+@startuml
+!theme cerulean-outline
+
+abstract class AbstractClass {
+  ...
+
+  {abstract} +templateMethod()
+  +step1()
+  +step2()
+  +step3()
+}
+
+class ConcreteClass1 extends AbstractClass {
+  ...
+
+  +step2()
+  +step3()
+}
+
+class ConcreteClass2 extends AbstractClass {
+  ...
+
+  +step1()
+  +step2()
+  +step3()
+}
+@enduml

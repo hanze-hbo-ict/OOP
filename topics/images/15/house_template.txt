@@ -1,0 +1,26 @@
+@startuml
+!theme cerulean-outline
+
+abstract class HouseTemplate {
+
+  +buildHouse() : void
+  -buildWindows() : void
+  {abstract} +buildWalls() : void
+  {abstract} +buildPillars() : void
+  -buildFoundation() : void
+}
+
+class WoodenHouse extends HouseTemplate {
+  +buildWalls()
+  +buildPillars()
+}
+
+class GlassHouse extends HouseTemplate {
+  +buildWalls()
+  +buildPillars()
+}
+
+note right of HouseTemplate::buildHouse
+  The algorithm, marked as final so subclasses can't override
+end note
+@enduml

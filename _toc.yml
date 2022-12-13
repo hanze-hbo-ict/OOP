@@ -207,6 +207,15 @@ parts:
   chapters:
   - file: course/week_12
     title: Onderwerpen
+    sections:
+    - file: topics/15a_template
+      title: Template Method Pattern
+  - file: exercises/practicum_adapter_pattern
+    title: Practicum
+  - file: exercises/adapter_pattern
+    title: Opgave adapter
+  - file: exercises/facade_pattern
+    title: Opgave facade
 
 - caption: Week 13
   chapters:

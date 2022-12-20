@@ -1,0 +1,1479 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Opgave composite pattern &#8212; Objectgeoriënteerd Programmeren</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Zoeken" href="../../search.html" />
+    <link rel="next" title="Week 14" href="../../course/week_14.html" />
+    <link rel="prev" title="Practicum composite pattern" href="../../exercises/composite/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_strings.html">
+     CodingBat strings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3b_arrays_en_referenties.html">
+     Arrays en referenties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/multiplication/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../profiler/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_3.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_arrays.html">
+     CodingBat arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_4.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9b_threads.html">
+     Threads
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/cone/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../class_design/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_4.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_recursie.html">
+     CodingBat recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_5.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_5.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../clock/index.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/7a_klassen_hergebruiken.html">
+     Overerving en abstracte klassen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/library/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/bouncing_balls/index.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../verhuur/index.html">
+   Opgave 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_8.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/7b_klassen.html">
+     Meer over klassen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/8_interfaces.html">
+     Interfaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/8b_exceptions.html">
+     Foutafhandeling en exceptions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/exceptions_gooien.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/exceptions_gebruiken.html">
+   Opgave 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/exceptions_en_bestanden.html">
+   Oefening
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_9.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9a_design_patterns.html">
+     Design Patterns
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9c_observer_pattern.html">
+     Observer pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/observer_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../connect4/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 10
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_10.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/10a_decorator.html">
+     Decorator Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/10b_factory.html">
+     Factory Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/pizza/index.html">
+   Practicum decorator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/cats/index.html">
+   Practicum decorator 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/logger.html">
+   Practicum factory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pizza/index.html">
+   Opgave factory
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 11
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_11.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/11a_singleton.html">
+     Singleton Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/11b_command.html">
+     Command Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/singleton_pattern.html">
+   Practicum 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/command_pattern.html">
+   Practicum 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../logger/index.html">
+   Opgave singleton 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../counter/index.html">
+   Opgave singleton 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_12.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/15a_template.html">
+     Template Method Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/15b_adapter_pattern.html">
+     Adapter Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/practicum_adapter_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/adapter_pattern.html">
+   Opgave adapter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/facade_pattern.html">
+   Opgave facade
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 13
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_13.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/12b_iterator.html">
+     Iterator Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/13a_composite.html">
+     Composite Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/iterator/index.html">
+   Practicum iterator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/composite/index.html">
+   Practicum composite
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Opgave composite pattern
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 14
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/week_14.html">
+   Onderwerpen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../topics/13b_state.html">
+   State Pattern
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/pinautomaat/index.html">
+   Practicum state
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ordering_products/index.html">
+   Opgave state 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mix_case/index.html">
+   Opgave state 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../patterns/1_alle_patterns.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../patterns/2_alle_patterns.html">
+   Opgave 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 15
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/week_15.html">
+   Onderwerpen
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/hanze-hbo-ict/OOP/main?urlpath=lab/tree/problems/forum/index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/problems/forum/index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doel">
+   Doel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gebruik-van-het-composite-pattern">
+   Gebruik van het composite pattern
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#component">
+     Component
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#leaf">
+     Leaf
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#composite">
+     Composite
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-methodes">
+   De methodes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-getuser-en-string-gettext">
+     String getUser() en String getText();
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#int-getnumberofpostings">
+     int getNumberOfPostings();
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#post-getresponses">
+     Post[] getResponses();
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#post-find-string-search">
+     Post[] find(String search);
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#void-printpostings">
+     void printPostings();
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#void-addresponse-post-post">
+     void addResponse(Post post)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testen">
+   Testen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opgave">
+   Opgave
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a">
+     a
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b">
+     b
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c">
+     c
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Opgave composite pattern</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doel">
+   Doel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gebruik-van-het-composite-pattern">
+   Gebruik van het composite pattern
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#component">
+     Component
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#leaf">
+     Leaf
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#composite">
+     Composite
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-methodes">
+   De methodes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-getuser-en-string-gettext">
+     String getUser() en String getText();
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#int-getnumberofpostings">
+     int getNumberOfPostings();
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#post-getresponses">
+     Post[] getResponses();
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#post-find-string-search">
+     Post[] find(String search);
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#void-printpostings">
+     void printPostings();
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#void-addresponse-post-post">
+     void addResponse(Post post)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testen">
+   Testen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opgave">
+   Opgave
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a">
+     a
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b">
+     b
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c">
+     c
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="opgave-composite-pattern">
+<h1>Opgave composite pattern<a class="headerlink" href="#opgave-composite-pattern" title="Permalink naar deze titel">#</a></h1>
+<section id="doel">
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">#</a></h2>
+<ul class="simple">
+<li><p>Oefenen met het composite pattern</p></li>
+</ul>
+</section>
+<section id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">#</a></h2>
+<p>Deze opgave gaat over een klasse die de functionaliteit biedt voor een post op een internet-forum.</p>
+<p>Op een forum kan iedereen een onderwerp starten door een post te plaatsen. Anderen kunnen daar op reageren.</p>
+<p>Op reacties kan echter ook weer gereageerd worden! Bij weergave van een forum vaak door middel van inspringen duidelijk gemaakt welke posts een reactie zijn op welke post.</p>
+<p>Bijvoorbeeld:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Auteur: foo123
+Ik gebruik een ArrayList in een Java-project maar krijg de hele tijd een nullpointer exception. Waarom???
+
+   Auteur: bar
+   Weet je zeker dat de oorzaak van de exception bij de ArrayList ligt?
+
+   Auteur: Javaguru
+   Mogelijk heb je geen instantie gemaakt van de ArrayList.
+
+      Auteur: foo123
+      Hoe kan ik  zien of ik een instantie heb gemaakt?
+
+      Auteur: Javaguru
+      Met het keyword new worden instanties gemaakt. Staat ergens in jouw code new ArrayList?
+
+      Auteur: foo123
+      Nee
+
+      Auteur: bar
+      n00b
+</pre></div>
+</div>
+<p>De gebruiker ‘foo123’ stelt een vraag over een ArrayList. De gebruikers ‘bar’ en ‘Javaguru’ reageren op die vraag. Op de reactie van Javaguru wordt vier keer gereageerd.</p>
+</section>
+<section id="gebruik-van-het-composite-pattern">
+<h2>Gebruik van het composite pattern<a class="headerlink" href="#gebruik-van-het-composite-pattern" title="Permalink naar deze titel">#</a></h2>
+<p>Een post in het forum kan zowel een post zijn met bijbehorende reacties (responses) als een losse post.</p>
+<p>De functionaliteit is in beide gevallen exact hetzelfde, alleen het resultaat verschilt. Zo zal een methode die het aantal posts retourneert, het getal 1 teruggeven bij een enkele post, terwijl bij een post met bijbehorende reacties naast de post zelf ook de aantallen posts van reacties worden meegeteld.</p>
+<p>Om het gebruik van <em>instanceof</em> te voorkomen, wordt het <em>composite pattern</em> gebruikt.</p>
+<section id="component">
+<h3>Component<a class="headerlink" href="#component" title="Permalink naar deze titel">#</a></h3>
+<p>De abstracte klasse <strong>Post</strong>, die de parent class is van beide soorten forum-posts, conform het composite pattern. Deze klasse heeft twee instantie-variabelen, de strings <strong>user</strong> en <strong>text</strong>. Deze worden via de constructor geïnitialiseerd en wijzigen niet.</p>
+</section>
+<section id="leaf">
+<h3>Leaf<a class="headerlink" href="#leaf" title="Permalink naar deze titel">#</a></h3>
+<p>De klasse <strong>SinglePost</strong> representeert een forum-post waar geen reacties op zijn. Dit is dus niets anders dan een enkele post. De constructor van <em>component</em> wordt gebruikt.</p>
+</section>
+<section id="composite">
+<h3>Composite<a class="headerlink" href="#composite" title="Permalink naar deze titel">#</a></h3>
+<p>De klasse <strong>StartPost</strong> representeert een forum-post waar reacties op zijn. Deze heeft alle eigenschappen van een enkele post, met daarbij ook een aantal posts (<em>List&lt;Post&gt;</em>) die daar een reactie op zijn. De constructor van <em>component</em> wordt gebruikt.</p>
+<p>Let op: De naam <strong>StartPost</strong> kan enigszins verwarrend zijn! Hiermee wordt niet alleen bedoeld de eerste post, maar ook een post waar reacties op zijn en tegelijk een reactie is op een andere post.</p>
+</section>
+</section>
+<section id="de-methodes">
+<h2>De methodes<a class="headerlink" href="#de-methodes" title="Permalink naar deze titel">#</a></h2>
+<p>Elk type forum-post heeft de volgende methodes:</p>
+<section id="string-getuser-en-string-gettext">
+<h3>String getUser() en String getText();<a class="headerlink" href="#string-getuser-en-string-gettext" title="Permalink naar deze titel">#</a></h3>
+<p>Getters voor de gebruikersnaam en de tekst.</p>
+</section>
+<section id="int-getnumberofpostings">
+<h3>int getNumberOfPostings();<a class="headerlink" href="#int-getnumberofpostings" title="Permalink naar deze titel">#</a></h3>
+<p>Deze methode retourneert het aantal postings. Bij een enkele post is dit altijd 1, de post zelf. Bij een post is dit de post zelf, en tellen alle reacties op de post (en de reacties daarop, etc..) bij.</p>
+</section>
+<section id="post-getresponses">
+<h3>Post[] getResponses();<a class="headerlink" href="#post-getresponses" title="Permalink naar deze titel">#</a></h3>
+<p>Deze methode geeft een array terug van alle directe reacties op een post (dus niet de reacties op de reacties). In geval van een enkele post wordt een lege array teruggegeven.</p>
+<p>Hint: Een List<Post> omzetten naar een array Post[] kan met: posts.toArray(new Post[0])</p>
+</section>
+<section id="post-find-string-search">
+<h3>Post[] find(String search);<a class="headerlink" href="#post-find-string-search" title="Permalink naar deze titel">#</a></h3>
+<p>Deze methode geeft een array terug van alle reacties waarin de tekst in parameter <em>search</em> voorkomt in de tekst. Zoek in de tekst zelf, en in eventuele reacties (en reacties daarop, etc..).</p>
+</section>
+<section id="void-printpostings">
+<h3>void printPostings();<a class="headerlink" href="#void-printpostings" title="Permalink naar deze titel">#</a></h3>
+<p>Deze methode print de post en alle reacties daarop (en reacties daarop, etc..).</p>
+<p>Een post als volgt geprint:</p>
+<ul class="simple">
+<li><p>Eerste regel bevat “Auteur: “, gevolgd door de naam van de gebruiker.</p></li>
+<li><p>De volgende regel bevat de tekst van de post</p></li>
+<li><p>Na een post wordt nog een lege regel geprint</p></li>
+</ul>
+<p>Achter de post komen eventuele reacties op die post. Die worden geprint door de methode <em>printPostings</em> aan te roepen.</p>
+<p>Om duidelijk te maken welke posts reacties zijn op welke post, worden reacties op een post ingesprongen (met 3 spaties) ten opzichte van de vorige post, zoals te zien is aan het voorbeeld in de inleiding.</p>
+<p>Om te bepalen hoeveel er ingesprongen moet worden, wordt een parameter <em>level</em> meegegeven: void printPostings(int level).</p>
+<p>Om <em>printPostings</em> aan te kunnen roepen zonder level (voor de eerste post), kan deze implementatie worden toegevoegd:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printPostings</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">printPostings</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="void-addresponse-post-post">
+<h3>void addResponse(Post post)<a class="headerlink" href="#void-addresponse-post-post" title="Permalink naar deze titel">#</a></h3>
+<p>Deze voegt een response toe aan een post. Deze methode is alleen aanwezig in de klasse <em>StartPost</em>.</p>
+</section>
+</section>
+<section id="testen">
+<h2>Testen<a class="headerlink" href="#testen" title="Permalink naar deze titel">#</a></h2>
+<p>De volgende main-methode en hulp-methode kan gebruikt worden om de forum-klassen te testen:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Post</span><span class="w"> </span><span class="nf">generateTestPost</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">StartPost</span><span class="w"> </span><span class="n">startPost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StartPost</span><span class="p">(</span><span class="s">&quot;foo123&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ik gebruik een ArrayList in een Java-project maar krijg de hele tijd een nullpointer exception. Waarom???&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">startPost</span><span class="p">.</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SinglePost</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Weet je zeker dat de oorzaak van de exception bij de ArrayList ligt?&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">StartPost</span><span class="w"> </span><span class="n">startPost2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StartPost</span><span class="p">(</span><span class="s">&quot;Javaguru&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mogelijk heb je geen instantie gemaakt van de ArrayList.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">startPost</span><span class="p">.</span><span class="na">addResponse</span><span class="p">(</span><span class="n">startPost2</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">startPost2</span><span class="p">.</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SinglePost</span><span class="p">(</span><span class="s">&quot;foo123&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hoe kan ik  zien of ik een instantie heb gemaakt?&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">startPost2</span><span class="p">.</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SinglePost</span><span class="p">(</span><span class="s">&quot;Javaguru&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Met het keyword new worden instanties gemaakt. Staat ergens in jouw code new ArrayList?&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">startPost2</span><span class="p">.</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SinglePost</span><span class="p">(</span><span class="s">&quot;foo123&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nee&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">startPost2</span><span class="p">.</span><span class="na">addResponse</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SinglePost</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;n00b&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">startPost</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Post</span><span class="w"> </span><span class="n">startPost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generateTestPost</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Totaal aantal postings (start-post + alle reacties): &quot;</span><span class="o">+</span><span class="n">startPost</span><span class="p">.</span><span class="na">getNumberOfPostings</span><span class="p">());</span><span class="w"> </span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;================&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">startPost</span><span class="p">.</span><span class="na">printPostings</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;================&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Zoeken naar het woord &#39;instantie&#39;:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">Post</span><span class="w"> </span><span class="n">post</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">startPost</span><span class="p">.</span><span class="na">find</span><span class="p">(</span><span class="s">&quot;instantie&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Auteur: &quot;</span><span class="o">+</span><span class="n">post</span><span class="p">.</span><span class="na">getUser</span><span class="p">());</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tekst:  &quot;</span><span class="o">+</span><span class="n">post</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Resultaat:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Totaal aantal postings (start-post + alle reacties): 7
+
+================
+
+Auteur: foo123
+Ik gebruik een ArrayList in een Java-project maar krijg de hele tijd een nullpointer exception. Waarom???
+
+   Auteur: bar
+   Weet je zeker dat de oorzaak van de exception bij de ArrayList ligt?
+
+   Auteur: Javaguru
+   Mogelijk heb je geen instantie gemaakt van de ArrayList.
+
+      Auteur: foo123
+      Hoe kan ik  zien of ik een instantie heb gemaakt?
+
+      Auteur: Javaguru
+      Met het keyword new worden instanties gemaakt. Staat ergens in jouw code new ArrayList?
+
+      Auteur: foo123
+      Nee
+
+      Auteur: bar
+      n00b
+
+================
+
+Zoeken naar het woord &#39;instantie&#39;:
+Auteur: Javaguru
+Tekst:  Mogelijk heb je geen instantie gemaakt van de ArrayList.
+Auteur: foo123
+Tekst:  Hoe kan ik  zien of ik een instantie heb gemaakt?
+Auteur: Javaguru
+Tekst:  Met het keyword new worden instanties gemaakt. Staat ergens in jouw code new ArrayList?
+</pre></div>
+</div>
+</section>
+<section id="opgave">
+<h2>Opgave<a class="headerlink" href="#opgave" title="Permalink naar deze titel">#</a></h2>
+<section id="a">
+<h3>a<a class="headerlink" href="#a" title="Permalink naar deze titel">#</a></h3>
+<p>Maak de klassen <strong>Post</strong>, <strong>SinglePost</strong> en <strong>StartPost</strong> volgens bovenstaande omschrijving.</p>
+<p>Minimaliseer de hoeveelheid duplicate code.</p>
+<p>Gebruik de gegeven main-methode om te testen.</p>
+</section>
+<section id="b">
+<h3>b<a class="headerlink" href="#b" title="Permalink naar deze titel">#</a></h3>
+<p>De methode <em>printPostings</em> voert print rechtstreeks op de console. Dat is niet wenselijk, want is volledig gekoppeld aan de console.</p>
+<p>Oplossing is het toevoegen van een parameter <em>PostPrinter postPrinter</em>.</p>
+<p>Het type <strong>PostPrinter</strong> is een <em>interface</em>:</p>
+<p>public interface PostPrinter {</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>void printPostings(int level, Post post);
+</pre></div>
+</div>
+<p>}</p>
+<p>Pas de methode <em>printPostings</em> aan.</p>
+<p>Maak een concrete klasse <strong>PostPrinterConsole</strong> die de inhoud van de post op de console print.</p>
+<p>Gebruik in main-methode: startPost.printPostings(new PostPrinterConsole());</p>
+<p>Welk designpattern wordt hiermee ook gebruikt?</p>
+</section>
+<section id="c">
+<h3>c<a class="headerlink" href="#c" title="Permalink naar deze titel">#</a></h3>
+<p>Op de meeste internet-fora heeft de eerste post ook een titel.</p>
+<p>De titel wordt opgevraagd met een getter en dient te worden ondersteund door de methode <em>printPostings</em>.</p>
+<p>Alleen de eerste post kan een titel hebben. Daarom hoeft <em>getTitle</em> niet in alle klassen beschikbaar te zijn.</p>
+<p>Implementeer deze functionaliteit door een klasse toe te voegen die de eerste post representeert. Blijf werken conform het composite pattern, geen <em>instanceof</em> en minimaliseer duplicate code.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "java"
+        },
+        kernelOptions: {
+            kernelName: "java",
+            path: "./problems/forum"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'java'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../exercises/composite/index.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Practicum composite pattern</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../course/week_14.html" title="volgende pagina">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Week 14</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

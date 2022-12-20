@@ -232,10 +232,8 @@ parts:
     title: Practicum iterator
   - file: exercises/composite/index
     title: Practicum composite
-  - file: problems/ordering_products/index
-    title: Opgave state 1
-  - file : problems/mix_case/index
-    title: Opgave state 2
+  - file: problems/forum/index
+    title: Opgave composite pattern
 
 - caption: Week 14
   chapters:
@@ -245,6 +243,10 @@ parts:
     title: State Pattern
   - file: exercises/pinautomaat/index
     title: Practicum state
+  - file: problems/ordering_products/index
+    title: Opgave state 1
+  - file : problems/mix_case/index
+    title: Opgave state 2
   - file: problems/patterns/1_alle_patterns
     title: Opgave 1
   - file: problems/patterns/2_alle_patterns

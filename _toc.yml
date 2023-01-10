@@ -247,12 +247,12 @@ parts:
     title: Opgave state 1
   - file : problems/mix_case/index
     title: Opgave state 2
-  - file: problems/patterns/1_alle_patterns
-    title: Opgave 1
-  - file: problems/patterns/2_alle_patterns
-    title: Opgave 2
 
 - caption: Week 15
   chapters:
   - file: course/week_15
     title: Onderwerpen
+  - file: problems/patterns/1_alle_patterns
+    title: Opgave 1
+  - file: problems/patterns/2_alle_patterns
+    title: Opgave 2

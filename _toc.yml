@@ -255,6 +255,6 @@ parts:
   - file: problems/patterns/1_alle_patterns
     title: Practicum
   - file: problems/patterns/2_alle_patterns_mvc
-    title: Opgave 2
+    title: Opgave 1
   - file: problems/patterns/3_alle_patterns
-    title: Opgave 3
+    title: Opgave 2

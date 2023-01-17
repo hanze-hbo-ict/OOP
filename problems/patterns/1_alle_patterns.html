@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Zoeken" href="../../search.html" />
-    <link rel="next" title="Opgave 2 Alle design patterns" href="2_alle_patterns.html" />
+    <link rel="next" title="Opgave 2 Alle design patterns / MVC" href="2_alle_patterns_mvc.html" />
     <link rel="prev" title="Week 15" href="../../course/week_15.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="nl">
@@ -815,11 +815,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Opgave 1
+   Practicum
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="2_alle_patterns.html">
+  <a class="reference internal" href="2_alle_patterns_mvc.html">
    Opgave 2
   </a>
  </li>
@@ -989,6 +989,21 @@ title="Print to PDF"
    Koppel elk pattern aan de juiste zin
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   1. Koppel elk pattern aan de juiste zin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#patterns-categoriseren">
+   2. Patterns categoriseren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#class-en-object-patterns">
+   3. Class en object patterns
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -1013,6 +1028,21 @@ title="Print to PDF"
    Koppel elk pattern aan de juiste zin
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   1. Koppel elk pattern aan de juiste zin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#patterns-categoriseren">
+   2. Patterns categoriseren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#class-en-object-patterns">
+   3. Class en object patterns
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -1027,27 +1057,55 @@ title="Print to PDF"
 <h1>Opgave 1 Alle design patterns<a class="headerlink" href="#opgave-1-alle-design-patterns" title="Permalink naar deze titel">#</a></h1>
 <section id="koppel-elk-pattern-aan-de-juiste-zin">
 <h2>Koppel elk pattern aan de juiste zin<a class="headerlink" href="#koppel-elk-pattern-aan-de-juiste-zin" title="Permalink naar deze titel">#</a></h2>
+<p>Deze opgave gaat over de onderstaande twaalf patterns:</p>
 <ol class="simple">
 <li><p>Strategy pattern</p></li>
 <li><p>Observer pattern</p></li>
 <li><p>Decorator pattern</p></li>
-<li><p>Factory pattern</p></li>
+<li><p>Factory patterns</p></li>
 <li><p>Singleton pattern</p></li>
 <li><p>Command pattern</p></li>
+<li><p>Adapter pattern</p></li>
+<li><p>Facade pattern</p></li>
+<li><p>Template method pattern</p></li>
 <li><p>Iterator pattern</p></li>
 <li><p>Composite pattern</p></li>
 <li><p>State pattern</p></li>
 </ol>
+</section>
+<section id="id1">
+<h2>1. Koppel elk pattern aan de juiste zin<a class="headerlink" href="#id1" title="Permalink naar deze titel">#</a></h2>
+<p>Koppel elk pattern aan de zin tie van toepassing is.</p>
 <p>A. Maakt het mogelijk dat objecten ‘op de hoogte worden gesteld’ als er veranderingen in een bepaald object zijn</p>
 <p>B. Een verzameling van objecten en individuele objecten kunnen op dezelfde manier behandeld worden</p>
 <p>C. Gedrag van een object in een bepaalde toestand is geïmplementeerd in een bijbehorende klasse, en functionaliteit
 van dat object wordt gedelegeerd naar de klasse van de huidige toestand.</p>
 <p>D. Omhult (‘wrapt’) een object in een ander object om nieuwe functionaliteit toe te voegen</p>
-<p>E. Object bevat alle informatie die nodig is om een actie op een later moment uit te voeren, via een uniforme interface met een methode om de actie uit te voeren.</p>
-<p>F. Maakt het mogelijk om een verzameling van objecten te doorlopen zonder dat het nodig is om de specifieke methodes van die verzameling te kennen.</p>
-<p>G. Implementeert functionaliteit in een klasse om objecten te maken. Deze functionaliteit is gedefiniëerd in een interface, zodat het niet nodig is om te weten welke klasse precies wordt gebruikt.</p>
-<p>H. Verzekert dat slechts er één instantie is van een bepaalde klasse</p>
-<p>I. Definiëert een groep algoritmes, die zijn geïmplementeerd in klassen toegankelijk via een interface, zodat ze uitwisselbaar zijn, zelfs tijdens uitvoering van een programma.</p>
+<p>E. Omhult (‘wrapt’) een object om deze te voorzien van een andere interface.</p>
+<p>F. In subklassen worden stappen van een algoritme geïmplementeerd</p>
+<p>G. Object bevat alle informatie die nodig is om een actie op een later moment uit te voeren, via een uniforme interface met een methode om de actie uit te voeren.</p>
+<p>H. Maakt het mogelijk om een verzameling van objecten te doorlopen zonder dat het nodig is om de specifieke methodes van die verzameling te kennen.</p>
+<p>I. Implementeert functionaliteit in een klasse om objecten te maken. Deze functionaliteit is gedefiniëerd in een interface, zodat het niet nodig is om te weten welke klasse precies wordt gebruikt.</p>
+<p>J. Biedt een vereenvoudigde interface aan voor een set klassen</p>
+<p>K. Verzekert dat slechts er één instantie is van een bepaalde klasse</p>
+<p>L. Definiëert een groep algoritmes, die zijn geïmplementeerd in klassen toegankelijk via een interface, zodat ze uitwisselbaar zijn, zelfs tijdens uitvoering van een programma.</p>
+</section>
+<section id="patterns-categoriseren">
+<h2>2. Patterns categoriseren<a class="headerlink" href="#patterns-categoriseren" title="Permalink naar deze titel">#</a></h2>
+<p>Deel elk van de patterns in onder één van de volgende categorieën:</p>
+<ul class="simple">
+<li><p>Creational</p></li>
+<li><p>Behavioral</p></li>
+<li><p>Structural</p></li>
+</ul>
+</section>
+<section id="class-en-object-patterns">
+<h2>3. Class en object patterns<a class="headerlink" href="#class-en-object-patterns" title="Permalink naar deze titel">#</a></h2>
+<p>Een andere wijze om patterns te categoriseren is de indeling in class en object patterns.</p>
+<p><strong>Class patterns</strong> beschrijven hoe relaties tussen klassen zijn definiëerd door middel van overerving. Relaties tussen klassen worden bepaald bij het compileren. <em>Overervaring is het leidende principe</em>.</p>
+<p><strong>Object patterns</strong> beschrijven relaties tussen objecten. Relaties tussen klassen worden vooral runtime bepaald. <em>Compositie is het leidende principe</em>.</p>
+<p>Deel elk van de patterns in bij één van deze categorieën.</p>
+<p>Maak bij de <em>Factory patterns</em> onderscheid tussen <em>factory mathod</em> en <em>abstract factory</em>.</p>
 </section>
 </section>
 
@@ -1085,10 +1143,10 @@ van dat object wordt gedelegeerd naar de klasse van de huidige toestand.</p>
             <p class="prev-next-title">Week 15</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="2_alle_patterns.html" title="volgende pagina">
+    <a class='right-next' id="next-link" href="2_alle_patterns_mvc.html" title="volgende pagina">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">volgende</p>
-        <p class="prev-next-title">Opgave 2 Alle design patterns</p>
+        <p class="prev-next-title">Opgave 2 Alle design patterns / MVC</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

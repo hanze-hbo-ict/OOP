@@ -253,6 +253,8 @@ parts:
   - file: course/week_15
     title: Onderwerpen
   - file: problems/patterns/1_alle_patterns
-    title: Opgave 1
-  - file: problems/patterns/2_alle_patterns
+    title: Practicum
+  - file: problems/patterns/2_alle_patterns_mvc
     title: Opgave 2
+  - file: problems/patterns/3_alle_patterns_mvc
+    title: Opgave 3

@@ -15,7 +15,7 @@ Indien je een foutbericht ziet, of als je niet weet hoe je het bovenstaande moet
 ````
 
 ````{tabbed} Windows
-De JDK die wij aanbevelen is OpenJDK, een *open source* implementatie van Java SE (Standard Edition). Ga naar [AdoptOpenJDK](https://adoptopenjdk.net/) en download een versie voor jouw besturingssysteem.
+De JDK die wij aanbevelen is OpenJDK, een *open source* implementatie van Java SE (Standard Edition). Ga naar [AdoptOpenJDK](https://adoptopenjdk.net/) en download de juiste versie voor je besturingssysteem.
 
 -   Kies OpenJDK 11 LTS (*Long Term Support*).
 -   Je kan kiezen voor een JVM (Java Virtual Machine), HotSpot is een goede keus.
@@ -48,19 +48,19 @@ Op Linux distributies is OpenJDK eenvoudig te installeren met package managers a
 
 ## Editor
 
-Java programma's kunnen met elke teksteditor worden geschreven, wij raden IntelliJ IDEA aan, een ontwikkelomgeving (een IDE, of *Integrated Development Environment*) specifiek voor Java en op dit moment één van de meest gebruikte toepassingen voor het schrijven van Java programma's.
+Java programma's kunnen met elke teksteditor worden geschreven, maar het is beter om hier een speciale editor voor te gebruiken. Wij raden IntelliJ IDEA aan, een ontwikkelomgeving (een IDE, of *Integrated Development Environment*) specifiek voor Java en op dit moment één van de meest gebruikte toepassingen voor het schrijven van Java programma's.
 
--   Ga naar [JetBrains](https://www.jetbrains.com/idea/download/) en download & installeer **IntelliJ IDEA Community Edition** voor jouw besturingssysteem.
+-   Ga naar [JetBrains](https://www.jetbrains.com/idea/download/) en download en installeer **IntelliJ IDEA Community Edition** voor jouw besturingssysteem.
 
 ```{admonition} Andere editors
 Het kan bijvoorbeeld zijn dat je eerder met [Visual Studio Code](https://code.visualstudio.com/) (VSCode) hebt gewerkt en dit ook voor Java zou willen gebruiken. Je zal dan VSCode moeten uitbreiden met functionaliteit specifiek voor Java. Het [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) is in dit geval een bundel van nuttige Java extensies om aan VSCode toe te voegen.
 
-Let op, in deze cursus zal in de voorbeelden en opgaven worden uitgegaan van IntelliJ als standaardeditor voor Java, maar dit is niet verplicht en je mag een andere editor of IDE gebruiken als je wilt (maar wordt niet door ons ondersteund!).
+Let op, in deze cursus zal in de voorbeelden en opgaven worden uitgegaan van IntelliJ als standaardeditor voor Java, maar dit is niet verplicht en je mag een andere editor of IDE gebruiken als je wilt (maar wordt niet door ons ondersteund).
 ```
 
 ## Open een project in IntelliJ
 
-Je gaat Java-programma's ontwikkelen in *IntelliJ IDEA Community Edition*.
+Je gaat Java programma's ontwikkelen in *IntelliJ IDEA Community Edition*.
 
 IntelliJ ordent Java-programma's in projecten. In deze cursus komt elk project overeen met één programmeeropdracht. Een typisch project bevat Java-programma's, bijbehorende gegevensbestanden en cursus-specifieke instellingen (zoals compileropties, stijlregels en bibliotheken, of *class libraries*).
 
@@ -68,7 +68,7 @@ IntelliJ ordent Java-programma's in projecten. In deze cursus komt elk project o
 Maak je geen zorgen als je nog niet weet wat bijvoorbeeld met *compileren*, *compileropties* of *class libraries* wordt bedoeld. De betekenis zal duidelijker worden naarmate de cursus vordert.
 ```
 
-Voor elke opdracht ga je een startproject downloaden waarin jij jouw programmacode gaat schrijven.
+Voor elke opdracht ga je een startproject downloaden waarin je je programmacode gaat schrijven.
 
 -   Download het volgende project voor de eerste programmeeropdracht naar een handige locatie (zoals bijvoorbeeld het *Bureaublad*).
 
@@ -99,7 +99,7 @@ Voor elke opdracht ga je een startproject downloaden waarin jij jouw programmaco
 
 -   Wanneer je IntelliJ voor de eerste keer start,
 
-    -   kan *IntelliJ* he [JetBrains privacybeleid](https://www.jetbrains.com/company/privacy.html) weergeven. Scroll naar beneden en *accepteer*.
+    -   kan *IntelliJ* het [JetBrains privacybeleid](https://www.jetbrains.com/company/privacy.html) weergeven. Scroll naar beneden en *accepteer*.
     -   kan *IntelliJ* vragen of je anonieme gebruiksstatistieken naar *JetBrains* wilt sturen. Kies de gewenste optie.
     -   zal *IntelliJ* een welkomstscherm tonen (*Welkom bij IntelliJ IDEA*).
 
@@ -122,12 +122,12 @@ Voor elke opdracht ga je een startproject downloaden waarin jij jouw programmaco
     Wanneer je IntelliJ voor de eerste keer opstart kan het een minuut of twee duren om bestanden te *indexeren*, sommige functies (zoals automatisch importeren) zullen niet beschikbaar zijn totdat dit proces is voltooid.
 
     ```{warning}
-    Klik niet op **Nieuw Project**, deze optie is bedoeld voor gevorderde gebruikers. Gebruik ook altijd **Openen**  met een projectmap, *niet* met een individueel bestand.
+    Klik niet op **Nieuw Project**, deze optie is bedoeld voor gevorderde gebruikers. Gebruik ook altijd **Openen** met een projectmap, *niet* met een individueel bestand.
     ```
 
 ## Maak een programma in IntelliJ
 
-Nu bent je klaar om uw eerste Java programma te schrijven. IntelliJ heeft veel gespecialiseerde programmeerhulpmiddelen, zoals regelnummering, syntax highlighting, bracket matching, auto indenting, auto formatting, auto importing, variable renaming, en continue code inspectie.
+Nu bent je klaar om je eerste Java programma te schrijven. IntelliJ heeft veel gespecialiseerde programmeerhulpmiddelen, zoals regelnummering, syntax highlighting, bracket matching, auto indenting, auto formatting, auto importing, variable renaming, en continue code inspectie.
 
 -   Om een nieuw Java programma te maken:
 
@@ -158,16 +158,16 @@ Nu bent je klaar om uw eerste Java programma te schrijven. IntelliJ heeft veel g
     }
     ```
 
-    Als je zelfs maar een puntkomma weglaat, zal het programma niet werken!
+    Als je zelfs maar een puntkomma weglaat, zal het programma niet werken.
 
 -   Terwijl je typt zal *IntelliJ* verschillende syntactische elementen in verschillende kleuren markeren. Wanneer je een haakje links typt, voegt *IntelliJ* het bijbehorende haakje rechts toe. Wanneer je een nieuwe regel begint, laat *IntelliJ* deze inspringen.
 
     <!-- TODO screenshot -->
 
--   Om het bestand op te slaan kies je de menuoptie **Bestand → Alles opslaan (Ctrl + S)**. Wanneer u het bestand opslaat, formatteert *IntelliJ* het (indien nodig) opnieuw.
+-   Om het bestand op te slaan kies je de menuoptie **Bestand → Alles opslaan (Ctrl + S)**. Wanneer je het bestand opslaat, formatteert *IntelliJ* het (indien nodig) opnieuw.
 
     ```{tip}
-    *IntelliJ* is zo ingesteld dat wijzigingen die je in jouw bestanden aanbrengt automatisch worden opgeslagen bij verschillende gebeurtenissen (zoals compileren, uitvoeren, sluiten van een bestand of project, of het afsluiten van de IDE). We raden nog steeds aan om **Bestand → Alles opslaan (Ctrl + S)** te gebruiken om uw code opnieuw te formatteren.
+    *IntelliJ* is zo ingesteld dat wijzigingen die je in je bestanden aanbrengt automatisch worden opgeslagen bij verschillende gebeurtenissen (zoals compileren, uitvoeren, sluiten van een bestand of project, of het afsluiten van de IDE). We raden nog steeds aan om **Bestand → Alles opslaan (Ctrl + S)** te gebruiken om uw code opnieuw te formatteren.
     ```
 
 <!-- TODO meer algemeen beschrijven

@@ -10,7 +10,7 @@
 
 ## Inleiding
 
-Om te beginnen zal je Java en een programmeeromgeving op jouw computer moeten instellen. Volg de [stap-voor-stap](/support/install) instructies zorgvuldig.
+Om te beginnen zal je Java en een programmeeromgeving op je computer moeten instellen. Volg de [stap-voor-stap](/support/install) instructies zorgvuldig.
 
 Ten tweede, alle opdrachten vereisen dat je een project zip-bestand downloadt. Gebruik de projectmap `hello` die je na de installatie van IntelliJ hebt gedownload. Het is een goed idee om die map ergens veilig op te slaan, samen met alle mappen die je voor volgende opdrachten in deze module aanmaakt.
 
@@ -34,14 +34,14 @@ Ten derde, lees hoofdstuk [1](https://books.trinket.io/thinkjava2/chapter1.html)
 
 ### `HelloWorld.java`
 
-Jouw eerste taak is het schrijven van het `HelloWorld` programma. Kies in IntelliJ *File > New > Java Class*. Geef het bestand de naam `HelloWorld` en typ dan het eerste programma van iedereen in: `HelloWorld.java`.
+De eerste taak is het schrijven van het `HelloWorld` programma. Kies in IntelliJ *File > New > Java Class*. Geef het bestand de naam `HelloWorld` en typ dan het eerste programma van iedereen in: `HelloWorld.java`.
 
 <!--
 ![](images/image7.png)
 -->
 
 ```{note}
-*Ik begrijp al het jargon in `HelloWorld.java` niet!*  Maak je geen zorgen, je zult de betekenis van alles in het programma in de loop van de cursus ontdekken. Java heeft veel boilerplate code nodig om te beginnen. Lees steeds de relevante hoofdstukken van het boek en stel vragen tijdens het practicum.
+*Ik begrijp al het jargon in `HelloWorld.java` niet.*  Maak je geen zorgen, je zult de betekenis van alles in het programma in de loop van de cursus ontdekken. Java heeft veel boilerplate code nodig om te beginnen. Lees steeds de relevante hoofdstukken van het boek en stel vragen tijdens het practicum.
 ```
 
 ### `HiFour.java`
@@ -98,11 +98,15 @@ Dit programma, `DeluxeOrdered.java`, voert dezelfde operatie uit als `Ordered.ja
 
 ### `GreatCircle.java`
 
-Deze oefening demonstreert het gebruik van het gegevenstype `double` en Java's [Math](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html) bibliotheek. De afstand van de grote cirkel is de kortste afstand tussen twee punten op het oppervlak van een bol als je gedwongen bent om langs het oppervlak te reizen. Schrijf een programma `GreatCircle.java` dat vier dubbele command-line argumenten `x1`, `y1`, `x2`, en `y2` (de breedtegraad en lengtegraad, in graden, van twee punten op het aardoppervlak) accepteert en de grootcirkelafstand (in zeemijlen) tussen deze punten afdrukt. Gebruik de volgende formule, die is afgeleid van de sferische wet van cosinussen:
+Deze oefening demonstreert het gebruik van het gegevenstype `double` en Java's [Math](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html) bibliotheek. De afstand van de grootcirkel is de kortste afstand tussen twee punten op het oppervlak van een bol als je gedwongen bent om langs het oppervlak te reizen. Schrijf een programma `GreatCircle.java` dat vier dubbele command-line argumenten `x1`, `y1`, `x2`, en `y2` (de breedtegraad en lengtegraad, in graden, van twee punten op het aardoppervlak) accepteert en de grootcirkelafstand (in zeemijlen) tussen deze punten afdrukt. Gebruik de volgende formule, die is afgeleid van de sferische wet van cosinussen:
 
 $$
 distance = 60 \times \arccos{(\sin{x_1} \sin{x_2} + \cos{x_1} \cos{x_2} \cos{(y_1 - y_2}))}
 $$
+
+```{note}
+Grootcirkelnavigatie is een belangrijk onderwerp in zowel de luchtvaart als de zeevaart. Het grote voordeel ervan is dat je altijd de kortste weg tussen twee punten op een bol (de aardglobe) aflegt. Het grote nadeel ervan is dat je gedurende je reis continu je koers moet verleggen. Zie [wikipedia over dit onderwerp](https://nl.wikipedia.org/wiki/Grootcirkelnavigatie) voor meer informatie.
+```
 
 <!--
 ![](images/image1.png)
@@ -128,7 +132,7 @@ Mijn uitvoer voor `GreatCircle` komt overeen met de voorbeelduitvoer in de opdra
 
 Deze oefening demonstreert het gebruik van type-omzettingen. Er worden verschillende formaten gebruikt om kleur weer te geven. Het primaire formaat voor LCD-schermen, digitale camera's en webpagina's - bekend als het *RGB-formaat* - specificeert bijvoorbeeld het niveau van rood (R), groen (G) en blauw (B) op een gehele schaal van 0 tot en met 255. Het primaire formaat voor het publiceren van boeken en tijdschriften - bekend als het CMYK formaat - specificeert het niveau van cyaan (C), magenta (M), geel (Y), en zwart (K) op een reële schaal van 0.0 tot en met 1.0.
 
-Schrijf een programma `RGBtoCMYK.java` dat converteert van RGB formaat naar CMYK formaat. Je programma moet drie gehele command-line argumenten accepteren, rood, groen en blauw, de RGB waarden afdrukken, en vervolgens de equivalente CMYK waarden afdrukken met behulp van de volgende wiskundige formules.
+Schrijf een programma `RGBtoCMYK.java` dat een input in RGB formaat naar CMYK formaat converteert. Je programma moet drie gehele command-line argumenten accepteren: de waarden van rood, groen en blauw; het programma moet de corresponderende RGB waarden afdrukken, en vervolgens de equivalente CMYK waarden afdrukken met behulp van de volgende wiskundige formules.
 
 Je mag in deze opdracht **geen** if-statements gebruiken, maar je mag aannemen dat de commandoregel-argumenten niet allemaal tegelijk nul zijn.
 
@@ -191,7 +195,7 @@ Dit programma, `DeluxeRGBtoCMYK.java`, voert dezelfde bewerking uit als `RGBtoCM
 
 ## Hello World
 
-Hier is [Hello World](http://helloworldcollection.de) in meer dan 200 verschillende  programmeertalen!
+Hier is [Hello World](http://helloworldcollection.de) in meer dan 200 verschillende  programmeertalen.
 
 ---
 

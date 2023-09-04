@@ -29,6 +29,16 @@ python -m http.server
 ![Het startscherm van het werkboek](images/startup-screen.png)
 
 
+## Opbouw van de notebooks
+
+In deze repo zijn verschillende directories opgenomen. Een aantal hiervan is nodig om jupyter-book goed te laten werken en een aantal spreekt redelijk voor zich. Voor de dagelijkse gang van het onderwijs zijn de volgende drie directories met name van belang:
+
+directory | onderdeel
+----|----
+topics | theorie en uitleg; fundering van de hoorcolleges
+problems | opgaven die tijdens de practica moeten worden uitgevoerd en aan het begin van het hieropvolgende practicum plenair worden besproken
+exercises | oefeningen die studenten in eigen tijd kunnen uitvoeren; begeleiders kunnen hier desgevraagd wel feedback op geven.
+
 &copy;2023 Hanzehogeschool Groningen
 
 

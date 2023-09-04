@@ -1,6 +1,6 @@
-![](../images/java_bromo_volcano.png)
+![Een mooi plaatje van een vulkaan](../images/java_bromo_volcano.png)
 
-![](../images/hanze_logo_black_wordmark.png)
+![Hanze logo](../images/hanze_logo_black_wordmark.png)
 
 # Welkom
 
@@ -12,6 +12,6 @@ public class HelloWorld {
 }
 ```
 
-Welkom bij Objectgeoriënteerd Programmeren!
+Welkom bij Objectgeoriënteerd Programmeren (OOP).
 
-Dit werkboek bevat de onderwerpen voor zowel *Objectgeoriënteerd Programmeren I* als *Objectgeoriënteerd Programmeren II*. Je kan hier het materiaal terugvinden dat tijdens college wordt gebruikt en practicum-, huiswerk- en oefenopgaven.
+Dit werkboek bevat de onderwerpen voor zowel *Objectgeoriënteerd Programmeren I* als *Objectgeoriënteerd Programmeren II*. Je kan hier het materiaal terugvinden dat tijdens de hoorcollege wordt gebruikt, alsmede practicum-, huiswerk- en oefenopgaven.

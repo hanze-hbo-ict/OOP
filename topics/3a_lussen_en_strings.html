@@ -1318,7 +1318,7 @@ title="Print to PDF"
 <p>Soms is het moeilijk te bepalen of een lus stopt. Deze lus gaat door tot <code class="docutils literal notranslate"><span class="pre">n</span></code> 1 is (wat de conditie <code class="docutils literal notranslate"><span class="pre">false</span></code> maakt).</p>
 <p>Elke keer dat de lus wordt doorlopen, toont het programma de waarde van <code class="docutils literal notranslate"><span class="pre">n</span></code> en controleert vervolgens of deze even of oneven is. Als het even is, wordt de waarde van <code class="docutils literal notranslate"><span class="pre">n</span></code> door 2 gedeeld. Is het oneven, dan wordt de waarde vervangen door <span class="math notranslate nohighlight">\(3n+1\)</span>. Bijvoorbeeld, als de beginwaarde 3 is, dan is de resulterende reeks 3, 10, 5, 16, 8, 4, 2, 1.</p>
 <p>Aangezien <code class="docutils literal notranslate"><span class="pre">n</span></code> soms toeneemt en soms afneemt, is er geen voor de hand liggend bewijs dat <code class="docutils literal notranslate"><span class="pre">n</span></code> ooit 1 zal bereiken en dat het programma ooit zal eindigen. Voor sommige waarden van <code class="docutils literal notranslate"><span class="pre">n</span></code>, zoals machten van twee, kunnen we bewijzen dat het programma eindigt.</p>
-<p>De moeilijke vraag is dus of dit programma eindigt voor {alle} waarden van <code class="docutils literal notranslate"><span class="pre">n</span></code>. Tot nu toe is niemand er in geslaagd om dit te bewijzen of te weerleggen! Zie voor meer informatie
+<p>De moeilijke vraag is dus of dit programma eindigt voor <em>alle</em> waarden van <code class="docutils literal notranslate"><span class="pre">n</span></code>. Tot nu toe is niemand er in geslaagd om dit te bewijzen of te weerleggen! Zie voor meer informatie
 Voor meer informatie over dit probleem het <a class="reference external" href="https://nl.wikipedia.org/wiki/Vermoeden_van_Collatz">vermoeden van Collatz</a>.</p>
 <p>Het vakgebied informatica is geïnteresseerd in dit soort vragen, omdat de antwoorden daarop inzicht geven in de grenzen van wat computers wel en niet kunnen.</p>
 </section>
@@ -1369,7 +1369,7 @@ Voor meer informatie over dit probleem het <a class="reference external" href="h
 </div>
 </div>
 </div>
-<p>Aan het einde van elke iteratie wordt de teller <code class="docutils literal notranslate"><span class="pre">i</span></code> met 1 verhoogd tot de conditie <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">5</span></code> waar is. Je ziet hier <code class="docutils literal notranslate"><span class="pre">i++</span></code> gebruikt worden om <code class="docutils literal notranslate"><span class="pre">i</span></code> met 1 te incrementeren. Dit is niet de enige mogelijke syntax voor deze operatie.</p>
+<p>Aan het einde van elke iteratie wordt de teller <code class="docutils literal notranslate"><span class="pre">i</span></code> met 1 verhoogd zolang de conditie <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;=</span> <span class="pre">5</span></code> waar is. Je ziet hier <code class="docutils literal notranslate"><span class="pre">i++</span></code> gebruikt worden om <code class="docutils literal notranslate"><span class="pre">i</span></code> met 1 te incrementeren. Dit is niet de enige mogelijke syntax voor deze operatie.</p>
 <section id="syntax">
 <h3>Syntax<a class="headerlink" href="#syntax" title="Permalink naar deze titel">#</a></h3>
 <p>Incrementeren</p>
@@ -1384,7 +1384,7 @@ Voor meer informatie over dit probleem het <a class="reference external" href="h
 <li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-=</span> <span class="pre">1</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">n--</span></code></p></li>
 </ol>
-<p>Drie varianten zijn dus mogelijk om dezelde handeling uit te drukken. Misschien zelfs een vierde want <code class="docutils literal notranslate"><span class="pre">++n</span></code> (of <code class="docutils literal notranslate"><span class="pre">--n</span></code>) is ook mogelijk!</p>
+<p>Drie varianten zijn dus mogelijk om dezelde handeling uit te drukken. Misschien zelfs een vierde, want <code class="docutils literal notranslate"><span class="pre">++n</span></code> (of <code class="docutils literal notranslate"><span class="pre">--n</span></code>) is ook mogelijk!</p>
 </section>
 <section id="een-subtiel-verschil">
 <h3>Een subtiel verschil<a class="headerlink" href="#een-subtiel-verschil" title="Permalink naar deze titel">#</a></h3>
@@ -1632,7 +1632,7 @@ Voor meer informatie over dit probleem het <a class="reference external" href="h
 <p>Maar een <code class="docutils literal notranslate"><span class="pre">int</span></code> kan je <em>casten</em> naar een <code class="docutils literal notranslate"><span class="pre">char</span></code> en in dit geval komt 66 overeen met B. Hoe werkt dit?</p>
 <section id="unicode">
 <h3>Unicode<a class="headerlink" href="#unicode" title="Permalink naar deze titel">#</a></h3>
-<p><a class="reference external" href="https://nl.wikipedia.org/wiki/Unicode">Unicode</a> is een superset van [ASCII](<a class="reference external" href="https://nl.wikipedia.org/wiki/ASCII_(tekenset)">https://nl.wikipedia.org/wiki/ASCII_(tekenset)</a></p>
+<p><a class="reference external" href="https://nl.wikipedia.org/wiki/Unicode">Unicode</a> is een superset van [ASCII](<a class="reference external" href="https://nl.wikipedia.org/wiki/ASCII_(tekenset)">https://nl.wikipedia.org/wiki/ASCII_(tekenset)</a>.</p>
 <p><img alt="ASCII table" src="../_images/ascii_table.png" /></p>
 <p>Een <code class="docutils literal notranslate"><span class="pre">char</span></code> staat voor een <em>code point</em>, een numerieke waarde die voor een karakter staat. De numerieke waarde van “!” is 33, als je dit verdubbelt dan komt je uit op 66, wat staat voor het karakter “B”.</p>
 </section>

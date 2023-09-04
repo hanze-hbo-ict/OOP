@@ -1,0 +1,1321 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Stuiterbal &#8212; Objectgeoriënteerd Programmeren</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Zoeken" href="../../search.html" />
+    <link rel="next" title="Verhuur" href="../../problems/verhuur/index.html" />
+    <link rel="prev" title="Bibliotheek" href="../library/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../codingbat_strings.html">
+     CodingBat strings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3b_arrays_en_referenties.html">
+     Arrays en referenties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../multiplication/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/profiler/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_3.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../codingbat_arrays.html">
+     CodingBat arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_4.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9b_threads.html">
+     Threads
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cone/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/class_design/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_4.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../codingbat_recursie.html">
+     CodingBat recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_5.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_5.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../problems/clock/index.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/simulation/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/7a_klassen_hergebruiken.html">
+     Overerving en abstracte klassen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../library/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/verhuur/index.html">
+   Opgave 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_8.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/7b_klassen.html">
+     Meer over klassen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/8_interfaces.html">
+     Interfaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/8b_exceptions.html">
+     Foutafhandeling en exceptions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exceptions_gooien.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exceptions_gebruiken.html">
+   Opgave 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exceptions_en_bestanden.html">
+   Oefening
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_9.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9a_design_patterns.html">
+     Design Patterns
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9c_observer_pattern.html">
+     Observer pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../observer_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/connect4/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 10
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_10.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/10a_decorator.html">
+     Decorator Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/10b_factory.html">
+     Factory Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pizza/index.html">
+   Practicum decorator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cats/index.html">
+   Practicum decorator 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../logger.html">
+   Practicum factory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/pizza/index.html">
+   Opgave factory
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 11
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_11.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/11a_singleton.html">
+     Singleton Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/11b_command.html">
+     Command Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../singleton_pattern.html">
+   Practicum 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../command_pattern.html">
+   Practicum 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/logger/index.html">
+   Opgave singleton 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/counter/index.html">
+   Opgave singleton 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_12.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/15a_template.html">
+     Template Method Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/15b_adapter_pattern.html">
+     Adapter Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../practicum_adapter_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../adapter_pattern.html">
+   Opgave adapter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../facade_pattern.html">
+   Opgave facade
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 13
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_13.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/12b_iterator.html">
+     Iterator Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/13a_composite.html">
+     Composite Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../iterator/index.html">
+   Practicum iterator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../composite/index.html">
+   Practicum composite
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/forum/index.html">
+   Opgave composite pattern
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 14
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/week_14.html">
+   Onderwerpen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../topics/13b_state.html">
+   State Pattern
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pinautomaat/index.html">
+   Practicum state
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/ordering_products/index.html">
+   Opgave state 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/mix_case/index.html">
+   Opgave state 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 15
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/week_15.html">
+   Onderwerpen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/patterns/1_alle_patterns.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/patterns/2_alle_patterns_mvc.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../problems/patterns/3_alle_patterns.html">
+   Opgave 2
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/exercises/bouncing_balls/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doel">
+   Doel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opgave">
+   Opgave
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mogelijke-stappen">
+   Mogelijke stappen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#velden-en-constructor">
+     Velden en constructor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beweging">
+     Beweging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tekenen">
+     Tekenen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#informatie">
+     Informatie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stuiteren">
+     Stuiteren
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Stuiterbal</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doel">
+   Doel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opgave">
+   Opgave
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mogelijke-stappen">
+   Mogelijke stappen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#velden-en-constructor">
+     Velden en constructor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beweging">
+     Beweging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tekenen">
+     Tekenen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#informatie">
+     Informatie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stuiteren">
+     Stuiteren
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="stuiterbal">
+<h1>Stuiterbal<a class="headerlink" href="#stuiterbal" title="Permalink naar deze titel">#</a></h1>
+<p><img alt="Bouncing balls" src="../../_images/bouncing_balls.gif" /></p>
+<section id="doel">
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">#</a></h2>
+<ul class="simple">
+<li><p>Klassen ontwerpen</p></li>
+<li><p>Begrip van het verschil tussen een statische- en object context</p></li>
+<li><p>Het gebruiken van collecties (de klasse <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>)</p></li>
+<li><p>Een probleem opdelen in kleinere delen</p></li>
+</ul>
+<p>In deze opgave ga je een klasse <code class="docutils literal notranslate"><span class="pre">Ball</span></code> schrijven die een bal representeert in een besloten tweedimensionale ruimte, met een bepaalde snelheid.</p>
+<p>Download en pak het projectbestand <a href="../../projects/bouncing_balls.zip">bouncing_balls.zip</a> uit. Dit project bevat een begin van de klasse <code class="docutils literal notranslate"><span class="pre">Ball</span></code> die je in de opgave verder gaat uitwerken. Verder bevat het een (Maven) projectconfiguratie die zorgt dat zowel Junit (voor het eventueel schrijven van tests) als <code class="docutils literal notranslate"><span class="pre">stdlib</span></code> (voor het kunnen tekenen van <code class="docutils literal notranslate"><span class="pre">Ball</span></code> objecten) in de IDE te gebruiken zijn.</p>
+</section>
+<section id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">#</a></h2>
+<figure class="align-default" id="position-vector">
+<img alt="../../_images/position.png" src="../../_images/position.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Positievector</span><a class="headerlink" href="#position-vector" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>Een punt in een tweedimensionale ruimte wordt beschreven als een <em>vector</em>. Deze vector (de <em>positievector</em> <span class="math notranslate nohighlight">\(\vec{r}\)</span>) zijn de coordinaten <span class="math notranslate nohighlight">\((r_x, r_y)\)</span> ten opzichte van een oorsprong <span class="math notranslate nohighlight">\(O\)</span>, zie <a class="reference internal" href="#position-vector"><span class="std std-numref">Fig. 10</span></a>.</p>
+<figure class="align-default" id="addition-vector">
+<img alt="../../_images/addition.png" src="../../_images/addition.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Optelling van vectoren</span><a class="headerlink" href="#addition-vector" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>Snelheid kan ook als een vector worden beschreven (de <em>snelheidsvector</em> <span class="math notranslate nohighlight">\(\vec{v}\)</span>) waarin de mate van verandering per tijdseenheid wordt gedefinieerd. In een tweedimensionale ruimte zal dit de verplaatsing <span class="math notranslate nohighlight">\((v_x, v_y)\)</span> zijn voor <span class="math notranslate nohighlight">\(\vec{r}\)</span>. Om twee vectoren op te tellen worden de overeenkomstige componenten opgeteld <a class="reference internal" href="#equation-vector-addition">(8)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-vector-addition">
+<span class="eqno">(8)<a class="headerlink" href="#equation-vector-addition" title="Permalink naar deze formule">#</a></span>\[\vec{r} + \vec{v} = (r_x + v_x, r_y + v_y)\]</div>
+<p>Voor elke verandering per tijdseenheid zal de nieuwe positievector <span class="math notranslate nohighlight">\(\vec{r}\)</span> dus het resultaat zijn van <span class="math notranslate nohighlight">\(\vec{r} + \vec{v}\)</span>.</p>
+</section>
+<section id="opgave">
+<h2>Opgave<a class="headerlink" href="#opgave" title="Permalink naar deze titel">#</a></h2>
+<p>In deze opgave ga je een klasse <code class="docutils literal notranslate"><span class="pre">Ball</span></code> uitwerken die een punt in een tweedimensionale ruimte representeert, met een bepaalde snelheid. Deze klasse zal als data een <em>positievector</em> en een <em>snelheidsvecor</em> moeten bevatten, en een <em>radius</em> die de grootte van de bal aangeeft.</p>
+<p>De ruimte waarin de het object zicht in beweegt is begrensd en je zal rekening moeten houden met het geval dat wanneer deze grens wordt bereikt het object een andere richting op zal moeten “stuiteren” (met andere woorden, de <em>snelheidsvecor</em> zal op dat moment wijzigen).</p>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> uit de <code class="docutils literal notranslate"><span class="pre">stdlib</span></code> bibliotheek ga je in deze opgave weer gebruiken voor het tekenen van objecten. De coördinaten van het vlak waar je op gaat tekenen zijn als volgt, waar de oorsporong <span class="math notranslate nohighlight">\(O\)</span> gelijk is aan <span class="math notranslate nohighlight">\((0, 0)\)</span></p>
+<p><img alt="Canvas coordinates" src="../../_images/canvas_coordinates.png" /></p>
+</section>
+<section id="mogelijke-stappen">
+<h2>Mogelijke stappen<a class="headerlink" href="#mogelijke-stappen" title="Permalink naar deze titel">#</a></h2>
+<section id="velden-en-constructor">
+<h3>Velden en constructor<a class="headerlink" href="#velden-en-constructor" title="Permalink naar deze titel">#</a></h3>
+<p>De eerste gedachte bij de beschrijving van <em>vectoren</em> en hoe je dit als <em>datastructuur</em> zou kunnen vormgeven zal misschien een array met twee elementen zijn. Dit is geen vreemde gedachte, maar bedenk dat je in een klasse niet direct aan dit soort structuren gebonden bent, je hebt een <em>keuze</em> om de vorm van de data te bepalen. Wij raden je aan om de volgende velden voor de klassen te definiëren:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// position vector r</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rx</span><span class="p">;</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ry</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// velocity vector v</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">vx</span><span class="p">;</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">vy</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// ball radius</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>De constructor van de klasse <code class="docutils literal notranslate"><span class="pre">Ball</span></code> zal velden moeten initialiseren. Schrijf een constructor (<em>zonder</em> parameters) en initialieer de velden als volgt:</p>
+<ul>
+<li><p>de beginpositie <span class="math notranslate nohighlight">\((r_x, r_y)\)</span> is altijd gelijk aan de oorsprong <span class="math notranslate nohighlight">\(O\)</span></p></li>
+<li><p>de snelheid <span class="math notranslate nohighlight">\((v_x, v_y)\)</span> bepaal je willekeurig, het volgende zou een goede optie kunnen zijn voor zowel <span class="math notranslate nohighlight">\(v_x\)</span> als <span class="math notranslate nohighlight">\(v_y\)</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="mf">0.015</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.03</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>de radius zet je ook willekeurig, de volgende variatie op het bovenstaande is een mogelijke optie:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="mf">0.025</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.05</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="beweging">
+<h3>Beweging<a class="headerlink" href="#beweging" title="Permalink naar deze titel">#</a></h3>
+<p>Met elke tijdseenheid zal het object op basis van de positievector en snelheidsvector een nieuwe positie kijgen (een nieuwe positievector). Het object heeft te maken met grenzen, het kan tegen een horizontale- (boven- en onderkant van het vlak) of verticale (linker- of rechterkant van het vlak) grens aanlopen.</p>
+<p>Bij een verticale grens zal vectorcomponent <span class="math notranslate nohighlight">\(v_y\)</span> van richting veranderen en bij een horizontale grens vectorcomponent <span class="math notranslate nohighlight">\(v_y\)</span>. Beredeneer ook voor jezelf waarom dit zo is.</p>
+<p>Scrijf de volgende twee methoden die zullen moeten controleren of een grens is bereikt en zo nodig de snelheidsvector aanpassen.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// bounce off vertical wall by reflecting x-velocity</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bounceOffVerticalWall</span><span class="p">()</span><span class="w"></span>
+
+<span class="c1">// bounce off horizontal wall by reflecting y-velocity</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bounceOffHorizontalWall</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Controleer in deze methoden of een grens is bereikt en pas indien nodig de snelheidsvector aan. Bedenk dat de optelling van een positievector met een snelheidsvector de volgende positie geeft. Indien deze de grens overschrijdt (de waarde 1, want dat is het bereik van het veld), dan pas je de snelheidsvector aan. Houd er ook rekening mee dat de bal een radius heeft, neem dit mee in de berekening!</p>
+<p>De positievector ga je in deze twee methoden niet aanpassen, dit ga je doen in de volgende methode:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// move the ball one step</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">move</span></code> zal eerst <code class="docutils literal notranslate"><span class="pre">bounceOffVerticalWall</span></code> en <code class="docutils literal notranslate"><span class="pre">bounceOffHorizontalWall</span></code> aanroepen. Vervolgens zal het de positievector aanpassen als optelling van de snelheidsvector.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>De verandering van richting zal de <em>negatie</em> van een component betekenen. Je kan hier de volgende syntax voor gebruiken:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="p">;</span><span class="w">  </span><span class="c1">// x now has value -1</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="tekenen">
+<h3>Tekenen<a class="headerlink" href="#tekenen" title="Permalink naar deze titel">#</a></h3>
+<p>De data en handelingen voor een <code class="docutils literal notranslate"><span class="pre">Ball</span></code> object heb je nu uitgewerkt en je gaat nog één methode toevoegen voor het tekenen van een object. Neem de volgende methode over, je ziet dat hier weer <code class="docutils literal notranslate"><span class="pre">StdDraw</span></code> gebruikt gaat worden:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// draw the ball, but not the background</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLACK</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">rx</span><span class="p">,</span><span class="w"> </span><span class="n">ry</span><span class="p">,</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Deze methode is compleet, het staat je natuurlijk vrij een andere kleur te kiezen (<em>random</em> of niet).</p>
+</section>
+<section id="informatie">
+<h3>Informatie<a class="headerlink" href="#informatie" title="Permalink naar deze titel">#</a></h3>
+<p>Het kan handig zijn om een <code class="docutils literal notranslate"><span class="pre">toString</span></code> methode toe te voegen om voor jezelf informatie te kunnen printen over een object, bijvoorbeeld</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;position: (&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ry</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;) &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;velocity: (&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;) &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;radius: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="stuiteren">
+<h3>Stuiteren<a class="headerlink" href="#stuiteren" title="Permalink naar deze titel">#</a></h3>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">Ball</span></code> is nu compleet, het doel is nu één of meer ballen in een ruime te laten stuiteren. Dit ga je doen door de methode <code class="docutils literal notranslate"><span class="pre">main</span></code> aan te vullen:</p>
+<ol>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main</span></code> ga je een een <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> initialiseren (bijvoorbeeld met de naam <code class="docutils literal notranslate"><span class="pre">balls</span></code>) waar je instanties van <code class="docutils literal notranslate"><span class="pre">Ball</span></code> aan toe gaat voegen. Begin eerst met een enkele bal, voeg later meer toe zodra je zeker bent dat alles correct werkt.</p></li>
+<li><p>Vervolgens ga je het veld opzetten waar de ballen in moeten gaan bewegen, dit is waar je de grenzen zet. Neem het volgende over:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// initialize standard drawing</span><span class="w"></span>
+<span class="n">StdDraw</span><span class="p">.</span><span class="na">setXscale</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">StdDraw</span><span class="p">.</span><span class="na">setYscale</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">StdDraw</span><span class="p">.</span><span class="na">enableDoubleBuffering</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Standaard is dubbele buffering uitgeschakeld voor <code class="docutils literal notranslate"><span class="pre">StdDraw</span></code>, wat betekent dat zodra je een tekenmethode aanroept als <code class="docutils literal notranslate"><span class="pre">point()</span></code> of <code class="docutils literal notranslate"><span class="pre">line()</span></code> de resultaat direct op scherm verschijnt.</p>
+<p>Wanneer dubbele buffering is ingeschakeld met <code class="docutils literal notranslate"><span class="pre">enableDoubleBuffering()</span></code> wordt eerst getekend op een ander, niet zichtbaar scherm. Pas wanneer je <code class="docutils literal notranslate"><span class="pre">show()</span></code> aanroept wordt de tekening gekopieerd naar het hoofschern waar het wordt getoond. Je kan dubbele buffering zien als het verzamelen van alle lijnen, punten, vormen en tekst die je wilt tekenen, om ze vervolgens in één keer op het scherm te tonen.</p>
+</div>
+</li>
+<li><p>Voeg nu de lus voor de animatie toe, dit is de lus waar bij elke iteratie de ballen worden bewogen met de methode <code class="docutils literal notranslate"><span class="pre">move</span></code> en getekend worden met <code class="docutils literal notranslate"><span class="pre">draw</span></code>. Gebruik de volgende structuur en vul de ontbrekende onderdelen aan waar je door de lijst van ballen gaat:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// clear canvas and set backgound</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">clear</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">GRAY</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(...)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// iterate though the list of balls</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// move the ball</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// draw the ball</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">show</span><span class="p">();</span><span class="w">     </span><span class="c1">// show the balls on canvas</span><span class="w"></span>
+<span class="w">    </span><span class="n">StdDraw</span><span class="p">.</span><span class="na">pause</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w">  </span><span class="c1">// pause before the next cycle</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./exercises/bouncing_balls"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../library/index.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Bibliotheek</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../problems/verhuur/index.html" title="volgende pagina">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Verhuur</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

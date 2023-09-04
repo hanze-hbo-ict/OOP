@@ -1,0 +1,1432 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Strings en lussen &#8212; Objectgeoriënteerd Programmeren</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Zoeken" href="../../search.html" />
+    <link rel="next" title="Oefeningen 3" href="../../course/ex_3.html" />
+    <link rel="prev" title="Arrays en lussen" href="../../exercises/multiplication/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_strings.html">
+     CodingBat strings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3b_arrays_en_referenties.html">
+     Arrays en referenties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/multiplication/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_3.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_arrays.html">
+     CodingBat arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_4.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9b_threads.html">
+     Threads
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/cone/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../class_design/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_4.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_recursie.html">
+     CodingBat recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_5.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_5.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../clock/index.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/7a_klassen_hergebruiken.html">
+     Overerving en abstracte klassen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/library/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/bouncing_balls/index.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../verhuur/index.html">
+   Opgave 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_8.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/7b_klassen.html">
+     Meer over klassen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/8_interfaces.html">
+     Interfaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/8b_exceptions.html">
+     Foutafhandeling en exceptions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/exceptions_gooien.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/exceptions_gebruiken.html">
+   Opgave 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/exceptions_en_bestanden.html">
+   Oefening
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_9.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9a_design_patterns.html">
+     Design Patterns
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9c_observer_pattern.html">
+     Observer pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/observer_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../connect4/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 10
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_10.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/10a_decorator.html">
+     Decorator Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/10b_factory.html">
+     Factory Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/pizza/index.html">
+   Practicum decorator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/cats/index.html">
+   Practicum decorator 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/logger.html">
+   Practicum factory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pizza/index.html">
+   Opgave factory
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 11
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_11.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/11a_singleton.html">
+     Singleton Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/11b_command.html">
+     Command Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/singleton_pattern.html">
+   Practicum 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/command_pattern.html">
+   Practicum 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../logger/index.html">
+   Opgave singleton 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../counter/index.html">
+   Opgave singleton 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_12.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/15a_template.html">
+     Template Method Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/15b_adapter_pattern.html">
+     Adapter Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/practicum_adapter_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/adapter_pattern.html">
+   Opgave adapter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/facade_pattern.html">
+   Opgave facade
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 13
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_13.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/12b_iterator.html">
+     Iterator Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/13a_composite.html">
+     Composite Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/iterator/index.html">
+   Practicum iterator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/composite/index.html">
+   Practicum composite
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../forum/index.html">
+   Opgave composite pattern
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 14
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/week_14.html">
+   Onderwerpen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../topics/13b_state.html">
+   State Pattern
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/pinautomaat/index.html">
+   Practicum state
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ordering_products/index.html">
+   Opgave state 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mix_case/index.html">
+   Opgave state 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 15
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/week_15.html">
+   Onderwerpen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../patterns/1_alle_patterns.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../patterns/2_alle_patterns_mvc.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../patterns/3_alle_patterns.html">
+   Opgave 2
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/problems/profiler/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doel">
+   Doel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#database">
+     Database
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opdracht">
+   Opdracht
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mogelijke-stappen">
+   Mogelijke stappen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bestanden-inlezen">
+     Bestanden inlezen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#de-maximale-herhaling-van-een-str">
+     De maximale herhaling van een STR
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combineren">
+     Combineren
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testen">
+   Testen
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Strings en lussen</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doel">
+   Doel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#database">
+     Database
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opdracht">
+   Opdracht
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mogelijke-stappen">
+   Mogelijke stappen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bestanden-inlezen">
+     Bestanden inlezen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#de-maximale-herhaling-van-een-str">
+     De maximale herhaling van een STR
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combineren">
+     Combineren
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testen">
+   Testen
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="strings-en-lussen">
+<h1>Strings en lussen<a class="headerlink" href="#strings-en-lussen" title="Permalink naar deze titel">#</a></h1>
+<p><img alt="DNA" src="../../_images/dna_forensics.png" /></p>
+<section id="doel">
+<h2>Doel<a class="headerlink" href="#doel" title="Permalink naar deze titel">#</a></h2>
+<ul class="simple">
+<li><p>Oefenen met het schrijven van lussen</p></li>
+<li><p>Oefenen met strings</p></li>
+<li><p>Verder gebruik van arrays</p></li>
+</ul>
+<p>Download en pak het projectbestand <a href="../../projects/profiler.zip">profiler.zip</a> uit. Dit bestand bevat een klasse <code class="docutils literal notranslate"><span class="pre">Profile.java</span></code> die je verder zal gaan uitwerken en databestanden om jouw oplossing te testen.</p>
+</section>
+<section id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">#</a></h2>
+<p>DNA, de drager van genetische informatie in levende wezens, wordt al tientallen jaren gebruikt in het strafrecht. Maar hoe werkt het opstellen van DNA-profielen precies? Hoe kunnen forensische onderzoekers aan de hand van een DNA-reeks vaststellen van wie het DNA is?</p>
+<p>DNA is eigenlijk gewoon een opeenvolging van moleculen, nucleotiden genaamd, die in een bepaalde vorm zijn gerangschikt (een dubbele helix). Elke nucleotide van DNA bevat een van de vier basen: adenine (A), cytosine (C), guanine (G), of thymine (T).</p>
+<p>Elke menselijke cel bevat miljarden van deze nucleotiden, gerangschikt in volgorde. Sommige delen van deze sequentie (d.w.z. het genoom) zijn hetzelfde, of lijken tenminste sterk op elkaar, bij bijna alle mensen, maar andere delen van de sequentie vertonen een grotere genetische diversiteit en variëren dus meer binnen de bevolking.</p>
+<p>Eén plaats waar DNA de neiging heeft een hoge genetische diversiteit te hebben is in de Short Tandem Repeats (STR’s). Een STR is een korte sequentie van DNA-basen die de neiging heeft talloze keren aansluitend te worden herhaald op specifieke plaatsen in het DNA. Het aantal keren dat een bepaalde STR wordt herhaald varieert sterk van mens tot mens. In de DNA-monsters hieronder, bijvoorbeeld, heeft Alice de STR AGAT vier keer herhaald in haar DNA, terwijl Bob dezelfde STR vijf keer heeft herhaald.</p>
+<p><img alt="STR" src="../../_images/strs.png" /></p>
+<p>Het gebruik van meerdere STR’s in plaats van slechts één kan de nauwkeurigheid van DNA-profilering verbeteren. Als de waarschijnlijkheid dat twee mensen hetzelfde aantal herhalingen hebben voor een enkele STR 5% is, en de analist kijkt naar 10 verschillende STR’s, dan is de waarschijnlijkheid dat twee DNA-monsters puur toevallig overeenkomen ongeveer 1 op 1 quadriljoen (ervan uitgaande dat alle STR’s onafhankelijk van elkaar zijn). Dus als twee DNA-monsters overeenkomen in het aantal herhalingen voor elk van de STR’s, dan kan de analist er vrij zeker van zijn dat ze van dezelfde persoon afkomstig zijn.</p>
+<p>CODIS, de <a class="reference external" href="https://www.fbi.gov/services/laboratory/biometric-analysis/codis/codis-and-ndis-fact-sheet">DNA-database</a> van de FBI, gebruikt 20 verschillende STR’s als onderdeel van het DNA-profielproces (in Europa worden tien van deze STR’s gebruikt). In Nederland beheert het Nederlands Forensisch Instituut (NFI) verschillende <a class="reference external" href="https://dnadatabase.forensischinstituut.nl/dna-databaseen">DNA-databases</a>.</p>
+<section id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink naar deze titel">#</a></h3>
+<p>Hoe zou zo’n DNA-database er uit kunnen zien? In zijn eenvoudigste vorm zou je je een DNA database kunnen voorstellen als een CSV (<em>comma separated values</em>) bestand, waarin elke rij overeenkomt met een individu, en elke kolom met een bepaalde STR.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>name,AGAT,AATG,TATC
+Alice,28,42,14
+Bob,17,22,19
+Charlie,36,18,25
+</pre></div>
+</div>
+<p>De gegevens in bovenstaand bestand suggereren dat Alice ergens in haar DNA de sequentie AGAT 28 keer achtereenvolgens herhaald heeft, de sequentie AATG 42 keer herhaald, en TATC 14 keer herhaald. Bob, ondertussen, heeft diezelfde drie STR’s respectievelijk 17 keer, 22 keer en 19 keer herhaald. En Charlie heeft dezelfde drie STR’s die respectievelijk 36, 18 en 25 keer worden herhaald.</p>
+<p>Dus als je een DNA-reeks hebt, hoe kun je dan bepalen van wie die is? Wel, stel je voor dat je in de DNA-reeks zoekt naar de langste opeenvolgende reeks herhaalde AGAT’s en ontdekt dat de langste reeks 17 herhalingen lang is. Als je dan ontdekt dat de langste reeks AATG’s 22 herhalingen lang is, en de langste reeks TATC’s 19 herhalingen lang is, dan zou dat een vrij goed bewijs zijn dat het DNA van Bob is. Het is natuurlijk ook mogelijk dat wanneer je de tellingen voor elk van de STR’s neemt, het niet overeenkomt met iemand in je DNA-database, in welk geval je geen overeenkomst hebt.</p>
+<p>In de praktijk weten analisten op welk chromosoom en op welke plaats in het DNA een STR zal worden gevonden, zodat zij hun zoekactie kunnen beperken tot slechts een klein gedeelte van het DNA. Wij negeren dit detail in deze opgave.</p>
+</section>
+</section>
+<section id="opdracht">
+<h2>Opdracht<a class="headerlink" href="#opdracht" title="Permalink naar deze titel">#</a></h2>
+<p>Jouw taak is een programma te schrijven dat een DNA-sequentie en een CSV-bestand met STR-tellingen voor een lijst van personen inleest en vervolgens bepaalt aan wie het DNA (waarschijnlijk) toebehoort.</p>
+<p>Vul de klasse <code class="docutils literal notranslate"><span class="pre">Profile.java</span></code> aan, een programma dat identificeert aan wie een DNA-sequentie toebehoort (deze kan je vinden in het projectbestand).</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Path</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Files</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Profile</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Read a file and return an array of lines</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param filename The filename (path) to read</span>
+<span class="cm">     * @return         An array of lines read</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="nf">readLines</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">Path</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">readString</span><span class="p">(</span><span class="n">path</span><span class="p">).</span><span class="na">strip</span><span class="p">().</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Read error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span><span class="w"></span>
+<span class="w">            </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Belangrijk</p>
+<p>De import statements zoals gegeven zijn voldoende om het probleem op te lossen, importeer <strong>geen</strong> andere klassen.</p>
+</div>
+<ul>
+<li><p>Het programma moet als eerste commandoregelargument de naam van een CSV-bestand vragen dat de STR-tellingen voor een lijst van personen bevat en als tweede commandoregelargument de naam van een tekstbestand dat de te identificeren DNA-sequentie bevat, bijvoorbeeld</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; java Profile.java data.csv sequence.txt</span>
+<span class="go">Alice</span>
+</pre></div>
+</div>
+</li>
+<li><p>Jouw programma moet het CSV-bestand openen en de inhoud in het geheugen lezen door gebruik de maken van de methode <code class="docutils literal notranslate"><span class="pre">readLines</span></code>. Je mag aannemen dat de eerste rij van het CSV-bestand de kolomnamen zijn. De eerste kolom zal de woord <code class="docutils literal notranslate"><span class="pre">name</span></code> zijn en de overige kolommen zullen de STR-sequenties zelf zijn.</p></li>
+<li><p>Jouw programma moet de DNA-sequentie openen en de inhoud in het geheugen lezen door gebruik te maken van de methode <code class="docutils literal notranslate"><span class="pre">readLines</span></code>.</p></li>
+<li><p>Voor elk van de STR’s (vanaf de eerste regel van het CSV-bestand) moet uw programma de langste reeks opeenvolgende herhalingen van de STR in de te identificeren DNA-sequentie berekenen.</p></li>
+<li><p>Als de STR-tellingen precies overeenkomen met een van de personen in het CSV-bestand, moet jouw programma de naam van de overeenkomende persoon afdrukken.</p>
+<ul class="simple">
+<li><p>Je kunt ervan uitgaan dat de STR-tellingen met niet meer dan één persoon overeenkomen.</p></li>
+</ul>
+</li>
+<li><p>Als de STR-tellingen niet exact overeenkomen met een van de personen in het CSV-bestand moet het programma “No match” afdrukken.</p></li>
+</ul>
+</section>
+<section id="mogelijke-stappen">
+<h2>Mogelijke stappen<a class="headerlink" href="#mogelijke-stappen" title="Permalink naar deze titel">#</a></h2>
+<section id="bestanden-inlezen">
+<h3>Bestanden inlezen<a class="headerlink" href="#bestanden-inlezen" title="Permalink naar deze titel">#</a></h3>
+<p>Een eerste stap zou het CSV-bestand inlezen en verwerken kunnen zijn. De methode <code class="docutils literal notranslate"><span class="pre">readLines</span></code> zal de regels van het bestand inlezen en als <code class="docutils literal notranslate"><span class="pre">String[]</span></code> array teruggeven. Bijvoorbeeld, de inhoud</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>name,AGAT,AATG,TATC
+Alice,5,2,8
+Bob,3,7,4
+Charlie,6,1,5
+</pre></div>
+</div>
+<p>zal per regel worden ingelezen en zal een array met 4 elementen bevatten:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;name,AGAT,AATG,TATC&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;Alice,5,2,8&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;Bob,3,7,4&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;Charlie,6,1,5&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Hoe kan je nu de gegevens die je nodig hebt uit deze regels halen? Breek dit probleem op en en implementeer de volgende methoden:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="nf">getNames</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">lines</span><span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="nf">getValues</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">lines</span><span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="nf">getStrs</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">lines</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Elk van deze methoden accepteert de ingelezen bestandsregels <code class="docutils literal notranslate"><span class="pre">lines</span></code> en elk zal een deel van de data uit de tabel als volgt moeten inlezen</p>
+<figure class="align-default" id="data-table-methods">
+<img alt="../../_images/table.png" src="../../_images/table.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">CSV-database en bijbehorende methoden</span><a class="headerlink" href="#data-table-methods" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>Let op, de STR’s kunnen per database verschillen, verwacht dus niet dat elke database de waarden uit de bovenstaande figuur bevat (AGAT, AATG, TATC), wat je hier ziet is een voorbeeld!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Elke regel bevat kommagescheiden waarden, gebruik de string <code class="docutils literal notranslate"><span class="pre">split</span></code> methode om de afzonderlijke waarden op te halen. Bijvoorbeeld</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;Alice,5,2,8&quot;</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>levert een <code class="docutils literal notranslate"><span class="pre">String[]</span></code> array op met 4 elementen (“Alice”, “5”, “2” en “8”).</p>
+</div>
+</section>
+<section id="de-maximale-herhaling-van-een-str">
+<h3>De maximale herhaling van een STR<a class="headerlink" href="#de-maximale-herhaling-van-een-str" title="Permalink naar deze titel">#</a></h3>
+<p>Tot slot zal je een methode moeten schrijven die het maximum aantal opeenvolgende herhalingen voor een STR bepaalt. Implementeer daarvoor de volgende methode</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">maxStrRepeat</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">sequence</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Deze methode heeft als eerste parameter een STR en als tweede parameter een DNA-sequentie. De laatste heb je als tweede argument meegegeven bij de aanroep van jouw programma en heb je eerder al met <code class="docutils literal notranslate"><span class="pre">readLines</span></code> ingelezen. De methode geeft uiteindelijk een <code class="docutils literal notranslate"><span class="pre">int</span></code> terug, het maximum aantal keer dat de STR opeenvolgend in de sequentie voorkomt.</p>
+</section>
+<section id="combineren">
+<h3>Combineren<a class="headerlink" href="#combineren" title="Permalink naar deze titel">#</a></h3>
+<p>Je zal nu alle methoden hebben om het probleen op te kunnen lossen.</p>
+<ul class="simple">
+<li><p>bepaal de maximale herhalingen voor STR waarden in de database, gebruik hier de methode <code class="docutils literal notranslate"><span class="pre">getStrs</span></code> om elke STR te doorlopen en de waarde met <code class="docutils literal notranslate"><span class="pre">maxStrRepeat</span></code> te bepalen.</p></li>
+<li><p>met <code class="docutils literal notranslate"><span class="pre">getValues</span></code> haal je de data op die je één voor één doorloopt en vergelijkt met de STR tellingen met die je eerder hebt gevonden.</p></li>
+<li><p>met <code class="docutils literal notranslate"><span class="pre">getNames</span></code> haal je de namen op, als je een match hebt gevonden print je de bijbehorende naam, bij geen match print je “No match”</p></li>
+</ul>
+<p>Bedenk dat je op index de bijbehorende naam voor de gevonden match kan vinden.</p>
+<figure class="align-default" id="name-data-index">
+<img alt="../../_images/name_data_index.png" src="../../_images/name_data_index.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Relatie namen en data</span><a class="headerlink" href="#name-data-index" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Arrays vergelijken kan niet met <code class="docutils literal notranslate"><span class="pre">==</span></code>, gebruik hier de methode <code class="docutils literal notranslate"><span class="pre">Arrays.equals</span></code> voor.</p>
+</div>
+</section>
+</section>
+<section id="testen">
+<h2>Testen<a class="headerlink" href="#testen" title="Permalink naar deze titel">#</a></h2>
+<p>Het projectbestand bevat een aantal STR-databases en DNA-sequenties om mee te testen.</p>
+<ol>
+<li><p>Het volgende geeft als antwoord <strong>Bob</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/small.csv sequences/1.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>No match</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/small.csv sequences/2.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>No match</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/small.csv sequences/3.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Alice</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/small.csv sequences/4.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Lavender</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/5.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Luna</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/6.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Ron</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/7.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Ginny</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/8.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Draco</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/9.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Albus</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/10.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Hermione</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/11.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Lily</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/12.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>No match</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/13.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Severus</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/14.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Sirius</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/15.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>No match</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/16.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Harry</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/17.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>No match</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/18.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>Fred</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/19.txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Het volgende geeft als antwoord <strong>No match</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">java Profile.java databases/large.csv sequences/20.txt</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<hr class="docutils" />
+<p>Copyright © 2020 Brian Yu, David J. Malan</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./problems/profiler"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../exercises/multiplication/index.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Arrays en lussen</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../course/ex_3.html" title="volgende pagina">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Oefeningen 3</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

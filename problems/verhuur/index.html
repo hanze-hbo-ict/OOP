@@ -1,0 +1,1216 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Verhuur &#8212; Objectgeoriënteerd Programmeren</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Zoeken" href="../../search.html" />
+    <link rel="next" title="Week 8" href="../../course/week_8.html" />
+    <link rel="prev" title="Stuiterbal" href="../../exercises/bouncing_balls/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../calculator/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_strings.html">
+     CodingBat strings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3b_arrays_en_referenties.html">
+     Arrays en referenties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/multiplication/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../profiler/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_3.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_arrays.html">
+     CodingBat arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_4.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9b_threads.html">
+     Threads
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/cone/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../class_design/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_4.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_recursie.html">
+     CodingBat recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_5.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6a_static_en_collections.html">
+     Static en collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6b_javadoc.html">
+     Javadoc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/6c_testen.html">
+     Testen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_5.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../clock/index.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_6.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/7a_klassen_hergebruiken.html">
+     Overerving en abstracte klassen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/library/index.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/bouncing_balls/index.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Opgave 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_8.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/7b_klassen.html">
+     Meer over klassen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/8_interfaces.html">
+     Interfaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/8b_exceptions.html">
+     Foutafhandeling en exceptions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/exceptions_gooien.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/exceptions_gebruiken.html">
+   Opgave 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/exceptions_en_bestanden.html">
+   Oefening
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_9.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9a_design_patterns.html">
+     Design Patterns
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/9c_observer_pattern.html">
+     Observer pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/observer_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../connect4/index.html">
+   Opgave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 10
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_10.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/10a_decorator.html">
+     Decorator Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/10b_factory.html">
+     Factory Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/pizza/index.html">
+   Practicum decorator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/cats/index.html">
+   Practicum decorator 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/logger.html">
+   Practicum factory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pizza/index.html">
+   Opgave factory
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 11
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_11.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/11a_singleton.html">
+     Singleton Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/11b_command.html">
+     Command Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/singleton_pattern.html">
+   Practicum 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/command_pattern.html">
+   Practicum 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../logger/index.html">
+   Opgave singleton 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../counter/index.html">
+   Opgave singleton 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_12.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/15a_template.html">
+     Template Method Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/15b_adapter_pattern.html">
+     Adapter Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/practicum_adapter_pattern.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/adapter_pattern.html">
+   Opgave adapter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/facade_pattern.html">
+   Opgave facade
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 13
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_13.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/12b_iterator.html">
+     Iterator Pattern
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/13a_composite.html">
+     Composite Pattern
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/iterator/index.html">
+   Practicum iterator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/composite/index.html">
+   Practicum composite
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../forum/index.html">
+   Opgave composite pattern
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 14
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/week_14.html">
+   Onderwerpen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../topics/13b_state.html">
+   State Pattern
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/pinautomaat/index.html">
+   Practicum state
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ordering_products/index.html">
+   Opgave state 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mix_case/index.html">
+   Opgave state 2
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 15
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/week_15.html">
+   Onderwerpen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../patterns/1_alle_patterns.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../patterns/2_alle_patterns_mvc.html">
+   Opgave 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../patterns/3_alle_patterns.html">
+   Opgave 2
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/problems/verhuur/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deel-1">
+   Deel 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deel-2">
+   Deel 2
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Verhuur</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deel-1">
+   Deel 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deel-2">
+   Deel 2
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="verhuur">
+<h1>Verhuur<a class="headerlink" href="#verhuur" title="Permalink naar deze titel">#</a></h1>
+<p><img alt="Dutch bike symbol" src="../../_images/dutch_bike_symbol.png" /></p>
+<p>In opdracht van een verhuurder van auto’s en fietsen wordt een systeem ontwikkeld om bij te houden welke auto’s en fietsen de verhuurder in zijn bezit heeft.</p>
+<section id="deel-1">
+<h2>Deel 1<a class="headerlink" href="#deel-1" title="Permalink naar deze titel">#</a></h2>
+<p>Gegevens van fietsen en auto’s worden opgeslagen in de klassen <code class="docutils literal notranslate"><span class="pre">Fiets</span></code> en <code class="docutils literal notranslate"><span class="pre">Auto</span></code>. Deze klassen zijn gegeven in project <a href="../../projects/rentals_1.zip">rentals_1.zip</a>.</p>
+<p>a. Zowel auto als fiets hebben velden <code class="docutils literal notranslate"><span class="pre">merk</span></code> en <code class="docutils literal notranslate"><span class="pre">type</span></code>.
+Deze velden vormen samen, met een spatie er tussen, de beschrijving. Bijvoorbeeld een auto van het merk Toyota en type Yaris heeft als omschrijving “Toyota Yaris”.</p>
+<p>Schrijf een <em>public</em> methode <code class="docutils literal notranslate"><span class="pre">getBeschrijving()</span></code>, die een string teruggeeft met merk en type, gescheiden door een spatie.</p>
+<p>b. Zowel auto als fiets hebben de <em>public</em> methode <code class="docutils literal notranslate"><span class="pre">printInfo()</span></code>. Deze methode print één regel met informatie over de auto of fiets. Er wordt niets teruggegeven.
+Voor fietsen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;merk&gt; &lt;type&gt;, &lt;frame&gt;, &lt;aantal versnellingen&gt; versnellingen
+</pre></div>
+</div>
+<p>frame: damesfiets of herenfiets.</p>
+<p>Voorbeeld: De Batavus Winner N3 herenfiets met 3 versnellingen geeft als info-regel</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Batavus Winner N3, herenfiets, 3 versnellingen.
+</pre></div>
+</div>
+<p>Voor auto’s:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;merk&gt; &lt;type&gt; &lt;kenteken&gt;, &lt;brandstoftype&gt;, &lt;aantal inzittenden&gt; personen
+</pre></div>
+</div>
+<p>brandstoftype: benzine, diesel, elektrisch</p>
+<p>Voorbeeld: De Toyota Aygo benzineauto met kenteken 37LHG3, met 4 zitplaatsen, geeft als info-regel:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Toyota Aygo 37LHG3, benzine, 4 personen
+</pre></div>
+</div>
+<p>Schrijf de methode <code class="docutils literal notranslate"><span class="pre">printInfo()</span></code>.</p>
+<p>c. Auto’s en fietsen moeten in één lijst (bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>) gezet kunnen worden. Dit kan gerealiseerd worden door een klasse <code class="docutils literal notranslate"><span class="pre">HuurVoertuig</span></code> te maken, die <em>parentclass</em> wordt van de klassen <code class="docutils literal notranslate"><span class="pre">Fiets</span></code> en <code class="docutils literal notranslate"><span class="pre">Auto</span></code>.</p>
+<p>Maak de klasse <code class="docutils literal notranslate"><span class="pre">HuurVoertuig</span></code>. Maak deze parentclass van <code class="docutils literal notranslate"><span class="pre">Fiets</span></code> en <code class="docutils literal notranslate"><span class="pre">Auto</span></code>.</p>
+<p>Zet in klasse <code class="docutils literal notranslate"><span class="pre">HuurVoertuig</span></code> de voor fietsen en auto’s gemeenschappelijke velden merk, type en huurprijs. Verplaats de bijbehorende getters ook naar klasse <code class="docutils literal notranslate"><span class="pre">HuurVoertuig</span></code>.</p>
+<p>Zorg ervoor dat vanuit de constructor van <code class="docutils literal notranslate"><span class="pre">Fiets</span></code> en <code class="docutils literal notranslate"><span class="pre">Auto</span></code> de velden <code class="docutils literal notranslate"><span class="pre">merk</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code> en <code class="docutils literal notranslate"><span class="pre">huurprijs</span></code> een waarde krijgen. Ook in klasse <code class="docutils literal notranslate"><span class="pre">HuurVoertuig</span></code>  zijn deze velden <code class="docutils literal notranslate"><span class="pre">private</span></code>. Setters gebruiken is niet wenselijk. Maak daarom gebruik van een constructor in klasse <code class="docutils literal notranslate"><span class="pre">HuurVoertuig</span></code>.</p>
+</section>
+<section id="deel-2">
+<h2>Deel 2<a class="headerlink" href="#deel-2" title="Permalink naar deze titel">#</a></h2>
+<p>Het project <a href="../../projects/rentals_2.zip">rentals_2.zip</a> bevat de klasse <code class="docutils literal notranslate"><span class="pre">Verhuur</span></code>. Verder zijn de klassen <code class="docutils literal notranslate"><span class="pre">Auto</span></code>, <code class="docutils literal notranslate"><span class="pre">Fiets</span></code> en <code class="docutils literal notranslate"><span class="pre">HuurVoertuig</span></code> nodig. Deze moet je zelf toevoegen van jouw uitwerking van deel 1.</p>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">Verhuur</span></code> is het begin van administratie van verhuurvoertuigen. Deze klasse is deels gerealiseerd.</p>
+<p>a. In week 1 is de <em>public</em> methode <code class="docutils literal notranslate"><span class="pre">printInfo()</span></code> gerealiseerd. Deze methode print één regel met informatie over de auto of fiets. Er wordt niets teruggegeven.
+Het is echter niet praktisch om <code class="docutils literal notranslate"><span class="pre">System.out.println()</span></code> te gebruiken in klassen die niet bedoeld zijn voor gebruikersinteractie.
+Zorg ervoor dat het printen van objecten van <code class="docutils literal notranslate"><span class="pre">Auto</span></code> of <code class="docutils literal notranslate"><span class="pre">Fiets</span></code> exact hetzelfde resultaat oplevert als de aanroep van <code class="docutils literal notranslate"><span class="pre">printInfo()</span></code>. Dit doe je door de methode <code class="docutils literal notranslate"><span class="pre">toString()</span></code> te overriden. De methode <code class="docutils literal notranslate"><span class="pre">printInfo()</span></code> kan vervolgens verwijderd worden.</p>
+<p>Gewenste resultaat:
+Voor fietsen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;merk&gt; &lt;type&gt;, &lt;frame&gt;, &lt;aantal versnellingen&gt; versnellingen
+</pre></div>
+</div>
+<p>frame: damesfiets of herenfiets.</p>
+<p>De Batavus Winner N3 herenfiets met 3 versnellingen geeft als info-regel</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Batavus Winner N3, herenfiets, 3 versnellingen
+</pre></div>
+</div>
+<p>Voor auto’s:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;merk&gt; &lt;type&gt; &lt;kenteken&gt;, &lt;brandstoftype&gt;, &lt;aantal inzittenden&gt; personen
+</pre></div>
+</div>
+<p>brandstoftype: benzine, diesel, elektrisch</p>
+<p>De Toyota Aygo benzineauto met kenteken 37LHG3, met 4 zitplaatsen, geeft als info-regel</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Toyota Aygo 37LHG3, benzine, 4 personen
+</pre></div>
+</div>
+<p>b. De methoden <code class="docutils literal notranslate"><span class="pre">getAutos()</span></code> van klasse <code class="docutils literal notranslate"><span class="pre">Verhuur</span></code> geeft van de voertuigen een lijst terug met alleen de auto’s. Schrijf de implementatie van deze methode.</p>
+<p>Doe hetzelfde voor <code class="docutils literal notranslate"><span class="pre">getFietsen()</span></code>, die een lijst teruggeeft met alleen de fietsen.</p>
+<p>c. De methode <code class="docutils literal notranslate"><span class="pre">voegHuurvoertuigToe()</span></code> in klasse <code class="docutils literal notranslate"><span class="pre">Verhuur</span></code> controleert of het toe te voegen voertuig al voorkomt in de administratie. Dit gebeurt met <code class="docutils literal notranslate"><span class="pre">hashCode()</span></code> en <code class="docutils literal notranslate"><span class="pre">equals()</span></code>.</p>
+<p>Deze controle functioneert niet als <code class="docutils literal notranslate"><span class="pre">hashCode()</span></code> en <code class="docutils literal notranslate"><span class="pre">equals()</span></code> niet in <code class="docutils literal notranslate"><span class="pre">Auto</span></code> en <code class="docutils literal notranslate"><span class="pre">Fiets</span></code> geïmplementeerd zijn. Override deze twee methodes in de klassen <code class="docutils literal notranslate"><span class="pre">Auto</span></code> en <code class="docutils literal notranslate"><span class="pre">Fiets</span></code>.</p>
+<p>Voor de methode <code class="docutils literal notranslate"><span class="pre">hashCode()</span></code> kun je volstaan met het teruggeven van de waarde 1 (<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">1</span></code>). Dit zorgt ervoor dat equals elke keer wordt aangeroepen ter controle. Dit is niet optimaal maar voor deze opgave voldoende. Eventueel kun je met opgave e) als extra uitdaging de methode <code class="docutils literal notranslate"><span class="pre">hashCode()</span></code> optimaliseren.</p>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">equals()</span></code> moet alle velden controleren. Hoewel in werkelijkheid verschillende auto’s niet hetzelfde kenteken kunnen hebben, moet dit in deze opgave genegeerd worden. Controleer simpelweg of alle velden overeenkomen. Vergeet de algemene velden in klasse <code class="docutils literal notranslate"><span class="pre">HuurVoertuig</span></code> niet. Probeer op slimme manier gebruik te maken van overerving.</p>
+<p>Algemene stappen in implementatie van <code class="docutils literal notranslate"><span class="pre">equals</span></code>:</p>
+<ol class="simple">
+<li><p>Check of argument gelijk is aan <code class="docutils literal notranslate"><span class="pre">this</span></code> (met <code class="docutils literal notranslate"><span class="pre">==</span></code>). Zo ja, return <code class="docutils literal notranslate"><span class="pre">true</span></code> (er is dan sprake van hetzelfde object)</p></li>
+<li><p>Check of argument instantie is van klasse. Zo nee, return <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p>Cast argument naar klasse</p></li>
+<li><p>Vergelijk alle relevante velden. Return <code class="docutils literal notranslate"><span class="pre">true</span></code> als ze allemaal gelijk zijn.</p></li>
+</ol>
+<p>Je hoeft geen rekening te houden met <code class="docutils literal notranslate"><span class="pre">null</span></code> waarden.</p>
+<p>d. [extra uitdaging]</p>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">meestVoorkomendeAutomerk()</span></code> in klasse <code class="docutils literal notranslate"><span class="pre">Verhuur</span></code> geeft het automerk terug die het meest voorkomt in de administratie. Alleen het merk, niet het type. Implementeer deze methode.</p>
+<p>e. [extra uitdaging]</p>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">hashCode()</span></code> voor alle objecten dezelfde waarde terug laten geven, is niet optimaal. Dit is met kleine aantallen objecten niet merkbaar, maar bij grote aantallen wel. Daarom bevat Main een test die 20 miljoen auto’s en 20 miljoen fietsen genereert en toevoegt aan een <code class="docutils literal notranslate"><span class="pre">HashSet</span></code>. <code class="docutils literal notranslate"><span class="pre">HashSet</span></code> voegt klassen die identiek zijn niet toe, en maakt daarbij gebruik van <code class="docutils literal notranslate"><span class="pre">hashCode()</span></code> en <code class="docutils literal notranslate"><span class="pre">equals()</span></code>.</p>
+<p>Met een niet-optimale methode <code class="docutils literal notranslate"><span class="pre">hashCode()</span></code> zal deze test ongeveer 10 seconden duren. Als een erg snelle computer wordt gebruikt, kan het zijn dat de test veel korter duurt. Verhoog in dat geval het aantal gegenereerde objecten in de loop naar bijvoorbeeld 40 miljoen.</p>
+<p>Bestudeer onderstaand artikel en optimaliseer de methode <code class="docutils literal notranslate"><span class="pre">hashCode()</span></code>.
+Als <code class="docutils literal notranslate"><span class="pre">hashCode()</span></code> geoptimaliseerd is, zal de tijdsduur van de test aanzienlijk afnemen. Baseer de hashcode op de integer-velden van <code class="docutils literal notranslate"><span class="pre">Fiets</span></code> en <code class="docutils literal notranslate"><span class="pre">Auto</span></code>. Probeer een zo groot mogelijke verbetering in prestatie te realiseren.</p>
+<p>Artikel <a class="reference external" href="https://www.baeldung.com/java-hashcode">Guide to hashCode() in Java</a>.</p>
+<!--
+## Deel 3
+
+Deze opdracht is een vervolg van week 2. Daarom kan deze opdracht pas gedaan worden als je voor week 1 een voldoende score hebt behaald.
+
+Het project <a href="../../projects/rentals_3.zip">rentals_3.zip</a> bevat de klassw `Verhuur`. Verder zijn de klassen `Auto`, `Fiets` en `HuurVoertuig` nodig. Deze moet je zelf toevoegen van jouw uitwerking van deel 2.
+
+In deel 1 heb je ook met een klasse `Verhuur` gewerkt. Gebruik voor deze opgave de meegeleverde klasse `Verhuur`.
+
+De klasse Main bevat code om de klassen te testen, voor elke opgaven. Deze is voor eigen gebruik, voor CodeGrade lever je de klassen Fiets, Auto, Voertuig, HuurVoertuig, HuurFiets, HuurAuto en Verhuur in. Eventueel ook VoertuigSorterBeschrijving in het geval opgave d ingeleverd wordt.
+
+
+a. Om de klassen van voertuigen flexibeler te maken, kan gewerkt worden met algemene voertuig-klassen die geen code voor verhuur bevatten. Een interface kan gebruikt worden om huurvoertuig-klassen te maken.
+Maak de klassen `Fiets` en `Auto` algemeen, zonder code voor huurvoertuigen.
+Hiervoor moeten de volgende stappen worden uitgevoerd:
+
+1. Hernoem de klasse `HuurVoertuig` naar `Voertuig`.
+2. Geef de klassen `Auto` en `Fiets` als parent class `Voertuig` in plaats van `HuurVoertuig`.
+2. Maak de klasse `Voertuig` *abstract*.
+3. Vervang het veld `huurprijs` door een veld met naam `aanschafprijs`. Omdat aanschafprijzen grotere bedragen zijn, is een `float` niet nodig en wordt het datatype `int` gebruikt. Vergeet de getter niet aan tepassen.
+
+b. Maak klassen voor huurvoertuigen door het generieke voertuig als parent class te gebruiken en een *interface* `HuurVoertuig` te implementeren.
+Hiervoor moeten de volgende stappen worden uitgevoerd:
+1. Maak een interface `HuurVoertuig` met één abstracte methode: `float berekenHuurprijs()`
+2. Maak een klasse `HuurAuto`, die de interface `HuurVoertuig` implementeert, en met parentclass `Auto`.
+Doe hetzelfde met `HuurFiets`, met parentclass `Fiets`.
+
+De methode `berekenHuurprijs()` geeft de huurprijs terug, die als volgt wordt berekend:
+
+Auto: aanschafprijs / 700 + 15.
+Fiets: aanschafprijs / 180 + 5.
+
+c. De klasse `Verhuur` heeft een methode `voegHuurvoertuigToe` om een voertuig toe te voegen. Het gebruikte argument is `Voertuig`. Daardoor kunnen er zowel reguliere voortuigen (`Auto`/`Fiets`) als huurvoertuigen (`HuurAuto`/`HuurFiets`) worden meegegeven. De methode bevat al een controle op identieke voortuigen, waardoor geen voertuigen dubbel worden toegevoegd. Breid de controle uit met een controle die er voor zorgt dat er alleen huurvoertuigen (objecten van een klasse die de interface `HuurVoertuig` implementeren) worden toegevoegd. Geef `false` terug als het niet om een huurvoertuig gaat.
+
+d. De methode `sorterenAanschafprijs()` van `Verhuur` zorgt ervoor dat de lijst huurvoertuigen gesorteerd wordt op aanschafprijs (van laag naar hoog).
+De implementatie van deze methode is al aanwezig. Uncomment de regel code om de methode te kunnen gebruiken.
+Het sorteren van klassen met de methode `Collections.sort()`, die wordt aangeroepen vanuit `sorterenAanschafprijs()`, is mogelijk als de klassen in de lijst de interface `Comparable` implementeren.
+Laat de klasse `Voertuig` de interface `Comparable<Voertuig>` implementeren (het stuk met de `<` en `>` hoort er ook bij).
+Deze interface vereist dat de methode `public int compareTo(Voertuig voertuig)` geïmplementeerd wordt. Deze methode vergelijkt twee objecten met elkaar. Door een bepaalde waarde terug te geven, wordt aangegeven op welke volgorde de objecten in de sortering moeten komen. Afhankelijk daarvan bepaalt `Collections.sort()` de volgorde.
+De exacte waarde is niet van belang. Het gaat om het positief of negatief zijn van de waarde. Bij een positieve waarde is het object ‘groter’ dan het object waarmee vergeleken wordt. Bij een negatieve waarde is het andersom.
+
+e. [extra uitdaging]
+De methode `sorterenBeschrijving()` sorteert de voertuigen op beschrijving, methode `getBeschrijving()`. Echter, voertuigen met dezelfde beschrijving (merk+type identiek) worden onderling gesorteerd op aanschafprijs.
+Met behulp van de interface `Comparable` kan maar één sortering geïmplementeerd worden. Dit is al gebeurd in opgave d.
+Er is echter nog een andere methode om te sorteren, die meer flexibiliteit biedt: De sort-methode van `ArrayList`. Deze methode krijgt als argument een instantie van een klasse die de interface `Comparator` implementeert.
+Ook `Comparator` heeft één methode: `compare`, die een integer teruggeeft. Deze return-waarde werkt op dezelfde manier als bij `compareTo` van `Comparable` (zie vorige opgave).
+De implementatie van deze methode is al aanwezig. Uncomment de regels code om de methode te kunnen gebruiken.
+Maak de klasse `VoertuigSorterBeschrijving`, die nodig is voor het sorteren. De klasse moet de interface `Comparator<Voertuig>` implementeren en de methode `public int compare(Voertuig t1, Voertuig t2)`.
+
+f. [extra uitdaging]
+De methode `sorterenBeschrijvingFietsAuto()` sorteert de voertuigen opdezelfde manier als de methode `sorterenBeschrijving()`, met als verschil dat in de resultaten éérst de fietsen worden gesorteerd, en dan de auto’s. De volgorde is: alle fietsen gesorteerd op beschrijving (en prijs bij dezelfde beschrijving), en vervolgens alle auto’s gesorteerd op beschrijving (en prijs bij dezelfde beschrijving).
+Implementeer `sorterenBeschrijvingFietsAuto()`. Maak gebruik van een innerclass (zie pagina 512 boek Programmeren in Java met BlueJ) of anonieme klasse.
+Tip: Door slim gebruik te maken van overerving van de klasse VoertuigSorterBeschrijving kan de hoeveelheid code tot een minimum beperkt worden.
+--></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./problems/verhuur"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../exercises/bouncing_balls/index.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Stuiterbal</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../course/week_8.html" title="volgende pagina">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Week 8</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

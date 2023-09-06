@@ -1,6 +1,6 @@
 # CodingBat
 
-[CodingBat](https://codingbat.com/java) is een handige site waar je kan oefenen met onder andere arrays en strings. Het is aan te raden om een account aan te maken zodat jouw opgaven bewaard blijven voor een volgende keer dat je de site bezoekt.
+[CodingBat](https://codingbat.com/java) is een handige site waar je kan oefenen met onder andere arrays en strings. Het is aan te raden om een account aan te maken zodat je uitwerkingen bewaard blijven voor een volgende keer dat je de site bezoekt.
 
 ## Strings
 

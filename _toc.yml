@@ -26,38 +26,37 @@ parts:
     sections:
     - file: exercises/8-9_primitive_data
     - file: exercises/9a-9_variables_assignment
+- caption: Week 2
+  chapters:
+  - file: course/week_2
+    title: Onderwerpen
+    sections:
+    - file: topics/2a1_methoden
+      title: Methoden
+    - file: topics/2a2_methoden_en_testen
+      title: Methoden en testen
+    - file: topics/2b_condities_en_logica
+      title: Condities en logica
+    - file: topics/3a_lussen_en_strings
+      title: Lussen en strings
+    - file: topics/3c_string_mystery
+      title: String Mystery
+    - file: topics/4a_recursie
+      title: Recursie
+  - file: exercises/debuggen_en_methoden
+    title: Practicum
+  - file: problems/calculator/index
+    title: Opgave
+  - file: course/ex_2
+    title: Oefening
+    sections:
+    - file: exercises/12_12_if_statements
+      title: Condities
+    - file: exercises/string_loops.md
+      title: Strings en lussen
+    - file: exercises/codingbat_strings
+      title: CodingBat strings
 
-#- caption: Week 2
-#  chapters:
-#  - file: course/week_2
-#    title: Onderwerpen
-#    sections:
-#    - file: topics/2a1_methoden
-#      title: Methoden
-#    - file: topics/2a2_methoden_en_testen
-#      title: Methoden en testen
-#    - file: topics/2b_condities_en_logica
-#      title: Condities en logica
-#    - file: topics/3a_lussen_en_strings
-#      title: Lussen en strings
-#    - file: topics/3c_string_mystery
-#      title: String Mystery
-#    - file: topics/4a_recursie
-#      title: Recursie
-#  - file: exercises/debuggen_en_methoden
-#    title: Practicum
-#  - file: problems/calculator/index
-#    title: Opgave
-#  - file: course/ex_2
-#    title: Oefening
-#    sections:
-#    - file: exercises/12_12_if_statements
-#      title: Condities
-#    - file: exercises/string_loops.md
-#      title: Strings en lussen
-#    - file: exercises/codingbat_strings
-#      title: CodingBat strings
-#
 #- caption: Week 3
 #  chapters:
 #  - file: course/week_3

@@ -2,7 +2,7 @@
 
 ## Korting
 
-Tijdens een uitverkoop wordt in een winkel een korting van 10% toegepast op aankopen van meer dan €10,00. Schrijf een programma `DiscountPrices.java` dat vraagt naar het bedrag van een aankoop, en dan de afgeprijsde prijs berekent. Het aankoopbedrag wordt ingevoerd in centen (als een geheel getal), bijvoorbeeld
+Tijdens een uitverkoop wordt in een winkel een korting van 10% toegepast op aankopen van meer dan €10,00. Schrijf een programma `DiscountPrices.java` dat vraagt naar het bedrag van een aankoop en dan de afgeprijsde prijs berekent en uitprint. Het aankoopbedrag wordt ingevoerd in centen (als een geheel getal), bijvoorbeeld
 
 ```console
 Voer het bedrag van de aankopen in: 2000

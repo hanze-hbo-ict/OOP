@@ -2,9 +2,9 @@
 
 ## Debuggen
 
-Je zal fouten maken in code en vooral *logische* fouten zijn soms lastig op te sporen. We gebruiken IntelliJ als standaardeditor en in deze opgave ga je beter bekend raken met de debug faciliteiten van IntelliJ.
+Hoe je het ook went of keert, je zult fouten maken in je code. Vooral *logische* fouten zijn vaak lastig op te sporen. In deze opgave ga je beter bekend raken met de debug-mogelijkheden van IntelliJ.
 
-Ga naar [Debug your first Java application](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html), dit is onderdeel van de IntelliJ documentatie. Volg deze korte tutorial voor een eerste kennismaking.
+Ga naar [Debug your first Java application](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html), onderdeel van de IntelliJ documentatie. Volg deze korte tutorial voor een eerste kennismaking.
 
 In de tutorial wordt een klasse `AverageFinder` gebruikt die concepten bevat die nog worden behandeld, zoals lussen. Als je moeite hebt dit te lezen kan je het volgende voorbeeld gebruiken voor debuggen
 
@@ -42,9 +42,9 @@ Veel berekeningen kunnen beknopter worden uitgedrukt met de "multadd" bewerking,
 
 2.  Schrijf een methode `multadd` die drie `double`'s als parameters accepteert en het resultaat van `a * b + c` teruggeeft.
 
-3.  Schrijf een `main` methode die `multadd` test door het aan te roepen met een paar eenvoudige parameters, zoals `1.0, 2.0, 3.0`.
+3.  Schrijf in de `main` methode een test voor `multadd` door het aan te roepen met een paar eenvoudige parameters, zoals `1.0, 2.0, 3.0`.
 
-4.  Ook in `main`, gebruik de methode `multadd` om de volgende waarden te berekenen:
+4.  Ook in `main`: gebruik de methode `multadd` om de volgende waarden te berekenen:
 
     ```{math}
     :label: one
@@ -64,12 +64,12 @@ Veel berekeningen kunnen beknopter worden uitgedrukt met de "multadd" bewerking,
     ```
 
     ```{hint}
-    De methode om *e* tot een macht te verheffen is `Math.exp`.
+    De methode om *e* tot een macht te verheffen is [`Math.exp`](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#exp-double-).
     ```
 
-In het laatste deel van deze oefening moet je een methode schrijven die een andere methode aanroept die jij geschreven hebt. Wanneer je dat doet, is het een goed idee om de eerste methode zorgvuldig te testen voordat je aan de tweede gaat werken. Anders zul je misschien twee methoden tegelijk moeten debuggen, wat lastig kan zijn.
+In het laatste deel van deze oefening moet je een methode schrijven die een andere methode aanroept die je geschreven hebt. Wanneer je dat doet, is het een goed idee om de eerste methode zorgvuldig te testen voordat je aan de tweede gaat werken. Anders zul je misschien twee methoden tegelijk moeten debuggen, wat lastig kan zijn.
 
-Een van de doelen van deze oefening is het oefenen van *pattern-matching*: de vaardigheid om een specifiek probleem te herkennen als een instantie van een algemene categorie van problemen.
+Eén van de doelen van deze oefening is het oefenen van *pattern-matching*: de vaardigheid om een specifiek probleem te herkennen als een instantie van een algemene categorie van problemen.
 
 ## Fermat
 
@@ -77,12 +77,12 @@ Een van de doelen van deze oefening is het oefenen van *pattern-matching*: de va
 Deze opgave kan je ook in het boek terugvinden in [hoofdstuk 5](https://books.trinket.io/thinkjava2/chapter5.html).
 ```
 
-De [Laatste Stelling van Fermat](https://nl.wikipedia.org/wiki/Laatste_stelling_van_Fermat) zegt dat er geen gehele getallen $a$, $b$, $c$ en $n$ bestaan zodat $a^n + b^n = c^n$, behalve als $n \leq 2$ is.
+De [Laatste Stelling van Fermat](https://nl.wikipedia.org/wiki/Laatste_stelling_van_Fermat) stelt dat er geen gehele getallen $a$, $b$, $c$ en $n$ bestaan zodat $a^n + b^n = c^n$, behalve als $n \leq 2$ is.
 
-Schrijf een programma `Fermat.java` dat vier gehele getallen invoert `a`, `b`, `c`, en `n`) en kijkt of de stelling van Fermat geldt.
-Als $n$ groter is dan 2 en $a^n + b^n = c^n$, dan zou het programma moeten weergeven "Potverdorie, Fermat had geen gelijk!"
+Schrijf een programma `Fermat.java` dat vier gehele getallen `a`, `b`, `c`, en `n` accepteert en kijkt of de stelling van Fermat geldt. Als $n$ groter is dan 2 en $a^n + b^n = c^n$, dan zou het programma moeten weergeven "Potverdorie, Fermat had geen gelijk!"
+
 Zo niet, dan moet het programma "Nee, dat werkt niet." weergeven.
 
 ```{tip}
-Je zou hier misschien `Math.pow` willen gebruiken.
+Je zou hier misschien [`Math.pow`](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#pow-double-double-) willen gebruiken.
 ```

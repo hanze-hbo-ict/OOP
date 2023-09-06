@@ -1,4 +1,4 @@
-# Hello World
+# Opgaven practicum 1 
 
 ## Doel
 
@@ -18,13 +18,13 @@ Ten derde, lees hoofdstuk [1](https://books.trinket.io/thinkjava2/chapter1.html)
 
 ## Opdracht
 
--   Implementeer de volgende *vijf* programma's:
+Hieronder worden vijf verschillende opdrachten beschreven. Maak voor elk van deze opdrachten een aparte klassse, elk met hun eigen *entry point* (`public static void main(String[] args)`). Vraag eventueel je practicumdocent hoe je deze verschillende *entry points* op separaat van elkaar kunt runnen.
 
-    *   `HelloWorld.java`
-    *   `HiFour.java`
-    *   `Ordered.java`
-    *   `GreatCircle.java`
-    *   `RGBtoCYMK.java`
+*   [`HelloWorld.java`](#helloworld-java)
+*   [`HiFour.java`](#hifour-java)
+*   [`Ordered.java`](#ordered-java)
+*   [`GreatCircle.java`](#greatcircle-java)
+*   [`RGBtoCYMK.java`](#rgbtocmyk-java)
 
 <!--
 -   De volgende twee programma's zijn **optionele** uitdagingen:

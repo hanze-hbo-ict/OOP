@@ -1,0 +1,853 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Methoden en condities &#8212; Objectgeoriënteerd Programmeren</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Zoeken" href="../../search.html" />
+    <link rel="next" title="Oefeningen 2" href="../../course/ex_2.html" />
+    <link rel="prev" title="Debuggen en methoden" href="../../exercises/debuggen_en_methoden.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hello_world/index.html">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_1.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/8-9_primitive_data.html">
+     Primitieve gegevenstypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/9a-9_variables_assignment.html">
+     Variabelen en toekenningen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Opgave
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_2.html">
+   Oefening
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/codingbat_strings.html">
+     CodingBat strings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/problems/calculator/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doelen">
+   Doelen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rekenmachine">
+   Rekenmachine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getmenuoption">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     getMenuOption
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getoperand">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     getOperand
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getpair">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     getPair
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eenvoudige-methoden">
+   Eenvoudige methoden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bijzondere-methoden">
+   Bijzondere methoden
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       random
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       distance
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-flow-van-het-programma">
+   De
+   <em>
+    flow
+   </em>
+   van het programma
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power-users">
+   Power users
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Methoden en condities</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doelen">
+   Doelen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rekenmachine">
+   Rekenmachine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getmenuoption">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     getMenuOption
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getoperand">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     getOperand
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getpair">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     getPair
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eenvoudige-methoden">
+   Eenvoudige methoden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bijzondere-methoden">
+   Bijzondere methoden
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       random
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       distance
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-flow-van-het-programma">
+   De
+   <em>
+    flow
+   </em>
+   van het programma
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power-users">
+   Power users
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="methoden-en-condities">
+<h1>Methoden en condities<a class="headerlink" href="#methoden-en-condities" title="Permalink naar deze titel">#</a></h1>
+<section id="doelen">
+<h2>Doelen<a class="headerlink" href="#doelen" title="Permalink naar deze titel">#</a></h2>
+<ul class="simple">
+<li><p>Oefenen met het schrijven van methodes</p></li>
+<li><p>Oefenen met conditionele statements</p></li>
+<li><p>Een vooruitblik op <em>arrays</em></p></li>
+</ul>
+</section>
+<section id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">#</a></h2>
+<p>In deze opave ga je een rekenmachine schrijven voor eenvoudige bewerkingen als het optellen en aftrekken van getallen. Ook zal deze rekenmachine meer geavanceerde functionaliteit hebben, bijvoorbeeld het kunnen berekenen van de <a class="reference external" href="https://nl.wikipedia.org/wiki/Afstand">afstand</a> tussen twee punten in een tweedimensionale ruimte (altijd handig!).</p>
+<p>Deze opgave hoopt je een voorbeeld te geven hoe een probleem in kleinere delen kan worden opgebroken, waar elk onderdeel een eigen verantwoordelijk heeft (<a class="reference external" href="https://en.wikipedia.org/wiki/Separation_of_concerns"><em>separation of concerns</em></a>) en hoe deze onderdelen met elkaar kunnen samenwerken (<a class="reference external" href="https://en.wikipedia.org/wiki/Function_composition_(computer_science)"><em>compositie</em></a>).</p>
+</section>
+<section id="rekenmachine">
+<h2>Rekenmachine<a class="headerlink" href="#rekenmachine" title="Permalink naar deze titel">#</a></h2>
+<p>Maak een klasse <code class="docutils literal notranslate"><span class="pre">Calculator.java</span></code> met een <code class="docutils literal notranslate"><span class="pre">main</span></code> methode. In deze opdracht ga je deze klasse verder aanvullen met de volgende methoden</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getMenuOption</span><span class="p">()</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getOperand</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">prompt</span><span class="p">)</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="nf">getPair</span><span class="p">()</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">subtract</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">random</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">distance</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">stop</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="getmenuoption">
+<h2><code class="docutils literal notranslate"><span class="pre">getMenuOption</span></code><a class="headerlink" href="#getmenuoption" title="Permalink naar deze titel">#</a></h2>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">getMenuOption</span></code> toont een menu aan de gebruiker en leest de gekozen optie in. Het programma start altijd met het tonen van dit keuzemenu. Als de gebruiker een geldige keuze heeft gemaakt moet de methode <code class="docutils literal notranslate"><span class="pre">getMenuOption</span></code> deze keuze teruggeven, geef de waarde 0 terug om aan te geven dat de gebruiker een ongeldige keus heeft gemaakt.</p>
+<p>Een mogelijke uitvoer van de aanroep van deze methode kan zijn:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; java Calculator.java</span>
+<span class="go">Menu</span>
+<span class="go">1 Optellen</span>
+<span class="go">2 Aftrekken</span>
+<span class="go">3 Vermenigvuldigen</span>
+<span class="go">4 Delen</span>
+<span class="go">5 Genereer een random getal</span>
+<span class="go">7 Bereken afstand</span>
+<span class="go">Wat zou je willen doen? 9</span>
+<span class="go">Helaas, 9 is geen optie</span>
+</pre></div>
+</div>
+<p>In dit voorbeeld heeft de gebruiker een ongeldige keus gemaakt.</p>
+</section>
+<section id="getoperand">
+<h2><code class="docutils literal notranslate"><span class="pre">getOperand</span></code><a class="headerlink" href="#getoperand" title="Permalink naar deze titel">#</a></h2>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">getOperand</span></code> heeft maar één eenvoudige taak, namelijk een <em>prompt</em> tonen die de gebruiker vraagt een waarde in te vullen, deze input te lezen en het resultaat als een <code class="docutils literal notranslate"><span class="pre">double</span></code> terug te geven. Je zal hier de klasse <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html"><code class="docutils literal notranslate"><span class="pre">Scanner</span></code></a> moeten gebruiken.</p>
+<p>Controleer ook hier of de input van de gebruiker correct is, met andere woorden, of de <code class="docutils literal notranslate"><span class="pre">String</span></code> input waarde kan worden omgezet naar een <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Neem paragraaf 5.9 in <a class="reference external" href="https://books.trinket.io/thinkjava2/chapter5.html">hoofdstuk 5</a> nog een keer door als je niet goed weet hoe je de controle op input moet afhandelen!</p>
+</div>
+</section>
+<section id="getpair">
+<h2><code class="docutils literal notranslate"><span class="pre">getPair</span></code><a class="headerlink" href="#getpair" title="Permalink naar deze titel">#</a></h2>
+<p>Alle rekenoperaties van onze rekenmachine hebben twee <em>operanden</em> nodig, <em>x</em> en <em>y</em>. Deze methode verzamelt de twee waarden en zal daarvoor de methode <code class="docutils literal notranslate"><span class="pre">getOperand</span></code> <em>tweemaal</em> aanroepen.</p>
+<p>Als je naar de signatuur van de methode kijkt zie je dat het een waarde met type <code class="docutils literal notranslate"><span class="pre">double[]</span></code> teruggeeft waar vooral het gebruik van de dubbele haken (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) opvalt. Denk terug aan het college waar de signatuur van de methode <code class="docutils literal notranslate"><span class="pre">main</span></code> nader werd bekeken.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Het type <code class="docutils literal notranslate"><span class="pre">String[]</span></code> is hier een <em>array</em>, een collectie van waarden met type <code class="docutils literal notranslate"><span class="pre">String</span></code>’. De methode <code class="docutils literal notranslate"><span class="pre">getPair</span></code> gaat ook een collectie teruggeven, in dit geval een <em>array</em> met <em>twee</em> <code class="docutils literal notranslate"><span class="pre">double</span></code> waarden, <em>x</em> en <em>y</em>. Gebruik de volgende implementatie van deze methode in je code.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="nf">getPair</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getOperand</span><span class="p">(</span><span class="s">&quot;Eerste waarde: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getOperand</span><span class="p">(</span><span class="s">&quot;Tweede waarde: &quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">}</span><span class="w"> </span><span class="c1">// declare and initialise a double&#39;s array</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">values</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Veel methoden in deze klassen hebben een <code class="docutils literal notranslate"><span class="pre">double[]</span></code> als parameter en zullen de <code class="docutils literal notranslate"><span class="pre">x</span></code> en <code class="docutils literal notranslate"><span class="pre">y</span></code> waarde uit dit array moeten lezen. Een voorbeeld hoe je dit zou kunnen schrijven:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span><span class="w"></span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="eenvoudige-methoden">
+<h2>Eenvoudige methoden<a class="headerlink" href="#eenvoudige-methoden" title="Permalink naar deze titel">#</a></h2>
+<p>De rekenmachine kent een aantal “gewone” methoden, dit zijn</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">add</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subtract</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">multiply</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">divide</span></code></p></li>
+</ul>
+<p>Je zal deze methoden implementeren door gebruik maken van de standaard operatoren, bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">+</span></code> en <code class="docutils literal notranslate"><span class="pre">-</span></code>. Controleer altijd of de waarden correct zijn, bijvoorbeeld de methode <code class="docutils literal notranslate"><span class="pre">divide</span></code> zal een getal niet kunnen delen door 0.</p>
+</section>
+<section id="bijzondere-methoden">
+<h2>Bijzondere methoden<a class="headerlink" href="#bijzondere-methoden" title="Permalink naar deze titel">#</a></h2>
+<p>De rekenmachine heeft ook een tweetal meer bijzondere methoden (althans, voor een rekenmachine!), dit zijn</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">random</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">distance</span></code></p></li>
+</ul>
+<section id="random">
+<h3><code class="docutils literal notranslate"><span class="pre">random</span></code><a class="headerlink" href="#random" title="Permalink naar deze titel">#</a></h3>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">random</span></code> moet een waarde teruggeven die <strong>groter of gelijk</strong> is dan de beginwaarde en <strong>kleiner</strong> dan de eindwaarde. Je moet hier de methode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--"><code class="docutils literal notranslate"><span class="pre">Math.random</span></code></a> voor gebruiken.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">random</span></code> in de klasse <code class="docutils literal notranslate"><span class="pre">Math</span></code> genereert een <code class="docutils literal notranslate"><span class="pre">double</span></code> waarde groter of gelijk aan <code class="docutils literal notranslate"><span class="pre">0.0</span></code> en kleiner dan <code class="docutils literal notranslate"><span class="pre">1.0</span></code>. Hoe kan je dit gegeven gebruiken om een random getal voor een bepaalde reeks te genereren? Bedenk dat je de waarde die <code class="docutils literal notranslate"><span class="pre">Math.random</span></code> genereert als een fractie kan gebruiken voor de <em>lengte</em> van jouw reeks.</p>
+</div>
+</section>
+<section id="distance">
+<h3><code class="docutils literal notranslate"><span class="pre">distance</span></code><a class="headerlink" href="#distance" title="Permalink naar deze titel">#</a></h3>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">distance</span></code> berekent de afstand tussen twee punten in een ruimte op basis van de coördinaten <span class="math notranslate nohighlight">\((x_1, y_1)\)</span> en <span class="math notranslate nohighlight">\((x_2, y_2)\)</span> volgens de formule</p>
+<div class="math notranslate nohighlight">
+\[
+\text{distance} = \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2}
+\]</div>
+<p>Implementeer deze methode en maak gebruik van methoden die je eerder hebt gedefinieerd, bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">add</span></code> en <code class="docutils literal notranslate"><span class="pre">multiply</span></code>. Uit de klasse <code class="docutils literal notranslate"><span class="pre">Math</span></code> mag je alleen de methode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#sqrt-double-"><code class="docutils literal notranslate"><span class="pre">sqrt</span></code></a> gebruiken.</p>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Weet je niet goed hoe je dit moet aanpakken? Lees dan paragraaf 4.9 in <a class="reference external" href="https://books.trinket.io/thinkjava2/chapter4.html">hoofdstuk 4</a> nog eens door hoe je dit probleem stap voor stap zou kunnen oplossen en testen.</p>
+</div>
+</section>
+</section>
+<section id="de-flow-van-het-programma">
+<h2>De <em>flow</em> van het programma<a class="headerlink" href="#de-flow-van-het-programma" title="Permalink naar deze titel">#</a></h2>
+<p>Als het goed is heb je nu alle methoden geïmplementeerd (en getest). Het begint natuurlijk in <code class="docutils literal notranslate"><span class="pre">main</span></code> met een aanroep van <code class="docutils literal notranslate"><span class="pre">getMenuOption</span></code>. Deze methode geeft de menukeuze als integer terug en op basis van deze waarde zal je</p>
+<ol class="simple">
+<li><p>de gebruiker moeten vragen om waarden voor <code class="docutils literal notranslate"><span class="pre">x</span></code> en <code class="docutils literal notranslate"><span class="pre">y</span></code> in te voeren,</p></li>
+<li><p>deze waarden om te zetten in een geschikt type,</p></li>
+<li><p>de bijbehorende rekenmethode aan te roepen,</p></li>
+<li><p>en tot slot het resultaat te printen</p></li>
+</ol>
+<p>Een voorbeeld sessie kan als volgt verlopen:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; java Calculator.java</span>
+<span class="go">Menu</span>
+<span class="go">1 Optellen</span>
+<span class="go">2 Aftrekken</span>
+<span class="go">3 Vermenigvuldigen</span>
+<span class="go">4 Delen</span>
+<span class="go">5 Genereer een random getal</span>
+<span class="go">7 Bereken afstand</span>
+<span class="go">Wat zou je willen doen? 4</span>
+<span class="go">Eerste waarde: 42</span>
+<span class="go">Tweede waarde: 2</span>
+<span class="go">Antwoord: 21.0</span>
+</pre></div>
+</div>
+<p>Je zal hier condities moeten schrijven waar je <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> statements voor kan gebruiken, maar misschien zijn <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements ook geschikt?</p>
+</section>
+<section id="power-users">
+<h2>Power users<a class="headerlink" href="#power-users" title="Permalink naar deze titel">#</a></h2>
+<p>Je rekenmachine is een succes! Eén groep gebruikers bestookt je met de vraag of ze niet via de command line alle opties in één keer kunnen invoeren. Ze kennen het menu uit het hoofd en vinden het omslachtig om steeds weer alle vragen te moeten beantwoorden en één voor één de waarden in te moeten typen. Je hebt hier te maken met <em>power users</em>.</p>
+<p>Deze gebruikers zouden de rekenmachine graag als volgt willen gebruiken, bijvoorbeeld voor een deling</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; java Calculator.java 4 42.0 6.0</span>
+<span class="go">7.0</span>
+</pre></div>
+</div>
+<p>Het eerste argument is de gewenste operatie en alle volgende argumenten de waarden.</p>
+<p>Jouw opdracht is om de rekenmachine uit te breiden met deze functionaliteit. Je zal gebruik moeten maken van het <em>array</em> <code class="docutils literal notranslate"><span class="pre">args</span></code> waar je steed zal moeten controleren of het aantal argumenten correct is door de property <code class="docutils literal notranslate"><span class="pre">length</span></code> van het object <code class="docutils literal notranslate"><span class="pre">args</span></code> te gebruiken, bijvoorbeeld</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./problems/calculator"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../exercises/debuggen_en_methoden.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Debuggen en methoden</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../course/ex_2.html" title="volgende pagina">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Oefeningen 2</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

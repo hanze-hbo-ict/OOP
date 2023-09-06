@@ -73,7 +73,7 @@ Voor elke opdracht ga je een startproject downloaden waarin je je programmacode 
 -   Download het volgende project voor de eerste programmeeropdracht naar een handige locatie (zoals bijvoorbeeld het *Bureaublad*).
 
     <!-- use anchor since it refers to a build file -->
-    -   <a href="../projects/hello.zip">hello.zip</a>
+    -   <a href="../projects/oop-projects.zip">oop-projects.zip</a>
 
     Pak het project als volgt uit voor jouw besturingssysteem:
 
@@ -82,17 +82,17 @@ Voor elke opdracht ga je een startproject downloaden waarin je je programmacode 
     ````
 
     ````{tabbed} macOS
-    **Dubbelklik** op het zip-bestand om het uit te pakken. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval `hello`). Het zip-bestand kan je nu verwijderen.
+    **Dubbelklik** op het zip-bestand om het uit te pakken. Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval `oop-projects`). Het zip-bestand kan je nu verwijderen.
     ````
 
     ````{tabbed} Linux
     Pak het zip-bestand uit met het volgende commando:
 
     ```console
-    > unzip -d hello hello.zip
+    > unzip -d oop-projects oop-projects.zip
     ```
 
-    Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval `hello`). Het zip-bestand kan je nu verwijderen.
+    Hierdoor wordt een projectmap aangemaakt met de naam van de bijbehorende programmeeropdracht (in dit geval `oop-projects`). Het zip-bestand kan je nu verwijderen.
     ````
 
 -   Start IntelliJ:
@@ -129,23 +129,22 @@ Voor elke opdracht ga je een startproject downloaden waarin je je programmacode 
 
 Nu bent je klaar om je eerste Java programma te schrijven. IntelliJ heeft veel gespecialiseerde programmeerhulpmiddelen, zoals regelnummering, syntax highlighting, bracket matching, auto indenting, auto formatting, auto importing, variable renaming, en continue code inspectie.
 
--   Om een nieuw Java programma te maken:
+Om een programma te maken, moeten we in de `src`-directory een klasse maken. Klik rechts op `src` in het overzichtsmenu links. Selecteer *New -> Java Class*. In het dialoogvenster dat nu verschijnt geef je de naam van de klasse op: geef het de naam `HelloWorld`. 
 
-    -   Open *IntelliJ* en het project opnieuw (als je het in de vorige stap hebt gesloten).
 
-    ```{figure} images/intellij_select_project_2.png
-    :name: intellij-select-project_2
+```{figure} images/intellij_select_src.png
+:name: intellij-select-src
 
-    Open het project
-    ```
+Selecteer de `src`-directory
+```
 
-    -   Klik op de projectnaam in de *Project View* zijbalk (links), zodat deze gemarkeerd wordt. <!--TODO LIFT specifiek, maak algemeen -->
+```{figure} images/intellij_new_class.png
+:name: intellij-new-class
 
-        <!-- TODO screenshot -->
+Maak een nieuwe klasse aan
+```
 
-    -   Selecteer de menu-optie LIFT → Nieuwe Java Klasse. Als daar om gevraagd wordt, typ dan **HelloWorld** als naam en klik op **OK**.
-
--   Maak in het hoofdvenster van de editor het Java-programma `HelloWorld.java` precies zoals het er hieronder uitziet. (IntelliJ genereert de grijze boilerplate code automatisch, eventueel met toevoeging van een course header block commentaar).
+-   Typ in editor het Java-programma `HelloWorld.java` precies zoals het er hieronder uitziet. (IntelliJ genereert de grijze boilerplate code automatisch, eventueel met toevoeging van een course header block commentaar).
 
     ```{code-block} java
     ---
@@ -169,6 +168,20 @@ Nu bent je klaar om je eerste Java programma te schrijven. IntelliJ heeft veel g
     ```{tip}
     *IntelliJ* is zo ingesteld dat wijzigingen die je in je bestanden aanbrengt automatisch worden opgeslagen bij verschillende gebeurtenissen (zoals compileren, uitvoeren, sluiten van een bestand of project, of het afsluiten van de IDE). We raden nog steeds aan om **Bestand → Alles opslaan (Ctrl + S)** te gebruiken om uw code opnieuw te formatteren.
     ```
+
+Als het goed is (je moet misschien nog wat infrastructuur opzetten; vraag eventueel je practicumdocent om hiermee te helpen) kun je nu het programma runnen en verschijnt er de fijne welkomsttekst `Hello, World` in de console onderin het scherm (samen met nog wat run-informatie die je rustig kunt negeren).
+
+
+```{figure} images/intellij_hello_world.png
+:name: intellij-hello-world
+
+Eindelijk hello world op het scherm
+```
+
+### Opgaven
+
+Maak nu [de opgaven van het eerste practicum](../problems/hello_world/index.md).
+
 
 <!-- TODO meer algemeen beschrijven
 

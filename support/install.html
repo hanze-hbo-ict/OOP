@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Zoeken" href="../search.html" />
-    <link rel="next" title="Hello World" href="../problems/hello_world/index.html" />
+    <link rel="next" title="Opgaven practicum 1" href="../problems/hello_world/index.html" />
     <link rel="prev" title="Invoer en uitvoer" href="../topics/1c_invoer_en_uitvoer.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="nl">
@@ -343,6 +343,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#maak-een-programma-in-intellij">
    Maak een programma in IntelliJ
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opgaven">
+     Opgaven
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -382,6 +389,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#maak-een-programma-in-intellij">
    Maak een programma in IntelliJ
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opgaven">
+     Opgaven
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -432,7 +446,7 @@ title="Print to PDF"
 <li><p>Download het volgende project voor de eerste programmeeropdracht naar een handige locatie (zoals bijvoorbeeld het <em>Bureaublad</em>).</p>
 <!-- use anchor since it refers to a build file -->
 <ul class="simple">
-<li><p><a href="../projects/hello.zip">hello.zip</a></p></li>
+<li><p><a href="../projects/oop-projects.zip">oop-projects.zip</a></p></li>
 </ul>
 <p>Pak het project als volgt uit voor jouw besturingssysteem:</p>
 </li>
@@ -469,25 +483,21 @@ title="Print to PDF"
 <section id="maak-een-programma-in-intellij">
 <h2>Maak een programma in IntelliJ<a class="headerlink" href="#maak-een-programma-in-intellij" title="Permalink naar deze titel">#</a></h2>
 <p>Nu bent je klaar om je eerste Java programma te schrijven. IntelliJ heeft veel gespecialiseerde programmeerhulpmiddelen, zoals regelnummering, syntax highlighting, bracket matching, auto indenting, auto formatting, auto importing, variable renaming, en continue code inspectie.</p>
-<ul>
-<li><p>Om een nieuw Java programma te maken:</p>
-<ul class="simple">
-<li><p>Open <em>IntelliJ</em> en het project opnieuw (als je het in de vorige stap hebt gesloten).</p></li>
-</ul>
-<figure class="align-default" id="intellij-select-project-2">
-<img alt="../_images/intellij_select_project_2.png" src="../_images/intellij_select_project_2.png" />
+<p>Om een programma te maken, moeten we in de <code class="docutils literal notranslate"><span class="pre">src</span></code>-directory een klasse maken. Klik rechts op <code class="docutils literal notranslate"><span class="pre">src</span></code> in het overzichtsmenu links. Selecteer <em>New -&gt; Java Class</em>. In het dialoogvenster dat nu verschijnt geef je de naam van de klasse op: geef het de naam <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code>.</p>
+<figure class="align-default" id="intellij-select-src">
+<img alt="../_images/intellij_select_src.png" src="../_images/intellij_select_src.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Open het project</span><a class="headerlink" href="#intellij-select-project-2" title="Permallink naar deze afbeelding">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Selecteer de <code class="docutils literal notranslate"><span class="pre">src</span></code>-directory</span><a class="headerlink" href="#intellij-select-src" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="intellij-new-class">
+<img alt="../_images/intellij_new_class.png" src="../_images/intellij_new_class.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Maak een nieuwe klasse aan</span><a class="headerlink" href="#intellij-new-class" title="Permallink naar deze afbeelding">#</a></p>
 </figcaption>
 </figure>
 <ul>
-<li><p>Klik op de projectnaam in de <em>Project View</em> zijbalk (links), zodat deze gemarkeerd wordt. <!--TODO LIFT specifiek, maak algemeen --></p>
-<!-- TODO screenshot -->
-</li>
-<li><p>Selecteer de menu-optie LIFT → Nieuwe Java Klasse. Als daar om gevraagd wordt, typ dan <strong>HelloWorld</strong> als naam en klik op <strong>OK</strong>.</p></li>
-</ul>
-</li>
-<li><p>Maak in het hoofdvenster van de editor het Java-programma <code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code> precies zoals het er hieronder uitziet. (IntelliJ genereert de grijze boilerplate code automatisch, eventueel met toevoeging van een course header block commentaar).</p>
+<li><p>Typ in editor het Java-programma <code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code> precies zoals het er hieronder uitziet. (IntelliJ genereert de grijze boilerplate code automatisch, eventueel met toevoeging van een course header block commentaar).</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="hll"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, World&quot;</span><span class="p">);</span><span class="w"></span>
@@ -507,6 +517,16 @@ title="Print to PDF"
 </div>
 </li>
 </ul>
+<p>Als het goed is (je moet misschien nog wat infrastructuur opzetten; vraag eventueel je practicumdocent om hiermee te helpen) kun je nu het programma runnen en verschijnt er de fijne welkomsttekst <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> in de console onderin het scherm (samen met nog wat run-informatie die je rustig kunt negeren).</p>
+<figure class="align-default" id="intellij-hello-world">
+<img alt="../_images/intellij_hello_world.png" src="../_images/intellij_hello_world.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Eindelijk hello world op het scherm</span><a class="headerlink" href="#intellij-hello-world" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<section id="opgaven">
+<h3>Opgaven<a class="headerlink" href="#opgaven" title="Permalink naar deze titel">#</a></h3>
+<p>Maak nu <a class="reference internal" href="../problems/hello_world/index.html"><span class="doc std std-doc">de opgaven van het eerste practicum</span></a>.</p>
 <!-- TODO meer algemeen beschrijven
 
 ## Compileren en uitvoeren
@@ -533,6 +553,7 @@ Als de compilatie mislukt opent een Recompile-paneel (onderaan), waarin de compi
 ### Commandline
 
 --></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -572,7 +593,7 @@ Als de compilatie mislukt opent een Recompile-paneel (onderaan), waarin de compi
     <a class='right-next' id="next-link" href="../problems/hello_world/index.html" title="volgende pagina">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">volgende</p>
-        <p class="prev-next-title">Hello World</p>
+        <p class="prev-next-title">Opgaven practicum 1</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

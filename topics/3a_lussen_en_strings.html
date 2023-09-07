@@ -167,14 +167,9 @@ const thebe_selector_output = ".output, .cell_output"
    Practicum
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/hello_world/index.html">
-   Opgave
-  </a>
- </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/ex_1.html">
-   Oefening
+   Opgaven
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -183,13 +178,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../problems/hello_world/index.html">
+     Introductieopgaven
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../exercises/8-9_primitive_data.html">
-     Primitieve gegevenstypen
+     Primitieve datatypen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../exercises/9a-9_variables_assignment.html">
-     Variabelen en toekenningen
+     Variabelen
     </a>
    </li>
   </ul>
@@ -248,14 +248,9 @@ const thebe_selector_output = ".output, .cell_output"
    Practicum
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../problems/calculator/index.html">
-   Opgave
-  </a>
- </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/ex_2.html">
-   Oefening
+   Opgaven
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -263,6 +258,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/calculator/index.html">
+     Rekenmachine
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../exercises/12_12_if_statements.html">
      Condities
@@ -275,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../exercises/codingbat_strings.html">
-     CodingBat strings
+     CodingBat Strings
     </a>
    </li>
   </ul>
@@ -702,16 +702,23 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="lussen-en-strings">
 <h1>Lussen en strings<a class="headerlink" href="#lussen-en-strings" title="Permalink naar deze titel">#</a></h1>
-<p>Handelingen herhalen en tekstuele data</p>
+<p>Werken met herhalende handelingen en met tekstuele data.</p>
 <section id="oneindige-lussen">
 <h2>Oneindige lussen<a class="headerlink" href="#oneindige-lussen" title="Permalink naar deze titel">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code> lussen</p>
+<p>De algemene structuur van een <code class="docutils literal notranslate"><span class="pre">while</span></code>-lus is als volgt:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="p">(</span><span class="o">&lt;</span><span class="n">conditie</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//statements</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Zie het onderstaande voorbeeld:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Help&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>De conditie is in dit geval altijd waar en de boodschap zal eindeloos worden herhaald, een oneindige lus.</p>
+<p>De conditie is in dit geval altijd <em>waar</em> (<code class="docutils literal notranslate"><span class="pre">true</span></code>) en de boodschap (<code class="docutils literal notranslate"><span class="pre">System.out.println</span></code>) zal eindeloos worden herhaald: een oneindige lus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
@@ -752,20 +759,20 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Zolang de conditie <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> waar is zal de body van de lus worden uitgevoerd.</p>
+<p>Zolang de conditie <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> <em>waar</em> is, zal de body van de lus worden uitgevoerd.</p>
 <section id="wanneer-stopt-een-lus">
 <h3>Wanneer stopt een lus?<a class="headerlink" href="#wanneer-stopt-een-lus" title="Permalink naar deze titel">#</a></h3>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">         </span><span class="c1">// n is even</span><span class="w"></span>
 <span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">                  </span><span class="c1">// n is odd</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">                  </span><span class="c1">// n is oneven</span><span class="w"></span>
 <span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Soms is het moeilijk te bepalen of een lus stopt. Deze lus gaat door tot <code class="docutils literal notranslate"><span class="pre">n</span></code> 1 is (wat de conditie <code class="docutils literal notranslate"><span class="pre">false</span></code> maakt).</p>
+<p>Soms is het moeilijk (soms zelfs onmogelijk) te bepalen of een lus stopt. De lus hierboven gaat door tot <code class="docutils literal notranslate"><span class="pre">n</span></code> 1 is (wat de conditie <code class="docutils literal notranslate"><span class="pre">false</span></code> maakt).</p>
 <p>Elke keer dat de lus wordt doorlopen, toont het programma de waarde van <code class="docutils literal notranslate"><span class="pre">n</span></code> en controleert vervolgens of deze even of oneven is. Als het even is, wordt de waarde van <code class="docutils literal notranslate"><span class="pre">n</span></code> door 2 gedeeld. Is het oneven, dan wordt de waarde vervangen door <span class="math notranslate nohighlight">\(3n+1\)</span>. Bijvoorbeeld, als de beginwaarde 3 is, dan is de resulterende reeks 3, 10, 5, 16, 8, 4, 2, 1.</p>
 <p>Aangezien <code class="docutils literal notranslate"><span class="pre">n</span></code> soms toeneemt en soms afneemt, is er geen voor de hand liggend bewijs dat <code class="docutils literal notranslate"><span class="pre">n</span></code> ooit 1 zal bereiken en dat het programma ooit zal eindigen. Voor sommige waarden van <code class="docutils literal notranslate"><span class="pre">n</span></code>, zoals machten van twee, kunnen we bewijzen dat het programma eindigt.</p>
 <p>De moeilijke vraag is dus of dit programma eindigt voor <em>alle</em> waarden van <code class="docutils literal notranslate"><span class="pre">n</span></code>. Tot nu toe is niemand er in geslaagd om dit te bewijzen of te weerleggen! Zie voor meer informatie
@@ -834,7 +841,7 @@ Voor meer informatie over dit probleem het <a class="reference external" href="h
 <li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-=</span> <span class="pre">1</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">n--</span></code></p></li>
 </ol>
-<p>Drie varianten zijn dus mogelijk om dezelde handeling uit te drukken. Misschien zelfs een vierde, want <code class="docutils literal notranslate"><span class="pre">++n</span></code> (of <code class="docutils literal notranslate"><span class="pre">--n</span></code>) is ook mogelijk!</p>
+<p>Drie varianten zijn dus mogelijk om dezelde handeling uit te drukken. Misschien zelfs een vierde, want <code class="docutils literal notranslate"><span class="pre">++n</span></code> (of <code class="docutils literal notranslate"><span class="pre">--n</span></code>) is ook mogelijk.</p>
 </section>
 <section id="een-subtiel-verschil">
 <h3>Een subtiel verschil<a class="headerlink" href="#een-subtiel-verschil" title="Permalink naar deze titel">#</a></h3>
@@ -872,8 +879,7 @@ Voor meer informatie over dit probleem het <a class="reference external" href="h
 </div>
 </div>
 </div>
-<p>Zowel de waarden van <code class="docutils literal notranslate"><span class="pre">i</span></code> als <code class="docutils literal notranslate"><span class="pre">a</span></code> worden geïncrementeerd, het verschil tussen beide is wannéér dit gebeurt, voor of ná de expressie.</p>
-<p><code class="docutils literal notranslate"><span class="pre">++i</span></code> verhoogt het getal <em>voordat</em> de huidige uitdrukking wordt geëvalueerd, terwijl <code class="docutils literal notranslate"><span class="pre">i++</span></code> het getal verhoogt <em>nadat</em> de uitdrukking is geëvalueerd.</p>
+<p>Zowel de waarden van <code class="docutils literal notranslate"><span class="pre">i</span></code> als <code class="docutils literal notranslate"><span class="pre">a</span></code> worden geïncrementeerd, het verschil tussen beide is wannéér dit gebeurt: voor of ná de expressie. De syntax <code class="docutils literal notranslate"><span class="pre">++i</span></code> verhoogt het getal <em>voordat</em> de huidige uitdrukking wordt geëvalueerd, terwijl <code class="docutils literal notranslate"><span class="pre">i++</span></code> het getal verhoogt <em>nadat</em> de uitdrukking is geëvalueerd.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
@@ -1327,11 +1333,11 @@ Voor meer informatie over dit probleem het <a class="reference external" href="h
 </div>
 </div>
 </div>
-<p>Nu lijken het wel dezelfde objecten wat betreft zowel identiteit als waarde?!? Er is iets bijzonders aan de hand met strings, lees om deze reden <a class="reference internal" href="3c_string_mystery.html"><span class="doc std std-doc">String Mystery</span></a> door voor de achtergrond van dit gedrag, het heeft alles te maken hoe strings worden aangemaakt en optimalisaties die de JVM toepast.</p>
+<p>Nu lijken het wel dezelfde objecten wat betreft zowel identiteit als waarde. Er is iets bijzonders aan de hand met strings, lees om deze reden <a class="reference internal" href="3c_string_mystery.html"><span class="doc std std-doc">String Mystery</span></a> door voor de achtergrond van dit gedrag, het heeft alles te maken hoe strings worden aangemaakt en optimalisaties die de JVM toepast.</p>
 </section>
 <section id="de-boodschap">
 <h3>De boodschap<a class="headerlink" href="#de-boodschap" title="Permalink naar deze titel">#</a></h3>
-<p>Gebruik altijd <code class="docutils literal notranslate"><span class="pre">equals</span></code> als je wilt vergelijken op <em>waarde</em>!</p>
+<p>Gebruik altijd <code class="docutils literal notranslate"><span class="pre">equals</span></code> als je wilt vergelijken op <em>waarde</em>.</p>
 </section>
 </section>
 </section>

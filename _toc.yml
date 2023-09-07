@@ -19,13 +19,15 @@ parts:
       title: Invoer en uitvoer
   - file: support/install
     title: Practicum
-  - file: problems/hello_world/index
-    title: Opgave
   - file: course/ex_1
-    title: Oefening
+    title: Opgaven
     sections:
+    - file: problems/hello_world/index
+      title: Introductieopgaven
     - file: exercises/8-9_primitive_data
-    - file: exercises/9a-9_variables_assignment
+      title: Primitieve datatypen
+    - file: exercises/9a-9_variables_assignment 
+      title: Variabelen
 - caption: Week 2
   chapters:
   - file: course/week_2
@@ -45,18 +47,17 @@ parts:
       title: Recursie
   - file: exercises/debuggen_en_methoden
     title: Practicum
-  - file: problems/calculator/index
-    title: Opgave
   - file: course/ex_2
-    title: Oefening
+    title: Opgaven
     sections:
+    - file: problems/calculator/index
+      title: Rekenmachine
     - file: exercises/12_12_if_statements
       title: Condities
-    - file: exercises/string_loops.md
+    - file: exercises/string_loops
       title: Strings en lussen
-    - file: exercises/codingbat_strings
-      title: CodingBat strings
-
+    - file: exercises/codingbat_strings 
+      title: CodingBat Strings
 #- caption: Week 3
 #  chapters:
 #  - file: course/week_3

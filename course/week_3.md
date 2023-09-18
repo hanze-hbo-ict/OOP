@@ -1,7 +1,6 @@
 # Week 3
 
--   Hoofdstuk 7: [Arrays and References](https://books.trinket.io/thinkjava2/chapter7.html)
--   Hoffdstuk 9: [Immutable Objects](https://books.trinket.io/thinkjava2/chapter9.html)
+-   Hoofdstuk 9: [Immutable Objects](https://books.trinket.io/thinkjava2/chapter9.html)
 -   Hoofdstuk 10: [Mutable Objects](https://books.trinket.io/thinkjava2/chapter10.html)
 
 ## Optioneel

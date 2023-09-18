@@ -67,17 +67,17 @@ parts:
       title: Immutabiliteit
     - file: topics/5a_mutable_klassen_en_objecten
       title: Mutable klassen en objecten
-  - file: exercises/multiplication/index
-    title: Practicum
-  - file: course/ex_3
-    title: Opgave
-    sections:
-    - file: exercises/grote_getallen
-      title: Grote getallen
-    - file: problems/profiler/index
-      title: Strings en Lussen
-    - file: exercises/codingbat_arrays
-      title: CodingBat arrays
+#  - file: exercises/multiplication/index
+#    title: Practicum
+#  - file: course/ex_3
+#    title: Opgave
+#    sections:
+#    - file: exercises/grote_getallen
+#      title: Grote getallen
+#    - file: problems/profiler/index
+#      title: Strings en Lussen
+#    - file: exercises/codingbat_arrays
+#      title: CodingBat arrays
 #
 #- caption: Week 4
 #  chapters:

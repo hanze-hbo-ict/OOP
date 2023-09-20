@@ -71,6 +71,8 @@ parts:
     title: Practicum
   - file: course/ex_3
     sections:
+    - file: exercises/grote_getallen
+      title: Grote getallen
     - file: problems/opgave-OptionalInt
       title: De klasse `OptionalInt`
     - file: problems/opgave-LocalDate

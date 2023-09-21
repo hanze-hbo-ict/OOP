@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Practicum: Objecten maken van klasse Point &#8212; Objectgeoriënteerd Programmeren</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Opgaven week 3" href="../course/ex_3.html" />
+    <link rel="prev" title="Mutable objects" href="../topics/5a_mutable_klassen_en_objecten.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_1.html">
+   Opgaven
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/hello_world/index.html">
+     Introductieopgaven
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-9_primitive_data.html">
+     Primitieve datatypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9a-9_variables_assignment.html">
+     Variabelen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_2.html">
+   Opgaven
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/calculator/index.html">
+     Rekenmachine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="codingbat_strings.html">
+     CodingBat Strings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_3.html">
+   Opgaven week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/opgave-OptionalInt.html">
+     De klasse `OptionalInt`
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/opgave-LocalDate.html">
+     De klasse `LocalDate`
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/exercises/objecten_maken_met_point.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#klasse-point">
+   Klasse
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Point
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes">
+   Methodes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructors">
+   Constructors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentatie">
+   Documentatie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-tostring">
+   Methode
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     toString()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes-met-objecten">
+   Methodes met objecten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#foutje">
+   Foutje…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nog-een-foutje">
+   Nog een foutje..
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Practicum: Objecten maken van klasse Point</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#klasse-point">
+   Klasse
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Point
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes">
+   Methodes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructors">
+   Constructors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentatie">
+   Documentatie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-tostring">
+   Methode
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     toString()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes-met-objecten">
+   Methodes met objecten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#foutje">
+   Foutje…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nog-een-foutje">
+   Nog een foutje..
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="practicum-objecten-maken-van-klasse-point">
+<h1>Practicum: Objecten maken van klasse Point<a class="headerlink" href="#practicum-objecten-maken-van-klasse-point" title="Permalink naar deze titel">#</a></h1>
+<p>Dit practicum is een kennismaking met het maken van en werken met objecten in Java.</p>
+<section id="klasse-point">
+<h2>Klasse <code class="docutils literal notranslate"><span class="pre">Point</span></code><a class="headerlink" href="#klasse-point" title="Permalink naar deze titel">#</a></h2>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">Point</span></code> representeert een punt in een twee-dimensionaal vlak. Een object maken van een klasse wordt in de regel gedaan met het <em>keyword</em> <em>new</em>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;niet-primitief-type&gt;</span> <span class="pre">*variabeleNaam*</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">&lt;klasse&gt;([argumenten]);</span></code></p>
+<p>Bijvoorbeeld het maken van een object van klasse <code class="docutils literal notranslate"><span class="pre">Point</span></code>:
+De onderstaande code maakt bijvoorbeeld een instantie van klasse <code class="docutils literal notranslate"><span class="pre">Point</span></code>. De <em>referentie</em> naar dit object wordt opgeslagen in de variabele <code class="docutils literal notranslate"><span class="pre">point1</span></code> Een instantie (Engels: <em>instance</em>) is een object.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Point</span><span class="w"> </span><span class="n">point1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">();</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">point1</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">point1</span><span class="p">.</span><span class="na">y</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Deze klasse is standaard in Java aanwezig, maar om hem beschikbaar te maken dient deze geïmporteerd te worden met de onderstaande regel:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.awt.Point</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>De import staat in de code <em>boven</em> de klasse-definitie maar <em>onder</em> de regel die begint met <code class="docutils literal notranslate"><span class="pre">package</span></code> (deze regel is niet altijd aanwezig, in dat geval staan de imports helemaal aan het begin). Een geavanceerde editor zoals IntelliJ zet de imports vaak automatisch in de code.</p>
+<p>Maak een klasse <code class="docutils literal notranslate"><span class="pre">PracticumPoint</span></code> met daarin een main-methode. Neem bovenstaande code over in main. Zorg ook voor de import van <code class="docutils literal notranslate"><span class="pre">Point</span></code>, door de import-regel bovenin <code class="docutils literal notranslate"><span class="pre">PracticumPoint.java</span></code> te plaatsen. Wat zijn de coördinaten van het punt?</p>
+<p>De coördinaten van <code class="docutils literal notranslate"><span class="pre">point1</span></code> opvragen of veranderen kunnen we doen door de properties <code class="docutils literal notranslate"><span class="pre">x</span></code> en <code class="docutils literal notranslate"><span class="pre">y</span></code> rechtstreeks te benaderen:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">point1</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="n">point1</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">point1</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">point1</span><span class="p">.</span><span class="na">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5,3</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Voeg bovenstaande regels code toe en test het programma.</p>
+<p>Voeg code toe om de <code class="docutils literal notranslate"><span class="pre">x</span></code>-coördinaat te verhogen met 10. Print vervolgens de coördinaten op het scherm.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">point1</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">point1</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">point1</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">point1</span><span class="p">.</span><span class="na">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5,3</span><span class="w"></span>
+</pre></div>
+</div>
+<p>De variabelen <code class="docutils literal notranslate"><span class="pre">x</span></code> en <code class="docutils literal notranslate"><span class="pre">y</span></code> zijn <em>properties</em> van <em>instanties</em> van <code class="docutils literal notranslate"><span class="pre">Point</span></code>. Properties van een object worden ook wel <em>instantie-variabelen</em> genoemd. Het rechtstreeks benaderen van instantie-variabelen van een object, buiten het object, is ongebruikelijk. Hoewel het technisch gezien kan, is binnen Java de gewoonte (conventies) om instantie-variabelen altijd te lezen of veranderen door middel van aanroep van methodes, zogenaamde <code class="docutils literal notranslate"><span class="pre">getters</span></code> en <code class="docutils literal notranslate"><span class="pre">setters</span></code>.</p>
+<p>In de meeste klassen is het rechtstreeks benaderen van instantie-variabelen zelfs onmogelijk gemaakt. De voornaamste reden dat dit bij <code class="docutils literal notranslate"><span class="pre">Point</span></code> niet het geval is, is dat deze klasse al onderdeel is van de allereerste versie van Java, toen men wat losser omging met properties.</p>
+</section>
+<section id="methodes">
+<h2>Methodes<a class="headerlink" href="#methodes" title="Permalink naar deze titel">#</a></h2>
+<p><em>Methodes</em> zijn vergelijkbaar met <em>functies</em> maar ze zijn onderdeel van een bepaalde klasse. Ze zijn beschikbaar via een <em>klasse</em> of <em>object</em>. Met de onderstaande code kun je bijvoorbeeld de <em>property</em> <code class="docutils literal notranslate"><span class="pre">x</span></code> van <code class="docutils literal notranslate"><span class="pre">point1</span></code> opvragen (dat is zo’n <code class="docutils literal notranslate"><span class="pre">getter</span></code> waar we het eerder over hadden):</p>
+<p><code class="docutils literal notranslate"><span class="pre">System.out.println(</span> <span class="pre">point1.getX()</span> <span class="pre">);</span></code></p>
+<p>Met de methodes <code class="docutils literal notranslate"><span class="pre">getX()</span></code> en <code class="docutils literal notranslate"><span class="pre">getY()</span></code> worden de coördinaten opgevraagd. Met de methode <code class="docutils literal notranslate"><span class="pre">setLocation(int</span> <span class="pre">x,</span> <span class="pre">int</span> <span class="pre">y)</span></code> worden de coördinaten veranderd.</p>
+<p>Herschrijf de code in je <code class="docutils literal notranslate"><span class="pre">main</span></code> methode zodat de properties <code class="docutils literal notranslate"><span class="pre">x</span></code> en <code class="docutils literal notranslate"><span class="pre">y</span></code> niet meer worden gebruikt. In plaats daarvan maak je gebruik van de bovenstaande methodes.</p>
+</section>
+<section id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink naar deze titel">#</a></h2>
+<p>Bij het maken van een instantie met keyword <code class="docutils literal notranslate"><span class="pre">new</span></code> kunnen argumenten worden meegegeven. Soms is dit verplicht, maar in het geval van <code class="docutils literal notranslate"><span class="pre">Point</span></code> niet. Welke argumenten kunnen worden meegegeven wordt gedefinieerd in de constructor. Soms zijn er meerdere constructors gedefinieerd, waarbij meerdere soorten argumenten mogelijk zijn (<em>constructor overloading</em>, vergelijkbaar met <em>method overloading</em>).</p>
+<p>De klasse Point heeft drie constructors: <code class="docutils literal notranslate"><span class="pre">Point()</span></code>, <code class="docutils literal notranslate"><span class="pre">Point​(int</span> <span class="pre">x,</span> <span class="pre">int</span> <span class="pre">y)</span></code> en <code class="docutils literal notranslate"><span class="pre">Point​(Point</span> <span class="pre">p)</span></code>. Voeg code toe om een tweede instantie van <code class="docutils literal notranslate"><span class="pre">Point</span></code> te maken met de naam <code class="docutils literal notranslate"><span class="pre">point2</span></code>. Geef aan de constructor de coördinaten <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2)</span></code> mee, door de argumenten 1,2 tussen haakjes te zetten achter <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Point</span></code>. Print de coördinaten op de console om te testen.</p>
+</section>
+<section id="documentatie">
+<h2>Documentatie<a class="headerlink" href="#documentatie" title="Permalink naar deze titel">#</a></h2>
+<p>Alle met Java meegeleverde klassen zijn uitvoerig gedocumenteerd. Zo is de documentatie van <code class="docutils literal notranslate"><span class="pre">Point</span></code> te vinden via <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Point.html">deze link</a>.</p>
+<p>Onder het kopje “Constructors” vind je de <em>constructors</em>. Onder “Method Summary” vind je een overzicht van alle methodes (je verwacht het niet).</p>
+<p><img alt="De documentatie op oracle.com" src="../_images/point-documentatie.png" /></p>
+<p>Voeg code toe om <code class="docutils literal notranslate"><span class="pre">point2</span></code> 3 plekken naar rechts en 1 naar onder te verplaatsen. Dit kan gerealiseerd worden met een combinatie van <code class="docutils literal notranslate"><span class="pre">setLocation</span></code>, <code class="docutils literal notranslate"><span class="pre">getX</span></code> en <code class="docutils literal notranslate"><span class="pre">getY</span></code>, maar er is ook een methode die dit in één keer kan doen. Zoek in de documentatie naar deze methode en maak daar gebruik van. Print de nieuwe coördinaten.</p>
+</section>
+<section id="methode-tostring">
+<h2>Methode <code class="docutils literal notranslate"><span class="pre">toString()</span></code><a class="headerlink" href="#methode-tostring" title="Permalink naar deze titel">#</a></h2>
+<p>Elk object heeft de methode <code class="docutils literal notranslate"><span class="pre">toString()</span></code>. Niet elke klasse heeft een specifieke implementatie, maar als dit het geval is dan geeft <code class="docutils literal notranslate"><span class="pre">toString()</span></code> een string terug met daarin de belangrijkste informatie over een object. Als een object op het scherm wordt afgedrukt met <code class="docutils literal notranslate"><span class="pre">System.out.println()</span></code> dan zorgt de JVM er zelf voor dat <code class="docutils literal notranslate"><span class="pre">toString()</span></code> wordt aangeroepen. Dit is ook het geval als een object aan een string wordt “geplakt” met de + operator (*string concatenation).</p>
+<p>Probeer de regels <code class="docutils literal notranslate"><span class="pre">System.out.println(point2.toString())</span></code> en <code class="docutils literal notranslate"><span class="pre">System.out.println(point2)</span></code> uit; kun je het verschil in uitkomsten verklaren?</p>
+</section>
+<section id="methodes-met-objecten">
+<h2>Methodes met objecten<a class="headerlink" href="#methodes-met-objecten" title="Permalink naar deze titel">#</a></h2>
+<p>Je kunt ook objecten meegegeven worden aan methoden; of, om het preciezer te formuleren, je kunt <em>verwijzingen</em> naar objecten meegegeven aan methoden. Dit zijn niet-primitieve datatypes.</p>
+<p>Schrijf de volgende methode:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isClose</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>De methode retourneert <code class="docutils literal notranslate"><span class="pre">true</span></code> als de afstand tussen beide punten kleiner is dan 2,5, en <code class="docutils literal notranslate"><span class="pre">false</span></code> als dit niet het geval is. De afstand tussen twee punten wordt berekend met de stelling van Pythagoras:</p>
+<div class="math notranslate nohighlight">
+\[
+distance = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}
+\]</div>
+<p>Je kunt het onderstaande code-blok gebruiken om de methode te testen:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Point</span><span class="w"> </span><span class="n">point3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isClose</span><span class="p">(</span><span class="n">point3</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isClose</span><span class="p">(</span><span class="n">point3</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isClose</span><span class="p">(</span><span class="n">point3</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)));</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="foutje">
+<h2>Foutje…<a class="headerlink" href="#foutje" title="Permalink naar deze titel">#</a></h2>
+<p>Gegeven de volgende methode:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="nf">between</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">betweenX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="na">getX</span><span class="p">())</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">betweenY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="na">getY</span><span class="p">())</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">p1</span><span class="p">.</span><span class="na">setLocation</span><span class="p">(</span><span class="w"> </span><span class="n">betweenX</span><span class="p">,</span><span class="w"> </span><span class="n">betweenY</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">between</span></code> retourneert het punt dat zich precies tussen de punten <code class="docutils literal notranslate"><span class="pre">p1</span></code> en <code class="docutils literal notranslate"><span class="pre">p2</span></code> bevindt. Coördinaten zijn altijd gehele getallen (<em>integers</em>).</p>
+<p>Deze test suggereert dat de methode goed werkt:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Point</span><span class="w"> </span><span class="n">point4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="n">Point</span><span class="w"> </span><span class="n">point5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">between</span><span class="p">(</span><span class="n">point4</span><span class="p">,</span><span class="w"> </span><span class="n">point5</span><span class="p">));</span><span class="w"> </span><span class="c1">// [x=10,y=5]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>De methode bevat echter een ernstige fout. Welke fout? Hint: Controleer na uitvoeren van de methode niet alleen naar de return-waarde, maar ook naar <code class="docutils literal notranslate"><span class="pre">point4</span></code> en <code class="docutils literal notranslate"><span class="pre">point5</span></code>…</p>
+<p>Verbeter de fout.</p>
+</section>
+<section id="nog-een-foutje">
+<h2>Nog een foutje..<a class="headerlink" href="#nog-een-foutje" title="Permalink naar deze titel">#</a></h2>
+<p>Gegeven de volgende code:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Point</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<span class="n">Point</span><span class="w"> </span><span class="n">monster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// De loop moet stoppen zodra de speler bij het monster is (als de coördinaten gelijk zijn)</span><span class="w"></span>
+<span class="k">while</span><span class="p">(</span><span class="n">player</span><span class="o">!=</span><span class="n">monster</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="n">player</span><span class="p">.</span><span class="na">translate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Move..&quot;</span><span class="o">+</span><span class="n">player</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Game over&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>De bedoeling is dat de speler steeds een stap zet, totdat de speler bij het monster is. Dit is het geval als de coördinaten van <code class="docutils literal notranslate"><span class="pre">player</span></code> en <code class="docutils literal notranslate"><span class="pre">monster</span></code> gelijk zijn.</p>
+<p>Test de code. De code bevat een ernstige fout. Welke?</p>
+<p>Er zijn twee correcte manieren om de coördinaten van <code class="docutils literal notranslate"><span class="pre">player</span></code> en <code class="docutils literal notranslate"><span class="pre">monster</span></code> te vergelijken. Allereerst het vergelijken van zowel de <code class="docutils literal notranslate"><span class="pre">x</span></code>- als de <code class="docutils literal notranslate"><span class="pre">y</span></code>-coördinaten. Verbeter op deze wijze de fout.</p>
+<p>Een andere manier is het vergelijken van de inhoud van de objecten. Dit lijkt te gebeuren in de gegeven code, maar dit is niet het geval. Inhoud van objecten wordt vergelijken met de <code class="docutils literal notranslate"><span class="pre">equals</span></code> methode. Verbeter de fout door gebruik te maken van de <code class="docutils literal notranslate"><span class="pre">equals</span></code> methode.</p>
+<p>De <code class="docutils literal notranslate"><span class="pre">equals</span></code> methode is de gangbare manier om de inhoud van objecten te vergelijken. Wat exact wordt vergeleken, hangt af van de klasse. Net als <code class="docutils literal notranslate"><span class="pre">toString</span></code> is de methode <code class="docutils literal notranslate"><span class="pre">equals</span></code> altijd aanwezig, maar het verschilt per klasse of deze volledig is geïmplementeerd.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../topics/5a_mutable_klassen_en_objecten.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Mutable objects</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../course/ex_3.html" title="volgende pagina">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Opgaven week 3</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

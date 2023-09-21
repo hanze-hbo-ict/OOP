@@ -67,6 +67,16 @@ parts:
       title: Immutabiliteit
     - file: topics/5a_mutable_klassen_en_objecten
       title: Mutable klassen en objecten
+  - file: exercises/objecten_maken_met_point
+    title: Practicum
+  - file: course/ex_3
+    sections:
+    - file: exercises/grote_getallen
+      title: Grote getallen
+    - file: problems/opgave-OptionalInt
+      title: De klasse `OptionalInt`
+    - file: problems/opgave-LocalDate
+      title: De klasse `LocalDate`
 #  - file: exercises/multiplication/index
 #    title: Practicum
 #  - file: course/ex_3

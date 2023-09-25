@@ -1,4 +1,4 @@
-# Klassen
+# Klassen ontwerpen en testen
 
 Doel
 
@@ -42,11 +42,11 @@ Nadat je het project hebt geopend zal je de volgende directorystructuur zien:
             └── ConeTest.java
 ```
 
-IDE's als IntelliJ moeten weten waar het jouw Java bestanden kan vinden, waar het tests voor jouw klassen kan vinden (daar straks meer over) en waar het de gecompileerde klassen naar toe moet schrijven. IDE's zijn bekend met deze projectstructuur en IntelliJ zal met kleur aangeven welke rol eeen directory heeft:
+IDE's als IntelliJ moeten weten waar het je Java-bestanden kan vinden, waar het tests voor je klassen kan vinden (daar straks meer over) en waar het de gecompileerde klassen naar toe moet schrijven. IDE's zijn bekend met deze projectstructuur en IntelliJ zal met kleur aangeven welke rol eeen directory heeft:
 
 -   ![Source root](images/sourceRoot.png)
 
-    De *source* directory is `src/main/java/`, op deze lokatie worden Java bestanden verwacht. Dit is de plek waar jij de `Cone.java` zal gaan schrijven.
+    De *source* directory is `src/main/java/`, op deze lokatie worden Java bestanden verwacht. Dit is de plek waar je `Cone.java` zal gaan schrijven.
 
 -   ![Test root](images/testRoot.png)
 
@@ -54,7 +54,7 @@ IDE's als IntelliJ moeten weten waar het jouw Java bestanden kan vinden, waar he
 
 -   ![Exclude root](images/excludeRoot.png)
 
-    Alle lokaties die *niet* onderdeel zijn van het project. De lokatie `target/` zal je nog niet zien, maar zodra je jouw klassen gaat testen of compileren zal deze directory zichtbaar worden, dit wordt de lokatie waar gecompileerde klassen naar toe worden geschreven. Deze worden uitgesloten omdat ze specifiek zijn voor jouw situatie (de oplossing die je op dat moment aan het uitwerken bent) in het geval dat je met meerdere mensen aan hetzelfde project werkt.
+    Alle lokaties die *niet* onderdeel zijn van het project. De lokatie `target/` zal je nog niet zien, maar zodra je je klassen gaat testen of compileren, zal deze directory zichtbaar worden. Dit is de lokatie waar *gecompileerde* klassen naar toe worden geschreven. Deze worden uitgesloten omdat ze specifiek zijn voor jouw situatie (de oplossing die je op dat moment aan het uitwerken bent) in het geval dat je met meerdere mensen aan hetzelfde project werkt.
 
 ### Afhankelijkheden
 

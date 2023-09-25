@@ -70,6 +70,7 @@ parts:
   - file: exercises/objecten_maken_met_point
     title: Practicum
   - file: course/ex_3
+    title: Opgaven
     sections:
     - file: exercises/grote_getallen
       title: Grote getallen
@@ -77,40 +78,32 @@ parts:
       title: De klasse `OptionalInt`
     - file: problems/opgave-LocalDate
       title: De klasse `LocalDate`
-#  - file: exercises/multiplication/index
-#    title: Practicum
-#  - file: course/ex_3
-#    title: Opgave
-#    sections:
-#    - file: exercises/grote_getallen
-#      title: Grote getallen
-#    - file: problems/profiler/index
-#      title: Strings en Lussen
-#    - file: exercises/codingbat_arrays
-#      title: CodingBat arrays
-#
-#- caption: Week 4
-#  chapters:
-#  - file: course/week_4
-#    title: Onderwerpen
-#    sections:
-#    - file: topics/5b_klassen_ontwerpen
-#      title: Klassen ontwerpen
-#    - file: topics/9b_threads
-#      title: Threads
-#  - file: exercises/cone/index
-#    title: Practicum
-#  # - file: exercises/nested_circles/index
-#  #   title: Practicum
-#  - file: problems/class_design/index
-#    title: Opgave
-#  # - file: problems/recursive_graphics/index
-#  #   title: Opgave
-#  - file: course/ex_4
-#    title: Oefening
-#    sections:
-#    - file: exercises/codingbat_recursie
-#      title: CodingBat recursie
+- caption: Week 4
+  chapters:
+  - file: course/week_4
+    title: Onderwerpen
+    sections:
+    - file: topics/5b_klassen_ontwerpen
+      title: Klassen ontwerpen
+    #- file: topics/9b_threads
+    #  title: Threads
+  - file: topics/9b_threads
+    title: "Practicum: multithreading"
+  - file: topics/jars-importeren
+    title: "Practicum: externe bibliotheken"
+  - file: course/ex_4
+    title: Opgaven
+    sections: 
+    - file: problems/class_design/index 
+      title: Klassen ontwerpen en data-typen
+    - file: exercises/cone/index #<-- gaat niet over Threads, maar over klassen ontwerpen en TDD
+      title: Klassen ontwerpen en TDD
+    - file: exercises/nested_circles/index #<-- recursie en en bibliotheken
+      title: Recursie en bibliotheken
+    - file: problems/recursive_graphics/index #<-- Sierpinski
+      title: Recusieve plaatjes 
+    - file: exercises/codingbat_recursie
+      title: CodingBat recursie
 #
 #- caption: Week 5
 #  chapters:

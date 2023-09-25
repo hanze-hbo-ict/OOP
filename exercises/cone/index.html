@@ -1,0 +1,972 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Klassen ontwerpen en testen &#8212; Objectgeoriënteerd Programmeren</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Zoeken" href="../../search.html" />
+    <link rel="next" title="Geneste cirkels" href="../nested_circles/index.html" />
+    <link rel="prev" title="Klassen ontwerpen" href="../../problems/class_design/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_1.html">
+   Opgaven
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../problems/hello_world/index.html">
+     Introductieopgaven
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../8-9_primitive_data.html">
+     Primitieve datatypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../9a-9_variables_assignment.html">
+     Variabelen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_2.html">
+   Opgaven
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../problems/calculator/index.html">
+     Rekenmachine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../codingbat_strings.html">
+     CodingBat Strings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../objecten_maken_met_point.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/ex_3.html">
+   Opgaven
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../problems/opgave-OptionalInt.html">
+     De klasse `OptionalInt`
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../problems/opgave-LocalDate.html">
+     De klasse `LocalDate`
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/week_4.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../topics/5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../topics/9b_threads.html">
+   Practicum: multithreading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../topics/jars-importeren.html">
+   Practicum: externe bibliotheken
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../course/ex_4.html">
+   Opgaven
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../problems/class_design/index.html">
+     Klassen ontwerpen en data-typen
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Klassen ontwerpen en TDD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nested_circles/index.html">
+     Recursie en bibliotheken
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../problems/recursive_graphics/index.html">
+     Recusieve plaatjes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../codingbat_recursie.html">
+     CodingBat recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/exercises/cone/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project">
+   Project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuratie">
+     Configuratie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afhankelijkheden">
+     Afhankelijkheden
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unit-testing">
+     Unit testing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opgave">
+   Opgave
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#de-klasse-cone">
+     De klasse
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Cone
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppervlak-en-volume">
+     Oppervlak en volume
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stap-voor-stap">
+     Stap voor stap
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optioneel">
+     Optioneel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tot-slot">
+   Tot slot
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Klassen ontwerpen en testen</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project">
+   Project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuratie">
+     Configuratie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#afhankelijkheden">
+     Afhankelijkheden
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unit-testing">
+     Unit testing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opgave">
+   Opgave
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#de-klasse-cone">
+     De klasse
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Cone
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppervlak-en-volume">
+     Oppervlak en volume
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stap-voor-stap">
+     Stap voor stap
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optioneel">
+     Optioneel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tot-slot">
+   Tot slot
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="klassen-ontwerpen-en-testen">
+<h1>Klassen ontwerpen en testen<a class="headerlink" href="#klassen-ontwerpen-en-testen" title="Permalink naar deze titel">#</a></h1>
+<p>Doel</p>
+<ul class="simple">
+<li><p>Het ontwerpen van klassen</p></li>
+<li><p>Het testen van klassen</p></li>
+<li><p>Een kennismaking met <em>test driven development</em></p></li>
+</ul>
+<section id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">#</a></h2>
+<figure class="align-default" id="cone">
+<img alt="../../_images/cone.png" src="../../_images/cone.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">De dimensie van een kegel</span><a class="headerlink" href="#cone" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>In deze opgave ga je een klasse <code class="docutils literal notranslate"><span class="pre">Cone</span></code> schrijven die een kegelvormig object beschrijft. Wat de vorm van een kegel kenmerkt zijn de straal van de basis <span class="math notranslate nohighlight">\(r\)</span> (radius) en de hoogte <span class="math notranslate nohighlight">\(h\)</span>.</p>
+</section>
+<section id="project">
+<h2>Project<a class="headerlink" href="#project" title="Permalink naar deze titel">#</a></h2>
+<p>Download het projectbestand <a href="../../projects/cone.zip">cone.zip</a> en pak het uit, maar lees eerst het volgende voordat je het project opent en met de opgave begint.</p>
+<section id="configuratie">
+<h3>Configuratie<a class="headerlink" href="#configuratie" title="Permalink naar deze titel">#</a></h3>
+<p>Je gaat in deze opgave kennismaken met een directorystructuur die gebruikelijk is voor Java projecten. Het projectbestand bevat ook een <a class="reference external" href="https://maven.apache.org/">Maven</a> configuratie (<code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>) waar afhankelijkheden in zijn beschreven, bijvoorbeeld externe bibliotheken die moeten worden gebruikt en het Java versienummer waar voor gecompileerd moet worden.</p>
+<p>Maven is een apart programma voor het helpen beheren van Java projecten en IntelliJ is bekend met Maven (het is samen met IntelliJ geïnstalleerd). IntelliJ kan jou om toestemming vragen deze Maven configuratie te importeren wanneer je het project opent:</p>
+<p><img alt="Open Maven project" src="../../_images/intellij_open_maven_project.png" /></p>
+<p>Nadat je het project hebt geopend zal je de volgende directorystructuur zien:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.
+├── pom.xml
+└── src
+    ├── main
+    │   └── java
+    └── test
+        └── java
+            └── ConeTest.java
+</pre></div>
+</div>
+<p>IDE’s als IntelliJ moeten weten waar het je Java-bestanden kan vinden, waar het tests voor je klassen kan vinden (daar straks meer over) en waar het de gecompileerde klassen naar toe moet schrijven. IDE’s zijn bekend met deze projectstructuur en IntelliJ zal met kleur aangeven welke rol eeen directory heeft:</p>
+<ul>
+<li><p><img alt="Source root" src="../../_images/sourceRoot.png" /></p>
+<p>De <em>source</em> directory is <code class="docutils literal notranslate"><span class="pre">src/main/java/</span></code>, op deze lokatie worden Java bestanden verwacht. Dit is de plek waar je <code class="docutils literal notranslate"><span class="pre">Cone.java</span></code> zal gaan schrijven.</p>
+</li>
+<li><p><img alt="Test root" src="../../_images/testRoot.png" /></p>
+<p>De <em>test</em> directory is <code class="docutils literal notranslate"><span class="pre">src/main/test/</span></code>, op deze lokatie worden tests verwacht. Ook dit zijn Java bestanden, in dit project zal je een <code class="docutils literal notranslate"><span class="pre">ConeTest.java</span></code> klasse vinden.</p>
+</li>
+<li><p><img alt="Exclude root" src="../../_images/excludeRoot.png" /></p>
+<p>Alle lokaties die <em>niet</em> onderdeel zijn van het project. De lokatie <code class="docutils literal notranslate"><span class="pre">target/</span></code> zal je nog niet zien, maar zodra je je klassen gaat testen of compileren, zal deze directory zichtbaar worden. Dit is de lokatie waar <em>gecompileerde</em> klassen naar toe worden geschreven. Deze worden uitgesloten omdat ze specifiek zijn voor jouw situatie (de oplossing die je op dat moment aan het uitwerken bent) in het geval dat je met meerdere mensen aan hetzelfde project werkt.</p>
+</li>
+</ul>
+</section>
+<section id="afhankelijkheden">
+<h3>Afhankelijkheden<a class="headerlink" href="#afhankelijkheden" title="Permalink naar deze titel">#</a></h3>
+<p>Dit project maakt gebruik van een externe blibliotheek <a class="reference external" href="https://junit.org/junit5/">JUnit 5</a>. Deze afhankelijkheid is gedefinieerd in de Maven projectconfiguratie en de IDE zal het automatisch voor jou ophalen.</p>
+</section>
+<section id="unit-testing">
+<h3>Unit testing<a class="headerlink" href="#unit-testing" title="Permalink naar deze titel">#</a></h3>
+<p>Tot nu toe zal je methoden hebben getest door ze in <code class="docutils literal notranslate"><span class="pre">main</span></code> aan te roepen en berichten voor jezelf te printen of het resultaat correct is of niet. We gaan in deze opgave een techniek introduceren om op een meer systematische manier te testen met <em><a class="reference external" href="https://en.wikipedia.org/wiki/Unit_testing">unit testing</a></em>.</p>
+<p>Unittests definiëren waar een oplossing aan moet voldoen, het zijn  <em>specificaties</em> opgesteld in code. Dit roept een interessante vraag op over het moment van testen van een oplossing, zal dit voor- of achteraf moeten zijn? <a class="reference external" href="https://tddmanifesto.com/"><em>Test driven development</em></a> is een methodiek (of werkwijze) die stelt dat éérst tests moeten worden opgesteld:</p>
+<blockquote>
+<div><p>If we want to trust our code, we need to be able to trust our tests. If we want to trust our tests we need to be able to see them failing. If we never see our tests fail we don’t know if our tests are actually testing the right things. Seeing a test failing is as important as seeing it passing. A test failure validates that the test is meaningful and unique. It’s a software expectation to fulfill. It gives us a target to aim for, showing that the code we are about to implement is useful and necessary.</p>
+</div></blockquote>
+<p>Het uitgangspunt van deze methode is dat hypothesen vooraf en niet achteraf moeten worden opgesteld.</p>
+<p>Unit testing is een methode om code (klassen en de methoden van deze klassen) afzonderlijk te kunnen testen. Voor deze opgave hebben wij een unittest geschreven specifiek voor de klasse <code class="docutils literal notranslate"><span class="pre">Cone</span></code> (die nog niet is geschreven!). Als je deze klasse <code class="docutils literal notranslate"><span class="pre">ConeTest.java</span></code> leest zie je dat verwacht <em>gedrag</em> wordt getest, bijvoorbeeld:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Test</span><span class="w"></span>
+<span class="nd">@DisplayName</span><span class="p">(</span><span class="s">&quot;Constructor sets height as absolute value&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testNegativeHeigthConstructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Cone</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cone</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">10.0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="na">getHeight</span><span class="p">(),</span><span class="w"> </span><span class="mf">10.0</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Hier wordt aangeven dat als een nieuw <code class="docutils literal notranslate"><span class="pre">Cone</span></code> object wordt aangemaakt met een negatieve waarde voor de hoogte van de kegel dat deze waarde absoluut zal moeten worden gemaakt. Met andere woorden, negatieve waarden worden geaccepteerd (<code class="docutils literal notranslate"><span class="pre">-10.0</span></code>), maar zullen altijd moeten worden omgezet naar de positive waarde (<code class="docutils literal notranslate"><span class="pre">10.0</span></code>).</p>
+<p>De methode <code class="docutils literal notranslate"><span class="pre">assertEquals</span></code> vergelijkt het resultaat van de aangeroepen methode met een te verwachte returnwaarde, de test slaagt indien de waarden gelijk zijn, anders faalt de test.</p>
+<p>In deze opgave ga jij de klasse <code class="docutils literal notranslate"><span class="pre">Cone</span></code> schrijven en zal je steeds de tests in de klasse <code class="docutils literal notranslate"><span class="pre">ConeTest</span></code> uitvoeren om te zien of jouw oplossing correct is.</p>
+</section>
+</section>
+<section id="opgave">
+<h2>Opgave<a class="headerlink" href="#opgave" title="Permalink naar deze titel">#</a></h2>
+<p>Jouw taak is het schrijven van een klasse <code class="docutils literal notranslate"><span class="pre">Cone</span></code> en je zal gebruik maken van de unittest om jouw oplossing stap voor te testen. De meest eenvoudige manier is om de klasse <code class="docutils literal notranslate"><span class="pre">ConeTest</span></code> door de IDE uit te laten voeren.</p>
+<p><img alt="Tests run" src="../../_images/intellij_tests_run.png" /></p>
+<p>Het zal je misschien zijn opgevallen dat de klasse <code class="docutils literal notranslate"><span class="pre">ConeTest</span></code> geen <code class="docutils literal notranslate"><span class="pre">main</span></code> methode heeft, maar wél kan worden uitgevoerd! Dit is omdat IDE’s JUnit kennen en de methoden in de test voor jou één voor één zullen uitvoeren.</p>
+<p><img alt="Tests initial" src="../../_images/intellij_tests_initial.png" /></p>
+<p>Het uitvoeren van de tests zal een testpaneel openen met een teleurstellend resultaat. Alle tests geven de fout <code class="docutils literal notranslate"><span class="pre">cannot</span> <span class="pre">find</span> <span class="pre">symbol</span> <span class="pre">class</span> <span class="pre">Cone</span></code> en dit is omdat deze klasse nog niet is geschreven…</p>
+<section id="de-klasse-cone">
+<h3>De klasse <code class="docutils literal notranslate"><span class="pre">Cone</span></code><a class="headerlink" href="#de-klasse-cone" title="Permalink naar deze titel">#</a></h3>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">Cone</span></code> zal de volgende onderdelen moeten bevatten</p>
+<ul>
+<li><p>Variabelen</p>
+<p>Dit zijn de <em>velden</em> of <em>properties</em> van de klasse, oftewel de <em>data</em>. De waarden van een kegel zijn de radius en hoogte, uit <code class="docutils literal notranslate"><span class="pre">ConeTest</span></code> kan je afleiden dat dit de namen <code class="docutils literal notranslate"><span class="pre">height</span></code> en <code class="docutils literal notranslate"><span class="pre">radius</span></code> zijn met type <code class="docutils literal notranslate"><span class="pre">double</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="c1">// height of the cone</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"> </span><span class="c1">// radius of the circular base</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Toegang tot lezen en schrijven van deze velden zijn per conventie altijd <code class="docutils literal notranslate"><span class="pre">private</span></code> waar mee aangegeven wordt dat alleen methoden van de klasse <code class="docutils literal notranslate"><span class="pre">Cone</span></code> toegang hebben tot deze waarden.</p>
+</li>
+<li><p>Constructor(s)</p>
+<p>Constructors maken een nieuwe instantie van een klasse. In dit geval zal een nieuwe instantie worden gecreëerd van de klasse <code class="docutils literal notranslate"><span class="pre">Cone</span></code> met een bepaalde radius en hoogte, uit <code class="docutils literal notranslate"><span class="pre">ConeTest</span></code> kan je afleiden dat één constructor nodig is met de volgende signatuur:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="nf">Cone</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Een constructor heeft altijd dezelfde naam als de klasse en heeft <em>geen</em> return type.</p>
+</li>
+<li><p>Methoden</p>
+<ul>
+<li><p><em>Accessors</em> en <em>mutators</em></p>
+<p>Een klasse kan (gecontroleerd) toegang geven tot de velden (<code class="docutils literal notranslate"><span class="pre">radius</span></code> en <code class="docutils literal notranslate"><span class="pre">height</span></code> in dit geval). Dit gaat via methoden voor het lezen (accessors) en schrijven (mutators) van deze waarden:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setHeight</span><span class="p">()</span><span class="w">   </span><span class="c1">// changes the height of a cone</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setRadius</span><span class="p">()</span><span class="w">   </span><span class="c1">// changes the radius of a cone</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getHeight</span><span class="p">()</span><span class="w"> </span><span class="c1">// returns the height of a cone</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getRadius</span><span class="p">()</span><span class="w"> </span><span class="c1">// returns the radius of a cone</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Andere methoden</p>
+<p>Los van methoden voor toegang tot de velden kunnen andere methoden gespecificeerd worden die relevant zijn, in het geval van een kegel het oppervlak en volume. Uit <code class="docutils literal notranslate"><span class="pre">ConeTest</span></code> kan je afleiden dat <em>twee</em> aanvullende methoden worden verwacht:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">area</span><span class="p">()</span><span class="w">   </span><span class="c1">// calculate and return the area of the cone</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">volume</span><span class="p">()</span><span class="w"> </span><span class="c1">// calculate and return the volume of the cone</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">Cone</span></code> ga je schrijven in de Java <em>source</em> directory van dit project, <code class="docutils literal notranslate"><span class="pre">src/main/java/</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.
+├── pom.xml
+└── src
+    ├── main
+    │   └── java
+<span class="hll">    │       └── Cone.java
+</span>    └── test
+        └── java
+            └── ConeTest.java
+</pre></div>
+</div>
+</section>
+<section id="oppervlak-en-volume">
+<h3>Oppervlak en volume<a class="headerlink" href="#oppervlak-en-volume" title="Permalink naar deze titel">#</a></h3>
+<p>De klasse <code class="docutils literal notranslate"><span class="pre">Cone</span></code> zal methoden moeten implementeren voor het bepalen van het oppervlak (<em>area</em>) en de inhoud (<em>volume</em>) van een kegel. Gebruik voor het bepalen van het <em>volume</em> de volgende formule</p>
+<div class="math notranslate nohighlight">
+\[
+V = \frac{{\pi \times r^2 \times h}}{3}
+\]</div>
+<p>en de volgende formule voor het bepalen van het <em>oppervlak</em></p>
+<div class="math notranslate nohighlight">
+\[
+A = π \times r \times (r +  \sqrt{(h^2 + r^2)})
+\]</div>
+</section>
+<section id="stap-voor-stap">
+<h3>Stap voor stap<a class="headerlink" href="#stap-voor-stap" title="Permalink naar deze titel">#</a></h3>
+<p>Implementeer stap voor stap de klasse, het eerste doel is om de tests uit te kunnen voeren (ongeacht of ze slagen of falen). Je zal tijd nodig hebben om de methoden <code class="docutils literal notranslate"><span class="pre">area</span></code> en <code class="docutils literal notranslate"><span class="pre">volume</span></code> uit te werken, geef in dat soort situaties om te beginnen een willekeurige <code class="docutils literal notranslate"><span class="pre">double</span></code> terug, bijvoorbeeld</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Je zal zien dat naarmate je verder komt met jouw implementatie dat sommige tests zullen slagen en andere falen.</p>
+<p><img alt="Tests initial" src="../../_images/intellij_tests_partial.png" /></p>
+<p>Als je er voor hebt gezorgd dat alle tests kunnen worden uitgevoerd ga je je vervolgens concentreren op de correctheid van de methoden die je hebt geïmplementeerd, het doel is om uiteindelijk alle lichten op groen te krijgen!</p>
+<p><img alt="Tests pass" src="../../_images/intellij_tests_pass.png" /></p>
+</section>
+<section id="optioneel">
+<h3>Optioneel<a class="headerlink" href="#optioneel" title="Permalink naar deze titel">#</a></h3>
+<p>Implementeer een methode <code class="docutils literal notranslate"><span class="pre">toString</span></code> die een tekstrepresentatie geeft van een kegel met een bepaalde afmeting. Kies hier zelf een vorm, bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">&quot;Cone:</span> <span class="pre">heigth</span> <span class="pre">10.0,</span> <span class="pre">radius:</span> <span class="pre">5.0&quot;</span></code>. Breid de klasse <code class="docutils literal notranslate"><span class="pre">ConeTest</span></code> uit met een methode die het resultaat van <code class="docutils literal notranslate"><span class="pre">toString</span></code> test, je kan ook hier de methode <code class="docutils literal notranslate"><span class="pre">assertEquals</span></code> gebruiken zoals je het in andere tests gebruikt ziet worden.</p>
+</section>
+</section>
+<section id="tot-slot">
+<h2>Tot slot<a class="headerlink" href="#tot-slot" title="Permalink naar deze titel">#</a></h2>
+<p>In paragraaf <a class="reference external" href="https://books.trinket.io/thinkjava2/appendix-a.html#sec218">A.7 Testing with JUnit</a> van het boek wordt JUnit kort besproken. Het voorbeeld gebruikt syntax van JUnit versie 4, wij gebruiken JUnit versie 5. Het voorbeeld dat wordt gegeven</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">junit.framework.TestCase</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.junit.Assert.assertEquals</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SeriesTest</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TestCase</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testFibonacci</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Series</span><span class="p">.</span><span class="na">fibonacci</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Series</span><span class="p">.</span><span class="na">fibonacci</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">Series</span><span class="p">.</span><span class="na">fibonacci</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>zal voor JUnit 5 als volgt moeten worden herschreven</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.Assertions.assertEquals</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SeriesTest</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Test</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testFibonacci</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">Series</span><span class="p">.</span><span class="na">fibonacci</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">Series</span><span class="p">.</span><span class="na">fibonacci</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">Series</span><span class="p">.</span><span class="na">fibonacci</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Vergelijkbaar, maar niet volledig! De import statements in Junit 5 zijn uitgebreider en met <em><a class="reference external" href="https://en.wikipedia.org/wiki/Java_annotation">annotaties</a></em> wordt nu bijvoorbeeld aangegeven welke methode een test is (<code class="docutils literal notranslate"><span class="pre">&#64;Test</span></code>). Java annotatie-syntax zullen wij in deze cursus verder <em>niet</em> behandelen, het is voornamelijk wanneer je gebruik gaat maken van JUnit 5 dat je deze syntax gaat toepassen, zie Junit 5 <a class="reference external" href="https://junit.org/junit5/docs/current/user-guide/">documentatie</a> voor meer informatie.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./exercises/cone"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../problems/class_design/index.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Klassen ontwerpen</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../nested_circles/index.html" title="volgende pagina">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Geneste cirkels</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

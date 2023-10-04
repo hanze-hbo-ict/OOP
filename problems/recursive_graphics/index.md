@@ -7,7 +7,6 @@
 * Een programma ontwerpen en ontwikkelen dat een recursief patroon van eigen ontwerp in beeld brengt (optioneel).
 
 <!--
-
 ## Inleiding
 
 Read Section 2.3 of the textbook. You may also find it instructive to work through some of the other exercises and look at the solutions on the booksite afterwards. You should also familiarize yourself with the [StdDraw](https://introcs.cs.princeton.edu/java/11cheatsheet/#StdDraw) API.

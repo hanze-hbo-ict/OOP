@@ -1,0 +1,1265 @@
+
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Overervering &#8212; Objectgeoriënteerd Programmeren</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Opgaven week 5" href="../course/ex_5.html" />
+    <link rel="prev" title="Arrays" href="../topics/6a_collections.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="nl">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_1.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Objectgeoriënteerd Programmeren</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Over deze cursus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/literatuur.html">
+   Literatuur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_1.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1a_inleiding.html">
+     Inleiding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1b_variabelen_en_operatoren.html">
+     Variabelen en operatoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/1c_invoer_en_uitvoer.html">
+     Invoer en uitvoer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../support/install.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_1.html">
+   Opgaven
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/hello_world/index.html">
+     Introductieopgaven
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-9_primitive_data.html">
+     Primitieve datatypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9a-9_variables_assignment.html">
+     Variabelen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_2.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/2a1_methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/2a2_methoden_en_testen.html">
+     Methoden en testen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/2b_condities_en_logica.html">
+     Condities en logica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/3a_lussen_en_strings.html">
+     Lussen en strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/3c_string_mystery.html">
+     String Mystery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/4a_recursie.html">
+     Recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debuggen_en_methoden.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_2.html">
+   Opgaven
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/calculator/index.html">
+     Rekenmachine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_12_if_statements.html">
+     Condities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="string_loops.html">
+     Strings en lussen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="codingbat_strings.html">
+     CodingBat Strings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_3.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/4b_immutable_objecten.html">
+     Immutabiliteit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/5a_mutable_klassen_en_objecten.html">
+     Mutable klassen en objecten
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="objecten_maken_met_point.html">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_3.html">
+   Opgaven
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grote_getallen.html">
+     Grote getallen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/opgave-OptionalInt.html">
+     De klasse `OptionalInt`
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/opgave-LocalDate.html">
+     De klasse `LocalDate`
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_4.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/5b_klassen_ontwerpen.html">
+     Klassen ontwerpen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../topics/9b_threads.html">
+   Practicum: multithreading
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../topics/jars-importeren.html">
+   Practicum: externe bibliotheken
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_4.html">
+   Opgaven
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/class_design/index.html">
+     Klassen ontwerpen en data-typen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cone/index.html">
+     Klassen ontwerpen en TDD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nested_circles/index.html">
+     Recursie en bibliotheken
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/recursive_graphics/index.html">
+     Recusieve plaatjes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="codingbat_recursie.html">
+     CodingBat recursie
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/week_5.html">
+   Onderwerpen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/6a_static_klassen.html">
+     Static en klassen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../topics/6a_collections.html">
+     Arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Practicum
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/ex_5.html">
+   Opgaven
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../problems/verhuur/index.html">
+     Voertuigen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="codingbat_arrays.html">
+     Codingbat Arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/exercises/hypotheek.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypotheek">
+   Hypotheek
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-klasse-aflossingsvrij">
+   De klasse
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Aflossingsvrij
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-klasse-lineair">
+   De klasse
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Lineair
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problemen-van-twee-soortgelijke-klassen">
+   Problemen van twee soortgelijke klassen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ongewenste-instantiering">
+   Ongewenste instantiëring
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstracte-methodes">
+   Abstracte methodes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annuiteiten">
+   Annuïteiten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#volledige-hypotheek">
+   Volledige hypotheek
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Overervering</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inleiding">
+   Inleiding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypotheek">
+   Hypotheek
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-klasse-aflossingsvrij">
+   De klasse
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Aflossingsvrij
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-klasse-lineair">
+   De klasse
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Lineair
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problemen-van-twee-soortgelijke-klassen">
+   Problemen van twee soortgelijke klassen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ongewenste-instantiering">
+   Ongewenste instantiëring
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstracte-methodes">
+   Abstracte methodes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annuiteiten">
+   Annuïteiten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#volledige-hypotheek">
+   Volledige hypotheek
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="overervering">
+<h1>Overervering<a class="headerlink" href="#overervering" title="Permalink naar deze titel">#</a></h1>
+<section id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Permalink naar deze titel">#</a></h2>
+<p>Dit practicum is een inleiding in overerving. Overerving wil zeggen dat een klasse eigenschappen overneem van zijn ouder-klasse (<em>parent class</em>).</p>
+</section>
+<section id="hypotheek">
+<h2>Hypotheek<a class="headerlink" href="#hypotheek" title="Permalink naar deze titel">#</a></h2>
+<p>Een lening voor de financiering van een huis wordt in de volksmond ook wel een hypotheek genoemd.</p>
+<p>Een hypotheek bestaat uit één of meerdere leningdelen.</p>
+<p>Elk leningdeel heeft een bedrag, een rentepercentage en looptijd.</p>
+<p>De looptijd wordt uitgedrukt in maanden en is standaard 360 maanden (30 jaar).</p>
+<p>Het rentepercentage kan in werkelijkheid veranderen. Om het eenvoudig te houden, is het in deze opgave gedurende de looptijd een vast percentage.</p>
+<p>Het bedrag kan gedurende de looptijd lager worden doordat er wordt afgelost. De verplichte maandelijkse aflossing is afhankelijk van het soort leningdeel. Daarnaast is het altijd mogelijk om extra af te lossen.</p>
+<p>Hoewel er verschillende soorten leningdelen zijn, hebben ze altijd bovenstaande eigenschappen. De verschillen tussen soorten leningdelen heeft vooral te maken met hoe wordt bepaald welk bedrag maandelijks wordt afgelost. De meest eenvoudige soort is aflossingsvrij, waarbij er geen verplichte maandelijkse aflossing is.</p>
+<p>Financieel adviseurs gebruiken software om inzichtelijk te maken wat de maandlasten van een hypotheek zijn. Met klassen voor een hypotheek en voor verschillende leningdelen kunnen veel verschillende hypotheken worden ondersteund.</p>
+</section>
+<section id="de-klasse-aflossingsvrij">
+<h2>De klasse <code class="docutils literal notranslate"><span class="pre">Aflossingsvrij</span></code><a class="headerlink" href="#de-klasse-aflossingsvrij" title="Permalink naar deze titel">#</a></h2>
+<p>Onderstaande code bevat een klasse voor een aflossingsvrij leningdeel. Bestudeer de code om een goed beeld te krijgen van hoe deze werkt. De klasse is lang, maar de methodes zijn kort en eenvoudig.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Aflossingsvrij</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">bedrag</span><span class="p">;</span><span class="w"> </span><span class="c1">// oorspronkelijke bedrag</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">resterendBedrag</span><span class="p">;</span><span class="w"> </span><span class="c1">// resterend bedrag</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rentePercentage</span><span class="p">;</span><span class="w"> </span><span class="c1">// Jaarlijks rentepercentage</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">looptijd</span><span class="p">;</span><span class="w"> </span><span class="c1">// oorspronkelijke looptijd</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">resterendeLooptijd</span><span class="p">;</span><span class="w"> </span><span class="c1">// resterende looptijd</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Constructor</span>
+<span class="cm">     * @param bedrag Bedrag van het leningdeel</span>
+<span class="cm">     * @param rentePercentage Rentepercentage</span>
+<span class="cm">     * @param looptijd Looptijd uitgedrukt in maanden</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Aflossingsvrij</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">bedrag</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rentePercentage</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">looptijd</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">rentePercentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rentePercentage</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">bedrag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bedrag</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">resterendBedrag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bedrag</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">looptijd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">looptijd</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">resterendeLooptijd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">looptijd</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Constructor met standaard looptijd van 30 jaar</span>
+<span class="cm">     * @param bedrag Bedrag van het leningdeel</span>
+<span class="cm">     * @param rentePercentage Rentepercentage</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Aflossingsvrij</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">bedrag</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rentePercentage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="n">bedrag</span><span class="p">,</span><span class="w"> </span><span class="n">rentePercentage</span><span class="p">,</span><span class="w"> </span><span class="mi">360</span><span class="p">);</span><span class="w"> </span><span class="c1">// standaard looptijd is 30 jaar</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getRentePercentage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">rentePercentage</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getBedrag</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">bedrag</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getResterendBedrag</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">resterendBedrag</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getLooptijd</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">looptijd</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getResterendeLooptijd</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">resterendeLooptijd</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Af te lossen bedrag deze maand</span>
+<span class="cm">     * @return bedrag aan aflossing deze maand</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">berekenMaandlastAflossing</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// geen standaard aflossing</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * De te betalen rente deze maand</span>
+<span class="cm">     * @return bedrag aan rente in de huidige termijn</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">berekenMaandlastRente</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">resterendBedrag</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rentePercentage</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * De totale maandlast bestaat uit maandelijkse rente en vaste maandelijkse aflossing</span>
+<span class="cm">     * @return totale maandlast</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">berekenMaandlast</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">berekenMaandlastRente</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">berekenMaandlastAflossing</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Bedrag aflossen</span>
+<span class="cm">     * Deze methode wordt gebruikt voor de verplichte maandelijkse aflossing</span>
+<span class="cm">     * maar kan ook worden gebruikt voor extra aflossingen.</span>
+<span class="cm">     * @param aflossing bedrag aan aflossing</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aflossen</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">aflossing</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">resterendBedrag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resterendBedrag</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">aflossing</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">resterendBedrag</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">resterendBedrag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Naar volgende maand gaan</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">volgendeMaand</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">resterendeLooptijd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Aflossing verwerken</span><span class="w"></span>
+<span class="w">            </span><span class="n">aflossen</span><span class="p">(</span><span class="w"> </span><span class="n">berekenMaandlastAflossing</span><span class="p">()</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Resterende looptijd verlagen</span><span class="w"></span>
+<span class="w">            </span><span class="n">resterendeLooptijd</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Naar volgend jaar gaan</span>
+<span class="cm">     * door middel van 12 keer naar volgende maand gaan</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">volgendJaar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"> </span><span class="n">t</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">volgendeMaand</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Retourneert true als hypotheek nog een resterende looptijd heeft (actief is).</span>
+<span class="cm">     * @return true als hypotheek nog actief is</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isActief</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">resterendeLooptijd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Neem de klasse <code class="docutils literal notranslate"><span class="pre">Aflossingsvrij</span></code> over in je IntelliJ.</p>
+<p>Maak een klasse <code class="docutils literal notranslate"><span class="pre">Main</span></code> met een main-methode met de volgende code om het leningdeel te testen:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Aflossingsvrij</span><span class="w"> </span><span class="n">leningdeel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Aflossingsvrij</span><span class="p">(</span><span class="mi">150000</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="p">);</span><span class="w"> </span><span class="c1">// Leningdeel 150.000 euro 4,5%</span><span class="w"></span>
+<span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">leningdeel</span><span class="p">.</span><span class="na">isActief</span><span class="p">()</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%d maanden € %.2f [maandbedrag rente + aflossing : € %.2f + € %.2f = € %.2f]\n&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="n">leningdeel</span><span class="p">.</span><span class="na">getResterendeLooptijd</span><span class="p">(),</span><span class="w"> </span><span class="n">leningdeel</span><span class="p">.</span><span class="na">getResterendBedrag</span><span class="p">(),</span><span class="w"></span>
+<span class="w">            </span><span class="n">leningdeel</span><span class="p">.</span><span class="na">berekenMaandlastRente</span><span class="p">(),</span><span class="w"> </span><span class="n">leningdeel</span><span class="p">.</span><span class="na">berekenMaandlastAflossing</span><span class="p">(),</span><span class="w"></span>
+<span class="w">            </span><span class="n">leningdeel</span><span class="p">.</span><span class="na">berekenMaandlast</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">leningdeel</span><span class="p">.</span><span class="na">volgendJaar</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Einde looptijd: € %.2f\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">leningdeel</span><span class="p">.</span><span class="na">getResterendBedrag</span><span class="p">());</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Verwachte uitvoer:<br></p>
+<div class="highlight-{code-block}shell notranslate"><div class="highlight"><pre><span></span>360 maanden € 150000,00 [maandbedrag rente + aflossing : € 562,50 + € 0,00 = € 562,50]
+348 maanden € 150000,00 [maandbedrag rente + aflossing : € 562,50 + € 0,00 = € 562,50]
+...
+24 maanden € 150000,00 [maandbedrag rente + aflossing : € 562,50 + € 0,00 = € 562,50]
+12 maanden € 150000,00 [maandbedrag rente + aflossing : € 562,50 + € 0,00 = € 562,50]
+Einde looptijd: € 150000,00
+</pre></div>
+</div>
+</section>
+<section id="de-klasse-lineair">
+<h2>De klasse <code class="docutils literal notranslate"><span class="pre">Lineair</span></code><a class="headerlink" href="#de-klasse-lineair" title="Permalink naar deze titel">#</a></h2>
+<p>Lineair aflossen wil zeggen dat elke maand hetzelfde bedrag wordt afgelost, zodat aan het einde van de looptijd het leningdeel volledig is afgellost. Kenmerkt van linair aflossen is dat de  maandelijkse lasten steeds iets lager worden, omdat de te betalen rente afneemt. Het af te lossen bedrag wordt berekend door het resterende bedrag te delen door de resterende looptijd.</p>
+<p>Maak de klasse <code class="docutils literal notranslate"><span class="pre">Lineair</span></code> door een kopie te maken van klasse <code class="docutils literal notranslate"><span class="pre">Aflossingsvrij</span></code>. Alleen de methode <code class="docutils literal notranslate"><span class="pre">berekenMaandlastAflossing</span></code> moet aangepast worden, op basis van de bovenstaande beschrijving.Test de klasse met behulp van de main-methode.</p>
+<p>Verwachte uitvoer:<br></p>
+<div class="highlight-{code-block}shell notranslate"><div class="highlight"><pre><span></span>360 maanden € 150000,00 [maandbedrag rente + aflossing : € 562,50 + € 416,67 = € 979,17]
+348 maanden € 145000,00 [maandbedrag rente + aflossing : € 543,75 + € 416,67 = € 960,42]
+...
+24 maanden € 10000,00 [maandbedrag rente + aflossing : € 37,50 + € 416,67 = € 454,17]
+12 maanden € 5000,00 [maandbedrag rente + aflossing : € 18,75 + € 416,67 = € 435,42]
+Einde looptijd: € 0,00
+</pre></div>
+</div>
+</section>
+<section id="problemen-van-twee-soortgelijke-klassen">
+<h2>Problemen van twee soortgelijke klassen<a class="headerlink" href="#problemen-van-twee-soortgelijke-klassen" title="Permalink naar deze titel">#</a></h2>
+<p>De klassen <code class="docutils literal notranslate"><span class="pre">Aflossingsvrij</span></code> en <code class="docutils literal notranslate"><span class="pre">Lineair</span></code> zijn soortgelijke klassen. Beide representeren een leningdeel. De code komt grotendeels overeen, wat resulteert in duplicate code. Als de opzet van de ene klasse verandert, dient dit waarschijnlijk ook in de andere klasse te gebeuren. Dit probleem wordt groter naarmate er meerdere soorten leningdelen bijkomen.</p>
+<p>Een ander probleem is gebruik van het datatype: Bij het wijzigen van <code class="docutils literal notranslate"><span class="pre">Aflossingsvrij</span></code> naar <code class="docutils literal notranslate"><span class="pre">Lineair</span></code> in <code class="docutils literal notranslate"><span class="pre">main</span></code> moesten zowel het <em>datatype</em> van de declaratie als het <em>object</em> bij keyword <code class="docutils literal notranslate"><span class="pre">new</span></code> aangepast worden. Dit maakt het gebruik van arrays of collecties voor het opslaan van een lijst verschillende leningdelen moeilijk. Het is wenselijk om een datatype te kunnen gebruiken voor een leningdeel, ongeacht het specifieke soort leningdeel (aflossingsvrij of lineair).</p>
+<p>De oplossing voor dit probleem is overerving. Overervaring wordt gerealiseerd met het keyword <code class="docutils literal notranslate"><span class="pre">extends</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Lineair</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Aflossingsvrij</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">     </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In dit geval overerft de klasse <code class="docutils literal notranslate"><span class="pre">Lineair</span></code> de klasse <code class="docutils literal notranslate"><span class="pre">Aflossingsvrij</span></code>. De klasse <code class="docutils literal notranslate"><span class="pre">Lineair</span></code> is de <em>parent class</em>. De klasse <code class="docutils literal notranslate"><span class="pre">Aflossingsvrij</span></code> is hier de <em>child class</em>. In plaats van <em>parent class</em> en <em>child class</em> worden ook wel de begrippen <em>superklasse</em> en <em>subklasse</em> gebruikt.</p>
+<p>Pas de klasse-definitie <code class="docutils literal notranslate"><span class="pre">Lineair</span></code> aan zodat deze <code class="docutils literal notranslate"><span class="pre">Aflossingsvrij</span></code> overerft. verwijder alle code in de klasse uit klasse <code class="docutils literal notranslate"><span class="pre">Lineair</span></code>.</p>
+<p>Om het correct werkend te krijgen moeten twee aanpassingen worden gedaan:</p>
+<ol class="simple">
+<li><p>De klasse <code class="docutils literal notranslate"><span class="pre">Lineair</span></code> heeft constructors nodig</p></li>
+<li><p>De methode <code class="docutils literal notranslate"><span class="pre">berekenMaandlastAflossing</span></code> moet geïmplementeerd worden, zodat er daadwerkelijk sprake is van lineaire aflossing.</p></li>
+</ol>
+<p>De constructors van <code class="docutils literal notranslate"><span class="pre">Lineair</span></code> zijn als volgt:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="nf">Lineair</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">bedrag</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rentePercentage</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">looptijd</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">super</span><span class="p">(</span><span class="n">bedrag</span><span class="p">,</span><span class="w"> </span><span class="n">rentePercentage</span><span class="p">,</span><span class="w"> </span><span class="n">looptijd</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="nf">Lineair</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">bedrag</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rentePercentage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">super</span><span class="p">(</span><span class="n">bedrag</span><span class="p">,</span><span class="w"> </span><span class="n">rentePercentage</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Het enige wat deze constructors doen is de constructor van de parent class (of superklasse) aanroepen. Dit voorkomt dubbele code.</p>
+<p>Alle publieke reguliere methodes van de <em>parent class</em> zijn ook beschikbaar in de <em>child class</em>.</p>
+<p>De implementatie van <code class="docutils literal notranslate"><span class="pre">berekenMaandlastAflossing</span></code> is als volgt:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> /**
+ * Af te lossen bedrag deze maand
+ * @return bedrag aan aflossing deze maand
+ */
+@Override
+public double berekenMaandlastAflossing() {
+    return getResterendBedrag() / getResterendeLooptijd();
+}
+
+Mogelijk heb je in de vorige versie van `Lineair` de properties `resterendBedrag` en `resterendeLooptijd` rechtstreeks gebruikt. Dit is nu niet meer mogelijk, omdat deze properties `private` zijn.
+
+Er zijn twee mogelijke oplossingen voor dit probleem. De hierboven gebruikte oplossing is het gebruik van beschikbare *getters*. Een alternatief is gebruik van access-modifier *protected*.
+
+Test de nieuwe versie van `Lineair`.
+
+## Problemen van incorrecte overerving
+
+Ondanks dat het probleem van duplicate code is opgelost, is deze overerving niet geheel correct. Hoewel het technisch werkt, is het ontwerp slecht.
+
+Overervaring creëert een &quot;is-a&quot;-relatie. Als klasse `Lineair` de klasse `Aflossingsvrij` overerft, dan is `Lineair` impliciet `Aflossingsvrij`.
+
+Daardoor is de volgende code mogelijk:
+```{code-block} java
+Aflossingsvrij leningdeel = new Lineair(150000, 4.5);
+</pre></div>
+</div>
+<p>Dit voorbeeld maakt zichtbaar dat het niet correct is. Immers, lineair aflossen is niet aflossingsvrij.</p>
+<p>De relatie ligt anders: lineair en aflossingsvrij zijn beide een soort leningdeel. Om dit te implementeren moeten beide klassen de klasse <em>Leningdeel</em> overervaren.</p>
+<p>Realiseer met door de volgende stappen:</p>
+<ol class="simple">
+<li><p>Hernoem <em>Aflossingsvrij</em> naar <em>Leningdeel</em></p></li>
+<li><p>Maak een nieuwe klasse <em>Aflossingsvrij</em> die <em>Leningdeel</em> overerft. Voorzie deze klasse van de benodigde constructors.</p></li>
+<li><p>Mogelijk overerft de klasse <em>Lineair</em> al <em>Leningdeel</em> doordat de editor dit automatisch voor je doet. Indien dit nog niet het geval is, voer deze wijziging dan zelf door.</p></li>
+</ol>
+<p>Test de nieuwe klassen in main, waarbij de variabele <em>leningdeel</em> gedeclareerd kan worden met <em>Leningdeel</em>:
+Daardoor is de volgende code mogelijk:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Leningdeel</span><span class="w"> </span><span class="n">leningdeel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Lineair</span><span class="p">(</span><span class="mi">150000</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="ongewenste-instantiering">
+<h2>Ongewenste instantiëring<a class="headerlink" href="#ongewenste-instantiering" title="Permalink naar deze titel">#</a></h2>
+<p>Soms is het niet wenselijk dat van een bepaalde klasse objecten worden gemaakt (ook instantiëring genoemd). Dit is vaak het geval bij een overkoepelende superklasse en is ook hier het geval.</p>
+<p>Van <em>Leningdeel</em> kan een object worden gemaakt:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Leningdeel</span><span class="w"> </span><span class="n">leningdeel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Leningdeel</span><span class="p">(</span><span class="mi">150000</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Deze zal zich gedragen als aflossingsvrij, maar het schept verwarring. De klasse <em>Leningdeel</em> is bedoeld om gebruikt te worden als superklasse, niet als klasse om objecten van te maken.</p>
+<p>Dit kan voorkomen worden met het keyword <em>abstract</em>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Leningdeel</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In dat geval zal het instantiëren van <em>Leningdeel</em> niet meer mogelijk zijn, waardoor expliciet gekozen moet worden voor <em>Aflossingsvrij</em> of <em>Lineair</em>.</p>
+<p>Een abstract klasse is een klasse die wel overerft kan worden, maar niet kan worden geïnstantiëerd.</p>
+</section>
+<section id="abstracte-methodes">
+<h2>Abstracte methodes<a class="headerlink" href="#abstracte-methodes" title="Permalink naar deze titel">#</a></h2>
+<p>Binnen een abstracte klasse, kunnen methoden <em>abstract</em> worden gemaakt met het keyword <code class="docutils literal notranslate"><span class="pre">abstract</span></code>. Daarmee wordt een methode gedefiniëerd maar niet geïmplementeerd.</p>
+<p>Een methode waarbij dit wenselijk is, is de methode <em>berekenMaandlastAflossing</em>. Het meest onderscheidende kenmerk tussen verschillende soorten leningdelen is het bedrag wat maandelijks wordt afgelost en hoe dit bedrag tot stand komt. Daarom is het vreemd dat <em>Leningdeel</em> al een standaard implementatie bevat.</p>
+<p>Het ligt meer voor de hand om implementaties uitsluitend in de subklassen te doen.</p>
+<p>Controleer of de variabele <em>leningdeel</em> is gedeclareerd als type <em>Leningdeel</em>. Verwijder de methode <em>berekenMaandlastAflossing</em> uit de klasse <em>Leningdeel</em>. Wat gebeurt er?</p>
+<p>De klasse <em>Leningdeel</em> moet een methode <em>berekenMaandlastAflossing</em> bevatten. Daarom geeft het verwijderen van de methode <em>berekenMaandlastAflossing</em> problemen. Maar implementatie van deze methode is niet wenselijk. Oplossing is het abstract maken van deze methode met keyword <em>abstract</em>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">abstract</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">berekenMaandlastAflossing</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Voer deze wijziging door. Het is noodzakelijk om ook in de klasse <em>Aflossingsvrij</em> een implementatie te maken van <em>berekenMaandlastAflossing</em>.</p>
+</section>
+<section id="annuiteiten">
+<h2>Annuïteiten<a class="headerlink" href="#annuiteiten" title="Permalink naar deze titel">#</a></h2>
+<p>Annuïtair aflossen wil zeggen dat elke maand hetzelfde bedrag wordt betaald, zodanig aan het einde van de looptijd het leningdeel volledig is afgelost. Kenmerkt van linair aflossen is dat de (bruto) lasten maandelijks gelijk blijven. Elke maand wordt minder rente betaald en meer aflossing, maar het totaalbedrag is steeds hetzelfde.</p>
+<p>Deze klasse is aanzienlijk lastiger dan de andere twee soorten leningdelen, omdat er een ingewikkelde formule is voor het berekenen van het te betalen bedrag.</p>
+<p>Bij aflossingsvrij en lineair is het gemakkelijk om de maandelijkse aflossing te berekenen in de methode <code class="docutils literal notranslate"><span class="pre">berekenMaandlastAflossing</span></code>. Bij annuïtair is dit het vaste maandbedrag met aftrek van de die maand te betalen rente.</p>
+<p>Dit wordt als volgt geïmplementeerd:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">berekenMaandlastAflossing</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">berekenMaandlast</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">berekenMaandlastRente</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Vervolgens dient in de methode <em>berekenMaandlast</em> het vaste maandelijkse bedrag worden berekend, door deze methode te <code class="docutils literal notranslate"><span class="pre">overriden</span></code> in <em>Annuitair</em>.</p>
+<p>De formule voor een vast maandbedrag bij een annuïtaire lening is als volgt:</p>
+<p>vast bedrag = ( r / ( 1 - ( (1 + r) ^ -aantaltermijnen ) ) ) x bedrag</p>
+<p>r is fractie van het rentepercentage, percentage / 100. Om een vast maandbedrag te berekenen dient de rente gedeeld te worden door 12. Kortom, <em>r = (getRentePercentage() / 100) / 12</em></p>
+<p>Let op het negatieve exponent in de formule! Hint: Math.pow</p>
+<p>Maak de klasse <code class="docutils literal notranslate"><span class="pre">Annuitair</span></code>.</p>
+<p>Test klasse met behulp van de main-methode.</p>
+<p>Verwachte uitvoer (obv. EUR 150.000 en 4,5%):
+360 maanden € 150000,00 [maandbedrag rente + aflossing : € 562,50 + € 197,53 = € 760,03]
+348 maanden € 147580,16 [maandbedrag rente + aflossing : € 553,43 + € 206,60 = € 760,03]
+…
+24 maanden € 17412,74 [maandbedrag rente + aflossing : € 65,30 + € 694,73 = € 760,03]
+12 maanden € 8901,86 [maandbedrag rente + aflossing : € 33,38 + € 726,65 = € 760,03]
+0 maanden € 0,00</p>
+</section>
+<section id="volledige-hypotheek">
+<h2>Volledige hypotheek<a class="headerlink" href="#volledige-hypotheek" title="Permalink naar deze titel">#</a></h2>
+<p>Doordat er verschillende soorten leningdelen beschikbaar zijn, kunnen hypotheken samengesteld worden. Een hypotheek bestaat uit 1 of meer leningdelen</p>
+<p>Dit zou kunnen met een array of ArrayList, maar het is wenselijk om methoden beschikbaar te hebben om bijvoorbeeld het (totaal) resterende bedrag op te vragen of de totale maandlast. Dat kan eenvoudig gerealiseerd worden met een klasse <em>Hypotheek</em></p>
+<p>Voor een klasse Hypotheek zijn twee opties:</p>
+<p>Optie 1:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hypotheek1</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Leningdeel</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// de rest</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Optie 2:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hypotheek</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Leningdeel</span><span class="o">&gt;</span><span class="w"> </span><span class="n">leningdelen</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// de rest</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Welke van de twee heeft de voorkeur? Probeer een onderbouwing te vinden waarom…</p>
+<p>Optie 1 heeft betrekking op een <em>is-a</em>-relatie. Dat is problematisch, want een hypotheek is geen arraylist. Daarnaast is een ongewenst neveneffect dat <em>alle</em> publieke methodes die via ArrayList beschikbaar zijn ook beschikbaar worden via Hypotheek.</p>
+<p>In optie 2 vindt geen overerving plaats (behalve van <code class="docutils literal notranslate"><span class="pre">Object</span></code>) maar is de lijst leningdelen een property van hypotheek. Dit wordt <em>compositie</em> genoemd en definieert een <em>has-a</em>-relatie. Dat is in dit geval passend.</p>
+<p>Per situatie moet overwogen worden of er gebruik wordt gemaakt van <em>overerving</em> of <em>compositie</em>.</p>
+<p>Dit is een eerste opzet van klasse <code class="docutils literal notranslate"><span class="pre">Hypotheek</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hypotheek</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Leningdeel</span><span class="o">&gt;</span><span class="w"> </span><span class="n">leningdelen</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Voegt leningdeel toe aan hypotheek</span>
+<span class="cm">     * @param leningdeel Toe te voegen leningdeel</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">voegLeningdeelToe</span><span class="p">(</span><span class="n">Leningdeel</span><span class="w"> </span><span class="n">leningdeel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Nog maken...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Berekent het totaalbedrag van alle leningdelen</span>
+<span class="cm">     * @return totaalbedrag van alle leningdelen</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getBedrag</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">bedrag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">Leningdeel</span><span class="w"> </span><span class="n">leningdeel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">leningdelen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">bedrag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bedrag</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">leningdeel</span><span class="p">.</span><span class="na">getBedrag</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">bedrag</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Berekent het totaal resterende bedrag van alle leningdelen</span>
+<span class="cm">     * @return totaal resterende bedrag van alle leningdelen</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getResterendBedrag</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nog maken...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Berekent het totaal af te lossen bedrag deze maand van alle leningdelen</span>
+<span class="cm">     * @return totaal af te lossen bedrag deze maand van alle leningdelen</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">berekenMaandlastAflossing</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nog maken...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Berekent de totaal te betalen rente deze maand van alle leningdelen</span>
+<span class="cm">     * @return totaal te betalen rente deze maand van alle leningdelen</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">berekenMaandlastRente</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nog maken...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * De totale maandlast bestaat uit maandelijkse rente en vaste maandelijkse aflossing</span>
+<span class="cm">     * @return totale maandlast</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">berekenMaandlast</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">berekenMaandlastRente</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">berekenMaandlastAflossing</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Naar volgende maand gaan (dit doen voor alle leningdelen)</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">volgendeMaand</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Nog maken</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Naar volgend jaar gaan</span>
+<span class="cm">     * door middel van 12 keer naar volgende maand gaan</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">volgendJaar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"> </span><span class="n">t</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">volgendeMaand</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Retourneert true als tenminste één leningdeel nog een resterende looptijd heeft (actief is).</span>
+<span class="cm">     * @return true als hypotheek nog actief is</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isActief</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Let op! Hypotheken met leningdelen met verschillende looptijden zijn mogelijk.</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Daaruit volgt dat er lopende hypotheken bestaan met leningdelen die niet meer actief zijn.</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Retourneer true als tenminste één leningdeel actief is</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nog maken</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Maak de klasse <code class="docutils literal notranslate"><span class="pre">Hypotheek</span></code> af.</p>
+<p>Test deze met de onderstaande code in main, waar op de plaats van … nog wat ingevuld moet worden..</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">Hypotheek van EUR 291.000, looptijd 30 jaar, bestaande uit twee leningdelen</span>
+<span class="cm">- Lineair EUR 224.000 5,2% rente</span>
+<span class="cm">- Aflossingsvrij EUR 67.000 5.5% rente</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="n">Leningdeel</span><span class="w"> </span><span class="n">leningdeel1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="n">Leningdeel</span><span class="w"> </span><span class="n">leningdeel2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">leningdeel1</span><span class="p">.</span><span class="na">getResterendBedrag</span><span class="p">());</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">leningdeel2</span><span class="p">.</span><span class="na">getResterendBedrag</span><span class="p">());</span><span class="w"></span>
+
+<span class="n">Hypotheek</span><span class="w"> </span><span class="n">hypotheek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Hypotheek</span><span class="p">();</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">hypotheek</span><span class="p">.</span><span class="na">getResterendBedrag</span><span class="p">());</span><span class="w"></span>
+
+<span class="n">hypotheek</span><span class="p">.</span><span class="na">voegLeningdeelToe</span><span class="p">(</span><span class="n">leningdeel1</span><span class="p">);</span><span class="w"></span>
+<span class="n">hypotheek</span><span class="p">.</span><span class="na">voegLeningdeelToe</span><span class="p">(</span><span class="n">leningdeel2</span><span class="p">);</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">jaar</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="k">while</span><span class="p">(</span><span class="n">hypotheek</span><span class="p">.</span><span class="na">isActief</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%de jaar: € %.2f [maandbedrag rente + aflossing : € %.2f + € %.2f = € %.2f]\n&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="n">jaar</span><span class="p">,</span><span class="w"> </span><span class="n">hypotheek</span><span class="p">.</span><span class="na">getResterendBedrag</span><span class="p">(),</span><span class="w"></span>
+<span class="w">            </span><span class="n">hypotheek</span><span class="p">.</span><span class="na">berekenMaandlastRente</span><span class="p">(),</span><span class="w"> </span><span class="n">hypotheek</span><span class="p">.</span><span class="na">berekenMaandlastAflossing</span><span class="p">(),</span><span class="w"></span>
+<span class="w">            </span><span class="n">hypotheek</span><span class="p">.</span><span class="na">berekenMaandlast</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">hypotheek</span><span class="p">.</span><span class="na">volgendJaar</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">jaar</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Einde looptijd: %.2f\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hypotheek</span><span class="p">.</span><span class="na">getResterendBedrag</span><span class="p">());</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Het verwachte resultaat is:</p>
+<div class="highlight-{code-block}shell notranslate"><div class="highlight"><pre><span></span>1e jaar: € 291000,00 [maandbedrag rente + aflossing : € 1277,75 + € 622,22 = € 1899,97]
+2e jaar: € 283533,33 [maandbedrag rente + aflossing : € 1245,39 + € 622,22 = € 1867,62]
+...
+29e jaar: € 81933,33 [maandbedrag rente + aflossing : € 371,79 + € 622,22 = € 994,02]
+30e jaar: € 74466,67 [maandbedrag rente + aflossing : € 339,44 + € 622,22 = € 961,66]
+Einde looptijd: € 67000,00
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../topics/6a_collections.html" title="vorige pagina">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">vorige</p>
+            <p class="prev-next-title">Arrays</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../course/ex_5.html" title="volgende pagina">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Opgaven week 5</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hanzehogeschool Groningen<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -96,22 +96,33 @@ parts:
     sections: 
     - file: problems/class_design/index 
       title: Klassen ontwerpen en data-typen
-    - file: exercises/cone/index #<-- gaat niet over Threads, maar over klassen ontwerpen en TDD
+    - file: exercises/cone/index 
       title: Klassen ontwerpen en TDD
-    - file: exercises/nested_circles/index #<-- recursie en en bibliotheken
+    - file: exercises/nested_circles/index 
       title: Recursie en bibliotheken
-    - file: problems/recursive_graphics/index #<-- Sierpinski
+    - file: problems/recursive_graphics/index 
       title: Recusieve plaatjes 
     - file: exercises/codingbat_recursie
-      title: CodingBat recursie
-#
-#- caption: Week 5
-#  chapters:
-#  - file: course/week_5
-#    title: Onderwerpen
-#    sections:
-#    - file: topics/6a_static_en_collections
-#      title: Static en collections
+      title: CodingBat recursie 
+- caption: Week 5
+  chapters:
+  - file: course/week_5
+    title: Onderwerpen
+    sections:
+    - file: topics/6a_static_klassen
+      title: Static en klassen
+    - file: topics/6a_collections
+      title: Arrays en Collecties
+  - file: exercises/hypotheek.md
+    title: Practicum
+  - file: course/ex_5
+    title: Opgaven
+    sections:
+    - file: problems/verhuur/index
+      title: Voertuigen
+    - file: exercises/codingbat_arrays
+      title: Codingbat Arrays
+
 #    - file: topics/6b_javadoc
 #      title: Javadoc
 #    - file: topics/6c_testen

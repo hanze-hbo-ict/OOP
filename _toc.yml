@@ -6,6 +6,7 @@ parts:
 - caption: Over deze cursus
   chapters:
   - file: about/literatuur
+
 - caption: Week 1
   chapters:
   - file: course/week_1
@@ -28,6 +29,7 @@ parts:
       title: Primitieve datatypen
     - file: exercises/9a-9_variables_assignment 
       title: Variabelen
+
 - caption: Week 2
   chapters:
   - file: course/week_2
@@ -58,6 +60,7 @@ parts:
       title: Strings en lussen
     - file: exercises/codingbat_strings 
       title: CodingBat Strings
+
 - caption: Week 3
   chapters:
   - file: course/week_3
@@ -78,6 +81,7 @@ parts:
       title: De klasse `OptionalInt`
     - file: problems/opgave-LocalDate
       title: De klasse `LocalDate`
+
 - caption: Week 4
   chapters:
   - file: course/week_4
@@ -104,6 +108,7 @@ parts:
       title: Recusieve plaatjes 
     - file: exercises/codingbat_recursie
       title: CodingBat recursie 
+
 - caption: Week 5
   chapters:
   - file: course/week_5

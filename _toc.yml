@@ -123,8 +123,26 @@ parts:
     - file: exercises/codingbat_arrays
       title: Codingbat Arrays
 
-#    - file: topics/6b_javadoc
-#      title: Javadoc
+- caption: Week 6
+  chapters:
+  - file: course/week_6
+    title: Onderwerpen
+    sections:
+    - file: topics/6b_javadoc
+      title: Javadoc 
+    - file: topics/8b_exceptions
+      title: Exceptions
+  - file: course/ex_6
+    title: Opgaven
+    sections:
+    - file: exercises/exceptions_gooien
+      title: Exceptions gooien
+    - file: exercises/exceptions_gebruiken
+      title: Exceptions gebruiken
+    - file: exercises/exceptions_en_bestanden
+      title: Exceptions en bestanden
+
+
 #    - file: topics/6c_testen
 #      title: Testen
 #  - file: course/ex_5
@@ -158,11 +176,6 @@ parts:
 #      title: Meer over klassen
 #    - file: topics/8_interfaces
 #    - file: topics/8b_exceptions
-#  - file: exercises/exceptions_gooien
-#    title: Opgave 1
-#  - file: exercises/exceptions_gebruiken
-#    title: Opgave 2
-#  - file: exercises/exceptions_en_bestanden
 #    title: Oefening
 #
 #- caption: Week 9

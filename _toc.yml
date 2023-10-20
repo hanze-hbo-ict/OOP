@@ -147,6 +147,18 @@ parts:
     - file: exercises/exceptions_en_bestanden
       title: Exceptions en bestanden
 
+- caption: Week 7
+  chapters:
+  - file: course/week_7
+    title: Onderwerpen
+    sections:
+    - file: topics/8_interfaces
+      title: Interfaces
+  - file: course/ex_7
+    title: Opgaven
+    sections:
+    - file: problems/verhuur2/index
+      title: Vervolg verhuur-opgave
 
 #    - file: topics/6c_testen
 #      title: Testen
@@ -169,7 +181,7 @@ parts:
 #    title: Practicum
 #  - file: exercises/bouncing_balls/index
 #    title: Opgave 1
-#  - file: problems/verhuur/index
+#  - file: problems/verhuur/index  #<-- derde deel opgave verhuur week 7
 #    title: Opgave 2
 #
 #- caption: Week 8
@@ -179,7 +191,7 @@ parts:
 #    sections:
 #    - file: topics/7b_klassen
 #      title: Meer over klassen
-#    - file: topics/8_interfaces
+#    - file: topics/8_interfaces #<-- deze ook bij week 7
 #    - file: topics/8b_exceptions
 #    title: Oefening
 #

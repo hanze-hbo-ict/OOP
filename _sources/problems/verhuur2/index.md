@@ -2,12 +2,9 @@
 
 In deze opgave gaan we verder met de verhuur-opgave.
 
-Het project <a href="../../projects/rentals_3.zip">rentals_3.zip</a> bevat de klass `Verhuur`. Verder zijn de klassen `Auto`, `Fiets` en `HuurVoertuig` nodig. Deze moet je zelf toevoegen van je uitwerking van deel 2.
+Het project <a href="../../projects/rentals_3.zip">rentals_3.zip</a> bevat de klass `Verhuur`. Verder zijn de klassen `Auto`, `Fiets` en `HuurVoertuig` nodig. Deze moet je zelf toevoegen op basis van je uitwerking van deel 2.
 
 In deel 1 heb je ook met een klasse `Verhuur` gewerkt. Gebruik voor deze opgave de meegeleverde klasse `Verhuur`.
-
-De klasse Main bevat code om de klassen te testen, voor elke opgaven. Deze is voor eigen gebruik, voor CodeGrade lever je de klassen Fiets, Auto, Voertuig, HuurVoertuig, HuurFiets, HuurAuto en Verhuur in. Eventueel ook VoertuigSorterBeschrijving in het geval opgave d ingeleverd wordt.
-
 
 a. Om de klassen van voertuigen flexibeler te maken, kan gewerkt worden met algemene voertuig-klassen die geen code voor verhuur bevatten. Een interface kan gebruikt worden om huurvoertuig-klassen te maken.
 Maak de klassen `Fiets` en `Auto` algemeen, zonder code voor huurvoertuigen.

@@ -6,7 +6,7 @@ parts:
 - caption: Over deze cursus
   chapters:
   - file: about/literatuur
-- caption: Week 9
+- caption: 'OOP2 – week 1'
   chapters:
   - file: course/week_9
     title: Onderwerpen
@@ -20,7 +20,7 @@ parts:
   - file: problems/connect4/index
     title: Opgave
 
-- caption: Week 10
+- caption: 'OOP2 – week2 '
   chapters:
   - file: course/week_10
     title: Onderwerpen
@@ -38,7 +38,7 @@ parts:
   - file: problems/pizza/index
     title: Opgave factory
 
-- caption: Week 11
+- caption: 'OOP2 – week 3'
   chapters:
   - file: course/week_11
     title: Onderwerpen
@@ -56,7 +56,7 @@ parts:
   - file: problems/counter/index
     title: Opgave singleton 2
 
-- caption: Week 12
+- caption: 'OOP2 – week 4'
   chapters:
   - file: course/week_12
     title: Onderwerpen
@@ -72,7 +72,7 @@ parts:
   - file: exercises/facade_pattern
     title: Opgave facade
 
-- caption: Week 13
+- caption: 'OOP2 – week 5'
   chapters:
   - file: course/week_13
     title: Onderwerpen
@@ -88,7 +88,7 @@ parts:
   - file: problems/forum/index
     title: Opgave composite pattern
 
-- caption: Week 14
+- caption: 'OOP2 – week 6'
   chapters:
   - file: course/week_14
     title: Onderwerpen
@@ -101,7 +101,7 @@ parts:
   - file : problems/mix_case/index
     title: Opgave state 2
 
-- caption: Week 15
+- caption: 'OOP2 – week 7'
   chapters:
   - file: course/week_15
     title: Onderwerpen
@@ -112,7 +112,7 @@ parts:
   - file: problems/patterns/3_alle_patterns
     title: Opgave 2
 
-- caption: Week 1
+- caption: 'OOP1 – Week 1'
   chapters:
   - file: course/week_1
     title: Onderwerpen
@@ -135,7 +135,7 @@ parts:
     - file: exercises/9a-9_variables_assignment 
       title: Variabelen
 
-- caption: Week 2
+- caption: 'OOP1 – Week 2'
   chapters:
   - file: course/week_2
     title: Onderwerpen
@@ -166,7 +166,7 @@ parts:
     - file: exercises/codingbat_strings 
       title: CodingBat Strings
 
-- caption: Week 3
+- caption: 'OOP1 – Week 3'
   chapters:
   - file: course/week_3
     title: Onderwerpen
@@ -187,7 +187,7 @@ parts:
     - file: problems/opgave-LocalDate
       title: De klasse `LocalDate`
 
-- caption: Week 4
+- caption: 'OOP1 – Week 4'
   chapters:
   - file: course/week_4
     title: Onderwerpen
@@ -214,7 +214,7 @@ parts:
     - file: exercises/codingbat_recursie
       title: CodingBat recursie 
 
-- caption: Week 5
+- caption: 'OOP1 – Week 5'
   chapters:
   - file: course/week_5
     title: Onderwerpen
@@ -233,7 +233,7 @@ parts:
     - file: exercises/codingbat_arrays
       title: Codingbat Arrays
 
-- caption: Week 6
+- caption: 'OOP1 – Week 6'
   chapters:
   - file: course/week_6
     title: Onderwerpen
@@ -252,7 +252,7 @@ parts:
     - file: exercises/exceptions_en_bestanden
       title: Exceptions en bestanden
 
-- caption: Week 7
+- caption: 'OOP1 – Week 7'
   chapters:
   - file: course/week_7
     title: Onderwerpen

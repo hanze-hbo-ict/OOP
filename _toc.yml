@@ -6,111 +6,7 @@ parts:
 - caption: Over deze cursus
   chapters:
   - file: about/literatuur
-- caption: 'OOP2 – week 1'
-  chapters:
-  - file: course/week_9
-    title: Onderwerpen
-    sections:
-      - file: topics/9a_design_patterns
-        title: Design Patterns
-      - file: topics/9c_observer_pattern
-        title: Observer pattern
-  - file: exercises/observer_pattern
-    title: Practicum
-  - file: problems/connect4/index
-    title: Opgave
 
-- caption: 'OOP2 – week2 '
-  chapters:
-  - file: course/week_10
-    title: Onderwerpen
-    sections:
-    - file: topics/10a_decorator
-      title: Decorator Pattern
-    - file: topics/10b_factory
-      title: Factory Pattern
-  - file: exercises/pizza/index
-    title: Practicum decorator
-  - file: exercises/cats/index
-    title: Practicum decorator 2
-  - file: exercises/logger
-    title: Practicum factory
-  - file: problems/pizza/index
-    title: Opgave factory
-
-- caption: 'OOP2 – week 3'
-  chapters:
-  - file: course/week_11
-    title: Onderwerpen
-    sections:
-    - file: topics/11a_singleton
-      title: Singleton Pattern
-    - file: topics/11b_command
-      title: Command Pattern
-  - file: exercises/singleton_pattern
-    title: Practicum 1
-  - file: exercises/command_pattern
-    title: Practicum 2
-  - file: problems/logger/index
-    title: Opgave singleton 1
-  - file: problems/counter/index
-    title: Opgave singleton 2
-
-- caption: 'OOP2 – week 4'
-  chapters:
-  - file: course/week_12
-    title: Onderwerpen
-    sections:
-    - file: topics/15a_template
-      title: Template Method Pattern
-    - file: topics/15b_adapter_pattern
-      title: Adapter Pattern
-  - file: exercises/practicum_adapter_pattern
-    title: Practicum
-  - file: exercises/adapter_pattern
-    title: Opgave adapter
-  - file: exercises/facade_pattern
-    title: Opgave facade
-
-- caption: 'OOP2 – week 5'
-  chapters:
-  - file: course/week_13
-    title: Onderwerpen
-    sections:
-    - file: topics/12b_iterator
-      title: Iterator Pattern
-    - file: topics/13a_composite
-      title: Composite Pattern
-  - file: exercises/iterator/index
-    title: Practicum iterator
-  - file: exercises/composite/index
-    title: Practicum composite
-  - file: problems/forum/index
-    title: Opgave composite pattern
-
-- caption: 'OOP2 – week 6'
-  chapters:
-  - file: course/week_14
-    title: Onderwerpen
-  - file: topics/13b_state
-    title: State Pattern
-  - file: exercises/pinautomaat/index
-    title: Practicum state
-  - file: problems/ordering_products/index
-    title: Opgave state 1
-  - file : problems/mix_case/index
-    title: Opgave state 2
-
-- caption: 'OOP2 – week 7'
-  chapters:
-  - file: course/week_15
-    title: Onderwerpen
-  - file: problems/patterns/1_alle_patterns
-    title: Practicum
-  - file: problems/patterns/2_alle_patterns_mvc
-    title: Opgave 1
-  - file: problems/patterns/3_alle_patterns
-    title: Opgave 2
 
 - caption: 'OOP1 – Week 1'
   chapters:
@@ -264,6 +160,113 @@ parts:
     sections:
     - file: problems/verhuur2/index
       title: Vervolg verhuur-opgave
+
+
+- caption: 'OOP2 – week 1'
+  chapters:
+  - file: course/week_9
+    title: Onderwerpen
+    sections:
+      - file: topics/9a_design_patterns
+        title: Design Patterns
+      - file: topics/9c_observer_pattern
+        title: Observer pattern
+  - file: exercises/observer_pattern
+    title: Practicum
+  - file: problems/connect4/index
+    title: Opgave
+
+- caption: 'OOP2 – week2 '
+  chapters:
+  - file: course/week_10
+    title: Onderwerpen
+    sections:
+    - file: topics/10a_decorator
+      title: Decorator Pattern
+    - file: topics/10b_factory
+      title: Factory Pattern
+  - file: exercises/pizza/index
+    title: Practicum decorator
+  - file: exercises/cats/index
+    title: Practicum decorator 2
+  - file: exercises/logger
+    title: Practicum factory
+  - file: problems/pizza/index
+    title: Opgave factory
+
+- caption: 'OOP2 – week 3'
+  chapters:
+  - file: course/week_11
+    title: Onderwerpen
+    sections:
+    - file: topics/11a_singleton
+      title: Singleton Pattern
+    - file: topics/11b_command
+      title: Command Pattern
+  - file: exercises/singleton_pattern
+    title: Practicum 1
+  - file: exercises/command_pattern
+    title: Practicum 2
+  - file: problems/logger/index
+    title: Opgave singleton 1
+  - file: problems/counter/index
+    title: Opgave singleton 2
+
+- caption: 'OOP2 – week 4'
+  chapters:
+  - file: course/week_12
+    title: Onderwerpen
+    sections:
+    - file: topics/15a_template
+      title: Template Method Pattern
+    - file: topics/15b_adapter_pattern
+      title: Adapter Pattern
+  - file: exercises/practicum_adapter_pattern
+    title: Practicum
+  - file: exercises/adapter_pattern
+    title: Opgave adapter
+  - file: exercises/facade_pattern
+    title: Opgave facade
+
+- caption: 'OOP2 – week 5'
+  chapters:
+  - file: course/week_13
+    title: Onderwerpen
+    sections:
+    - file: topics/12b_iterator
+      title: Iterator Pattern
+    - file: topics/13a_composite
+      title: Composite Pattern
+  - file: exercises/iterator/index
+    title: Practicum iterator
+  - file: exercises/composite/index
+    title: Practicum composite
+  - file: problems/forum/index
+    title: Opgave composite pattern
+
+- caption: 'OOP2 – week 6'
+  chapters:
+  - file: course/week_14
+    title: Onderwerpen
+  - file: topics/13b_state
+    title: State Pattern
+  - file: exercises/pinautomaat/index
+    title: Practicum state
+  - file: problems/ordering_products/index
+    title: Opgave state 1
+  - file : problems/mix_case/index
+    title: Opgave state 2
+
+- caption: 'OOP2 – week 7'
+  chapters:
+  - file: course/week_15
+    title: Onderwerpen
+  - file: problems/patterns/1_alle_patterns
+    title: Practicum
+  - file: problems/patterns/2_alle_patterns_mvc
+    title: Opgave 1
+  - file: problems/patterns/3_alle_patterns
+    title: Opgave 2
 
 #    - file: topics/6c_testen
 #      title: Testen

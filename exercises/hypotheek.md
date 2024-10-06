@@ -208,7 +208,7 @@ public class Lineair extends Aflossingsvrij {
 }
 ```
 
-In dit geval overerft de klasse `Lineair` de klasse `Aflossingsvrij`. De klasse `Lineair` is de *parent class*. De klasse `Aflossingsvrij` is hier de *child class*. In plaats van *parent class* en *child class* worden ook wel de begrippen *superklasse* en *subklasse* gebruikt.
+In dit geval overerft de klasse `Lineair` de klasse `Aflossingsvrij`. De klasse `Lineair` is de *child class*. De klasse `Aflossingsvrij` is hier de *parent class*. In plaats van *parent class* en *child class* worden ook wel de begrippen *superklasse* en *subklasse* gebruikt.
 
 Pas de klasse-definitie `Lineair` aan zodat deze `Aflossingsvrij` overerft. verwijder alle code in de klasse uit klasse `Lineair`.
 

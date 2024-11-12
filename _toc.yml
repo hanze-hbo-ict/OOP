@@ -7,7 +7,7 @@ parts:
   chapters:
   - file: about/literatuur
 
-  - caption: 'OOP2 – week 1'
+- caption: 'OOP2 – week 1'
   chapters:
   - file: course/week_9
     title: Onderwerpen

@@ -2,9 +2,8 @@
 
 ## Onderwerpen
 
--   Adapter Pattern
--   Facade Pattern
--   Template Method Pattern
+-   [Adapter Pattern](/topics/15b_adapter_pattern.ipynb)
+-   [Template Method Pattern](/topics/15a_template.ipynb)
 
 
 ## Boek

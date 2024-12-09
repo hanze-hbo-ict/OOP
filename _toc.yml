@@ -62,10 +62,10 @@ parts:
   - file: course/week_12
     title: Onderwerpen
     sections:
-    - file: topics/15a_template
-      title: Template Method Pattern
-    - file: topics/15b_adapter_pattern
+    - file: topics/15a_adapter_pattern
       title: Adapter Pattern
+    - file: topics/15b_template
+      title: Template Method Pattern
   - file: exercises/practicum_adapter_pattern
     title: Practicum
   - file: exercises/adapter_pattern

@@ -44,7 +44,7 @@ jupyter_client==7.3.5
 jupyterlab-pygments==0.2.2
 jupyterlab-widgets==1.1.1
 latexcodec==2.0.1
-linkify-it-py==1.0.3
+linkify-it-py==2.0.3
 lxml==5.3.0
 markdown-it-py==1.1.0
 MarkupSafe==2.1.1

@@ -1,0 +1,659 @@
+
+<!DOCTYPE html>
+
+
+<html lang="nl" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Adapter pattern &#8212; Objectgeoriënteerd Programmeren</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2d50fd4e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=b028fc25"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=ff8fa330"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=5ce3cdba"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'topics/15a_adapter_pattern';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Template method pattern" href="15b_template.html" />
+    <link rel="prev" title="Week 12" href="../course/week_12.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nl"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../about/syllabus.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo_1.png" class="logo__image only-light" alt="Objectgeoriënteerd Programmeren - Home"/>
+    <img src="../_static/logo_1.png" class="logo__image only-dark pst-js-only" alt="Objectgeoriënteerd Programmeren - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Zoeken" aria-label="Zoeken" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Zoeken</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../about/syllabus.html">
+                    Welkom
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Over deze cursus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/literatuur.html">Literatuur</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP2 – week 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_9.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="9a_design_patterns.html">Design Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9c_observer_pattern.html">Observer pattern</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/observer_pattern.html">Practicum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/connect4/index.html">Opgave</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP2 – week2 </span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_10.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10a_decorator.html">Decorator Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10b_factory.html">Factory Pattern</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/pizza/index.html">Practicum decorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/cats/index.html">Practicum decorator 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/logger.html">Practicum factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/pizza/index.html">Opgave factory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP2 – week 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_11.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11a_singleton.html">Singleton Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11b_command.html">Command Pattern</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/singleton_pattern.html">Practicum 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/command_pattern.html">Practicum 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/logger/index.html">Opgave singleton 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/counter/index.html">Opgave singleton 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP2 – week 4</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../course/week_12.html">Onderwerpen</a><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Adapter Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15b_template.html">Template Method Pattern</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/practicum_adapter_pattern.html">Practicum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/adapter_pattern.html">Opgave adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/facade_pattern.html">Opgave facade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP2 – week 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_13.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12b_iterator.html">Iterator Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13a_composite.html">Composite Pattern</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/iterator/index.html">Practicum iterator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/composite/index.html">Practicum composite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/forum/index.html">Opgave composite pattern</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP2 – week 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../course/week_14.html">Onderwerpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13b_state.html">State Pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/pinautomaat/index.html">Practicum state</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ordering_products/index.html">Opgave state 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/mix_case/index.html">Opgave state 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP2 – week 7</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../course/week_15.html">Onderwerpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/patterns/1_alle_patterns.html">Practicum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/patterns/2_alle_patterns_mvc.html">Opgave 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/patterns/3_alle_patterns.html">Opgave 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP1 – Week 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_1.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1a_inleiding.html">Inleiding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1b_variabelen_en_operatoren.html">Variabelen en operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1c_invoer_en_uitvoer.html">Invoer en uitvoer</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/install.html">Practicum</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/ex_1.html">Opgaven</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../problems/hello_world/index.html">Introductieopgaven</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/8-9_primitive_data.html">Primitieve datatypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/9a-9_variables_assignment.html">Variabelen</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP1 – Week 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_2.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2a1_methoden.html">Methoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2a2_methoden_en_testen.html">Methoden en testen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2b_condities_en_logica.html">Condities en logica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3a_lussen_en_strings.html">Lussen en strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3c_string_mystery.html">String Mystery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4a_recursie.html">Recursie</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/debuggen_en_methoden.html">Practicum</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/ex_2.html">Opgaven</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../problems/calculator/index.html">Rekenmachine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/12_12_if_statements.html">Condities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/string_loops.html">Strings en lussen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/codingbat_strings.html">CodingBat Strings</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP1 – Week 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_3.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4b_immutable_objecten.html">Immutabiliteit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5a_mutable_klassen_en_objecten.html">Mutable klassen en objecten</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/objecten_maken_met_point.html">Practicum</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/ex_3.html">Opgaven</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/grote_getallen.html">Grote getallen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../problems/opgave-OptionalInt.html">De klasse `OptionalInt`</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../problems/opgave-LocalDate.html">De klasse `LocalDate`</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP1 – Week 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_4.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5b_klassen_ontwerpen.html">Klassen ontwerpen</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="9b_threads.html">Practicum: multithreading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jars-importeren.html">Practicum: externe bibliotheken</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/ex_4.html">Opgaven</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../problems/class_design/index.html">Klassen ontwerpen en data-typen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/cone/index.html">Klassen ontwerpen en TDD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/nested_circles/index.html">Recursie en bibliotheken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../problems/recursive_graphics/index.html">Recusieve plaatjes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/codingbat_recursie.html">CodingBat recursie</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP1 – Week 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_5.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6a_static_klassen.html">Static en klassen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6a_collections.html">Arrays</a></li>
+
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/hypotheek.html">Practicum</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/ex_5.html">Opgaven</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../problems/verhuur/index.html">Voertuigen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/codingbat_arrays.html">Codingbat Arrays</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP1 – Week 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_6.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6b_javadoc.html">Javadoc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8b_exceptions.html">Exceptions</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/ex_6.html">Opgaven</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/exceptions_gooien.html">Exceptions gooien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/exceptions_gebruiken.html">Exceptions gebruiken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/exceptions_en_bestanden.html">Exceptions en bestanden</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OOP1 – Week 7</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/week_7.html">Onderwerpen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="8_interfaces.html">Interfaces</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course/ex_7.html">Opgaven</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../problems/verhuur2/index.html">Vervolg verhuur-opgave</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download deze pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/topics/15a_adapter_pattern.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download het bronbestand"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Afdrukken naar pdf"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Volledig scherm"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Zoeken" aria-label="Zoeken" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Adapter pattern</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Inhoud </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#onderdelen">Onderdelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#twee-varianten">Twee varianten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-adapter">Object adapter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-adapter">Class adapter</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="adapter-pattern">
+<h1>Adapter pattern<a class="headerlink" href="#adapter-pattern" title="Link to this heading">#</a></h1>
+<p>Het adapter pattern maakt het mogelijk om (een interface van) een bestaande klasse te voorzien van een andere interface, zodat een klasse gebruikt kan worden in situaties waarin een bepaalde interface wordt gevraagd, zonder andere klassen te wijzigen. Met andere woorden: Converteert een interface naar een andere interface, zodat de klasse in situaties gebruikt kan worden waarin naar de andere interface wordt gevraagd.</p>
+<section id="onderdelen">
+<h2>Onderdelen<a class="headerlink" href="#onderdelen" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>client: onderdeel dat een klasse vraagt met interface/type <em>target</em>..</p></li>
+<li><p>target: een interface</p></li>
+<li><p>adaptee: een klasse die (ook) gebruikt moet kunnen worden via de interface <em>target</em></p></li>
+<li><p>adapter: wrapper-klasse die de interface <em>target</em> implementeert</p></li>
+</ul>
+<p>Er vindt conversie plaats van <em>adaptee</em> naar <em>target</em>, via <em>adapter</em>.</p>
+</section>
+<section id="twee-varianten">
+<h2>Twee varianten<a class="headerlink" href="#twee-varianten" title="Link to this heading">#</a></h2>
+<p>Er zijn twee varianten: <em>object adapter</em> en <em>class adapter</em></p>
+<section id="object-adapter">
+<h3>Object adapter<a class="headerlink" href="#object-adapter" title="Link to this heading">#</a></h3>
+<p><img alt="object adapter" src="../_images/adapter_object.png" /></p>
+<p>Bij object adapter implementeert de <em>adapter</em> de interface <em>target</em> en bevat een verwijziging naar een instantie van <em>adaptee</em>. Er wordt gewerkt met <em>compositie</em>. Deze variant heeft de voorkeur in Java.</p>
+</section>
+<section id="class-adapter">
+<h3>Class adapter<a class="headerlink" href="#class-adapter" title="Link to this heading">#</a></h3>
+<p><img alt="class adapter" src="../_images/adapter_class.png" /></p>
+<p>Bij class adapter overerft <em>adapter</em> een klasse <em>target</em> en een klasse <em>adaptee</em>. Door overriding wordt de functionaliteit van <em>target</em> doorgegeven aan <em>adaptee</em>. Hiervooor is multiple inheritance nodig, wat Java niet ondersteunt.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./topics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../course/week_12.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">vorige</p>
+        <p class="prev-next-title">Week 12</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="15b_template.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title">Template method pattern</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Inhoud
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#onderdelen">Onderdelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#twee-varianten">Twee varianten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-adapter">Object adapter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-adapter">Class adapter</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Door Hanzehogeschool Groningen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

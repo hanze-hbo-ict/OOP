@@ -51,8 +51,8 @@ MarkupSafe==2.1.1
 matplotlib-inline==0.1.6
 mdit-py-plugins==0.2.8
 mistune==0.8.4
-myst-nb==0.13.2
-myst-parser==0.15.2
+myst-nb==1.1.2
+myst-parser==4.0.0
 nbclient==0.5.13
 nbconvert==6.5.3
 nbdime==3.1.1

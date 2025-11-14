@@ -16,8 +16,10 @@ parts:
         title: Design Patterns
       - file: topics/9c_observer_pattern
         title: Observer pattern
+    - file: exercises/strategy_pattern
+    title: Practicum Strategy
   - file: exercises/observer_pattern
-    title: Practicum
+    title: Practicum Observer
   - file: problems/connect4/index
     title: Opgave
 

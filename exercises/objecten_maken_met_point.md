@@ -40,7 +40,7 @@ Voeg code toe om de `x`-coördinaat te verhogen met 10. Print vervolgens de coö
 
 ```{code-block} java
 point1.x = point1.x + 10;
-System.out.println(point1.x + "," + point1.y); // 5,3
+System.out.println(point1.x + "," + point1.y); // 15,3
 ```
 
 De variabelen `x` en `y` zijn *properties* van *instanties* van `Point`. Properties van een object worden ook wel *instantie-variabelen* genoemd. Het rechtstreeks benaderen van instantie-variabelen van een object, buiten het object, is ongebruikelijk. Hoewel het technisch gezien kan, is binnen Java de gewoonte (conventies) om instantie-variabelen altijd te lezen of veranderen door middel van aanroep van methodes, zogenaamde `getters` en `setters`.

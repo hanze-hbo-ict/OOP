@@ -78,7 +78,7 @@ Unit testing is een methode om code (klassen en de methoden van deze klassen) af
 public void testNegativeHeigthConstructor() {
     Cone c = new Cone(5.0, -10.0);
 
-    assertEquals(c.getHeight(), 10.0);
+    assertEquals(10.0, c.getHeight());
 }
 ```
 
